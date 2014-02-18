@@ -113,7 +113,7 @@ return array(
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
-		//'Artdarek\OAuth\OAuthServiceProvider'
+		'Artdarek\OAuth\OAuthServiceProvider'
 	),
 
 	/*
@@ -180,7 +180,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
 		// custom alias
-		//'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
+		'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
 );
