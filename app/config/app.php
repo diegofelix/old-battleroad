@@ -108,6 +108,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
+		// Champ Service Providers
+		'Champ\Providers\EntityServiceProvider',
+
+		// custom service providers
+		'Way\Generators\GeneratorsServiceProvider',
+		//'Artdarek\OAuth\OAuthServiceProvider'
 	),
 
 	/*
@@ -173,7 +179,8 @@ return array(
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-
+		// custom alias
+		//'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
 );
