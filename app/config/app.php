@@ -110,6 +110,7 @@ return array(
 
 		// Champ Service Providers
 		'Champ\Providers\EntityServiceProvider',
+		'Champ\Providers\AccountServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
