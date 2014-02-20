@@ -20,4 +20,14 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
         return $this->redirectTo((string) OAuth::consumer('Google')->getAuthorizationUri());
     }
 
+    public function userFound($user)
+    {
+
+    }
+
+    public function userIsBanned($user)
+    {
+
+    }
+
 }
