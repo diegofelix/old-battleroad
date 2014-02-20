@@ -1,7 +1,7 @@
-<?php namespace Champ\Social;
+<?php namespace Champ\Social\Google;
 
 use Champ\Account\UserRepositoryInterface;
-use Champ\Social\GoogleDataReader;
+use Champ\Social\SocialAuthenticatorListener;
 
 class GoogleAuthenticator {
 
@@ -15,7 +15,7 @@ class GoogleAuthenticator {
     /**
      * Google User Data Reader
      *
-     * @var Champ\Social\GoogleDataReader
+     * @var Champ\Social\Google\GoogleDataReader
      */
     protected $reader;
 
@@ -30,6 +30,8 @@ class GoogleAuthenticator {
 
     public function authByCode(SocialAuthenticatorListener $listener, $code)
     {
+        $googleData = $this->reader->getDataFromCode($code);
+        dd($googleData);
     }
 
 }

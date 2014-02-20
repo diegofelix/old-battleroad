@@ -15,4 +15,15 @@ class BaseController extends Controller {
 		}
 	}
 
+	/**
+	 * Redirect the user to an url
+	 *
+	 * @param  string $url
+	 * @return Response
+	 */
+	protected function redirectTo($url)
+	{
+		return Redirect::to($url);
+	}
+
 }
