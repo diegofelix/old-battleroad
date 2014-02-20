@@ -1,6 +1,8 @@
 <?php
 
-class AuthController extends BaseController {
+use Champ\Social\SocialAuthenticatorListener;
+
+class AuthController extends BaseController implements SocialAuthenticatorListener {
 
     public function __construct()
     {
