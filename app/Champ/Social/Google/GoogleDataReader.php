@@ -25,7 +25,7 @@ class GoogleDataReader {
     public function getDataFromCode($code)
     {
         $data = $this->readDataFromGoogle($code);
-        return $this->formatter->format($result);
+        return $this->formatter->format($data);
     }
 
     /**
