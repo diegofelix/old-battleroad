@@ -28,10 +28,51 @@ class GoogleAuthenticator {
         $this->reader = $reader;
     }
 
+    /**
+     * Authenticate an user using Google credentials
+     *
+     * @param  SocialAuthenticatorListener $listener
+     * @param  string                      $code
+     * @return Response
+     */
     public function authByCode(SocialAuthenticatorListener $listener, $code)
     {
         $googleData = $this->reader->getDataFromCode($code);
-        dd($googleData);
+        $user = $this->user->getByEmail($googleData['email']);
+
+        if ($user) {
+            return $this->loginUser($listener, $user);
+        }
+
+        return $this->userNotFound($listener, $googleData);
+    }
+
+    /**
+     * Use the listener to treat the user found
+     *
+     * @param  Champ\Social\SocialAuthenticatorListener $listener
+     * @param  Champ\Account\User $user
+     * @return Response
+     */
+    public function loginUser($listener, $user)
+    {
+        if ($user->is_banned) {
+            return $listener->userIsBanned($user);
+        }
+
+        return $listener->userFound($user);
+    }
+
+    /**
+     * Use the listener to treat the user not found
+     *
+     * @param  Champ\Social\SocialAuthenticatorListener $listener
+     * @param  array $googleData
+     * @return Response
+     */
+    public function userNotFound($listener, $googleData)
+    {
+        return $listener->userNotFound($googleData);
     }
 
 }
