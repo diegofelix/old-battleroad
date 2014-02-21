@@ -22,4 +22,15 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         $this->model = $userModel;
     }
 
+    /**
+     * Return a user by the email
+     *
+     * @param  string $email
+     * @return Champ\Account\User
+     */
+    public function getByEmail($email)
+    {
+        return $this->model->whereEmail($email)->first();
+    }
+
 }
