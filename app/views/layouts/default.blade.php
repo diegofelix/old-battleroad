@@ -9,12 +9,14 @@
         <title>Champaholic - De olho nos campeões</title>
 
         <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+
+        {{ HTML::style('css/main.css') }}
     </head>
 
     <body>
 
         <div id="wrapper">
-            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -23,10 +25,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-
-                        <a href="/" class="navbar-brand">
-                            Champaholic
-                        </a>
+                        <a href="/" class="navbar-brand">Champaholic</a>
                     </div> <!-- navbar-header -->
 
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
