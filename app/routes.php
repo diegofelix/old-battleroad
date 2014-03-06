@@ -7,6 +7,30 @@ Route::get('/', function()
     return View::make('hello');
 });
 
+Route::get('moip', function(){
+
+    $moip = new Moip\Moip;
+    $moip->setEnvironment('test');
+    $moip->setCredential(array(
+        'key' => 'H980Q22VM3W6LC6LIQIA8JVQTUKF1E1ONH4VL3QC',
+        'token' => 'ZOYXSPWPYR5ZEGYPGQVRKO9I58JA6CLU'
+        ));
+
+    $moip->setUniqueID(false);
+    $moip->setValue('100.00');
+    $moip->setReason('Thiago é muito ruim no Street, só ganha no Tekken!');
+
+    $moip->validate('Basic');
+
+    $moip->send();
+
+    $response = $moip->getAnswer()->response;
+    $token = $moip->getAnswer()->token;
+
+    return Redirect::to($moip->getAnswer()->payment_url);
+
+});
+
 Route::get('/diego', function()
 {
     $user = App::make('Champ\Account\UserRepositoryInterface');
