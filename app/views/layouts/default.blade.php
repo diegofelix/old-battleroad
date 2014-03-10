@@ -17,7 +17,7 @@
 
         <div id="wrapper">
 
-            <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -26,6 +26,8 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
+
+                        <a class="navbar-brand" href="#">Champaholic</a>
                     </div> <!-- navbar-header -->
 
                     <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -44,15 +46,19 @@
             </nav>
 
             <div class="piece banner">
-                
-                <div id="call-subscribe">
-                    <header>
-                        <h1><a href="#">Champaholic</a></h1>
-                    </header>
-                    <section>
-                        <p>A primeira plataforma de campeonatos do Brasil. Mostre quem é o melhor!</p>
-                        <p><a href="#" title="Cadastre-se" class="btn button-subscribe">Cadastre-se!</a></p>
-                    </section>
+
+                <div class="container">
+
+                    <div class="call">
+                        <h2>De olho nos campeões</h2>
+                        <h3>Dedicado aos <span class="highlight">jogadores.</span></h3>
+                        <h3>Perfeito para <span class="highlight">Lan Houses & Organizadores.</span></h3>
+                    </div>
+
+                    <div class="subscribe">
+                        <a href="#">Cadastre-se, é grátis!</a>
+                    </div>
+
                 </div>
 
             </div>
