@@ -11,8 +11,47 @@
 }
 
 .banner {
-    padding-top: 100px;
-    background: #333 url('../images/banner.jpg') no-repeat;
-    min-height: 660px;
+    position: relative;
+    padding-top: 250px;
+    background: #fff url('../images/banner.jpg') no-repeat;
     color: #fff;
+    padding-left: 0;
+    h2 {
+        font-size: 6.7em;
+        width: 80%;
+        text-transform: uppercase;
+        font-weight: bolder;
+        line-height: 0.9em;
+    }
+    h3 {
+        font: 400 1.3em/0.8em Lato;
+        margin-left: 10px;
+        margin-top: 0;
+    }
 }
+
+.subscription {
+    .subscribe {
+        margin-top: 113px;
+        margin-bottom: -30px;
+        margin-left: 70%;
+        display: inline-block;
+        background: #fff;
+        padding: 4px;
+        border-radius: 5px;
+    }
+    .btn-subscribe,
+    .btn-subscribe:hover {
+        padding: 15px;
+        display: block;
+        background-color: #0091c9;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+    }
+    .btn-subscribe:hover {
+        background-color: #00bce2;
+    }
+}
+
+@import "main-responsive.less";
