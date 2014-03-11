@@ -55,22 +55,10 @@
                         <h3>Perfeito para <span class="highlight">Lan Houses & Organizadores.</span></h3>
                     </hgroup>
 
-                </div>
-
-                <div class="subscription">
-                    <div class="container">
-                        <div class="subscribe">
-                            <a class="btn btn-lg btn-default btn-subscribe" href="#">Cadastre-se, é grátis!</a>
-                        </div>
+                    <div class="subscribe">
+                        <a class="btn btn-default btn-subscribe" href="#">Cadastre-se, é grátis!</a>
                     </div>
-                </div>
 
-            </div>
-
-            <div id="content" class="piece">
-
-                <div class="container">
-                    <h2>Apenas um teste!</h2>
                 </div>
 
             </div>
