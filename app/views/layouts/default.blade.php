@@ -47,7 +47,7 @@
                 </div> <!-- container -->
             </nav>
 
-            <div class="piece banner">
+            <div class="banner">
 
                 <div class="container">
 
@@ -69,14 +69,80 @@
 
             </div>
 
-            <div id="content" class="piece">
+            <div id="content" class="piece second">
 
                 <div class="container">
-                    <h2>Apenas um teste!</h2>
+
+                    <h2>Se preocupe com o campeonato, nós cuidamos dos jogadores!</h2>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <p>Crie seu campeonato e a Champaholics cuidará do resto: Divulgação, inscrição, pagamento e etc.</p>
+                            <p><a class="btn btn-warning btn-lg" href="#">Saiba mais</a></p>
+                        </div>
+
+                        <div class="col-md-8">
+                            <img class="img-responsive" src="http://placehold.it/700x500" alt="">
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
 
+            <div class="piece third">
+
+                <div class="container">
+
+                    <h2>É fanático por games e competição? Está no lugar certo!</h2>
+
+                    <div class="row">
+                        <div class="col-md-8">
+                            <img class="img-responsive" src="http://placehold.it/700x500" alt="">
+                        </div>
+
+                        <div class="col-md-4">
+                            <p>Faça amigos, participe de campeonatos, ganhe prêmios, seja reconhecido, seja o melhor!</p>
+                            <p><a class="btn btn-warning btn-lg" href="#">Saiba mais</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <footer id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Plataforma</h4>
+                            <ul>
+                                <li><a href="#">Como funciona?</a></li>
+                                <li><a href="#">Sobre</a></li>
+                                <li><a href="#">Changelog</a></li>
+                                <li><a href="#">Ajuda</a></li>
+                                <!--<li><a href="#">Estatísticas</a></li>-->
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Colabore</h4>
+                            <ul>
+                                <li><a href="#">Feedback</a></li>
+                                <li><a href="#">Depoimentos</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Onde estamos?</h4>
+                            <ul>
+                                <li><a href="mailto:contato@champaholic.com.br"><span class="icon-mail"></span>E-mail</a></li>
+                                <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
+                                <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rights">
+                        Champaholic {{ date('Y')}} - Todos os direitos reservados.
+                    </div>
+                </div>
+            </footer>
         </div><!-- wrapper -->
     </body>
 </html>
