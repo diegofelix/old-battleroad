@@ -2,11 +2,10 @@
 
 Route::get('google', 'AuthController@google');
 
-Route::get('/', function()
-{
-    return View::make('hello');
-});
+Route::get('/', 'HomeController@index');
+Route::get('como-funciona', 'HomeController@howItWorks');
 
+/*
 Route::get('moip', function(){
 
     $moip = new Moip\Moip;
@@ -39,3 +38,4 @@ Route::get('/diego', function()
 
     dd($userFound);
 });
+*/

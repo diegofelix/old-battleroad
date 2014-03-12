@@ -1,107 +1,11 @@
 // Import the bootstrap
 @import "bootstrap/bootstrap.less";
 
-.navbar {
-    padding: 20px 0;
-    background: transparent url('../images/navbar.png');
-}
+// Base
+@import "base.less";
 
-.banner {
-    position: relative;
-    padding-top: 250px;
-    background: #fff url('../images/banner.jpg') no-repeat;
-    color: #fff;
-    padding-left: 0;
-    h2 {
-        font-family: Raleway, Arial, sans-serif;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-        letter-spacing: -0.05em;
-        font-weight: 900;
-        font-size: 7.7em;
-        width: 80%;
-        text-transform: uppercase;
-        line-height: 1em;
-    }
-    h3 {
-        font: 400 1.3em/0.8em Lato, Trebuchet MS, Tahoma, sans-serif;
-        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
-        margin-left: 10px;
-        margin-top: 0;
-        .highlight {
-            color: #ff6;
-        }
-    }
-}
+// Index
+@import "index.less";
 
-.subscription {
-    .subscribe {
-        margin-top: 113px;
-        margin-bottom: -30px;
-        margin-left: 70%;
-        display: inline-block;
-        background: #fff;
-        padding: 4px;
-        border-radius: 5px;
-    }
-    .btn-subscribe,
-    .btn-subscribe:hover {
-        padding: 25px;
-        display: block;
-        background-color: #339e35;
-        border: none;
-        border-radius: 5px;
-        color: #fff;
-    }
-    .btn-subscribe:hover {
-        background-color: #1eb53a;
-    }
-}
-
-.piece {
-    padding-top: 30px;
-    h2 {
-        font-family: Lato;
-        font-weight: 300;
-        text-align: center;
-    }
-    .row {
-        margin-top: 40px;
-    }
-    p {
-        margin-top: 20px;
-        font-family: Lato, Trebuchet MS, Tahoma, sans-serif;
-        font-weight: 300;
-        font-size: 1.4em;
-        text-align: right;
-        margin-bottom: 15px;
-    }
-}
-.piece.third {
-    p {
-        text-align: left;
-    }
-}
-
-#footer {
-    background-image: linear-gradient(to bottom, #222, #333);
-    margin-top: 30px;
-    padding-top: 20px;
-    color: #fff;
-    font-size: 1.1em;
-    font-weight: 300;
-    ul {
-        list-style: none;
-        padding: 0 0 0 10px;
-        li {
-            a {
-                color: #fff;
-            }
-        }
-    }
-    .rights {
-        text-align: center;
-        margin: 20px 0 40px 0;
-    }
-}
-
-@import "main-responsive.less";
+// How it works
+@import "how_it_works.less";
