@@ -15,6 +15,11 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function view($view, array $params = array())
+	{
+		return View::make($view, $params);
+	}
+
 	/**
 	 * Redirect the user to an url
 	 *
