@@ -7,11 +7,11 @@
 			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
 
                 <div class="form-group">
-                    {{ Form::text('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login']) }}
+                    {{ Form::text('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login', 'required']) }}
                 </div>
 
                 <div class="form-group">
-                    {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password']) }}
+                    {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
                 </div>
 
                 <div class="checkbox">
@@ -25,6 +25,7 @@
                 <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
 
             {{ Form::close() }}
+
         </div><!-- login -->
 	</div><!-- container -->
 
