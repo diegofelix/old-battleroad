@@ -15,6 +15,13 @@ class BaseController extends Controller {
 		}
 	}
 
+	/**
+	 * Return an view
+	 *
+	 * @param  string $view
+	 * @param  array  $params
+	 * @return Response
+	 */
 	public function view($view, array $params = array())
 	{
 		return View::make($view, $params);
@@ -29,6 +36,29 @@ class BaseController extends Controller {
 	protected function redirectTo($url)
 	{
 		return Redirect::to($url);
+	}
+
+	/**
+	 * Redirect the user back with an message
+	 *
+	 * @param  array  $with
+	 * @return Response
+	 */
+	public function redirectBack(array $with = null)
+	{
+		return Redirect::back()->withInput()->with($with);
+	}
+
+	/**
+	 * Redirect the user to the intended page before login or to a default
+	 * page in case has no one url
+	 *
+	 * @param  string $fallback
+	 * @return Response
+	 */
+	public function redirectIntended($fallback = '/')
+	{
+		return Redirect::intended($fallback);
 	}
 
 }
