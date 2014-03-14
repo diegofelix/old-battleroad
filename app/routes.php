@@ -8,7 +8,10 @@ Route::post('login', ['as' => 'session.store', 'uses' => 'SessionController@stor
 Route::get('google', 'AuthController@google');
 
 Route::get('/', 'HomeController@index');
-Route::get('como-funciona', 'HomeController@howItWorks');
+Route::get('como-funciona', [
+    'as' => 'home.how_it_works',
+    'uses' => 'HomeController@howItWorks'
+]);
 
 /*
 Route::get('moip', function(){

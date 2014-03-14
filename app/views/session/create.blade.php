@@ -2,31 +2,44 @@
 
 @section('content')
 
-    <div class="container">
-        <div id="login">
-			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
+    <div class="featured-title featured-login">
+        <div class="container">
+            <h2 class="sr-only">Login</h2>
+        </div>
+    </div>
 
-                <div class="form-group">
-                    {{ Form::text('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login', 'required']) }}
-                </div>
+    <div class="container" id="login">
 
-                <div class="form-group">
-                    {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
-                </div>
+        <div class="row">
 
-                <div class="checkbox">
-                    <label>
-                        {{ Form::checkbox('remember') }} Mantenha-me conectado
-                    </label>
-                </div>
+            <div class="login-form col-md-6 col-md-offset-3">
 
-                <span class="help-block pull-right"><a href="#">Esqueceu sua senha?</a></span>
+    			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
 
-                <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
+                    <div class="form-group">
+                        {{ Form::text('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login', 'required']) }}
+                    </div>
 
-            {{ Form::close() }}
+                    <div class="form-group">
+                        {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
+                    </div>
 
-        </div><!-- login -->
+                    <div class="checkbox">
+                        <label>
+                            {{ Form::checkbox('remember') }} Mantenha-me conectado
+                        </label>
+                    </div>
+
+                    <span class="help-block pull-right"><a href="#">Esqueceu sua senha?</a></span>
+
+                    <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
+
+                {{ Form::close() }}
+
+            </div><!-- login-form -->
+
+        </div><!-- row -->
+
 	</div><!-- container -->
 
 @stop

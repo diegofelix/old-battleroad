@@ -27,7 +27,7 @@ $app = new Illuminate\Foundation\Application;
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('MSDEV04'),
+	'local' => array('MSDEV04', 'precise64'),
 
 ));
 

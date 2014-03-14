@@ -1,0 +1,34 @@
+.featured-login {
+    height: 400px;
+}
+#login {
+    margin-top: -200px;
+}
+.login-form {
+    background: #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    border: 10px solid #fff;
+    .input-lg {
+        height: 80px;
+    }
+    .checkbox {
+        label {
+            font-size: 1.1em;
+        }
+        input {
+            margin-right: 20px;
+            font-size: 1.4em;
+        }
+    }
+    .champ-button {
+        padding: 20px 20px;
+        border: none;
+        background-color: @champ-button-color;
+        color: #fff;
+        border-bottom: 3px solid @champ-button-color;
+        &:hover {
+            background-color: lighten(@champ-button-color, 10%);
+        }
+    }
+}
