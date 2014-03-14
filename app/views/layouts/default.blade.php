@@ -19,6 +19,8 @@
 
         <div id="wrapper">
 
+            @include('partials._flash_message')
+
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div class="container">
                     <div class="navbar-header">
