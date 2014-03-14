@@ -114,8 +114,7 @@ return array(
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
-		'Artdarek\OAuth\OAuthServiceProvider',
-		'Way\Form\FormServiceProvider'
+		'Artdarek\OAuth\OAuthServiceProvider'
 	),
 
 	/*
