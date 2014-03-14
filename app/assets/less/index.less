@@ -35,17 +35,15 @@
         padding: 4px;
         border-radius: 5px;
     }
-    .btn-subscribe,
-    .btn-subscribe:hover {
-        padding: 25px;
-        display: block;
-        background-color: #339e35;
+    .btn-subscribe {
+        padding: 20px 20px;
         border: none;
-        border-radius: 5px;
+        background-color: @champ-button-color;
         color: #fff;
-    }
-    .btn-subscribe:hover {
-        background-color: #1eb53a;
+        border-bottom: 3px solid @champ-button-color;
+        &:hover {
+            background-color: lighten(@champ-button-color, 10%);
+        }
     }
 }
 
