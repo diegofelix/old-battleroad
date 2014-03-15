@@ -17,7 +17,7 @@
     			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
 
                     <div class="form-group">
-                        {{ Form::text('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login', 'required']) }}
+                        {{ Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'Login', 'required']) }}
                     </div>
 
                     <div class="form-group">

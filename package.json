@@ -4,6 +4,9 @@
     "gulp-less": "^1.2.2",
     "gulp-minify-css": "^0.3.0",
     "gulp-util": "^2.2.14",
-    "gulp-autoprefixer": "0.0.6"
+    "gulp-autoprefixer": "0.0.6",
+    "gulp-uglify": "^0.2.1",
+    "gulp-rename": "^1.2.0",
+    "gulp-concat": "^2.1.7"
   }
 }
