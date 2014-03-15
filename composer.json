@@ -7,7 +7,7 @@
 		"laravel/framework": "4.1.*",
 		"fideloper/proxy": "dev-master",
 		"artdarek/oauth-4-laravel": "dev-master",
-		"camcima/moip-php": "dev-master",
+		"camcima/moip-php": "dev-master"
 	},
 	"require-dev": {
 		"way/generators": "dev-master"
