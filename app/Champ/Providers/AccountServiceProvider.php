@@ -5,10 +5,10 @@ use Illuminate\Support\ServiceProvider;
 class AccountServiceProvider extends ServiceProvider {
 
 	/**
-	* Register the binding
-	*
-	* @return void
-	*/
+	 * Register the binding
+	 *
+	 * @return void
+	 */
 	public function register()
 	{
 		$this->app->bind('Champ\Account\UserEntityInterface', 'Champ\Account\UserEntity');
