@@ -1,4 +1,4 @@
-<?php namespace Champ\Core\Social;
+<?php namespace Champ\Social;
 
 use Champ\Social\SocialDataReaderInterface;
 
