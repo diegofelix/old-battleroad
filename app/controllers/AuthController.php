@@ -1,6 +1,7 @@
 <?php
 
 use Champ\Social\SocialAuthenticatorListenerInterface;
+use Champ\Account\UserEntityInterface;
 
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
 
