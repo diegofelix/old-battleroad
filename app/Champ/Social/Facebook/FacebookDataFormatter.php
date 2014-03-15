@@ -13,6 +13,7 @@ class FacebookDataFormatter {
         return [
             'name' => $data['name'],
             'email' => $data['email'],
+            'username' => $data['username'],
             'picture' => "http://graph.facebook.com/{$data['id']}/picture"
         ];
     }
