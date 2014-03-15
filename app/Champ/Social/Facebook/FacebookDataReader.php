@@ -26,9 +26,6 @@ class FacebookDataReader {
     {
         $data = $this->readDataFromFacebook($code);
 
-        dd($data);
-
-
         return $this->formatter->format($data);
     }
 
