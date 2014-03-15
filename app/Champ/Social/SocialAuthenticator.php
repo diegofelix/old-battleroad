@@ -31,6 +31,6 @@ abstract class SocialAuthenticator {
         $user = App::make('Champ\Account\UserRepositoryInterface');
 
         $socialData = $this->reader->getDataFromCode($code);
-        return $this->user->getByEmail($socialData['email']);
+        return $user->getByEmail($socialData['email']);
     }
 }
