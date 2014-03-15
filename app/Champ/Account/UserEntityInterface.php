@@ -10,6 +10,6 @@ interface UserEntityInterface {
 	 * @param array
 	 * @return Champ\Account\User
 	 */
-	public functin createBySocialAuth($data);
+	public function createBySocialAuth($data);
 
 }
