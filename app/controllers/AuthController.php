@@ -24,6 +24,11 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
         return $this->redirectTo((string) OAuth::consumer('Google')->getAuthorizationUri());
     }
 
+    /**
+     * Handle the Authentication from Facebook
+     * 
+     * @return Response
+     */
     public function faceebok()
     {
         return $this->redirectTo((string) OAuth::consumer('Facebook')->getAuthorizationUri());
