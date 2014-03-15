@@ -1,8 +1,9 @@
 <?php namespace Champ\Social\Facebook;
 
 use OAuth;
+use Champ\Social\SocialDataReaderInterface;
 
-class FacebookDataReader {
+class FacebookDataReader implements SocialDataReaderInterface {
 
     /**
      * Facebook Data Formatter

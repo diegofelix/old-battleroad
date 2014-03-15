@@ -3,7 +3,6 @@
 use Champ\Account\UserRepositoryInterface;
 use Champ\Social\SocialAuthenticatorListener;
 use Champ\Social\SocialAuthenticator;
-use Champ\Social\SocialAuthenticatorListenerInterface;
 
 class GoogleAuthenticator extends SocialAuthenticator {
 
