@@ -3,7 +3,7 @@
 use Champ\Account\UserRepositoryInterface;
 use Champ\Social\SocialAuthenticatorListener;
 
-class GoogleAuthenticator {
+class FacebookAuthenticator {
 
     /**
      * User Repository
@@ -21,7 +21,7 @@ class GoogleAuthenticator {
 
     public function __construct(
         UserRepositoryInterface $user,
-        GoogleDataReader $reader
+        FacebookDataReader $reader
     )
     {
         $this->user = $user;

@@ -11,13 +11,13 @@ class FacebookDataReader {
      */
     protected $formatter;
 
-    public function __construct(GoogleDataFormatter $formatter)
+    public function __construct(FacebookDataFormatter $formatter)
     {
         $this->formatter = $formatter;
     }
 
     /**
-     * Get the code and do an request back to google retrieving the user data.
+     * Get the code and do an request back to facebook retrieving the user data.
      *
      * @param  string $code
      * @return array
