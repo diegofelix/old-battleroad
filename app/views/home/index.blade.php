@@ -7,9 +7,9 @@
         <div class="container">
 
             <hgroup>
-                <h2>De olho nos campeões</h2>
-                <h3>Dedicado aos <span class="highlight">jogadores.</span></h3>
-                <h3>Perfeito para <span class="highlight">Lan Houses & Organizadores.</span></h3>
+                <h2 class="wow fadeInDown">De olho nos campeões</h2>
+                <h3 class="wow fadeInUp">Dedicado aos <span class="highlight">jogadores.</span></h3>
+                <h3 class="wow fadeInUp">Perfeito para <span class="highlight">Lan Houses & Organizadores.</span></h3>
             </hgroup>
 
         </div>

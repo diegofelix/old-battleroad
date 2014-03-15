@@ -4,7 +4,7 @@
 
     <div class="featured-title">
         <div class="container">
-            <h2>Como funciona?</h2>
+            <h2 class="wow fadeInLeft">Como funciona?</h2>
         </div>
     </div>
 
