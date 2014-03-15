@@ -12,7 +12,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     public function google()
     {
         if (Input::has('code')) {
-            return App::make('Champ\Social\Google\GoogleAuthenticator')->auth($this, Input::get('code'));
+            return App::make('Champ\Social\Google\GoogleAuthenticator')->authByCode($this, Input::get('code'));
         }
 
         // redirect to the google oAuth

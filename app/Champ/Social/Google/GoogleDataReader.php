@@ -35,7 +35,7 @@ class GoogleDataReader implements SocialDataReaderInterface {
      * @param  string $code
      * @return array
      */
-    private function readDataFromGoogle($code)
+    protected function readDataFromGoogle($code)
     {
         $googleService = OAuth::consumer('Google');
         $token = $googleService->requestAccessToken($code);
