@@ -11,6 +11,7 @@ class AccountServiceProvider extends ServiceProvider {
    */
   public function register()
   {
+    $this->app->bind('Champ\Account\UserEntityInterface', 'Champ\Account\UserEntity');
     $this->app->bind('Champ\Account\UserRepositoryInterface', 'Champ\Account\UserRepository');
   }
 
