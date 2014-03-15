@@ -1,16 +1,21 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util');
+// css
 var less = require('gulp-less');
 var autoprefix = require('gulp-autoprefixer');
 var minifyCSS = require('gulp-minify-css');
-var exec = require('child_process').exec;
-var sys = require('sys');
+// js
+var uglify = require('gulp-uglify');
+//var rename = require('gulp-rename');
+//var concat = require('gulp-concat');
 
-// Where do you store your less files?
+// from
 var lessDir = 'app/assets/less';
+var jsDir   = 'app/assets/js';
 
-// Which directory should less compile to?
+// compile to
 var targetCSSDir = 'public/css';
+var targetJsDir  = 'public/js';
 
 
 // Compile less, autoprefix CSS3,
@@ -23,10 +28,17 @@ gulp.task('css', function () {
         .pipe(gulp.dest(targetCSSDir));
 });
 
-// Keep an eye on less, Coffee, and PHP files for changes...
+gulp.task('js', function() {
+  gulp.src(jsDir + '/**/*.js')
+  	//.pipe(concat('min.js'))
+    .pipe(uglify({outSourceMap: true}))
+    .pipe(gulp.dest(targetJsDir));
+});
+
 gulp.task('watch', function () {
     gulp.watch(lessDir + '/**/*.less', ['css']);
+    gulp.watch(jsDir + '/**/*.js', ['js']);
 });
 
 // What tasks does running gulp trigger?
-gulp.task('default', ['css', 'watch']);
+gulp.task('default', ['css', 'js', 'watch']);

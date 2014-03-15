@@ -13,6 +13,7 @@
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 
         {{ HTML::style('css/main.css') }}
+        
     </head>
 
     <body>
@@ -22,7 +23,7 @@
             @include('partials._flash_message')
 
             <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-                <div class="container">
+                <div class="container wow bounceInDown">
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                             <span class="sr-only">Menu</span>
@@ -88,7 +89,11 @@
                 </div>
             </footer>
         </div><!-- wrapper -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    {{ HTML::script('js/bootstrap.min.js') }}
+    {{ HTML::script('js/lib/jquery.min.js') }}
+    {{ HTML::script('js/lib/bootstrap.min.js') }}
+    {{ HTML::script('js/lib/wow.min.js') }}
+    <script>
+        new WOW().init();
+    </script>
     </body>
 </html>
