@@ -1,9 +1,18 @@
 <?php namespace Champ\Social;
 
 use Champ\Social\SocialDataReaderInterface;
+use Champ\Social\SocialAuthenticatorListenerInterface;
+use Champ\Account\UserRepositoryInterface
 use App;
 
 abstract class SocialAuthenticator {
+
+    /**
+     * Social User Data Reader
+     *
+     * @var Champ\Account\UserRepositoryInterface
+     */
+    protected $user;
 
     /**
      * Social User Data Reader
@@ -13,24 +22,70 @@ abstract class SocialAuthenticator {
     protected $reader;
 
     /**
-     * Inject the data reader interface
+     * @var Champ\Social\SocialAuthenticatorListenerInterface
      */
-    public function __construct(SocialDataReaderInterface $reader = null)
+    protected $listener;
+
+    /**
+     * Inject the data reader and the user repository
+     */
+    public function __construct(
+        UserRepositoryInterface $user = null,
+        SocialDataReaderInterface $reader = null
+    )
     {
+        $this->user = $user;
         $this->reader = $reader;
     }
 
     /**
-     * Get the repository user data using Social credentials
+     * Get the repository user data using oAuth
      *
-     * @param  string $code
+     * @param Champ\Social\SocialAuthenticatorListenerInterface $listener
+     * @param string $code
      * @return Response
      */
-    public function authByCode($code)
+    public function authByCode(SocialAuthenticatorListenerInterface $listener, $code)
     {
-        $user = App::make('Champ\Account\UserRepositoryInterface');
+        // cache the listener
+        $this->listener = $listener;
 
+        // get the social data from the code given
         $socialData = $this->reader->getDataFromCode($code);
-        return $user->getByEmail($socialData['email']);
+
+        // get the user from the user repository
+        $user = $this->user->getByEmail($socialData['email']);
+
+        if ($user) {
+            return $this->loginUser($user);
+        }
+
+        return $this->userNotFound($googleData);
+    }
+
+    /**
+     * Use the listener to handle the user userFound
+     *
+     * @param  Champ\Account\User $user
+     * @return Response
+     */
+    protected function loginUser($user)
+    {
+        if ($user->is_banned) {
+            return $this->listener->userIsBanned($user);
+        }
+
+        return $this->listener->userFound($user);
+    }
+
+    /**
+     * Use the listener to treat the user not found
+     *
+     * @param  array $googleData
+     * @return Response
+     */
+    protected function userNotFound($googleData)
+    {
+        return $this->listener->userNotFound($googleData);
     }
 }
