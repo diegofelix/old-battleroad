@@ -37,4 +37,15 @@ class UserEntity extends AbstractEntity implements UserEntityInterface {
         $this->validator = $validator;
     }
 
+    /**
+     * Create the user using the data from the Social Auth
+     * 
+     * @param array
+     * @return Champ\Account\User
+     */
+    public functin createBySocialAuth($data)
+    {
+        return $this->repository->create($data);
+    }
+
 }

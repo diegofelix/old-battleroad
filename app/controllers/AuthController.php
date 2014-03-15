@@ -5,6 +5,18 @@ use Champ\Social\SocialAuthenticatorListenerInterface;
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
 
     /**
+     * User Entity
+     *
+     * @var Champ\Account\UserEntityInterface
+     */
+    protected $user;
+
+    public function __construct(UserEntityInterface $user)
+    {
+        $this->user = $user;
+    }
+
+    /**
      * Handle the Authentication from Google
      *
      * @return Response
@@ -41,7 +53,8 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     public function userFound($user)
     {
-        dd($user);
+        Auth::loginUsingId($user->id);
+        return $this->redirectTo('/');
     }
 
     /**
@@ -64,7 +77,8 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     public function userNotFound($data)
     {
-        dd($data);
+        $user = $this->user->createBySocialAuth($data);
+        return $this->userFound($user);
     }
 
 }
