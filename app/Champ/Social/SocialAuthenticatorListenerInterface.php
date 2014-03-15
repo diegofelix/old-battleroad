@@ -1,6 +1,6 @@
 <?php namespace Champ\Social;
 
-interface SocialAuthenticatorListener {
+interface SocialAuthenticatorListenerInterface {
 
     /**
      * Login the user in case the user exists

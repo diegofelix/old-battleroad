@@ -1,8 +1,9 @@
 <?php namespace Champ\Social\Google;
 
 use OAuth;
+use Champ\Social\SocialDataReaderInterface;
 
-class GoogleDataReader {
+class GoogleDataReader implements SocialDataReaderInterface {
 
     /**
      * Google Data Formatter

@@ -3,42 +3,25 @@
 use Champ\Account\UserRepositoryInterface;
 use Champ\Social\SocialAuthenticatorListener;
 
-class GoogleAuthenticator {
+class GoogleAuthenticator extends SocialAuthenticator implements SocialAuthenticatorInterface {
 
     /**
-     * User Repository
-     *
-     * @var Champ\Account\UserRepositoryInterface
+     * Inject the Google data reader
      */
-    protected $user;
-
-    /**
-     * Google User Data Reader
-     *
-     * @var Champ\Social\Google\GoogleDataReader
-     */
-    protected $reader;
-
-    public function __construct(
-        UserRepositoryInterface $user,
-        GoogleDataReader $reader
-    )
+    public function __construct(GoogleDataReader $reader)
     {
-        $this->user = $user;
         $this->reader = $reader;
     }
 
     /**
-     * Authenticate an user using Google credentials
+     * Auth the user using oAuth
      *
-     * @param  SocialAuthenticatorListener $listener
-     * @param  string                      $code
-     * @return Response
+     * @param Champ\Social\SocialAuthenticatorListenerInterface $listener
+     * @param string $code token from the oAuth
      */
-    public function authByCode(SocialAuthenticatorListener $listener, $code)
+    public function auth(SocialAuthenticatorListenerInterface $listener, $code)
     {
-        $googleData = $this->reader->getDataFromCode($code);
-        $user = $this->user->getByEmail($googleData['email']);
+        $user = $this->authByCode($code);
 
         if ($user) {
             return $this->loginUser($listener, $user);
