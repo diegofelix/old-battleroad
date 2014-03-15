@@ -1,6 +1,7 @@
 <?php namespace Champ\Social;
 
 use Champ\Social\SocialDataReaderInterface;
+use App;
 
 abstract class SocialAuthenticator {
 
