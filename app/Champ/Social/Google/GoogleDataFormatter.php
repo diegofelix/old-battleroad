@@ -13,6 +13,7 @@ class GoogleDataFormatter {
         return [
             'name' => $data['name'],
             'email' => $data['email'],
+            'username' => usernameFromEmail($data['email']),
             'picture' => $data['picture']
         ];
     }
