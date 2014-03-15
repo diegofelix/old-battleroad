@@ -2,7 +2,7 @@
 
 use Champ\Social\SocialDataReaderInterface;
 use Champ\Social\SocialAuthenticatorListenerInterface;
-use Champ\Account\UserRepositoryInterface
+use Champ\Account\UserRepositoryInterface;
 use App;
 
 abstract class SocialAuthenticator {
