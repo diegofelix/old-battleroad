@@ -60,7 +60,7 @@ abstract class SocialAuthenticator {
             return $this->loginUser($user);
         }
 
-        return $this->userNotFound($googleData);
+        return $this->userNotFound($socialData);
     }
 
     /**
