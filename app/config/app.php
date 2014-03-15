@@ -109,7 +109,6 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
 		// Champ Service Providers
-		'Champ\Providers\EntityServiceProvider',
 		'Champ\Providers\AccountServiceProvider',
 
 		// custom service providers

@@ -43,7 +43,7 @@ class UserEntity extends AbstractEntity implements UserEntityInterface {
      * @param array
      * @return Champ\Account\User
      */
-    public functin createBySocialAuth($data)
+    public function createBySocialAuth($data)
     {
         return $this->repository->create($data);
     }
