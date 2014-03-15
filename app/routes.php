@@ -6,6 +6,7 @@ Route::get('logout', ['as' => 'session.destroy', 'uses' => 'SessionController@de
 Route::post('login', ['as' => 'session.store', 'uses' => 'SessionController@store']);
 
 Route::get('google', 'AuthController@google');
+Route::get('facebook', 'AuthController@facebook');
 
 Route::get('/', 'HomeController@index');
 Route::get('como-funciona', [
