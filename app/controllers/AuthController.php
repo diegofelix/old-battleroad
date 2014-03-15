@@ -31,6 +31,10 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     public function facebook()
     {
+        if (Input::has('code')) {
+            return App::make('Champ\Social\Google\FacebookAuthenticator')->authByCode($this, Input::get('code'));
+        }
+
         return $this->redirectTo((string) OAuth::consumer('Facebook')->getAuthorizationUri());
     }
 
