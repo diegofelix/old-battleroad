@@ -14,6 +14,23 @@
 
             <div class="login-form col-md-6 col-md-offset-3">
 
+                <div class="social-networks">
+                    
+                    <h5>Entre usando sua conta:</h5>
+
+                    <div class="networks">
+                        <ul>
+                            <li>{{ link_to_route('auth.facebook', 'Facebook', null, ['class' => 'btn btn-default btn-facebook']) }}</li>
+                            <li>{{ link_to_route('auth.google', 'Google', null, ['class' => 'btn btn-default btn-google']) }}</li>
+                        </ul>
+                    </div>
+
+                    <div class="separator">
+                        <p>ou</p>
+                    </div>
+
+                </div>
+
     			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
 
                     <div class="form-group">

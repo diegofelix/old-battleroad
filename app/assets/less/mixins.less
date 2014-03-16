@@ -1,3 +1,13 @@
-.champ-button {
-
+.champ-button(@background-color, @padding-vertical, @padding-horizontal, @color: #fff) {
+	border: none;
+    background-color: @background-color;
+    border-bottom: 3px solid @background-color;
+    padding: @padding-vertical @padding-horizontal @padding-vertical @padding-horizontal;
+    color: @color;
+    border-radius: 3px;
+    &:hover {
+    	color: @color;
+        background-color: lighten(@background-color, 5%);
+        border-bottom-color: darken(@background-color, 10%);
+    }
 }

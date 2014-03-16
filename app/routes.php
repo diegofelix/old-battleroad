@@ -5,8 +5,8 @@ Route::get('login', ['as' => 'session.create', 'uses' => 'SessionController@crea
 Route::get('logout', ['as' => 'session.destroy', 'uses' => 'SessionController@destroy']);
 Route::post('login', ['as' => 'session.store', 'uses' => 'SessionController@store']);
 
-Route::get('google', 'AuthController@google');
-Route::get('facebook', 'AuthController@facebook');
+Route::get('google', ['as' => 'auth.google', 'uses' => 'AuthController@google']);
+Route::get('facebook', ['as' => 'auth.facebook', 'uses' => 'AuthController@facebook']);
 
 Route::get('/', 'HomeController@index');
 Route::get('como-funciona', [
