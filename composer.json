@@ -10,7 +10,8 @@
 		"camcima/moip-php": "dev-master"
 	},
 	"require-dev": {
-		"way/generators": "dev-master"
+		"way/generators": "dev-master",
+		"fzaninotto/faker": "v1.3.0"
 	},
 	"autoload": {
 		"classmap": [
