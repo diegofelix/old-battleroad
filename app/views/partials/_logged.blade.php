@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top logged" role="navigation">
     <div class="container wow bounceInDown">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -27,18 +27,8 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-with-icons">
-                        <li>
-                            <a href="/all">
-                                <i class="icon-pencil"></i>
-                                Perfil
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/all">
-                                <i class="icon-signout"></i>
-                                Sair
-                            </a>
-                        </li>
+                        <li><a href="{{ route('user.profile') }}"><i class="icon icon-user"></i> Perfil</a></li>
+                        <li><a href="{{ route('session.destroy') }}"><i class="icon icon-sign-out"></i> Sair</a></li>
                     </ul>
                 </li>
             </ul>
