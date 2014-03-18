@@ -9,10 +9,14 @@ Route::get('google', ['as' => 'auth.google', 'uses' => 'AuthController@google'])
 Route::get('facebook', ['as' => 'auth.facebook', 'uses' => 'AuthController@facebook']);
 
 Route::get('/', 'HomeController@index');
-Route::get('como-funciona', [
+Route::get('how-it-works', [
     'as' => 'home.how_it_works',
     'uses' => 'HomeController@howItWorks'
 ]);
+
+Route::get('profile', ['as' => 'user.profile'], function(){
+    echo 'hey!';
+});
 
 /*
 Route::get('moip', function(){
