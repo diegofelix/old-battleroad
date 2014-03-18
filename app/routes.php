@@ -8,15 +8,18 @@ Route::post('login', ['as' => 'session.store', 'uses' => 'SessionController@stor
 Route::get('google', ['as' => 'auth.google', 'uses' => 'AuthController@google']);
 Route::get('facebook', ['as' => 'auth.facebook', 'uses' => 'AuthController@facebook']);
 
+// home routes
 Route::get('/', 'HomeController@index');
 Route::get('how-it-works', [
     'as' => 'home.how_it_works',
     'uses' => 'HomeController@howItWorks'
 ]);
 
-Route::get('profile', ['as' => 'user.profile'], function(){
-    echo 'hey!';
-});
+// user routes
+Route::get('profile', [
+    'as' => 'user.profile', 
+    'uses' => 'UsersController@profile'
+]);
 
 /*
 Route::get('moip', function(){
