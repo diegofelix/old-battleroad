@@ -9,7 +9,17 @@ class UsersTableSeeder extends Seeder {
 	{
 		$faker = Faker::create();
 
-		foreach(range(1, 10) as $index)
+		// create a real user to work with
+		User::create([
+			'name' => 'Diego Felix',
+			'username' => 'diegofelix',
+			'email' => 'diegoflx.oliveira@gmail.com',
+			'password' => Hash::make('diegofelix'),
+			'picture' => 'https://lh6.googleusercontent.com/-LfMmuv9QXh4/AAAAAAAAAAI/AAAAAAAAAOY/1wKOh84NVzM/s120-c/photo.jpg'
+		]);
+
+		// create more 9 fake users
+		foreach(range(1, 9) as $index)
 		{
 			User::create([
 				'name' => $faker->name,
