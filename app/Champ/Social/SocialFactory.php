@@ -4,7 +4,7 @@ use InvalidArgumentException;
 
 class SocialFactory {
 
-    public function use($provider)
+    public function create($provider)
     {
         switch ($provider) {
             case 'Facebook':
