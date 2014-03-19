@@ -2,6 +2,7 @@
 
 use Champ\Social\SocialAuthenticatorListenerInterface;
 use Champ\Account\UserEntityInterface;
+use Champ\Social\SocialFactory;
 
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
 
@@ -12,9 +13,19 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     protected $user;
 
-    public function __construct(UserEntityInterface $user)
+    /**
+     * Social Factory
+     *
+     * @var Champ\Social\SocialFactory
+     */
+    protected $social;
+
+    public function __construct(
+        UserEntityInterface $user,
+        SocialFactory $social)
     {
         $this->user = $user;
+        $this->social = $social;
     }
 
     /**
@@ -24,26 +35,17 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     public function google()
     {
-        if (Input::has('code')) {
-            return App::make('Champ\Social\Google\GoogleAuthenticator')->authByCode($this, Input::get('code'));
-        }
-
-        // redirect to the google oAuth
-        return $this->redirectTo((string) OAuth::consumer('Google')->getAuthorizationUri());
+        return $this->auth('Google');
     }
 
     /**
      * Handle the Authentication from Facebook
-     * 
+     *
      * @return Response
      */
     public function facebook()
     {
-        if (Input::has('code')) {
-            return App::make('Champ\Social\Facebook\FacebookAuthenticator')->authByCode($this, Input::get('code'));
-        }
-
-        return $this->redirectTo((string) OAuth::consumer('Facebook')->getAuthorizationUri());
+        return $this->auth('Facebook');
     }
 
     /**
@@ -82,4 +84,13 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
         return $this->userFound($user);
     }
 
+    protected function auth($serviceName)
+    {
+        if (Input::has('code')) {
+            return $social->use($serviceName)->authByCode($this, Input::get('code'));
+        }
+
+        // redirect to the facebook oAuth
+        return $this->redirectTo((string) OAuth::consumer($serviceName)->getAuthorizationUri());
+    }
 }
