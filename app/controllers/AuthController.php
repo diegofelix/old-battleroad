@@ -87,7 +87,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     protected function auth($serviceName)
     {
         if (Input::has('code')) {
-            return $social->use($serviceName)->authByCode($this, Input::get('code'));
+            return $social->create($serviceName)->authByCode($this, Input::get('code'));
         }
 
         // redirect to the facebook oAuth
