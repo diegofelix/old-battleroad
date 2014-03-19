@@ -1,5 +1,6 @@
 <?php namespace Champ\Social;
 
+use App;
 use InvalidArgumentException;
 
 class SocialFactory {
