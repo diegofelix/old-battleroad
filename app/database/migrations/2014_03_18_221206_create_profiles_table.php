@@ -15,7 +15,16 @@ class CreateProfilesTable extends Migration {
 		Schema::create('profiles', function(Blueprint $table) {
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
-			$table->text('bio');
+			$table->textarea('bio');
+			$table->date('birthday');
+			$table->string('rg');
+			$table->string('cpf');
+			$table->string('zipcode', 8);
+			$table->string('address');
+			$table->string('number');
+			$table->string('complement');
+			$table->string('state');
+			$table->string('city');
 			$table->timestamps();
 			$table->foreign('user_id')
 				->references('id')->on('users')

@@ -12,4 +12,12 @@ interface UserRepositoryInterface extends RepositoryInterface {
      */
     public function getByEmail($email);
 
+    /**
+     * Get the user and profile by id
+     *
+     * @param int $id
+     * @return Champ\Account\User
+     */
+    public function getById($id);
+
 }

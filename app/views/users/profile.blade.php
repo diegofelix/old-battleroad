@@ -19,7 +19,7 @@
                         <h3>Olá, meu nome é {{ Auth::user()->name }}! <span class="member-since"><em>Membro desde </em>{{ Auth::user()->created_at->format('M, Y') }}</span></h3>
                     </header>
                     <section>
-                        <p>{{ Auth::user()->bio ?: 'Ainda não tenho uma biografia =/' }}</p>
+                        <p>{{ $user->profile->bio ?: 'Ainda não tenho uma biografia =/' }}</p>
                     </section>
                 </div>
             </div>

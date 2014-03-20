@@ -30,6 +30,12 @@ abstract class AbstractRepository {
      */
     public function create(array $data)
     {
+        if( ! $this->validator->passes($data))
+        {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
         return $this->model->create($data);
     }
 
@@ -41,6 +47,12 @@ abstract class AbstractRepository {
      */
     public function update(array $data)
     {
+        if( ! $this->validator->passes($data, 'update'))
+        {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
         return $this->model->update($data);
     }
 
