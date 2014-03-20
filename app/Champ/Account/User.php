@@ -67,4 +67,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
         return $this->hasMany('Championship');
     }
 
+    /**
+     * Relation with profile
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasOne
+     */
+    public function profile()
+    {
+        return $this->hasOne('Champ\Account\Profile');
+    }
+
 }

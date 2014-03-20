@@ -1,17 +1,17 @@
 <?php
 
-use Champ\Account\UserEntityInterface;
+use Champ\Account\UserRepositoryInterface;
 
 class UsersController extends BaseController {
 
 	/**
 	 * User Entity
 	 *
-	 * @var Champ\Account\UserEntityInterface
+	 * @var Champ\Account\UserRepositoryInterface
 	 */
 	protected $user;
 
-	public function __construct(UserEntityInterface $user)
+	public function __construct(UserRepositoryInterface $user)
     {
         $this->user = $user;
     }
@@ -23,7 +23,9 @@ class UsersController extends BaseController {
      */
     public function profile()
     {
-        return $this->view('users.profile');
+        $user = $this->user->getById(Auth::user()->id);
+
+        return $this->view('users.profile', compact('user'));
     }
 
 }

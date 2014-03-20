@@ -13,13 +13,23 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     protected $model;
 
     /**
+     * User Validator
+     *
+     * @var Champ\Services\Validation\User\UserValidator;
+     */
+    protected $validator;
+
+    /**
      * Constructor
      *
      * @param Champ\Account\User $userModel
+     * @param Champ\Account\UserValidator $validator
+     * @return void
      */
-    public function __construct(User $userModel)
+    public function __construct(User $userModel, UserValidator $validator)
     {
         $this->model = $userModel;
+        $this->validator = $validator;
     }
 
     /**
@@ -31,6 +41,17 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     public function getByEmail($email)
     {
         return $this->model->whereEmail($email)->first();
+    }
+
+    /**
+     * Get the user and profile by id
+     *
+     * @param int $id
+     * @return Champ\Account\User
+     */
+    public function getById($id)
+    {
+        return $this->model->with('profile')->find($id);
     }
 
 }
