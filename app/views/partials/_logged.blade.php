@@ -27,7 +27,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-with-icons">
-                        <li><a href="{{ route('user.profile') }}"><i class="icon icon-user"></i> Perfil</a></li>
+                        <li><a href="{{ route('profile.index') }}"><i class="icon icon-user"></i> Perfil</a></li>
                         <li><a href="{{ route('session.destroy') }}"><i class="icon icon-sign-out"></i> Sair</a></li>
                     </ul>
                 </li>

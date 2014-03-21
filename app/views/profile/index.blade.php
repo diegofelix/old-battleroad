@@ -2,11 +2,7 @@
 
 @section ('content')
 
-    <div class="featured-title">
-        <div class="container">
-            <h2>Perfil do usuário</h2>
-        </div>
-    </div>
+    @include('partials._featured_title', ['title' => 'Perfil do Usuário'])
 
     <div class="container">
         <div class="row">
@@ -18,9 +14,9 @@
                     <header>
                         <h3>Olá, meu nome é {{ Auth::user()->name }}! <span class="member-since"><em>Membro desde </em>{{ Auth::user()->created_at->format('M, Y') }}</span></h3>
                     </header>
-                    <section>
-                        <p>{{ $user->profile->bio ?: 'Ainda não tenho uma biografia =/' }}</p>
-                    </section>
+                    @if ( ! $user->profile)
+                        @include ('partials._no_profile')
+                    @endif
                 </div>
             </div>
         </div>
