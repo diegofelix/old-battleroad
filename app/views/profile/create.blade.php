@@ -1,37 +1,112 @@
 @extends('layouts.default')
 
 @section('content')
-	@include('partials._featured_title', ['title' => 'Perfil de '. Auth::user()->name])
 
-	{{ Form::open(['route' => 'profile.store', 'role' => 'form']) }}
+	<div id="profile">
 
-		{{ FormField::bio(['placeholder' => 'Fale um pouco sobre você...']) }}
+		@include('partials._featured_title', ['title' => 'Perfil de '. Auth::user()->name])
 
-		{{ FormField::rg(['label' => 'RG:']) }}
+		<div class="container">
 
-		{{ FormField::cpf(['label' => 'CPF:']) }}
+			{{ Form::open(['route' => 'profile.store', 'role' => 'form', 'class' => 'form-horizontal']) }}
 
-		{{ FormField::cep(['label' => 'CEP:']) }}
+				<fieldset>
 
-		{{ FormField::address(['label' => 'Endereço:']) }}
+					<legend>Dados Pessoais</legend>
 
-		{{ FormField::number(['label' => 'Número:']) }}
+					<div class="form-group">
+						{{ Form::label('bio', 'Biografia: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::textarea('bio', null, [
+								'class' => 'form-control',
+								'id' => 'bio',
+								'placeholder' => 'Fale um pouco sobre você...'
+							]) }}
+						</div>
+					</div>
 
-		{{ FormField::complement(['label' => 'Complemento:']) }}
+					<div class="form-group">
+						{{ Form::label('rg', 'RG: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('rg', null, ['class' => 'form-control', 'id' => 'rg', 'required']) }}
+						</div>
+					</div>
 
-		{{ FormField::city(['label' => 'Cidade:']) }}
+					<div class="form-group">
+						{{ Form::label('cpf', 'CPF: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('cpf', null, ['class' => 'form-control', 'id' => 'cpf', 'required']) }}
+						</div>
+					</div>
 
-		<div class="form-group">
-			<label for="state" class="control-label">Estado:</label>
-			<select name="state" class="form-control" id="state">
-				<option>1</option>
-				<option>2</option>
-				<option>3</option>
-				<option>4</option>
-				<option>5</option>
-			</select>
-		</div>
+				</fieldset>
 
-	{{ Form::close() }}
+				<fieldset>
+
+					<legend>Endereço</legend>
+
+					<div class="form-group">
+						{{ Form::label('cep', 'CEP: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('cep', null, ['class' => 'form-control', 'id' => 'cep', 'required']) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ Form::label('address', 'Endereço: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('address', null, ['class' => 'form-control', 'id' => 'address', 'required']) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ Form::label('number', 'Número: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-2">
+							{{ Form::text('number', null, ['class' => 'form-control', 'id' => 'number', 'required']) }}
+						</div>
+						{{ Form::label('complement', 'Complemento: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-3">
+							{{ Form::text('complement', null, ['class' => 'form-control', 'id' => 'complement']) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+
+					</div>
+
+					<div class="form-group">
+						{{ Form::label('city', 'Cidade: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('city', null, ['class' => 'form-control', 'id' => 'city', 'required']) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						<label for="state" class="col-md-2 control-label">Estado:</label>
+						<div class="col-md-7">
+							<select name="state" class="form-control" id="state" required>
+								<option value="">Selecione um Estado</option>
+								<option value="1">São Paulo</option>
+								<option value="2">Rio de Janeiro</option>
+								<option value="3">Brasília</option>
+								<option value="4">Pará</option>
+								<option value="5">Paraná</option>
+							</select>
+						</div>
+					</div><!-- form group -->
+
+				</fieldset>
+
+				<div class="form-group">
+				    <div class="col-sm-offset-2 col-sm-10">
+				    	<button type="submit" class="btn btn-default champ-button">Salvar</button>
+				    </div>
+				</div>
+
+			{{ Form::close() }}
+
+		</div><!-- container -->
+
+	</div>
 
 @stop

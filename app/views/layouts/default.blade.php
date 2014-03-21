@@ -6,14 +6,14 @@
         <meta name="description" content="O primeiro site de campeonatos do brasil!">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <title>Champaholic - De olho nos campeões</title>
+        <title>BattleRoad - De olho nos campeões</title>
 
         <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
 
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 
         {{ HTML::style('css/main.css') }}
-        
+
     </head>
 
     <body>
@@ -55,14 +55,14 @@
                         <div class="col-md-4">
                             <h4>Onde estamos?</h4>
                             <ul>
-                                <li><a href="mailto:contato@champaholic.com.br"><span class="icon-mail"></span>E-mail</a></li>
+                                <li><a href="mailto:contato@BattleRoad.com.br"><span class="icon-mail"></span>E-mail</a></li>
                                 <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
                                 <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="rights">
-                        Champaholic {{ date('Y')}} - Todos os direitos reservados.
+                        BattleRoad {{ date('Y')}} - Todos os direitos reservados.
                     </div>
                 </div>
             </footer>
