@@ -15,7 +15,7 @@ class CreateProfilesTable extends Migration {
 		Schema::create('profiles', function(Blueprint $table) {
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
-			$table->textarea('bio');
+			$table->text('bio');
 			$table->date('birthday');
 			$table->string('rg');
 			$table->string('cpf');

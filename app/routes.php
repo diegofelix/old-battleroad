@@ -15,11 +15,8 @@ Route::get('how-it-works', [
     'uses' => 'HomeController@howItWorks'
 ]);
 
-// user routes
-Route::get('profile', [
-    'as' => 'user.profile', 
-    'uses' => 'UsersController@profile'
-]);
+// profile route
+Route::resource('profile', 'ProfileController');
 
 /*
 Route::get('moip', function(){

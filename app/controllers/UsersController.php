@@ -16,16 +16,4 @@ class UsersController extends BaseController {
         $this->user = $user;
     }
 
-    /**
-     * Show the user profile
-     *
-     * @return Response
-     */
-    public function profile()
-    {
-        $user = $this->user->getById(Auth::user()->id);
-
-        return $this->view('users.profile', compact('user'));
-    }
-
 }
