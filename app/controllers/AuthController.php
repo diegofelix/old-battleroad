@@ -1,17 +1,17 @@
 <?php
 
 use Champ\Social\SocialAuthenticatorListenerInterface;
-use Champ\Account\UserEntityInterface;
+use Champ\Account\UserRepositoryInterface;
 use Champ\Social\SocialFactory;
 
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
 
     /**
-     * User Entity
+     * User Repository
      *
-     * @var Champ\Account\UserEntityInterface
+     * @var Champ\Account\UserRepositoryInterface
      */
-    protected $user;
+    protected $userRepo;
 
     /**
      * Social Factory
@@ -21,10 +21,10 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     protected $social;
 
     public function __construct(
-        UserEntityInterface $user,
+        UserRepositoryInterface $user,
         SocialFactory $social)
     {
-        $this->user = $user;
+        $this->userRepo = $user;
         $this->social = $social;
     }
 
@@ -80,7 +80,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      */
     public function userNotFound($data)
     {
-        $user = $this->user->createBySocialAuth($data);
+        $user = $this->userRepo->createBySocialAuth($data);
 
         return $this->userFound($user);
     }
