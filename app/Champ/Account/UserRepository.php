@@ -44,6 +44,17 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
+     * Create a user with the social data
+     *
+     * @param array $data
+     * @return Model
+     */
+    public function createBySocialAuth($data)
+    {
+        return $this->model->create($data);
+    }
+
+    /**
      * Get the user and profile by id
      *
      * @param int $id

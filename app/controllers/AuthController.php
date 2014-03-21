@@ -81,6 +81,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     public function userNotFound($data)
     {
         $user = $this->user->createBySocialAuth($data);
+
         return $this->userFound($user);
     }
 
