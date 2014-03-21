@@ -3,6 +3,13 @@
 abstract class AbstractRepository {
 
     /**
+     * Errors
+     *
+     * @var MessageBag
+     */
+    protected $errors;
+
+    /**
      * All
      *
      * @return Illuminate\Database\Eloquent\Collection
@@ -62,6 +69,16 @@ abstract class AbstractRepository {
     public function delete($id)
     {
         return $this->model->delete($id);
+    }
+
+    /**
+     * Get the validation errors
+     *
+     * @return MessageBag
+     */
+    public function getErrors()
+    {
+        return $this->errors;
     }
 
 }

@@ -14,9 +14,8 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
             <ul class="nav navbar-nav">
-                <li>{{ link_to_route('home.how_it_works', 'Como funciona?') }}</li>
-                <li><a href="#">Feedback</a></li>
-                <li><a href="#">Ajuda</a></li>
+                <li>{{ link_to('http://battleroad.uservoice.com/knowledgebase', 'Como funciona?') }}</li>
+                <li><a href="http://battleroad.uservoice.com">Feedback</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">

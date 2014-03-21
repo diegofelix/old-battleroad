@@ -21,11 +21,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     protected $hidden = array('password');
 
     /**
-     * The user can add points to himself
+     * All fields below can be mass assigned
      *
      * @var array
      */
-    protected $guarded = array('points');
+    protected $fillable = ['name', 'username', 'email', 'password', 'picture'];
 
     /**
      * Get the unique identifier for the user.

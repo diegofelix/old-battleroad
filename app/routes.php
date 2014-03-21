@@ -18,6 +18,10 @@ Route::get('how-it-works', [
 // profile route
 Route::resource('profile', 'ProfileController');
 
+// register
+Route::get('register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);
+Route::post('register', ['as' => 'register.store', 'uses' => 'RegisterController@store']);
+
 /*
 Route::get('moip', function(){
 
