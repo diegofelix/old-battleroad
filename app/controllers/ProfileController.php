@@ -6,14 +6,14 @@ class ProfileController extends BaseController {
 
 	/**
 	 * User Repository
-	 * 
+	 *
 	 * @var Champ\Account\UserRepositoryInterface
 	 */
 	protected $userRepo;
 
 	/**
 	 * Inject the user Repository
-	 * 
+	 *
 	 * @param Champ\Account\UserRepositoryInterface
 	 * @return void
 	 */
@@ -44,8 +44,10 @@ class ProfileController extends BaseController {
 	 */
 	public function create()
 	{
+		// if the user already have a profile, there is no need to
+		// create a profile.
 		if (Auth::user()->profile) return App::abort('404');
-		
+
 		return $this->view('profile.create');
 	}
 

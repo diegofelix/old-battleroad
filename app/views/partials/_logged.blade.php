@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            {{ link_to('/', 'Champaholic', ['class' => 'navbar-brand']) }}
+            {{ link_to('/', 'BattleRoad', ['class' => 'navbar-brand']) }}
         </div> <!-- navbar-header -->
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -18,7 +18,7 @@
                 <li><a href="#">Feedback</a></li>
                 <li><a href="#">Ajuda</a></li>
             </ul>
-            
+
             <ul class="nav navbar-nav navbar-right">
                 <li id="user-options" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
