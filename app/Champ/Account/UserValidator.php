@@ -22,4 +22,8 @@ class UserValidator extends AbstractValidator implements ValidableInterface {
         ]
     ];
 
+    protected $messages = [
+        'unique' => 'Esse :attribute já está sendo utilizado, escolha outro.'
+    ];
+
 }

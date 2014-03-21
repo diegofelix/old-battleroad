@@ -38,17 +38,16 @@
                         <div class="col-md-4">
                             <h4>Plataforma</h4>
                             <ul>
-                                <li><a href="#">Como funciona?</a></li>
+                                <li><a href="http://battleroad.uservoice.com/knowledgebase">Como funciona?</a></li>
                                 <li><a href="#">Sobre</a></li>
                                 <li><a href="#">Changelog</a></li>
-                                <li><a href="#">Ajuda</a></li>
                                 <!--<li><a href="#">Estatísticas</a></li>-->
                             </ul>
                         </div>
                         <div class="col-md-4">
                             <h4>Colabore</h4>
                             <ul>
-                                <li><a href="#">Feedback</a></li>
+                                <li><a href="http://battleroad.uservoice.com">Feedback</a></li>
                                 <li><a href="#">Depoimentos</a></li>
                             </ul>
                         </div>
@@ -56,8 +55,8 @@
                             <h4>Onde estamos?</h4>
                             <ul>
                                 <li><a href="mailto:contato@BattleRoad.com.br"><span class="icon-mail"></span>E-mail</a></li>
-                                <li><a href="#"><span class="icon-twitter"></span> Twitter</a></li>
-                                <li><a href="#"><span class="icon-facebook"></span> Facebook</a></li>
+                                <li><a href="#"><span class="icon icon-twitter-square"></span> Twitter</a></li>
+                                <li><a href="#"><span class="icon icon-facebook-square"></span> Facebook</a></li>
                             </ul>
                         </div>
                     </div>
