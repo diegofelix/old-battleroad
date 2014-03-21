@@ -49,7 +49,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      * @param array $data
      * @return Model
      */
-    public function createBySocialAuth($data)
+    public function createBySocialAuth(array $data)
     {
         return $this->model->create($data);
     }
