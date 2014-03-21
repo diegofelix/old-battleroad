@@ -20,9 +20,8 @@
 
                 {{ Form::open(['route' => 'register.store', 'role' => 'form']) }}
 
-                    <div class="form-group has-error has-feedback">
+                    <div class="form-group">
                         {{ Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Nome', 'required']) }}
-                        <span class="icon icon-times form-control-feedback"></span>
                     </div>
 
                     <div class="form-group">
