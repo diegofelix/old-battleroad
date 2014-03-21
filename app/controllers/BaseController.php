@@ -33,9 +33,9 @@ class BaseController extends Controller {
 	 * @param  string $url
 	 * @return Response
 	 */
-	protected function redirectTo($url)
+	protected function redirectTo($url, $with = array())
 	{
-		return Redirect::to($url);
+		return Redirect::to($url)->with($with);
 	}
 
 	/**

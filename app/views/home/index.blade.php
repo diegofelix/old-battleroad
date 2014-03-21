@@ -17,7 +17,7 @@
         <div class="subscription">
             <div class="container">
                 <div class="subscribe">
-                    <a class="btn btn-lg btn-default btn-subscribe" href="#">Cadastre-se, é grátis!</a>
+                    {{ link_to_route('register.index', 'Cadastre-se, é grátis!', null, ['class' => 'btn btn-lg btn-default btn-subscribe']) }}
                 </div>
             </div>
         </div>
