@@ -66,9 +66,7 @@
                 </div>
             </footer>
         </div><!-- wrapper -->
-    {{ HTML::script('js/lib/jquery.min.js') }}
-    {{ HTML::script('js/lib/bootstrap.min.js') }}
-    {{ HTML::script('js/lib/wow.min.js') }}
+    {{ HTML::script('js/min.js') }}
     <script>
         new WOW().init();
     </script>

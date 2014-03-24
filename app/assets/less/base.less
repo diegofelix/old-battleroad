@@ -20,6 +20,31 @@ body {
         border-right: 1px solid #333;
     }
 }
+
+.flash-message {
+    padding: 30px 0;
+    border-radius: 0;
+    z-index: 10000;
+    width: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    i {
+        margin: auto 20px auto 20px;
+        font-size: 1.2em;
+    }
+    p {
+        font-size: 1.1em;
+        color: #fff;
+    }
+}
+.flash-message.alert-error {
+    background: darken(#f60, 15%);
+}
+.flash-message.alert-success {
+    background: darken(@champ-button-color, 15%);
+}
+
 // logged
 #user-options {
     img {
