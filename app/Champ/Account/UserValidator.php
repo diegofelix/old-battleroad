@@ -13,7 +13,7 @@ class UserValidator extends AbstractValidator implements ValidableInterface {
     protected $rules = [
         'create' => [
             'name' => 'required|min:4',
-            'username' => 'required|between:5,14|unique:users',
+            'username' => 'required|between:5,20|unique:users|alpha_dash',
             'email' => 'required|email|unique:users',
             'password' => 'required|confirmed'
         ],
@@ -23,7 +23,12 @@ class UserValidator extends AbstractValidator implements ValidableInterface {
     ];
 
     protected $messages = [
-        'unique' => 'Esse :attribute já está sendo utilizado, escolha outro.'
+        'required' => 'Você esqueceu de preencher o campo :attribute.',
+        'unique' => 'Esse :attribute já está sendo utilizado, escolha outro.',
+        'alpha_dash' => 'Seu :attribute deve conter apenas letras, números e hífens.',
+        'between' => 'Seu nick deve ter entre :min e :max caracteres.',
+        'email' => 'Formato de e-mail inválido.',
+        'confirmed' => 'As senhas digitadas não são iguais.'
     ];
 
 }

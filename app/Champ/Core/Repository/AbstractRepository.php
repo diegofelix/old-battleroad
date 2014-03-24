@@ -10,6 +10,13 @@ abstract class AbstractRepository {
     protected $errors;
 
     /**
+     * Default Image if user has no picture
+     *
+     * @var string
+     */
+    protected $defaultPicture = 'images/defaultUser.jpg';
+
+    /**
      * All
      *
      * @return Illuminate\Database\Eloquent\Collection
@@ -40,6 +47,11 @@ abstract class AbstractRepository {
         if ( ! $this->validator->passes($data)) {
             $this->errors = $this->validator->errors();
             return false;
+        }
+
+        // attach a default image to the user
+        if (empty($data['picture'])) {
+            $data['picture'] = $this->defaultPicture;
         }
 
         return $this->model->create($data);

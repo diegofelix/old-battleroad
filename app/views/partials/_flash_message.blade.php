@@ -2,7 +2,16 @@
 
     <!-- Error Message -->
     <div class="flash-message alert alert-error">
-        <p><i class="icon icon-warning"></i> {{ Session::get('error') }}</p>
+        @if (Session::get('error') instanceof Illuminate\Support\MessageBag)
+            <i class="icon icon-warning"></i>
+            <ul>
+                @foreach (Session::get('error')->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        @else
+            <p><i class="icon icon-warning"></i> {{ Session::get('error') }}</p>
+        @endif
     </div>
     <!-- Error Message -->
 
