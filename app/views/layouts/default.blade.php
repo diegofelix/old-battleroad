@@ -54,7 +54,7 @@
                         <div class="col-md-4">
                             <h4>Onde estamos?</h4>
                             <ul>
-                                <li><a href="mailto:contato@BattleRoad.com.br"><span class="icon-mail"></span>E-mail</a></li>
+                                <li><a href="mailto:contato@BattleRoad.com.br"><span class="icon icon-envelope"></span> E-mail</a></li>
                                 <li><a href="#"><span class="icon icon-twitter-square"></span> Twitter</a></li>
                                 <li><a href="#"><span class="icon icon-facebook-square"></span> Facebook</a></li>
                             </ul>
