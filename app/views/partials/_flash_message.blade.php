@@ -2,7 +2,7 @@
 
     <!-- Error Message -->
     <div class="flash-message alert alert-error">
-        {{ Session::get('error') }}
+        <p><i class="icon icon-warning"></i> {{ Session::get('error') }}</p>
     </div>
     <!-- Error Message -->
 
@@ -12,7 +12,7 @@
 
     <!-- Message -->
     <div class="flash-message alert alert-success">
-        {{ Session::get('message') }}
+        <p><i class="icon icon-thumbs-up"></i> {{ Session::get('message') }}</p>
     </div>
     <!-- Message -->
 

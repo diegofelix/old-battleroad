@@ -7,7 +7,7 @@ var minifyCSS = require('gulp-minify-css');
 // js
 var uglify = require('gulp-uglify');
 //var rename = require('gulp-rename');
-//var concat = require('gulp-concat');
+var concat = require('gulp-concat');
 
 // from
 var lessDir = 'app/assets/less';
@@ -29,9 +29,15 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function() {
-  gulp.src(jsDir + '/**/*.js')
-  	//.pipe(concat('min.js'))
-    .pipe(uglify({outSourceMap: true}))
+  gulp.src([
+        // do this to mantain specific order.
+        jsDir + '/lib/jquery.js',
+        jsDir + '/lib/bootstrap.js',
+        jsDir + '/lib/wow.js',
+        // custom js
+        jsDir + '/*.js' ])
+  	.pipe(concat('min.js'))
+    .pipe(uglify({preserveComments: "some"}))
     .pipe(gulp.dest(targetJsDir));
 });
 
