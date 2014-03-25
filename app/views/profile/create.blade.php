@@ -20,7 +20,9 @@
 							{{ Form::textarea('bio', null, [
 								'class' => 'form-control',
 								'id' => 'bio',
-								'placeholder' => 'Fale um pouco sobre você...'
+								'placeholder' => 'Fale um pouco sobre você...',
+								'rows' => '10',
+								'cols' => '10'
 							]) }}
 						</div>
 					</div>
@@ -35,7 +37,14 @@
 					<div class="form-group">
 						{{ Form::label('cpf', 'CPF: ', ['class' => 'col-md-2 control-label']) }}
 						<div class="col-md-7">
-							{{ Form::text('cpf', null, ['class' => 'form-control', 'id' => 'cpf', 'required']) }}
+							{{ Form::text('cpf', null, ['class' => 'form-control', 'id' => 'cpf', 'required', 'pattern' => '[0-9]{11}']) }}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ Form::label('phone', 'Telefone: ', ['class' => 'col-md-2 control-label']) }}
+						<div class="col-md-7">
+							{{ Form::text('phone', null, ['class' => 'form-control', 'id' => 'phone', 'required']) }}
 						</div>
 					</div>
 
@@ -84,14 +93,7 @@
 					<div class="form-group">
 						<label for="state" class="col-md-2 control-label">Estado:</label>
 						<div class="col-md-7">
-							<select name="state" class="form-control" id="state" required>
-								<option value="">Selecione um Estado</option>
-								<option value="1">São Paulo</option>
-								<option value="2">Rio de Janeiro</option>
-								<option value="3">Brasília</option>
-								<option value="4">Pará</option>
-								<option value="5">Paraná</option>
-							</select>
+							{{ Form::select('state', Champ\State\State::lists('name', 'abbr'), null, ['class' => 'form-control', 'required']) }}
 						</div>
 					</div><!-- form group -->
 
