@@ -34,6 +34,7 @@ gulp.task('js', function() {
         jsDir + '/lib/jquery.js',
         jsDir + '/lib/bootstrap.js',
         jsDir + '/lib/wow.js',
+        jsDir + '/lib/jquery-input-mask.js',
         // custom js
         jsDir + '/*.js' ])
   	.pipe(concat('min.js'))
