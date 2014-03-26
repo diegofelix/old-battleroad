@@ -65,4 +65,21 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         return $this->model->with('profile')->find($id);
     }
 
+    /**
+     * Save a profile for a user
+     *
+     * @param int $userId
+     * @param array $data
+     * @return mixed
+     */
+    public function saveProfile($userId, $data)
+    {
+        if ( ! $this->validator->passes($data, 'createProfile')) {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
+        return $this->model->find($userId)->profile()->create(array_except($data, '_token'));
+    }
+
 }

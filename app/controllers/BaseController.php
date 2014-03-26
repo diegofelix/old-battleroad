@@ -39,6 +39,18 @@ class BaseController extends Controller {
 	}
 
 	/**
+	 * Redirect the user to an route
+	 *
+	 * @param  string $route
+	 * @param  array $params
+	 * @return Response
+	 */
+	protected function redirectRoute($route, $params = array())
+	{
+		return Redirect::route($route, $params);
+	}
+
+	/**
 	 * Redirect the user back with an message
 	 *
 	 * @param  array  $with
