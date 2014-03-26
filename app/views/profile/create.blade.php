@@ -28,16 +28,16 @@
 					</div>
 
 					<div class="form-group">
-						{{ Form::label('rg', 'RG: ', ['class' => 'col-md-2 control-label']) }}
+						{{ Form::label('cpf', 'CPF: ', ['class' => 'col-md-2 control-label']) }}
 						<div class="col-md-7">
-							{{ Form::text('rg', null, ['class' => 'form-control', 'id' => 'rg', 'required']) }}
+							{{ Form::text('cpf', null, ['class' => 'form-control', 'id' => 'cpf', 'required', 'pattern' => '[0-9]{11}']) }}
 						</div>
 					</div>
 
 					<div class="form-group">
-						{{ Form::label('cpf', 'CPF: ', ['class' => 'col-md-2 control-label']) }}
+						{{ Form::label('birthday', 'Data de Nascimento: ', ['class' => 'col-md-2 control-label']) }}
 						<div class="col-md-7">
-							{{ Form::text('cpf', null, ['class' => 'form-control', 'id' => 'cpf', 'required', 'pattern' => '[0-9]{11}']) }}
+							{{ Form::text('birthday', null, ['class' => 'form-control', 'id' => 'birthday']) }}
 						</div>
 					</div>
 
@@ -55,9 +55,9 @@
 					<legend>Endereço</legend>
 
 					<div class="form-group">
-						{{ Form::label('cep', 'CEP: ', ['class' => 'col-md-2 control-label']) }}
+						{{ Form::label('zipcode', 'CEP: ', ['class' => 'col-md-2 control-label']) }}
 						<div class="col-md-7">
-							{{ Form::text('cep', null, ['class' => 'form-control', 'id' => 'cep', 'required']) }}
+							{{ Form::text('zipcode', null, ['class' => 'form-control', 'id' => 'zipcode', 'required']) }}
 						</div>
 					</div>
 

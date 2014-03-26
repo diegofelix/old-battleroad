@@ -4,6 +4,8 @@ use Eloquent;
 
 class Profile extends Eloquent {
 
+    protected $fillable = ['bio', 'rg', 'cpf', 'phone', 'cep', 'address', 'number', 'complement', 'city', 'state'];
+
     /**
      * Relation with User
      *
@@ -12,6 +14,26 @@ class Profile extends Eloquent {
     public function user()
     {
         return $this->belongsTo('Champ\Account\User');
+    }
+
+    /**
+     * Dates to be handled by the Carbon
+     *
+     * @return array
+     */
+    public function getDates()
+    {
+        return ['created_at', 'updated_at', 'birthday'];
+    }
+
+    /**
+     * Change the date format before save the birthday
+     *
+     * @return void
+     */
+    public function setBirthdayAttribute($value)
+    {
+        $this->attributes['birthday'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
     }
 
 }

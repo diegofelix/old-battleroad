@@ -17,8 +17,8 @@ class CreateProfilesTable extends Migration {
 			$table->unsignedInteger('user_id');
 			$table->text('bio');
 			$table->date('birthday');
-			$table->string('rg');
 			$table->string('cpf');
+			$table->string('phone');
 			$table->string('zipcode', 8);
 			$table->string('address');
 			$table->string('number');
