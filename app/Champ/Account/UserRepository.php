@@ -62,7 +62,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      */
     public function getById($id)
     {
-        return $this->model->with('profile')->find($id);
+        return $this->getFirstBy('user_id', $id);
     }
 
     /**

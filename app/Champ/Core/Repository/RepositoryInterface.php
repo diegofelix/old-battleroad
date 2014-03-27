@@ -31,7 +31,7 @@ interface RepositoryInterface {
      * @param array $input
      * @return Illuminate\Database\Eloquent\Model
      */
-    public function update(array $input);
+    public function update($id, array $input);
 
     /**
      * Delete
@@ -40,5 +40,33 @@ interface RepositoryInterface {
      * @return boolean
      */
     public function delete($id);
+
+    /**
+     * get a model by its key
+     *
+     * @param  string $key
+     * @param  mixed $value
+     * @param  array  $with
+     * @return Model
+     */
+    public function getBy($key, $value, $with = array());
+
+    /**
+     * Get first model by its key
+     *
+     * @param  string $key
+     * @param  mixed $value
+     * @param  array  $with
+     * @return Model
+     */
+    public function getFirstBy($key, $value, $with = array());
+
+    /**
+     * make Method eager loading itens
+     *
+     * @param  array  $with
+     * @return Query
+     */
+    public function make($with = array());
 
 }
