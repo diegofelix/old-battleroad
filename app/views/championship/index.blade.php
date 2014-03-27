@@ -2,17 +2,21 @@
 
 @section ('content')
 
-    <div class="featured-title championship">
-        <div class="container">
-            <h2>
-                Campeonatos
-                <a class="btn btn-default btn-lg pull-right">Criar um Campeonato</a>
-            </h2>
-        </div>
-    </div>
+    <div id="championship">
 
-    @if ( ! $championships)
-        Ainda não tem nenhum campeonato =(
-    @endif
+        <div class="featured-title championship">
+            <div class="container">
+                <h2>
+                    Campeonatos
+                    {{ link_to_route('championship.create', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
+                </h2>
+            </div>
+        </div>
+
+        @if ( ! count($championships))
+            Não temos campeonatos
+        @endif
+
+    </div>
 
 @endsection
