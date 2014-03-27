@@ -15,8 +15,20 @@ Route::get('how-it-works', [
     'uses' => 'HomeController@howItWorks'
 ]);
 
-// profile route
-Route::resource('profile', 'ProfileController');
+/*
+ |-----------------------------------------------------------------------------
+ | Profile Routes
+ |-----------------------------------------------------------------------------
+ */
+Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
+{
+    Route::get('/', ['as' => 'profile.index', 'uses' => 'ProfileController@index']);
+    Route::get('create', ['as' => 'profile.create', 'uses' => 'ProfileController@create']);
+    Route::get('edit', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
+    // posts requests
+    Route::post('store', ['as' => 'profile.store', 'uses' => 'ProfileController@store']);
+    Route::post('update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+});
 
 // register
 Route::get('register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);

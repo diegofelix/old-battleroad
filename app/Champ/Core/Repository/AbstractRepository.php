@@ -63,14 +63,14 @@ abstract class AbstractRepository {
      * @param array $data
      * @return boolean
      */
-    public function update(array $data)
+    public function update($id, array $data)
     {
         if ( ! $this->validator->passes($data, 'update')) {
             $this->errors = $this->validator->errors();
             return false;
         }
 
-        return $this->model->update($data);
+        return $this->model->find($id)->update($data);
     }
 
     /**
@@ -91,6 +91,43 @@ abstract class AbstractRepository {
     public function getErrors()
     {
         return $this->errors;
+    }
+
+    /**
+     * get a model by its key
+     *
+     * @param  string $key
+     * @param  mixed $value
+     * @param  array  $with
+     * @return Model
+     */
+    public function getBy($key, $value, $with = array())
+    {
+        return $this->make($with)->where($key, '=', $value)->get();
+    }
+
+    /**
+     * Get first model by its key
+     *
+     * @param  string $key
+     * @param  mixed $value
+     * @param  array  $with
+     * @return Model
+     */
+    public function getFirstBy($key, $value, $with = array())
+    {
+        return $this->make($with)->where($key, '=', $value)->first();
+    }
+
+    /**
+     * make Method eager loading itens
+     *
+     * @param  array  $with
+     * @return Query
+     */
+    public function make($with = array())
+    {
+        return $this->model->with($with);
     }
 
 }

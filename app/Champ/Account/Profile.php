@@ -4,7 +4,7 @@ use Eloquent;
 
 class Profile extends Eloquent {
 
-    protected $fillable = ['bio', 'rg', 'cpf', 'phone', 'cep', 'address', 'number', 'complement', 'city', 'state'];
+    protected $fillable = ['user_id', 'bio', 'rg', 'cpf', 'phone', 'zipcode', 'address', 'number', 'complement', 'city', 'state'];
 
     /**
      * Relation with User

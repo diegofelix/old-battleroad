@@ -1,36 +1,19 @@
 <?php
 
-use Champ\Account\UserRepositoryInterface;
-use Champ\Account\ProfileValidator;
+use Champ\Account\ProfileRepositoryInterface;
 
 class ProfileController extends BaseController {
 
 	/**
-	 * User Repository
+	 * Profile Repository
 	 *
-	 * @var Champ\Account\UserRepositoryInterface
+	 * @var Champ\Account\ProfileRepositoryInterface
 	 */
-	protected $userRepo;
+	protected $profileRepo;
 
-	/**
-	 * Profile Validator
-	 *
-	 * @var Champ\Account\ProfileValidator
-	 */
-	protected $validator;
-
-	/**
-	 * Inject the user Repository
-	 *
-	 * @param Champ\Account\UserRepositoryInterface
-	 * @return void
-	 */
-	public function __construct(UserRepositoryInterface $user)
+	public function __construct(ProfileRepositoryInterface $profile)
 	{
-		$this->userRepo = $user;
-
-		// only logged users can view the profile
-		$this->beforeFilter('auth');
+		$this->profileRepo = $profile;
 	}
 
 	/**
@@ -40,9 +23,9 @@ class ProfileController extends BaseController {
 	 */
 	public function index()
 	{
-		$user = $this->userRepo->getById(Auth::user()->id);
+		$profile = $this->profileRepo->getFirstByUserId(Auth::user()->id);
 
-		return $this->view('profile.index', compact('user'));
+		return $this->view('profile.index', compact('profile'));
 	}
 
 	/**
@@ -60,20 +43,45 @@ class ProfileController extends BaseController {
 	}
 
 	/**
-	 * Create a profile to the user
+	 * Show the profile update form
+	 *
+	 * @return Response
+	 */
+	public function edit()
+	{
+		return $this->view('profile.edit', ['profile' => Auth::user()->profile]);
+	}
+
+	/**
+	 * Updates the user profile
+	 *
+	 * @return Response
+	 */
+	public function update()
+	{
+		$id = Auth::user()->profile->id;
+
+		if ( ! $this->profileRepo->update($id, Input::all())) {
+			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
+		}
+
+		return $this->redirectRoute('profile.index')
+			->with('message', 'Perfil Atualizado com sucesso!');
+	}
+
+	/**
+	 * Create a profile to a user
 	 *
 	 * @return Reponse
 	 */
 	public function store()
 	{
-		if ( ! $this->userRepo->saveProfile(Auth::user()->id, Input::all())) {
-			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
+		if ( ! $this->profileRepo->createForUser(Auth::user()->id, Input::all())) {
+			return $this->redirectBack(['error' => $this->profileRepo->getErrors()]);
 		}
 
-		return $this->redirectRoute(
-			'profile.index',
-			['messgae' => 'Perfil criado com sucesso!']
-		);
+		return $this->redirectRoute('profile.index')
+			->with('message', 'Perfil Criado com sucesso!');
 	}
 
 }
