@@ -110,6 +110,7 @@ return array(
 
 		// Champ Service Providers
 		'Champ\Providers\AccountServiceProvider',
+		'Champ\Providers\ChampionshipServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
