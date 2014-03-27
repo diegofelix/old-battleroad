@@ -59,13 +59,21 @@ class ProfileController extends BaseController {
 		return $this->view('profile.create');
 	}
 
+	/**
+	 * Create a profile to the user
+	 *
+	 * @return Reponse
+	 */
 	public function store()
 	{
 		if ( ! $this->userRepo->saveProfile(Auth::user()->id, Input::all())) {
 			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
 		}
 
-		dd('You passed sr!');
+		return $this->redirectRoute(
+			'profile.index',
+			['messgae' => 'Perfil criado com sucesso!']
+		);
 	}
 
 }
