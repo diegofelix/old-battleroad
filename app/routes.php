@@ -30,7 +30,7 @@ Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
     Route::post('update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 });
 
-Route::resource('championship', 'ChampionshipController');
+Route::resource('championships', 'ChampionshipsController');
 
 // register
 Route::get('register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);

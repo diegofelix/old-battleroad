@@ -2,7 +2,7 @@
 
 use Champ\Championship\ChampionshipRepositoryInterface;
 
-class ChampionshipController extends BaseController {
+class ChampionshipsController extends BaseController {
 
     /**
      * Championship Repository
@@ -25,7 +25,17 @@ class ChampionshipController extends BaseController {
     {
         $championships = $this->champRepo->featured();
 
-        return $this->view('championship.index', compact('championships'));
+        return $this->view('championships.index', compact('championships'));
+    }
+
+    public function create()
+    {
+        return $this->view('championships.create');
+    }
+
+    public function store()
+    {
+        dd(Input::all());
     }
 
 }
