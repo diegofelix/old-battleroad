@@ -8,7 +8,8 @@
 		"fideloper/proxy": "dev-master",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"camcima/moip-php": "dev-master",
-		"way/form": "dev-master"
+		"way/form": "dev-master",
+		"intervention/image": "1.*"
 	},
 	"require-dev": {
 		"way/generators": "dev-master",

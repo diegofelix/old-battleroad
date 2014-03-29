@@ -35,7 +35,11 @@ class ChampionshipsController extends BaseController {
 
     public function store()
     {
-        dd(Input::all());
+        if ( ! $this->champRepo->createForUser(Auth::user()->id, Input::all())) {
+            dd($this->champRepo->getErrors());
+        }
+
+        dd('Champ Created boy!');
     }
 
 }
