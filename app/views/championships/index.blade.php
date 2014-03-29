@@ -14,11 +14,15 @@
         </div>
 
         <div class="container">
-            @if ( ! count($championships))
-                Não temos campeonatos
-            @endif
-        </div>
+            @if (count($championships))
+                @foreach ($championships as $champ)
 
-    </div>
+                    <h2>{{ HTML::image($champ->image) }}</h2>
+                    <p>{{ $champ->description }}</p>
+
+                @endforeach
+            @endif
+        </div><!-- container -->
+    </div><!-- championship -->
 
 @endsection

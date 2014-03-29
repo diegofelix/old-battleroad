@@ -37,7 +37,7 @@ class ProfileRepository extends AbstractRepository implements ProfileRepositoryI
     public function createForUser($userId, $data = array())
     {
         $data['user_id'] = $userId;
-        return $this->model->create($data);
+        return $this->create($data);
     }
 
 }

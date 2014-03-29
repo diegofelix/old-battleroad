@@ -23,4 +23,35 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         return $this->make(['user'])->orderBy('event_start', 'desc')->paginate();
     }
 
+    /**
+     * Create a championship assigned to a user
+     *
+     * @param  int $userId
+     * @param  array  $data
+     * @return Model
+     */
+    public function createForUser($userId, $data)
+    {
+        $data['user_id'] = $userId;
+        $data['image'] = $this->uploadImage($data);
+
+        return $this->create($data);
+    }
+
+    /**
+     * Upload a file
+     *
+     * @param  array $data
+     * @return string url to the image uploaded
+     */
+    public function uploadImage($data)
+    {
+        $imagePath = '/images/championships/';
+        $imageName = $data['user_id'] . '_' . time() . '.jpg';
+
+        $data['image']->move(public_path() . $imagePath, $imageName);
+
+        return $imagePath . $imageName;
+    }
+
 }

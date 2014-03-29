@@ -20,6 +20,13 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     protected $validator;
 
     /**
+     * Default Image if user has no picture
+     *
+     * @var string
+     */
+    protected $defaultPicture = 'images/defaultUser.jpg';
+
+    /**
      * Constructor
      *
      * @param Champ\Account\User $userModel
@@ -55,6 +62,23 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
+     * Overrided method to add a default picture to a user in registration
+     *
+     * @param  array  $data
+     * @return Model
+     */
+    public function create(array $data)
+    {
+        // attach a default image to the user
+        if (empty($data['picture'])) {
+            $data['picture'] = $this->defaultPicture;
+        }
+
+        // call the create of a abstract
+        return parent::create($data);
+    }
+
+    /**
      * Get the user and profile by id
      *
      * @param int $id
@@ -64,22 +88,4 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     {
         return $this->getFirstBy('user_id', $id);
     }
-
-    /**
-     * Save a profile for a user
-     *
-     * @param int $userId
-     * @param array $data
-     * @return mixed
-     */
-    public function saveProfile($userId, $data)
-    {
-        if ( ! $this->validator->passes($data, 'createProfile')) {
-            $this->errors = $this->validator->errors();
-            return false;
-        }
-
-        return $this->model->find($userId)->profile()->create(array_except($data, '_token'));
-    }
-
 }
