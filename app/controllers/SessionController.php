@@ -25,6 +25,8 @@ class SessionController extends BaseController {
 			return $this->redirectBack(['error' => 'E-mail ou senha inválidos.']);
 		}
 
+		App::make('context')->set(Auth::user());
+
 		return $this->redirectIntended();
 	}
 

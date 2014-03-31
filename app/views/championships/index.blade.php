@@ -15,12 +15,29 @@
 
         <div class="container">
             @if (count($championships))
-                @foreach ($championships as $champ)
-
-                    <h2>{{ HTML::image($champ->image) }}</h2>
-                    <p>{{ $champ->description }}</p>
-
+                @foreach ($championships as $key => $champ)
+                    @if ($key == 0)
+                    <div class="main-champ">
+                        <figure>
+                            {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                            <figcaption>
+                                <h2>{{ $champ->name }}</h2>
+                                <p>{{ $champ->description }}</p>
+                            </figcaption>
+                        </figure>
+                    </div><!-- main-champ -->
+                    <!-- other champs -->
+                    <div class="row">
+                    @else
+                        <div class="champ col-md-4">
+                            <figure>
+                                {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                            </figure>
+                            <h3>{{ $champ->description }}</h3>
+                        </div>
+                    @endif
                 @endforeach
+                </div><!-- other champs -->
             @endif
         </div><!-- container -->
     </div><!-- championship -->

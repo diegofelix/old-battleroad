@@ -2,6 +2,34 @@
     .create-button {
         .champ-button(#5597fb, 20px, 20px);
     }
+    .main-champ {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        figure {
+            position: relative;
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto
+            }
+            &:hover figcaption {
+                display: block;
+            }
+            figcaption {
+                display: none;
+                padding: 20px;
+                background: transparent url('../images/navbar.png');
+                color: #fff;
+                position: absolute;
+                bottom: 0;
+                width: 100%;
+                height: 100px;
+                h2 {
+                    margin: 0;
+                }
+            }
+        }
+    }
 }
 
 #champ-create {
