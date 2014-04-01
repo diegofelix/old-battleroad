@@ -15,7 +15,8 @@
 
         <div class="container">
             @if (count($championships))
-                @foreach ($championships as $key => $champ)
+                @foreach ($championships as $champ)
+                    {{--
                     @if ($key == 0)
                     <div class="main-champ">
                         <figure>
@@ -29,13 +30,29 @@
                     <!-- other champs -->
                     <div class="row">
                     @else
-                        <div class="champ col-md-4">
-                            <figure>
-                                {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
-                            </figure>
-                            <h3>{{ $champ->description }}</h3>
+                    --}}
+                        <div class="champ col-md-3">
+                            <div class="champ-inner">
+                                <figure>
+                                    {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                                </figure>
+                                <section class="description">
+                                    <h3>{{ $champ->name }}</h3>
+                                    <p>{{ $champ->description }}</p>
+                                </section>
+                                <section class="info">
+                                    <a href="#" class="time-left">
+                                        <span>4 dias</span>
+                                        restantes
+                                    </a>
+                                    <a href="#" class="price">
+                                        <span>R$ {{ $champ->price }}</span>
+                                        Entrada
+                                    </a>
+                                </section>
+                            </div>
                         </div>
-                    @endif
+                    {{--@endif--}}
                 @endforeach
                 </div><!-- other champs -->
             @endif
