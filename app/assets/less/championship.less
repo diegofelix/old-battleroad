@@ -1,4 +1,8 @@
 #championship {
+    padding-bottom: 20px;
+    > .container {
+        margin-top: 10px;
+    }
     .create-button {
         .champ-button(#5597fb, 20px, 20px);
     }
@@ -12,11 +16,7 @@
                 margin-left: auto;
                 margin-right: auto
             }
-            &:hover figcaption {
-                display: block;
-            }
             figcaption {
-                display: none;
                 padding: 20px;
                 background: transparent url('../images/navbar.png');
                 color: #fff;
@@ -27,6 +27,61 @@
                 h2 {
                     margin: 0;
                 }
+            }
+        }
+    }
+    .champ {
+        padding: 0 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .champ-inner {
+            background: #fff;
+            box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        figure img {
+            height: 200px;
+        }
+        section {
+            padding: 10px;
+        }
+        .description {
+            height: 170px;
+        }
+        h3, p {
+            font-family: Lato, Arial, sans-serif;
+        }
+        h3 {
+            font-size: 1.2em;
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+        p {
+            color: #666;
+        }
+        .info {
+            border-top: 1px solid #ddd;
+            background: #F8F8F8;
+            &:after {
+               content: ".";
+               visibility: hidden;
+               display: block;
+               height: 0;
+               clear: both;
+            }
+            a {
+                color: #666;
+            }
+            span {
+                display: block;
+                color: #333;
+                font-weight: bold;
+            }
+            .time-left {
+                float: left;
+            }
+            .price {
+                float: right;
             }
         }
     }
