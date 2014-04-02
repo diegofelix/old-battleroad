@@ -38,12 +38,11 @@
                                 </figure>
                                 <section class="description">
                                     <h3>{{ $champ->name }}</h3>
-                                    <p>{{ $champ->description }}</p>
+                                    <p>{{ $champ->short_description }}</p>
                                 </section>
                                 <section class="info">
                                     <a href="#" class="time-left">
-                                        <span>4 dias</span>
-                                        restantes
+                                        {{ $champ->days_left }}
                                     </a>
                                     <a href="#" class="price">
                                         <span>R$ {{ $champ->price }}</span>

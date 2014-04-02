@@ -115,7 +115,8 @@ return array(
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
-		'Way\Form\FormServiceProvider'
+		'Way\Form\FormServiceProvider',
+		'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
 	),
 
 	/*

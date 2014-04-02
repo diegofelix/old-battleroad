@@ -6,6 +6,13 @@ use Carbon\Carbon;
 class Championship extends Eloquent {
 
     /**
+     * Championship presenter
+     *
+     * @var string
+     */
+    public $presenter = 'Champ\Presenters\Championship';
+
+    /**
      * Allow all other fields to be mass assigned
      *
      * @var array
