@@ -25,7 +25,11 @@ Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
     Route::post('update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 });
 
-Route::resource('championships', 'ChampionshipsController');
+Route::get('championships', 'ChampionshipsController@index');
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function(){
+    Route::resource('championships', 'ChampionshipsController');
+});
 
 // register
 Route::get('register', ['as' => 'register.index', 'uses' => 'RegisterController@index']);

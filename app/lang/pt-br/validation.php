@@ -91,7 +91,8 @@ return array(
         'number'    => 'Número',
         'city'      => 'Cidade',
         'state'     => 'Estado',
-        'phone'     => 'Telefone'
+        'phone'     => 'Telefone',
+        'image'     => 'Imagem'
     ),
 
 );

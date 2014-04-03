@@ -27,19 +27,4 @@ class ChampionshipsController extends BaseController {
 
         return $this->view('championships.index', compact('championships'));
     }
-
-    public function create()
-    {
-        return $this->view('championships.create');
-    }
-
-    public function store()
-    {
-        if ( ! $this->champRepo->createForUser(Auth::user()->id, Input::all())) {
-            dd($this->champRepo->getErrors());
-        }
-
-        dd('Champ Created boy!');
-    }
-
 }
