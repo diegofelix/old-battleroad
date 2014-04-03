@@ -8,7 +8,7 @@
 
         <div class="container">
 
-            {{ Form::open(['route' => 'championships.store', 'role' => 'form', 'files' => true]) }}
+            {{ Form::open(['route' => 'admin.championships.store', 'role' => 'form', 'files' => true]) }}
 
             <div class="row">
 

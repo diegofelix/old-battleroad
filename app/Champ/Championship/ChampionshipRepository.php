@@ -20,7 +20,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function featured()
     {
-        return $this->make(['user'])->orderBy('event_start', 'desc')->paginate();
+        return $this->make(['user'])
+            ->wherePublished(true)
+            ->orderBy('event_start', 'desc')
+            ->paginate();
     }
 
     /**
@@ -46,6 +49,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function uploadImage($data)
     {
+        // if was not image, go away
+        if ( ! $data['image']) return null;
+
         $imagePath = '/images/championships/';
         $imageName = $data['user_id'] . '_' . time() . '.jpg';
 
