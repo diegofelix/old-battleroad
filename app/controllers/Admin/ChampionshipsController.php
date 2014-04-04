@@ -3,7 +3,7 @@
 use Auth;
 use Input;
 use BaseController;
-use Champ\Championship\ChampionshipRepositoryInterface;
+use Champ\Repositories\ChampionshipRepositoryInterface;
 
 class ChampionshipsController extends BaseController {
 
@@ -48,7 +48,7 @@ class ChampionshipsController extends BaseController {
      */
     public function store()
     {
-        if ( ! $championship =  $this->champRepo->createForUser(Auth::user()->id, Input::all())) {
+        if ( ! $championship =  $this->champRepo->create(Input::all())) {
             return $this->redirectBack()->with('error', $this->champRepo->getErrors());
         }
 

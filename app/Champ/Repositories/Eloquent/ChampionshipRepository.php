@@ -1,16 +1,24 @@
-<?php namespace Champ\Championship;
+<?php namespace Champ\Repositories\Eloquent;
 
-use Champ\Core\Repository\AbstractRepository;
+use Champ\Repositories\Core\TenantRepository;
+use Champ\Championship\Championship;
+use Champ\Validators\ChampionshipValidator;
+use Champ\Repositories\ChampionshipRepositoryInterface;
+use Champ\Contexts\Core\ContextInterface;
 
-class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
+class ChampionshipRepository extends TenantRepository implements ChampionshipRepositoryInterface {
+
+    protected $context;
 
     public function __construct(
         Championship $model,
-        ChampionshipValidator $validator
+        ChampionshipValidator $validator,
+        ContextInterface $context
     )
     {
         $this->model = $model;
         $this->validator = $validator;
+        $this->context = $context;
     }
 
     /**
@@ -20,7 +28,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function featured()
     {
-        return $this->make(['user'])
+        return $this->model->with('user')
             ->wherePublished(true)
             ->orderBy('event_start', 'desc')
             ->paginate();
@@ -33,12 +41,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      * @param  array  $data
      * @return Model
      */
-    public function createForUser($userId, $data)
+    public function create(array $data)
     {
-        $data['user_id'] = $userId;
         $data['image'] = $this->uploadImage($data);
 
-        return $this->create($data);
+        return parent::create($data);
     }
 
     /**

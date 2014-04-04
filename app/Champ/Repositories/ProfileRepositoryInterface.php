@@ -1,6 +1,6 @@
-<?php namespace Champ\Account;
+<?php namespace Champ\Repositories;
 
-use Champ\Core\Repository\RepositoryInterface;
+use Champ\Repositories\Core\RepositoryInterface;
 
 interface ProfileRepositoryInterface extends RepositoryInterface {
 

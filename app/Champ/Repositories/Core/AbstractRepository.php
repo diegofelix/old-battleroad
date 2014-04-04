@@ -1,4 +1,4 @@
-<?php namespace Champ\Core\Repository;
+<?php namespace Champ\Repositories\Core;
 
 abstract class AbstractRepository {
 
@@ -10,13 +10,24 @@ abstract class AbstractRepository {
     protected $errors;
 
     /**
+     * Get the first instance of a model
+     *
+     * @param  array  $with
+     * @return Model
+     */
+    public function first($with = array())
+    {
+        return $this->make($with)->first();
+    }
+
+    /**
      * All
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function all()
+    public function all($with = array())
     {
-        return $this->model->all();
+        return $this->make($with)->all();
     }
 
     /**
@@ -24,9 +35,9 @@ abstract class AbstractRepository {
      *
      * @return Illuminate\Database\Eloquent\Model
      */
-    public function find($id)
+    public function find($id, $with = array())
     {
-        return $this->model->find($id);
+        return $this->make($with)->find($id);
     }
 
     /**
@@ -113,7 +124,7 @@ abstract class AbstractRepository {
      * @param  array  $with
      * @return Query
      */
-    public function make($with = array())
+    protected function make($with = array())
     {
         return $this->model->with($with);
     }

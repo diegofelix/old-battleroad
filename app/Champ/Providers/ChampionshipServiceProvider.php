@@ -11,6 +11,6 @@ class ChampionshipServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->bind('Champ\Championship\ChampionshipRepositoryInterface', 'Champ\Championship\ChampionshipRepository');
+        $this->app->bind('Champ\Repositories\ChampionshipRepositoryInterface', 'Champ\Repositories\Eloquent\ChampionshipRepository');
     }
 }

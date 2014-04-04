@@ -1,19 +1,24 @@
-<?php namespace Champ\Account;
+<?php namespace Champ\Repositories\Eloquent;
 
-use Champ\Core\Repository\AbstractRepository;
+use Champ\Repositories\Core\TenantRepository;
+use Champ\Account\Profile;
+use Champ\Validators\ProfileValidator;
+use Champ\Repositories\ProfileRepositoryInterface;
+use Champ\Contexts\Core\ContextInterface;
 
-class ProfileRepository extends AbstractRepository implements ProfileRepositoryInterface {
+class ProfileRepository extends TenantRepository implements ProfileRepositoryInterface {
 
     /**
      * inject the model and validator into constructor
      *
-     * @param Profile $model
-     * @param ProfileValidator $validator
+     * @param Champ\Account\Profile $model
+     * @param Champ\Validators\ProfileValidator $validator
      */
-    public function __construct(Profile $model, ProfileValidator $validator)
+    public function __construct(Profile $model, ProfileValidator $validator, ContextInterface $context)
     {
         $this->model = $model;
         $this->validator = $validator;
+        $this->context = $context;
     }
 
     /**
@@ -24,7 +29,7 @@ class ProfileRepository extends AbstractRepository implements ProfileRepositoryI
      */
     public function getFirstByUserId($userId)
     {
-        return $this->getFirstBy('user_id', $userId, ['user']);
+        return $this->getFirst();
     }
 
     /**

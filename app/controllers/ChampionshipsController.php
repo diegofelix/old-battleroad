@@ -1,13 +1,13 @@
 <?php
 
-use Champ\Championship\ChampionshipRepositoryInterface;
+use Champ\Repositories\ChampionshipRepositoryInterface;
 
 class ChampionshipsController extends BaseController {
 
     /**
      * Championship Repository
      *
-     * @var Champ\Championship\ChampionshipRepositoryInterface
+     * @var Champ\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 

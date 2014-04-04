@@ -1,4 +1,4 @@
-<?php namespace Champ\Core\Validation;
+<?php namespace Champ\Validators\Core;
 
 class StubValidator extends AbstractValidator implements ValidableInterface {
 
