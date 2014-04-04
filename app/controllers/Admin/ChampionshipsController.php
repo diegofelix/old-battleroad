@@ -26,9 +26,9 @@ class ChampionshipsController extends BaseController {
      */
     public function index()
     {
-        $championships = $this->champRepo->featured();
+        $championships = $this->champRepo->all(['user']);
 
-        return $this->view('championships.index', compact('championships'));
+        return $this->view('admin.championships.index', compact('championships'));
     }
 
     /**

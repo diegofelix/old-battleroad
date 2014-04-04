@@ -27,7 +27,7 @@ abstract class AbstractRepository {
      */
     public function all($with = array())
     {
-        return $this->make($with)->all();
+        return $this->make($with)->get();
     }
 
     /**
