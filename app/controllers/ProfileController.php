@@ -1,13 +1,13 @@
 <?php
 
-use Champ\Account\ProfileRepositoryInterface;
+use Champ\Repositories\ProfileRepositoryInterface;
 
 class ProfileController extends BaseController {
 
 	/**
 	 * Profile Repository
 	 *
-	 * @var Champ\Account\ProfileRepositoryInterface
+	 * @var Champ\Repositories\ProfileRepositoryInterface
 	 */
 	protected $profileRepo;
 
@@ -23,7 +23,7 @@ class ProfileController extends BaseController {
 	 */
 	public function index()
 	{
-		$profile = $this->profileRepo->getFirstByUserId(Auth::user()->id);
+		$profile = $this->profileRepo->first();
 
 		return $this->view('profile.index', compact('profile'));
 	}

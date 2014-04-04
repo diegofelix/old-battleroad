@@ -1,7 +1,7 @@
 <?php
 
 use Champ\Social\SocialAuthenticatorListenerInterface;
-use Champ\Account\UserRepositoryInterface;
+use Champ\Repositories\UserRepositoryInterface;
 use Champ\Social\SocialFactory;
 
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
@@ -9,7 +9,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     /**
      * User Repository
      *
-     * @var Champ\Account\UserRepositoryInterface
+     * @var Champ\Repositories\UserRepositoryInterface
      */
     protected $userRepo;
 

@@ -1,13 +1,21 @@
-<?php namespace Champ\Core\Repository;
+<?php namespace Champ\Repositories\Core;
 
 interface RepositoryInterface {
+
+    /**
+     * Get the first instance of a model
+     *
+     * @param  array  $with
+     * @return Illuminate\Database\Eloquent\Model
+     */
+    public function first($with = array());
 
     /**
      * All
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
-    public function all();
+    public function all($with = array());
 
     /**
      * Find
@@ -15,7 +23,7 @@ interface RepositoryInterface {
      * @param int $id
      * @return Illuminate\Database\Eloquent\Model
      */
-    public function find($id);
+    public function find($id, $with = array());
 
     /**
      * Create
@@ -60,13 +68,5 @@ interface RepositoryInterface {
      * @return Model
      */
     public function getFirstBy($key, $value, $with = array());
-
-    /**
-     * make Method eager loading itens
-     *
-     * @param  array  $with
-     * @return Query
-     */
-    public function make($with = array());
 
 }

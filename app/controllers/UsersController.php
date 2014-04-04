@@ -1,13 +1,13 @@
 <?php
 
-use Champ\Account\UserRepositoryInterface;
+use Champ\Repositories\UserRepositoryInterface;
 
 class UsersController extends BaseController {
 
 	/**
 	 * User Entity
 	 *
-	 * @var Champ\Account\UserRepositoryInterface
+	 * @var Champ\Repositories\UserRepositoryInterface
 	 */
 	protected $user;
 

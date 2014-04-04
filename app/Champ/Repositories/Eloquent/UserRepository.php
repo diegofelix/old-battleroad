@@ -1,7 +1,9 @@
-<?php namespace Champ\Account;
+<?php namespace Champ\Repositories\Eloquent;
 
-use Champ\Core\Repository\AbstractRepository;
+use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
+use Champ\Validators\UserValidator;
+use Champ\Repositories\UserRepositoryInterface;
 
 class UserRepository extends AbstractRepository implements UserRepositoryInterface {
 
@@ -30,7 +32,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      * Constructor
      *
      * @param Champ\Account\User $userModel
-     * @param Champ\Account\UserValidator $validator
+     * @param Champ\Validators\UserValidator $validator
      * @return void
      */
     public function __construct(User $userModel, UserValidator $validator)

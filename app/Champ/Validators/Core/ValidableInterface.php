@@ -1,4 +1,4 @@
-<?php namespace Champ\Core\Validation;
+<?php namespace Champ\Validators\Core;
 
 interface ValidableInterface {
 

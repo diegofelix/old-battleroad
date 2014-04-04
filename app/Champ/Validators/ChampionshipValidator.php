@@ -1,7 +1,7 @@
-<?php namespace Champ\Championship;
+<?php namespace Champ\Validators;
 
-use Champ\Core\Validation\AbstractValidator;
-use Champ\Core\Validation\ValidableInterface;
+use Champ\Validators\Core\AbstractValidator;
+use Champ\Validators\Core\ValidableInterface;
 
 class ChampionshipValidator extends AbstractValidator implements ValidableInterface {
 
