@@ -112,7 +112,6 @@ return array(
 		'Champ\Providers\AccountServiceProvider',
 		'Champ\Providers\ChampionshipServiceProvider',
 		'Champ\Providers\ContextsServiceProvider',
-		'Champ\Providers\AuthHandlerServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
