@@ -1,3 +1,5 @@
+@import "base/base.less";
+
 .banner {
     position: relative;
     padding-top: 250px;
@@ -63,7 +65,40 @@
 }
 .piece.second,
 .piece.third {
-    h2 {
+    h2 {@media (max-width: @screen-xs-max) {
+    .banner {
+        padding-top: 100px;
+    }
+    .subscription {
+        .subscribe {
+            margin-top: 113px;
+            margin-bottom: -30px;
+            margin-left: 30%;
+        }
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .banner {
+        padding-top: 100px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    .banner {
+        position: relative;
+        padding-top: 150px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    .banner {
+        position: relative;
+        padding-top: 150px;
+    }
+}
         text-align: center;
         margin-bottom: 30px;
     }
@@ -81,6 +116,3 @@
         text-align: left;
     }
 }
-
-// Responsive.less
-@import "index-responsive.less";

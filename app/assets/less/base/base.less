@@ -1,3 +1,28 @@
+/*
+ |-----------------------------------------------------------------------------
+ | Import the essentials libraries
+ |-----------------------------------------------------------------------------
+ |
+ */
+// bootstrap
+@import "bootstrap/bootstrap.less";
+@import "animate/animate.less";
+
+// font-awesome
+@import "font-awesome/font-awesome.less";
+
+// all base variables
+@import "variables.less";
+
+// all mixins
+@import "mixins.less";
+
+/*
+ |-----------------------------------------------------------------------------
+ | Default for all pages
+ |-----------------------------------------------------------------------------
+ |
+ */
 body {
     background: #333;
 }
@@ -45,7 +70,7 @@ body {
     background: darken(@champ-button-color, 15%);
 }
 
-// logged
+// when user is logged, this less come to action
 #user-options {
     img {
         margin-right: 10px;
@@ -60,6 +85,7 @@ body {
     border-radius: 3px 3px 0 0;
 }
 
+// all titles beyond home follow this pattern
 .featured-title {
     background: #fff url('../images/banner.jpg') 50% 30% no-repeat;
     padding: 120px 0 40px 0;
@@ -70,18 +96,9 @@ body {
         font-weight: 100;
     }
 }
-/*
-.navbar-brand {
-    background: transparent url('../images/logo_130x31.png') no-repeat;
-    text-indent: -9000px;
-    width: 130px;
-    height: 31px;
-    margin-right: 20px;
-    margin-top: 4px;
-    overflow: hidden;
+.sub-page {
+    padding: 20px 0 20px 0;
 }
-*/
-
 #footer {
     background-image: linear-gradient(to bottom, #222, #333);
     padding-top: 20px;

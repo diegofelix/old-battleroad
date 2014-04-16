@@ -3,83 +3,54 @@
 
     @include ('partials._featured_title', ['title' => $championship->name])
 
-    <div id="champ-manage">
+    <div class="sub-page">
         <div class="container">
             <div class="row">
-                <div id="description" class="col-md-8 show-hide">
-                    <div class="description-label"><h3>Informações</h3></div>
-                    <figure class="image info">
-                        <header>
-                            <h3>Imagem</h3>
-                        </header>
-                        <section>
-                            {{ HTML::image($championship->image, $championship->name, ['class' => 'img-responsive']) }}
-                        </section>
-                    </figure>
-                    <div class="description info">
-                        <header>
-                            <h3>Descrição</h3>
-                        </header>
-                        <section>
-                            {{ $championship->description }}
-                        </section>
-                    </div>
-                    <div class="location info">
-                        <header>
-                            <h3>Local</h3>
-                        </header>
-                        <section>
-                            {{ $championship->location }}
-                        </section>
-                    </div>
-                    <div class="price info">
-                        <header>
-                            <h3>Taxa Entrada</h3>
-                        </header>
-                        <section>
-                            {{ $championship->price }}
-                        </section>
-                    </div>
-                    <div class="price info">
-                        <header>
-                            <h3>Início do Evento</h3>
-                        </header>
-                        <section>
-                            {{ $championship->event_start }}
-                        </section>
-                    </div>
-                    <div class="price info">
-                        <header>
-                            <h3>Encerramento das Inscrições</h3>
-                        </header>
-                        <section>
-                            {{ $championship->event_end }}
-                        </section>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div id="payments" class="col-md-11 col-md-offset-1 show-hide">
-                            <div class="price info">
-                                <header>
-                                    <h3>Últimos pagamentos</h3>
-                                </header>
-                                <section>
-                                    {{ $championship->event_start }}
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div id="publish" class="col-md-11 col-md-offset-1">
-                            @if ($championship->published)
-                                <a href="#" class="btn btn-default btn-block champ-button disabled">Publicado</a>
-                            @else
-                                <a href="#" class="btn btn-default btn-block champ-button">Publicar</a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-3 champ-sidebar">
+                    <a href="#" class="btn btn-success btn-lg btn-block">Publicar</a>
+
+                    <ul>
+                        <li><a href="#"><i class="pull-right icon icon-info-circle"></i> Informações</a></li>
+                        <li><a href="#"><i class="pull-right icon icon-camera"></i> Banner</a></li>
+                        <li class="active"><a href="#"><i class="pull-right icon icon-gamepad"></i> Jogos</a></li>
+                        <li><a href="#"><i class="pull-right icon icon-users"></i> Participantes</a></li>
+                        <li><a href="#"><i class="pull-right icon icon-star"></i> Feedback</a></li>
+                    </ul>
+
+                </div><!-- champ-sidebar -->
+                <div id="description" class="col-md-9">
+                    <h3>
+                        <i class="icon icon-gamepad"></i> Jogos
+                        <a href="#" class="btn btn-info btn-lg pull-right">Adicionar jogo</a>
+                    </h3>
+                    <table class="table table-striped table-hover games-table">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Jogo</th>
+                                <th>Formato</th>
+                                <th>Plataforma</th>
+                                <th>Administrar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="icon icon-gamepad"></i></td>
+                                <td>SUPER STREET FIGHTER IV: ARCADE EDITION V.2012</td>
+                                <td>Double Elimination</td>
+                                <td>PS3</td>
+                                <td><a href="#" class="btn btn-default">Gerenciar</a></td>
+                            </tr>
+                            <tr>
+                                <td><i class="icon icon-gamepad"></i></td>
+                                <td>Ultimate Marvel vs Capcom 3</td>
+                                <td>Double Elimination</td>
+                                <td>PS3</td>
+                                <td><a href="#" class="btn btn-default">Gerenciar</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div><!-- champ-description -->
             </div><!-- row -->
         </div><!-- container -->
     </div><!-- champ-manage -->
