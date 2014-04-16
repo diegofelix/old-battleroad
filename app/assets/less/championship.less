@@ -1,3 +1,5 @@
+@import "base/base.less";
+
 #championship {
     padding-bottom: 20px;
     > .container {
@@ -117,45 +119,78 @@
     }
 }
 
-#champ-manage {
-    background: #f1f1f1;
-}
-.description-label {
-    padding: 10px 0;
-}
-#description,
-#payments {
-    margin-top: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-#description,
-#payments {
-    h3, p {
-        font-family: Lato;
-    }
-    h3 {
-        color: #000;
-        margin: 0;
+
+.champ-sidebar {
+    a {
         font-size: 1.3em;
+        font-family: Lato;
         font-weight: 300;
     }
-    .info {
-        margin-bottom: 10px;
-        header {
-            padding: 10px 0;
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0 0 0;
+    }
+    li {
+        a {
+            display: block;
+            color: #555;
+            padding: 10px 20px;
+            &:hover,
+            &:active {
+                background: #eee;
+                text-decoration: none;
+                color: #333;
+            }
+            .icon {
+                color: #ddd;
+            }
         }
-        section {
-            color: #666;
-            padding: 10px 10px;
-            border-radius: 5px;
-            border: 1px solid #eee;
+        &.active {
+            a {
+                background: #eee;
+                color: @champ-button-color;
+                .icon {
+                    color: @champ-button-color;
+                }
+            }
         }
     }
 }
-#payments {
-    height: 200px;
+.games-table {
+    margin-top: 40px;
+}
+
+/*
+#champ-manage {
+    padding: 20px 0;
+    background: #f1f1f1;
+    .show-hide {
+        margin-top: 0;
+        padding: 0;
+        background: #fff;
+        margin-bottom: 20px;
+        .content {
+            padding: 0 15px 0 15px;
+        }
+    }
+    .description-label {
+        margin: 5px;
+        padding: 5px 10px;
+        background: #ddd;
+        border-radius: 5px 5px 0 0;
+        h3 {
+            margin: 0;
+            font-family: Lato;
+            color: #333;
+            font-size: 1.3em;
+            font-weight: 300;
+        }
+        &:hover {
+            background: #eee;
+            cursor: pointer;
+        }
+    }
 }
 #publish {
     padding: 0;
@@ -163,6 +198,7 @@
         margin-top: 20px;
         font-size: 1.8em;
         text-transform: uppercase;
-        .champ-button(@champ-button-color, 30px, 30px);
+        .champ-button(@champ-button-color, 20px, 30px);
     }
 }
+*/

@@ -4,12 +4,13 @@ $(document).ready(function(){
     $("#price").inputmask('[9][9]99,99', { numericInput: true, "placeholder" : "" });
     $("#event_start, #event_end").inputmask('d/m/y h:s:00');
 
-    $('.description-label').hide();
+    // hide the content of champ info
+    $('#champ-info .content').hide();
 
     // show and hide divs when clicked
-    $('.show-hide').click(function(){
+    $('.show-hide').on('click', function(){
         $this = $(this);
-        $this.find('.info').slideToggle();
-        $this.find('.description-label').toggle();
+        $this.find(".icon").toggleClass('icon-caret-up');
+        $this.find('.content').toggle();
     });
 });

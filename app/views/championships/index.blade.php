@@ -8,7 +8,7 @@
             <div class="container">
                 <h2>
                     Campeonatos
-                    @if (Auth::user()->championships()->count())
+                    @if (Auth::user() && Auth::user()->championships()->count())
                         {{ link_to_route('admin.championships.index', 'Meus Campeonatos', null, ['class' => 'btn btn-default manage-button pull-right']) }}
                     @else
                         {{ link_to_route('admin.championships.create', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
