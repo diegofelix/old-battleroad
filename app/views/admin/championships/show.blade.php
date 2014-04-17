@@ -35,17 +35,17 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><i class="icon icon-gamepad"></i></td>
+                                <td>{{ HTML::image('images/games/ssfivae.jpg') }}</td>
                                 <td>SUPER STREET FIGHTER IV: ARCADE EDITION V.2012</td>
                                 <td>Double Elimination</td>
-                                <td>PS3</td>
+                                <td>{{ HTML::image('images/platforms/ps3.jpg') }}</td>
                                 <td><a href="#" class="btn btn-default">Gerenciar</a></td>
                             </tr>
                             <tr>
-                                <td><i class="icon icon-gamepad"></i></td>
-                                <td>Ultimate Marvel vs Capcom 3</td>
+                                <td>{{ HTML::image('images/games/umvc3.jpg') }}</td>
+                                <td>ULTIMATE MARVEL VS CAPCOM 3</td>
                                 <td>Double Elimination</td>
-                                <td>PS3</td>
+                                <td>{{ HTML::image('images/platforms/xbox360.jpg') }}</td>
                                 <td><a href="#" class="btn btn-default">Gerenciar</a></td>
                             </tr>
                         </tbody>
