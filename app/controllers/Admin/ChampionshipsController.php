@@ -1,6 +1,5 @@
 <?php namespace Admin;
 
-use Auth;
 use Input;
 use BaseController;
 use Champ\Repositories\ChampionshipRepositoryInterface;
@@ -68,5 +67,17 @@ class ChampionshipsController extends BaseController {
     {
         $championship = $this->champRepo->find($id);
         return $this->view('admin.championships.show', compact('championship'));
+    }
+
+    public function games($id)
+    {
+        $championship = $this->champRepo->find($id);
+        return $this->view('admin.championships.games', compact('championship'));
+    }
+
+    public function banner($id)
+    {
+        $championship = $this->champRepo->find($id);
+        return $this->view('admin.championships.banner', compact('championship'));
     }
 }

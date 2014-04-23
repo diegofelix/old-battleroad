@@ -29,6 +29,14 @@ Route::get('championships', 'ChampionshipsController@index');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function(){
     Route::resource('championships', 'ChampionshipsController');
+    // additional routes for the championships resource
+    Route::get('championships/{id}/banner', ['as' => 'admin.championships.banner', 'uses' => 'ChampionshipsController@banner']);
+    Route::get('championships/{id}/users', ['as' => 'admin.championships.users', 'uses' => 'ChampionshipsController@users']);
+    Route::get('championships/{id}/feedback', ['as' => 'admin.championships.feedback', 'uses' => 'ChampionshipsController@feedback']);
+
+    // nested resource games.
+    Route::resource('championships.games', 'ChampGamesController');
+    //Route::get('championships/{id}/games', ['as' => 'admin.championships.games', 'uses' => 'ChampionshipsController@games']);
 });
 
 // register
