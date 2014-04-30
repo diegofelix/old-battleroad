@@ -31,7 +31,7 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Fimd
+     * Find
      *
      * @return Illuminate\Database\Eloquent\Model
      */

@@ -13,11 +13,11 @@
                         <a href="#" class="btn btn-success btn-lg btn-block">Publicar</a>
                     @endif
                     <ul>
-                        {{ champ_action_links('Informações', 'admin.championships.show', $championship->id, 'icon-info-circle'); }}
-                        {{ champ_action_links('Banner', 'admin.championships.banner', $championship->id, 'icon-camera'); }}
-                        {{ champ_action_links('Jogos', 'admin.championships.games.index', $championship->id, 'icon-gamepad'); }}
-                        {{ champ_action_links('Participantes', 'admin.championships.users', $championship->id, 'icon-users'); }}
-                        {{ champ_action_links('Feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); }}
+                        {{ champ_action_links('Informações', '', 'admin.championships.show', $championship->id, 'icon-info-circle'); }}
+                        {{ champ_action_links('Banner', 'banner', 'admin.championships.banner', $championship->id, 'icon-camera'); }}
+                        {{ champ_action_links('Jogos', 'games', 'admin.championships.games.index', $championship->id, 'icon-gamepad'); }}
+                        {{ champ_action_links('Participantes', 'users', 'admin.championships.users', $championship->id, 'icon-users'); }}
+                        {{ champ_action_links('Feedback', 'feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); }}
                     </ul>
                 </div><!-- champ-sidebar -->
 

@@ -17,10 +17,20 @@ if ( ! function_exists('usernameFromEmail')) {
 
 if ( ! function_exists('champ_action_links')) {
 
-	function champ_action_links($name, $route, $id, $icon)
+	/**
+	 * Generate a menu based on segment and classify what menu is active
+	 *
+	 * @param  string $name
+	 * @param  string $segment
+	 * @param  string $route
+	 * @param  int $id
+	 * @param  string $icon
+	 * @return string
+	 */
+	function champ_action_links($name, $segment, $route, $id, $icon)
 	{
 		$class = '';
-		if (Route::currentRouteName() == $route)
+		if (Request::segment(4) == $segment)
 		{
 			$class = 'active';
 		}

@@ -9,7 +9,7 @@ class ChampionshipsController extends BaseController {
     /**
      * Championship Repository
      *
-     * @var Champ\Championship\ChampionshipRepositoryInterface
+     * @var Champ\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 

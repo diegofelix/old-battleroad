@@ -35,7 +35,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
     Route::get('championships/{id}/feedback', ['as' => 'admin.championships.feedback', 'uses' => 'ChampionshipsController@feedback']);
 
     // nested resource games.
-    Route::resource('championships.games', 'ChampGamesController');
+    Route::resource('championships.games', 'CompetitionsController');
     //Route::get('championships/{id}/games', ['as' => 'admin.championships.games', 'uses' => 'ChampionshipsController@games']);
 });
 
