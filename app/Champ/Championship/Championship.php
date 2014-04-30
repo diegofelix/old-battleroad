@@ -30,6 +30,16 @@ class Championship extends Eloquent {
     }
 
     /**
+     * Relation with competition
+     *
+     * @return HasMany
+     */
+    public function competitions()
+    {
+        return $this->hasMany('Champ\Championship\Competition');
+    }
+
+    /**
      * Dates handled by Carbon
      *
      * @return array
