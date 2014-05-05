@@ -4,5 +4,4 @@ use Eloquent;
 
 class Format extends Eloquent
 {
-
 }

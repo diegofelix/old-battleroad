@@ -2,6 +2,6 @@
 
 use Champ\Repositories\Core\DropdownInterface;
 
-interface GameRepositoryInterface extends DropdownInterface
+interface FormatRepositoryInterface extends DropdownInterface
 {
 }

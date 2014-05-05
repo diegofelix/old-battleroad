@@ -4,5 +4,4 @@ use Eloquent;
 
 class Platform extends Eloquent
 {
-
 }

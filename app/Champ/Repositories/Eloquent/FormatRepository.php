@@ -1,0 +1,36 @@
+<?php namespace Champ\Repositories\Eloquent;
+
+use Champ\Championship\Format;
+use Champ\Repositories\FormatRepositoryInterface;
+
+class FormatRepository implements FormatRepositoryInterface {
+
+    /**
+     * Format Model
+     *
+     * @var Cham\Championship\Format
+     */
+    protected $model;
+
+    /**
+     * inject the model into constructor
+     *
+     * @param Champ\Championship\Format $model
+     */
+    public function __construct(Format $model)
+    {
+        $this->model = $model;
+    }
+
+    /**
+     * Get a list of Formats
+     *
+     * @param  int $champId
+     * @return array
+     */
+    public function dropdown()
+    {
+        return $this->model->lists('name', 'id');
+    }
+
+}

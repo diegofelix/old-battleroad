@@ -4,6 +4,8 @@ use Input;
 use BaseController;
 use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Repositories\GameRepositoryInterface;
+use Champ\Repositories\FormatRepositoryInterface;
+use Champ\Repositories\PlatformRepositoryInterface;
 
 class CompetitionsController extends BaseController
 {
@@ -23,10 +25,14 @@ class CompetitionsController extends BaseController
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
-        GameRepositoryInterface $gameRepo
+        GameRepositoryInterface $gameRepo,
+        FormatRepositoryInterface $formatRepo,
+        PlatformRepositoryInterface $platformRepo
     ) {
         $this->champRepo = $champRepo;
         $this->gameRepo = $gameRepo;
+        $this->formatRepo = $formatRepo;
+        $this->platformRepo = $platformRepo;
     }
 
     /**
@@ -52,6 +58,18 @@ class CompetitionsController extends BaseController
     {
         $championship = $this->champRepo->find($champId, ['competitions']);
         $games = $this->gameRepo->dropdown();
-        return $this->view('admin.championships.games.create', compact('championship', 'games'));
+        $formats = $this->formatRepo->dropdown();
+        $platforms = $this->platformRepo->dropdown();
+        return $this->view('admin.championships.games.create', compact('championship', 'games', 'formats', 'platforms'));
+    }
+
+    public function store($champId)
+    {
+        $input = Input::only('game_id', 'platform_id', 'format_id', 'price');
+        $input['championship_id'] = $champId;
+
+        $championship = $this->champRepo->find($champId, ['competitions']);
+
+        $championship->competitions()->create($input);
     }
 }
