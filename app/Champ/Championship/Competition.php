@@ -5,6 +5,13 @@ use Eloquent;
 class Competition extends Eloquent
 {
     /**
+     * Allow all other fields to be mass assigned
+     *
+     * @var array
+     */
+    protected $fillable = ['id'];
+
+    /**
      * Relation with Championship
      *
      * @return BelongsTo
@@ -42,4 +49,21 @@ class Competition extends Eloquent
     {
         return $this->belongsTo('Champ\Championship\Platform');
     }
+
+    /**
+     * Dates handles by Carbon\Carbon
+     *
+     * @return array
+     */
+    public function getDates()
+    {
+        return ['created_at', 'updated_at', 'start'];
+    }
+
+    public function setStartAttribute($value)
+    {
+        $this->attributes['start'] = $this->formatToDb($value);
+    }
+
+    use \Champ\Traits\FormatToDb;
 }
