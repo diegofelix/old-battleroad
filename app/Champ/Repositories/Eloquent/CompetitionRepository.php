@@ -26,4 +26,9 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     {
         return $this->getBy('championship_id', $champId, ['championship', 'format', 'game', 'platform']);
     }
+
+    public function getCompetition()
+    {
+        # code...
+    }
 }

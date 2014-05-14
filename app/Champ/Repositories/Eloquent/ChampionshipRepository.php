@@ -34,6 +34,15 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
             ->paginate();
     }
 
+    public function getCompetition($champId, $competitionId)
+    {
+        return $this->model->with(['competitions' => function($query) use ($competitionId)
+        {
+            $query->where('id', '=', $competitionId);
+        }])
+        ->find($champId);
+    }
+
     /**
      * Create a championship assigned to a user
      *

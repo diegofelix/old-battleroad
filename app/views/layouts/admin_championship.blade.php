@@ -29,3 +29,7 @@
         </div><!-- container -->
     </div><!-- champ-manage -->
 @stop
+
+@section('scripts')
+    {{ HTML::script('js/bootstrap-datepicker.js') }}
+@stop
