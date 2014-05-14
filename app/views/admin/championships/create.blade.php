@@ -91,3 +91,6 @@
     </div>
 
 @endsection
+@section('scripts')
+    {{ HTML::script('js/bootstrap-datepicker.js') }}
+@stop

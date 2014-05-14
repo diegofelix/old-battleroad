@@ -63,13 +63,36 @@ class CompetitionsController extends BaseController
         return $this->view('admin.championships.games.create', compact('championship', 'games', 'formats', 'platforms'));
     }
 
+    /**
+     * Attach a game to a competition
+     * @param  int $champId
+     * @return Response
+     */
     public function store($champId)
     {
+        // get the necessary inputs
         $input = Input::only('game_id', 'platform_id', 'format_id', 'price');
-        $input['championship_id'] = $champId;
 
+        // get the championship
         $championship = $this->champRepo->find($champId, ['competitions']);
 
+        // attach the game to it
         $championship->competitions()->create($input);
+
+        // redirect back
+        return \Redirect::route('admin.championships.games.index', [$champId]);
+
+    }
+
+    public function show($champId, $competitionId)
+    {
+        $championship = $this->champRepo->getCompetition($champId, $competitionId);
+        $competition = $championship->competitions->first();
+
+        $games = $this->gameRepo->dropdown();
+        $formats = $this->formatRepo->dropdown();
+        $platforms = $this->platformRepo->dropdown();
+
+        return $this->view('admin.championships.games.edit', compact('championship', 'competition', 'games', 'formats', 'platforms'));
     }
 }
