@@ -34,6 +34,21 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
             ->paginate();
     }
 
+    /**
+     * Publish a championship
+     *
+     * @param  int $id
+     * @return bool
+     */
+    public function publish($id)
+    {
+        $user = $this->model->find($id);
+
+        $user->published = 1;
+
+        return $user->save();
+    }
+
     public function getCompetition($champId, $competitionId)
     {
         return $this->model->with(['competitions' => function($query) use ($competitionId)
@@ -52,8 +67,14 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
      */
     public function create(array $data)
     {
-        $data['image'] = $this->uploadImage($data);
+        // do the upload
+        $image = $this->uploadImage($data);
 
+        // save the images
+        $data['image'] = $image->getImagePath();
+        $data['thumb'] = $image->getThumbPath();
+
+        // continue to save the championship
         return parent::create($data);
     }
 
@@ -68,12 +89,9 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
         // if was not image, go away
         if ( ! $data['image']) return null;
 
-        $imagePath = '/images/championships/';
-        $imageName = $data['user_id'] . '_' . time() . '.jpg';
+        $champImage = \App::make('Champ\Services\ChampionshipImage');
 
-        $data['image']->move(public_path() . $imagePath, $imageName);
-
-        return $imagePath . $imageName;
+        return $champImage->upload($data['image']);
     }
 
 }

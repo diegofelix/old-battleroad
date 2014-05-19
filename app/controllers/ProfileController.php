@@ -14,6 +14,9 @@ class ProfileController extends BaseController {
 	public function __construct(ProfileRepositoryInterface $profile)
 	{
 		$this->profileRepo = $profile;
+
+        // checks if the user is logged in and inject the user context
+        $this->beforeFilter('auth');
 	}
 
 	/**

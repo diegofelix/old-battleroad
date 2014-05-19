@@ -9,7 +9,7 @@
                 <h2>
                     Campeonatos
                     @if (Auth::user() && Auth::user()->championships()->count())
-                        {{ link_to_route('admin.championships.index', 'Meus Campeonatos', null, ['class' => 'btn btn-default manage-button pull-right']) }}
+                        {{ link_to_route('admin.championships.index', 'Meus Campeonatos', null, ['class' => 'btn btn-default create-button pull-right']) }}
                     @else
                         {{ link_to_route('admin.championships.create', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
                     @endif
@@ -23,7 +23,7 @@
                     <div class="champ col-md-3">
                         <div class="champ-inner">
                             <figure>
-                                {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                                {{ HTML::image($champ->thumb, $champ->title, ['class' => 'img-responsive']) }}
                             </figure>
                             <section class="description">
                                 <h3>{{ $champ->name }}</h3>

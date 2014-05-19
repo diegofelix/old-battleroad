@@ -9,7 +9,7 @@ class Competition extends Eloquent
      *
      * @var array
      */
-    protected $fillable = ['id'];
+    protected $guarded = ['id'];
 
     /**
      * Relation with Championship
@@ -64,6 +64,13 @@ class Competition extends Eloquent
     {
         $this->attributes['start'] = $this->formatToDb($value);
     }
+
+    public function getStartAttribute($value)
+    {
+        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
+    }
+
+
 
     use \Champ\Traits\FormatToDb;
 }

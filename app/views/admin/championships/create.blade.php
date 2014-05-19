@@ -10,9 +10,8 @@
 
             {{ Form::open(['route' => 'admin.championships.store', 'role' => 'form', 'files' => true]) }}
 
-            <div class="row">
-
-                <div class="col-md-8 main-form">
+            <div class="container">
+                <div class="main-form">
 
                     {{ Form::hidden('user_id', Auth::user()->id) }}
 
@@ -47,42 +46,29 @@
                         {{ Form::text('location', null, ['class' => 'form-control input-lg', 'id' => 'location', 'required']) }}
                     </div>
 
-                </div>
-
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-11 col-md-offset-1 side-form">
-                            <div class="form-group">
-                                {{ Form::label('price', 'Preço Entrada (em Reais): ') }}
-                                <div class="input-group input-group-lg">
-                                    <span class="input-group-addon">R$</span>
-                                    {{ Form::text('price', null, ['class' => 'form-control input-lg', 'id' => 'price', 'required']) }}
-                                </div>
-                                <span class="help-block">
-                                    O preço que você definir será o preço que receberá, com nossa taxa já aplicada.
-                                </span>
-                            </div>
-
-                            <div class="form-group">
-                                {{ Form::label('event_start', 'Data do Evento: ') }}
-                                {{ Form::text('event_start', null, [
-                                    'class' => 'form-control input-lg',
-                                    'id' => 'event_start',
-                                    'placeholder' => 'Que horas começa?',
-                                    'required']) }}
-                            </div>
-
-                            <div class="form-group">
-                                {{ Form::label('event_end', 'Término das Inscrições: ') }}
-                                {{ Form::text('event_end', null, ['class' => 'form-control input-lg', 'id' => 'event_end', 'required']) }}
-                            </div>
+                    <div class="form-group">
+                        {{ Form::label('price', 'Preço Entrada (em Reais): ') }}
+                        <div class="input-group input-group-lg">
+                            <span class="input-group-addon">R$</span>
+                            {{ Form::text('price', null, ['class' => 'form-control input-lg', 'id' => 'price', 'required']) }}
                         </div>
+                        <span class="help-block">
+                            O preço que você definir será o preço que receberá, com nossa taxa já aplicada.
+                        </span>
                     </div>
+
+                    <div class="form-group">
+                        {{ Form::label('event_start', 'Data do Evento: ') }}
+                        {{ Form::text('event_start', null, [
+                            'class' => 'form-control input-lg',
+                            'id' => 'event_start',
+                            'placeholder' => 'Que horas começa?',
+                            'required']) }}
+                    </div>
+
+                    <button type="submit" class="btn btn-default champ-button">Salvar</button>
                 </div>
-
-            </div><!-- row -->
-
-            <button type="submit" class="btn btn-default champ-button">Salvar</button>
+            </div><!-- container -->
 
         </div><!-- container -->
 

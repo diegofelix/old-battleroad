@@ -3,7 +3,6 @@
 
     <h3>
         <i class="icon icon-camera"></i> Banner
-        <a href="#" class="btn btn-info btn-lg pull-right">Trocar Imagem</a>
     </h3>
 
     <div class="panel panel-default">
