@@ -10,7 +10,10 @@
                     @if ($championship->published)
                         <a href="#" class="btn btn-success btn-lg btn-block disabled">Publicado</a>
                     @else
-                        <a href="#" class="btn btn-success btn-lg btn-block">Publicar</a>
+                        <a href="{{ route('admin.championships.publish', [$championship->id]) }}"
+                            class="btn btn-success btn-lg btn-block">
+                            Publicar
+                        </a>
                     @endif
                     <ul>
                         {{ champ_action_links('Informações', '', 'admin.championships.show', $championship->id, 'icon-info-circle'); }}

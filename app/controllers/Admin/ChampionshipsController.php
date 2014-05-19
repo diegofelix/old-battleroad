@@ -40,6 +40,28 @@ class ChampionshipsController extends BaseController {
         return $this->view('admin.championships.create');
     }
 
+    public function edit($id)
+    {
+        $championship = $this->champRepo->find($id);
+        return $this->view('admin.championships.edit', compact('championship'));
+    }
+
+    /**
+     * Update the championship's information, in this case, only description
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function update($id)
+    {
+        if ( ! $this->champRepo->update($id, ['description' => Input::get('description')])) {
+            return $this->redirectBack()->with('error', $this->champRepo->getErrors());
+        }
+
+        return $this->redirectRoute('admin.championships.show', [$id])
+            ->with('message', 'Informações atualizadas!');
+    }
+
     /**
      * Save the championship
      *
@@ -53,8 +75,34 @@ class ChampionshipsController extends BaseController {
 
         // after the championship is created, we redirect to his page, there, the user can
         // add games and define prices and etc.
-        return $this->redirectRoute('admin.championships.show', [$championship->id])
+        return $this->redirectRoute('admin.championships.games.index', [$championship->id])
             ->with(['message' => 'Campeonato criado, agora só falta adicionar os jogos pro seu campeonato =)']);
+    }
+
+    /**
+     * Publish a championship, but only if the championship have at least
+     * one game
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function publish($id)
+    {
+        $championship = $this->champRepo->find($id);
+
+        // check the count of competitions
+        if ($championship->competitions->count() > 0)
+        {
+            $this->champRepo->publish($id);
+
+            return $this->redirectRoute('admin.championships.index', [$championship->id])
+                ->with(['message' => 'Campeonato publicado!']);
+        }
+        else
+        {
+            return $this->redirectBack()
+                ->with('error', 'Você precisa ter pelo menos uma competição pra publicar um campeonato.');
+        }
     }
 
     /**
@@ -67,12 +115,6 @@ class ChampionshipsController extends BaseController {
     {
         $championship = $this->champRepo->find($id);
         return $this->view('admin.championships.show', compact('championship'));
-    }
-
-    public function games($id)
-    {
-        $championship = $this->champRepo->find($id);
-        return $this->view('admin.championships.games', compact('championship'));
     }
 
     public function banner($id)

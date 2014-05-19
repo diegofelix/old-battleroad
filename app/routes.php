@@ -5,17 +5,17 @@ Route::get('login', ['as' => 'session.create', 'uses' => 'SessionController@crea
 Route::get('logout', ['as' => 'session.destroy', 'uses' => 'SessionController@destroy']);
 Route::post('login', ['as' => 'session.store', 'uses' => 'SessionController@store']);
 
+// Authentication from social networks
 Route::get('google', ['as' => 'auth.google', 'uses' => 'AuthController@google']);
 Route::get('facebook', ['as' => 'auth.facebook', 'uses' => 'AuthController@facebook']);
 
+// Home Page
 Route::get('/', 'HomeController@index');
 
-/*
- |-----------------------------------------------------------------------------
- | Profile Routes
- |-----------------------------------------------------------------------------
- */
-Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
+// resource
+Route::resource('profile', 'ProfileController', ['except' => ['destroy']]);
+
+/*Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
 {
     Route::get('/', ['as' => 'profile.index', 'uses' => 'ProfileController@index']);
     Route::get('create', ['as' => 'profile.create', 'uses' => 'ProfileController@create']);
@@ -23,12 +23,22 @@ Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
     // posts requests
     Route::post('store', ['as' => 'profile.store', 'uses' => 'ProfileController@store']);
     Route::post('update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
-});
+});*/
 
 Route::get('championships', 'ChampionshipsController@index');
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function(){
+
+    // championship resource
     Route::resource('championships', 'ChampionshipsController');
+
+    // publish a championship
+    Route::get(
+        'championships/{id}/publish', [
+        'as' => 'admin.championships.publish',
+        'uses' => 'ChampionshipsController@publish'
+    ]);
+
     // additional routes for the championships resource
     Route::get('championships/{id}/banner', ['as' => 'admin.championships.banner', 'uses' => 'ChampionshipsController@banner']);
     Route::get('championships/{id}/users', ['as' => 'admin.championships.users', 'uses' => 'ChampionshipsController@users']);

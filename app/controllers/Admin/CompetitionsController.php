@@ -6,6 +6,7 @@ use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Repositories\GameRepositoryInterface;
 use Champ\Repositories\FormatRepositoryInterface;
 use Champ\Repositories\PlatformRepositoryInterface;
+use Champ\Championship\Competition;
 
 class CompetitionsController extends BaseController
 {
@@ -71,13 +72,16 @@ class CompetitionsController extends BaseController
     public function store($champId)
     {
         // get the necessary inputs
-        $input = Input::only('game_id', 'platform_id', 'format_id', 'price');
+        $input = Input::only('game_id', 'platform_id', 'format_id', 'price', 'start');
 
         // get the championship
         $championship = $this->champRepo->find($champId, ['competitions']);
 
-        // attach the game to it
-        $championship->competitions()->create($input);
+        // create a new Competition
+        $competition = new Competition($input);
+
+        // attach the competition to the championship
+        $championship->competitions()->save($competition);
 
         // redirect back
         return \Redirect::route('admin.championships.games.index', [$champId]);
@@ -94,5 +98,16 @@ class CompetitionsController extends BaseController
         $platforms = $this->platformRepo->dropdown();
 
         return $this->view('admin.championships.games.edit', compact('championship', 'competition', 'games', 'formats', 'platforms'));
+    }
+
+    public function destroy($champId, $competitionId)
+    {
+        $championship = $this->champRepo->getCompetition($champId, $competitionId);
+        $competition = $championship->competitions->first();
+
+        $competition->delete();
+
+        // redirect back
+        return \Redirect::route('admin.championships.games.index', [$champId]);
     }
 }

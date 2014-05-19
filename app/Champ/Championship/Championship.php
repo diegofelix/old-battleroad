@@ -46,7 +46,7 @@ class Championship extends Eloquent {
      */
     public function getDates()
     {
-        return ['created_at', 'updated_at', 'event_start', 'event_end', 'published_at'];
+        return ['created_at', 'updated_at', 'event_start', 'published_at'];
     }
 
     /**
@@ -57,16 +57,6 @@ class Championship extends Eloquent {
     public function setEventStartAttribute($value)
     {
         $this->attributes['event_start'] = $this->formatToDb($value);
-    }
-
-    /**
-     * Convert the date to the db format
-     *
-     * @param string $value
-     */
-    public function setEventEndAttribute($value)
-    {
-        $this->attributes['event_end'] = $this->formatToDb($value);
     }
 
     use \Champ\Traits\FormatToDb;

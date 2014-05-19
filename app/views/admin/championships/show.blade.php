@@ -18,7 +18,7 @@
 
     <div class="panel panel-default">
         <div class="panel-heading">Taxa de Entrada</div>
-        <div class="panel-body">{{ $championship->price }}</div>
+        <div class="panel-body">R$ {{ $championship->price }}</div>
     </div>
 
     <div class="panel panel-default">

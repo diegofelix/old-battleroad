@@ -1,8 +1,8 @@
 <?php namespace Champ\Services;
 
-use Intervention\Image\Facades\Image;
+use Intervention\Image\Image;
 
-abstract ImageUploader {
+abstract class ImageUploader {
 
     /**
      * Intervention Image
@@ -10,6 +10,34 @@ abstract ImageUploader {
      * @var Intervention\Image\Facades\Image
      */
     protected $image;
+
+    /**
+     * The relative path to image
+     *
+     * @var string
+     */
+    protected $path;
+
+    /**
+     * Size in pixels
+     *
+     * @var int
+     */
+    protected $width;
+
+    /**
+     * Size in pixels
+     *
+     * @var int
+     */
+    protected $height;
+
+    /**
+     * The uploaded image
+     *
+     * @var Intervention/Image
+     */
+    protected $uploadedImage;
 
     /**
      * Inject the intervention
@@ -29,14 +57,37 @@ abstract ImageUploader {
      * @param  array $input
      * @return Intervention\Image\Facades\Image
      */
-    public function upload($input, $width, $height, $path)
+    public function upload($input)
     {
         // save the image and generate its name based on current time
-        $dest = $path . time() . '.jpg';
+        $dest = public_path($this->path . time() . '.jpg');
 
-        return $this->image->make($input->getRealPath())
-            ->grab($width, $height)
+        $this->uploadedImage = $this->image->make($input->getRealPath())
+            ->grab($this->width, $this->height)
             ->save($dest);
+
+        // hook to make another modification in the current image
+        $this->afterUpload($this->uploadedImage);
+
+        return $this;
     }
+
+    /**
+     * Return the path to the image
+     *
+     * @return string
+     */
+    public function getImagePath()
+    {
+        return $this->path . $this->uploadedImage->basename;
+    }
+
+    /**
+     * This is a hook method to do some other stufss after
+     * the main image is save on file
+     *
+     * @return void
+     */
+    public function afterUpload($image){}
 
 }
