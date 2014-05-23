@@ -1,17 +1,16 @@
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-// css
-var less = require('gulp-less');
-var autoprefix = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
-// js
-var uglify = require('gulp-uglify');
-//var rename = require('gulp-rename');
-var concat = require('gulp-concat');
+// plugins
+var gulp        = require('gulp');
+var gutil       = require('gulp-util');
+var less        = require('gulp-less');
+var autoprefix  = require('gulp-autoprefixer');
+var minifyCSS   = require('gulp-minify-css');
+var uglify      = require('gulp-uglify');
+var concat      = require('gulp-concat');
 
 // from
-var lessDir = 'app/assets/less';
-var jsDir   = 'app/assets/js';
+var lessDir     = 'app/assets/less';
+var jsLibDir    = 'app/assets/js/lib';
+var jsDir       = 'app/assets/js';
 
 // compile to
 var targetCSSDir = 'public/css';
@@ -28,17 +27,20 @@ gulp.task('css', function () {
         .pipe(gulp.dest(targetCSSDir));
 });
 
+gulp.task('libJS', function(){
+    gulp.src([
+        jsLibDir + '/jquery.js',
+        jsLibDir + '/bootstrap.js',
+        jsLibDir + '/wow.js',
+    ])
+    .pipe(concat('min.js'))
+    .pipe(uglify({preserveComments: "some"}))
+    .pipe(gulp.dest(targetJsDir));
+});
+
 gulp.task('js', function() {
   gulp.src([
-        // do this to mantain specific order.
-        jsDir + '/lib/jquery.js',
-        jsDir + '/lib/bootstrap.js',
-        jsDir + '/lib/wow.js',
-        jsDir + '/lib/jquery-input-mask.js',
-        jsDir + '/lib/jquery-input-mask-date.js',
-        // custom js
         jsDir + '/*.js' ])
-  	.pipe(concat('min.js'))
     .pipe(uglify({preserveComments: "some"}))
     .pipe(gulp.dest(targetJsDir));
 });
@@ -49,4 +51,4 @@ gulp.task('watch', function () {
 });
 
 // What tasks does running gulp trigger?
-gulp.task('default', ['css', 'js', 'watch']);
+gulp.task('default', ['css', 'libJS', 'js', 'watch']);

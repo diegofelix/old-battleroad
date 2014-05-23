@@ -79,4 +79,10 @@
 @endsection
 @section('scripts')
     {{ HTML::script('js/bootstrap-datepicker.js') }}
+    <script type="text/javascript">
+        $('#event_start').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true
+        });
+    </script>
 @stop

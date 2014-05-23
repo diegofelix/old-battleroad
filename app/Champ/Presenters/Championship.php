@@ -29,14 +29,14 @@ class Championship extends BasePresenter
         $days = $this->resource->event_start->diffInDays($now);
 
         // check if the diff is zero, meaning the champi is today!
-        if ($days == 0) return '<span>Hoje</span>';
+        if ($days == 0) return 'Hoje';
 
         // if is greater then one, then we have to plurarize the output.
         // the line put an s in our words
         $plural = ($days > 1) ? 's' : '';
 
         // finaly return the formated date
-        return "<span>{$days} Dia{$plural}</span> restante{$plural}";
+        return "{$days} Dia{$plural} restante{$plural}";
     }
 
     /**

@@ -49,12 +49,30 @@
                 {{ Form::text('start', null, [
                     'class' => 'form-control',
                     'id' => 'event_start',
-                    'placeholder' => 'Que horas começa?',
+                    'placeholder' => 'Que dia começa?',
                     'required']) }}
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="input-group col-md-3">
+                <label>
+                    {{ Form::checkbox('limit', 1, true) }}
+                    Sem limite de participantes
+                </label>
             </div>
         </div>
 
         <button type="submit" class="btn btn-info">Salvar</button>
 
     {{ Form::close() }}
+@stop
+@section('scripts')
+    {{ HTML::script('js/bootstrap-datepicker.js') }}
+    <script type="text/javascript">
+        $('#event_start').datepicker({
+            format: "dd/mm/yyyy",
+            autoclose: true
+        });
+    </script>
 @stop

@@ -21,24 +21,25 @@
             @if (count($championships))
                 @foreach ($championships as $champ)
                     <div class="champ col-md-3">
-                        <div class="champ-inner">
-                            <figure>
-                                {{ HTML::image($champ->thumb, $champ->title, ['class' => 'img-responsive']) }}
-                            </figure>
-                            <section class="description">
-                                <h3>{{ $champ->name }}</h3>
-                                <p>{{ $champ->short_description }}</p>
-                            </section>
-                            <section class="info">
-                                <a href="#" class="time-left">
-                                    {{ $champ->days_left }}
-                                </a>
-                                <a href="#" class="price">
-                                    <span>R$ {{ $champ->price }}</span>
-                                    Entrada
-                                </a>
-                            </section>
-                        </div><!-- champ-inner -->
+                        <a href="{{ route('championships.show', [$champ->id]) }}">
+                            <div class="champ-inner">
+                                <figure>
+                                    {{ HTML::image($champ->thumb, $champ->title, ['class' => 'img-responsive']) }}
+                                </figure>
+                                <section class="description">
+                                    <h3>{{ $champ->name }}</h3>
+                                    <p>{{ $champ->short_description }}</p>
+                                </section>
+                                <section class="info">
+                                    <a href="#" class="time-left">
+                                        <i class="icon icon-calendar"></i> {{ $champ->days_left }}
+                                    </a>
+                                    <a href="#" class="price">
+                                        <i class="icon icon-money"></i> {{ $champ->price }}
+                                    </a>
+                                </section>
+                            </div><!-- champ-inner -->
+                        </a>
                     </div><!-- champ -->
                 @endforeach
             @endif

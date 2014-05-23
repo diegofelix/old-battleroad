@@ -25,7 +25,7 @@ Route::resource('profile', 'ProfileController', ['except' => ['destroy']]);
     Route::post('update', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
 });*/
 
-Route::get('championships', 'ChampionshipsController@index');
+Route::resource('championships', 'ChampionshipsController', ['only' => ['index', 'show']]);
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function(){
 
