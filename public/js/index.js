@@ -1,0 +1,1 @@
+$(document).ready(function(){$("div.flash-message").delay(3e3).slideUp()});

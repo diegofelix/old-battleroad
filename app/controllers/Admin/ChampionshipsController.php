@@ -76,7 +76,7 @@ class ChampionshipsController extends BaseController {
         // after the championship is created, we redirect to his page, there, the user can
         // add games and define prices and etc.
         return $this->redirectRoute('admin.championships.games.index', [$championship->id])
-            ->with(['message' => 'Campeonato criado, agora só falta adicionar os jogos pro seu campeonato =)']);
+            ->with(['message' => 'Campeonato criado com sucesso!', 'show-tutorial' => true]);
     }
 
     /**

@@ -63,7 +63,7 @@ abstract class ImageUploader {
         $dest = public_path($this->path . time() . '.jpg');
 
         $this->uploadedImage = $this->image->make($input->getRealPath())
-            ->grab($this->width, $this->height)
+            ->resize($this->width, $this->height)
             ->save($dest);
 
         // hook to make another modification in the current image

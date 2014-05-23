@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#champ-info .content").hide(),$(".show-hide").on("click",function(){$this=$(this),$this.find(".icon").toggleClass("icon-caret-up"),$this.find(".content").toggle()})});
