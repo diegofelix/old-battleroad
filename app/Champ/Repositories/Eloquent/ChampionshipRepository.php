@@ -1,12 +1,13 @@
 <?php namespace Champ\Repositories\Eloquent;
 
-use Champ\Repositories\Core\TenantRepository;
+use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Championship;
 use Champ\Validators\ChampionshipValidator;
 use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Contexts\Core\ContextInterface;
+use App;
 
-class ChampionshipRepository extends TenantRepository implements ChampionshipRepositoryInterface {
+class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
 
     protected $context;
 
@@ -49,6 +50,13 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
         return $user->save();
     }
 
+    /**
+     * Return a competition by a champ id
+     *
+     * @param  int $champId
+     * @param  int $competitionId
+     * @return Model
+     */
     public function getCompetition($champId, $competitionId)
     {
         return $this->model->with(['competitions' => function($query) use ($competitionId)
@@ -84,12 +92,12 @@ class ChampionshipRepository extends TenantRepository implements ChampionshipRep
      * @param  array $data
      * @return string url to the image uploaded
      */
-    public function uploadImage($data)
+    private function uploadImage($data)
     {
         // if was not image, go away
         if ( ! $data['image']) return null;
 
-        $champImage = \App::make('Champ\Services\ChampionshipImage');
+        $champImage = App::make('Champ\Services\ChampionshipImage');
 
         return $champImage->upload($data['image']);
     }

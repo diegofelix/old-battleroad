@@ -95,8 +95,8 @@ class ChampionshipsController extends BaseController {
         {
             $this->champRepo->publish($id);
 
-            return $this->redirectRoute('admin.championships.index', [$championship->id])
-                ->with(['message' => 'Campeonato publicado!']);
+            return $this->redirectRoute('admin.championships.show', [$id])
+                ->with('message', 'Campeonato publicado!');
         }
         else
         {

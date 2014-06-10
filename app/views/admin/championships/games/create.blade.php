@@ -56,10 +56,21 @@
 
         <div class="form-group">
             <div class="input-group col-md-3">
-                <label>
-                    {{ Form::checkbox('limit', 1, true) }}
+                <label for="limit-switch">
+                    {{ Form::checkbox('limit_switch', 1, true, ['id' => 'limit-switch']) }}
                     Sem limite de participantes
                 </label>
+            </div>
+        </div>
+
+        <div id="limit-input" class="form-group hide">
+            {{ Form::label('limit', 'Limite de participantes: ') }}
+            <div class="input-group col-md-3">
+                {{ Form::text('limit', null, [
+                    'class' => 'form-control',
+                    'id' => 'limit',
+                    'placeholder' => 'Que dia começa?'
+                ]) }}
             </div>
         </div>
 
@@ -69,10 +80,5 @@
 @stop
 @section('scripts')
     {{ HTML::script('js/bootstrap-datepicker.js') }}
-    <script type="text/javascript">
-        $('#event_start').datepicker({
-            format: "dd/mm/yyyy",
-            autoclose: true
-        });
-    </script>
+    {{ HTML::script('js/games.js') }}
 @stop

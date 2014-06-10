@@ -10,9 +10,7 @@ class TenantRepository extends AbstractRepository {
      */
     public function create(array $data)
     {
-        // inject the context in the model
-        $data['user_id'] = $this->context->id();
-        return parent::create($data);
+        return parent::create($data + ['user_id' => $this->context->id()]);
     }
 
     /**
