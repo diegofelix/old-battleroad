@@ -2,6 +2,5 @@
 
 use Champ\Repositories\Core\DropdownInterface;
 
-interface PlatformRepositoryInterface extends DropdownInterface
-{
+interface PlatformRepositoryInterface extends DropdownInterface {
 }

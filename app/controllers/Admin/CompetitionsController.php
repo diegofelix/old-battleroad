@@ -74,6 +74,12 @@ class CompetitionsController extends BaseController
         // get the necessary inputs
         $input = Input::only('game_id', 'platform_id', 'format_id', 'price', 'start');
 
+        // if the user setted a competition limit
+        if ( ! Input::get('limit_switch') && Input::get('limit'))
+        {
+            $input['limit'] = Input::get('limit');
+        }
+
         // get the championship
         $championship = $this->champRepo->find($champId, ['competitions']);
 

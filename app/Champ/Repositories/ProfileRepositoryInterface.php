@@ -12,4 +12,17 @@ interface ProfileRepositoryInterface extends RepositoryInterface {
      */
     public function getFirstByUserId($userId);
 
+    /**
+     * Create a profile assigned to a user
+     *
+     * @param  int $userId
+     * @param  array  $data
+     * @return Model
+     */
+    public function createForUser($userId, $data = array())
+    {
+        $data['user_id'] = $userId;
+        return $this->create($data);
+    }
+
 }

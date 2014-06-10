@@ -3,7 +3,7 @@
 use Illuminate\Database\Eloquent\Model;
 use Champ\Contexts\Core\ContextInterface;
 
-class UserContext implements ContextInterface{
+class UserContext implements ContextInterface {
 
     /**
      * Context
@@ -28,8 +28,7 @@ class UserContext implements ContextInterface{
      */
     public function has()
     {
-        if($this->context) return true;
-        return false;
+        return isset($this->context);
     }
 
     /**

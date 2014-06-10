@@ -27,4 +27,17 @@ class ChampionshipsController extends BaseController {
 
         return $this->view('championships.index', compact('championships'));
     }
+
+    /**
+     * Show all details about the championship
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function show($id)
+    {
+        $championship = $this->champRepo->find($id);
+
+        return $this->view('championships.show', compact('championship'));
+    }
 }
