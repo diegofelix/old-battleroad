@@ -1,7 +1,9 @@
 <?php namespace Champ\Repositories\Eloquent;
 
+use App;
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
+use Champ\Account\Profile;
 use Champ\Validators\UserValidator;
 use Champ\Repositories\UserRepositoryInterface;
 
@@ -66,7 +68,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     /**
      * Overrided method to add a default picture to a user in registration
      *
-     * @param  array  $data
+     * @param  array  $dataedit
      * @return Model
      */
     public function create(array $data)
@@ -89,5 +91,82 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     public function getById($id)
     {
         return $this->getFirstBy('user_id', $id);
+    }
+
+    /**
+     * Create a profile for the user
+     *
+     * @param  array $data
+     * @return mixed
+     */
+    public function createProfile($id, array $data)
+    {
+        if ( ! $this->profileIsValid($data))
+        {
+            return false;
+        }
+
+        // get a user
+        $user = $this->find($id, ['profile']);
+
+        // create a profile
+        $profile = new Profile($data);
+
+        // link a profile with a user
+        return $user->profile()->save($profile);
+    }
+
+    /**
+     * Update a profile for the user
+     *
+     * @param  int $id
+     * @param  array  $data
+     * @return mixed
+     */
+    public function updateProfile($id, array $data)
+    {
+        if ( ! $this->profileIsValid($data, 'update'))
+        {
+            return false;
+        }
+
+         // get a user
+        $user = $this->find($id, ['profile']);
+
+        // update your profile
+        return $user->profile->fill($data)->save();
+    }
+
+    /**
+     * Get a profile by a username
+     *
+     * @param  int $username
+     * @return Profile
+     */
+    public function getProfile($username)
+    {
+        return $this->getFirstBy('username', $username, ['profile']);
+    }
+
+    /**
+     * Check if the profile is valid
+     *
+     * @param  array $data
+     * @param  string $ruleset create or update
+     *
+     * @return boolean
+     */
+    private function profileIsValid($data, $ruleset = 'create')
+    {
+        // instantiate the validator
+        $validator = App::make('Champ\Validators\ProfileValidator');
+
+        // if passes then, send ok
+        if ($validator->passes($data, $ruleset)) return true;
+
+        // if not, then, get the errors
+        $this->errors = $validator->errors();
+
+        return false;
     }
 }

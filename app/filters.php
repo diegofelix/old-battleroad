@@ -82,3 +82,11 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('no_profile', function()
+{
+    if (Auth::user()->profile)
+    {
+        return Redirect::to('/');
+    }
+});

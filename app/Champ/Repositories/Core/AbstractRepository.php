@@ -48,7 +48,8 @@ abstract class AbstractRepository {
      */
     public function create(array $data)
     {
-        if ( ! $this->validator->passes($data)) {
+        if ( ! $this->validator->passes($data))
+        {
             $this->errors = $this->validator->errors();
             return false;
         }

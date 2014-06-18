@@ -3,6 +3,7 @@
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
 use Eloquent;
+use Auth;
 
 class User extends Eloquent implements UserInterface, RemindableInterface {
 
@@ -90,6 +91,18 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function profile()
     {
         return $this->hasOne('Champ\Account\Profile');
+    }
+
+    /**
+     * Check if the authenticated user is the same as requested
+     *
+     * @return boolean
+     */
+    public function currentUser()
+    {
+        if (Auth::guest()) return false;
+
+        return $this->id == Auth::user()->id;
     }
 
 }

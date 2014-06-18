@@ -36,4 +36,29 @@ interface UserRepositoryInterface extends RepositoryInterface {
      */
     public function getById($id);
 
+    /**
+     * Create a profile for the user
+     *
+     * @param  array $data
+     * @return mixed
+     */
+    public function createProfile($username, array $data);
+
+    /**
+     * Update a profile for the user
+     *
+     * @param  int $id
+     * @param  array  $data
+     * @return mixed
+     */
+    public function updateProfile($id, array $data);
+
+    /**
+     * Get a profile by a username
+     *
+     * @param  int $username
+     * @return Profile
+     */
+    public function getProfile($username);
+
 }

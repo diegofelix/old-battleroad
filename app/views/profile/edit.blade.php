@@ -8,7 +8,7 @@
 
         <div class="container">
 
-            {{ Form::model($profile, ['route' => ['profile.update', $profile->id], 'method' => 'PATCH', 'role' => 'form', 'class' => 'form-horizontal']) }}
+            {{ Form::model(Auth::user()->profile, ['route' => ['profile.update', Auth::user()->profile->id], 'method' => 'PATCH', 'role' => 'form', 'class' => 'form-horizontal']) }}
 
                 <fieldset>
 

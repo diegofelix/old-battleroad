@@ -1,6 +1,6 @@
 <?php
 
-use Champ\Repositories\ProfileRepositoryInterface;
+use Champ\Repositories\UserRepositoryInterface;
 
 class ProfileController extends BaseController {
 
@@ -9,26 +9,30 @@ class ProfileController extends BaseController {
 	 *
 	 * @var Champ\Repositories\ProfileRepositoryInterface
 	 */
-	protected $profileRepo;
+	protected $userRepo;
 
-	public function __construct(ProfileRepositoryInterface $profile)
+	public function __construct(UserRepositoryInterface $user)
 	{
-		$this->profileRepo = $profile;
+		$this->userRepo = $user;
 
         // checks if the user is logged in and inject the user context
-        $this->beforeFilter('auth');
+        $this->beforeFilter('auth', ['except' => 'show']);
+
+        // this methods can be view only if the user has no profile yet
+        $this->beforeFilter('no_profile', ['only' => ['create', 'store']]);
 	}
 
 	/**
-	 * Show The User Profile
+	 * Show the profile for a user
 	 *
+	 * @param  string $username
 	 * @return Response
 	 */
-	public function index()
+	public function show($username)
 	{
-		$profile = $this->profileRepo->first();
+		$user = $this->userRepo->getProfile($username);
 
-		return $this->view('profile.index', compact('profile'));
+		return View::make('profile.show', compact('user'));
 	}
 
 	/**
@@ -38,21 +42,21 @@ class ProfileController extends BaseController {
 	 */
 	public function create()
 	{
-		// if the user already have a profile, there is no need to
-		// create a profile.
-		if (Auth::user()->profile) return $this->redirectRoute('profile.index');
-
 		return $this->view('profile.create');
 	}
 
 	/**
 	 * Show the profile update form
 	 *
+	 * This route is made to edit only your profile. In fact you can
+	 * access this route like /profile/blablabla/edit. I made this way
+	 * to not create any unecessary validations.
+	 *
 	 * @return Response
 	 */
 	public function edit()
 	{
-		return $this->view('profile.edit', ['profile' => Auth::user()->profile]);
+		return $this->view('profile.edit');
 	}
 
 	/**
@@ -62,13 +66,16 @@ class ProfileController extends BaseController {
 	 */
 	public function update()
 	{
-		$id = Auth::user()->profile->id;
-
-		if ( ! $this->profileRepo->update($id, Input::all())) {
+		// check if the profile was created
+		// if not, redirect the user back and show what happened
+		if ( ! $this->userRepo->updateProfile(Auth::user()->id, Input::all()))
+		{
 			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
 		}
 
-		return $this->redirectRoute('profile.index')
+		// if came here means profile was created
+		// redirect him to your brand new profile and show a nice message =)
+		return $this->redirectRoute('profile.show', [Auth::user()->username])
 			->with('message', 'Perfil Atualizado com sucesso!');
 	}
 
@@ -79,12 +86,17 @@ class ProfileController extends BaseController {
 	 */
 	public function store()
 	{
-		if ( ! $this->profileRepo->createForUser(Auth::user()->id, Input::all())) {
-			return $this->redirectBack(['error' => $this->profileRepo->getErrors()]);
+		// check if the profile was created
+		// if not, redirect the user back to the form and show what happened
+		if ( ! $this->userRepo->createProfile(Auth::user()->id, Input::all()))
+		{
+			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
 		}
 
-		return $this->redirectRoute('profile.index')
-			->with('message', 'Perfil Criado com sucesso!');
+		// if came here means everything gone ok
+		// lets redirect the user and show a nice message =)
+		return $this->redirectRoute('profile.show', Auth::user()->username)
+			->with('message', 'Perfil criado com sucesso!');
 	}
 
 }
