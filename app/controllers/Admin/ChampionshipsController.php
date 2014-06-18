@@ -40,6 +40,12 @@ class ChampionshipsController extends BaseController {
         return $this->view('admin.championships.create');
     }
 
+    /**
+     * Show a form to edit a championship
+     *
+     * @param  int $id
+     * @return Response
+     */
     public function edit($id)
     {
         $championship = $this->champRepo->find($id);

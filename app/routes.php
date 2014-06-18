@@ -12,8 +12,8 @@ Route::get('facebook', ['as' => 'auth.facebook', 'uses' => 'AuthController@faceb
 // Home Page
 Route::get('/', 'HomeController@index');
 
-// resource
-Route::resource('profile', 'ProfileController', ['except' => ['destroy']]);
+// Profile Routes
+Route::resource('profile', 'ProfileController', ['except' => ['index', 'destroy']]);
 
 /*Route::group(['prefix' => 'profile', 'before' => 'auth'], function()
 {

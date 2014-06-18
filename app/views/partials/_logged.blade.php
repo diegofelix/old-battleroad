@@ -30,7 +30,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-with-icons">
                         <li><a href="{{ route('admin.championships.index') }}"><i class="icon icon-trophy"></i> Meus Campeonatos</a></li>
-                        <li><a href="{{ route('profile.index') }}"><i class="icon icon-user"></i> Perfil</a></li>
+                        <li><a href="{{ route('profile.show', [Auth::user()->username]) }}"><i class="icon icon-user"></i> Perfil</a></li>
                         <li><a href="{{ route('session.destroy') }}"><i class="icon icon-sign-out"></i> Sair</a></li>
                     </ul>
                 </li>
