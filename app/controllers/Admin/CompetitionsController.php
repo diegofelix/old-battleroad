@@ -6,7 +6,6 @@ use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Repositories\GameRepositoryInterface;
 use Champ\Repositories\FormatRepositoryInterface;
 use Champ\Repositories\PlatformRepositoryInterface;
-use Champ\Championship\Competition;
 
 class CompetitionsController extends BaseController
 {
@@ -46,7 +45,7 @@ class CompetitionsController extends BaseController
     {
         $championship = $this->champRepo->find($champId, ['competitions']);
 
-        return $this->view('admin.championships.games.index', compact('championship'));
+        return $this->view('admin.register.games.index', compact('championship'));
     }
 
     /**
@@ -61,7 +60,7 @@ class CompetitionsController extends BaseController
         $games = $this->gameRepo->dropdown();
         $formats = $this->formatRepo->dropdown();
         $platforms = $this->platformRepo->dropdown();
-        return $this->view('admin.championships.games.create', compact('championship', 'games', 'formats', 'platforms'));
+        return $this->view('admin.register.games.create', compact('championship', 'games', 'formats', 'platforms'));
     }
 
     /**
@@ -80,17 +79,11 @@ class CompetitionsController extends BaseController
             $input['limit'] = Input::get('limit');
         }
 
-        // get the championship
-        $championship = $this->champRepo->find($champId, ['competitions']);
-
-        // create a new Competition
-        $competition = new Competition($input);
-
-        // attach the competition to the championship
-        $championship->competitions()->save($competition);
+        // create the championship
+        $this->champRepo->createCompetition($champId, $input);
 
         // redirect back
-        return \Redirect::route('admin.championships.games.index', [$champId]);
+        return $this->redirectRoute('admin.register.games.index', [$champId]);
 
     }
 
@@ -103,7 +96,7 @@ class CompetitionsController extends BaseController
         $formats = $this->formatRepo->dropdown();
         $platforms = $this->platformRepo->dropdown();
 
-        return $this->view('admin.championships.games.edit', compact('championship', 'competition', 'games', 'formats', 'platforms'));
+        return $this->view('admin.register.games.edit', compact('championship', 'competition', 'games', 'formats', 'platforms'));
     }
 
     public function destroy($champId, $competitionId)
@@ -114,6 +107,6 @@ class CompetitionsController extends BaseController
         $competition->delete();
 
         // redirect back
-        return \Redirect::route('admin.championships.games.index', [$champId]);
+        return $this->redirectRoute('admin.register.games.index', [$champId]);
     }
 }
