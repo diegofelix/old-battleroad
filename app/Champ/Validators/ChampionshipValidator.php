@@ -13,10 +13,14 @@ class ChampionshipValidator extends AbstractValidator implements ValidableInterf
     protected $rules = [
         'create' => [
             'name' => 'required|min:5',
+            'description' => 'required|min:20',
             'image' => 'required|image',
-            'location' => 'required|min:10',
-            'price' => 'required',
             'event_start' => 'required|date_format:"d/m/Y"',
+        ],
+        'location' => [
+            'location' => 'required',
+            'price' => 'sometimes|numeric',
+            'limit' => 'sometimes|numeric'
         ],
         'update' => [
             'description' => 'required|min:20'

@@ -18,31 +18,51 @@
         </div>
 
         <div class="container">
-            @if (count($championships))
-                @foreach ($championships as $champ)
-                    <div class="champ col-md-3">
-                        <a href="{{ route('championships.show', [$champ->id]) }}">
-                            <div class="champ-inner">
-                                <figure>
-                                    {{ HTML::image($champ->thumb, $champ->title, ['class' => 'img-responsive']) }}
-                                </figure>
-                                <section class="description">
-                                    <h3>{{ $champ->name }}</h3>
-                                    <p>{{ $champ->short_description }}</p>
-                                </section>
-                                <section class="info">
-                                    <a href="#" class="time-left">
-                                        <i class="icon icon-calendar"></i> {{ $champ->days_left }}
-                                    </a>
-                                    <a href="#" class="price">
-                                        <i class="icon icon-money"></i> {{ $champ->price }}
-                                    </a>
-                                </section>
-                            </div><!-- champ-inner -->
-                        </a>
-                    </div><!-- champ -->
-                @endforeach
-            @endif
+            <div class="col-md-9">
+                <div class="row">
+                    @if (count($championships))
+                        @foreach ($championships as $champ)
+                            <div class="champ col-md-12">
+                                <a href="{{ route('championships.show', [$champ->id]) }}">
+                                    <div class="champ-inner">
+                                        <h3>{{ $champ->name }}</h3>
+                                        <figure>
+                                            {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                                        </figure>
+                                        <!--
+                                        <div class="description">
+                                            <p>{{ $champ->short_description }}</p>
+                                        </div>
+                                        -->
+                                        <section class="info">
+                                            <a href="#" class="time-left">
+                                                <i class="icon icon-calendar"></i> {{ $champ->days_left }}
+                                            </a>
+                                            <a href="#" class="price">
+                                                <small>R$</small> <strong>{{ $champ->price }}</strong>
+                                            </a>
+                                        </section>
+                                    </div><!-- champ-inner -->
+                                </a>
+                            </div><!-- champ -->
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+            <div class="champ col-md-3">
+                <a href="{{ route('championships.show', [$champ->id]) }}">
+                    <div class="champ-inner">
+                        <h3>Filtros</h3>
+
+                        <ul>
+                            <li>Street Fighter</li>
+                            <li>The king of fighters</li>
+                            <li>Smash Bros</li>
+                            <li>Marvel vs Capcom</li>
+                        </ul>
+                    </div><!-- champ-inner -->
+                </a>
+            </div>
         </div><!-- container -->
     </div><!-- championship -->
 

@@ -1,22 +1,19 @@
-@extends ('layouts.admin_championship')
-@section ('champ-content')
+@extends ('layouts.admin_register')
+@section ('register_content')
+
     <h3>
-        <i class="icon icon-gamepad"></i> Jogos
         {{ link_to_route(
             'admin.register.games.create',
             'Adicionar jogo',
             [$championship->id],
-            ['class' => 'btn btn-info btn-lg pull-right']
+            ['class' => 'btn btn-info']
         ) }}
     </h3>
 
-    @if (Session::has('show-tutorial'))
-        <div class="well alert-success">
-            <h4>Certo. Seu campeonato está criado!</h4>
-            <p>Agora precisamos criar os jogos que farão parte do seu campeonato.</p>
-            <p>Clique em "Adicionar jogo" para adicionar um jogo, definir preço, tipo de eliminação e etc.</p>
-        </div>
-    @endif
+    <div class="well alert-success">
+        <p>Agora precisamos criar os jogos que farão parte do seu campeonato.</p>
+        <p>Clique em "Adicionar jogo" para adicionar um jogo, definir preço, tipo de eliminação e etc.</p>
+    </div>
 
     <table class="table table-striped table-hover games-table">
         <thead>
@@ -54,5 +51,9 @@
                 </tr>
             @endforeach
         </tbody>
+
     </table>
+
+    {{ link_to_route('admin.register.confirmation', 'Continuar', $championship->id, ['class' => 'btn btn-default']) }}
+
 @stop

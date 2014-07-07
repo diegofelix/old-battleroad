@@ -5,21 +5,19 @@ use Champ\Championship\Championship;
 use Champ\Validators\ChampionshipValidator;
 use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Contexts\Core\ContextInterface;
+use Champ\Championship\Competition;
 use App;
+use Auth;
 
 class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
 
-    protected $context;
-
     public function __construct(
         Championship $model,
-        ChampionshipValidator $validator,
-        ContextInterface $context
+        ChampionshipValidator $validator
     )
     {
         $this->model = $model;
         $this->validator = $validator;
-        $this->context = $context;
     }
 
     /**
@@ -43,11 +41,38 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function publish($id)
     {
-        $user = $this->model->find($id);
+        $championship = $this->model->find($id);
 
-        $user->published = 1;
+        $championship->published = 1;
 
-        return $user->save();
+        return $championship->save();
+    }
+
+    /**
+     * Save the location and price for the championship
+     *
+     * @param  array $input
+     * @return mixed
+     */
+    public function saveLocation($input)
+    {
+        $championship = $this->model->findOrFail($input['id']);
+
+
+        // prevent malicious intentions checking the ownership
+        if ($championship->user_id != Auth::user()->id) return false;
+
+        if ( ! $this->validator->passes($input, 'location'))
+        {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
+        // save only the inputs specifieds in the form.
+        $championship->location = $input['location'];
+        $championship->price = $input['price'];
+
+        return $championship->save();
     }
 
     /**
@@ -64,6 +89,25 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             $query->where('id', '=', $competitionId);
         }])
         ->find($champId);
+    }
+
+    /**
+     * Create a new competition and attach to the championship
+     *
+     * @param  int $champId
+     * @param  array $data
+     * @return mixed
+     */
+    public function createCompetition($champId, $data)
+    {
+        // get the championship
+        $championship = $this->find($champId, ['competitions']);
+
+        // create a new Competition
+        $competition = new Competition($data);
+
+        // attach the competition to the championship
+        return $championship->competitions()->save($competition);
     }
 
     /**
@@ -87,7 +131,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Upload a file
+     * Upload an image
      *
      * @param  array $data
      * @return string url to the image uploaded

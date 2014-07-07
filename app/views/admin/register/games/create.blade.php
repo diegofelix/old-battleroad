@@ -1,5 +1,6 @@
-@extends ('layouts.admin_championship')
-@section ('champ-content')
+@extends ('layouts.admin_register')
+@section ('register_content')
+
     <h3>
         <i class="icon icon-gamepad"></i> Jogos <small>Adicionando jogos ao campeonato.</small>
     </h3>
@@ -49,7 +50,6 @@
                 {{ Form::text('start', null, [
                     'class' => 'form-control',
                     'id' => 'event_start',
-                    'placeholder' => 'Que dia começa?',
                     'required']) }}
             </div>
         </div>
@@ -68,8 +68,7 @@
             <div class="input-group col-md-3">
                 {{ Form::text('limit', null, [
                     'class' => 'form-control',
-                    'id' => 'limit',
-                    'placeholder' => 'Que dia começa?'
+                    'id' => 'limit'
                 ]) }}
             </div>
         </div>
@@ -77,6 +76,7 @@
         <button type="submit" class="btn btn-info">Salvar</button>
 
     {{ Form::close() }}
+
 @stop
 @section('scripts')
     {{ HTML::script('js/bootstrap-datepicker.js') }}

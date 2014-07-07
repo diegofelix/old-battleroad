@@ -1,6 +1,7 @@
 <?php
 
 use Champ\Repositories\ChampionshipRepositoryInterface;
+use Moip\Moip;
 
 class ChampionshipsController extends BaseController {
 
@@ -39,5 +40,29 @@ class ChampionshipsController extends BaseController {
         $championship = $this->champRepo->find($id);
 
         return $this->view('championships.show', compact('championship'));
+
+        /*$moip = new Moip();
+        $moip->setEnvironment('test');
+        $moip->setCredential(array(
+            'key' => 'H980Q22VM3W6LC6LIQIA8JVQTUKF1E1ONH4VL3QC',
+            'token' => 'ZOYXSPWPYR5ZEGYPGQVRKO9I58JA6CLU'
+            ));
+        $moip->setUniqueID(false);
+        $moip->setValue('100.00');
+        $moip->setReason('Teste do Moip-PHP');*/
+        /*
+        $moip->addComission(
+            'Razão do Split',
+            'diegoflx.oliveira@gmail.com',
+            '98.00',
+            true,
+            true
+        );
+
+        $moip->validate('Basic');
+        $moip->send();
+
+        print_r($moip->getAnswer());
+        */
     }
 }
