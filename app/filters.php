@@ -83,10 +83,46 @@ Route::filter('csrf', function()
 	}
 });
 
+/*
+|--------------------------------------------------------------------------
+| No Profile Filter
+|--------------------------------------------------------------------------
+|
+| The No Profile is responsible for check if the user has a profile.
+| Without a profile, the user canot create a championship nor
+| register to a one.
+|
+*/
+
 Route::filter('no_profile', function()
 {
     if (Auth::user()->profile)
     {
         return Redirect::to('/');
+    }
+});
+
+/*
+|--------------------------------------------------------------------------
+| Moip user filter
+|--------------------------------------------------------------------------
+|
+| This filter is responsible for check if the user has a moip_user.
+| Without it he cant register a championship.
+|
+*/
+
+Route::filter('has_moip', function()
+{
+    if ( ! Auth::user()->profile)
+    {
+        return Redirect::route('profile.create')
+            ->withError('Preencha seu perfil com seus dados e sua conta MOIP antes de registrar um campeonato.');
+    }
+
+    if ( ! Auth::user()->profile->moip_user)
+    {
+        return Redirect::route('profile.edit', Auth::user()->username)
+            ->withError('Você precisa ter uma conta MOIP antes. Preencha seu login MOIP no seu perfil.');
     }
 });

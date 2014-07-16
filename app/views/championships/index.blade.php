@@ -11,7 +11,7 @@
                     @if (Auth::user() && Auth::user()->championships()->count())
                         {{ link_to_route('admin.championships.index', 'Meus Campeonatos', null, ['class' => 'btn btn-default create-button pull-right']) }}
                     @else
-                        {{ link_to_route('admin.championships.create', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
+                        {{ link_to_route('admin.register.index', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
                     @endif
                 </h2>
             </div>
@@ -50,10 +50,8 @@
                 </div>
             </div>
             <div class="champ col-md-3">
-                <a href="{{ route('championships.show', [$champ->id]) }}">
                     <div class="champ-inner">
                         <h3>Filtros</h3>
-
                         <ul>
                             <li>Street Fighter</li>
                             <li>The king of fighters</li>

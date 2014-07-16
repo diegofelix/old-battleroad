@@ -16,15 +16,10 @@ class CreateProfilesTable extends Migration {
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
 			$table->text('bio');
-			$table->date('birthday');
-			$table->string('cpf');
-			$table->string('phone');
-			$table->string('zipcode', 8);
-			$table->string('address');
-			$table->string('number');
-			$table->string('complement');
-			$table->string('state');
-			$table->string('city');
+			$table->string('psn');
+			$table->string('live');
+			$table->string('steam');
+			$table->string('moip_user');
 			$table->timestamps();
 			$table->foreign('user_id')
 				->references('id')->on('users')

@@ -80,7 +80,8 @@ class CompetitionsController extends BaseController
         }
 
         // create the championship
-        $this->champRepo->createCompetition($champId, $input);
+        if ( ! $this->champRepo->createCompetition($champId, $input))
+            return $this->redirectBack(['error' => $this->champRepo->getErrors()]);
 
         // redirect back
         return $this->redirectRoute('admin.register.games.index', [$champId]);

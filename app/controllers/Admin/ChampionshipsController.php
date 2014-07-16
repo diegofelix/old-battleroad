@@ -50,9 +50,8 @@ class ChampionshipsController extends BaseController {
      */
     public function update($id)
     {
-        if ( ! $this->champRepo->update($id, ['description' => Input::get('description')])) {
+        if ( ! $this->champRepo->update($id, ['description' => Input::get('description')]))
             return $this->redirectBack()->with('error', $this->champRepo->getErrors());
-        }
 
         return $this->redirectRoute('admin.championships.show', [$id])
             ->with('message', 'Informações atualizadas!');
