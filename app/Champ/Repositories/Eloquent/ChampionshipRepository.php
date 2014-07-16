@@ -84,11 +84,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function getCompetition($champId, $competitionId)
     {
-        return $this->model->with(['competitions' => function($query) use ($competitionId)
-        {
-            $query->where('id', '=', $competitionId);
-        }])
-        ->find($champId);
+        $championship = $this->model->find($champId);
+
+        return $championship->competitions()->find($competitionId);
     }
 
     /**
