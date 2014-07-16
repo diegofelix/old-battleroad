@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function(){
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has_moip'], function(){
 
     // championship resource
     Route::resource('championships', 'ChampionshipsController');

@@ -24,6 +24,13 @@ class ChampionshipValidator extends AbstractValidator implements ValidableInterf
         ],
         'update' => [
             'description' => 'required|min:20'
+        ],
+        'competition' => [
+            'game_id' => 'required',
+            'format_id' => 'required',
+            'platform_id' => 'required',
+            'price' => 'sometimes|numeric',
+            'start' => 'required|date_format:"d/m/Y"',
         ]
     ];
 

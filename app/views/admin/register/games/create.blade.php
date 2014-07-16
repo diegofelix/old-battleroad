@@ -37,7 +37,7 @@
             {{ Form::label('price', 'Preço (em Reais): ') }}
             <div class="input-group col-md-3">
                 <span class="input-group-addon">R$</span>
-                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price', 'required']) }}
+                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
             </div>
             <span class="help-block">
                 O preço que você definir será o preço que receberá, com nossa taxa já aplicada.
@@ -71,6 +71,7 @@
                     'id' => 'limit'
                 ]) }}
             </div>
+            <div class="help-block">Máximo: {{ $championship->limit }}</div>
         </div>
 
         <button type="submit" class="btn btn-info">Salvar</button>

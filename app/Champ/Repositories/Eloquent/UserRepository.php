@@ -101,11 +101,6 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      */
     public function createProfile($id, array $data)
     {
-        if ( ! $this->profileIsValid($data))
-        {
-            return false;
-        }
-
         // get a user
         $user = $this->find($id, ['profile']);
 
@@ -125,12 +120,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      */
     public function updateProfile($id, array $data)
     {
-        if ( ! $this->profileIsValid($data, 'update'))
-        {
-            return false;
-        }
-
-         // get a user
+        // get a user
         $user = $this->find($id, ['profile']);
 
         // update your profile
@@ -146,27 +136,5 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     public function getProfile($username)
     {
         return $this->getFirstBy('username', $username, ['profile']);
-    }
-
-    /**
-     * Check if the profile is valid
-     *
-     * @param  array $data
-     * @param  string $ruleset create or update
-     *
-     * @return boolean
-     */
-    private function profileIsValid($data, $ruleset = 'create')
-    {
-        // instantiate the validator
-        $validator = App::make('Champ\Validators\ProfileValidator');
-
-        // if passes then, send ok
-        if ($validator->passes($data, $ruleset)) return true;
-
-        // if not, then, get the errors
-        $this->errors = $validator->errors();
-
-        return false;
     }
 }

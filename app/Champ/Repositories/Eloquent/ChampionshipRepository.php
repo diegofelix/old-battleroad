@@ -58,7 +58,6 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     {
         $championship = $this->model->findOrFail($input['id']);
 
-
         // prevent malicious intentions checking the ownership
         if ($championship->user_id != Auth::user()->id) return false;
 
@@ -70,7 +69,8 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // save only the inputs specifieds in the form.
         $championship->location = $input['location'];
-        $championship->price = $input['price'];
+        $championship->price    = $input['price'];
+        $championship->limit    = $input['limit'];
 
         return $championship->save();
     }
@@ -102,6 +102,22 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     {
         // get the championship
         $championship = $this->find($champId, ['competitions']);
+
+        // check if validation passes
+        if ( ! $this->validator->passes($data, 'competition'))
+        {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
+        // set the limit for the competition
+        $data['limit'] = $this->updateLimitValues($championship, $data);
+
+        // set the limit to the championship limit if value is greater than
+        if (isset($data['limit']) && $data['limit'] > $championship->limit)
+        {
+            $data['limit'] = $championship->limit;
+        }
 
         // create a new Competition
         $competition = new Competition($data);
@@ -144,6 +160,29 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $champImage = App::make('Champ\Services\ChampionshipImage');
 
         return $champImage->upload($data['image']);
+    }
+
+    /**
+     * Check if the limit of players in competition is greater than the championship limit
+     * if so, then, we will limit the numbers os players to the max limit of the championship
+     *
+     * @param  Championship $championship
+     * @param  array $data
+     * @return mixed
+     */
+    private function updateLimitValues($championship, $data)
+    {
+        if (isset($championship->limit) && isset($data['limit']))
+        {
+            if ($data['limit'] > $championship->limit)
+            {
+                return $championship->limit;
+            }
+
+            return $data['limit'];
+        }
+
+        return null;
     }
 
 }

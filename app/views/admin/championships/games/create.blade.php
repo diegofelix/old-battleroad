@@ -36,7 +36,7 @@
             {{ Form::label('price', 'Preço (em Reais): ') }}
             <div class="input-group col-md-3">
                 <span class="input-group-addon">R$</span>
-                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price', 'required']) }}
+                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
             </div>
             <span class="help-block">
                 O preço que você definir será o preço que receberá, com nossa taxa já aplicada.

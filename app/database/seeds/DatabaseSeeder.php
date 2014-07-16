@@ -12,10 +12,9 @@ class DatabaseSeeder extends Seeder {
 		Eloquent::unguard();
 
 		$this->call('UsersTableSeeder');
-		$this->call('FormatTableSeeder');
-		$this->call('GameTableSeeder');
 		$this->call('PlatformTableSeeder');
-		$this->call('StatesTableSeeder');
+		$this->call('GameTableSeeder');
+		$this->call('FormatTableSeeder');
 	}
 
 }
