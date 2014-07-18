@@ -2,15 +2,18 @@
 
 use Eloquent;
 use Carbon\Carbon;
+use Laracasts\Presenter\PresentableTrait;
 
 class Championship extends Eloquent {
+
+    use PresentableTrait;
 
     /**
      * Championship presenter
      *
      * @var string
      */
-    public $presenter = 'Champ\Presenters\Championship';
+    protected $presenter = 'Champ\Presenters\ChampionshipPresenter';
 
     /**
      * Allow all other fields to be mass assigned
@@ -18,6 +21,21 @@ class Championship extends Eloquent {
      * @var array
      */
     protected $guarded = ['_token', 'published', 'published_at'];
+
+    /**
+     * Register a championship
+     *
+     * @param  string $name
+     * @param  string $description
+     * @param  string $event_start
+     * @param  string $image
+     * @param  string $thumb
+     * @return Championship
+     */
+    public static function register($user_id, $name, $description, $event_start, $image = null, $thumb = null)
+    {
+       return new static(compact('user_id', 'name', 'description', 'event_start', 'image', 'thumb'));
+    }
 
     /**
      * Relation with User

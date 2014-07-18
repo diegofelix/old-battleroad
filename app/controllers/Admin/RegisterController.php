@@ -1,21 +1,28 @@
 <?php namespace Admin;
 
+use Auth;
 use Input;
 use BaseController;
-use Champ\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Laracasts\Commander\CommandBus;
+use Champ\Championship\Registration\RegisterChampionshipCommand;
 
 class RegisterController extends BaseController{
 
     /**
      * Championship Repository
      *
-     * @var Champ\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
-    public function __construct(ChampionshipRepositoryInterface $champRepo)
+    public function __construct(
+        ChampionshipRepositoryInterface $champRepo,
+        CommandBus $commandBus
+    )
     {
         $this->champRepo = $champRepo;
+        $this->commandBus = $commandBus;
     }
 
     /**
@@ -35,11 +42,15 @@ class RegisterController extends BaseController{
      */
     public function store()
     {
-        if ( ! $championship =  $this->champRepo->create(Input::all()))
-        {
-            return $this->redirectBack()
-                ->with('error', $this->champRepo->getErrors());
-        }
+        $command = new RegisterChampionshipCommand(
+            Auth::user()->id,
+            Input::get('name'),
+            Input::get('description'),
+            Input::get('event_start'),
+            Input::file('image')
+        );
+
+        $championship = $this->commandBus->execute($command);
 
         // redirect the user to the location page.
         return $this->redirectRoute('admin.register.location', [$championship->id]);

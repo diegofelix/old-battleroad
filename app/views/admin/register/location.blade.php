@@ -51,7 +51,7 @@
 
             <div class="form-group">
                 <div class="col-md-9 col-md-offset-2">
-                    <button type="submit" class="btn btn-default champ-button">Continuar</button>
+                    <button type="submit" class="btn btn-success champ-button"><i class="icon icon-arrow-right"></i> Continuar</button>
                 </div>
             </div>
         </div>

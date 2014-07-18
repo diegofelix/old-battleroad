@@ -1,7 +1,6 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Game;
-use Champ\Repositories\GameRepositoryInterface;
 
 class GameRepository implements GameRepositoryInterface {
 

@@ -1,6 +1,6 @@
 <?php
 
-use Champ\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepositoryInterface;
 
 class ProfileController extends BaseController {
 

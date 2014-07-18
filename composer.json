@@ -5,12 +5,12 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"fideloper/proxy": "dev-master",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"camcima/moip-php": "dev-master",
-		"way/form": "dev-master",
 		"intervention/image": "1.*",
-		"mccool/laravel-auto-presenter": "*"
+		"laracasts/commander": "1.1.*",
+		"laracasts/validation": "1.1.*",
+		"laracasts/presenter": "0.1.*"
 	},
 	"require-dev": {
 		"way/generators": "dev-master",

@@ -1,6 +1,6 @@
 <?php
 
-use Champ\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Moip\Moip;
 //use Champ\Billing\Core\BillingInterface
 
@@ -9,7 +9,7 @@ class ChampionshipsController extends BaseController {
     /**
      * Championship Repository
      *
-     * @var Champ\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 

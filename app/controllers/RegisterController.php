@@ -1,13 +1,13 @@
 <?php
 
-use Champ\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepositoryInterface;
 
 class RegisterController extends BaseController {
 
     /**
      * User Repository
      *
-     * @var Champ\Repositories\UserRepositoryInterface
+     * @var Champ\Account\Repositories\UserRepositoryInterface
      */
     protected $userRepo;
 

@@ -36,7 +36,7 @@
                                         -->
                                         <section class="info">
                                             <a href="#" class="time-left">
-                                                <i class="icon icon-calendar"></i> {{ $champ->days_left }}
+                                                <i class="icon icon-calendar"></i> {{ $champ->present()->days_left }}
                                             </a>
                                             <a href="#" class="price">
                                                 <small>R$</small> <strong>{{ $champ->price }}</strong>

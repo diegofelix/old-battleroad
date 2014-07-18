@@ -2,24 +2,24 @@
 
 use Input;
 use BaseController;
-use Champ\Repositories\ChampionshipRepositoryInterface;
-use Champ\Repositories\GameRepositoryInterface;
-use Champ\Repositories\FormatRepositoryInterface;
-use Champ\Repositories\PlatformRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\GameRepositoryInterface;
+use Champ\Championship\Repositories\FormatRepositoryInterface;
+use Champ\Championship\Repositories\PlatformRepositoryInterface;
 
 class CompetitionsController extends BaseController
 {
     /**
      * Championship Repository
      *
-     * @var Champ\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
     /**
      * Game Repository
      *
-     * @var Champ\Repositories\GameRepositoryInterface
+     * @var Champ\Championship\Repositories\GameRepositoryInterface
      */
     protected $gameRepo;
 

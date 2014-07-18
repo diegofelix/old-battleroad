@@ -1,9 +1,8 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Championship;
 use Champ\Validators\ChampionshipValidator;
-use Champ\Repositories\ChampionshipRepositoryInterface;
 use Champ\Contexts\Core\ContextInterface;
 use Champ\Championship\Competition;
 use App;
@@ -60,6 +59,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // prevent malicious intentions checking the ownership
         if ($championship->user_id != Auth::user()->id) return false;
+
 
         if ( ! $this->validator->passes($input, 'location'))
         {
@@ -122,6 +122,17 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // attach the competition to the championship
         return $championship->competitions()->save($competition);
+    }
+
+    /**
+     * Save a championship
+     *
+     * @param  Championship $championship
+     * @return mixed
+     */
+    public function register(Championship $championship)
+    {
+        return $championship->save();
     }
 
     /**
