@@ -2,14 +2,14 @@
 
 use Input;
 use BaseController;
-use Champ\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 class ChampionshipsController extends BaseController {
 
     /**
      * Championship Repository
      *
-     * @var Champ\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 

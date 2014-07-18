@@ -54,6 +54,8 @@
 
     </table>
 
-    {{ link_to_route('admin.register.confirmation', 'Continuar', $championship->id, ['class' => 'btn btn-default']) }}
+    <div class="form-group">
+        <a href="{{ route('admin.register.confirmation', $championship->id) }}" class="btn btn-success champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
+    </div>
 
 @stop

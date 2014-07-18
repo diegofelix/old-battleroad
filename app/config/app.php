@@ -80,7 +80,6 @@ return array(
 
 	'providers' => array(
 
-		'Fideloper\Proxy\ProxyServiceProvider',
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -117,8 +116,8 @@ return array(
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
-		'Way\Form\FormServiceProvider',
-		'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
+		'Laracasts\Commander\CommanderServiceProvider',
+		'Laracasts\Validation\ValidationServiceProvider'
 	),
 
 	/*

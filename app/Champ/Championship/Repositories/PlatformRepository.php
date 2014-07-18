@@ -1,7 +1,6 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Platform;
-use Champ\Repositories\PlatformRepositoryInterface;
 
 class PlatformRepository implements PlatformRepositoryInterface {
 

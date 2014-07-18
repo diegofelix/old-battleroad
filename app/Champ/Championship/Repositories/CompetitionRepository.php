@@ -1,7 +1,6 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Competition;
-use Champ\Repositories\CompetitionRepositoryInterface;
 use Champ\Repositories\Core\AbstractRepository;
 
 class CompetitionRepository extends AbstractRepository implements CompetitionRepositoryInterface {

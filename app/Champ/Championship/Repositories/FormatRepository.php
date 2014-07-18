@@ -1,7 +1,6 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Format;
-use Champ\Repositories\FormatRepositoryInterface;
 
 class FormatRepository implements FormatRepositoryInterface {
 

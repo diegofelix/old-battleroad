@@ -1,4 +1,4 @@
-<?php namespace Champ\Repositories;
+<?php namespace Champ\Championship\Repositories;
 
 use Champ\Repositories\Core\RepositoryInterface;
 

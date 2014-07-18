@@ -34,7 +34,7 @@
             </span>
         </div>
 
-        <button type="submit" class="btn btn-default champ-button">Salvar</button>
+        <button type="submit" class="btn btn-success champ-button"><i class="icon icon-arrow-right"></i>Salvar</button>
 
     {{ Form::close() }}
 

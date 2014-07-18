@@ -1,11 +1,10 @@
-<?php namespace Champ\Repositories\Eloquent;
+<?php namespace Champ\Account\Repositories;
 
 use App;
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
 use Champ\Account\Profile;
 use Champ\Validators\UserValidator;
-use Champ\Repositories\UserRepositoryInterface;
 
 class UserRepository extends AbstractRepository implements UserRepositoryInterface {
 
