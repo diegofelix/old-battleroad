@@ -1,0 +1,1 @@
+Aqui mostra o número do seu pedido ({{ $join->id }}) e o quanto você tem que pagar (ainda não fiz.)

@@ -14,4 +14,15 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     {
         $this->model = $model;
     }
+
+    /**
+     * Get all competitions where id in an array
+     *
+     * @param  array  $ids
+     * @return Collection
+     */
+    public function getByIds(array $ids)
+    {
+        return $this->model->whereIn('id', $ids)->get();
+    }
 }

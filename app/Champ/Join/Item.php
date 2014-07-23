@@ -1,4 +1,4 @@
-<?php namespace Champ\Subscription;
+<?php namespace Champ\Join;
 
 use Eloquent;
 
@@ -9,12 +9,12 @@ class Item extends Eloquent
     public $timestamps = false;
 
     /**
-     * Relation with Subscription
+     * Relation with Join
      *
      * @return  BelongsTo
      */
-    public function subscription()
+    public function join()
     {
-        return $this->belongsTo('Subscription');
+        return $this->belongsTo('Join');
     }
 }

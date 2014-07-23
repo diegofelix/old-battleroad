@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateSubscriptionsTable extends Migration {
+class CreateJoinsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,12 @@ class CreateSubscriptionsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('subscriptions', function(Blueprint $table)
+		Schema::create('joins', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->unsignedInteger('user_id');
 			$table->unsignedInteger('championship_id');
 			$table->integer('price');
-			$table->integer('total');
 			$table->timestamps();
 
 			$table->foreign('user_id')->references('id')->on('users');

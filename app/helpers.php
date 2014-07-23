@@ -1,6 +1,7 @@
 <?php
 
-if ( ! function_exists('usernameFromEmail')) {
+if ( ! function_exists('usernameFromEmail'))
+{
 	/**
 	 * Get a username from a e-mail address given
 	 *
@@ -15,8 +16,8 @@ if ( ! function_exists('usernameFromEmail')) {
 	}
 }
 
-if ( ! function_exists('champ_action_links')) {
-
+if ( ! function_exists('champ_action_links'))
+{
 	/**
 	 * Generate a menu based on segment and classify what menu is active
 	 *
@@ -36,5 +37,38 @@ if ( ! function_exists('champ_action_links')) {
 		}
 
 		return '<li class="'. $class .'"><a href="'. route($route, $id) .'"><i class="pull-right icon '. $icon .'"></i> '. $name .'</a></li>';
+	}
+}
+
+if ( ! function_exists('icon_route'))
+{
+	/**
+	 * Generate an html link with an icon inside
+	 *
+	 * @param  string $route
+	 * @param  string $name
+	 * @param  string $icon
+	 * @param  mixed $params
+	 * @return strgin
+	 */
+	function icon_route($route, $name, $icon, $params = null)
+	{
+		return '<a href="' . route($route, $params) . '">' . '<i class="icon icon-' . $icon . '"> </i> ' . $name . '</a>';
+	}
+}
+if ( ! function_exists('icon_link'))
+{
+	/**
+	 * Generate an html link with an icon inside
+	 *
+	 * @param  string $link
+	 * @param  string $name
+	 * @param  string $icon
+	 * @param  mixed $params
+	 * @return strgin
+	 */
+	function icon_link($link, $name, $icon, $params = null)
+	{
+		return '<a href="' . $link . '">' . '<i class="icon icon-' . $icon . '"> </i> ' . $name . '</a>';
 	}
 }
