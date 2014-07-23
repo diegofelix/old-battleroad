@@ -1,10 +1,14 @@
-<?php namespace Champ\Subscription;
+<?php namespace Champ\Join;
 
 use Eloquent;
+use Laracasts\Commander\Events\EventGenerator;
+use Champ\Join\Events\UserJoined;
 
-class Subscription extends Eloquent
+class Join extends Eloquent
 {
     protected $guarded = [];
+
+    use EventGenerator;
 
     /**
      * Relation with User
@@ -32,19 +36,23 @@ class Subscription extends Eloquent
     }
 
     /**
-     * Create a new Subscription
+     * Create a new Join
      *
      * @param  int $user_id
      * @param  int $championship_id
-     * @return Subscription
+     * @return Join
      */
     public static function register($user_id, $championship_id, $price)
     {
-        return new static(compact('user_id', 'championship_id', 'price'));
+        $Join = new static(compact('user_id', 'championship_id', 'price'));
+
+        $Join->raise(new UserJoined($Join));
+
+        return $Join;
     }
 
     /**
-     * Add an item to the subscription
+     * Add an item to the Join
      *
      * @param int $competitionId
      * @param int $price
@@ -52,7 +60,7 @@ class Subscription extends Eloquent
     public function addItem($competitionId, $price)
     {
         return new Item([
-            'subscription_id' => $this->id,
+            'join_id' => $this->id,
             'competition_id' => $competitionId,
             'price' => $price
         ]);

@@ -1,7 +1,7 @@
-<?php namespace Champ\Subscription\Repositories;
+<?php namespace Champ\Join\Repositories;
 
 use Champ\Repositories\Core\RepositoryInterface;
-use Champ\Subscription\Item;
+use Champ\Join\Item;
 
 interface ItemRepositoryInterface extends RepositoryInterface
 {

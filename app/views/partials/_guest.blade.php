@@ -14,13 +14,14 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
             <ul class="nav navbar-nav">
-                <li>{{ link_to('championships', 'Campeonatos') }}</li>
+                <li>{{ link_to_route('championships.index', 'Campeonatos') }}</li>
                 <li>{{ link_to('http://battleroad.uservoice.com/knowledgebase', 'Como funciona?') }}</li>
-                <li><a href="http://battleroad.uservoice.com">Feedback</a></li>
+                <li>{{ link_to('http://battleroad.uservoice.com', 'Feedback') }}</li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li>{{ link_to_route('session.create', 'Login') }}</li>
+                <li>{{ link_to_route('register.index', 'Cadastrar-se') }}</li>
+                <li>{{ icon_route('session.create', 'Login', 'sign-in') }}</li>
             </ul>
         </div> <!-- collapse -->
     </div> <!-- container -->

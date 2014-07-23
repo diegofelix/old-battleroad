@@ -15,10 +15,10 @@ class CreateItemsTable extends Migration {
 		Schema::create('items', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->unsignedInteger('subscription_id');
+			$table->unsignedInteger('join_id');
 			$table->unsignedInteger('competition_id');
 			$table->integer('price');
-			$table->foreign('subscription_id')->references('id')->on('subscriptions');
+			$table->foreign('join_id')->references('id')->on('joins');
 			$table->foreign('competition_id')->references('id')->on('competitions');
 		});
 	}

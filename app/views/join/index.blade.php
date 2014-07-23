@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        {{ Form::open(['route' => 'subscription.register']) }}
+        {{ Form::open(['route' => 'join.register']) }}
 
             {{ Form::hidden('id', $championship->id) }}
 

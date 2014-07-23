@@ -1,1 +1,0 @@
-Aqui mostra o número do seu pedido ({{ $subscription->id }}) e o quanto você tem que pagar (ainda não fiz.)

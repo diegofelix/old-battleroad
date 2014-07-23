@@ -1,9 +1,9 @@
-<?php namespace Champ\Subscription;
+<?php namespace Champ\Join;
 
 use Champ\Account\User;
 use Champ\Championship\Championship;
 
-class SubscriptionCommand {
+class JoinCommand {
 
     public $user;
 
@@ -11,7 +11,7 @@ class SubscriptionCommand {
 
     public $competitions;
 
-    public function __construct(User $user, Championship $championship, array $competitions = [])
+    public function __construct(User $user, Championship $championship, $competitions = null)
     {
         $this->user = $user;
         $this->championship = $championship;

@@ -1,6 +1,6 @@
-<?php namespace Champ\Subscription\Repositories;
+<?php namespace Champ\Join\Repositories;
 
-use Champ\Subscription\Item;
+use Champ\Join\Item;
 use Champ\Repositories\Core\AbstractRepository;
 
 class ItemRepository extends AbstractRepository implements ItemRepositoryInterface {
@@ -8,7 +8,7 @@ class ItemRepository extends AbstractRepository implements ItemRepositoryInterfa
     /**
      * inject the model into constructor
      *
-     * @param Champ\Subscription\Item $model
+     * @param Champ\Join\Item $model
      */
     public function __construct(Item $model)
     {

@@ -1,11 +1,11 @@
 <?php
 
 use Laracasts\Commander\CommandBus;
-use Champ\Subscription\SubscriptionCommand;
+use Champ\Join\JoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Subscription\Repositories\SubscriptionRepositoryInterface;
+use Champ\Join\Repositories\JoinRepositoryInterface;
 
-class SubscriptionController extends BaseController
+class JoinController extends BaseController
 {
     /**
      * Championship Repository
@@ -15,11 +15,11 @@ class SubscriptionController extends BaseController
     protected $champRepo;
 
     /**
-     * Subscription Repository
+     * Join Repository
      *
-     * @var Champ\Subscription\Repositories\SubscriptionRepositoryInterface
+     * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
-    protected $subscriptionRepo;
+    protected $joinRepo;
 
     /**
      * Command Bus
@@ -30,12 +30,12 @@ class SubscriptionController extends BaseController
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
-        SubscriptionRepositoryInterface $subscriptionRepo,
+        JoinRepositoryInterface $joinRepo,
         CommandBus $commandBus
     )
     {
         $this->champRepo = $champRepo;
-        $this->subscriptionRepo = $subscriptionRepo;
+        $this->joinRepo = $joinRepo;
         $this->commandBus = $commandBus;
     }
 
@@ -49,7 +49,7 @@ class SubscriptionController extends BaseController
     {
         $championship = $this->champRepo->find($id);
 
-        return $this->view('subscription.index', compact('championship'));
+        return $this->view('join.index', compact('championship'));
     }
 
     /**
@@ -61,27 +61,23 @@ class SubscriptionController extends BaseController
     {
         $championship = $this->champRepo->find(Input::get('id'));
 
-        $command = new SubscriptionCommand(
-            Auth::user(),
-            $championship,
-            Input::get('competitions')
-        );
+        $command = new JoinCommand(Auth::user(), $championship, Input::get('competitions'));
 
-        $subscription = $this->commandBus->execute($command);
+        $join = $this->commandBus->execute($command);
 
         // redirect the user to the location page.
-        return $this->redirectRoute('subscription.show', [$subscription->id]);
+        return $this->redirectRoute('join.show', [$join->id]);
     }
 
     /**
-     * Show all Subscription data
+     * Show all Join data
      * @param  int $id
      * @return Response
      */
     public function show($id)
     {
-        $subscription = $this->subscriptionRepo->find($id);
+        $join = $this->joinRepo->find($id);
 
-        return $this->view('subscription.show', compact('subscription'));
+        return $this->view('join.show', compact('join'));
     }
 }
