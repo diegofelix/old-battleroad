@@ -7,14 +7,21 @@ use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Laracasts\Commander\CommandBus;
 use Champ\Championship\Registration\RegisterChampionshipCommand;
 
-class RegisterController extends BaseController{
-
+class RegisterController extends BaseController
+{
     /**
      * Championship Repository
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
+
+    /**
+     * Command Bus
+     *
+     * @var Laracasts\Commander\CommandBus
+     */
+    protected $commandBus;
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,

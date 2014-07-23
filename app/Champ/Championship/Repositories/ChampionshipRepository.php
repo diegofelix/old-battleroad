@@ -130,7 +130,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      * @param  Championship $championship
      * @return mixed
      */
-    public function register(Championship $championship)
+    public function save(Championship $championship)
     {
         return $championship->save();
     }
