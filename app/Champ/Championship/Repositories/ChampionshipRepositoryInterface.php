@@ -1,6 +1,7 @@
 <?php namespace Champ\Championship\Repositories;
 
 use Champ\Repositories\Core\RepositoryInterface;
+use Champ\Championship\Championship;
 
 interface ChampionshipRepositoryInterface extends RepositoryInterface {
 
@@ -18,6 +19,31 @@ interface ChampionshipRepositoryInterface extends RepositoryInterface {
      * @return bool
      */
     public function publish($id);
+
+    /**
+     * Save the location and price for the championship
+     *
+     * @param  array $input
+     * @return mixed
+     */
+    public function saveLocation($input);
+
+    /**
+     * Create a new competition and attach to the championship
+     *
+     * @param  int $champId
+     * @param  array $data
+     * @return mixed
+     */
+    public function createCompetition($champId, $data);
+
+    /**
+     * Save a championship
+     *
+     * @param  Championship $championship
+     * @return mixed
+     */
+    public function save(Championship $championship);
 
     /**
      * Return a competition by a champ id

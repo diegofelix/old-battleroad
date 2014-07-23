@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        {{ Form::open(['route' => 'championships.payment']) }}
+        {{ Form::open(['route' => 'subscription.register']) }}
 
             {{ Form::hidden('id', $championship->id) }}
 
@@ -39,7 +39,7 @@
 
                             ?>
                             <tr>
-                                <td><input type="checkbox" name="competitions[]" value="{{ $competition->game_id }}" /> {{ $competition->game->name }}</td>
+                                <td><input type="checkbox" name="competitions[]" value="{{ $competition->id }}" /> {{ $competition->game->name }}</td>
                                 <td>{{ $competition->price }}</td>
                             </tr>
                         @endforeach
@@ -50,7 +50,6 @@
                     </tbody>
                 </table>
 
-                {{ link_to_route('subscription.create', 'Inscrever-se', $championship->id) }}
                 <button type="submit" class="btn btn-lg btn-success">Finalizar Inscrição</button>
 
             </div>

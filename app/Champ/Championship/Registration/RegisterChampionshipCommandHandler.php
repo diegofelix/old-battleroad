@@ -32,7 +32,7 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
             $image->getThumbPath()
         );
 
-        $this->repository->register($championship);
+        $this->repository->save($championship);
 
         //$this->dispatchEventsFor($championship);
 

@@ -4,8 +4,8 @@ use Eloquent;
 use Carbon\Carbon;
 use Laracasts\Presenter\PresentableTrait;
 
-class Championship extends Eloquent {
-
+class Championship extends Eloquent
+{
     use PresentableTrait;
 
     /**
