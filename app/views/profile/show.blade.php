@@ -17,7 +17,9 @@
                             </header>
                             <section>
                                 <ul class="settings-list">
+                                    @if ($user->profile)
                                     <li><a href="{{ route('profile.edit', Auth::user()->username) }}"><i class="icon icon-user"></i> Editar Perfil</a></li>
+                                    @endif
                                     <li><a href="#"><i class="icon icon-key"></i> Alterar Senha</a></li>
                                     <li><a href="{{ route('session.destroy') }}"><i class="icon icon-sign-out"></i> Sair</a></li>
                                 </ul>
