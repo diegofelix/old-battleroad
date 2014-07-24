@@ -113,6 +113,7 @@ return array(
 		'Champ\Providers\ContextsServiceProvider',
 		'Champ\Providers\BillingServiceProvider',
 		'Champ\Providers\JoinServiceProvider',
+		'Champ\Providers\EventingServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',

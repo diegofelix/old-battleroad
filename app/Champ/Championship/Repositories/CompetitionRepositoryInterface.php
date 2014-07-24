@@ -1,6 +1,7 @@
 <?php namespace Champ\Championship\Repositories;
 
 use Champ\Repositories\Core\RepositoryInterface;
+use Champ\Championship\Competition;
 
 interface CompetitionRepositoryInterface extends RepositoryInterface {
 
@@ -11,4 +12,12 @@ interface CompetitionRepositoryInterface extends RepositoryInterface {
      * @return Collection
      */
     public function getByIds(array $ids);
+
+    /**
+     * Saves a competition
+     *
+     * @param  Competition $competition
+     * @return boolean
+     */
+    public function save(Competition $competition);
 }

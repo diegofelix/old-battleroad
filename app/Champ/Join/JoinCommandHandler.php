@@ -25,6 +25,8 @@ class JoinCommandHandler implements CommandHandler {
      */
     protected $itemRepo;
 
+    use DispatchableTrait;
+
     public function __construct(
         JoinRepositoryInterface $joinRepo,
         CompetitionRepositoryInterface $competitionRepo,
@@ -43,6 +45,8 @@ class JoinCommandHandler implements CommandHandler {
 
         // add the competitions
         $this->registerCompetitions($join, $command);
+
+        $this->dispatchEventsFor($join);
 
         return $join;
     }

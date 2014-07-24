@@ -25,4 +25,15 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     {
         return $this->model->whereIn('id', $ids)->get();
     }
+
+    /**
+     * Saves a competition
+     *
+     * @param  Competition $competition
+     * @return boolean
+     */
+    public function save(Competition $competition)
+    {
+        return $competition->save();
+    }
 }
