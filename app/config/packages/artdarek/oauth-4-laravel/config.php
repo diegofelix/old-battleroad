@@ -31,10 +31,10 @@ return array(
          * Facebook
          */
         'Facebook' => array(
-		    'client_id'     => '1398418917095280',
-		    'client_secret' => 'ef2d16428f91f970d3492eb341196059',
+		    'client_id'     => '504273893036690',
+		    'client_secret' => '0730a59ff7583042bcd3d7635e40bfc8',
 		    'scope'         => array('email'),
-		),  
+		),
 
 	)
 
