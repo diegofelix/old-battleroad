@@ -15,6 +15,16 @@ class Item extends Eloquent
      */
     public function join()
     {
-        return $this->belongsTo('Join');
+        return $this->belongsTo('Champ\Join');
+    }
+
+    /**
+     * Relation with Competition
+     *
+     * @return BelongsTo
+     */
+    public function competition()
+    {
+        return $this->belongsTo('Champ\Championship\Competition');
     }
 }

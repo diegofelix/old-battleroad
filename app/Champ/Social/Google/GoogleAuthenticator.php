@@ -1,6 +1,6 @@
 <?php namespace Champ\Social\Google;
 
-use Champ\Account\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepositoryInterface;
 use Champ\Social\SocialAuthenticatorListener;
 use Champ\Social\SocialAuthenticator;
 

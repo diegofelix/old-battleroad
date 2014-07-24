@@ -111,12 +111,6 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         // set the limit for the competition
         $data['limit'] = $this->updateLimitValues($championship, $data);
 
-        // set the limit to the championship limit if value is greater than
-        if (isset($data['limit']) && $data['limit'] > $championship->limit)
-        {
-            $data['limit'] = $championship->limit;
-        }
-
         // create a new Competition
         $competition = new Competition($data);
 
@@ -181,17 +175,19 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     private function updateLimitValues($championship, $data)
     {
-        if (isset($championship->limit) && isset($data['limit']))
-        {
-            if ($data['limit'] > $championship->limit)
-            {
-                return $championship->limit;
-            }
+        // if the championship dont have limit we dont need to
+        // check this
+        if (empty($championship->limit)) return $data['limit'];
 
-            return $data['limit'];
-        }
+        // if no limit was specified, then is the same as the championship limit
+        if (empty($data['limit'])) return $championship->limit;
 
-        return null;
+        // if the limit for the competition is greater than the championship
+        // we limit to the championship limit
+        if ($data['limit'] > $championship->limit) return $championship->limit;
+
+        // if came here, then return himself.
+        return $data['limit'];
     }
 
 }

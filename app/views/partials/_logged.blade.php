@@ -24,7 +24,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li id="user-options" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        {{ HTML::image(Auth::user()->picture, Auth::user()->name, ['width' => '30']) }}
+                        {{ HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['width' => '30']) }}
                         {{ Auth::user()->name }}
                         <b class="caret"></b>
                     </a>

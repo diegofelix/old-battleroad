@@ -15,7 +15,7 @@ class Join extends Eloquent
      */
     public function user()
     {
-        return $this->belongsTo('User');
+        return $this->belongsTo('Champ\Account\User');
     }
 
     /**
@@ -23,7 +23,7 @@ class Join extends Eloquent
      */
     public function championship()
     {
-        return $this->belongsTo('Championship');
+        return $this->belongsTo('Champ\Championship\Championship');
     }
 
     /**
@@ -32,7 +32,7 @@ class Join extends Eloquent
      */
     public function items()
     {
-        return $this->hasMany('Item');
+        return $this->hasMany('Champ\Join\Item');
     }
 
     /**
@@ -44,11 +44,11 @@ class Join extends Eloquent
      */
     public static function register($user_id, $championship_id, $price)
     {
-        $Join = new static(compact('user_id', 'championship_id', 'price'));
+        $join = new static(compact('user_id', 'championship_id', 'price'));
 
-        $Join->raise(new UserJoined($Join));
+        $join->raise(new UserJoined($join));
 
-        return $Join;
+        return $join;
     }
 
     /**

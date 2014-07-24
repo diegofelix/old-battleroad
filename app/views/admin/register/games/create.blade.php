@@ -71,7 +71,11 @@
                     'id' => 'limit'
                 ]) }}
             </div>
-            <div class="help-block">Máximo: {{ $championship->limit }}</div>
+            @if ( ! empty($championship->limit))
+                <div class="help-block">Máximo: {{ $championship->limit }}</div>
+            @else
+                <div class="help-block">Máximo: Ilimitado</div>
+            @endif
         </div>
 
         <button type="submit" class="btn btn-info">Salvar</button>

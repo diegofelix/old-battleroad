@@ -2,10 +2,19 @@
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Laracasts\Presenter\PresentableTrait;
 use Eloquent;
 use Auth;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface
+{
+
+    /**
+     * Championship presenter
+     *
+     * @var string
+     */
+    protected $presenter = 'Champ\Presenters\UserPresenter';
 
     /**
      * The database table used by the model.
@@ -27,6 +36,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
      * @var array
      */
     protected $fillable = ['name', 'username', 'email', 'password', 'picture'];
+
+    use PresentableTrait;
 
     /**
      * Get the unique identifier for the user.
