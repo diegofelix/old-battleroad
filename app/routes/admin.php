@@ -15,32 +15,37 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has
         'uses' => 'RegisterController@store'
     ]);
 
-    // location
-    Route::get('register/{id}/location', [
-        'as' => 'admin.register.location',
-        'uses' => 'RegisterController@location'
-    ]);
+    Route::group(['before' => 'championship_not_published'], function()
+    {
+        // location
+        Route::get('register/{id}/location', [
+            'before' => 'championship_not_published',
+            'as' => 'admin.register.location',
+            'uses' => 'RegisterController@location'
+        ]);
 
-    // save location
-    Route::post('register/{id}/location', [
-        'as' => 'admin.register.storeLocation',
-        'uses' => 'RegisterController@storeLocation'
-    ]);
+        // save location
+        Route::post('register/{id}/location', [
+            'before' => 'championship_not_published',
+            'as' => 'admin.register.storeLocation',
+            'uses' => 'RegisterController@storeLocation'
+        ]);
 
-    // nested resource games.
-    Route::resource('register.games', 'CompetitionsController');
+        // nested resource games.
+        Route::resource('register.games', 'CompetitionsController');
 
-    // confirmation
-    Route::get('register/{id}/confirmation', [
-        'as' => 'admin.register.confirmation',
-        'uses' => 'RegisterController@confirmation'
-    ]);
+        // confirmation
+        Route::get('register/{id}/confirmation', [
+            'as' => 'admin.register.confirmation',
+            'uses' => 'RegisterController@confirmation'
+        ]);
 
-    // publish a championship
-    Route::get('register/{id}/publish', [
-        'as' => 'admin.register.publish',
-        'uses' => 'RegisterController@publish'
-    ]);
+        // publish a championship
+        Route::get('register/{id}/publish', [
+            'as' => 'admin.register.publish',
+            'uses' => 'RegisterController@publish'
+        ]);
+    });
 
     /*// location
     Route::get('championships/{id}/location', [
