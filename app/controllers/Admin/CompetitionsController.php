@@ -45,7 +45,7 @@ class CompetitionsController extends BaseController
     {
         $championship = $this->champRepo->find($champId, ['competitions']);
 
-        return $this->view('admin.register.games.index', compact('championship'));
+        return $this->view('admin.championships.games.index', compact('championship'));
     }
 
     /**
@@ -90,14 +90,10 @@ class CompetitionsController extends BaseController
 
     public function show($champId, $competitionId)
     {
-        $championship = $this->champRepo->getCompetition($champId, $competitionId);
-        $competition = $championship->competitions->first();
+        $championship = $this->champRepo->find($champId);
+        $competition = $championship->competitions->find($competitionId);
 
-        $games = $this->gameRepo->dropdown();
-        $formats = $this->formatRepo->dropdown();
-        $platforms = $this->platformRepo->dropdown();
-
-        return $this->view('admin.register.games.edit', compact('championship', 'competition', 'games', 'formats', 'platforms'));
+        return $this->view('admin.championships.games.show', compact('championship', 'competition'));
     }
 
     public function destroy($champId, $competitionId)

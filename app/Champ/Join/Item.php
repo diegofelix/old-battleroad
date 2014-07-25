@@ -15,7 +15,7 @@ class Item extends Eloquent
      */
     public function join()
     {
-        return $this->belongsTo('Champ\Join');
+        return $this->belongsTo('Champ\Join\Join');
     }
 
     /**

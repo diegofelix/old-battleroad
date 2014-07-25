@@ -54,4 +54,13 @@ interface ChampionshipRepositoryInterface extends RepositoryInterface {
      */
     public function getCompetition($champId, $competitionId);
 
+    /**
+     * Get all championships for the user
+     *
+     * @param  int $id
+     * @param  array $with
+     * @return Collectino
+     */
+    public function getAllByUser($id, $with);
+
 }
