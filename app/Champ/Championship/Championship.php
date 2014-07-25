@@ -77,6 +77,17 @@ class Championship extends Eloquent
         $this->attributes['event_start'] = $this->formatToDb($value);
     }
 
+    /**
+     * Check if Championship was published
+     *
+     * @param  int $id
+     * @return boolean
+     */
+    public static function checkPublished($id)
+    {
+        return self::find($id)->published == 1;
+    }
+
     use \Champ\Traits\FormatToDb;
 
 }

@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('event_start', 'Data do Evento: ') }}
+            {{ Form::label('event_start', 'Data do Campeonato: ') }}
             <div class="input-group">
                 <div class="col-md-6">
                     {{ Form::text('start', null, [
