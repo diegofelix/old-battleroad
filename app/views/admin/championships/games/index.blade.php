@@ -1,14 +1,6 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
-    <h3>
-        <i class="icon icon-gamepad"></i> Jogos
-        {{ link_to_route(
-            'admin.register.games.create',
-            'Adicionar jogo',
-            [$championship->id],
-            ['class' => 'btn btn-info btn-lg pull-right']
-        ) }}
-    </h3>
+    <h3><i class="icon icon-gamepad"></i> Jogos</h3>
 
     @if (Session::has('show-tutorial'))
         <div class="well alert-success">
@@ -22,36 +14,22 @@
         <thead>
             <tr>
                 <th>Jogo</th>
-                <th>Formato</th>
                 <th>Plataforma</th>
-                <th>Preço</th>
+                <th>Participantes</th>
                 <th>Data</th>
-                <th>Remover?</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             @foreach ($championship->competitions as $competition)
                 <tr>
-                    <td>{{ HTML::image($competition->game->icon) }}</td>
-                    <td>{{ $competition->format->name }}</td>
+                    <td>{{ $competition->game->name }}</td>
                     <td>{{ HTML::image($competition->platform->icon) }}</td>
-                    <td>R$ {{ $competition->price }}</td>
+                    <td>{{ $competition->items->count() }} Participantes</td>
                     <td>{{ $competition->start }}</td>
-                    <td>
-                        {{ Form::open(['route' => ['admin.register.games.destroy', $championship->id, $competition->id], 'method' => 'DELETE', 'role' => 'form']) }}
-                            <button type="submit" class="btn btn-danger">
-                                <i class="icon icon-times-circle"></i>
-                            </button>
-                        {{ Form::close() }}
-                        {{--
-                            link_to_route(
-                                'admin.championships.games.delete',
-                                'Remover',
-                                [$championship->id, $competition->id],
-                                ['class' => 'btn btn-danger']
-                        )--}}
-                    </td>
+                    <td>{{ link_to_route('admin.championships.games.show', 'Detalhes', [$championship->id, $competition->id]) }}</td>
                 </tr>
+
             @endforeach
         </tbody>
     </table>

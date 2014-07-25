@@ -150,6 +150,18 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
+     * Get all championships for the user
+     *
+     * @param  int $id
+     * @param  array $with
+     * @return Collectino
+     */
+    public function getAllByUser($id, $with)
+    {
+        return $this->model->whereUserId($id)->get();
+    }
+
+    /**
      * Upload an image
      *
      * @param  array $data

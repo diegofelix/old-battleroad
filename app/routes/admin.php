@@ -74,7 +74,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has
     // games
     Route::get('championships/{id}/games', [
         'as' => 'admin.championships.games',
-        'uses' => 'ChampionshipsController@games'
+        'uses' => 'CompetitionsController@index'
+    ]);
+
+    Route::get('championships/{id}/games/{gameId}', [
+        'as' => 'admin.championships.games.show',
+        'uses' => 'CompetitionsController@show'
     ]);
 
     // users in the championship

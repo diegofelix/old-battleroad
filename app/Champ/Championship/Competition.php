@@ -51,6 +51,16 @@ class Competition extends Eloquent
     }
 
     /**
+     * Relation with Item in Join
+     *
+     * @return HasMany
+     */
+    public function items()
+    {
+        return $this->hasMany('Champ\Join\Item');
+    }
+
+    /**
      * Dates handles by Carbon\Carbon
      *
      * @return array

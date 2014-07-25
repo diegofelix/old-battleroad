@@ -1,5 +1,6 @@
 <?php namespace Admin;
 
+use Auth;
 use Input;
 use BaseController;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
@@ -25,7 +26,7 @@ class ChampionshipsController extends BaseController {
      */
     public function index()
     {
-        $championships = $this->champRepo->all(['user']);
+        $championships = $this->champRepo->getAllByUser(Auth::user()->id, ['user']);
 
         return $this->view('admin.championships.index', compact('championships'));
     }
