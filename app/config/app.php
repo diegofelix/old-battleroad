@@ -114,6 +114,7 @@ return array(
 		'Champ\Providers\BillingServiceProvider',
 		'Champ\Providers\JoinServiceProvider',
 		'Champ\Providers\EventingServiceProvider',
+		'Champ\Providers\ValidationServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',

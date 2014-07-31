@@ -69,3 +69,8 @@
     {{ Form::close() }}
 
 @endsection
+@section('scripts')
+    {{ HTML::script('js/jquery-input-mask.js') }}
+    {{ HTML::script('js/jquery-input-mask-date.js') }}
+    {{ HTML::script('js/championship.js') }}
+@stop
