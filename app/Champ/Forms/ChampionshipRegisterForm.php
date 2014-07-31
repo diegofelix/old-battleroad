@@ -8,7 +8,7 @@ class ChampionshipRegisterForm extends FormValidator {
         'name' => 'required|min:5',
         'description' => 'required|min:20',
         'image' => 'required|image',
-        'event_start' => 'required|date_format:"d/m/Y"',
+        'event_start' => 'required|date_format:"d/m/Y"|future_date',
     ];
 
 }

@@ -3,7 +3,6 @@
 
     <h3>
         <i class="icon icon-info-circle"></i> Informações
-        <a href="{{ route('admin.championships.edit', $championship->id) }}" class="btn btn-info btn-lg pull-right">Editar Informações</a>
     </h3>
 
     <div class="panel panel-default">

@@ -113,6 +113,18 @@ Route::filter('championship_not_published', function($request)
             ->withError('Você não pode alterar um campeonato já publicado');
     }
 });
+
+Route::filter('championship_published', function($request)
+{
+    $id = $request->getParameter('id');
+
+    if ( ! Champ\Championship\Championship::checkPublished($id))
+    {
+        return Redirect::route('admin.register.location', $id)
+            ->withError('Esse campeonato ainda não publicado, termine de registra-lo.');
+    }
+});
+
 /*
 |--------------------------------------------------------------------------
 | Moip user filter

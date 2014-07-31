@@ -2,9 +2,9 @@
 
 @section ('register_content')
 
-    {{ Form::open(['route' => ['admin.register.storeLocation', $id], 'role' => 'form', 'class' => 'form-horizontal', 'files' => true]) }}
+    {{ Form::model($championship, ['route' => ['admin.register.storeLocation', $championship->id], 'role' => 'form', 'class' => 'form-horizontal', 'files' => true]) }}
 
-        {{ Form::hidden('id', $id) }}
+        {{ Form::hidden('id', $championship->id) }}
 
         <div class="main-form">
 

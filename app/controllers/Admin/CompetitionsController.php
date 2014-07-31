@@ -16,23 +16,9 @@ class CompetitionsController extends BaseController
      */
     protected $champRepo;
 
-    /**
-     * Game Repository
-     *
-     * @var Champ\Championship\Repositories\GameRepositoryInterface
-     */
-    protected $gameRepo;
-
-    public function __construct(
-        ChampionshipRepositoryInterface $champRepo,
-        GameRepositoryInterface $gameRepo,
-        FormatRepositoryInterface $formatRepo,
-        PlatformRepositoryInterface $platformRepo
-    ) {
+    public function __construct(ChampionshipRepositoryInterface $champRepo)
+    {
         $this->champRepo = $champRepo;
-        $this->gameRepo = $gameRepo;
-        $this->formatRepo = $formatRepo;
-        $this->platformRepo = $platformRepo;
     }
 
     /**
@@ -49,61 +35,19 @@ class CompetitionsController extends BaseController
     }
 
     /**
-     * Show a form to create a new competition
+     * Show all details for the competition
      *
      * @param  int $champId
+     * @param  int $competitionId
      * @return Response
      */
-    public function create($champId)
-    {
-        $championship = $this->champRepo->find($champId, ['competitions']);
-        $games = $this->gameRepo->dropdown();
-        $formats = $this->formatRepo->dropdown();
-        $platforms = $this->platformRepo->dropdown();
-        return $this->view('admin.register.games.create', compact('championship', 'games', 'formats', 'platforms'));
-    }
-
-    /**
-     * Attach a game to a competition
-     * @param  int $champId
-     * @return Response
-     */
-    public function store($champId)
-    {
-        // get the necessary inputs
-        $input = Input::only('game_id', 'platform_id', 'format_id', 'price', 'start');
-
-        // if the user setted a competition limit
-        if ( ! Input::get('limit_switch') && Input::get('limit'))
-        {
-            $input['limit'] = Input::get('limit');
-        }
-
-        // create the championship
-        if ( ! $this->champRepo->createCompetition($champId, $input))
-            return $this->redirectBack(['error' => $this->champRepo->getErrors()]);
-
-        // redirect back
-        return $this->redirectRoute('admin.register.games.index', [$champId]);
-
-    }
-
     public function show($champId, $competitionId)
     {
-        $championship = $this->champRepo->find($champId);
+        // I need to improve this code
+        $championship = $this->champRepo->find($champId, ['competitions.items.join.user']);
+
         $competition = $championship->competitions->find($competitionId);
 
         return $this->view('admin.championships.games.show', compact('championship', 'competition'));
-    }
-
-    public function destroy($champId, $competitionId)
-    {
-        $championship = $this->champRepo->getCompetition($champId, $competitionId);
-        $competition = $championship->competitions->first();
-
-        $competition->delete();
-
-        // redirect back
-        return $this->redirectRoute('admin.register.games.index', [$champId]);
     }
 }

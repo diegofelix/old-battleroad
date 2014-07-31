@@ -8,7 +8,7 @@
             <div class="container">
                 <h2>
                     Meus Campeonatos
-                    {{ link_to_route('admin.championships.create', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
+                    {{ link_to_route('admin.register.index', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
                 </h2>
             </div>
         </div>

@@ -1,95 +1,131 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has_moip'], function(){
-
-    // championship resource
-    Route::resource('championships', 'ChampionshipsController');
-
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has_moip'], function()
+{
     Route::get('register', [
         'as' => 'admin.register.index',
-        'uses' => 'RegisterController@index'
+        'uses' => 'Registration\RegisterController@index'
     ]);
 
     Route::post('register', [
         'as' => 'admin.register.store',
-        'uses' => 'RegisterController@store'
+        'uses' => 'Registration\RegisterController@store'
     ]);
 
     Route::group(['before' => 'championship_not_published'], function()
     {
-        // location
-        Route::get('register/{id}/location', [
-            'before' => 'championship_not_published',
+        /*
+         |---------------------------------------------------------------------
+         | Location Routes
+         |---------------------------------------------------------------------
+         |
+         */
+
+        Route::get('register/{register}/location', [
             'as' => 'admin.register.location',
-            'uses' => 'RegisterController@location'
+            'uses' => 'Registration\LocationController@create'
         ]);
 
-        // save location
-        Route::post('register/{id}/location', [
-            'before' => 'championship_not_published',
+        Route::post('register/{register}/location', [
             'as' => 'admin.register.storeLocation',
-            'uses' => 'RegisterController@storeLocation'
+            'uses' => 'Registration\LocationController@store'
         ]);
 
-        // nested resource games.
-        Route::resource('register.games', 'CompetitionsController');
+        /*
+         |---------------------------------------------------------------------
+         | Game Routes
+         |---------------------------------------------------------------------
+         |
+         */
 
-        // confirmation
-        Route::get('register/{id}/confirmation', [
+        Route::get('register/{register}/games', [
+            'as' => 'admin.register.games',
+            'uses' => 'Registration\CompetitionsController@index'
+        ]);
+
+        Route::get('register/{register}/games/create', [
+            'as' => 'admin.register.games.create',
+            'uses' => 'Registration\CompetitionsController@create'
+        ]);
+
+        Route::post('register/{register}/games/create', [
+            'as' => 'admin.register.games.store',
+            'uses' => 'Registration\CompetitionsController@store'
+        ]);
+
+        Route::post('register/{register}/games/{games}', [
+            'as' => 'admin.register.games.destroy',
+            'uses' => 'Registration\CompetitionsController@destroy'
+        ]);
+
+        /*
+         |---------------------------------------------------------------------
+         | Publish Routes
+         |---------------------------------------------------------------------
+         |
+         */
+
+        // confirm before publish
+        Route::get('register/{register}/confirmation', [
             'as' => 'admin.register.confirmation',
-            'uses' => 'RegisterController@confirmation'
+            'uses' => 'Registration\PublisherController@confirmation'
         ]);
 
         // publish a championship
-        Route::get('register/{id}/publish', [
+        Route::get('register/{register}/publish', [
             'as' => 'admin.register.publish',
-            'uses' => 'RegisterController@publish'
+            'uses' => 'Registration\PublisherController@publish'
         ]);
     });
 
-    /*// location
-    Route::get('championships/{id}/location', [
-            'as' => 'admin.championships.location',
-            'uses' => 'ChampionshipsController@location'
-    ]);
+    /*
+     |---------------------------------------------------------------------
+     | Manager Routes
+     |---------------------------------------------------------------------
+     |
+     | In this section are the routes the handle the championship after
+     | publication like, users joineds, games and etc.
+     |
+     */
 
-    // save location
-    Route::post('championships/{id}/location', [
-        'as' => 'admin.championships.storeLocation',
-        'uses' => 'ChampionshipsController@storeLocation'
-    ]);
+    Route::group(['before' => 'championship_published'], function()
+    {
+        Route::get('championships', [
+            'as' => 'admin.championships.index',
+            'uses' => 'ChampionshipsController@index'
+        ]);
 
-    // publish a championship
-    Route::get('championships/{id}/publish', [
-        'as' => 'admin.championships.publish',
-        'uses' => 'ChampionshipsController@publish'
-    ]);*/
+        Route::get('championships/{id}', [
+            'as' => 'admin.championships.show',
+            'uses' => 'ChampionshipsController@show'
+        ]);
 
-    // banner
-    Route::get('championships/{id}/banner', [
-        'as' => 'admin.championships.banner',
-        'uses' => 'ChampionshipsController@banner'
-    ]);
+        // banner
+        Route::get('championships/{id}/banner', [
+            'as' => 'admin.championships.banner',
+            'uses' => 'ChampionshipsController@banner'
+        ]);
 
-    // games
-    Route::get('championships/{id}/games', [
-        'as' => 'admin.championships.games',
-        'uses' => 'CompetitionsController@index'
-    ]);
+        // games
+        Route::get('championships/{id}/games', [
+            'as' => 'admin.championships.games',
+            'uses' => 'CompetitionsController@index'
+        ]);
 
-    Route::get('championships/{id}/games/{gameId}', [
-        'as' => 'admin.championships.games.show',
-        'uses' => 'CompetitionsController@show'
-    ]);
+        Route::get('championships/{id}/games/{gameId}', [
+            'as' => 'admin.championships.games.show',
+            'uses' => 'CompetitionsController@show'
+        ]);
 
-    // users in the championship
-    Route::get('championships/{id}/users', [
-        'as' => 'admin.championships.users',
-        'uses' => 'ChampionshipsController@users'
-    ]);
-    // feedback from users
-    Route::get('championships/{id}/feedback', [
-        'as' => 'admin.championships.feedback',
-        'uses' => 'ChampionshipsController@feedback'
-    ]);
+        // users in the championship
+        Route::get('championships/{id}/users', [
+            'as' => 'admin.championships.users',
+            'uses' => 'ChampionshipsController@users'
+        ]);
+        // feedback from users
+        Route::get('championships/{id}/feedback', [
+            'as' => 'admin.championships.feedback',
+            'uses' => 'ChampionshipsController@feedback'
+        ]);
+    });
 });

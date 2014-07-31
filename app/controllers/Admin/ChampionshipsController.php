@@ -32,33 +32,6 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show a form to edit a championship
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function edit($id)
-    {
-        $championship = $this->champRepo->find($id);
-        return $this->view('admin.championships.edit', compact('championship'));
-    }
-
-    /**
-     * Update the championship's information, in this case, only description
-     *
-     * @param  int $id
-     * @return Response
-     */
-    public function update($id)
-    {
-        if ( ! $this->champRepo->update($id, ['description' => Input::get('description')]))
-            return $this->redirectBack()->with('error', $this->champRepo->getErrors());
-
-        return $this->redirectRoute('admin.championships.show', [$id])
-            ->with('message', 'Informações atualizadas!');
-    }
-
-    /**
      * Manage the championship
      *
      * @param int $id
@@ -70,6 +43,12 @@ class ChampionshipsController extends BaseController {
         return $this->view('admin.championships.show', compact('championship'));
     }
 
+    /**
+     * Show the banner of the championship
+     *
+     * @param  int $id
+     * @return Response
+     */
     public function banner($id)
     {
         $championship = $this->champRepo->find($id);

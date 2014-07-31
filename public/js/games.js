@@ -1,1 +1,1 @@
-$("document").ready(function(){var e=new Date,t=new Date(e.getFullYear(),e.getMonth(),e.getDate(),0,0,0,0);console.log(t),$("#event_start").datepicker({format:"dd/mm/yyyy",autoclose:!0,onRender:function(e){return e.valueOf()<t.valueOf()?"disabled":""}}),$("#limit-switch").on("click",function(){$("#limit-input").toggleClass("hide")})});
+$("document").ready(function(){$("#event_start").inputmask("d/m/y",{placeholder:"dd/mm/aaaa"}),$("#limit-switch").on("click",function(){$("#limit-input").toggleClass("hide")})});

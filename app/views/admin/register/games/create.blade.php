@@ -84,6 +84,7 @@
 
 @stop
 @section('scripts')
-    {{ HTML::script('js/bootstrap-datepicker.js') }}
+    {{ HTML::script('js/jquery-input-mask.js') }}
+    {{ HTML::script('js/jquery-input-mask-date.js') }}
     {{ HTML::script('js/games.js') }}
 @stop

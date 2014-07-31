@@ -1,1 +1,1 @@
-$(document).ready(function(){$("#champ-info .content").hide(),$(".show-hide").on("click",function(){$this=$(this),$this.find(".icon").toggleClass("icon-caret-up"),$this.find(".content").toggle()})});
+$(document).ready(function(){$("#event_start").inputmask("d/m/y",{placeholder:"dd/mm/aaaa"})});

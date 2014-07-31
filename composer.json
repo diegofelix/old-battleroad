@@ -8,7 +8,7 @@
 		"artdarek/oauth-4-laravel": "dev-master",
 		"camcima/moip-php": "dev-master",
 		"intervention/image": "1.*",
-		"laracasts/commander": "1.1.*",
+		"laracasts/commander": "1.*",
 		"laracasts/validation": "1.1.*",
 		"laracasts/presenter": "0.1.*"
 	},
@@ -24,9 +24,7 @@
 			"app/database/seeds",
 			"app/tests/TestCase.php"
 		],
-		"files": [
-			"app/helpers.php"
-		],
+		"files": ["app/helpers.php"],
 		"psr-4": {
 			"Champ\\": "app/Champ"
 		}
