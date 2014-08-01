@@ -54,4 +54,17 @@ class ChampionshipsController extends BaseController {
         $championship = $this->champRepo->find($id);
         return $this->view('admin.championships.banner', compact('championship'));
     }
+
+    /**
+     * Show all users that joined the championship
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function users($id)
+    {
+        $championship = $this->champRepo->find($id, ['joins.user']);
+
+        return $this->view('admin.championships.users', compact('championship'));
+    }
 }

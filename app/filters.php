@@ -36,10 +36,6 @@ App::after(function($request, $response)
 Route::filter('auth', function()
 {
     if (Auth::guest()) return Redirect::guest('login');
-
-    // if the user is logged in, then he can use the context.
-    $context = App::make('Champ\Contexts\Core\ContextInterface');
-    $context->set(Auth::user());
 });
 
 
