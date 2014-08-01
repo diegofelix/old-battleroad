@@ -53,10 +53,7 @@
                     <div class="champ-inner">
                         <h3>Filtros</h3>
                         <ul>
-                            <li>Street Fighter</li>
-                            <li>The king of fighters</li>
-                            <li>Smash Bros</li>
-                            <li>Marvel vs Capcom</li>
+                            @include('championships.partials.filters')
                         </ul>
                     </div><!-- champ-inner -->
                 </a>

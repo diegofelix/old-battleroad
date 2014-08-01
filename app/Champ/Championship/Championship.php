@@ -48,6 +48,16 @@ class Championship extends Eloquent
     }
 
     /**
+     * Relation with joins
+     *
+     * @return HasMany
+     */
+    public function joins()
+    {
+        return $this->hasMany('Champ\Join\Join');
+    }
+
+    /**
      * Relation with competition
      *
      * @return HasMany

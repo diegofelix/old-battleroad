@@ -26,8 +26,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function featured()
     {
-        return $this->model->with('user')
-            ->wherePublished(true)
+        return $this->model->wherePublished(true)
             ->orderBy('event_start', 'desc')
             ->paginate();
     }
@@ -42,7 +41,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     {
         $championship = $this->model->find($id);
 
-        $championship->published = 1;
+        $championship->published = true;
 
         return $championship->save();
     }
@@ -87,6 +86,22 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championship = $this->model->find($champId);
 
         return $championship->competitions()->find($competitionId);
+    }
+
+    public function getAvailableCompetitions()
+    {
+        $competitions = [];
+        $championships = $this->model->with('competitions.game')->where('published', 1)->get();
+
+        foreach($championships as $champ)
+        {
+            foreach ($champ->competitions as $competition)
+            {
+                $competitions[] = $competition->game->name;
+            }
+        }
+
+        return array_unique($competitions);
     }
 
     /**

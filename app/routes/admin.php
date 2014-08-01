@@ -122,6 +122,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has
             'as' => 'admin.championships.users',
             'uses' => 'ChampionshipsController@users'
         ]);
+
         // feedback from users
         Route::get('championships/{id}/feedback', [
             'as' => 'admin.championships.feedback',
