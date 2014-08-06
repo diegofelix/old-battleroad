@@ -24,11 +24,22 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      *
      * @return Paginator
      */
-    public function featured()
+    public function featured($game = null)
     {
-        return $this->model->wherePublished(true)
-            ->orderBy('event_start', 'desc')
-            ->paginate();
+        $query = $this->model->wherePublished(true);
+
+        if ($game)
+        {
+            $query->whereHas('competitions', function($q) use ($game)
+            {
+                $q->whereHas('game', function($g) use ($game)
+                {
+                    $g->where('name', '=', $game);
+                });
+            });
+        }
+
+        return $query->orderBy('event_start', 'desc')->paginate();
     }
 
     /**
