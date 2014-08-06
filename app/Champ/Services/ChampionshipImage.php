@@ -14,7 +14,7 @@ class ChampionshipImage extends ImageUploader
      *
      * @var integer
      */
-    protected $width = 1170;
+    protected $width = 1140;
     protected $thumbWidth = 300;
 
     /**

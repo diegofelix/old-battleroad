@@ -3,6 +3,7 @@
 use Laracasts\Presenter\Presenter;
 use Champ\Championship\Championship;
 use Config;
+use Michelf\Markdown;
 
 class ChampionshipPresenter extends Presenter
 {
@@ -38,5 +39,25 @@ class ChampionshipPresenter extends Presenter
     public function shortDescription()
     {
         return substr($this->description, 0, 160) . '...' ;
+    }
+
+    /**
+     * Return a text transformed to markdown
+     *
+     * @return string
+     */
+    public function markdownDescription()
+    {
+        return $this->getMarkdown()->defaultTransform($this->description);
+    }
+
+    /**
+     * Instantiate a Markdown parser
+     *
+     * @return Markdown
+     */
+    private function getMarkdown()
+    {
+        return new Markdown;
     }
 }

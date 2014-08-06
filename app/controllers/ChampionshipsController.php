@@ -25,7 +25,8 @@ class ChampionshipsController extends BaseController {
      */
     public function index()
     {
-        $championships = $this->champRepo->featured();
+        $game = Input::get('game');
+        $championships = $this->champRepo->featured($game);
 
         return $this->view('championships.index', compact('championships'));
     }
