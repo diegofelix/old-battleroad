@@ -36,10 +36,10 @@
                                         -->
                                         <section class="info">
                                             <a href="#" class="time-left">
-                                                <i class="icon icon-calendar"></i> {{ $champ->present()->days_left }}
+                                                <i class="icon icon-calendar"></i> {{ $champ->present()->daysLeft }}
                                             </a>
                                             <a href="#" class="price">
-                                                <small>R$</small> <strong>{{ $champ->price }}</strong>
+                                                <strong>{{ $champ->present()->userPrice }}</strong>
                                             </a>
                                         </section>
                                     </div><!-- champ-inner -->

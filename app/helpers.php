@@ -72,3 +72,19 @@ if ( ! function_exists('icon_link'))
 		return '<a href="' . $link . '">' . '<i class="icon icon-' . $icon . '"> </i> ' . $name . '</a>';
 	}
 }
+
+if ( ! function_exists('apply_rate'))
+{
+	/**
+	 * Apply a rate to a price
+	 *
+	 * @param  int $price
+	 * @param  float $rate
+	 * @return float
+	 */
+	function apply_rate($price, $rate)
+	{
+		$rate = 1 + ($rate / 100 );
+		return $price * $rate;
+	}
+}

@@ -36,7 +36,7 @@ class RegisterController extends BaseRegistrationController {
 
         $championship = $this->execute($command);
 
-        return $this->redirectRoute('admin.register.location.index', [$championship->id]);
+        return $this->redirectRoute('admin.register.location', [$championship->id]);
     }
 
 }

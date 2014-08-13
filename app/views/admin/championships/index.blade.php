@@ -26,7 +26,7 @@
                         <section class="champ-infos">
                             <div class="info">
                                 <strong>Preço: </strong>
-                                {{ $champ->price }}
+                                {{ $champ->present()->userPrice }}
                             </div>
                         </section>
                     </div><!-- champ -->
