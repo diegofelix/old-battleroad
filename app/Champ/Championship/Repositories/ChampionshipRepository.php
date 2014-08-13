@@ -7,6 +7,7 @@ use Champ\Contexts\Core\ContextInterface;
 use Champ\Championship\Competition;
 use App;
 use Auth;
+use Config;
 
 class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
 
@@ -78,9 +79,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         }
 
         // save only the inputs specifieds in the form.
-        $championship->location = $input['location'];
-        $championship->price    = $input['price'];
-        $championship->limit    = $input['limit'];
+        $championship->location         = $input['location'];
+        $championship->price            = $this->updatePrice($input['price']);
+        $championship->original_price   = $data['price'];
+        $championship->limit            = $input['limit'];
 
         return $championship->save();
     }
@@ -136,6 +138,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // set the limit for the competition
         $data['limit'] = $this->updateLimitValues($championship, $data);
+
+        // updates the price.
+        $data['price']          = $this->updatePrice($data['price']);
+        $data['original_price'] = $data['price'];
 
         // create a new Competition
         $competition = new Competition($data);
@@ -226,6 +232,17 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // if came here, then return himself.
         return $data['limit'];
+    }
+
+    /**
+     * Apply our rate to the price
+     *
+     * @param  int $price
+     * @return float
+     */
+    public function updatePrice($price)
+    {
+        return apply_rate($price, Config::get('champ.rate'));
     }
 
 }

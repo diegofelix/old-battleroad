@@ -40,7 +40,7 @@
                     <div class="col-md-9">
                         {{ Form::file('image', ['id' => 'image']) }}
                         <span class="help-block">
-                            A imagem será cortada para 700x400, então é recomendado que já nos envie com esse tamanho pra melhor visualização.
+                            É recomendado que você envie uma imagem de 1140x300 pixels, pois esse é o tamanho que mostraremos aos seus competidores.
                         </span>
                     </div>
                 </div>

@@ -47,7 +47,7 @@
                                         <td>{{{ $competition->format->name }}}</td>
                                         <td>{{{ $competition->platform->name }}}</td>
                                         <td>{{{ $competition->limit }}} Restantes</td>
-                                        <td>R${{{ $competition->price }}}</td>
+                                        <td>{{ $competition->present()->userPrice }}</td>
                                     </tr>
                                 @endforeach
                             </tbody>
@@ -61,7 +61,7 @@
                         <ul class="list-group">
                             <li class="list-group-item">Av Engenheiro Armando de Arruda Pereira, 1370, Jabaquara SP</li>
                             <li class="list-group-item"><strong>{{{ $championship->limit }}}</strong> Vagas restantes</li>
-                            <li class="list-group-item">R${{{ $championship->price }}} por pessoa</li>
+                            <li class="list-group-item">{{ $championship->present()->userPrice }}</li>
                             <li class="list-group-item">{{{ $championship->present()->daysLeft }}}</li>
                         </ul>
                         <div class="panel-body">

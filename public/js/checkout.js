@@ -1,0 +1,1 @@
+$("document").ready(function(){var t=$("#totalprice");$(".input-competition").click(function(){var i=$(this).data("price");$(this).is(":checked")||(i=-1*i);var c=parseFloat(t.text())+i;t.text(c)})});

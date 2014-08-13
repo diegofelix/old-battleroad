@@ -11,7 +11,7 @@ class EventingServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $listeners = $this->app['config']->get('battleroad.listeners');
+        $listeners = $this->app['config']->get('champ.listeners');
 
         foreach ($listeners as $listener)
         {

@@ -2,11 +2,14 @@
 
 use Laracasts\Presenter\Presenter;
 use Champ\Championship\Championship;
+use Champ\Traits\UserPrice;
 use Config;
 use Michelf\Markdown;
 
 class ChampionshipPresenter extends Presenter
 {
+    use UserPrice;
+
     /**
      * Return the date with diff for humans translated to pt-br
      *

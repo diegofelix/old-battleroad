@@ -3,10 +3,12 @@
 use Eloquent;
 use Carbon\Carbon;
 use Laracasts\Presenter\PresentableTrait;
+use Champ\Traits\FormatToDb;
 
 class Championship extends Eloquent
 {
     use PresentableTrait;
+    use FormatToDb;
 
     /**
      * Championship presenter
@@ -88,6 +90,27 @@ class Championship extends Eloquent
     }
 
     /**
+     * Convert the price to cents
+     *
+     * @param int $value
+     */
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value * 100;
+    }
+
+    /**
+     * Get the price in cents and transforms to real
+     *
+     * @param  int $value
+     * @return float
+     */
+    public function getPriceAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
      * Check if Championship was published
      *
      * @param  int $id
@@ -97,7 +120,5 @@ class Championship extends Eloquent
     {
         return self::find($id)->published == 1;
     }
-
-    use \Champ\Traits\FormatToDb;
 
 }

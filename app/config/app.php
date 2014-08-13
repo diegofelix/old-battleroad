@@ -120,7 +120,8 @@ return array(
 		'Way\Generators\GeneratorsServiceProvider',
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
-		'Laracasts\Validation\ValidationServiceProvider'
+		'Laracasts\Validation\ValidationServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 	),
 
 	/*

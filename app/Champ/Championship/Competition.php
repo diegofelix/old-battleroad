@@ -1,6 +1,7 @@
 <?php namespace Champ\Championship;
 
 use Eloquent;
+use Laracasts\Presenter\PresentableTrait;
 
 class Competition extends Eloquent
 {
@@ -10,6 +11,15 @@ class Competition extends Eloquent
      * @var array
      */
     protected $guarded = ['id'];
+
+    /**
+     * Competition presenter
+     *
+     * @var string
+     */
+    protected $presenter = 'Champ\Presenters\CompetitionPresenter';
+
+    use PresentableTrait;
 
     /**
      * Relation with Championship
@@ -78,6 +88,27 @@ class Competition extends Eloquent
     public function getStartAttribute($value)
     {
         return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
+    }
+
+    /**
+     * Convert the price to cents
+     *
+     * @param int $value
+     */
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value * 100;
+    }
+
+    /**
+     * Get the price in cents and transforms to real
+     *
+     * @param  int $value
+     * @return float
+     */
+    public function getPriceAttribute($value)
+    {
+        return $value / 100;
     }
 
 

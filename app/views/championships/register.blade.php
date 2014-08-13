@@ -25,7 +25,7 @@
                     <tbody>
                         <tr>
                             <td><input type="checkbox" value="1" checked="checked" readonly="readonly" /> Entrada</td>
-                            <td>{{ $championship->price }}</td>
+                            <td>{{ $championship->present()->userPrice }}</td>
                         </tr>
                         @foreach ($championship->competitions as $competition)
                             <?php
@@ -40,7 +40,7 @@
                             ?>
                             <tr>
                                 <td><input type="checkbox" name="competitions[]" value="{{ $competition->game_id }}" /> {{ $competition->game->name }}</td>
-                                <td>{{ $competition->price }}</td>
+                                <td>{{ $competition->present()->userPrice }}</td>
                             </tr>
                         @endforeach
                         <tr>

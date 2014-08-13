@@ -15,7 +15,7 @@
         <dt>Entrada</dt>
         <dd>
             @if ($championship->price)
-                R$ {{ $championship->price }},00
+                R$ {{ $championship->present()->userPrice }},00
             @else
                 Gratuita
             @endif
