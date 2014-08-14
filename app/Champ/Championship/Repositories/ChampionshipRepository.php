@@ -81,7 +81,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         // save only the inputs specifieds in the form.
         $championship->location         = $input['location'];
         $championship->price            = $this->updatePrice($input['price']);
-        $championship->original_price   = $data['price'];
+        $championship->original_price   = $input['price'];
         $championship->limit            = $input['limit'];
 
         return $championship->save();
