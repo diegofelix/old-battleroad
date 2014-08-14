@@ -85,7 +85,7 @@ class ChampionshipsController extends BaseController {
             'token' => getenv('MOIP_TOKEN')
         ));
 
-        $moip->setUniqueID(false);
+        $moip->setUniqueID($join->id);
         $moip->setReason('Pagamento: ' . $join->championship->name);
         $moip->addComission(
             'Valor líquido',
@@ -106,8 +106,6 @@ class ChampionshipsController extends BaseController {
         $moip->send();
 
         $answer = $moip->getAnswer();
-
-        dd($answer);
 
         return ( ! $answer->error)
             ? $this->redirectTo($answer->payment_url)
