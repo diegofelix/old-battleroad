@@ -85,11 +85,11 @@ class ChampionshipsController extends BaseController {
             'token' => getenv('MOIP_TOKEN')
         ));
 
-        $moip->setUniqueID($join->id);
+        $moip->setUniqueID(false);
         $moip->setReason('Pagamento: ' . $join->championship->name);
         $moip->addComission(
             'Valor líquido',
-            Auth::user()->moip_user,
+            Auth::user()->profile->moip_user,
             Config::get('champ.rate'),
             true,
             false
@@ -106,6 +106,8 @@ class ChampionshipsController extends BaseController {
         $moip->send();
 
         $answer = $moip->getAnswer();
+
+        dd($answer);
 
         return ( ! $answer->error)
             ? $this->redirectTo($answer->payment_url)
