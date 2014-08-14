@@ -1,6 +1,7 @@
 <?php
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Join\Repositories\JoinRepositoryInterface;
 use Moip\Moip;
 //use Champ\Billing\Core\BillingInterface
 
@@ -13,9 +14,15 @@ class ChampionshipsController extends BaseController {
      */
     protected $champRepo;
 
-    public function __construct(ChampionshipRepositoryInterface $champRepo)
+    protected $joinRepository;
+
+    public function __construct(
+        ChampionshipRepositoryInterface $champRepo,
+        JoinRepositoryInterface $joinRepository
+    )
     {
         $this->champRepo = $champRepo;
+        $this->joinRepository = $joinRepository;
     }
 
     /**
@@ -62,16 +69,13 @@ class ChampionshipsController extends BaseController {
      *
      * @return Response
      */
-    public function payment()
+    public function payment($id)
     {
         // get the championship
-        $championship = $this->champRepo->find(Input::get('id'));
-
-        // get the competitions registered
-        $competitions = Input::get('competitions');
+        $join = $this->joinRepository->find($id, ['championship', 'items.competition']);
 
         // total price
-        $total = $championship->price;
+        $total = $join->price;
 
         // moips things
         $moip = new Moip();
@@ -81,23 +85,20 @@ class ChampionshipsController extends BaseController {
             'token' => getenv('MOIP_TOKEN')
         ));
 
-        $moip->setUniqueID(false);
-        $moip->setReason('Pagamento: ' . $championship->name);
+        $moip->setUniqueID($join->id);
+        $moip->setReason('Pagamento: ' . $join->championship->name);
         $moip->addComission(
             'Valor líquido',
-            'diegoflx.oliveira@gmail.com',
-            getenv('BILLING_COMISSION'),
-            getenv('BILLING_PERCENT'),
-            getenv('BILLING_RATE')
+            Auth::user()->moip_user,
+            Config::get('champ.rate'),
+            true,
+            false
         );
-        $moip->addMessage('Entrada para o campeonato');
-        foreach ($championship->competitions as $competition)
+        $moip->addMessage('Entrada: ' . $join->championship->name);
+        foreach ($join->items as $item)
         {
-            if (in_array($competition->game_id, $competitions))
-            {
-                $moip->addMessage('Inscrição: ' . $competition->game->name);
-                $total += $competition->price;
-            }
+            $moip->addMessage('Inscrição: ' . $item->competition->game->name);
+            $total += $item->price;
         }
 
         $moip->setValue($total);
@@ -120,5 +121,10 @@ class ChampionshipsController extends BaseController {
             ? $this->redirectTo($answer->payment_url)
             : $this->redirectTo('/', ['error' => $answer->error]);
         */
+    }
+
+    public function moipReturn()
+    {
+        dd(Input::all());
     }
 }
