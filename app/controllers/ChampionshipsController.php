@@ -84,7 +84,6 @@ class ChampionshipsController extends BaseController {
             'key' => getenv('MOIP_KEY'),
             'token' => getenv('MOIP_TOKEN')
         ));
-
         $moip->setUniqueID($join->id);
         $moip->setReason('Pagamento: ' . $join->championship->name);
         $moip->addComission(
