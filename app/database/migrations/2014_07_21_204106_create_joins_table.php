@@ -33,7 +33,7 @@ class CreateJoinsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('subscriptions');
+		Schema::drop('joins');
 	}
 
 }
