@@ -19,7 +19,7 @@
         <div class="form-group">
             {{ Form::label('platform', 'Plataforma') }}
             <div class="input-group col-md-5">
-                {{ Form::select('platform_id', $formats, 1, ['id' => 'platform', 'class' => 'form-control']) }}
+                {{ Form::select('platform_id', $formats, null, ['id' => 'platform', 'class' => 'form-control']) }}
             </div>
             <span class="help-block">
                 Não sabe o que significa cada formato? <a href="#">saiba aqui!</a>
@@ -29,7 +29,7 @@
         <div class="form-group">
             {{ Form::label('format', 'Formato') }}
             <div class="input-group col-md-5">
-                {{ Form::select('format_id', $platforms, 1, ['id' => 'format', 'class' => 'form-control']) }}
+                {{ Form::select('format_id', $platforms, null, ['id' => 'format', 'class' => 'form-control']) }}
             </div>
         </div>
 
