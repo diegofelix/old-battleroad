@@ -86,6 +86,7 @@ class ChampionshipsController extends BaseController {
         ));
         $moip->setUniqueID('p'.$join->id);
         $moip->setReason('Pagamento: ' . $join->championship->name);
+        /*
         $moip->addComission(
             'Valor líquido',
             $join->championship->user->profile->moip_user,
@@ -93,6 +94,7 @@ class ChampionshipsController extends BaseController {
             true,
             false
         );
+        */
         $moip->addMessage('Entrada: ' . $join->championship->name);
         foreach ($join->items as $item)
         {
@@ -109,17 +111,6 @@ class ChampionshipsController extends BaseController {
         return ( ! $answer->error)
             ? $this->redirectTo($answer->payment_url)
             : $this->redirectTo('/', ['error' => $answer->error]);
-
-        /*
-        $championship = $this->champRepo->find($id);
-
-        $billing = App::make('Champ\Billing\Core\BillingInterface');
-        $answer = $billing->pay($championship, Auth::user());
-
-        return ( ! $answer->error)
-            ? $this->redirectTo($answer->payment_url)
-            : $this->redirectTo('/', ['error' => $answer->error]);
-        */
     }
 
     public function moipReturn()

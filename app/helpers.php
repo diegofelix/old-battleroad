@@ -76,7 +76,11 @@ if ( ! function_exists('icon_link'))
 if ( ! function_exists('apply_rate'))
 {
 	/**
-	 * Apply a rate to a price
+	 * Apply a rate to a price.
+	 *
+	 * The calcule is a follow:
+	 * If the user input 20, what the number that, applying our 10% ( for example ) rate, results in 20?
+	 * In this case is 22, 10% of 20 is 2.
 	 *
 	 * @param  int $price
 	 * @param  float $rate
@@ -84,7 +88,6 @@ if ( ! function_exists('apply_rate'))
 	 */
 	function apply_rate($price, $rate)
 	{
-		$rate = 1 + ($rate / 100 );
-		return $price * $rate;
+		return ($price / 100) * (100 + $rate);
 	}
 }
