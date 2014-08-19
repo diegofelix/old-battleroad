@@ -86,15 +86,7 @@ class ChampionshipsController extends BaseController {
         ));
         $moip->setUniqueID('p'.$join->id);
         $moip->setReason('Pagamento: ' . $join->championship->name);
-        /*
-        $moip->addComission(
-            'Valor líquido',
-            $join->championship->user->profile->moip_user,
-            100 - Config::get('champ.rate'), // 91%
-            true,
-            false
-        );
-        */
+
         $moip->addMessage('Entrada: ' . $join->championship->name);
         foreach ($join->items as $item)
         {

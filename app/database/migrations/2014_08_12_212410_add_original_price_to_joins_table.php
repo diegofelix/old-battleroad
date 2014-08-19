@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddOriginalPriceToChampionshipsTable extends Migration {
+class AddOriginalPriceToJoinsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class AddOriginalPriceToChampionshipsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('championships', function(Blueprint $table)
+		Schema::table('joins', function(Blueprint $table)
 		{
 			$table->integer('original_price')->after('price');
 		});
@@ -26,7 +26,7 @@ class AddOriginalPriceToChampionshipsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('championships', function(Blueprint $table)
+		Schema::table('joins', function(Blueprint $table)
 		{
 			$table->dropColumn('original_price');
 		});
