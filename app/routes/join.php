@@ -14,3 +14,11 @@ Route::get('join/{id}', [
     'as' => 'join.show',
     'uses' => 'JoinController@show'
 ]);
+
+Route::get('payment/{id}', [
+    'as' => 'payment',
+    'uses' => 'JoinController@payment'
+]);
+
+// nasp
+Route::post('moip', 'JoinController@nasp');

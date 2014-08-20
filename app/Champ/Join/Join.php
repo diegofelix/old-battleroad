@@ -36,6 +36,16 @@ class Join extends Eloquent
     }
 
     /**
+     * Relation with Status
+     *
+     * @return BelongsTo
+     */
+    public function status()
+    {
+        return $this->belongsTo('Champ\Join\Status');
+    }
+
+    /**
      * Create a new Join
      *
      * @param  int $user_id
@@ -44,7 +54,8 @@ class Join extends Eloquent
      */
     public static function register($user_id, $championship_id, $price)
     {
-        $join = new static(compact('user_id', 'championship_id', 'price'));
+        $status_id = 2; // Initiated
+        $join = new static(compact('user_id', 'championship_id', 'price', 'status_id'));
 
         $join->raise(new UserJoined($join));
 

@@ -2,7 +2,7 @@
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Moip\Moip;
+use Champ\Billing\Moip\MoipBilling;
 //use Champ\Billing\Core\BillingInterface
 
 class ChampionshipsController extends BaseController {
@@ -14,15 +14,29 @@ class ChampionshipsController extends BaseController {
      */
     protected $champRepo;
 
+    /**
+     * Join Repository
+     *
+     * @var JoinRepositoryInterface
+     */
     protected $joinRepository;
+
+    /**
+     * Billing
+     *
+     * @var Billing
+     */
+    protected $billing;
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
-        JoinRepositoryInterface $joinRepository
+        JoinRepositoryInterface $joinRepository,
+        MoipBilling $billing
     )
     {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
+        $this->billing = $billing;
     }
 
     /**
@@ -62,51 +76,5 @@ class ChampionshipsController extends BaseController {
         $championship = $this->champRepo->find($id);
 
         return $this->view('championships.register', compact('championship'));
-    }
-
-    /**
-     * Payment
-     *
-     * @return Response
-     */
-    public function payment($id)
-    {
-        // get the championship
-        $join = $this->joinRepository->find($id, ['championship', 'items.competition']);
-
-        // total price
-        $total = $join->price;
-
-        // moips things
-        $moip = new Moip();
-        $moip->setEnvironment('test');
-        $moip->setCredential(array(
-            'key' => getenv('MOIP_KEY'),
-            'token' => getenv('MOIP_TOKEN')
-        ));
-        $moip->setUniqueID('p'.$join->id);
-        $moip->setReason('Pagamento: ' . $join->championship->name);
-
-        $moip->addMessage('Entrada: ' . $join->championship->name);
-        foreach ($join->items as $item)
-        {
-            $moip->addMessage('Inscrição: ' . $item->competition->game->name);
-            $total += $item->price;
-        }
-
-        $moip->setValue($total);
-        $moip->validate('Basic');
-        $moip->send();
-
-        $answer = $moip->getAnswer();
-
-        return ( ! $answer->error)
-            ? $this->redirectTo($answer->payment_url)
-            : $this->redirectTo('/', ['error' => $answer->error]);
-    }
-
-    public function moipReturn()
-    {
-        dd(Input::all());
     }
 }
