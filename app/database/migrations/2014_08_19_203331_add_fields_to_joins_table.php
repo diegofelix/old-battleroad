@@ -14,7 +14,7 @@ class AddFieldsToJoinsTable extends Migration {
 	{
 		Schema::table('joins', function(Blueprint $table)
 		{
-			$table->integer('status_id')->after('original_price');
+			$table->integer('status_id')->after('price');
 			$table->string('token')->after('status_id');
 		});
 	}

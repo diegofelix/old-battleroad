@@ -43,7 +43,14 @@
             </table>
 
             <div class="well well-lg">
-                <h4>Status do Pagamento: <span class="label label-info"> Em Análise</span></h4>
+                <h4>
+                    Status do Pagamento: <span class="label label-info">{{ $join->status->name }}</span>
+                    @if ( $join->status_id != 2)
+                        <br><small>
+                            {{ $join->status->description }}
+                        </small>
+                    @endif
+                </h4>
             </div>
 
             {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-primary']) }}

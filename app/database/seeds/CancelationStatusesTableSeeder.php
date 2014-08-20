@@ -36,10 +36,11 @@ class CancelationStatusesTableSeeder extends Seeder {
 
         DB::table('cancelation_statuses')->insert([
             'id' => 6,
-            'name' => 'Transação duplicadaEsse pagamento já foi realizado. Caso não encontre nenhuma referência ao pagamento anterior, por favor entre em contato com o nosso Atendimento.',
-            'description' => 'DB::table('cancelation_statuses')->insert(['
+            'name' => 'Transação duplicada',
+            'description' => 'Esse pagamento já foi realizado. Caso não encontre nenhuma referência ao pagamento anterior, por favor entre em contato com o nosso Atendimento.'
         ]);
 
+        DB::table('cancelation_statuses')->insert([
             'id' => 7,
             'name' => 'Política do Moip',
             'description' => 'O pagamento não foi autorizado. Para mais informações, entre em contato com o nosso atendimento.'

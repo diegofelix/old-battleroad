@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddOriginalPriceToItemsTable extends Migration {
+class AddOriginalPriceToCompetitionsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,7 +12,7 @@ class AddOriginalPriceToItemsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('items', function(Blueprint $table)
+		Schema::table('competitions', function(Blueprint $table)
 		{
 			$table->integer('original_price')->after('price');
 		});
@@ -26,7 +26,7 @@ class AddOriginalPriceToItemsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('items', function(Blueprint $table)
+		Schema::table('competitions', function(Blueprint $table)
 		{
 			$table->dropColumn('original_price');
 		});
