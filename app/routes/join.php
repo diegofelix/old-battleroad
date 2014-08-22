@@ -1,24 +1,26 @@
 <?php
+Route::group(['before' => 'auth'], function()
+{
+    Route::get('join/create/{id}', [
+        'as' => 'join.create',
+        'uses' => 'JoinController@index',
+    ]);
 
-Route::get('join/create/{id}', [
-    'as' => 'join.create',
-    'uses' => 'JoinController@index',
-]);
+    Route::post('join/register', [
+        'as' => 'join.register',
+        'uses' => 'JoinController@register'
+    ]);
 
-Route::post('join/register', [
-    'as' => 'join.register',
-    'uses' => 'JoinController@register'
-]);
+    Route::get('join/{id}', [
+        'as' => 'join.show',
+        'uses' => 'JoinController@show'
+    ]);
 
-Route::get('join/{id}', [
-    'as' => 'join.show',
-    'uses' => 'JoinController@show'
-]);
-
-Route::get('payment/{id}', [
-    'as' => 'payment',
-    'uses' => 'JoinController@payment'
-]);
+    Route::get('payment/{id}', [
+        'as' => 'payment',
+        'uses' => 'JoinController@payment'
+    ]);
+});
 
 // nasp
 Route::post('moip', 'JoinController@nasp');

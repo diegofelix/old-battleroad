@@ -45,7 +45,7 @@
             <div class="well well-lg">
                 <h4>
                     Status do Pagamento: <span class="label label-info">{{ $join->status->name }}</span>
-                    @if ( $join->status_id != 2)
+                    @if ( $join->status_id != 2) {{-- 2 = Initiated --}}
                         <br><small>
                             {{ $join->status->description }}
                         </small>
