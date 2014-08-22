@@ -129,7 +129,7 @@ class JoinController extends BaseController
             $forma_pagamento,
             $tipo_pagamento,
             $parcelas,
-            $mail_consumidor,
+            $email_consumidor,
             $classificacao
         );
 
