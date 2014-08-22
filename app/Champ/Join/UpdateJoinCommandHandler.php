@@ -19,12 +19,12 @@ class UpdateJoinCommandHandler implements CommandHandler {
 
     public function __construct(JoinRepositoryInterface $joinRepo)
     {
-        $this->JoinRepo = $joinRepo;
+        $this->joinRepo = $joinRepo;
     }
 
     public function handle($command)
     {
-        $join = $this->joinRepo->find($command->id);
+        $join = $this->joinRepo->find(str_replace('BRT', '', $command->id));
 
         $join->status_id        = $command->statusId;
         $join->cancelation_id   = $command->cancelationId;
