@@ -24,7 +24,7 @@ class UpdateJoinCommandHandler implements CommandHandler {
 
     public function handle($command)
     {
-        $join = $this->joinRepo->find(str_replace('BRT', '', $command->id));
+        $join = $this->joinRepo->find(str_replace('BTR', '', $command->id));
 
         $join->status_id        = $command->statusId;
         $join->cancelation_id   = $command->cancelationId;
