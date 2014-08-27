@@ -5,6 +5,8 @@ use Laracasts\Presenter\PresentableTrait;
 
 class Competition extends Eloquent
 {
+    use PresentableTrait;
+
     /**
      * Allow all other fields to be mass assigned
      *
@@ -18,8 +20,6 @@ class Competition extends Eloquent
      * @var string
      */
     protected $presenter = 'Champ\Presenters\CompetitionPresenter';
-
-    use PresentableTrait;
 
     /**
      * Relation with Championship
@@ -107,6 +107,27 @@ class Competition extends Eloquent
      * @return float
      */
     public function getPriceAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
+     * Convert the original price to cents
+     *
+     * @param int $value
+     */
+    public function setOriginalPriceAttribute($value)
+    {
+        $this->attributes['original_price'] = $value * 100;
+    }
+
+    /**
+     * Get the original price in cents and transforms to real
+     *
+     * @param  int $value
+     * @return float
+     */
+    public function getOriginalPriceAttribute($value)
     {
         return $value / 100;
     }

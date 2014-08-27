@@ -44,7 +44,7 @@
                                 <td>{{ $competition->platform->name }}</td>
                                 <td>{{ $competition->format->name }}</td>
                                 <td>{{ $competition->present()->userPrice }}</td>
-                                <td>{{ $competition->limit }} Restantes</td>
+                                <td>{{ $competition->present()->trueLimit }} Restantes</td>
                             </tr>
                         @endforeach
                         <tr>

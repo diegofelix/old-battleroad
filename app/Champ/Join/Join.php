@@ -63,6 +63,44 @@ class Join extends Eloquent
     }
 
     /**
+     * Convert the price to cents
+     *
+     * @param int $value
+     */
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = $value * 100;
+    }
+
+    /**
+     * Get the price in cents and transforms to real
+     *
+     * @param  int $value
+     * @return float
+     */
+    public function getPriceAttribute($value)
+    {
+        return $value / 100;
+    }
+
+    /**
+     * Check if the user joined a free championship or not
+     *
+     * @return boolean
+     */
+    public function isFree()
+    {
+        if ( ! empty($this->price)) return false;
+
+        foreach ($this->items as $item)
+        {
+            if ( ! empty($item->price)) return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Add an item to the Join
      *
      * @param int $competitionId

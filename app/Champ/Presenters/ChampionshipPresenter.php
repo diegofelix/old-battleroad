@@ -31,7 +31,7 @@ class ChampionshipPresenter extends Presenter
         $plural = ($days > 1) ? 's' : '';
 
         // finaly return the formatted date
-        return "{$days} Dia{$plural} restante{$plural}";
+        return "{$days} Dia{$plural} para o início do campeonato.";
     }
 
     /**

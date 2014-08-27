@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has_moip'], function()
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function()
 {
     Route::get('register', [
         'as' => 'admin.register.index',
@@ -78,6 +78,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has
         ]);
     });
 
+    Route::get('championships', [
+        'as' => 'admin.championships.index',
+        'uses' => 'ChampionshipsController@index'
+    ]);
+
     /*
      |---------------------------------------------------------------------
      | Manager Routes
@@ -90,11 +95,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|has
 
     Route::group(['before' => 'championship_published'], function()
     {
-        Route::get('championships', [
-            'as' => 'admin.championships.index',
-            'uses' => 'ChampionshipsController@index'
-        ]);
-
         Route::get('championships/{id}', [
             'as' => 'admin.championships.show',
             'uses' => 'ChampionshipsController@show'

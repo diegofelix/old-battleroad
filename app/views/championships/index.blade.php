@@ -25,7 +25,7 @@
                             <div class="champ col-md-12">
                                 <a href="{{ route('championships.show', [$champ->id]) }}">
                                     <div class="champ-inner">
-                                        <h3>{{ $champ->name }}</h3>
+                                        <h3>{{ $champ->name }} <span>{{ $champ->limit }} Vagas restantes</span></h3>
                                         <figure>
                                             {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
                                         </figure>
@@ -50,9 +50,9 @@
                 </div>
             </div>
             <div class="champ col-md-3">
-                    <div class="champ-inner">
-                        <h3>Filtros</h3>
-                        <ul>
+                    <div class="champ-inner filters">
+                        <h3>Filtrar por Jogo</h3>
+                        <ul class="list-group">
                             @include('championships.partials.filters')
                         </ul>
                     </div><!-- champ-inner -->
