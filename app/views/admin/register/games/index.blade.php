@@ -29,10 +29,10 @@
         <tbody>
             @foreach ($championship->competitions as $competition)
                 <tr>
-                    <td>{{ HTML::image($competition->game->icon) }}</td>
+                    <td>{{ $competition->game->name }}</td>
                     <td>{{ $competition->format->name }}</td>
                     <td>{{ HTML::image($competition->platform->icon) }}</td>
-                    <td>R$ {{ $competition->present()->userPrice }}</td>
+                    <td>{{ $competition->present()->userPrice }}</td>
                     <td>{{ $competition->start }}</td>
                     <td>
                         {{ Form::open(['route' => ['admin.register.games.destroy', $championship->id, $competition->id], 'method' => 'DELETE', 'role' => 'form']) }}

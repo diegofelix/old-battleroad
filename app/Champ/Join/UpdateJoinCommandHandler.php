@@ -29,6 +29,11 @@ class UpdateJoinCommandHandler implements CommandHandler {
         $join->status_id        = $command->statusId;
         $join->cancelation_id   = $command->cancelationId;
 
+        // if the status was cancelled, then send an e-mail with the reason to the user;
+        // the description of the reason is in the cancelation_statuses table
+        //
+        // in any case, send an e-mail to the user btw
+
         $this->joinRepo->save($join);
 
         $this->dispatchEventsFor($join);

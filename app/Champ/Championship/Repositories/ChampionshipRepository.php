@@ -190,7 +190,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function getAllByUser($id, $with)
     {
-        return $this->model->whereUserId($id)->get();
+        return $this->model
+            ->whereUserId($id)
+            ->wherePublished(true)
+            ->get();
     }
 
     /**

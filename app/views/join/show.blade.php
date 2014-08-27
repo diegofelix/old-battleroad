@@ -23,7 +23,7 @@
                 <tbody>
                     <tr>
                         <td colspan="3">Entrada: {{ link_to_route('championships.show', $join->championship->name, $join->championship->id) }}</td>
-                        <td>{{ $join->championship->present()->userPrice }}</td>
+                        <td>{{ $join->price }}</td>
                     </tr>
                     <?php $total = $join->price; ?>
                     @foreach ($join->items as $item)
@@ -32,7 +32,7 @@
                             <td>{{ $item->competition->game->name }}</td>
                             <td>{{ $item->competition->platform->name }}</td>
                             <td>{{ $item->competition->format->name }}</td>
-                            <td>{{ $item->competition->present()->userPrice }}</td>
+                            <td>{{ $item->price }}</td>
                         </tr>
                     @endforeach
                     <tr>
@@ -42,18 +42,28 @@
                 </tbody>
             </table>
 
-            <div class="well well-lg">
-                <h4>
-                    Status do Pagamento: <span class="label label-info">{{ $join->status->name }}</span>
-                    @if ( $join->status_id != 2) {{-- 2 = Initiated --}}
-                        <br><small>
-                            {{ $join->status->description }}
-                        </small>
-                    @endif
-                </h4>
-            </div>
+            @if ( ! $join->isFree())
+                <div class="well well-lg">
+                    <h4>
+                        Status do Pagamento: <span class="label label-info">{{ $join->status->name }}</span>
+                        @if ( $join->status_id != 2) {{-- 2 = Initiated --}}
+                            <br><small>
+                                {{ $join->status->description }}
+                            </small>
+                        @endif
+                    </h4>
+                </div>
 
-            {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-primary']) }}
+                {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-primary']) }}
+            @endif
+
+            <hr>
+
+            <h3>Informações Adicionais</h3>
+
+            <p>Parabéns por fazer parte! Seu pedido é o <strong>{{ $join->id }}</strong>.</p>
+            <p>O campeonato está marcado pra começar em: <strong>{{ Date('d/m/Y à\s\ H\hi', strtotime($join->championship->event_start)) }}</strong>.</p>
+            <p>Tente chegar um pouco antes pra não haver problemas e boa sorte!</p>
         </div>
 
     </div><!-- championship -->

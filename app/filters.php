@@ -145,3 +145,32 @@ Route::filter('has_moip', function()
             ->withError('Você precisa ter uma conta MOIP antes. Preencha seu login MOIP no seu perfil.');
     }
 });
+
+Route::filter('not_joined_yet', function()
+{
+    // get the id of the intended championship
+    $id = Request::segment(3);
+
+    // get the last joined championship
+    $joined = Auth::user()->getJoin();
+
+    // if founded
+    if ($joined)
+    {
+        $message = "Você já está participando desse campeonato.";
+
+        return Redirect::route('join.show', $joined->id)
+            ->with('message', $message);
+    }
+
+});
+
+Route::filter('paid_championship', function(){
+    // get the id of the intended championship
+    $id = Request::segment(2);
+
+    if (Champ\Join\Join::find($id)->isFree())
+    {
+        return Redirect::back()->with('error', 'Vai pagar o que se o campeonato é gratuito?');
+    }
+});

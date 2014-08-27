@@ -1,5 +1,7 @@
 @extends ('layouts.default')
 
+@section('title', $championship->name)
+
 @section ('content')
 
     <div id="championship">
@@ -46,7 +48,7 @@
                                         <td>{{{ $competition->game->name }}}</td>
                                         <td>{{{ $competition->format->name }}}</td>
                                         <td>{{{ $competition->platform->name }}}</td>
-                                        <td>{{{ $competition->limit }}} Restantes</td>
+                                        <td>{{{ $competition->present()->trueLimit }}} Restantes</td>
                                         <td>{{ $competition->present()->userPrice }}</td>
                                     </tr>
                                 @endforeach

@@ -105,6 +105,29 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
+     * Relation with Join
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function joins()
+    {
+        return $this->hasMany('Champ\Join\Join');
+    }
+
+    /**
+     * Get the latest
+     *
+     * @return Join
+     */
+    public function getJoin()
+    {
+        return $this->joins()
+                ->where('status_id', '!=', 4) // finished
+                ->where('cancelation_id', 0) // not canceled
+                ->first();
+    }
+
+    /**
      * Check if the authenticated user is the same as requested
      *
      * @return boolean
