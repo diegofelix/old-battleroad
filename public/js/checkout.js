@@ -1,1 +1,1 @@
-$("document").ready(function(){var t=$("#totalprice");$(".input-competition").click(function(){var i=$(this).data("price");$(this).is(":checked")||(i=-1*i);var c=parseFloat(t.text())+i;t.text(c)})});
+$("document").ready(function(){var t=$("#totalprice");$(".input-competition").click(function(){var i=+$(this).data("price"),c=+t.text();$(this).is(":checked")||(i=-1*i);var e=(c+i).toFixed(2);t.text(e)})});
