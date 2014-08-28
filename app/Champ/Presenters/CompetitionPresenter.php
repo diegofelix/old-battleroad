@@ -20,5 +20,7 @@ class CompetitionPresenter extends Presenter
         {
             return $this->championship->limit;
         }
+
+        return $this->limit;
     }
 }
