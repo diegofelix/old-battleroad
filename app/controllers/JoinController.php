@@ -5,7 +5,7 @@ use Champ\Join\JoinCommand;
 use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Billing\Moip\MoipBilling;
+use Champ\Billing\Pagseguro\Pagseguro;
 
 class JoinController extends BaseController
 {
@@ -34,7 +34,7 @@ class JoinController extends BaseController
     /**
      * Moip Billing
      *
-     * @var MoipBilling
+     * @var Pagseguro
      */
     protected $billing;
 
@@ -42,7 +42,7 @@ class JoinController extends BaseController
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepo,
         CommandBus $commandBus,
-        MoipBilling $billing
+        Pagseguro $billing
     )
     {
         $this->champRepo = $champRepo;
@@ -106,9 +106,9 @@ class JoinController extends BaseController
         // get the answer if apply
         $answer = $this->billing->pay($join);
 
-        return ( ! $answer->error)
-            ? $this->redirectTo($answer->payment_url)
-            : $this->redirectTo('/', ['error' => $answer->error]);
+        return ($answer)
+            ? $this->redirectTo($answer->getRedirectionUrl())
+            : $this->redirectTo('/', ['error' => 'Erro desconhecido']);
     }
 
     /**
