@@ -3,12 +3,21 @@
 use Eloquent;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Join\Events\UserJoined;
+use Laracasts\Presenter\PresentableTrait;
 
 class Join extends Eloquent
 {
     protected $guarded = [];
 
+    use PresentableTrait;
     use EventGenerator;
+
+    /**
+     * Championship presenter
+     *
+     * @var string
+     */
+    protected $presenter = 'Champ\Presenters\JoinPresenter';
 
     /**
      * Relation with User
