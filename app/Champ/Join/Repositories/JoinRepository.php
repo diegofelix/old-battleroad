@@ -25,4 +25,15 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
     {
         return $join->save();
     }
+
+    /**
+     * Find a join by the token
+     *
+     * @param  string $token
+     * @return Join
+     */
+    public function findByToken($token)
+    {
+        return $this->model->whereToken($token)->firstOrFail();
+    }
 }
