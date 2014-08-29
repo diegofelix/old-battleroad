@@ -52,6 +52,7 @@ class Pagseguro {
     private function calculateTotalPrice($join, $service)
     {
         $checkout = $service->createCheckoutBuilder();
+        $checkout->setReference($join->id);
         $itemCounter = 1;
 
         if ($join->price)
