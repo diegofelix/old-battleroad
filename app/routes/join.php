@@ -26,4 +26,4 @@ Route::group(['before' => 'auth'], function()
 });
 
 // nasp
-Route::any('moip', 'JoinController@nasp');
+Route::any('nasp', 'JoinController@nasp');
