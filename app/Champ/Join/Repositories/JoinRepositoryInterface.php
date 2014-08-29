@@ -12,4 +12,12 @@ interface JoinRepositoryInterface extends RepositoryInterface
      * @return Join
      */
     public function save(Join $join);
+
+    /**
+     * Find a join by the token
+     *
+     * @param  string $token
+     * @return Join
+     */
+    public function findByToken($token);
 }
