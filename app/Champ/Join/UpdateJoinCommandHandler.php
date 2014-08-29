@@ -36,7 +36,7 @@ class UpdateJoinCommandHandler implements CommandHandler {
         $details = $purshase->getDetails();
 
         // find the join by the code
-        $join = $this->joinRepository->findByToken("10613689A8A85E9DD4EA0FB929343AC9");
+        $join = $this->joinRepository->findByToken($details->getCode());
 
         // update the status
         $join->status = $details->getStatus();
