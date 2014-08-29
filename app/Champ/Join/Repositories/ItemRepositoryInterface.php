@@ -12,4 +12,12 @@ interface ItemRepositoryInterface extends RepositoryInterface
      * @return Item
      */
     public function save(Item $item);
+
+    /**
+     * Find a join by the token
+     *
+     * @param  string $token
+     * @return Join
+     */
+    public function findByToken($token);
 }

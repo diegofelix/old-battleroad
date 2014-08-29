@@ -2,39 +2,47 @@
 
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Join\Join;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Join\Repositories\ItemRepositoryInterface;
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
-use App;
+use Champ\Billing\Pagseguro\NotificationHandler;
 
 class UpdateJoinCommandHandler implements CommandHandler {
 
     /**
      * Join Repository
      */
-    protected $joinRepo;
+    protected $joinRepository;
+
+    /**
+     * Notification Handler
+     */
+    protected $NotificationHandler;
 
     use DispatchableTrait;
 
-    public function __construct(JoinRepositoryInterface $joinRepo)
+    public function __construct(
+        JoinRepositoryInterface $joinRepository,
+        NotificationHandler $notificationHandler
+    )
     {
-        $this->joinRepo = $joinRepo;
+        $this->joinRepository = $joinRepository;
+        $this->notificationHandler = $notificationHandler;
     }
 
     public function handle($command)
     {
-        $join = $this->joinRepo->find(str_replace('BTR', '', $command->id));
+        // get the notification data
+        $purshase = $this->notificationHandler->handle($command);
 
-        $join->status_id        = $command->statusId;
-        $join->cancelation_id   = $command->cancelationId;
+        $details = $purshase->getDetails();
 
-        // if the status was cancelled, then send an e-mail with the reason to the user;
-        // the description of the reason is in the cancelation_statuses table
-        //
-        // in any case, send an e-mail to the user btw
+        // find the join by the code
+        $join = $this->joinRepository->findByToken("10613689A8A85E9DD4EA0FB929343AC9");
 
-        $this->joinRepo->save($join);
+        // update the status
+        $join->status = $details->getStatus();
+
+        // save it
+        $this->joinRepository->save($join);
 
         $this->dispatchEventsFor($join);
 
