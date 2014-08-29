@@ -32,7 +32,7 @@
 
             <div class="row">
                 <div class="col-md-4">
-                    <p>Crie seu campeonato e a Champaholics cuidará do resto: Divulgação, inscrição, pagamento e etc.</p>
+                    <p>Crie seu campeonato e a BattleRoad cuidará do resto: Divulgação, inscrição, pagamento e etc.</p>
                     <p><a class="btn btn-warning btn-lg" href="#">Saiba mais</a></p>
                 </div>
 
