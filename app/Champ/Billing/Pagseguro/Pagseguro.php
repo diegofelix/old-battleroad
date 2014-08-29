@@ -3,12 +3,9 @@
 use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Join\Join;
-
-
-// pagseguro
+use Champ\Billing\Core\PaymentListenerInterface;
 use PHPSC\PagSeguro\Credentials;
 use PHPSC\PagSeguro\Environments\Sandbox;
-use PHPSC\PagSeguro\Customer\Customer;
 use PHPSC\PagSeguro\Items\Item;
 use PHPSC\PagSeguro\Requests\Checkout\CheckoutService;
 
@@ -28,7 +25,7 @@ class Pagseguro {
      * @param  PaymentObjectInterface $payment
      * @return mixed
      */
-    public function pay(Join $join)
+    public function invoice(Join $join, PaymentListenerInterface $listener)
     {
         try
         {
@@ -38,11 +35,12 @@ class Pagseguro {
 
             $response = $service->checkout($checkout);
 
-            return $response;
+            return $listener->paymentAllowed($response, $join);
         }
         catch (Exception $error)
         {
-           return $error->getMessage();
+            $error = $error->getMessage();
+            return $listener->errorOnPayment($error);
         }
     }
 
@@ -64,17 +62,23 @@ class Pagseguro {
     private function calculateTotalPrice($join, $service)
     {
         $checkout = $service->createCheckoutBuilder();
+        $itemCounter = 1;
+
         if ($join->price)
         {
-            $item = new Item(1, 'Entrada', $join->price);
+            $item = new Item($itemCounter++, 'Entrada', $join->price);
             $checkout->addItem($item);
+        }
 
-            foreach ($join->items as $item)
+        // if we dont have items to add, go back boy.
+        if ( ! $join->count()) return $checkout->getCheckout();
+
+        // pass through all items and add to the checkout.
+        foreach ($join->items as $item)
+        {
+            if ($item->price > 0)
             {
-                if ($item->price > 0)
-                {
-                    $checkout->addItem(new Item($item->id, $item->competition->game->name, $item->price));
-                }
+                $checkout->addItem(new Item($itemCounter++, $item->competition->game->name, $item->price));
             }
         }
 

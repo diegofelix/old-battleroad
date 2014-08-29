@@ -1,13 +1,15 @@
 <?php
 
 use Laracasts\Commander\CommandBus;
+use Champ\Join\Join;
 use Champ\Join\JoinCommand;
 use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Billing\Core\PaymentListenerInterface;
 use Champ\Billing\Pagseguro\Pagseguro;
 
-class JoinController extends BaseController
+class JoinController extends BaseController implements PaymentListenerInterface
 {
 
     /**
@@ -22,7 +24,7 @@ class JoinController extends BaseController
      *
      * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
-    protected $joinRepo;
+    protected $joinRepository;
 
     /**
      * Command Bus
@@ -40,13 +42,13 @@ class JoinController extends BaseController
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
-        JoinRepositoryInterface $joinRepo,
+        JoinRepositoryInterface $joinRepository,
         CommandBus $commandBus,
         Pagseguro $billing
     )
     {
         $this->champRepo = $champRepo;
-        $this->joinRepo = $joinRepo;
+        $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
         $this->billing = $billing;
     }
@@ -103,12 +105,7 @@ class JoinController extends BaseController
     {
         $join = $this->findAJoinById($id);
 
-        // get the answer if apply
-        $answer = $this->billing->pay($join);
-
-        return ($answer)
-            ? $this->redirectTo($answer->getRedirectionUrl())
-            : $this->redirectTo('/', ['error' => 'Erro desconhecido']);
+        return $this->billing->invoice($join, $this);
     }
 
     /**
@@ -119,6 +116,7 @@ class JoinController extends BaseController
      */
     public function nasp()
     {
+        dd(Input::all());
         extract(Input::all());
 
         $command = new UpdateJoinCommand(
@@ -139,6 +137,32 @@ class JoinController extends BaseController
     }
 
     /**
+     * This method will be called when the user is allowed to pay
+     *
+     * @param   $response
+     * @return Response
+     */
+    public function paymentAllowed($response, Join $join)
+    {
+        $join->token = $response->getCode();
+
+        $this->joinRepository->save($join);
+
+        return $this->redirectTo($response->getRedirectionUrl());
+    }
+
+    /**
+     * When occurs an error, this method will be called
+     *
+     * @param   $error
+     * @return Response
+     */
+    public function paymentError($error)
+    {
+        return $this->redirectBack(['error' => $error]);
+    }
+
+    /**
      * Find a joined user by the join id
      *
      * @param  int $id
@@ -146,6 +170,6 @@ class JoinController extends BaseController
      */
     private function findAJoinById($id)
     {
-        return $this->joinRepo->find($id, ['Championship', 'items.competition']);
+        return $this->joinRepository->find($id, ['Championship', 'items.competition.game']);
     }
 }
