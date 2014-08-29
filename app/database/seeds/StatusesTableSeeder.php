@@ -36,7 +36,7 @@ class StatusesTableSeeder extends Seeder {
 
         DB::table('statuses')->insert([
             'name' => 'Cancelado',
-            'description' => 'Ocorreu algum erro ou através de sua solicitação a transação foi cancelada.'
+            'description' => 'Ocorreu algum erro com o Pagseguro ou com a instituição financeira, tente novamente.'
         ]);
 
         DB::table('statuses')->insert([
