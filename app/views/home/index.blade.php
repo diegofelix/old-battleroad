@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    <img class="img-responsive" src="http://placehold.it/700x500" alt="">
+                    {{ HTML::image('images/admin.jpg', ['class' => 'img-responsive']) }}    
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <img class="img-responsive" src="http://placehold.it/700x500" alt="">
+                    {{ HTML::image('images/championships.jpg', ['class' => 'img-responsive']) }}
                 </div>
 
                 <div class="col-md-4">
