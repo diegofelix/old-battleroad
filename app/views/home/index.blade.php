@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    {{ HTML::image('images/admin.jpg', ['class' => 'img-responsive']) }}    
+                    {{ HTML::image('images/admin.jpg', 'Painel de Administração', ['class' => 'img-responsive']) }}    
                 </div>
             </div>
 
@@ -53,7 +53,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    {{ HTML::image('images/championships.jpg', ['class' => 'img-responsive']) }}
+                    {{ HTML::image('images/championships.jpg', 'Lista de campeonatos', ['class' => 'img-responsive']) }}
                 </div>
 
                 <div class="col-md-4">
