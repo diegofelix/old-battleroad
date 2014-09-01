@@ -32,28 +32,30 @@
 
                     <div class="panel panel-default">
                         <div class="panel-heading">Competições</div>
-                        <table class="table table-striped table-hover">
-                            <thead>
-                                <tr>
-                                    <th>Jogo</th>
-                                    <th>Formato</th>
-                                    <th>Plataforma</th>
-                                    <th>Vagas</th>
-                                    <th>Inscrição</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @foreach($championship->competitions as $competition)
+                        <div class="panel-body">
+                            <table class="table table-striped table-hover">
+                                <thead>
                                     <tr>
-                                        <td>{{{ $competition->game->name }}}</td>
-                                        <td>{{{ $competition->format->name }}}</td>
-                                        <td>{{{ $competition->platform->name }}}</td>
-                                        <td>{{{ $competition->present()->trueLimit }}} Restantes</td>
-                                        <td>{{ $competition->present()->userPrice }}</td>
+                                        <th>Jogo</th>
+                                        <th>Formato</th>
+                                        <th>Plataforma</th>
+                                        <th>Vagas</th>
+                                        <th>Inscrição</th>
                                     </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                                </thead>
+                                <tbody>
+                                    @foreach($championship->competitions as $competition)
+                                        <tr>
+                                            <td>{{{ $competition->game->name }}}</td>
+                                            <td>{{{ $competition->format->name }}}</td>
+                                            <td>{{{ $competition->platform->name }}}</td>
+                                            <td>{{{ $competition->present()->slotsRemaining }}}</td>
+                                            <td>{{ $competition->present()->userPrice }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
 
                 </div>

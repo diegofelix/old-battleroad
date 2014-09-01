@@ -85,7 +85,10 @@ class JoinCommandHandler implements CommandHandler {
 
         foreach ($competitions as $competition)
         {
-            $this->addItemToJoin($join, $competition);
+            if ($competition->limit > 0)
+            {
+                $this->addItemToJoin($join, $competition);
+            }
         }
     }
 

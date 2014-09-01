@@ -23,4 +23,18 @@ class CompetitionPresenter extends Presenter
 
         return $this->limit;
     }
+
+    /**
+     * Show the current slots remainings
+     *
+     * @return string
+     */
+    public function slotsRemaining()
+    {
+        if ($this->trueLimit == 0 ) return 'Sem Vagas';
+
+        if ($this->trueLimit == 1) return '1 Vaga';
+
+        return $this->trueLimit . ' Restantes';
+    }
 }

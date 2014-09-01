@@ -14,4 +14,14 @@ trait UserPrice {
         return '<span class="label label-default">R$ ' . number_format($this->price, 2) . '</span>';
     }
 
+    /**
+     * Show the price in a numeric format
+     *
+     * @return string
+     */
+    public function numericPrice()
+    {
+        return number_format($this->price, 2);
+    }
+
 }
