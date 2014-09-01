@@ -1,12 +1,22 @@
 <?php namespace Champ\Join;
 
 use Eloquent;
+use Laracasts\Presenter\PresentableTrait;
 
 class Item extends Eloquent
 {
+    use PresentableTrait;
+
     protected $guarded = [];
 
     public $timestamps = false;
+
+    /**
+     * Championship presenter
+     *
+     * @var string
+     */
+    protected $presenter = 'Champ\Presenters\ItemPresenter';
 
     /**
      * Relation with Join

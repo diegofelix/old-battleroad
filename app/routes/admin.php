@@ -129,4 +129,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
             'uses' => 'ChampionshipsController@feedback'
         ]);
     });
+
+    Route::get('dashboard', [
+        'as' => 'admin.dashboard',
+        'uses' => 'DashboardController@index'
+    ]);
 });

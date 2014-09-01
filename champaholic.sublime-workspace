@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"sta",
+				"status"
+			],
+			[
+				"status",
+				"statusSelected"
+			],
+			[
 				"noti",
 				"NotificationHandler"
 			],
@@ -506,10 +514,6 @@
 			[
 				"User",
 				"UserRepositoryInterface"
-			],
-			[
-				"ser",
-				"serviceName"
 			]
 		]
 	},
@@ -519,7 +523,39 @@
 			"file": "app/Champ/Billing/Pagseguro/Pagseguro.php",
 			"settings":
 			{
-				"buffer_size": 1942,
+				"buffer_size": 1986,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutService.php",
+			"settings":
+			{
+				"buffer_size": 1270,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutBuilder.php",
+			"settings":
+			{
+				"buffer_size": 1927,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/phpsc/pagseguro/src/Requests/Service.php",
+			"settings":
+			{
+				"buffer_size": 580,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/phpsc/pagseguro/src/Service.php",
+			"settings":
+			{
+				"buffer_size": 1146,
 				"line_ending": "Unix"
 			}
 		},
@@ -557,6 +593,94 @@
 			}
 		},
 		{
+			"file": "app/Champ/Join/Join.php",
+			"settings":
+			{
+				"buffer_size": 2527,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/database/seeds/StatusesTableSeeder.php",
+			"settings":
+			{
+				"buffer_size": 1798,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/home/index.blade.php",
+			"settings":
+			{
+				"buffer_size": 2076,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/admin/championships/show.blade.php",
+			"settings":
+			{
+				"buffer_size": 853,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/admin/championships/users.blade.php",
+			"settings":
+			{
+				"buffer_size": 2589,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Champ/Presenters/JoinPresenter.php",
+			"settings":
+			{
+				"buffer_size": 309,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Champ/Championship/Championship.php",
+			"settings":
+			{
+				"buffer_size": 3008,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/js/championship.js",
+			"settings":
+			{
+				"buffer_size": 107,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/js/admin_championship.js",
+			"settings":
+			{
+				"buffer_size": 311,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/assets/less/championship.less",
+			"settings":
+			{
+				"buffer_size": 5265,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Champ/Presenters/UserPresenter.php",
+			"settings":
+			{
+				"buffer_size": 492,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/Champ/Join/Repositories/ItemRepositoryInterface.php",
 			"settings":
 			{
@@ -576,7 +700,7 @@
 			"file": "app/Champ/Join/UpdateJoinCommandHandler.php",
 			"settings":
 			{
-				"buffer_size": 1235,
+				"buffer_size": 1300,
 				"line_ending": "Unix"
 			}
 		},
@@ -849,7 +973,34 @@
 	},
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Traits/UserPrice.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/UpdateJoinCommand.php",
+		"/media/win/xampp/htdocs/answer-stack/public/css/user-profile.css",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/CheckoutBuilder.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/CheckoutService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/tests/ServiceTest.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/SearchService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/NotificationService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/SubscriptionService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/PreApprovalService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/tests/Requests/Checkout/CheckoutServiceTest.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/Subscriptions/SubscriptionService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/PreApprovals/PreApprovalService.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Service.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Environment.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Credentials.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/.gitignore",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Client/PagSeguroException.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/pages.php",
+		"/media/win/xampp/htdocs/answer-stack/package.json",
+		"/media/win/xampp/htdocs/answer-stack/app/storage/meta/services.json",
+		"/media/win/xampp/htdocs/answer-stack/server.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/ServerException.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/Service.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/Pagseguro/CredentialsTrait.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/Subscriptions/Decoder.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Html/HtmlBuilder.php",
@@ -857,9 +1008,6 @@
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/node_modules/request/node_modules/qs/index.js",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/Subscriptions/Locator.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/Transactions/Locator.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/NotificationService.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/admin.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/node_modules/optimist/test/_/argv.js",
@@ -873,15 +1021,12 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/Redirection.php",
 		"/media/win/xampp/htdocs/answer-stack/app/config/local/app.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Items/Item.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Service.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/Service.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutService.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/Core/PaymentListenerInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/examples/reddit.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/replaceExtension.js",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/BaseController.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/src/Guzzle/Batch/BatchSizeDivisor.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/CheckoutService.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/src/Guzzle/Http/Message/Response.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php",
@@ -890,7 +1035,6 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendEvent.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/debug/Symfony/Component/Debug/Exception/FlattenException.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/DataCollector/ExceptionDataCollector.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/CheckoutBuilder.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
 		"/media/win/xampp/htdocs/answer-stack/app/assets/js/checkout.js",
 		"/media/win/xampp/htdocs/answer-stack/public/js/checkout.js",
@@ -908,12 +1052,10 @@
 		"/media/win/xampp/htdocs/answer-stack/app/views/championships/index.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/championships/partials/filters.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/JoinCommandHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Competition.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/layouts/default.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/confirmation.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/index.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/games/index.blade.php",
@@ -945,7 +1087,6 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Pagination/views/simple.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Foundation/ViewPublisher.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/doc/overview.rst",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/pages.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/register.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/mustache/mustache/test/fixtures/examples/section_magic_objects/SectionMagicObjects.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-uglify/node_modules/uglify-js/node_modules/optimist/node_modules/wordwrap/.npmignore",
@@ -953,30 +1094,13 @@
 		"/media/win/xampp/htdocs/answer-stack/public/js/jquery-input-mask.js",
 		"/media/win/xampp/htdocs/answer-stack/app/helpers.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Services/ImageUploader.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Traits/UserPrice.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-uglify/node_modules/uglify-js/node_modules/optimist/index.js",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/monolog/monolog/src/Monolog/Handler/MongoDBHandler.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Queue/Failed/FailedJobProviderInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/KeyCache/SimpleKeyCacheInputStream.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/security-core/Symfony/Component/Security/Core/User/UserChecker.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/DependencyInjection/ContainerAwareHttpKernel.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepositoryInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/AuthController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/.gitkeep",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/RegisterController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
-		"/media/win/xampp/htdocs/answer-stack/app/commands/.gitkeep",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/.fuse_hidden00012e8800000006",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/datepicker.less",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/jquery-input-mask-date.js",
-		"/media/win/xampp/htdocs/answer-stack/vendor/composer/autoload_psr4.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/filp/whoops/examples/example-ajax-only.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/way/generators/tests/stubs/AddTitleToOrdersTable.txt",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/UpdateJoinCommandHandler.php",
-		"/home/diego/Desktop/teste.html",
-		"/media/win/xampp/htdocs/zoneinfo/app/controllers/BaseController.php"
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php"
 	],
 	"find":
 	{
@@ -1006,6 +1130,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"class",
+			"btn ",
+			"btn",
+			"champah",
+			"'id'",
+			"            'id' => 1,",
 			"$purshase->getDetails()",
 			"$joinRepo",
 			"joinRepo",
@@ -1127,13 +1257,7 @@
 			"$champ->price",
 			"Price",
 			"price",
-			"$championship->price",
-			"price",
-			"$championship->price",
-			"price",
-			"$championship->price",
-			"championship",
-			"updatePrice"
+			"$championship->price"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1152,7 +1276,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 17,
 			"sheets":
 			[
 				{
@@ -1161,15 +1285,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1942,
+						"buffer_size": 1986,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								331,
-								331
+								1299,
+								1299
 							]
 						],
 						"settings":
@@ -1179,14 +1303,134 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 240.0,
+						"translation.y": 1920.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutService.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								979,
+								979
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1123.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 19,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutBuilder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1927,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1683.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 20,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "vendor/phpsc/pagseguro/src/Requests/Service.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 21,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "vendor/phpsc/pagseguro/src/Service.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1146,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 120.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 22,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/Champ/Billing/Pagseguro/NotificationHandler.php",
 					"semi_transient": false,
 					"settings":
@@ -1204,17 +1448,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 360.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 18,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 6,
 					"file": "vendor/phpsc/pagseguro/src/Purchases/Transactions/Locator.php",
 					"semi_transient": false,
 					"settings":
@@ -1240,11 +1486,11 @@
 						"translation.y": 1643.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 23,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "vendor/phpsc/pagseguro/src/Purchases/Transactions/Decoder.php",
 					"semi_transient": false,
 					"settings":
@@ -1270,11 +1516,11 @@
 						"translation.y": 243.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 24,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 8,
 					"file": "app/controllers/NotificationController.php",
 					"semi_transient": false,
 					"settings":
@@ -1293,17 +1539,345 @@
 						"settings":
 						{
 							"auto_name": "<?php",
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 905.0,
+						"translation.y": 76.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app/Champ/Join/Join.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2527,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								399,
+								399
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 240.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "app/database/seeds/StatusesTableSeeder.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1798,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1408,
+								1408
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/views/home/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2076,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1069,
+								1069
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 953.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 12,
+					"file": "app/views/admin/championships/show.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 853,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								610,
+								610
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/views/admin/championships/users.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2589,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2452,
+								2452
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "app/Champ/Presenters/JoinPresenter.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 309,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "app/Champ/Championship/Championship.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 3008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								70,
+								70
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"file": "app/assets/js/championship.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 107,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								103,
+								103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "app/assets/js/admin_championship.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 311,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								246,
+								246
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 18,
+					"file": "app/assets/less/championship.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5265,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4276,
+								4276
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 7080.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 19,
+					"file": "app/Champ/Presenters/UserPresenter.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 492,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								492,
+								492
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 20,
 					"file": "app/Champ/Join/Repositories/ItemRepositoryInterface.php",
 					"semi_transient": false,
 					"settings":
@@ -1324,14 +1898,14 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 120.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 17,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 21,
 					"file": "app/Champ/Join/Repositories/JoinRepository.php",
 					"semi_transient": false,
 					"settings":
@@ -1354,27 +1928,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 821.0,
+						"translation.y": 596.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 22,
 					"file": "app/Champ/Join/UpdateJoinCommandHandler.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1235,
+						"buffer_size": 1300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1022,
-								1022
+								1267,
+								1267
 							]
 						],
 						"settings":
@@ -1384,14 +1958,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1123.0,
+						"translation.y": 1156.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 23,
 					"file": "app/Champ/Join/Repositories/JoinRepositoryInterface.php",
 					"semi_transient": false,
 					"settings":
@@ -1409,17 +1983,19 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 24,
 					"file": "app/Champ/Billing/Core/NotificationListenerInterface.php",
 					"semi_transient": false,
 					"settings":
@@ -1445,7 +2021,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 15,
 					"type": "text"
 				}
 			]
@@ -1497,6 +2073,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"userpresenter",
+				"app/Champ/Presenters/UserPresenter.php"
+			],
+			[
+				"join.php",
+				"app/Champ/Join/Join.php"
+			],
+			[
+				"updatecommandhande",
+				"app/Champ/Join/UpdateJoinCommandHandler.php"
+			],
+			[
+				"pagseguro/service",
+				"vendor/phpsc/pagseguro/src/Service.php"
+			],
 			[
 				"/routes/join",
 				"app/routes/join.php"
@@ -1580,10 +2172,6 @@
 			[
 				"model",
 				"vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php"
-			],
-			[
-				"join.php",
-				"app/Champ/Join/Join.php"
 			],
 			[
 				"app/controll/admin/cham",
@@ -1996,18 +2584,6 @@
 			[
 				"lmongo/query/builder",
 				"vendor/navruzm/lmongo/src/LMongo/Query/Builder.php"
-			],
-			[
-				"competitionscontrol",
-				"app/controllers/Admin/CompetitionsController.php"
-			],
-			[
-				"championrepo",
-				"app/Champ/Championship/Repositories/ChampionshipRepository.php"
-			],
-			[
-				"routing/roue.",
-				"vendor/laravel/framework/src/Illuminate/Routing/Route.php"
 			]
 		],
 		"width": 0.0

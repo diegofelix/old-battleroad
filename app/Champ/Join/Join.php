@@ -64,6 +64,7 @@ class Join extends Eloquent
     public static function register($user_id, $championship_id, $price)
     {
         $status_id = 1; // Waiting payment
+
         $join = new static(compact('user_id', 'championship_id', 'price', 'status_id'));
 
         $join->raise(new UserJoined($join));
