@@ -5,6 +5,8 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="@yield('meta_description', 'O primeiro site de campeonatos do brasil!')">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+	<meta name="google-site-verification" content="QlRQqaIL0xz5aGS-ZENdKQKdTNaUQfiphyBgVJV_-u4" />
 
         <title>@yield('title', 'BattleRoad - De olho nos campeões')</title>
 

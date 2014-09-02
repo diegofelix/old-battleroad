@@ -152,7 +152,7 @@ Route::filter('not_joined_yet', function()
     $id = Request::segment(3);
 
     // get the last joined championship
-    $joined = Auth::user()->getJoin();
+    $joined = Auth::user()->getJoin($id);
 
     // if founded
     if ($joined)
