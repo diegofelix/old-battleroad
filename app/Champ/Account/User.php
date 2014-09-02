@@ -117,13 +117,13 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     /**
      * Get the latest
      *
+     * @param  $id
      * @return Join
      */
-    public function getJoin()
+    public function getJoin($id)
     {
         return $this->joins()
-                ->where('status_id', '!=', 4) // finished
-                ->where('cancelation_id', 0) // not canceled
+                ->where('championship_id', $id)
                 ->first();
     }
 

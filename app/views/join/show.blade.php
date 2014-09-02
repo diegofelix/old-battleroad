@@ -51,12 +51,8 @@
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="icon icon-credit-card"></span> Dados do Pagamento</div>
                     <div class="panel-body">
-                        <h4>
-                            Status : <span class="label label-info">{{ $join->status->name }}</span>
-                            <br><small>
-                                {{ $join->status->description }}
-                            </small>
-                        </h4>
+                        <h4>Status : <span class="label label-info">{{ $join->status->name }}</span></h4>
+                        <p><small> {{ $join->status->description }} </small></p>
                         <hr>
                         {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) }}
                     </div>
