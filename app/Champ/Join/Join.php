@@ -3,6 +3,7 @@
 use Eloquent;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Join\Events\UserJoined;
+use Champ\Join\Events\JoinStatusChanged;
 use Laracasts\Presenter\PresentableTrait;
 
 class Join extends Eloquent
