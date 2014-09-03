@@ -73,6 +73,21 @@ class Join extends Eloquent
     }
 
     /**
+     * Change the Status for this order.
+     *
+     * @param  int $statusId
+     * @param  string $token
+     * @return void
+     */
+    public function changeStatus($statusId, $token)
+    {
+        $this->status_id    = $statusId;
+        $this->token        = $token;
+
+        $this->raise(new JoinStatusChanged($join));
+    }
+
+    /**
      * Convert the price to cents
      *
      * @param int $value

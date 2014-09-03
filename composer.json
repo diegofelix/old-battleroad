@@ -4,7 +4,7 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*",
+		"laravel/framework": "4.2.*",
 		"artdarek/oauth-4-laravel": "dev-master",
 		"camcima/moip-php": "dev-master",
 		"intervention/image": "1.*",
@@ -13,7 +13,8 @@
 		"laracasts/presenter": "0.1.*",
 		"michelf/php-markdown": "1.4.*",
 		"barryvdh/laravel-debugbar": "1.x",
-		"phpsc/pagseguro": "dev-master"
+		"phpsc/pagseguro": "dev-master",
+		"guzzlehttp/guzzle": "4.*"
 	},
 	"require-dev": {
 		"way/generators": "dev-master",

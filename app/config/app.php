@@ -191,4 +191,6 @@ return array(
 		'OAuth'           => 'Artdarek\OAuth\Facade\OAuth',
 	),
 
+	'cipher' => MCRYPT_RIJNDAEL_256
+
 );
