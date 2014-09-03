@@ -536,6 +536,22 @@
 			}
 		},
 		{
+			"file": "app/Champ/Billing/Pagseguro/CredentialsTrait.php",
+			"settings":
+			{
+				"buffer_size": 454,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/lusitanian/oauth/src/OAuth/Common/Consumer/Credentials.php",
+			"settings":
+			{
+				"buffer_size": 1068,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/filters.php",
 			"settings":
 			{
@@ -587,7 +603,31 @@
 			"file": "app/views/join/show.blade.php",
 			"settings":
 			{
-				"buffer_size": 3742,
+				"buffer_size": 3627,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/config/mail.php",
+			"settings":
+			{
+				"buffer_size": 3999,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes.php",
+			"settings":
+			{
+				"buffer_size": 447,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/default.blade.php",
+			"settings":
+			{
+				"buffer_size": 3015,
 				"line_ending": "Unix"
 			}
 		}
@@ -848,6 +888,23 @@
 	},
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/app/config/services.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Credentials.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/mustache/mustache/bin/create_example.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpseclib/phpseclib/build/code-sniffer-ruleset.xml",
+		"/media/win/xampp/htdocs/answer-stack/composer.json",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Environments/Sandbox.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/tests/Environments/SandboxTest.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp/node_modules/chalk/node_modules/.bin/strip-ansi",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Social/SocialAuthenticator.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/emails/test.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/.env.local.php",
+		"/media/win/xampp/htdocs/answer-stack/.gitattributes",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/Moip/MoipBilling.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/mail.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-uglify/node_modules/uglify-js/lib/mozilla-ast.js",
+		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/.gitignore",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/View/View.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
@@ -859,14 +916,12 @@
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Traits/UserPrice.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/join/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/join/index.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/CompetitionPresenter.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/JoinCommandHandler.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/public/js/championship.js",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
-		"/media/win/xampp/htdocs/answer-stack/composer.json",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Exceptions/CompetitionFullException.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/postcss/lib/vendor.js",
 		"/media/win/xampp/htdocs/answer-stack/vendor/nesbot/carbon/tests/StartEndOfTest.php",
@@ -932,7 +987,6 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Purchases/Subscriptions/SubscriptionService.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/PreApprovals/PreApprovalService.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Environment.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Credentials.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/.gitignore",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Client/PagSeguroException.php",
 		"/media/win/xampp/htdocs/answer-stack/package.json",
@@ -961,21 +1015,7 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/src/Guzzle/Http/Message/Response.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Validation/Validator.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/View/Engines/CompilerEngine.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/ResponseError.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/ResponseErrorInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Events/SendEvent.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/debug/Symfony/Component/Debug/Exception/FlattenException.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/DataCollector/ExceptionDataCollector.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/checkout.js",
-		"/media/win/xampp/htdocs/answer-stack/public/js/checkout.js",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/Moip/MoipBilling.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/ChampionshipsController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/partials/filters.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Competition.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/layouts/default.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/confirmation.blade.php"
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/ResponseError.php"
 	],
 	"find":
 	{
@@ -1006,6 +1046,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"billing",
+			"getenv",
+			"BILLING_PERCENT",
+			"BILLING_COMISSION",
 			"getJoin()",
 			"Dashboard",
 			"limit",
@@ -1129,11 +1173,7 @@
 			"AbstractPreparedData",
 			"Comparison",
 			"psn",
-			"this->series",
-			"serieData",
-			"BasicChart",
-			"$competition->price",
-			"$champ->price"
+			"this->series"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1152,7 +1192,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 13,
 			"sheets":
 			[
 				{
@@ -1179,10 +1219,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5618.0,
+						"translation.y": 5440.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1209,14 +1249,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 365.0,
+						"translation.y": 436.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Champ/Billing/Pagseguro/CredentialsTrait.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 454,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 120.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "vendor/lusitanian/oauth/src/OAuth/Common/Consumer/Credentials.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1068,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								538,
+								538
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "app/filters.php",
 					"semi_transient": false,
 					"settings":
@@ -1242,11 +1342,11 @@
 						"translation.y": 6905.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "app/Champ/Account/User.php",
 					"semi_transient": false,
 					"settings":
@@ -1272,11 +1372,11 @@
 						"translation.y": 5166.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
 					"file": "app/views/join/index.blade.php",
 					"semi_transient": false,
 					"settings":
@@ -1302,11 +1402,11 @@
 						"translation.y": 842.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 7,
 					"file": "app/views/admin/dashboard.blade.php",
 					"semi_transient": false,
 					"settings":
@@ -1333,11 +1433,11 @@
 						"translation.y": 541.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 8,
 					"file": "app/assets/less/base/base.less",
 					"semi_transient": false,
 					"settings":
@@ -1360,14 +1460,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5633.0,
+						"translation.y": 5200.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 9,
 					"file": "app/views/partials/_logged.blade.php",
 					"semi_transient": false,
 					"settings":
@@ -1393,24 +1493,24 @@
 						"translation.y": 720.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "app/views/join/show.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3742,
+						"buffer_size": 3627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2552,
-								2552
+								2681,
+								2681
 							]
 						],
 						"settings":
@@ -1420,10 +1520,97 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 228.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "app/config/mail.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3999,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1818,
+								1818
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1920.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "app/routes.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 447,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								445,
+								445
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "app/views/layouts/default.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3015,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								465,
+								465
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1475,6 +1662,30 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"credentia",
+				"app/Champ/Billing/Pagseguro/CredentialsTrait.php"
+			],
+			[
+				"sandbox.php",
+				"vendor/phpsc/pagseguro/src/Environments/Sandbox.php"
+			],
+			[
+				".en",
+				".env.local.php"
+			],
+			[
+				"mail.",
+				"app/config/mail.php"
+			],
+			[
+				"mail.php",
+				"app/config/mail.php"
+			],
+			[
+				"views/joi",
+				"app/views/join/show.blade.php"
+			],
 			[
 				"views/join",
 				"app/views/join/index.blade.php"
@@ -1962,30 +2173,6 @@
 			[
 				"perormancontroll",
 				"app/controllers/PerformanceController.php"
-			],
-			[
-				"assets/champ.js",
-				"app/assets/js/championship.js"
-			],
-			[
-				"champ.js",
-				"public/js/championship.js"
-			],
-			[
-				"formvalidator",
-				"vendor/laracasts/validation/src/Laracasts/Validation/FormValidator.php"
-			],
-			[
-				"admin.php",
-				"app/routes/admin.php"
-			],
-			[
-				"championshipcontrol",
-				"app/controllers/Admin/ChampionshipsController.php"
-			],
-			[
-				"registercontroler",
-				"app/controllers/RegisterController.php"
 			]
 		],
 		"width": 0.0

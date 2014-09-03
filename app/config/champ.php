@@ -17,6 +17,7 @@ return [
     */
     'listeners' => [
         'Champ\Listeners\ChampionshipVacancyUpdater',
-        'Champ\Listeners\CompetitionVacancyUpdater'
+        'Champ\Listeners\CompetitionVacancyUpdater',
+        'Champ\Listeners\NotificationListener'
     ]
 ];

@@ -15,8 +15,8 @@ trait CredentialsTrait {
     private function startupPagseguro()
     {
         $this->credentials = new Credentials(
-            'diegoflx.oliveira@gmail.com',
-            'B36A4ADF9F7E4B58A82E26D2D8AA4BBD',
+            getenv('PAGSEGURO_EMAIL'),
+            getenv('PAGSEGURO_TOKEN'),
             new Sandbox()
         );
     }
