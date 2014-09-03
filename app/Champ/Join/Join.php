@@ -85,7 +85,7 @@ class Join extends Eloquent
         $this->status_id    = $statusId;
         $this->token        = $token;
 
-        $this->raise(new JoinStatusChanged($join));
+        $this->raise(new JoinStatusChanged($this));
     }
 
     /**
