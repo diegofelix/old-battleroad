@@ -28,7 +28,7 @@ class NotificationListener extends EventListener {
 
         if (in_array($join->status_id, $this->notifiable))
         {
-            Mail::send('emails.status_changed', $parameters, function($message)
+            Mail::send('emails.status_changed', $parameters, function($message) use ($join)
             {
                 $message->to($join->user->email)->subject("O Status da sua inscrição mudou");
             });
