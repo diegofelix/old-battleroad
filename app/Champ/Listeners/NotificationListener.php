@@ -2,6 +2,7 @@
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\JoinStatusChanged;
+use Champ\Join\Events\UserJoined;
 use Mail;
 
 class NotificationListener extends EventListener {
@@ -35,4 +36,25 @@ class NotificationListener extends EventListener {
         }
     }
 
+    /**
+     * Send a email to the user when he join a championship
+     *
+     * @param  UserJoined $event
+     * @return void
+     */
+    public function whenUserJoined(UserJoined $event)
+    {
+        $join = $event->join;
+
+        $parameters = [
+            'name' => $join->user->name,
+            'championship' => $join->championship->name,
+            'join' => $join->id
+        ];
+
+        Mail::send('emails.user_joined', $parameters, function($message) use ($join)
+        {
+            $message->to($join->user->email)->subject("Você tá dentro!");
+        });
+    }
 }

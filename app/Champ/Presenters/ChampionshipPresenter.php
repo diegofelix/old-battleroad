@@ -55,6 +55,17 @@ class ChampionshipPresenter extends Presenter
     }
 
     /**
+     * Return a clean description to the admin user
+     *
+     * @return string
+     */
+    public function cleanDescription()
+    {
+        $description = $this->markdownDescription();
+        return strip_tags($description);
+    }
+
+    /**
      * Instantiate a Markdown parser
      *
      * @return Markdown
@@ -62,5 +73,21 @@ class ChampionshipPresenter extends Presenter
     private function getMarkdown()
     {
         return new Markdown;
+    }
+
+    /**
+     * Show the vacancy limit for the championship
+     *
+     * @return string
+     */
+    public function slotsRemaining()
+    {
+        if ($this->limit > 900000) return 'Sem limite';
+
+        if ($this->trueLimit == 1) return '1 Vaga restantes';
+
+        if ($this->limit > 1) return $this->limit . ' Vagas restantes';
+
+        return 'Vagas esgotadas';
     }
 }

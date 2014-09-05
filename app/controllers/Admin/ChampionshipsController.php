@@ -43,6 +43,11 @@ class ChampionshipsController extends BaseController {
         return $this->view('admin.championships.show', compact('championship'));
     }
 
+    public function edit()
+    {
+        dd('Updating');
+    }
+
     /**
      * Show the banner of the championship
      *

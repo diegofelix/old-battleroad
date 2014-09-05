@@ -64,13 +64,15 @@
                         <div class="panel-heading">Informações</div>
                         <ul class="list-group">
                             <li class="list-group-item">Av Engenheiro Armando de Arruda Pereira, 1370, Jabaquara SP</li>
-                            <li class="list-group-item"><strong>{{{ $championship->limit }}}</strong> Vagas restantes</li>
+                            <li class="list-group-item"><strong>{{{ $championship->present()->slotsRemaining }}}</strong></li>
                             <li class="list-group-item">{{ $championship->present()->userPrice }}</li>
                             <li class="list-group-item">{{{ $championship->present()->daysLeft }}}</li>
                         </ul>
-                        <div class="panel-body">
-                            {{ link_to_route('join.create', 'Quero Participar!', $championship->id, ['class' => 'btn btn-block btn-lg btn-success']) }}
-                        </div>
+                        @if ($championship->limit > 0)
+                            <div class="panel-body">
+                                {{ link_to_route('join.create', 'Quero Participar!', $championship->id, ['class' => 'btn btn-block btn-lg btn-success']) }}
+                            </div>
+                        @endif
                     </div>
                 </div>
             </div>

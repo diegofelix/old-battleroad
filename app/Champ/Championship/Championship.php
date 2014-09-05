@@ -142,4 +142,21 @@ class Championship extends Eloquent
         return self::find($id)->published == 1;
     }
 
+    /**
+     * Set the the limit attribute
+     * If the limit was not specified, then we set a high number to ensure that
+     * this limit will not be reach
+     *
+     * @param int $value
+     */
+    public function setLimitAttribute($value)
+    {
+        $this->attributes['limit'] = $value;
+
+        if (empty($value) || $value == 0)
+        {
+            $this->attributes['limit'] = 999999;
+        }
+    }
+
 }

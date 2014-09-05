@@ -24,26 +24,6 @@
                     {{ $join->user->name }}</td>
                     <td>{{ $join->status->name }}</td>
                     <td><a href="">Detalhes</a></td>
-                </tr><tr class="status status-{{ $join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ $join->user->name }}</td>
-                    <td>{{ $join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
-                </tr><tr class="status status-{{ $join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ $join->user->name }}</td>
-                    <td>{{ $join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
-                </tr><tr class="status status-{{ $join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ $join->user->name }}</td>
-                    <td>{{ $join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
-                </tr><tr class="status status-{{ $join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ $join->user->name }}</td>
-                    <td>{{ $join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
                 </tr>
             @endforeach
         </tbody>
