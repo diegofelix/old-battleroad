@@ -71,7 +71,6 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         // prevent malicious intentions checking the ownership
         if ($championship->user_id != Auth::user()->id) return false;
 
-
         if ( ! $this->validator->passes($input, 'location'))
         {
             $this->errors = $this->validator->errors();
@@ -222,12 +221,12 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     private function updateLimitValues($championship, $data)
     {
+        // if no limit was specified, then is the same as the championship limit
+        if (empty($data['limit'])) return $championship->limit;
+
         // if the championship dont have limit we dont need to
         // check this
         if (empty($championship->limit)) return $data['limit'];
-
-        // if no limit was specified, then is the same as the championship limit
-        if (empty($data['limit'])) return $championship->limit;
 
         // if the limit for the competition is greater than the championship
         // we limit to the championship limit

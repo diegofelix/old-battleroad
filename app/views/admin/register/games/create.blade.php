@@ -34,14 +34,10 @@
         </div>
 
         <div class="form-group">
-            {{ Form::label('price', 'Preço (em Reais): ') }}
-            <div class="input-group col-md-3">
-                <span class="input-group-addon">R$</span>
-                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
+            {{ Form::label('price', 'Preço da Entrada (em Reais): ') }}
+            <div class="input-group col-md-5">
+                @include ('admin.register._price')
             </div>
-            <span class="help-block">
-                O preço que você definir será o preço que receberá, com nossa taxa já aplicada.
-            </span>
         </div>
 
         <div class="form-group">
@@ -87,4 +83,5 @@
     {{ HTML::script('js/jquery-input-mask.js') }}
     {{ HTML::script('js/jquery-input-mask-date.js') }}
     {{ HTML::script('js/games.js') }}
+    {{ HTML::script('js/register.js') }}
 @stop

@@ -31,10 +31,12 @@ class CompetitionPresenter extends Presenter
      */
     public function slotsRemaining()
     {
-        if ($this->trueLimit == 0 ) return 'Sem Vagas';
+        if ($this->trueLimit > 900000) return 'Sem limite';
 
-        if ($this->trueLimit == 1) return '1 Vaga';
+        if ($this->trueLimit == 1) return '1 Vaga restante';
 
-        return $this->trueLimit . ' Restantes';
+        if ($this->trueLimit > 0 ) $this->trueLimit . ' Vagas restantes';
+
+        return 'Vagas esgotadas';
     }
 }

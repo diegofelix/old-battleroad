@@ -17,7 +17,7 @@
 		"guzzlehttp/guzzle": "4.*"
 	},
 	"require-dev": {
-		"way/generators": "dev-master",
+		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0"
 	},
 	"autoload": {

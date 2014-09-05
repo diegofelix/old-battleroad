@@ -32,7 +32,7 @@
                                 <tr>
                                     <td colspan="3"><input type="checkbox" value="1" checked="checked" readonly="readonly" disabled> Entrada</td>
                                     <td>{{ $championship->present()->userPrice }}</td>
-                                    <td>{{ $championship->present()->limit }} Restantes</td>
+                                    <td>{{ $championship->present()->slotsRemaining }}</td>
                                 </tr>
                                 @foreach ($championship->competitions as $competition)
                                     <?php $total = $championship->price; ?>

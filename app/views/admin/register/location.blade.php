@@ -25,13 +25,7 @@
             <div class="form-group">
                 {{ Form::label('price', 'Preço da Entrada (em Reais): ', ['class' => 'col-md-2 control-label']) }}
                 <div class="col-md-9">
-                    <div class="input-group">
-                        <span class="input-group-addon">R$</span>
-                        {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
-                    </div>
-                    <span class="help-block">
-                        O preço que você definir será o preço que receberá líquido, com nossa taxa já aplicada.
-                    </span>
+                    @include ('admin.register._price')
                 </div>
             </div>
 
@@ -58,4 +52,8 @@
 
     {{ Form::close() }}
 
+@endsection
+
+@section ('scripts')
+    {{ HTML::script('js/register.js') }}
 @endsection

@@ -100,6 +100,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
             'uses' => 'ChampionshipsController@show'
         ]);
 
+        Route::get('championships/{id}/edit', [
+            'as' => 'admin.championships.edit',
+            'uses' => 'ChampionshipsController@edit'
+        ]);
+
         // banner
         Route::get('championships/{id}/banner', [
             'as' => 'admin.championships.banner',

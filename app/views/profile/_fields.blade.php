@@ -1,6 +1,6 @@
 <fieldset>
 
-    <legend>Dados Pessoais</legend>
+    <legend><span class="icon icon-user"></span> Dados Pessoais</legend>
 
     <div class="form-group">
         {{ Form::label('bio', 'Biografia: ', ['class' => 'col-md-2 control-label']) }}
@@ -26,7 +26,7 @@
 
 <fieldset>
 
-    <legend>Gamer Tags</legend>
+    <legend><span class="icon icon-gamepad"></span> Gamer Tags</legend>
 
     <div class="form-group">
         {{ Form::label('psn', 'PSN: ', ['class' => 'col-md-2 control-label']) }}
@@ -52,7 +52,20 @@
 </fieldset>
 <fieldset>
 
-    <legend>Para organizadores</legend>
+    <legend><span class="icon icon-check"></span> Notificações</legend>
+
+    <div class="form-group">
+        <div class="col-md-7 col-md-offset-2">
+            <div class="checkbox">
+                <label>
+                    {{ Form::checkbox('notify') }} Receber mensalmente novidades da Battleroad.
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- <legend>Para organizadores</legend>
+
 
     <div class="form-group">
         {{ Form::label('moip_user', 'Login MOIP: ', ['class' => 'col-md-2 control-label']) }}
@@ -63,12 +76,12 @@
                 <a href="#">Veja como criar uma conta MOIP aqui</a></p>
             </div>
         </div>
-    </div>
+    </div> -->
 
 </fieldset>
 
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-default champ-button">Salvar</button>
+        <button type="submit" class="btn btn-success champ-button">Salvar</button>
     </div>
 </div>

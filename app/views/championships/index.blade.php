@@ -25,7 +25,7 @@
                             <div class="champ col-md-12">
                                 <a href="{{ route('championships.show', [$champ->id]) }}">
                                     <div class="champ-inner">
-                                        <h3>{{ $champ->name }} <span>{{ $champ->limit }} Vagas restantes</span></h3>
+                                        <h3>{{ $champ->name }} <span>{{ $champ->present()->slotsRemaining }}</span></h3>
                                         <figure>
                                             {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
                                         </figure>

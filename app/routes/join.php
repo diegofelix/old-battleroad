@@ -3,7 +3,7 @@ Route::group(['before' => 'auth'], function()
 {
     Route::get('join/create/{id}', [
         'as' => 'join.create',
-        'before' => 'not_joined_yet',
+        'before' => 'not_joined_yet|has_vacancy',
         'uses' => 'JoinController@index',
     ]);
 
