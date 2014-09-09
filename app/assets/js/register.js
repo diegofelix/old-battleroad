@@ -15,7 +15,7 @@ $(document).ready(function()
 });
 function calcPrice(thePrice, tax, inverted = false)
 {
-    var currentPrice = $(thePrice).val();
+    var currentPrice = $(thePrice).val().replace(',', '.');
     var result = 0;
     if (currentPrice > 0)
     {
