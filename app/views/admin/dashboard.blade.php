@@ -2,22 +2,39 @@
 
 @section('content')
 
-    <div id="championship">
-        <div class="featured-title championship">
-            <div class="container">
-                <h2>
-                    Dashboard
-                </h2>
+    <div id="dashboard-bar" class="main-container">
+        <div class="container">
+            <div class="row">
+                <div class="dashboard-item col-md-4">
+                    <h3>
+                        <span class="icon icon-dollar"></span>
+                        <small>R$</small>108,90
+                    </h3>
+                </div>
+                <div class="dashboard-item col-md-4">
+                    <h3>
+                        <span class="icon icon-trophy"></span>
+                        2 Campeonatos
+                    </h3>
+                </div>
+                <div class="dashboard-item col-md-4">
+                    <h3>
+                        <span class="icon icon-users"></span>
+                        5 Organizações
+                    </h3>
+                </div>
             </div>
         </div>
-    </div>
+</div>
 
     <div class="container">
 
-        <div class="panel panel-primary">
+        <h2 class="main-title">Dashboard</h2>
+
+        <div class="panel panel-default">
             <div class="panel-heading">Campeonatos que estou participando</div>
             <div class="panel-body">
-                <table class="table table-striped">
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Título</th>

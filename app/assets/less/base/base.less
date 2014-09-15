@@ -31,21 +31,40 @@ body {
 }
 .navbar {
     padding: 20px 0;
-    background: transparent url('../images/navbar.png');
+    background-color: #444;
     .navbar-nav > li > a {
-        font-size: 1.1em;
+        font-size: 1.2em;
         font-family: Lato, Trebuchet MS, Tahoma, sans-serif;
-        font-weight: 400;
-        color: #ccc;
+        font-weight: 300;
+        color: #eee;
+        &:hover {
+            color: #fff;
+            text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5)
+        }
     }
     .navbar-brand {
         font-size: 1.7em;
-        font-weight: 300;
+        font-weight: 400;
         color: #fff;
-        border-right: 1px solid #333;
+        border-right: 1px solid rgba(0, 0, 0, 0.2);
     }
 }
-
+.navbar-inverse {
+    border-color: none;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.main-container {
+    padding-top: 95px;
+}
+.main-title {
+    border-bottom: 1px solid #eee;
+    font-weight: 300;
+    color: #444;
+    padding-bottom: 10px;
+    a.search {
+        color: #999;
+    }
+}
 .flash-message {
     padding: 30px 0;
     border-radius: 0;
@@ -76,6 +95,7 @@ body {
         margin-right: 10px;
         border-radius: 3px;
         border:1px solid #000;
+        margin-top: -1px;
     }
 }
 .navbar-inverse .navbar-nav > .open > a,
@@ -103,7 +123,7 @@ body {
     padding-bottom: 20px;
 }
 #footer {
-    background-image: linear-gradient(to bottom, #222, #333);
+    background-color: #444;
     padding-top: 20px;
     color: #fff;
     font-size: 1.1em;
