@@ -1,19 +1,45 @@
 <?php
 
-// Route::get('teste', function(){
-//     // $mp = new MP("327781618675455", "nTpwgusnAxp7P3bjmDGlVHqbxcOXVI7x");
+Route::get('outro', function(){
 
-//     // $accessToken = $mp->get_access_token();
+    $response = MPRestClient::post("/checkout/preferences?access_token=" . 'APP_USR-327781618675455-091512-dd9bb9d0fcc54fd5f878ce936d2ae799__C_K__-92389140',  array(
+        "items" => array(
+            array(
+                "title" => "Title of what you are paying for",
+                "currency_id" => "BRL",
+                "category_id" => "Category",
+                "quantity" => 1,
+                "unit_price" => 10.2
+            )
+        ),
+        "marketplace_fee" => 2.29
+    ));
 
-//     // print_r ($accessToken);
-//     $YOUR_APP_ID = 327781618675455;
-//     return Redirect::to('https://auth.mercadolibre.com.ar/authorization?client_id=' . $YOUR_APP_ID . '&response_type=code&platform_id=mp');
+    $url = $response['response']['sandbox_init_point'];
 
-//     // TG-540f30d1e4b06521771f2f3c
-// //     curl -H "Accept: application/json" -H "Content-type: application/x-www-form-urlencoded" -X POST -d \
-// // "grant_type=authorization_code&client_id=327781618675455&client_secret=nTpwgusnAxp7P3bjmDGlVHqbxcOXVI7x&code=TG-540f30d1e4b06521771f2f3c&redirect_uri=MARKETPLACE_REDIRECT_URI" \
-// // "https://api.mercadolibre.com/oauth/token" --cacert cacert.pem -3
-// });
+    return Redirect::to($url);
+
+});
+
+Route::get('teste', function(){
+    $app_id = "327781618675455";
+    $app_secret = "nTpwgusnAxp7P3bjmDGlVHqbxcOXVI7x";
+
+    if ( ! Input::has('code'))
+    {
+        return Redirect::to('https://auth.mercadolivre.com.br/authorization?client_id=' . $app_id . '&response_type=code&platform_id=mp');
+    }
+
+    $response = MPRestClient::post('/oauth/token', http_build_query([
+        'grant_type' => 'authorization_code',
+        'client_id' => $app_id,
+        'client_secret' => $app_secret,
+        'code' => Input::get('code'),
+        'redirect_uri' => 'http://champaholic.dev/teste'
+    ]), "application/x-www-form-urlencoded");
+
+    dd($response);
+});
 
 View::composer('championships.partials.filters', 'Champ\Composers\CompetitionFilterComposer');
 
