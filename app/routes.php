@@ -2,7 +2,10 @@
 
 Route::get('outro', function(){
 
-    $response = MPRestClient::post("/checkout/preferences?access_token=" . 'APP_USR-327781618675455-091512-dd9bb9d0fcc54fd5f878ce936d2ae799__C_K__-92389140',  array(
+    $token = "APP_USR-327781618675455-091615-662ac2200c7e764b685c75d3853d8bda__A_H__-92389140";
+    $refresh_token = "TG-541893d0e4b0450be4c41a6f";
+
+    $response = MPRestClient::post("/checkout/preferences?access_token=" . $token,  array(
         "items" => array(
             array(
                 "title" => "Title of what you are paying for",
