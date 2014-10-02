@@ -53,9 +53,24 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
             'uses' => 'Registration\CompetitionsController@store'
         ]);
 
-        Route::post('register/{register}/games/{games}', [
+        Route::delete('register/{register}/games/{games}', [
             'as' => 'admin.register.games.destroy',
             'uses' => 'Registration\CompetitionsController@destroy'
+        ]);
+
+        /*
+         |---------------------------------------------------------------------
+         | Integration Routes
+         |---------------------------------------------------------------------
+         */
+        Route::get('register/{register}/integration', [
+            'as' => 'admin.register.integration',
+            'uses' => 'Registration\IntegrationController@index'
+        ]);
+
+        Route::get('register/{register}/login', [
+            'as' => 'admin.register.login',
+            'uses' => 'Registration\IntegrationController@login'
         ]);
 
         /*
