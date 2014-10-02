@@ -1,72 +1,112 @@
-@extends ('layouts.admin_register')
+@extends ('layouts.admin_register_2')
 
 @section ('register_content')
 
-    {{ Form::open(['route' => 'admin.register.store', 'role' => 'form', 'class' => 'form-horizontal', 'files' => true]) }}
+    <h2 class="main-title">Cadastrando um Novo Campeonato</h2>
 
-        <div class="main-form">
+    <ol id="steps">
+        <li>
+            <div class="step-title">
+                <span class="number">1</span>
+                <h2>
+                    Informações
+                    <small>Como vai ser?</small>
+                </h2>
+            </div>
+            <div class="row">
+            <div class="step-content main-form col-md-12">
+                {{ Form::open(['route' => 'admin.register.store', 'role' => 'form', 'files' => true]) }}
 
-            {{ Form::hidden('user_id', Auth::user()->id) }}
+                        {{ Form::hidden('user_id', Auth::user()->id) }}
 
-            <fieldset>
+                        <fieldset>
 
-                <div class="form-group">
-                    {{ Form::label('name', 'Nome:', ['class' => 'col-md-2 control-label']) }}
-                    <div class="col-md-9">
-                        {{ Form::text('name', null, [
-                            'class' => 'form-control',
-                            'id' => 'name',
-                            'required' => 'required'
-                        ]) }}
-                    </div>
-                </div>
+                            <div class="form-group">
+                                {{ Form::label('name', 'Nome:', ['class' => 'control-label']) }}
+                                {{ Form::text('name', null, [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Nome do Campeonato',
+                                    'id' => 'name',
+                                    'required' => 'required'
+                                ]) }}
+                            </div>
 
-                <div class="form-group">
-                    {{ Form::label('name', 'Descrição:', ['class' => 'col-md-2 control-label']) }}
-                    <div class="col-md-9">
-                        {{ Form::textarea('description', null, [
-                            'class' => 'form-control',
-                            'id' => 'description'
-                        ]) }}
-                        <span class="help-block">
-                            Você pode usar Markdown para estilizar a descrição do seu campeonato, só não exagere. <br>
-                            Não sabe usar o Markdown? Veja {{ link_to('http://battleroad.uservoice.com/knowledgebase/articles/339890-como-usar-o-markdown', 'como usar aqui.') }}
-                        </span>
-                    </div>
-                </div>
+                            <div class="form-group">
+                                {{ Form::label('name', 'Descrição:', ['class' => 'control-label']) }}
+                                {{ Form::textarea('description', null, [
+                                    'class' => 'form-control togglable-help',
+                                    'placeholder' => 'Descrição do campeonato',
+                                    'id' => 'description'
+                                ]) }}
+                                <span class="help-block hide">
+                                    Você pode usar Markdown para estilizar a descrição do seu campeonato, só não exagere. <br>
+                                    Não sabe usar o Markdown? Veja {{ link_to('http://battleroad.uservoice.com/knowledgebase/articles/339890-como-usar-o-markdown', 'como usar aqui.') }}
+                                </span>
+                            </div>
 
-                <div class="form-group">
-                    {{ Form::label('name', 'Imagem:', ['class' => 'col-md-2 control-label']) }}
-                    <div class="col-md-9">
-                        {{ Form::file('image', ['id' => 'image']) }}
-                        <span class="help-block">
-                            É recomendado que você envie uma imagem de 1140x300 pixels, pois esse é o tamanho que mostraremos aos seus competidores.
-                        </span>
-                    </div>
-                </div>
+                            <div class="form-group">
+                                {{ Form::label('name', 'Imagem:', ['class' => 'control-label']) }}
+                                {{ Form::file('image', ['id' => 'image', 'class' => 'form-control togglable-help']) }}
+                                <span class="help-block hide">
+                                    É recomendado que você envie uma imagem de 1140x300 pixels, pois esse é o tamanho que mostraremos aos seus competidores.
+                                </span>
+                            </div>
 
-                <div class="form-group">
-                    {{ Form::label('name', 'Data de Início:', ['class' => 'col-md-2 control-label']) }}
-                    <div class="col-md-9">
-                        {{ Form::text('event_start', null, [
-                            'class' => 'form-control',
-                            'id' => 'event_start',
-                            'required' => 'required'
-                        ]) }}
-                    </div>
-                </div>
+                            <div class="form-group">
+                                {{ Form::label('name', 'Data de Início:', ['class' => 'control-label']) }}
+                                    {{ Form::text('event_start', null, [
+                                        'class' => 'form-control',
+                                        'placeholder' => 'Data no formato: dd/mm/aaaa',
+                                        'id' => 'event_start',
+                                        'required' => 'required'
+                                    ]) }}
+                            </div>
 
-                <div class="form-group">
-                    <div class="col-md-9 col-md-offset-2">
-                        <button type="submit" class="btn btn-success champ-button"><i class="icon icon-arrow-right"></i> Continuar</button>
-                    </div>
-                </div>
-
-            </fieldset>
-
-        </div>
-
-    {{ Form::close() }}
+                            <div class="form-group next-step">
+                                <button type="submit" class="btn btn-success champ-button pull-right"><i class="icon icon-arrow-right"></i> Continuar</button>
+                            </div>
+                        </fieldset>
+                {{ Form::close() }}
+            </div>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">2</span>
+                <h2>
+                    Localização
+                    <small>Onde vai ser?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">3</span>
+                <h2>
+                    Jogos
+                    <small>Quais jogos?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">4</span>
+                <h2>
+                    Sistema de Pagamento
+                    <small>Integre à sua conta Mercado Livre</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">5</span>
+                <h2>
+                    Confirmação
+                    <small>Tudo certo?</small>
+                </h2>
+            </div>
+        </li>
+    </ol>
 
 @endsection
 @section('scripts')

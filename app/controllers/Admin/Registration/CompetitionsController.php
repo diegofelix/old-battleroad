@@ -44,8 +44,12 @@ class CompetitionsController extends BaseRegistrationController
     public function index($champId)
     {
         $championship = $this->champRepo->find($champId, ['competitions']);
+        $championship = $this->champRepo->find($champId, ['competitions']);
+        $games = $this->gameRepo->dropdown();
+        $formats = $this->formatRepo->dropdown();
+        $platforms = $this->platformRepo->dropdown();
 
-        return $this->view('admin.register.games.index', compact('championship'));
+        return $this->view('admin.register.games.index', compact('championship', 'games', 'formats', 'platforms'));
     }
 
     /**
