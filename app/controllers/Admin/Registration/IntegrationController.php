@@ -20,11 +20,10 @@ class IntegrationController extends BaseRegistrationController {
         return $this->view('admin.register.integration', compact('championship'));
     }
 
-    public function login()
+    public function login($id)
     {
-        $currentUrl = Request::url();
-
-        $mercadopago = App::make('Champ\Billing\MercadoPago\Marketplace');
+        $currentUrl  = Request::url();
+        $mercadopago = $this->getMercadoPagoApi();
 
         if ( ! Input::has('code'))
         {
@@ -33,6 +32,18 @@ class IntegrationController extends BaseRegistrationController {
 
         $response = $mercadopago->getSellerAccessToken(Input::get('code'), $currentUrl);
 
-        var_dump($response);
+        $championship = $this->championshipRepository->addRefreshToken($id, $response['response']['refresh_token']);
+
+        return $this->view('admin.register.integration', compact('championship'));
+    }
+
+    /**
+     * Get a mercado pago api instance
+     *
+     * @return Champ\Billing\MercadoPago\Marketplace
+     */
+    public function getMercadoPagoApi()
+    {
+        return App::make('Champ\Billing\MercadoPago\Marketplace');
     }
 }

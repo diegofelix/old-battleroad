@@ -16,7 +16,7 @@ class Marketplace {
     public function getAuthenticationUrl($redirectUrl)
     {
         $clientId = getenv('MERCADOLIVRE_CLIENT');
-        return "https://auth.mercadolibre.com.ar/authorization?client_id={$clientId}&response_type=code&platform_id=mp&redirect_uri={$redirectUrl}";
+        return "https://auth.mercadolivre.com.br/authorization?client_id={$clientId}&response_type=code&platform_id=mp&redirect_uri={$redirectUrl}";
     }
 
     /**

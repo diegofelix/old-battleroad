@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddCoinsToUsersTable extends Migration {
+class AddRefreshTokenToChampionshipsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,9 +12,9 @@ class AddCoinsToUsersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('championships', function(Blueprint $table)
 		{
-			$table->integer('coins')->after('points');
+			$table->string('refresh_token')->after('limit');
 		});
 	}
 
@@ -26,9 +26,9 @@ class AddCoinsToUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::table('users', function(Blueprint $table)
+		Schema::table('championships', function(Blueprint $table)
 		{
-			$table->dropColumn('coins');
+			$table->dropColumn('refresh_token');
 		});
 	}
 
