@@ -247,4 +247,18 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         return apply_rate($price, Config::get('champ.rate'));
     }
 
+    /**
+     * Add a refresh token, used by the billing mercado pago for the user
+     *
+     * @param string $refreshToken
+     */
+    public function addRefreshToken($id, $refreshToken)
+    {
+        $championship = $this->model->find($id);
+        $championship->refresh_token = $refreshToken;
+        $championship->save();
+
+        return $championship;
+    }
+
 }

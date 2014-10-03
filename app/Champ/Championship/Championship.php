@@ -159,4 +159,14 @@ class Championship extends Eloquent
         }
     }
 
+    /**
+     * Check if the user already has integrated with MercadoPago
+     *
+     * @return boolean
+     */
+    public function hasIntegrated()
+    {
+        return !is_null($this->refresh_token);
+    }
+
 }
