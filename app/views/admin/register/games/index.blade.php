@@ -12,17 +12,8 @@
             </div>
         </li>
         <li>
-            <div class="step-title step-finished">
-                <span class="number">2</span>
-                <h2>
-                    Localização
-                    <small>Onde vai ser?</small>
-                </h2>
-            </div>
-        </li>
-        <li>
             <div class="step-title">
-                <span class="number">3</span>
+                <span class="number">2</span>
                 <h2>
                     Jogos
                     <small>Quais jogos?</small>
@@ -80,9 +71,18 @@
                     </table>
 
                     <div class="form-group next-step">
-                        <a href="{{ route('admin.register.integration', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
+                        <a href="{{ route('admin.register.pricing', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
                     </div>
                 </div>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">3</span>
+                <h2>
+                    Valores
+                    <small>Quanto custará pra participar</small>
+                </h2>
             </div>
         </li>
         <li>

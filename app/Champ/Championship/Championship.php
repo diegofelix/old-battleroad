@@ -34,9 +34,9 @@ class Championship extends Eloquent
      * @param  string $thumb
      * @return Championship
      */
-    public static function register($user_id, $name, $description, $event_start, $image = null, $thumb = null)
+    public static function register($user_id, $name, $description, $event_start, $location, $image = null, $thumb = null, $limit = null)
     {
-       return new static(compact('user_id', 'name', 'description', 'event_start', 'image', 'thumb'));
+       return new static(compact('user_id', 'name', 'description', 'event_start', 'location', 'image', 'thumb', 'limit'));
     }
 
     /**

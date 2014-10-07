@@ -16,17 +16,17 @@
             <div class="step-title step-finished">
                 <span class="number">2</span>
                 <h2>
-                    Localização
-                    <small>Onde vai ser?</small>
+                    Jogos
+                    <small>Quais jogos?</small>
                 </h2>
             </div>
         </li>
         <li>
-            <div class="step-title step-finished">
+            <div class="step-title">
                 <span class="number">3</span>
                 <h2>
-                    Jogos
-                    <small>Quais jogos?</small>
+                    Valores
+                    <small>Quanto custará pra participar</small>
                 </h2>
             </div>
         </li>
