@@ -31,12 +31,14 @@ class RegisterController extends BaseRegistrationController {
             Input::get('name'),
             Input::get('description'),
             Input::get('event_start'),
-            Input::file('image')
+            Input::get('location'),
+            Input::file('image'),
+            Input::get('limit')
         );
 
         $championship = $this->execute($command);
 
-        return $this->redirectRoute('admin.register.location', [$championship->id]);
+        return $this->redirectRoute('admin.register.games', [$championship->id]);
     }
 
 }

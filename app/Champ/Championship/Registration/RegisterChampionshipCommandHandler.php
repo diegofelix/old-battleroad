@@ -28,8 +28,10 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
             $command->name,
             $command->description,
             $command->event_start,
+            $command->location,
             $image->getImagePath(),
-            $image->getThumbPath()
+            $image->getThumbPath(),
+            $command->limit
         );
 
         $this->repository->save($championship);

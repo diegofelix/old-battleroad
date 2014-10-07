@@ -1,5 +1,19 @@
 <?php
 
+Route::get('egon', function(){
+
+    $image = Intervention\Image\Image::make(public_path('/images/balloon.png'));
+    // return $image->text('Aqui eh o Egon!', 40, 40, function($font){
+    //     $font->file(1);
+    //     $font->size(100);
+    // })->response('jpg');
+    return $image->text(Input::get('tweet', 'foo'), 50, 100, function($font) {
+        $font->file(public_path('fonts/DroidSans.ttf'));
+        $font->color(array(0,0,0, 0.4));
+        $font->size(30);
+    })->response('png');
+});
+
 Route::get('teste', function(){
     $mercadopago = App::make('Champ\Billing\MercadoPago\Marketplace');
 

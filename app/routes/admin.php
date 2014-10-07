@@ -21,15 +21,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
          |
          */
 
-        Route::get('register/{register}/location', [
-            'as' => 'admin.register.location',
-            'uses' => 'Registration\LocationController@create'
-        ]);
+        // Route::get('register/{register}/location', [
+        //     'as' => 'admin.register.location',
+        //     'uses' => 'Registration\LocationController@create'
+        // ]);
 
-        Route::post('register/{register}/location', [
-            'as' => 'admin.register.storeLocation',
-            'uses' => 'Registration\LocationController@store'
-        ]);
+        // Route::post('register/{register}/location', [
+        //     'as' => 'admin.register.storeLocation',
+        //     'uses' => 'Registration\LocationController@store'
+        // ]);
 
         /*
          |---------------------------------------------------------------------
@@ -56,6 +56,21 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
         Route::delete('register/{register}/games/{games}', [
             'as' => 'admin.register.games.destroy',
             'uses' => 'Registration\CompetitionsController@destroy'
+        ]);
+
+        /*
+         |---------------------------------------------------------------------
+         | Princing Routes
+         |---------------------------------------------------------------------
+         */
+        Route::get('register/{register}/pricing', [
+            'as' => 'admin.register.pricing',
+            'uses' => 'Registration\PricingController@create'
+        ]);
+
+        Route::post('register/{register}/pricing', [
+            'as' => 'admin.register.storePricing',
+            'uses' => 'Registration\PricingController@store'
         ]);
 
         /*

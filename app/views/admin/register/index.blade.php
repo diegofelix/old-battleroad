@@ -62,6 +62,28 @@
                                     ]) }}
                             </div>
 
+                            <div class="form-group">
+                                {{ Form::label('location', 'Localização:', ['class' => 'control-label']) }}
+                                {{ Form::text('location', null, [
+                                    'class' => 'form-control',
+                                    'placeholder' => 'Online, Shopp Itaquera..',
+                                    'id' => 'location',
+                                    'required' => 'required'
+                                ]) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::label('limit', 'Limite de participantes:', ['class' => 'control-label']) }}
+                                {{ Form::text('limit', null, [
+                                    'class' => 'form-control',
+                                    'placeholder' => '200',
+                                    'id' => 'limit'
+                                ]) }}
+                                <span class="help-block">
+                                    Deixe em branco se não houver limites.
+                                </span>
+                            </div>
+
                             <div class="form-group next-step">
                                 <button type="submit" class="btn btn-success champ-button pull-right"><i class="icon icon-arrow-right"></i> Continuar</button>
                             </div>
@@ -74,8 +96,8 @@
             <div class="step-title">
                 <span class="number">2</span>
                 <h2>
-                    Localização
-                    <small>Onde vai ser?</small>
+                    Jogos
+                    <small>Quais jogos?</small>
                 </h2>
             </div>
         </li>
@@ -83,8 +105,8 @@
             <div class="step-title">
                 <span class="number">3</span>
                 <h2>
-                    Jogos
-                    <small>Quais jogos?</small>
+                    Valores
+                    <small>Quanto custará pra participar</small>
                 </h2>
             </div>
         </li>
