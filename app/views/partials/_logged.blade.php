@@ -26,7 +26,7 @@
                 <li id="user-options" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         {{ HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['width' => '25']) }}
-                        {{ Auth::user()->name }}
+                        {{{ Auth::user()->name }}}
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-with-icons">

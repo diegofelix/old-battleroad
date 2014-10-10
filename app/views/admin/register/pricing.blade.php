@@ -49,7 +49,7 @@
                                 <div class="col-md-2">
                                     <div class="input-group">
                                         <div class="input-group-addon">R$</div>
-                                        <input class="form-control" type="text">
+                                        <input class="form-control" type="text" name="price">
                                     </div>
                                 </div>
                             </div>
@@ -62,7 +62,7 @@
                                     <div class="col-md-2">
                                         <div class="input-group">
                                             <div class="input-group-addon">R$</div>
-                                            <input class="form-control" type="text">
+                                            <input class="form-control" type="text" name="championship[{{ $competition->id }}][]">
                                         </div>
                                     </div>
                                 </div>

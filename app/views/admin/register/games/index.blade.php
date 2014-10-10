@@ -71,7 +71,7 @@
                     </table>
 
                     <div class="form-group next-step">
-                        <a href="{{ route('admin.register.pricing', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
+                        <a href="{{ route('admin.register.integration', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
                     </div>
                 </div>
             </div>
@@ -80,15 +80,6 @@
             <div class="step-title">
                 <span class="number">3</span>
                 <h2>
-                    Valores
-                    <small>Quanto custará pra participar</small>
-                </h2>
-            </div>
-        </li>
-        <li>
-            <div class="step-title">
-                <span class="number">4</span>
-                <h2>
                     Sistema de Pagamento
                     <small>Integre à sua conta Mercado Livre</small>
                 </h2>
@@ -96,7 +87,7 @@
         </li>
         <li>
             <div class="step-title">
-                <span class="number">5</span>
+                <span class="number">4</span>
                 <h2>
                     Confirmação
                     <small>Tudo certo?</small>

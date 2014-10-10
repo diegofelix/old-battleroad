@@ -1,0 +1,12 @@
+  'id' => 168510639
+  'nickname' => 'TETE9502501'
+  'password' => 'qatest1148'
+  'site_status' => 'active'
+  'email' => 'test_user_39348373@testuser.com'
+
+  array (size=5)
+      'id' => 168510668
+      'nickname' => 'TETE4247442'
+      'password' => 'qatest2901'
+      'site_status' => 'active'
+      'email' => 'test_user_99463950@testuser.com'

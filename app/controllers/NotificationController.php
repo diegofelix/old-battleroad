@@ -32,4 +32,15 @@ class NotificationController extends BaseController {
 
         Log::info('Join updated');
     }
+
+    public function mercadopago()
+    {
+        $id = Input::get('id');
+
+        $marketplace = App::make('Champ\Billing\MercadoPago\Marketplace');
+
+        $paymentInfo = $marketplace->getPayment($id);
+
+        Log::info($paymentInfo);
+    }
 }

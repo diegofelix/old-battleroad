@@ -22,17 +22,8 @@
             </div>
         </li>
         <li>
-            <div class="step-title step-finished">
-                <span class="number">3</span>
-                <h2>
-                    Valores
-                    <small>Quanto custará pra participar</small>
-                </h2>
-            </div>
-        </li>
-        <li>
             <div class="step-title">
-                <span class="number">4</span>
+                <span class="number">3</span>
                 <h2>
                     Sistema de Pagamento
                     <small>Integre à sua conta Mercado Livre</small>
@@ -61,7 +52,7 @@
         </li>
         <li>
             <div class="step-title">
-                <span class="number">5</span>
+                <span class="number">4</span>
                 <h2>
                     Confirmação
                     <small>Tudo certo?</small>
