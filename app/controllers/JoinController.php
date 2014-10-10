@@ -7,7 +7,7 @@ use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
-use Champ\Billing\Pagseguro\Pagseguro;
+use Champ\Billing\MercadoPago\Marketplace;
 
 class JoinController extends BaseController implements PaymentListenerInterface
 {
@@ -36,7 +36,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
     /**
      * Moip Billing
      *
-     * @var Pagseguro
+     * @var Marketplace
      */
     protected $billing;
 
@@ -44,7 +44,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepository,
         CommandBus $commandBus,
-        Pagseguro $billing
+        Marketplace $billing
     )
     {
         $this->champRepo = $champRepo;
@@ -105,7 +105,9 @@ class JoinController extends BaseController implements PaymentListenerInterface
     {
         $join = $this->findAJoinById($id);
 
-        return $this->billing->invoice($join, $this);
+        $response = $this->billing->invoice($join, $this);
+
+        dd($response);
     }
 
     /**
@@ -144,6 +146,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     public function paymentAllowed($response, Join $join)
     {
+        dd($response);
         $join->token = $response->getCode();
 
         $this->joinRepository->save($join);

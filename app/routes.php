@@ -1,5 +1,22 @@
 <?php
 
+Route::get('usuario-teste', function(){
+
+    $marketplace = App::make('Champ\Billing\MercadoPago\Marketplace');
+
+    $response = $marketplace->createTestUser();
+
+    dd($response);
+});
+
+Route::get('historico', function(){
+    $marketplace = App::make('Champ\Billing\MercadoPago\Marketplace');
+
+    $response = $marketplace->getHistory(Champ\Championship\Championship::find(15));
+
+    dd($response);
+});
+
 Route::get('egon', function(){
 
     $image = Intervention\Image\Image::make(public_path('/images/balloon.png'));

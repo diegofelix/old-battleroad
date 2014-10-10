@@ -166,7 +166,7 @@ class Championship extends Eloquent
      */
     public function hasIntegrated()
     {
-        return !is_null($this->refresh_token);
+        return !empty($this->refresh_token);
     }
 
 }
