@@ -4,6 +4,7 @@ use Champ\Join\Join;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\UpdateJoinCommand;
 use Laracasts\Commander\CommanderTrait;
+use Log;
 
 class NotificationController extends BaseController {
 
@@ -35,6 +36,8 @@ class NotificationController extends BaseController {
 
     public function mercadopago()
     {
+        Log::info('Recebeu alguma notificacao aqui');
+
         $id = Input::get('id');
 
         $marketplace = App::make('Champ\Billing\MercadoPago\Marketplace');
