@@ -528,12 +528,31 @@
 			}
 		},
 		{
-			"file": "app/Champ/Billing/MercadoPago/test_users.txt",
+			"file": ".env.local.php",
 			"settings":
 			{
-				"buffer_size": 345,
+				"buffer_size": 891,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "// Usuario com APP.\n'id' => int 168546432\n'nickname' => string 'TETE6554437' (length=11)\n'password' => string 'qatest8185' (length=10)\n'site_status' => string 'active' (length=6)\n'email' => string 'test_user_27780787@testuser.com' (length=31)\n\n// Usuario que vende.\n'id' => 168510639\n'nickname' => 'TETE9502501'\n'password' => 'qatest1148'\n'site_status' => 'active'\n'email' => 'test_user_39348373@testuser.com'\n\n// Usuario que compra.\n'id' => 168510668\n'nickname' => 'TETE4247442'\n'password' => 'qatest2901'\n'site_status' => 'active'\n'email' => 'test_user_99463950@testuser.com'\n",
+			"file": "app/Champ/Billing/MercadoPago/test_users.txt",
+			"file_size": 345,
+			"file_write_time": 130573602432540660,
+			"settings":
+			{
+				"buffer_size": 578,
 				"line_ending": "Unix",
 				"name": "'id' => 168510639"
+			}
+		},
+		{
+			"file": "app/views/layouts/default.blade.php",
+			"settings":
+			{
+				"buffer_size": 3088,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -550,6 +569,16 @@
 			{
 				"buffer_size": 3915,
 				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "Searching 9104 files for \"3348313329700561\"\n\n/media/win/xampp/htdocs/answer-stack/.env.local.php:\n   23  \n   24      // Teste\n   25:     'MERCADOLIVRE_CLIENT' => '3348313329700561',\n   26      'MERCADOLIVRE_SECRET' => '8qRy6R72rul2XKPnh2Wz18AsC2r7Atya',\n   27  \n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/0e3ff6d045641c0244225f7bbf465232.json:\n    1: {\"__meta\":{\"id\":\"0e3ff6d045641c0244225f7bbf465232\",\"datetime\":\"2014-10-10 15:19:17\",\"utime\":1412954357.7539,\"method\":\"GET\",\"uri\":\"\\/teste?error=redirect_uri_mismatch&error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412954355.206,\"end\":1412954357.7542,\"duration\":2.5481770038605,\"duration_str\":\"2.55s\",\"measures\":[{\"label\":\"Booting\",\"start\":1412954355.2186,\"relative_start\":0.012584924697876,\"end\":1412954357.5521,\"relative_end\":1412954357.5521,\"duration\":2.3335590362549,\"duration_str\":\"2.33s\"},{\"label\":\"Application\",\"start\":1412954357.5716,\"relative_start\":2.3655939102173,\"end\":1412954357.7354,\"relative_end\":1412954357.7354,\"duration\":0.16381192207336,\"duration_str\":\"163.81ms\"},{\"label\":\"After application\",\"start\":1412954357.7355,\"relative_start\":2.5295209884644,\"end\":1412954357.7542,\"relative_end\":2.6941299438477e-5,\"duration\":0.018682956695557,\"duration_str\":\"18.68ms\"}]},\"memory\":{\"peak_usage\":3670016,\"peak_usage_str\":\"3.5MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET teste\",\"name\":\"-\",\"action\":\"Closure\",\"before\":\"-\",\"after\":\"-\"},\"queries\":{\"nb_statements\":0,\"nb_failed_statements\":0,\"accumulated_duration\":0,\"accumulated_duration_str\":\"0\\u03bcs\",\"statements\":[]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array(2) [\\n    'error' => string (21) \\\"redirect_uri_mismatch\\\"\\n    'error_description' => string (110) \\\"Your client callback must have the same host of your redirect_uri or the same host of your application domains\\\"\\n]\",\"request_request\":\"array()\",\"request_headers\":\"array(8) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'referer' => array(1) [\\n        string (54) \\\"http:\\/\\/battleroad.com.br\\/admin\\/register\\/10\\/integration\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1413) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IktDajFuOWErUXg3Zlh6VEtXWExqeHhPOWpkdnZsV3RJbU0zT0I5OUpDT0k9IiwidmFsdWUiOiJDZllxanJoM2Y4RGxSc1ZySUtmbkFGTnViSXY3Vk9laXZnK2FcL2xvNmRvc0NNdndYUkdyR1BsemRDVm9xc3c5OE8rMDAwWlNGcEJXbWlcL2hqNUJWc0pBPT0iLCJtYWMiOiI0ZDNmNTc4YTNhMGYxYzc3ZDM1MWZlZDgyYWY0ODUyN2ZmMDJlMDc1NWU0OWU5MWRiN2RlOTI0YTg0MjE0NDdmIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6ImN4UStRQjFjMmpWOFRuaXNZZ1Iwc0h1TGNTVzBCcDZ6cGU5SGQyUzhLM2M9IiwidmFsdWUiOiJ6M1pGUkhtelZuOTZXN0lmVmd4c0RtRzhsMFJOeTJycXZLSVdxVmZRbFJkWmZXcEZHTEs5N2tZcGpsdG5PT1k5VjZTcVwvbXlpa0dVZTVwV0ZCalJVcUlcL2dJTmNVc0Zjd09PNlA0ZWlVN2x0citlWkhZK0lheHpoTXB1bGxrS0hCVHNRc2Y4WVp6ZTA4NHFnb0syYmRlcmJ1N3dsR1wvV3lOaWZ6RVRXaGRST1wvMTdaeUY3eCtUTGZ3OUpZcko1RTFoTUhSdXZlOGxSM1kzSEY2cmg3MGxnUjlxZG91QytqcHRcL2xidjA4UXRCS0Z1UlNsdHZWYmlUZG9PNHFqSm1pc3JUaEtOQkdUUmFTM0hWQ2prd2JNQnVMSU9vM05idWN0SXY5dmdZVzk2XC82cms1S05YcEtBTW5IS1wvMkJzN3g4QU1EMnhObVRESHZKUWhROWhITnJpZmJocGNOTUd2K1lRcEJxNUtFM1dmSllxSUhJS2VuOUhYM2tWVXgzaFZvVGpSWnJsVlJaUllSRHhuNWxUZ3FBdCtqcFhKYXdrNlkyendGMXhYemhTazM3c2tROFpqOEN4alVYMjU4V1wvTlB0WTdkdUQ2c2lOUDVzZGxUclwvZmRYWEpuVDdPWDhsNXRIUWptaFQreFpGYjhDK1phSWlvOThCeFN3QTlLNlpKQ1I1UVZzM3krc2h0cEJrTEV5Q0FjRWFpWXZFQ0xyQWZJMnRJblgzd2l4aHZFK2k4WUNpbmVcL1BRZE1LZ1l5YktjaVZIaUtxQkZpQWV0dzdScDQxeTFiMlZRUT09IiwibWFjIjoiMTg2ODdhYTU1MmRjY2Q3ZWZiNTY3YWZiZmQ1Y2ZiYjcxMjk4MGJmOGI5MmY0ZDA1NGM1ZWJiMzMzMDc1NTU4NCJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(34) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_REFERER' => string (54) \\\"http:\\/\\/battleroad.com.br\\/admin\\/register\\/10\\/integration\\\"\\n    'HTTP_COOKIE' => string (1413) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IktDajFuOWErUXg3Zlh6VEtXWExqeHhPOWpkdnZsV3RJbU0zT0I5OUpDT0k9IiwidmFsdWUiOiJDZllxanJoM2Y4RGxSc1ZySUtmbkFGTnViSXY3Vk9laXZnK2FcL2xvNmRvc0NNdndYUkdyR1BsemRDVm9xc3c5OE8rMDAwWlNGcEJXbWlcL2hqNUJWc0pBPT0iLCJtYWMiOiI0ZDNmNTc4YTNhMGYxYzc3ZDM1MWZlZDgyYWY0ODUyN2ZmMDJlMDc1NWU0OWU5MWRiN2RlOTI0YTg0MjE0NDdmIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6ImN4UStRQjFjMmpWOFRuaXNZZ1Iwc0h1TGNTVzBCcDZ6cGU5SGQyUzhLM2M9IiwidmFsdWUiOiJ6M1pGUkhtelZuOTZXN0lmVmd4c0RtRzhsMFJOeTJycXZLSVdxVmZRbFJkWmZXcEZHTEs5N2tZcGpsdG5PT1k5VjZTcVwvbXlpa0dVZTVwV0ZCalJVcUlcL2dJTmNVc0Zjd09PNlA0ZWlVN2x0citlWkhZK0lheHpoTXB1bGxrS0hCVHNRc2Y4WVp6ZTA4NHFnb0syYmRlcmJ1N3dsR1wvV3lOaWZ6RVRXaGRST1wvMTdaeUY3eCtUTGZ3OUpZcko1RTFoTUhSdXZlOGxSM1kzSEY2cmg3MGxnUjlxZG91QytqcHRcL2xidjA4UXRCS0Z1UlNsdHZWYmlUZG9PNHFqSm1pc3JUaEtOQkdUUmFTM0hWQ2prd2JNQnVMSU9vM05idWN0SXY5dmdZVzk2XC82cms1S05YcEtBTW5IS1wvMkJzN3g4QU1EMnhObVRESHZKUWhROWhITnJpZmJocGNOTUd2K1lRcEJxNUtFM1dmSllxSUhJS2VuOUhYM2tWVXgzaFZvVGpSWnJsVlJaUllSRHhuNWxUZ3FBdCtqcFhKYXdrNlkyendGMXhYemhTazM3c2tROFpqOEN4alVYMjU4V1wvTlB0WTdkdUQ2c2lOUDVzZGxUclwvZmRYWEpuVDdPWDhsNXRIUWptaFQreFpGYjhDK1phSWlvOThCeFN3QTlLNlpKQ1I1UVZzM3krc2h0cEJrTEV5Q0FjRWFpWXZFQ0xyQWZJMnRJblgzd2l4aHZFK2k4WUNpbmVcL1BRZE1LZ1l5YktjaVZIaUtxQkZpQWV0dzdScDQxeTFiMlZRUT09IiwibWFjIjoiMTg2ODdhYTU1MmRjY2Q3ZWZiNTY3YWZiZmQ1Y2ZiYjcxMjk4MGJmOGI5MmY0ZDA1NGM1ZWJiMzMzMDc1NTU4NCJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"42521\\\"\\n    'REDIRECT_QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REDIRECT_URL' => string (6) \\\"\\/teste\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REQUEST_URI' => string (163) \\\"\\/teste?error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412954355.206\\n    'REQUEST_TIME' => integer 1412954355\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (413) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:3:{s:32:&quot;ac0c82ed7ce249d47cfeb0d9d96dbd25&quot;;N;s:32:&quot;139d68f6979d07e5063ecc682a23c743&quot;;N;s:32:&quot;823db93363f23de031462fa954f37a40&quot;;N;}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412954342;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 15:19:17 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (149) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/teste\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/teste\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array(3) [\\n        'ac0c82ed7ce249d47cfeb0d9d96dbd25' => NULL\\n        '139d68f6979d07e5063ecc682a23c743' => NULL\\n        '823db93363f23de031462fa954f37a40' => NULL\\n    ]\\n]\"}}\n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/139d68f6979d07e5063ecc682a23c743.json:\n    1: {\"__meta\":{\"id\":\"139d68f6979d07e5063ecc682a23c743\",\"datetime\":\"2014-10-10 15:18:04\",\"utime\":1412954284.8337,\"method\":\"GET\",\"uri\":\"\\/teste?error=redirect_uri_mismatch&error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412954281.735,\"end\":1412954284.8343,\"duration\":3.0993211269379,\"duration_str\":\"3.1s\",\"measures\":[{\"label\":\"Booting\",\"start\":1412954281.754,\"relative_start\":0.01895809173584,\"end\":1412954284.5839,\"relative_end\":1412954284.5839,\"duration\":2.8299510478973,\"duration_str\":\"2.83s\"},{\"label\":\"Application\",\"start\":1412954284.5963,\"relative_start\":2.8613500595093,\"end\":1412954284.8052,\"relative_end\":1412954284.8052,\"duration\":0.20887804031372,\"duration_str\":\"208.88ms\"},{\"label\":\"After application\",\"start\":1412954284.8055,\"relative_start\":3.0705101490021,\"end\":1412954284.8344,\"relative_end\":7.4863433837891e-5,\"duration\":0.028885841369629,\"duration_str\":\"28.89ms\"}]},\"memory\":{\"peak_usage\":3670016,\"peak_usage_str\":\"3.5MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET teste\",\"name\":\"-\",\"action\":\"Closure\",\"before\":\"-\",\"after\":\"-\"},\"queries\":{\"nb_statements\":0,\"nb_failed_statements\":0,\"accumulated_duration\":0,\"accumulated_duration_str\":\"0\\u03bcs\",\"statements\":[]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array(2) [\\n    'error' => string (21) \\\"redirect_uri_mismatch\\\"\\n    'error_description' => string (110) \\\"Your client callback must have the same host of your redirect_uri or the same host of your application domains\\\"\\n]\",\"request_request\":\"array()\",\"request_headers\":\"array(7) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1249) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6ImJ5Q1VNczBpNFlHMVRxZURZNDdhSjFKS0Y1ZFpSOExmSzd1dzJCRmpTeEk9IiwidmFsdWUiOiJGTzBIcTRWOXVYdVl5VEt4ZlRlc3ZyQ2tEYkZPaUFnOGZGZW9LUWdzWkpTbUhFZkpVeG0xR2NiNXViMXc5TEtcLzNsclwvbjBVaFNZRWt0VXhWY25TaUtnPT0iLCJtYWMiOiJlNGI1MmVlNmE0YzM2NzlmYjQ5NGIyMDZhYzUzNGZmY2E4Mjg2YTBmYzIxMTkxOGQ1ODhiYmIzODczYWY4YmJkIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IkZGdmFpSThLQkNLRytVQjAxVEdBdHZIdmNVYXdQRHJEMXhoaFpMTXcrRW89IiwidmFsdWUiOiJCVnV0VSs3aUZ3bVwvb3lVbE55XC9zSWRCMmduMW9kXC9kSjVaSzFEYjdrU2xnWFhmcFNscUhmdFcxWnlDNUpPSEJOXC9Kb3l4TXZLVzc3eFZrU2pReW9WZE9qaDdLaXBxUzV2UWlwXC8xV2NZZExcL2pjaG1hbHZnU2JNaXBzUjZyZzZpcmF1NTJaakVqNkI5dGo5U004XC9sZUlIK1VHQXJEejRFR0tGT3hwb0JQSlAxaW5SeXpjZ3VNXC9SVGl3ekQrXC9yWEhaZjRHZDQ2dW1iQXBLNGpTa2xmRmtxYTFZZTNQQ205UUlhSUhhSWF6ZnZRSW9lT3VyTTY3RytIOHFSWFJcL0VBYmZrWmtKXC9vK3NYSGlsVXhYc01UeFhWeU9KZ1wvc0lrMVdiR1N1RTA3NWtTbksxeElTWFBPMk14YW1oTThrQ2poM3VnU1JFOEdxaEpUVVwvUzhoUlVYbDVKdzdIR3AxM3RQM0RpSWRGdFk5T2RCUUlaN0FtZjdDV3pDc3FnQVBPYUY3cXZPS29cLzk1QlBEV05ZUTNZbm9wUVc3T0VVR3VSXC92enFqSWJXbjNCV3dRb0dscUVjYmprTFh6dUlHbUtHaXBUMkwxZkRoQUx3ZHhyRjhsbzhONUZqUT09IiwibWFjIjoiMjRjNGM3YTRiZjI2MmU2YzFjMzkxMGE1N2Q4YzgzMjU4Nzc1NGI2OGZiMDE4NzcwODRjMGIyYTMxYjFhNGM0ZSJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(33) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_COOKIE' => string (1249) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6ImJ5Q1VNczBpNFlHMVRxZURZNDdhSjFKS0Y1ZFpSOExmSzd1dzJCRmpTeEk9IiwidmFsdWUiOiJGTzBIcTRWOXVYdVl5VEt4ZlRlc3ZyQ2tEYkZPaUFnOGZGZW9LUWdzWkpTbUhFZkpVeG0xR2NiNXViMXc5TEtcLzNsclwvbjBVaFNZRWt0VXhWY25TaUtnPT0iLCJtYWMiOiJlNGI1MmVlNmE0YzM2NzlmYjQ5NGIyMDZhYzUzNGZmY2E4Mjg2YTBmYzIxMTkxOGQ1ODhiYmIzODczYWY4YmJkIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IkZGdmFpSThLQkNLRytVQjAxVEdBdHZIdmNVYXdQRHJEMXhoaFpMTXcrRW89IiwidmFsdWUiOiJCVnV0VSs3aUZ3bVwvb3lVbE55XC9zSWRCMmduMW9kXC9kSjVaSzFEYjdrU2xnWFhmcFNscUhmdFcxWnlDNUpPSEJOXC9Kb3l4TXZLVzc3eFZrU2pReW9WZE9qaDdLaXBxUzV2UWlwXC8xV2NZZExcL2pjaG1hbHZnU2JNaXBzUjZyZzZpcmF1NTJaakVqNkI5dGo5U004XC9sZUlIK1VHQXJEejRFR0tGT3hwb0JQSlAxaW5SeXpjZ3VNXC9SVGl3ekQrXC9yWEhaZjRHZDQ2dW1iQXBLNGpTa2xmRmtxYTFZZTNQQ205UUlhSUhhSWF6ZnZRSW9lT3VyTTY3RytIOHFSWFJcL0VBYmZrWmtKXC9vK3NYSGlsVXhYc01UeFhWeU9KZ1wvc0lrMVdiR1N1RTA3NWtTbksxeElTWFBPMk14YW1oTThrQ2poM3VnU1JFOEdxaEpUVVwvUzhoUlVYbDVKdzdIR3AxM3RQM0RpSWRGdFk5T2RCUUlaN0FtZjdDV3pDc3FnQVBPYUY3cXZPS29cLzk1QlBEV05ZUTNZbm9wUVc3T0VVR3VSXC92enFqSWJXbjNCV3dRb0dscUVjYmprTFh6dUlHbUtHaXBUMkwxZkRoQUx3ZHhyRjhsbzhONUZqUT09IiwibWFjIjoiMjRjNGM3YTRiZjI2MmU2YzFjMzkxMGE1N2Q4YzgzMjU4Nzc1NGI2OGZiMDE4NzcwODRjMGIyYTMxYjFhNGM0ZSJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"42481\\\"\\n    'REDIRECT_QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REDIRECT_URL' => string (6) \\\"\\/teste\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REQUEST_URI' => string (163) \\\"\\/teste?error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412954281.735\\n    'REQUEST_TIME' => integer 1412954281\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (329) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:1:{s:32:&quot;ac0c82ed7ce249d47cfeb0d9d96dbd25&quot;;N;}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412954146;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 15:18:04 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (149) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/teste\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/teste\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array(1) [\\n        'ac0c82ed7ce249d47cfeb0d9d96dbd25' => NULL\\n    ]\\n]\"}}\n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/4d9c7f1740cd08b12dc6f9e4b91d637a.json:\n    1: {\"__meta\":{\"id\":\"4d9c7f1740cd08b12dc6f9e4b91d637a\",\"datetime\":\"2014-10-10 13:35:17\",\"utime\":1412948117.4957,\"method\":\"GET\",\"uri\":\"\\/admin\\/register\\/16\\/login\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412948116.103,\"end\":1412948117.4962,\"duration\":1.393196105957,\"duration_str\":\"1.39s\",\"measures\":[{\"label\":\"Booting\",\"start\":1412948116.1175,\"relative_start\":0.014480113983154,\"end\":1412948116.8662,\"relative_end\":1412948116.8662,\"duration\":0.74870705604553,\"duration_str\":\"748.71ms\"},{\"label\":\"Application\",\"start\":1412948116.903,\"relative_start\":0.80002808570862,\"end\":1412948117.4593,\"relative_end\":1412948117.4593,\"duration\":0.55625987052917,\"duration_str\":\"556.26ms\"},{\"label\":\"After application\",\"start\":1412948117.4596,\"relative_start\":1.3565580844879,\"end\":1412948117.4963,\"relative_end\":0.00012588500976562,\"duration\":0.036763906478882,\"duration_str\":\"36.76ms\"}]},\"memory\":{\"peak_usage\":4194304,\"peak_usage_str\":\"4MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET admin\\/register\\/{register}\\/login\",\"name\":\"admin.register.login\",\"action\":\"Admin\\\\Registration\\\\IntegrationController@login\",\"before\":\"auth, championship_not_published\",\"after\":\"-\"},\"queries\":{\"nb_statements\":2,\"nb_failed_statements\":0,\"accumulated_duration\":0.00232,\"accumulated_duration_str\":\"2.32ms\",\"statements\":[{\"sql\":\"select * from `users` where `id` = '1' limit 1\",\"params\":{\"0\":\"1\"},\"duration\":0.00131,\"duration_str\":\"1.31ms\",\"stmt_id\":null},{\"sql\":\"select * from `championships` where `id` = '16' limit 1\",\"params\":{\"0\":\"16\"},\"duration\":0.00101,\"duration_str\":\"1.01ms\",\"stmt_id\":null}]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array()\",\"request_request\":\"array()\",\"request_headers\":\"array(8) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'referer' => array(1) [\\n        string (52) \\\"http:\\/\\/champaholic.dev\\/admin\\/register\\/16\\/integration\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1179) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C5%7C41; laravel_session=eyJpdiI6IlR2TGl4MTdMcEpweFJDMmtieHRUbGJkZEVXaFBwdFpnQk1TbGNnZ1pVS2s9IiwidmFsdWUiOiJjWGxqcndLMVNDWkgxRGN4NTF4bHd1ZUh4SGtiMjZqckNjNlJTbG9lKzdobHk4RFZiTkJEa0s3YktHYjhPdFFLaHRVMm9FcVwvbFh6UEN0Y3VLMVVDbGc9PSIsIm1hYyI6IjI4MDFmNDZkYmRhYzY4MDQzMDg4ZjYwZWJmN2I3ZDczMDI2ODYxYzE3OGNhOTViNGFiNjUwMjI1ZDE2OWI2NmQifQ%3D%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IjJ0TVNYS3FtU0tyTHhENGl1RndGOU9mSnJUc2pKbmNjM0ZpWHFTVTczcVE9IiwidmFsdWUiOiJJTmlBRnlVU05Id0l2c0JLcUFxXC81NjFidFF2UjJmVnBlR28zV3VxWEZENUxobStrdWVRMDRmeDRGMHhSRWVHMUlTRnArRllkbUxGd01WaFhlZ3ltaVBUNjFPbThOWnhaM2YzeUlVeFZXaFBBVjFYNWsrTTh2aFpvMTJjeGtPOVpCU2Z2SnVDeE94Rm1ZSHBCTmRGYkFTWnRvbFwvait4RVNwWTJISythZmtBYm5IbWJrRWJcL3VqdE9jcGpCZ0p3ckdvaWhEdXFmSWJYYkpsZ0dMeFpUK2lSeEo2OUhKUzAwWSs1YmJjVWlsZ1lKd2d3K3lielFCdkNkck0xU1d4XC9ZZFhLMzJYbVg0VEFrYnZLSmpDYUV2d3pWbXFDQ3lMOHBXbk9JQVRwb3VaTExtaUEzSDlYRUxBeEVHNFN3RW5nZG9LSGNWcXFiM2xLNHJPZkdWRG9JdzI2U0JvcmU4amI2UHlheFpJSTUyQnBYdHlPUGlSXC9Jdzk3RmU1V2FnZldveHJvalhVcFVTU1Vqdmh3TFZvbHRMa0FZYWp0SkFDSzdRWkxBZmZLSnNubzg9IiwibWFjIjoiZGQ3OGRhN2I1YWVlZDhjNGJmNGFjNmM0MThmYzQzOTIwMjM5NmQwMjY0MDc3YTM5ODUxOTRlMzNhZWNhZGNjMCJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(33) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_REFERER' => string (52) \\\"http:\\/\\/champaholic.dev\\/admin\\/register\\/16\\/integration\\\"\\n    'HTTP_COOKIE' => string (1179) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C5%7C41; laravel_session=eyJpdiI6IlR2TGl4MTdMcEpweFJDMmtieHRUbGJkZEVXaFBwdFpnQk1TbGNnZ1pVS2s9IiwidmFsdWUiOiJjWGxqcndLMVNDWkgxRGN4NTF4bHd1ZUh4SGtiMjZqckNjNlJTbG9lKzdobHk4RFZiTkJEa0s3YktHYjhPdFFLaHRVMm9FcVwvbFh6UEN0Y3VLMVVDbGc9PSIsIm1hYyI6IjI4MDFmNDZkYmRhYzY4MDQzMDg4ZjYwZWJmN2I3ZDczMDI2ODYxYzE3OGNhOTViNGFiNjUwMjI1ZDE2OWI2NmQifQ%3D%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IjJ0TVNYS3FtU0tyTHhENGl1RndGOU9mSnJUc2pKbmNjM0ZpWHFTVTczcVE9IiwidmFsdWUiOiJJTmlBRnlVU05Id0l2c0JLcUFxXC81NjFidFF2UjJmVnBlR28zV3VxWEZENUxobStrdWVRMDRmeDRGMHhSRWVHMUlTRnArRllkbUxGd01WaFhlZ3ltaVBUNjFPbThOWnhaM2YzeUlVeFZXaFBBVjFYNWsrTTh2aFpvMTJjeGtPOVpCU2Z2SnVDeE94Rm1ZSHBCTmRGYkFTWnRvbFwvait4RVNwWTJISythZmtBYm5IbWJrRWJcL3VqdE9jcGpCZ0p3ckdvaWhEdXFmSWJYYkpsZ0dMeFpUK2lSeEo2OUhKUzAwWSs1YmJjVWlsZ1lKd2d3K3lielFCdkNkck0xU1d4XC9ZZFhLMzJYbVg0VEFrYnZLSmpDYUV2d3pWbXFDQ3lMOHBXbk9JQVRwb3VaTExtaUEzSDlYRUxBeEVHNFN3RW5nZG9LSGNWcXFiM2xLNHJPZkdWRG9JdzI2U0JvcmU4amI2UHlheFpJSTUyQnBYdHlPUGlSXC9Jdzk3RmU1V2FnZldveHJvalhVcFVTU1Vqdmh3TFZvbHRMa0FZYWp0SkFDSzdRWkxBZmZLSnNubzg9IiwibWFjIjoiZGQ3OGRhN2I1YWVlZDhjNGJmNGFjNmM0MThmYzQzOTIwMjM5NmQwMjY0MDc3YTM5ODUxOTRlMzNhZWNhZGNjMCJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"40786\\\"\\n    'REDIRECT_URL' => string (24) \\\"\\/admin\\/register\\/16\\/login\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (0) \\\"\\\"\\n    'REQUEST_URI' => string (24) \\\"\\/admin\\/register\\/16\\/login\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412948116.103\\n    'REQUEST_TIME' => integer 1412948116\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (287) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:0:{}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412948111;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 13:35:17 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (167) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/admin\\/register\\/16\\/login\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/admin\\/register\\/16\\/login\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array()\\n]\"}}\n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/5debdffafb8be198c945b4309a9a5589.json:\n    1: {\"__meta\":{\"id\":\"5debdffafb8be198c945b4309a9a5589\",\"datetime\":\"2014-10-10 15:19:03\",\"utime\":1412954343.8308,\"method\":\"GET\",\"uri\":\"\\/teste?error=redirect_uri_mismatch&error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412954341.142,\"end\":1412954343.8311,\"duration\":2.6890530586243,\"duration_str\":\"2.69s\",\"measures\":[{\"label\":\"Booting\",\"start\":1412954341.1588,\"relative_start\":0.016768932342529,\"end\":1412954343.4559,\"relative_end\":1412954343.4559,\"duration\":2.2971091270447,\"duration_str\":\"2.3s\"},{\"label\":\"Application\",\"start\":1412954343.4852,\"relative_start\":2.3431720733643,\"end\":1412954343.7855,\"relative_end\":1412954343.7855,\"duration\":0.30030703544617,\"duration_str\":\"300.31ms\"},{\"label\":\"After application\",\"start\":1412954343.7857,\"relative_start\":2.6437420845032,\"end\":1412954343.8311,\"relative_end\":2.6941299438477e-5,\"duration\":0.045337915420532,\"duration_str\":\"45.34ms\"}]},\"memory\":{\"peak_usage\":3670016,\"peak_usage_str\":\"3.5MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET teste\",\"name\":\"-\",\"action\":\"Closure\",\"before\":\"-\",\"after\":\"-\"},\"queries\":{\"nb_statements\":0,\"nb_failed_statements\":0,\"accumulated_duration\":0,\"accumulated_duration_str\":\"0\\u03bcs\",\"statements\":[]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array(2) [\\n    'error' => string (21) \\\"redirect_uri_mismatch\\\"\\n    'error_description' => string (110) \\\"Your client callback must have the same host of your redirect_uri or the same host of your application domains\\\"\\n]\",\"request_request\":\"array()\",\"request_headers\":\"array(7) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1301) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IkJjVmc5K3VZTklhYlpcL0FHY0lHbGY3OWNhMThGVzkrbGZHd2xZdTdiWE9rPSIsInZhbHVlIjoiRERndW9FK2RzdmpvQmp4YWJENkhtc1ZUZVFkYWJSbzNqaEI4VHJrZlJSQTM5TFZ2WmRkRlQ2THF6anF0QW5hM0RJM0FcL2oybng4VTJxVGtQdFVId1F3PT0iLCJtYWMiOiJlMmNjYTMyMjgxNGY3MjI5MDQ1M2QyOGVmMTYxN2RhNjg0OTgwNTg0NzMxOWZjOWU0MDNiY2FkNGJmMzhkNGUwIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IlpVODhSczRoanE2WEh1ZlkraTJESWV6ZVFYWjE1dHd6M2NrWTdPR3JBMWM9IiwidmFsdWUiOiJKb0FCdmpWQVhXUW9qYzZqM0xBRmZZVHN6d2ZcL2VMOWV1bng2K2RqTk5qeGR0TVFsbnV6TkIxM2w3bzVDNW5yaFNjWEpRTjV2emtwRlA3Vm4zbDh3YlwvdzZLRG1acTVZOFcxT3I1V3NxN3RYRnVPSDlsbXhzXC9LQXhRRXdYb3V1ekl5YTRvelpSOXF1QXFQVFwvdHZUT0ExWVRZYXc0eGdMbE55U2szN2xQZGlBd2k5NzVUQUxGTitGcFpsdldtM1lqS3AxRk5KUGIyM0c1Mnhsb04rYUduSTV4UnRrRGZBR0M5OUVuTWR6XC9hZGFabnpJZmw5Smd1eWRSdFY5bFBySlwvZTlSZ1wvTG9QRFk4ZStqdkRcL2s5M2JwOW0yQzNRM1RseGhjUFBKRnBXVm1hT05BTFpQcjM1dFVRaXJERDFOUDc1MEswTUpodlRGMWdzZ1Y5RGgrTlpnNTZsNTFUNElCb1lJdzkwaVcwWENWaktrQ0FZY2JmUEFnd0dcLzVLak5IVVwvUVwvQVVraGJnaVRaUHJKMW9UYWRLdWxoQ1d5QWxnUU16eFM0a0pZc0lhTjhKcTNDcEZxQUMrXC8yYW82MWtWSkQ1UnpHbXd4Q1N4WHphZ2tQZFlYY0ljbk1oVkdPWXFtZzRCbVNmVWl0XC91VmJVY3diam9WV0JNZUVlcXVMXC9OYlVhIiwibWFjIjoiMTAxZTA3MWI3MTYwYzNkYmI0MDNmNDI3NjQ0M2M3YTQwMThiYzFhM2FjODcyODk2YTY1Y2ViYzM0NzFkZjdkZSJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(33) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_COOKIE' => string (1301) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IkJjVmc5K3VZTklhYlpcL0FHY0lHbGY3OWNhMThGVzkrbGZHd2xZdTdiWE9rPSIsInZhbHVlIjoiRERndW9FK2RzdmpvQmp4YWJENkhtc1ZUZVFkYWJSbzNqaEI4VHJrZlJSQTM5TFZ2WmRkRlQ2THF6anF0QW5hM0RJM0FcL2oybng4VTJxVGtQdFVId1F3PT0iLCJtYWMiOiJlMmNjYTMyMjgxNGY3MjI5MDQ1M2QyOGVmMTYxN2RhNjg0OTgwNTg0NzMxOWZjOWU0MDNiY2FkNGJmMzhkNGUwIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IlpVODhSczRoanE2WEh1ZlkraTJESWV6ZVFYWjE1dHd6M2NrWTdPR3JBMWM9IiwidmFsdWUiOiJKb0FCdmpWQVhXUW9qYzZqM0xBRmZZVHN6d2ZcL2VMOWV1bng2K2RqTk5qeGR0TVFsbnV6TkIxM2w3bzVDNW5yaFNjWEpRTjV2emtwRlA3Vm4zbDh3YlwvdzZLRG1acTVZOFcxT3I1V3NxN3RYRnVPSDlsbXhzXC9LQXhRRXdYb3V1ekl5YTRvelpSOXF1QXFQVFwvdHZUT0ExWVRZYXc0eGdMbE55U2szN2xQZGlBd2k5NzVUQUxGTitGcFpsdldtM1lqS3AxRk5KUGIyM0c1Mnhsb04rYUduSTV4UnRrRGZBR0M5OUVuTWR6XC9hZGFabnpJZmw5Smd1eWRSdFY5bFBySlwvZTlSZ1wvTG9QRFk4ZStqdkRcL2s5M2JwOW0yQzNRM1RseGhjUFBKRnBXVm1hT05BTFpQcjM1dFVRaXJERDFOUDc1MEswTUpodlRGMWdzZ1Y5RGgrTlpnNTZsNTFUNElCb1lJdzkwaVcwWENWaktrQ0FZY2JmUEFnd0dcLzVLak5IVVwvUVwvQVVraGJnaVRaUHJKMW9UYWRLdWxoQ1d5QWxnUU16eFM0a0pZc0lhTjhKcTNDcEZxQUMrXC8yYW82MWtWSkQ1UnpHbXd4Q1N4WHphZ2tQZFlYY0ljbk1oVkdPWXFtZzRCbVNmVWl0XC91VmJVY3diam9WV0JNZUVlcXVMXC9OYlVhIiwibWFjIjoiMTAxZTA3MWI3MTYwYzNkYmI0MDNmNDI3NjQ0M2M3YTQwMThiYzFhM2FjODcyODk2YTY1Y2ViYzM0NzFkZjdkZSJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"42492\\\"\\n    'REDIRECT_QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REDIRECT_URL' => string (6) \\\"\\/teste\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REQUEST_URI' => string (163) \\\"\\/teste?error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412954341.142\\n    'REQUEST_TIME' => integer 1412954341\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (371) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:2:{s:32:&quot;ac0c82ed7ce249d47cfeb0d9d96dbd25&quot;;N;s:32:&quot;139d68f6979d07e5063ecc682a23c743&quot;;N;}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412954282;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 15:19:03 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (149) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/teste\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/teste\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array(2) [\\n        'ac0c82ed7ce249d47cfeb0d9d96dbd25' => NULL\\n        '139d68f6979d07e5063ecc682a23c743' => NULL\\n    ]\\n]\"}}\n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/823db93363f23de031462fa954f37a40.json:\n    1: {\"__meta\":{\"id\":\"823db93363f23de031462fa954f37a40\",\"datetime\":\"2014-10-10 15:19:03\",\"utime\":1412954343.8243,\"method\":\"GET\",\"uri\":\"\\/teste?error=redirect_uri_mismatch&error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412954342.899,\"end\":1412954343.8246,\"duration\":0.92556810379028,\"duration_str\":\"925.57ms\",\"measures\":[{\"label\":\"Booting\",\"start\":1412954342.9148,\"relative_start\":0.015817165374756,\"end\":1412954343.4559,\"relative_end\":1412954343.4559,\"duration\":0.54104781150818,\"duration_str\":\"541.05ms\"},{\"label\":\"Application\",\"start\":1412954343.4835,\"relative_start\":0.58452415466309,\"end\":1412954343.7874,\"relative_end\":1412954343.7874,\"duration\":0.30384993553162,\"duration_str\":\"303.85ms\"},{\"label\":\"After application\",\"start\":1412954343.7876,\"relative_start\":0.88863110542297,\"end\":1412954343.8246,\"relative_end\":3.8862228393555e-5,\"duration\":0.036975860595703,\"duration_str\":\"36.98ms\"}]},\"memory\":{\"peak_usage\":3670016,\"peak_usage_str\":\"3.5MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET teste\",\"name\":\"-\",\"action\":\"Closure\",\"before\":\"-\",\"after\":\"-\"},\"queries\":{\"nb_statements\":0,\"nb_failed_statements\":0,\"accumulated_duration\":0,\"accumulated_duration_str\":\"0\\u03bcs\",\"statements\":[]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array(2) [\\n    'error' => string (21) \\\"redirect_uri_mismatch\\\"\\n    'error_description' => string (110) \\\"Your client callback must have the same host of your redirect_uri or the same host of your application domains\\\"\\n]\",\"request_request\":\"array()\",\"request_headers\":\"array(7) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1301) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IkJjVmc5K3VZTklhYlpcL0FHY0lHbGY3OWNhMThGVzkrbGZHd2xZdTdiWE9rPSIsInZhbHVlIjoiRERndW9FK2RzdmpvQmp4YWJENkhtc1ZUZVFkYWJSbzNqaEI4VHJrZlJSQTM5TFZ2WmRkRlQ2THF6anF0QW5hM0RJM0FcL2oybng4VTJxVGtQdFVId1F3PT0iLCJtYWMiOiJlMmNjYTMyMjgxNGY3MjI5MDQ1M2QyOGVmMTYxN2RhNjg0OTgwNTg0NzMxOWZjOWU0MDNiY2FkNGJmMzhkNGUwIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IlpVODhSczRoanE2WEh1ZlkraTJESWV6ZVFYWjE1dHd6M2NrWTdPR3JBMWM9IiwidmFsdWUiOiJKb0FCdmpWQVhXUW9qYzZqM0xBRmZZVHN6d2ZcL2VMOWV1bng2K2RqTk5qeGR0TVFsbnV6TkIxM2w3bzVDNW5yaFNjWEpRTjV2emtwRlA3Vm4zbDh3YlwvdzZLRG1acTVZOFcxT3I1V3NxN3RYRnVPSDlsbXhzXC9LQXhRRXdYb3V1ekl5YTRvelpSOXF1QXFQVFwvdHZUT0ExWVRZYXc0eGdMbE55U2szN2xQZGlBd2k5NzVUQUxGTitGcFpsdldtM1lqS3AxRk5KUGIyM0c1Mnhsb04rYUduSTV4UnRrRGZBR0M5OUVuTWR6XC9hZGFabnpJZmw5Smd1eWRSdFY5bFBySlwvZTlSZ1wvTG9QRFk4ZStqdkRcL2s5M2JwOW0yQzNRM1RseGhjUFBKRnBXVm1hT05BTFpQcjM1dFVRaXJERDFOUDc1MEswTUpodlRGMWdzZ1Y5RGgrTlpnNTZsNTFUNElCb1lJdzkwaVcwWENWaktrQ0FZY2JmUEFnd0dcLzVLak5IVVwvUVwvQVVraGJnaVRaUHJKMW9UYWRLdWxoQ1d5QWxnUU16eFM0a0pZc0lhTjhKcTNDcEZxQUMrXC8yYW82MWtWSkQ1UnpHbXd4Q1N4WHphZ2tQZFlYY0ljbk1oVkdPWXFtZzRCbVNmVWl0XC91VmJVY3diam9WV0JNZUVlcXVMXC9OYlVhIiwibWFjIjoiMTAxZTA3MWI3MTYwYzNkYmI0MDNmNDI3NjQ0M2M3YTQwMThiYzFhM2FjODcyODk2YTY1Y2ViYzM0NzFkZjdkZSJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(33) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_COOKIE' => string (1301) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6IkJjVmc5K3VZTklhYlpcL0FHY0lHbGY3OWNhMThGVzkrbGZHd2xZdTdiWE9rPSIsInZhbHVlIjoiRERndW9FK2RzdmpvQmp4YWJENkhtc1ZUZVFkYWJSbzNqaEI4VHJrZlJSQTM5TFZ2WmRkRlQ2THF6anF0QW5hM0RJM0FcL2oybng4VTJxVGtQdFVId1F3PT0iLCJtYWMiOiJlMmNjYTMyMjgxNGY3MjI5MDQ1M2QyOGVmMTYxN2RhNjg0OTgwNTg0NzMxOWZjOWU0MDNiY2FkNGJmMzhkNGUwIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IlpVODhSczRoanE2WEh1ZlkraTJESWV6ZVFYWjE1dHd6M2NrWTdPR3JBMWM9IiwidmFsdWUiOiJKb0FCdmpWQVhXUW9qYzZqM0xBRmZZVHN6d2ZcL2VMOWV1bng2K2RqTk5qeGR0TVFsbnV6TkIxM2w3bzVDNW5yaFNjWEpRTjV2emtwRlA3Vm4zbDh3YlwvdzZLRG1acTVZOFcxT3I1V3NxN3RYRnVPSDlsbXhzXC9LQXhRRXdYb3V1ekl5YTRvelpSOXF1QXFQVFwvdHZUT0ExWVRZYXc0eGdMbE55U2szN2xQZGlBd2k5NzVUQUxGTitGcFpsdldtM1lqS3AxRk5KUGIyM0c1Mnhsb04rYUduSTV4UnRrRGZBR0M5OUVuTWR6XC9hZGFabnpJZmw5Smd1eWRSdFY5bFBySlwvZTlSZ1wvTG9QRFk4ZStqdkRcL2s5M2JwOW0yQzNRM1RseGhjUFBKRnBXVm1hT05BTFpQcjM1dFVRaXJERDFOUDc1MEswTUpodlRGMWdzZ1Y5RGgrTlpnNTZsNTFUNElCb1lJdzkwaVcwWENWaktrQ0FZY2JmUEFnd0dcLzVLak5IVVwvUVwvQVVraGJnaVRaUHJKMW9UYWRLdWxoQ1d5QWxnUU16eFM0a0pZc0lhTjhKcTNDcEZxQUMrXC8yYW82MWtWSkQ1UnpHbXd4Q1N4WHphZ2tQZFlYY0ljbk1oVkdPWXFtZzRCbVNmVWl0XC91VmJVY3diam9WV0JNZUVlcXVMXC9OYlVhIiwibWFjIjoiMTAxZTA3MWI3MTYwYzNkYmI0MDNmNDI3NjQ0M2M3YTQwMThiYzFhM2FjODcyODk2YTY1Y2ViYzM0NzFkZjdkZSJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"42493\\\"\\n    'REDIRECT_QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REDIRECT_URL' => string (6) \\\"\\/teste\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REQUEST_URI' => string (163) \\\"\\/teste?error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412954342.899\\n    'REQUEST_TIME' => integer 1412954342\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (371) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:2:{s:32:&quot;ac0c82ed7ce249d47cfeb0d9d96dbd25&quot;;N;s:32:&quot;139d68f6979d07e5063ecc682a23c743&quot;;N;}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412954282;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 15:19:03 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (149) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/teste\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/teste\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array(2) [\\n        'ac0c82ed7ce249d47cfeb0d9d96dbd25' => NULL\\n        '139d68f6979d07e5063ecc682a23c743' => NULL\\n    ]\\n]\"}}\n\n/media/win/xampp/htdocs/answer-stack/app/storage/debugbar/ac0c82ed7ce249d47cfeb0d9d96dbd25.json:\n    1: {\"__meta\":{\"id\":\"ac0c82ed7ce249d47cfeb0d9d96dbd25\",\"datetime\":\"2014-10-10 15:15:48\",\"utime\":1412954148.412,\"method\":\"GET\",\"uri\":\"\\/teste?error=redirect_uri_mismatch&error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\",\"ip\":\"192.168.33.1\"},\"php\":{\"version\":\"5.5.15RC1\"},\"messages\":{\"count\":0,\"messages\":[]},\"time\":{\"start\":1412954145.689,\"end\":1412954148.4125,\"duration\":2.7234680652618,\"duration_str\":\"2.72s\",\"measures\":[{\"label\":\"Booting\",\"start\":1412954145.7037,\"relative_start\":0.014679193496704,\"end\":1412954148.1608,\"relative_end\":1412954148.1608,\"duration\":2.4571118354797,\"duration_str\":\"2.46s\"},{\"label\":\"Application\",\"start\":1412954148.1839,\"relative_start\":2.4949140548706,\"end\":1412954148.3739,\"relative_end\":1412954148.3739,\"duration\":0.19003415107727,\"duration_str\":\"190.03ms\"},{\"label\":\"After application\",\"start\":1412954148.3743,\"relative_start\":2.6852791309357,\"end\":1412954148.4125,\"relative_end\":5.5074691772461e-5,\"duration\":0.038244009017944,\"duration_str\":\"38.24ms\"}]},\"memory\":{\"peak_usage\":3670016,\"peak_usage_str\":\"3.5MB\"},\"exceptions\":{\"count\":0,\"exceptions\":[]},\"views\":[],\"route\":{\"host\":\"-\",\"uri\":\"GET teste\",\"name\":\"-\",\"action\":\"Closure\",\"before\":\"-\",\"after\":\"-\"},\"queries\":{\"nb_statements\":0,\"nb_failed_statements\":0,\"accumulated_duration\":0,\"accumulated_duration_str\":\"0\\u03bcs\",\"statements\":[]},\"swiftmailer_mails\":{\"count\":0,\"mails\":[]},\"request\":{\"format\":\"html\",\"content_type\":\"text\\/html; charset=UTF-8\",\"status_text\":\"Found\",\"status_code\":\"integer 302\",\"request_query\":\"array(2) [\\n    'error' => string (21) \\\"redirect_uri_mismatch\\\"\\n    'error_description' => string (110) \\\"Your client callback must have the same host of your redirect_uri or the same host of your application domains\\\"\\n]\",\"request_request\":\"array()\",\"request_headers\":\"array(8) [\\n    'host' => array(1) [\\n        string (15) \\\"champaholic.dev\\\"\\n    ]\\n    'user-agent' => array(1) [\\n        string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    ]\\n    'accept' => array(1) [\\n        string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    ]\\n    'accept-language' => array(1) [\\n        string (14) \\\"en-US,en;q=0.5\\\"\\n    ]\\n    'accept-encoding' => array(1) [\\n        string (13) \\\"gzip, deflate\\\"\\n    ]\\n    'referer' => array(1) [\\n        string (54) \\\"http:\\/\\/battleroad.com.br\\/admin\\/register\\/10\\/integration\\\"\\n    ]\\n    'cookie' => array(1) [\\n        string (1177) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6ImdFdUF6VGVZZ2s4cCtFRnVBUjhPS3NXa1FlTXVDa3Q3WkFoMWp2RXR3amM9IiwidmFsdWUiOiJ1K0V2NHprcEUrbUhlN25sVFV4Rm0xYnE1ZCtiY1F1R2F3UW1mdVd5dkhGMXBZQ1JKQjJUT2Y5dVFHRlI0UXBiaFZ6NjdOVzdzXC8rbGJ2XC83MVVoSG53PT0iLCJtYWMiOiJlNDcxMTA4MDJkYTEzMTk4MWQ4NDgzZjI0MDgyNWQ2Nzk4YWNkMDAzZDA0OGVkMTVkNmQxY2IzMTBjYTBjODNkIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IkozY0xpK2gwUFNtSHNUWW5IaVVmbHdFQjNVVHJIZ2JCbHFtUmtjYXhWKzg9IiwidmFsdWUiOiJhc3BDZVVxeGdKVmhzayt5SXVVRUxLYlpRM0UyRmF0dHZ2TWRQRzl1dHloVVA5R2JXalRcL0hadzVXRGFySFJuZEdSMEhlRkJ6R0YybTJmWU9nS3NhYUNSa2poWE1BWVVaSHJ2XC91cmV5WGR2NXRcL0hMbHVKYVdwRGhPS0pUUm1PS0xXaGsxTW9wVlF3Y01jQ0dQRWQ1N0pNN1wvcU4rK3JKNEFqNlVOSm03dCtzaEZQMmdyVWRlWkdBRE90Yjc4ZTVhdWl6akNiNDAxd25NY3EyeUN1bW9KUlVMMnlDWkVvdW41QVltZkZ2M0hMeHhYdzJtVTVQRlwvZDN6YytDajVJTWczUERGdXQyMXhBVmlCTlhid3ZlWStubVdYYisyVnVyMjIwMHVVZTNFVjVFa0VLVGhKY2NGUGw4M2ZaWmp1SXp6dloyaXRPU0l0eitLdUxkWmROY3ZSaUgxY2VtYVl6MzVzU2pOSm54RUFRN1REdlFNMVhpUkJXTkhXWWNWdHVxS0p4RWF6NFpWOElQSk5IMHJNanBsdjVmY0lTaEhNNUpmU3REMjZtMDgrVDA9IiwibWFjIjoiYjFiOWNiZWJkMDg4ODdlMTM0M2U1N2IxMzI0YzAxOTg2OWYxMWU0NGJjMzI4N2E4NzczM2VmM2NkZTVlMzlkNSJ9\\\"\\n    ]\\n    'connection' => array(1) [\\n        string (10) \\\"keep-alive\\\"\\n    ]\\n]\",\"request_server\":\"array(34) [\\n    'REDIRECT_STATUS' => string (3) \\\"200\\\"\\n    'HTTP_HOST' => string (15) \\\"champaholic.dev\\\"\\n    'HTTP_USER_AGENT' => string (68) \\\"Mozilla\\/5.0 (X11; Linux x86_64; rv:32.0) Gecko\\/20100101 Firefox\\/32.0\\\"\\n    'HTTP_ACCEPT' => string (63) \\\"text\\/html,application\\/xhtml+xml,application\\/xml;q=0.9,*\\/*;q=0.8\\\"\\n    'HTTP_ACCEPT_LANGUAGE' => string (14) \\\"en-US,en;q=0.5\\\"\\n    'HTTP_ACCEPT_ENCODING' => string (13) \\\"gzip, deflate\\\"\\n    'HTTP_REFERER' => string (54) \\\"http:\\/\\/battleroad.com.br\\/admin\\/register\\/10\\/integration\\\"\\n    'HTTP_COOKIE' => string (1177) \\\"__atuvc=8%7C37%2C1%7C38%2C0%7C39%2C1%7C40%2C6%7C41; laravel_session=eyJpdiI6ImdFdUF6VGVZZ2s4cCtFRnVBUjhPS3NXa1FlTXVDa3Q3WkFoMWp2RXR3amM9IiwidmFsdWUiOiJ1K0V2NHprcEUrbUhlN25sVFV4Rm0xYnE1ZCtiY1F1R2F3UW1mdVd5dkhGMXBZQ1JKQjJUT2Y5dVFHRlI0UXBiaFZ6NjdOVzdzXC8rbGJ2XC83MVVoSG53PT0iLCJtYWMiOiJlNDcxMTA4MDJkYTEzMTk4MWQ4NDgzZjI0MDgyNWQ2Nzk4YWNkMDAzZDA0OGVkMTVkNmQxY2IzMTBjYTBjODNkIn0%3D; 0c209a7902c4c5aa15db926a0187f3f90515fa3d=eyJpdiI6IkozY0xpK2gwUFNtSHNUWW5IaVVmbHdFQjNVVHJIZ2JCbHFtUmtjYXhWKzg9IiwidmFsdWUiOiJhc3BDZVVxeGdKVmhzayt5SXVVRUxLYlpRM0UyRmF0dHZ2TWRQRzl1dHloVVA5R2JXalRcL0hadzVXRGFySFJuZEdSMEhlRkJ6R0YybTJmWU9nS3NhYUNSa2poWE1BWVVaSHJ2XC91cmV5WGR2NXRcL0hMbHVKYVdwRGhPS0pUUm1PS0xXaGsxTW9wVlF3Y01jQ0dQRWQ1N0pNN1wvcU4rK3JKNEFqNlVOSm03dCtzaEZQMmdyVWRlWkdBRE90Yjc4ZTVhdWl6akNiNDAxd25NY3EyeUN1bW9KUlVMMnlDWkVvdW41QVltZkZ2M0hMeHhYdzJtVTVQRlwvZDN6YytDajVJTWczUERGdXQyMXhBVmlCTlhid3ZlWStubVdYYisyVnVyMjIwMHVVZTNFVjVFa0VLVGhKY2NGUGw4M2ZaWmp1SXp6dloyaXRPU0l0eitLdUxkWmROY3ZSaUgxY2VtYVl6MzVzU2pOSm54RUFRN1REdlFNMVhpUkJXTkhXWWNWdHVxS0p4RWF6NFpWOElQSk5IMHJNanBsdjVmY0lTaEhNNUpmU3REMjZtMDgrVDA9IiwibWFjIjoiYjFiOWNiZWJkMDg4ODdlMTM0M2U1N2IxMzI0YzAxOTg2OWYxMWU0NGJjMzI4N2E4NzczM2VmM2NkZTVlMzlkNSJ9\\\"\\n    'HTTP_CONNECTION' => string (10) \\\"keep-alive\\\"\\n    'PATH' => string (60) \\\"\\/usr\\/local\\/sbin:\\/usr\\/local\\/bin:\\/usr\\/sbin:\\/usr\\/bin:\\/sbin:\\/bin\\\"\\n    'SERVER_SIGNATURE' => string (75) \\\"&lt;address&gt;Apache\\/2.4.7 (Ubuntu) Server at champaholic.dev Port 80&lt;\\/address&gt;\\n\\\"\\n    'SERVER_SOFTWARE' => string (21) \\\"Apache\\/2.4.7 (Ubuntu)\\\"\\n    'SERVER_NAME' => string (15) \\\"champaholic.dev\\\"\\n    'SERVER_ADDR' => string (13) \\\"192.168.33.21\\\"\\n    'SERVER_PORT' => string (2) \\\"80\\\"\\n    'REMOTE_ADDR' => string (12) \\\"192.168.33.1\\\"\\n    'DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'REQUEST_SCHEME' => string (4) \\\"http\\\"\\n    'CONTEXT_PREFIX' => string (0) \\\"\\\"\\n    'CONTEXT_DOCUMENT_ROOT' => string (28) \\\"\\/var\\/www\\/answer-stack\\/public\\\"\\n    'SERVER_ADMIN' => string (19) \\\"webmaster@localhost\\\"\\n    'SCRIPT_FILENAME' => string (38) \\\"\\/var\\/www\\/answer-stack\\/public\\/index.php\\\"\\n    'REMOTE_PORT' => string (5) \\\"42355\\\"\\n    'REDIRECT_QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REDIRECT_URL' => string (6) \\\"\\/teste\\\"\\n    'GATEWAY_INTERFACE' => string (7) \\\"CGI\\/1.1\\\"\\n    'SERVER_PROTOCOL' => string (8) \\\"HTTP\\/1.1\\\"\\n    'REQUEST_METHOD' => string (3) \\\"GET\\\"\\n    'QUERY_STRING' => string (156) \\\"error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'REQUEST_URI' => string (163) \\\"\\/teste?error=redirect_uri_mismatch&amp;error_description=Your+client+callback+must+have+the+same+host+of+your+redirect_uri+or+the+same+host+of+your+application+domains\\\"\\n    'SCRIPT_NAME' => string (10) \\\"\\/index.php\\\"\\n    'PHP_SELF' => string (10) \\\"\\/index.php\\\"\\n    'REQUEST_TIME_FLOAT' => float 1412954145.689\\n    'REQUEST_TIME' => integer 1412954145\\n]\",\"request_cookies\":\"array(3) [\\n    '__atuvc' => NULL\\n    'laravel_session' => string (40) \\\"0c209a7902c4c5aa15db926a0187f3f90515fa3d\\\"\\n    '0c209a7902c4c5aa15db926a0187f3f90515fa3d' => string (287) \\\"a:5:{s:6:&quot;_token&quot;;s:40:&quot;k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t&quot;;s:5:&quot;flash&quot;;a:2:{s:3:&quot;old&quot;;a:0:{}s:3:&quot;new&quot;;a:0:{}}s:38:&quot;login_82e5d2c56bdd0811318f0cf078b78bfc&quot;;s:1:&quot;1&quot;;s:22:&quot;PHPDEBUGBAR_STACK_DATA&quot;;a:0:{}s:9:&quot;_sf2_meta&quot;;a:3:{s:1:&quot;u&quot;;i:1412949067;s:1:&quot;c&quot;;i:1412943291;s:1:&quot;l&quot;;s:1:&quot;0&quot;;}}\\\"\\n]\",\"response_headers\":\"array(4) [\\n    'cache-control' => array(1) [\\n        string (8) \\\"no-cache\\\"\\n    ]\\n    'date' => array(1) [\\n        string (29) \\\"Fri, 10 Oct 2014 15:15:48 GMT\\\"\\n    ]\\n    'location' => array(1) [\\n        string (149) \\\"https:\\/\\/auth.mercadolivre.com.br\\/authorization?client_id=3348313329700561&amp;response_type=code&amp;platform_id=mp&amp;redirect_uri=http:\\/\\/champaholic.dev\\/teste\\\"\\n    ]\\n    'content-type' => array(1) [\\n        string (24) \\\"text\\/html; charset=UTF-8\\\"\\n    ]\\n]\",\"path_info\":\"\\/teste\",\"session_attributes\":\"array(4) [\\n    '_token' => string (40) \\\"k5DOSUfa6xt7RatYOdyOA1y2ce2L1lJBfdxhg14t\\\"\\n    'flash' => array(2) [\\n        'old' => array()\\n        'new' => array()\\n    ]\\n    'login_82e5d2c56bdd0811318f0cf078b78bfc' => string (1) \\\"1\\\"\\n    'PHPDEBUGBAR_STACK_DATA' => array()\\n]\"}}\n\n7 matches across 7 files\n",
+			"settings":
+			{
+				"buffer_size": 56221,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		},
 		{
@@ -577,61 +606,10 @@
 			}
 		},
 		{
-			"contents": "$busca = $_POST['busca']; // diego\n// \\\\\\\"or 1 = \\\\\\\"1\n\nselect * from artigos where titulo like \"\\\\\"or 1 = \\\"1\";",
-			"settings":
-			{
-				"buffer_size": 112,
-				"line_ending": "Unix",
-				"name": "$busca = $_POST['busca']; // diego"
-			}
-		},
-		{
 			"file": "app/filters.php",
 			"settings":
 			{
 				"buffer_size": 5137,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes/register.php",
-			"settings":
-			{
-				"buffer_size": 199,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".env.local.php",
-			"settings":
-			{
-				"buffer_size": 741,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "curl -X POST -H \"Content-Type: application/json\" 'https://api.mercadolibre.com/users/test_user?access_token=seu_acesso_token' -d '{\"site_id\":\"MLB\"}'",
-			"settings":
-			{
-				"buffer_size": 148,
-				"line_ending": "Unix",
-				"name": "curl -X POST -H \"Content-Type: application/json\" '"
-			}
-		},
-		{
-			"contents": "34191750094031264030900923920003662140000011389",
-			"settings":
-			{
-				"buffer_size": 47,
-				"line_ending": "Unix",
-				"name": "34191750094031264030900923920003662140000011389"
-			}
-		},
-		{
-			"file": "vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-			"settings":
-			{
-				"buffer_size": 70540,
 				"line_ending": "Unix"
 			}
 		}
@@ -922,6 +900,26 @@
 	],
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/Makefile",
+		"/media/win/xampp/htdocs/answer-stack/app/config/mail.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ItemPresenter.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/isNull.js",
+		"/media/win/xampp/htdocs/answer-stack/vendor/psr/log/Psr/Log/InvalidArgumentException.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/MailInvoker.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/less/errors/mixin-not-visible-in-scope-1.less",
+		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/src/Intervention/Image/Exception/InvalidImageResourceException.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Routing/Matching/ValidatorInterface.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Traits/UserPrice.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/docs/webservice-client/using-the-service-builder.rst",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Validators/Core/StubValidator.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/camcima/moip-php/src/Moip/MoipResponse.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/docs/plugins/mock-plugin.rst",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/debug/Symfony/Component/Debug/Exception/DummyException.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/dashboard.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/register.php",
+		"/media/win/xampp/htdocs/answer-stack/.env.local.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Foundation/Providers/RouteListServiceProvider.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/phpsc/pagseguro/src/Requests/Checkout/CheckoutSerializer.php",
@@ -949,14 +947,12 @@
 		"/media/win/xampp/htdocs/answer-stack/name",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
 		"/media/win/xampp/htdocs/answer-stack/test.txt",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/Core/PaymentListenerInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/composer.json",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/MercadoPago/.fuse_hidden0000507300000002",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/less/errors/css-guard-default-func.less",
 		"/media/win/xampp/htdocs/answer-stack/vendor/mercadopago/sdk/lib/mercadopago.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/MercadoPago/MPRestClient.php",
-		"/media/win/xampp/htdocs/answer-stack/app/config/mail.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/pricing.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/postcss/node_modules/source-map/.travis.yml",
@@ -1003,8 +999,6 @@
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/replaceExtension.js",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Input.php",
 		"/media/win/xampp/htdocs/answer-stack/public/js/jquery-input-mask.js",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/isNull.js",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ItemPresenter.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/composer/include_paths.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/.gitignore",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Services/ImageUploader.php",
@@ -1033,23 +1027,7 @@
 		"/media/win/xampp/htdocs/answer-stack/app/config/view.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/provides.json",
 		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/phpunit.xml",
-		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/composer.json",
-		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/LICENSE",
-		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/.travis.yml",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/base/bootstrap/responsive-utilities.less",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp/node_modules/orchestrator/lib/runTask.js",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-uglify/node_modules/uglify-js/test/run-tests.js",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/LocationController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_logged.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Repositories/Core/RepositoryInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/security-core/Symfony/Component/Security/Core/Authentication/RememberMe/InMemoryTokenProvider.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/examples/MultiBulkReplyIterators.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/guzzle/guzzle/tests/Guzzle/Tests/Service/Resource/MapResourceIteratorFactoryTest.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/ChampionshipsController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/edit.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/create.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/register.blade.php"
+		"/media/win/xampp/htdocs/answer-stack/vendor/intervention/image/composer.json"
 	],
 	"find":
 	{
@@ -1080,6 +1058,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"3348313329700561",
 			"string",
 			"=>",
 			"int",
@@ -1206,8 +1185,7 @@
 			"JoinRepositoryInterface",
 			";\n",
 			"CompetitionRepositoryInterface",
-			"ItemRepositoryInterface",
-			"price"
+			"ItemRepositoryInterface"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1226,7 +1204,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1242,8 +1220,8 @@
 						"selection":
 						[
 							[
-								2891,
-								2891
+								3192,
+								3192
 							]
 						],
 						"settings":
@@ -1252,28 +1230,58 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 56.0,
-						"translation.y": 3177.0,
+						"translation.x": 0.0,
+						"translation.y": 4435.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/Champ/Billing/MercadoPago/test_users.txt",
-					"semi_transient": false,
+					"file": ".env.local.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 345,
+						"buffer_size": 891,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								344,
-								344
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/Champ/Billing/MercadoPago/test_users.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 578,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								337,
+								337
 							]
 						],
 						"settings":
@@ -1284,14 +1292,44 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 234.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
+					"file": "app/views/layouts/default.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1290,
+								1290
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
 					"file": "vendor/mercadopago/sdk/lib/mercadopago.php",
 					"semi_transient": false,
 					"settings":
@@ -1317,11 +1355,11 @@
 						"translation.y": 1113.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "app/Champ/Billing/MercadoPago/MPRestClient.php",
 					"semi_transient": false,
 					"settings":
@@ -1344,14 +1382,85 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1539.0,
+						"translation.y": 3411.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 6,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 56221,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										163,
+										179
+									],
+									[
+										9517,
+										9533
+									],
+									[
+										18822,
+										18838
+									],
+									[
+										27612,
+										27628
+									],
+									[
+										36951,
+										36967
+									],
+									[
+										46373,
+										46389
+									],
+									[
+										55654,
+										55670
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								105,
+								105
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
 					"file": "app/controllers/JoinController.php",
 					"semi_transient": false,
 					"settings":
@@ -1363,8 +1472,8 @@
 						"selection":
 						[
 							[
-								3405,
-								3405
+								2443,
+								2443
 							]
 						],
 						"settings":
@@ -1374,14 +1483,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 5490.0,
+						"translation.y": 3852.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 8,
 					"file": "app/routes.php",
 					"semi_transient": false,
 					"settings":
@@ -1404,14 +1513,14 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 702.0,
+						"translation.y": 1404.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 9,
 					"file": "app/views/partials/_logged.blade.php",
 					"semi_transient": false,
 					"settings":
@@ -1437,39 +1546,11 @@
 						"translation.y": 936.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 112,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								54,
-								54
-							]
-						],
-						"settings":
-						{
-							"auto_name": "$busca = $_POST['busca']; // diego",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
+					"buffer": 10,
 					"file": "app/filters.php",
 					"semi_transient": false,
 					"settings":
@@ -1491,154 +1572,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 2574.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/routes/register.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 199,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								159,
-								159
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 156.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": ".env.local.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 741,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 156.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								148,
-								148
-							]
-						],
-						"settings":
-						{
-							"auto_name": "curl -X POST -H \"Content-Type: application/json\" '",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 47,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								47,
-								47
-							]
-						],
-						"settings":
-						{
-							"auto_name": "34191750094031264030900923920003662140000011389",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 70540,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13454,
-								13454
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 24171.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
+					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1691,6 +1629,30 @@
 		"selected_items":
 		[
 			[
+				"makrpe",
+				"app/Champ/Billing/MercadoPago/Marketplace.php"
+			],
+			[
+				"joincontrol",
+				"app/controllers/JoinController.php"
+			],
+			[
+				"mprest",
+				"app/Champ/Billing/MercadoPago/MPRestClient.php"
+			],
+			[
+				"route",
+				"app/routes.php"
+			],
+			[
+				"default.blade",
+				"app/views/layouts/default.blade.php"
+			],
+			[
+				".env",
+				".env.local.php"
+			],
+			[
 				"routes",
 				"app/routes.php"
 			],
@@ -1707,16 +1669,8 @@
 				"vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php"
 			],
 			[
-				"route",
-				"app/routes.php"
-			],
-			[
 				"notificati",
 				"app/controllers/NotificationController.php"
-			],
-			[
-				"joincontrol",
-				"app/controllers/JoinController.php"
 			],
 			[
 				"mercd",
@@ -2055,10 +2009,6 @@
 				"app/views/emails/status_changed.blade.php"
 			],
 			[
-				".env",
-				".env.local.php"
-			],
-			[
 				"join.php",
 				"app/routes/join.php"
 			],
@@ -2189,18 +2139,6 @@
 			[
 				"views/champion/show",
 				"app/views/championships/show.blade.php"
-			],
-			[
-				"routes/join",
-				"app/routes/join.php"
-			],
-			[
-				"joincommandhan",
-				"app/Champ/Join/JoinCommandHandler.php"
-			],
-			[
-				"joincontr",
-				"app/controllers/JoinController.php"
 			]
 		],
 		"width": 0.0
