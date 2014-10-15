@@ -7,7 +7,7 @@ use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
-use Champ\Billing\MercadoPago\Marketplace;
+use Champ\Billing\Pagseguro\Pagseguro;
 
 class JoinController extends BaseController implements PaymentListenerInterface
 {
@@ -34,9 +34,9 @@ class JoinController extends BaseController implements PaymentListenerInterface
     protected $commandBus;
 
     /**
-     * Moip Billing
+     * Pagseguro Billing
      *
-     * @var Marketplace
+     * @var Pagseguro
      */
     protected $billing;
 
@@ -44,7 +44,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepository,
         CommandBus $commandBus,
-        Marketplace $billing
+        Pagseguro $billing
     )
     {
         $this->champRepo = $champRepo;
@@ -105,37 +105,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
     {
         $join = $this->findAJoinById($id);
 
-        $response = $this->billing->invoice($join, $this);
-
-        dd($response);
-    }
-
-    /**
-     * This method is called by the moip when a payment status is changed,
-     * so, when hit here, I have some things to do about
-     *
-     * @return Response
-     */
-    public function nasp()
-    {
-        dd(Input::all());
-        extract(Input::all());
-
-        $command = new UpdateJoinCommand(
-            $id_transacao,
-            $valor,
-            $status_pagamento,
-            $cod_moip,
-            $forma_pagamento,
-            $tipo_pagamento,
-            $parcelas,
-            $email_consumidor,
-            $classificacao
-        );
-
-        $join = $this->commandBus->execute($command);
-
-        echo 'ok';
+        return $this->billing->invoice($join, $this);
     }
 
     /**
@@ -146,7 +116,6 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     public function paymentAllowed($response, Join $join)
     {
-        dd($response);
         $join->token = $response->getCode();
 
         $this->joinRepository->save($join);
