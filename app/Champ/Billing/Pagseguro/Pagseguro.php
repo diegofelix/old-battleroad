@@ -55,14 +55,14 @@ class Pagseguro {
         $checkout->setReference($join->id);
         $itemCounter = 1;
 
-        if ($join->price)
-        {
-            $item = new Item($itemCounter++, 'Entrada', $join->price);
-            $checkout->addItem($item);
-        }
+        // if ($join->price)
+        // {
+        //     $item = new Item($itemCounter++, 'Entrada', $join->price);
+        //     $checkout->addItem($item);
+        // }
 
         // if we dont have items to add, go back boy.
-        if ( ! $join->count()) return $checkout->getCheckout();
+        if ( ! $join->items->count()) return $checkout->getCheckout();
 
         // pass through all items and add to the checkout.
         foreach ($join->items as $item)
