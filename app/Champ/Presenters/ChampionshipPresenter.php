@@ -90,4 +90,36 @@ class ChampionshipPresenter extends Presenter
 
         return 'Vagas esgotadas';
     }
+
+    /**
+     * Show the quantity of games for a event
+     *
+     * @return string
+     */
+    public function countCompetitions()
+    {
+        $count = $this->competitions->count();
+        $text  = $count . ' jogo';
+
+        if ($count > 1) $text .= 's';
+
+        return $text;
+    }
+
+    public function lowestPrice()
+    {
+        $lowestPrice = $this->competitions->first()->price;
+
+        foreach ($this->competitions as $competition)
+        {
+            if ($competition->price < $lowestPrice)
+            {
+                $lowestPrice = $competition->price;
+            }
+        }
+
+        if ( $lowestPrice == 0) return '<span class="champ-free label label-success">Grátis!</span>';
+
+        return '<span class="label label-info">À partir de R$ ' . number_format($lowestPrice, 2) . '</span>';
+    }
 }

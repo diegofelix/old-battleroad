@@ -35,7 +35,7 @@ class CompetitionPresenter extends Presenter
 
         if ($this->trueLimit == 1) return '1 Vaga restante';
 
-        if ($this->trueLimit > 0 ) $this->trueLimit . ' Vagas restantes';
+        if ($this->trueLimit > 0 ) return $this->trueLimit . ' Vagas restantes';
 
         return 'Vagas esgotadas';
     }

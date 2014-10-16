@@ -25,25 +25,6 @@
             <div class="step-title">
                 <span class="number">3</span>
                 <h2>
-                    Valores
-                    <small>Quanto custará pra participar</small>
-                </h2>
-            </div>
-        </li>
-        <li>
-            <div class="step-title step-finished">
-                <span class="number">4</span>
-                <h2>
-                    Sistema de Pagamento
-                    <small>Integre à sua conta Mercado Livre</small>
-                </h2>
-            </div>
-        </li>
-        </li>
-        <li>
-            <div class="step-title">
-                <span class="number">5</span>
-                <h2>
                     Confirmação
                     <small>Tudo certo?</small>
                 </h2>
@@ -68,26 +49,6 @@
                             <tr>
                                 <th>Localização</th>
                                 <td>{{ $championship->location }}</td>
-                            </tr>
-                            <tr>
-                                <th>Entrada</th>
-                                <td>
-                                    @if ($championship->price)
-                                        {{ $championship->present()->userPrice }}
-                                    @else
-                                        Gratuita
-                                    @endif
-                                </td>
-                            </tr>
-                            <tr>
-                                <th>Limite de Pessoas</th>
-                                <td>
-                                    @if ($championship->limit)
-                                        {{ $championship->limit }}
-                                    @else
-                                        Ilimitado
-                                    @endif
-                                </td>
                             </tr>
                             <tr>
                                 <th rowspan="3">Jogos</th>

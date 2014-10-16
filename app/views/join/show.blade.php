@@ -24,10 +24,6 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td colspan="3">Entrada: {{ link_to_route('championships.show', $join->championship->name, $join->championship->id) }}</td>
-                                <td>R$ {{ $join->present()->numericPrice }}</td>
-                            </tr>
                             <?php $total = $join->price; ?>
                             @foreach ($join->items as $item)
                                 <?php $total += $item->price; ?>
@@ -54,7 +50,9 @@
                         <h4>Status : <span class="label label-info">{{ $join->status->name }}</span></h4>
                         <p><small> {{ $join->status->description }} </small></p>
                         <hr>
-                        {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) }}
+                        @if ($join->status_id == 1)
+                            {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) }}
+                        @endif
                     </div>
                 </div>
             @endif
