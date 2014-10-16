@@ -13,7 +13,7 @@
                                 <div class="champ-item col-md-12">
                                     <a href="{{ route('championships.show', [$champ->id]) }}">
                                         <div class="champ-inner">
-                                            <h3>{{ $champ->name }} <span>{{ $champ->present()->slotsRemaining }}</span></h3>
+                                            <h3>{{ $champ->name }} <span>{{ $champ->present()->countCompetitions() }}</span></h3>
                                             <figure>
                                                 {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
                                             </figure>
@@ -27,7 +27,7 @@
                                                     <i class="icon icon-calendar"></i> {{ $champ->present()->daysLeft }}
                                                 </a>
                                                 <a href="#" class="price">
-                                                    <strong>{{ $champ->present()->userPrice }}</strong>
+                                                    <strong>{{ $champ->present()->lowestPrice }}</strong>
                                                 </a>
                                             </section>
                                         </div><!-- champ-inner -->
