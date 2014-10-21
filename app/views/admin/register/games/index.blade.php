@@ -70,9 +70,11 @@
 
                     </table>
 
-                    <div class="form-group next-step">
-                        <a href="{{ route('admin.register.confirmation', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
-                    </div>
+                    @if ($championship->competitions->count() > 0)
+                        <div class="form-group next-step">
+                            <a href="{{ route('admin.register.confirmation', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
+                        </div>
+                    @endif
                 </div>
             </div>
         </li>

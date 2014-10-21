@@ -190,3 +190,14 @@ Route::filter('paid_championship', function(){
         return Redirect::back()->with('error', 'Vai pagar o que se o campeonato é gratuito?');
     }
 });
+
+/**
+ * Check if user is organizer
+ */
+Route::filter('organizer', function()
+{
+    if ( ! Auth::user() || ! Auth::user()->isOrganizer())
+    {
+        App::abort(404);
+    }
+});

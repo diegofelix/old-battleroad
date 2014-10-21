@@ -68,8 +68,13 @@ class BaseController extends Controller {
 	 * @param  string $fallback
 	 * @return Response
 	 */
-	public function redirectIntended($fallback = '/')
+	public function redirectIntended($fallback = 'admin/joins')
 	{
+		if (Auth::user()->isOrganizer())
+		{
+			$fallback = 'admin/dashboard';
+		}
+
 		return Redirect::intended($fallback);
 	}
 

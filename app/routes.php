@@ -1,5 +1,5 @@
 <?php
-
+/*
 Route::get('usuario-teste', function(){
 
     $marketplace = App::make('Champ\Billing\MercadoPago\Marketplace');
@@ -15,7 +15,7 @@ Route::get('historico', function(){
     $response = $marketplace->getHistory(Champ\Championship\Championship::find(15));
 
     dd($response);
-});
+});*/
 
 Route::get('egon', function(){
 
@@ -31,7 +31,7 @@ Route::get('egon', function(){
     })->response('png');
 });
 
-Route::get('teste', function(){
+/*Route::get('teste', function(){
     $mercadopago = App::make('Champ\Billing\MercadoPago\Marketplace');
 
     if ( ! Input::has('code'))
@@ -42,7 +42,7 @@ Route::get('teste', function(){
     $response = $mercadopago->getSellerAccessToken(Input::get('code'), 'http://champaholic.dev/teste');
 
     var_dump($response);
-});
+});*/
 
 
 
@@ -53,7 +53,7 @@ Route::get('teste', function(){
 
 
 
-
+/*
 
 Route::get('http', function(){
 
@@ -144,7 +144,7 @@ Route::get('teste_working', function(){
 
     dd($response);
 });
-
+*/
 View::composer('championships.partials.filters', 'Champ\Composers\CompetitionFilterComposer');
 
 // pass through all files in the folder app/routes/ and require here
