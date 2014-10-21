@@ -1,16 +1,18 @@
 <?php namespace Champ\Billing\Core;
 
 use Champ\Account\User;
-use Champ\Championship\Championship;
+use Champ\Join\Join;
+use Champ\Billing\Core\PaymentListenerInterface;
 
 interface BillingInterface {
 
     /**
      * Do the payment
      *
-     * @param  PaymentObjectInterface $payment
-     * @return mixed
+     * @param  PaymentListenerInterface $payment
+     * @param  Join $join
+     * @return Response
      */
-    public function pay(Championship $championship, User $user);
+    public function invoice(Join $join, PaymentListenerInterface $listener);
 
 }

@@ -13,7 +13,7 @@ $(document).ready(function()
         $("#price").val(price);
     });
 });
-function calcPrice(thePrice, tax, inverted = false)
+function calcPrice(thePrice, tax, inverted)
 {
     var currentPrice = $(thePrice).val().replace(',', '.');
     var result = 0;

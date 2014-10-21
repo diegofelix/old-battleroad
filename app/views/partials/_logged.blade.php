@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse navbar-fixed-top logged" role="navigation">
+<nav class="navbar navbar-inverse logged" role="navigation">
     <div class="container wow bounceInDown">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

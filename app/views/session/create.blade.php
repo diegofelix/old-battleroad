@@ -2,12 +2,6 @@
 
 @section('content')
 
-    <div class="featured-title featured-login">
-        <div class="container">
-            <h2 class="sr-only">Login</h2>
-        </div>
-    </div>
-
     <div class="container" id="login">
 
         <div class="row">
@@ -15,7 +9,7 @@
             <div class="login-form col-md-6 col-md-offset-3">
 
                 <div class="social-networks">
-                    
+
                     <h5>Entre usando sua conta:</h5>
 
                     <div class="networks">
