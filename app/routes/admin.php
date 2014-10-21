@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function()
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|organizer'], function()
 {
     Route::get('register', [
         'as' => 'admin.register.index',
@@ -43,10 +43,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
             'uses' => 'Registration\CompetitionsController@index'
         ]);
 
-        Route::get('register/{register}/games/create', [
-            'as' => 'admin.register.games.create',
-            'uses' => 'Registration\CompetitionsController@create'
-        ]);
+        // Route::get('register/{register}/games/create', [
+        //     'as' => 'admin.register.games.create',
+        //     'uses' => 'Registration\CompetitionsController@create'
+        // ]);
 
         Route::post('register/{register}/games/create', [
             'as' => 'admin.register.games.store',
@@ -63,15 +63,15 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
          | Princing Routes
          |---------------------------------------------------------------------
          */
-        Route::get('register/{register}/pricing', [
-            'as' => 'admin.register.pricing',
-            'uses' => 'Registration\PricingController@create'
-        ]);
+        // Route::get('register/{register}/pricing', [
+        //     'as' => 'admin.register.pricing',
+        //     'uses' => 'Registration\PricingController@create'
+        // ]);
 
-        Route::post('register/{register}/pricing', [
-            'as' => 'admin.register.storePricing',
-            'uses' => 'Registration\PricingController@store'
-        ]);
+        // Route::post('register/{register}/pricing', [
+        //     'as' => 'admin.register.storePricing',
+        //     'uses' => 'Registration\PricingController@store'
+        // ]);
 
         /*
          |---------------------------------------------------------------------
@@ -83,10 +83,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
             'uses' => 'Registration\IntegrationController@index'
         ]);
 
-        Route::get('register/{register}/login', [
-            'as' => 'admin.register.login',
-            'uses' => 'Registration\IntegrationController@login'
-        ]);
+        // Route::get('register/{register}/login', [
+        //     'as' => 'admin.register.login',
+        //     'uses' => 'Registration\IntegrationController@login'
+        // ]);
 
         /*
          |---------------------------------------------------------------------
@@ -168,5 +168,13 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], 
     Route::get('dashboard', [
         'as' => 'admin.dashboard',
         'uses' => 'DashboardController@index'
+    ]);
+});
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth'], function()
+{
+    Route::get('joins', [
+        'as' => 'admin.joins',
+        'uses' => 'JoinsController@index'
     ]);
 });

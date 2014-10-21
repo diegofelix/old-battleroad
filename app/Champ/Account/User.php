@@ -139,4 +139,14 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->id == Auth::user()->id;
     }
 
+    /**
+     * Check if the user is a organizer
+     *
+     * @return boolean
+     */
+    public function isOrganizer()
+    {
+        return $this->is_organizer == true;
+    }
+
 }
