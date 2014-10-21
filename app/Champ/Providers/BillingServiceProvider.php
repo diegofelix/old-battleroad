@@ -11,6 +11,6 @@ class BillingServiceProvider extends ServiceProvider {
      */
     public function register()
     {
-        $this->app->bind('Champ\Billing\Core\BillingInterface', 'Champ\Billing\Moip\MoipBilling');
+        $this->app->bind('Champ\Billing\Core\BillingInterface', 'Champ\Billing\Pagseguro\Pagseguro');
     }
 }

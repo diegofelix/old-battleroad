@@ -46,4 +46,10 @@ class NotificationController extends BaseController {
 
         Log::info($paymentInfo);
     }
+
+    public function bcash()
+    {
+        Log::info('Recebeu alguma notificacao aqui');
+        Log::info(json_encode(Input::all()));
+    }
 }

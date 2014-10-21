@@ -7,7 +7,7 @@ use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
-use Champ\Billing\Pagseguro\Pagseguro;
+use Champ\Billing\Core\BillingInterface;
 
 class JoinController extends BaseController implements PaymentListenerInterface
 {
@@ -34,9 +34,9 @@ class JoinController extends BaseController implements PaymentListenerInterface
     protected $commandBus;
 
     /**
-     * Pagseguro Billing
+     * BillingInterface Billing
      *
-     * @var Pagseguro
+     * @var BillingInterface
      */
     protected $billing;
 
@@ -44,7 +44,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepository,
         CommandBus $commandBus,
-        Pagseguro $billing
+        BillingInterface $billing
     )
     {
         $this->champRepo = $champRepo;

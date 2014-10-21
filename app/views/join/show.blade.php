@@ -51,7 +51,8 @@
                         <p><small> {{ $join->status->description }} </small></p>
                         <hr>
                         @if ($join->status_id == 1)
-                            {{ link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) }}
+                            @include ('join.bcash')
+                            {{-- link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) --}}
                         @endif
                     </div>
                 </div>

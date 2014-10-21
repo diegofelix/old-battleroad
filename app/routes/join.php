@@ -28,3 +28,4 @@ Route::group(['before' => 'auth'], function()
 // nasp
 Route::any('nasp', 'NotificationController@nasp');
 Route::get('mercadopago', 'NotificationController@mercadopago');
+Route::post('bcash', 'NotificationController@bcash');

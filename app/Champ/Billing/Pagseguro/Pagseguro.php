@@ -4,10 +4,11 @@ use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Join\Join;
 use Champ\Billing\Core\PaymentListenerInterface;
+use Champ\Billing\Core\BillingInterface;
 use PHPSC\PagSeguro\Items\Item;
 use PHPSC\PagSeguro\Requests\Checkout\CheckoutService;
 
-class Pagseguro {
+class Pagseguro implements BillingInterface {
 
     use CredentialsTrait;
 
