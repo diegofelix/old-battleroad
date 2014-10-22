@@ -21,6 +21,11 @@
     {{ Form::hidden('valor_dependente_1', 0.25) }}
     {{-- // Comission data --}}
 
+    {{-- Urls --}}
+    {{ Form::hidden('url_retorno', route('join.returned', $join->id)) }}
+    {{ Form::hidden('url_aviso', route('bcash')) }}
+    {{-- // Urls --}}
+
     {{ Form::submit('Realizar Pagamento', ['class' => 'btn btn-lg btn-success']) }}
 
 </form>

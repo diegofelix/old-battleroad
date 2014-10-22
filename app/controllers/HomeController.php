@@ -9,7 +9,17 @@ class HomeController extends BaseController {
 	 */
 	public function index()
 	{
-		return $this->view('home.index');
+		return $this->view('pages.home');
 	}
+
+    /**
+     * Show a mini tutorial to the user
+     *
+     * @return Response
+     */
+    public function bcash()
+    {
+        return $this->view('pages.bcash');
+    }
 
 }

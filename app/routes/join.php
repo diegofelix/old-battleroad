@@ -18,6 +18,11 @@ Route::group(['before' => 'auth'], function()
         'uses' => 'JoinController@show'
     ]);
 
+    Route::post('join/{id}', [
+        'as' => 'join.returned',
+        'uses' => 'JoinController@returned'
+    ]);
+
     Route::get('payment/{id}', [
         'as' => 'payment',
         'before' => 'paid_championship',
@@ -28,4 +33,7 @@ Route::group(['before' => 'auth'], function()
 // nasp
 Route::any('nasp', 'NotificationController@nasp');
 Route::get('mercadopago', 'NotificationController@mercadopago');
-Route::post('bcash', 'NotificationController@bcash');
+Route::any('bcash', [
+    'as' => 'bcash',
+    'uses' => 'NotificationController@bcash'
+]);

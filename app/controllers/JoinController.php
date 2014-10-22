@@ -97,6 +97,19 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
+     * After the user paid for join, he will return back
+     * here, with some information. So, show some helpful message =)
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function returned($id)
+    {
+        return $this->redirectRoute('join.show', $id)
+            ->with(['message' => 'Obrigado por comprar na Battleroad!']);
+    }
+
+    /**
      * Payment
      *
      * @return Response

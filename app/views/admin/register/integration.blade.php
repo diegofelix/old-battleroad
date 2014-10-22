@@ -26,27 +26,34 @@
                 <span class="number">3</span>
                 <h2>
                     Sistema de Pagamento
-                    <small>Integre à sua conta Mercado Livre</small>
+                    <small>Integre à sua conta ao Bcash</small>
                 </h2>
             </div>
             <div class="row">
                 <div class="step-content col-md-12">
-                    @if ( ! $championship->hasIntegrated())
-                        <div class="mini-helper warning">
-                            <p>Clique abaixo para autorizar a Battleroad a direcionar os pagamento dos inscritos diretamente pra sua conta.</p>
-                            <p>O Sistema que a Battleroad utiliza como pagamento é o Mercado Livre, o maior motivo é justamente a facilidade de integração entre o recebedor, o pagador e nós, os intermediários.</p>
+                    <div class="mini-helper warning">
+                        <h5>Conta BCash</h5>
+                        <p>
+                            Bcash é o sistema de pagamentos escolhido pela Battleroad. Além de ser uma empresa do grupo Buscapé e de confiança, o Bcash nos possibilita que o pagamento das inscrições do seu campeonato vá diretamente para sua conta.<br>
+                            Dessa forma, o dinheiro não precisa passar pela Battleroad e você terá controle total sobre o dinheiro através de sua conta Bcash.
+                        </p>
+                        <p>Tem dúvidas de como criar sua conta Bcash? Temos um {{ link_to_route('tutorial_bcash', 'mini-manual aqui')  }} que pode te ajudar!</p>
+                    </div>
+
+                    {{ Form::open(['route' => ['admin.register.integration', $championship->id]]) }}
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                {{ Form::label('E-mail cadastrado no Bcash') }}
+                                {{ Form::email('bcash_account', null, ['class' => 'form-control', 'required' => 'required']) }}
+                            </div>
                         </div>
-                        <p>{{ link_to_route('admin.register.login', 'Integrar com Mercado Livre', [$championship->id, ], ['class' => 'btn btn-info']) }}</p>
-                    @else
-                        <div class="mini-helper success">
-                            <p>Parabéns, sistema integrado com sucesso, agora você já poderá receber os pagamentos dos competidores.</p>
-                            <p>Clique em continuar para confirmar as informações do campeonato e finalmente publica-lo!</p>
-                        </div>
-                        <p>{{ link_to_route('admin.register.login', 'Integrado', [$championship->id, ], ['class' => 'btn btn-info', 'disabled' => 'disabled']) }}</p>
-                        <div class="next-step">
-                            <a href="{{ route('admin.register.confirmation', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
-                        </div>
-                    @endif
+                    </div>
+
+                    <div class="next-step">
+                        <button type="submit" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</button>
+                    </div>
+                    {{ Form::close() }}
                 </div>
             </div>
         </li>

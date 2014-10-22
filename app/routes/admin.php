@@ -83,6 +83,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'uses' => 'Registration\IntegrationController@index'
         ]);
 
+        Route::post('register/{register}/integration', [
+            'as' => 'admin.register.integration',
+            'uses' => 'Registration\IntegrationController@store'
+        ]);
+
         // Route::get('register/{register}/login', [
         //     'as' => 'admin.register.login',
         //     'uses' => 'Registration\IntegrationController@login'

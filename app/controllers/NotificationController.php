@@ -10,6 +10,22 @@ class NotificationController extends BaseController {
 
     use CommanderTrait;
 
+
+    /**
+     * Bcash statuses
+     *
+     * @var array
+     */
+    protected $statuses = [
+        'Em Andamento' => 2,
+        'Aprovada' => 3,
+        'Concluída' => 4,
+        'Disputa' => 5,
+        'Devolvida' => 6,
+        'Cancelada' => 7,
+        'Chargeback' => 8,
+    ];
+
     /**
      * Join repository
      *
@@ -47,9 +63,22 @@ class NotificationController extends BaseController {
         Log::info($paymentInfo);
     }
 
+    /**
+     * Bcash notification
+     *
+     * @return void
+     */
     public function bcash()
     {
-        Log::info('Recebeu alguma notificacao aqui');
-        Log::info(json_encode(Input::all()));
+        Log::info('O Status de uma transação mudou');
+
+        // get the join
+        $join = $this->joinRepository->find(Input::get('id'));
+
+        // change his status
+        $join->status_id = $this->statuses[Input::get('status')];
+
+        // save it
+        $this->joinRepository->save($join);
     }
 }
