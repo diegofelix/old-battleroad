@@ -20,6 +20,17 @@ class IntegrationController extends BaseRegistrationController {
         return $this->view('admin.register.integration', compact('championship'));
     }
 
+    public function store($id)
+    {
+        $championship = $this->championshipRepository->find($id);
+
+        $championship->refresh_token = Input::get('bcash_account');
+
+        $this->championshipRepository->save($championship);
+
+        return $this->redirectRoute('admin.register.confirmation', $championship->id);
+    }
+
     public function login($id)
     {
         $currentUrl  = Request::url();

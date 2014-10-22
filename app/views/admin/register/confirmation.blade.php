@@ -51,6 +51,10 @@
                                 <td>{{ $championship->location }}</td>
                             </tr>
                             <tr>
+                                <th>Conta Bcash</th>
+                                <td>{{ $championship->refresh_token }}</td>
+                            </tr>
+                            <tr>
                                 <th rowspan="3">Jogos</th>
                             </tr>
                             @if ($championship->competitions)
