@@ -4,7 +4,6 @@ use Champ\Join\Join;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\UpdateJoinCommand;
 use Laracasts\Commander\CommanderTrait;
-use Log;
 
 class NotificationController extends BaseController {
 
@@ -71,13 +70,15 @@ class NotificationController extends BaseController {
     public function bcash()
     {
         Log::info('O Status de uma transação mudou');
+        Log::info(Input::get());
 
+        // if input has a transacao_id means that is item that changed his status.
         if (Input::has('transacao_id'))
         {
             // get the join
             $join = $this->joinRepository->findByToken(Input::get('transacao_id'));
 
-            if ( ! is_null($join)
+            if ( ! is_null($join))
             {
                 // change his status
                 $join->status_id = $this->statuses[Input::get('status')];
@@ -90,6 +91,21 @@ class NotificationController extends BaseController {
             else
             {
                 Log::warning('Join não encontrado');
+            }
+        }
+
+        // if input has a pedido_id means is a transaction that maybe
+        // was not paid or paid in another way. for example:
+        // the user clicked in "pay" twice, but just in the second time he effectvly paid.
+        if (Input::has('produto_codigo_1'))
+        {
+            $join = $this->joinRepository->findByCompetition(Input::get('produto_codigo_1'));
+
+            if (is_null($join->token))
+            {
+                $join->token = Input::get('id_transacao');
+                $this->joinRepository->save($join);
+                Log::info('Adicionei o token de pagamento pelo retorno.');
             }
         }
     }
