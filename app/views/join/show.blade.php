@@ -50,9 +50,8 @@
                         <h4>Status : <span class="label label-info">{{ $join->status->name }}</span></h4>
                         <p><small> {{ $join->status->description }} </small></p>
                         <hr>
-                        @if ($join->status_id == 1)
+                        @if (empty($join->token))
                             @include ('join.bcash')
-                            {{-- link_to_route('payment', 'Realizar Pagamento', $join->id, ['class' => 'btn btn-lg btn-success']) --}}
                         @endif
                     </div>
                 </div>

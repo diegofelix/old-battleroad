@@ -36,4 +36,18 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
     {
         return $this->model->whereToken($token)->firstOrFail();
     }
+
+    /**
+     * Get the join id by it item
+     *
+     * @param  int $competitionId
+     * @return Model
+     */
+    public function findByCompetition($competitionId)
+    {
+        return $this->model->whereHas('items', function($q) use ($competitionId)
+        {
+            $q->where('id', '=', $competitionId);
+        })->first();
+    }
 }
