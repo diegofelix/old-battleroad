@@ -17,7 +17,7 @@ class NotificationController extends BaseController {
      * @var array
      */
     protected $statuses = [
-        'Em Andamento' => 2,
+        'Em andamento' => 2,
         'Aprovada' => 3,
         'Concluída' => 4,
         'Disputa' => 5,
@@ -72,13 +72,25 @@ class NotificationController extends BaseController {
     {
         Log::info('O Status de uma transação mudou');
 
-        // get the join
-        $join = $this->joinRepository->find(Input::get('id'));
+        if (Input::has('transacao_id'))
+        {
+            // get the join
+            $join = $this->joinRepository->findByToken(Input::get('transacao_id'));
 
-        // change his status
-        $join->status_id = $this->statuses[Input::get('status')];
+            if ( ! is_null($join)
+            {
+                // change his status
+                $join->status_id = $this->statuses[Input::get('status')];
 
-        // save it
-        $this->joinRepository->save($join);
+                // save it
+                $this->joinRepository->save($join);
+
+                Log::info('Status alterado com sucesso!');
+            }
+            else
+            {
+                Log::warning('Join não encontrado');
+            }
+        }
     }
 }
