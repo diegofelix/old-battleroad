@@ -6,8 +6,8 @@ use Champ\Join\Events\UserJoined;
 use Champ\Join\Events\JoinStatusChanged;
 use Laracasts\Presenter\PresentableTrait;
 
-class Join extends Eloquent
-{
+class Join extends Eloquent {
+
     protected $guarded = [];
 
     use PresentableTrait;
@@ -53,6 +53,16 @@ class Join extends Eloquent
     public function status()
     {
         return $this->belongsTo('Champ\Join\Status');
+    }
+
+    /**
+     * Relation with Transaction
+     *
+     * @return HasMany
+     */
+    public function transactions()
+    {
+        return $this->hasMany('Champ\Join\Transaction');
     }
 
     /**
@@ -139,5 +149,32 @@ class Join extends Eloquent
             'competition_id' => $competitionId,
             'price' => $price
         ]);
+    }
+
+    /**
+     * Add a transaction that belongs to a join
+     *
+     * @param int $transactionId
+     */
+    public function addTransaction($transactionId)
+    {
+        $transaction = $this->findTransaction($transactionId);
+
+        if (empty($transaction))
+        {
+            $transaction = new Transaction(['transaction_id' => $transaction]);
+            $this->transactions()->save($transaction);
+        }
+    }
+
+    /**
+     * Find a transaction by its Id
+     *
+     * @param  int $transactionId
+     * @return Transaction
+     */
+    public function findTransaction($transactionId)
+    {
+        return $this->transactions()->where('transaction_id', $transactionId)->first();
     }
 }

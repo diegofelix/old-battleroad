@@ -76,21 +76,15 @@ class NotificationController extends BaseController {
         if (Input::has('transacao_id'))
         {
             // get the join
-            $join = $this->joinRepository->findByToken(Input::get('transacao_id'));
+            $transaction = $this->joinRepository->findTransaction(Input::get('transacao_id'));
 
-            if ( ! is_null($join))
+            if ( ! empty($transaction))
             {
                 // change his status
-                $join->status_id = $this->statuses[Input::get('status')];
-
-                // save it
-                $this->joinRepository->save($join);
+                $transaction->status_id = $this->statuses[Input::get('status')];
+                $transaction->save();
 
                 Log::info('Status alterado com sucesso!');
-            }
-            else
-            {
-                Log::warning('Join não encontrado');
             }
         }
 
@@ -100,13 +94,8 @@ class NotificationController extends BaseController {
         if (Input::has('produto_codigo_1'))
         {
             $join = $this->joinRepository->findByCompetition(Input::get('produto_codigo_1'));
-
-            if (is_null($join->token))
-            {
-                $join->token = Input::get('id_transacao');
-                $this->joinRepository->save($join);
-                Log::info('Adicionei o token de pagamento pelo retorno.');
-            }
+            $join->addTransaction(Input::get('id_transacao'));
+            Log::info('adicionada uma transacao.')
         }
     }
 }

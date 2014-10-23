@@ -49,6 +49,11 @@
                     <div class="panel-body">
                         <h4>Status : <span class="label label-info">{{ $join->status->name }}</span></h4>
                         <p><small> {{ $join->status->description }} </small></p>
+                        @if ($join->status_id == 1 & ! empty($join->token))
+                            <p>
+                                Se já clicou em realizar o pagamento mas não concluiu, nosso sistema de pagamentos irá te enviar um e-mail referente ao código <strong>{{$join->token}}</strong> para que o pagamento seja efetuado.
+                            </p>
+                        @endif
                         <hr>
                         @if (empty($join->token))
                             @include ('join.bcash')
