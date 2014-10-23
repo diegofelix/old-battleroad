@@ -50,4 +50,15 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
             $q->where('id', '=', $competitionId);
         })->first();
     }
+
+    /**
+     * Find a transaction by its id
+     *
+     * @param  int $transactionId
+     * @return Transaction
+     */
+    public function findTransaction($transactionId)
+    {
+        return $this->model->findTransaction($transactionId);
+    }
 }

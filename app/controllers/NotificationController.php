@@ -95,7 +95,7 @@ class NotificationController extends BaseController {
         {
             $join = $this->joinRepository->findByCompetition(Input::get('produto_codigo_1'));
             $join->addTransaction(Input::get('id_transacao'));
-            Log::info('adicionada uma transacao.')
+            Log::info('adicionada uma transacao.');
         }
     }
 }

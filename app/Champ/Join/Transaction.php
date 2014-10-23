@@ -1,4 +1,4 @@
-<?php namespace Champ\Join\Transaction;
+<?php namespace Champ\Join;
 
 use Eloquent;
 
