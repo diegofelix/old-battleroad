@@ -107,7 +107,9 @@ class JoinController extends BaseController implements PaymentListenerInterface
     {
         $join = $this->joinRepository->find($id);
 
-        $join->addTransaction(Input::get('id_transacao'));
+        $join->token = Input::get('id_transacao');
+
+        $this->joinRepository->save($join);
 
         return $this->redirectRoute('join.show', $id)
             ->with(['message' => 'Parabéns, você está quase confirmado no campeonato!']);
