@@ -99,7 +99,7 @@ class NotificationController extends BaseController {
         if (Input::has('id_pedido'))
         {
             $join = $this->joinRepository->find(Input::get('id_pedido'));
-            $join->token = $this->statuses[Input::get('id_transacao')];
+            $join->token = Input::get('id_transacao');
             $this->joinRepository->save($join);
 
             Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
