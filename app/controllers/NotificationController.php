@@ -80,17 +80,6 @@ class NotificationController extends BaseController {
             $this->joinRepository->save($join);
 
             Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
-
-            // $transaction = $join->findTransaction(Input::get('transacao_id'));
-
-            // if ( ! empty($transaction))
-            // {
-            //     // change his status
-            //     $transaction->status_id =
-            //     $transaction->save();
-
-            //     Log::info('Status da transacao: ' .$transaction->transaction_id. ' alterado com sucesso!');
-            // }
         }
 
         // if input has a pedido_id means is a transaction that maybe
@@ -103,8 +92,6 @@ class NotificationController extends BaseController {
             $this->joinRepository->save($join);
 
             Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
-            // $join->addTransaction(Input::get('id_transacao'));
-            // Log::info('adicionada uma transacao.');
         }
     }
 }

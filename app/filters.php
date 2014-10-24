@@ -151,6 +151,18 @@ Route::filter('not_joined_yet', function()
     // get the id of the intended championship
     $id = Request::segment(3);
 
+    // if the url has no segment, then probaly is a post request
+    if (empty($id))
+    {
+        $id = Input::get('id');
+    }
+
+    // if came here with no id, then something is wrong.
+    if (empty($id))
+    {
+        return App::abort(404);
+    }
+
     // get the last joined championship
     $joined = Auth::user()->getJoin($id);
 
@@ -163,6 +175,17 @@ Route::filter('not_joined_yet', function()
             ->with('message', $message);
     }
 
+});
+
+Route::filter('has_competition', function()
+{
+    if ( ! Input::has('competitions') && sizeof(Input::get('competitions')) > 0)
+    {
+        $message = "Você precisa selecionar ao menos um jogo do campeonato.";
+
+        return Redirect::route('join.show', $joined->id)
+            ->with('message', $message);
+    }
 });
 
 Route::filter('has_vacancy', function(){

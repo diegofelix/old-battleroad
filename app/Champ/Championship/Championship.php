@@ -36,7 +36,7 @@ class Championship extends Eloquent
      */
     public static function register($user_id, $name, $description, $event_start, $location, $image = null, $thumb = null, $limit = null)
     {
-       return new static(compact('user_id', 'name', 'description', 'event_start', 'location', 'image', 'thumb', 'limit'));
+        return new static(compact('user_id', 'name', 'description', 'event_start', 'location', 'image', 'thumb', 'limit'));
     }
 
     /**
