@@ -15,4 +15,16 @@ class JoinPresenter extends Presenter
             ? 'paid'
             : 'pending';
     }
+
+    public function totalPrice()
+    {
+        $price = 0;
+
+        foreach ($this->items as $item)
+        {
+            $price += $item->competition->original_price;
+        }
+
+        return $price;
+    }
 }

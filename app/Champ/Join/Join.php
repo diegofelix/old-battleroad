@@ -162,7 +162,7 @@ class Join extends Eloquent {
 
         if (empty($transaction))
         {
-            $transaction = new Transaction(['transaction_id' => $transaction]);
+            $transaction = new Transaction(['transaction_id' => $transactionId]);
             $this->transactions()->save($transaction);
         }
     }

@@ -139,8 +139,8 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $data['limit'] = $this->updateLimitValues($championship, $data);
 
         // updates the price.
-        $data['price']          = $this->updatePrice($data['price']);
         $data['original_price'] = $data['price'];
+        $data['price']          = $this->updatePrice($data['price']);
 
         // create a new Competition
         $competition = new Competition($data);

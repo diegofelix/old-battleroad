@@ -59,6 +59,9 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
      */
     public function findTransaction($transactionId)
     {
-        return $this->model->findTransaction($transactionId);
+        return $this->model->whereHas('transactions', function($q) use ($transactionId)
+        {
+            $q->where('transaction_id', '=', $transactionId);
+        })->first();
     }
 }

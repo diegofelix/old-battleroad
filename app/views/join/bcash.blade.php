@@ -1,7 +1,10 @@
 <form name="bcash"action="https://www.bcash.com.br/checkout/pay/"method="post">
 
     {{-- Organizer identifier --}}
-    {{ Form::hidden('email_loja', $join->championship->refresh_token) }}
+    {{ Form::hidden('email_loja', 'diegoflx.oliveira@gmail.com') }}
+
+    {{-- Join id --}}
+    {{ Form::hidden('id_pedido', $join->id) }}
 
     {{-- Championship data --}}
     @foreach ($join->items as $key => $item)
@@ -13,12 +16,14 @@
     @endforeach
     {{-- // Championship data --}}
 
+    {{-- User data --}}
     <input name="email"type="hidden" value="{{{ $join->user->email }}}">
     <input name="nome"type="hidden"value="{{{ $join->user->name }}}">
+    {{-- // User data --}}
 
     {{-- Comission data --}}
-    {{ Form::hidden('email_dependente_1', 'diegoflx.oliveira@gmail.com') }}
-    {{ Form::hidden('valor_dependente_1', 0.25) }}
+    {{ Form::hidden('email_dependente_1', $join->championship->refresh_token) }}
+    {{ Form::hidden('valor_dependente_1', $join->present()->totalPrice) }}
     {{-- // Comission data --}}
 
     {{-- Urls --}}
