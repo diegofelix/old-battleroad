@@ -73,10 +73,11 @@ class NotificationController extends BaseController {
         Log::info(Input::get());
 
         // if input has a transacao_id means that is item that changed his status.
-        if (Input::has('transacao_id'))
+        if (Input::has('pedido'))
         {
-            // get the join
-            $transaction = $this->joinRepository->findTransaction(Input::get('transacao_id'));
+            $join = $this->joinRepository->find(Input::get('pedido'));
+
+            $transaction = $join->findTransaction(Input::get('transacao_id'));
 
             if ( ! empty($transaction))
             {
@@ -84,16 +85,16 @@ class NotificationController extends BaseController {
                 $transaction->status_id = $this->statuses[Input::get('status')];
                 $transaction->save();
 
-                Log::info('Status alterado com sucesso!');
+                Log::info('Status da transacao: ' .$transaction->transaction_id. ' alterado com sucesso!');
             }
         }
 
         // if input has a pedido_id means is a transaction that maybe
         // was not paid or paid in another way. for example:
         // the user clicked in "pay" twice, but just in the second time he effectvly paid.
-        if (Input::has('produto_codigo_1'))
+        if (Input::has('id_pedido'))
         {
-            $join = $this->joinRepository->findByCompetition(Input::get('produto_codigo_1'));
+            $join = $this->joinRepository->find(Input::get('id_pedido'));
             $join->addTransaction(Input::get('id_transacao'));
             Log::info('adicionada uma transacao.');
         }
