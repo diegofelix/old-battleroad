@@ -75,7 +75,7 @@ class NotificationController extends BaseController {
         // if input has a pedido means that the item status has changed.
         if (Input::has('pedido'))
         {
-            $this->execute(JoinStatusChangedCommand::class);
+            $join = $this->execute(JoinStatusChangedCommand::class);
 
             // $join = $this->joinRepository->find(Input::get('pedido'));
             // $join->status_id = $this->statuses[Input::get('status')];
