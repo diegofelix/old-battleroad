@@ -22,7 +22,7 @@ class JoinStatusChangedCommand {
 
     public function __construct($pedido, $status)
     {
-        $this->id       = $notificationType;
+        $this->id       = $pedido;
         $this->statusId = $this->statuses[$status];
     }
 
