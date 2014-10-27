@@ -3,6 +3,7 @@
 use Champ\Join\Join;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\UpdateJoinCommand;
+use Champ\Join\JoinStatusChangedCommand;
 use Laracasts\Commander\CommanderTrait;
 
 class NotificationController extends BaseController {
@@ -42,7 +43,7 @@ class NotificationController extends BaseController {
      *
      * @return Response
      */
-    public function nasp()
+    /*public function nasp()
     {
         $join = $this->execute(UpdateJoinCommand::class);
 
@@ -60,7 +61,7 @@ class NotificationController extends BaseController {
         $paymentInfo = $marketplace->getPayment($id);
 
         Log::info($paymentInfo);
-    }
+    }*/
 
     /**
      * Bcash notification
@@ -70,21 +71,19 @@ class NotificationController extends BaseController {
     public function bcash()
     {
         Log::info('O Status de uma transação mudou');
-        Log::info(Input::get());
 
-        // if input has a transacao_id means that is item that changed his status.
+        // if input has a pedido means that the item status has changed.
         if (Input::has('pedido'))
         {
-            $join = $this->joinRepository->find(Input::get('pedido'));
-            $join->status_id = $this->statuses[Input::get('status')];
-            $this->joinRepository->save($join);
+            $this->execute(JoinStatusChangedCommand::class);
+
+            // $join = $this->joinRepository->find(Input::get('pedido'));
+            // $join->status_id = $this->statuses[Input::get('status')];
+            // $this->joinRepository->save($join);
 
             Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
         }
 
-        // if input has a pedido_id means is a transaction that maybe
-        // was not paid or paid in another way. for example:
-        // the user clicked in "pay" twice, but just in the second time he effectvly paid.
         if (Input::has('id_pedido'))
         {
             $join = $this->joinRepository->find(Input::get('id_pedido'));

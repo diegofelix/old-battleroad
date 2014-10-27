@@ -90,12 +90,22 @@ class Join extends Eloquent {
      * @param  string $token
      * @return void
      */
-    public function changeStatus($statusId, $token)
+    public function changeStatus($statusId)
     {
-        $this->status_id    = $statusId;
-        $this->token        = $token;
+        $this->status_id = $statusId;
 
         $this->raise(new JoinStatusChanged($this));
+
+        if ($statusId == 3) // Approved
+        {
+            $this->raise(new JoinApproved($this));
+        }
+
+        if ($statusId == 7) // Canceled
+        {
+            $this->raise(new JoinCancelled($this));
+        }
+
     }
 
     /**

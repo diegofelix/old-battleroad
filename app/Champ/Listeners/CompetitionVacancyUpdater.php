@@ -2,6 +2,7 @@
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
+use Champ\Join\Events\JoinCancelled;
 use Champ\Championship\Repositories\CompetitionRepositoryInterface;
 
 class CompetitionVacancyUpdater extends EventListener {
@@ -14,12 +15,34 @@ class CompetitionVacancyUpdater extends EventListener {
     }
 
     /**
-     * Update the championship limit when a user join the championship
+     * Subtract a vacancy in the competition when user join the championship
      *
      * @param  UserJoined $event
      * @return void
      */
     public function whenUserJoined(UserJoined $event)
+    {
+        $this->addVancancy($event, -1);
+    }
+
+    /**
+     * Add the vacancy back when user cancel the championship
+     *
+     * @param  JoinCancelled $event
+     * @return void
+     */
+    public function whenJoinCancelled(JoinCancelled $event)
+    {
+        $this->addVancancy($event);
+    }
+
+    /**
+     * Add or remove vancancy for the competition
+     *
+     * @param $event
+     * @param integer $value
+     */
+    private function addVancancy($event, $value = 1)
     {
         $items = $event->join->items;
         if ($items->count())
@@ -27,11 +50,9 @@ class CompetitionVacancyUpdater extends EventListener {
             foreach ($items as $item)
             {
                 $competition = $item->competition;
-                $competition->limit--;
+                $competition->limit += $value;
                 $this->competitionRepository->save($competition);
             }
         }
-
     }
-
 }

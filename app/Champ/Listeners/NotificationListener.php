@@ -3,6 +3,7 @@
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Events\UserJoined;
+use Champ\Join\Events\JoinCancelled;
 use Mail;
 
 class NotificationListener extends EventListener {
@@ -34,6 +35,28 @@ class NotificationListener extends EventListener {
                 $message->to($join->user->email)->subject("O Status da sua inscrição mudou");
             });
         }
+    }
+
+    /**
+     * Send a email to the user when the join was cancelled
+     *
+     * @param  UserJoined $event
+     * @return void
+     */
+    public function whenJoinCancelled(JoinCancelled $event)
+    {
+        $join = $event->join;
+
+        $parameters = [
+            'name' => $join->user->name,
+            'championship' => $join->championship->name,
+            'join' => $join->id
+        ];
+
+        Mail::send('emails.join_cancelled', $parameters, function($message) use ($join)
+        {
+            $message->to($join->user->email)->subject("Sua inscrição foi cancelada.");
+        });
     }
 
     /**
