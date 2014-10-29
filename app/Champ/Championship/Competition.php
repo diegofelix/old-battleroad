@@ -139,7 +139,7 @@ class Competition extends Eloquent
      *
      * @param int $value
      */
-    public function setLimitAttribute($value)
+    /*public function setLimitAttribute($value)
     {
         $this->attributes['limit'] = $value;
 
@@ -147,7 +147,7 @@ class Competition extends Eloquent
         {
             $this->attributes['limit'] = 999999;
         }
-    }
+    }*/
 
 
     use \Champ\Traits\FormatToDb;

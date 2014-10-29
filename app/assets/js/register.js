@@ -21,11 +21,12 @@ function calcPrice(thePrice, tax, inverted)
     {
         if (inverted)
         {
-            result = (currentPrice / (100+tax)) * 100;
+            result = currentPrice * ((100 - tax) / 100);
         }
         else
         {
-            result = currentPrice * (1+ (tax/100));
+            result = (currentPrice / (100 - tax)) * 100;
+            // result = currentPrice * (1+ (tax/100));
         }
     }
     return result.toFixed(2);

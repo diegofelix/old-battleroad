@@ -221,7 +221,14 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     private function updateLimitValues($championship, $data)
     {
-        // if no limit was specified, then is the same as the championship limit
+        if (empty($data['limit'])) return 99999;
+
+        return $data['limit'];
+        /*
+         * This is working when we have a championship limit.
+         * For now, we only need a competition limit.
+         *
+         // if no limit was specified, then is the same as the championship limit
         if (empty($data['limit'])) return $championship->limit;
 
         // if the championship dont have limit we dont need to
@@ -233,7 +240,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         if ($data['limit'] > $championship->limit) return $championship->limit;
 
         // if came here, then return himself.
-        return $data['limit'];
+        return $data['limit'];*/
     }
 
     /**
