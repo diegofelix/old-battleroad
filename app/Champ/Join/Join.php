@@ -103,7 +103,7 @@ class Join extends Eloquent {
             $this->raise(new JoinApproved($this));
         }
 
-        if ($statusId == 7) // Canceled
+        if ($statusId >= 6) // Cancelled, Returned and chargeback
         {
             $this->raise(new JoinCancelled($this));
         }
