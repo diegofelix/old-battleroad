@@ -5,6 +5,7 @@ use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\UpdateJoinCommand;
 use Champ\Join\JoinStatusChangedCommand;
 use Laracasts\Commander\CommanderTrait;
+use Champ\Join\Status;
 
 class NotificationController extends BaseController {
 
@@ -17,13 +18,13 @@ class NotificationController extends BaseController {
      * @var array
      */
     protected $statuses = [
-        'Em andamento' => 2,
-        'Aprovada' => 3,
-        'Concluída' => 4,
-        'Disputa' => 5,
-        'Devolvida' => 6,
-        'Cancelada' => 7,
-        'Chargeback' => 8,
+        'Em andamento'  => Status::IN_PROGRESS,
+        'Aprovada'      => Status::APPROVED,
+        'Concluída'     => Status::FINISHED,
+        'Disputa'       => Status::DISPUTE,
+        'Devolvida'     => Status::RETURNED,
+        'Cancelada'     => Status::CANCELLED,
+        'Chargeback'    => Status::CHARGEBACK,
     ];
 
     /**

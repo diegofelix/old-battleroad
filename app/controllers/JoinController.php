@@ -8,9 +8,12 @@ use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
 use Champ\Billing\Core\BillingInterface;
+use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController implements PaymentListenerInterface
 {
+
+    use CommanderTrait;
 
     /**
      * Championship Repository
@@ -73,11 +76,15 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     public function register()
     {
-        $championship = $this->champRepo->find(Input::get('id'));
+        $input = Input::all();
+        // dd($input);
+        $input['user'] = Auth::user();
+        $input['championship'] = $this->champRepo->find(Input::get('id'));
 
-        $command = new JoinCommand(Auth::user(), $championship, Input::get('competitions'));
 
-        $join = $this->commandBus->execute($command);
+        // $command = new JoinCommand(Auth::user(), $championship, Input::get('competitions'));
+
+        $join = $this->execute(JoinCommand::class, $input);
 
         // redirect the user to the location page.
         return $this->redirectRoute('join.show', [$join->id]);
@@ -175,7 +182,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
             'email_dependente_1'    => $join->championship->user->email,
             'valor_dependente_1'    => $join->present()->totalPrice,
             'url_retorno'           => route('join.returned', $join->id),
-            'url_aviso'             => route('bcash'),
+            'url_aviso'             => route('bcash')
         ];
 
         foreach ($join->items as $key => $item)
@@ -192,6 +199,8 @@ class JoinController extends BaseController implements PaymentListenerInterface
 
         $string = http_build_query($fields);
 
-        return md5($string.getenv('BCASH_TOKEN'));
+        // dd(md5($string.getenv('BCASH_TOKEN')));
+
+        return md5($string.'&token='.getenv('BCASH_TOKEN'));
     }
 }

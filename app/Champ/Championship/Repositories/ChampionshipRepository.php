@@ -8,6 +8,8 @@ use Champ\Championship\Competition;
 use App;
 use Auth;
 use Config;
+use Event;
+use Log;
 
 class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
 
@@ -266,6 +268,35 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championship->save();
 
         return $championship;
+    }
+
+    /**
+     * Cancel past championships based on the current date
+     *
+     * @return void
+     */
+    public function finishPastChampionships()
+    {
+        $limit = Config::get('champ.payday_limit');
+
+        // get all championships that cross the limit of time
+        $championships = $this->model
+            ->whereRaw("datediff(event_start, now()) <= ?", [$limit])
+            ->get();
+
+        // pass for all these championships and "finish him!"
+        foreach ($championships as $championship)
+        {
+            if ( ! $championship->isFinished())
+            {
+                $championship->finished = true;
+                $championship->save();
+                Event::fire('championship.finished', [$championship]);
+                Log::info('championship ' . $championship->id . ' finished.');
+            }
+        }
+
+
     }
 
 }

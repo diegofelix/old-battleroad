@@ -121,7 +121,8 @@ return array(
 		'Artdarek\OAuth\OAuthServiceProvider',
 		'Laracasts\Commander\CommanderServiceProvider',
 		'Laracasts\Validation\ValidationServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
+		// 'Barryvdh\Debugbar\ServiceProvider',
+		'Indatus\Dispatcher\ServiceProvider'
 	),
 
 	/*

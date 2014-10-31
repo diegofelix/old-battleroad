@@ -169,4 +169,14 @@ class Championship extends Eloquent
         return !empty($this->refresh_token);
     }
 
+    /**
+     * Check if the championship period is finished
+     *
+     * @return boolean
+     */
+    public function isFinished()
+    {
+        return $this->finished == true;
+    }
+
 }

@@ -1,5 +1,7 @@
 <?php
 
+Artisan::resolve('FinishChampionshipCommand');
+
 /*
 |--------------------------------------------------------------------------
 | Register The Artisan Commands

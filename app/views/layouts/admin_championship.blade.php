@@ -17,6 +17,28 @@
                         {{ champ_action_links('Participantes', 'users', 'admin.championships.users', $championship->id, 'icon-users'); }}
                         {{ champ_action_links('Feedback', 'feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); }}
                     </ul>
+
+                    <hr>
+
+                    <div class="alert alert-info">
+                        <h4>Pagamentos Confirmados:</h4>
+                        <h4 class="text-right">R$ {{ $championship->present()->totalConfirmedPrice() }}</h4>
+                    </div>
+
+                    <hr>
+
+                    <div class="alert alert-warning">
+                        <h4>Pagamentos Pendentes:</h4>
+                        <h4 class="text-right">R$ {{ $championship->present()->totalPendentPrice() }}</h4>
+                    </div>
+
+                    <hr>
+
+                    <div class="alert alert-success">
+                        <h4>Previsão total dos recebimentos:</h4>
+                        <h4 class="text-right">R$ {{ $championship->present()->totalPrice() }}</h4>
+                    </div>
+
                 </div><!-- champ-sidebar -->
 
                 <div class="col-md-9 champ-description">
