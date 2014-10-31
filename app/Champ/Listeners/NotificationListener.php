@@ -4,13 +4,14 @@ use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Events\UserJoined;
 use Champ\Join\Events\JoinCancelled;
+use Champ\Join\Status;
 use Mail;
 
 class NotificationListener extends EventListener {
 
     protected $notifiable = [
-        3, // Paid
-        7 // Canceled
+        Status::APPROVED,
+        Status::CANCELLED
     ];
 
     /**

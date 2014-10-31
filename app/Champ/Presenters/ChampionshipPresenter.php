@@ -122,4 +122,37 @@ class ChampionshipPresenter extends Presenter
 
         return '<span class="label label-info">À partir de R$ ' . number_format($lowestPrice, 2) . '</span>';
     }
+
+    public function totalPrice()
+    {
+        $totalPrice = 0;
+        foreach ($this->joins as $join)
+        {
+            $totalPrice += $join->present()->totalPrice;
+        }
+
+        return number_format($totalPrice, 2);
+    }
+
+    public function totalConfirmedPrice()
+    {
+        $totalPrice = 0;
+        foreach ($this->joins as $join)
+        {
+            $totalPrice += $join->present()->totalConfirmedPrice;
+        }
+
+        return number_format($totalPrice, 2);
+    }
+
+    public function totalPendentPrice()
+    {
+        $totalPrice = 0;
+        foreach ($this->joins as $join)
+        {
+            $totalPrice += $join->present()->totalPendentPrice;
+        }
+
+        return number_format($totalPrice, 2);
+    }
 }

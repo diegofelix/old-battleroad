@@ -20,4 +20,12 @@ interface JoinRepositoryInterface extends RepositoryInterface
      * @return Join
      */
     public function findByToken($token);
+
+    /**
+     * Get the joins that belongs to a given championship
+     *
+     * @param  int $championshipId
+     * @return Collection
+     */
+    public function getByChampionship($championshipId);
 }

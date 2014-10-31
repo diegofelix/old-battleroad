@@ -24,6 +24,9 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td colspan="4">{{ $join->championship->name }}</td>
+                            </tr>
                             <?php $total = $join->price; ?>
                             @foreach ($join->items as $item)
                                 <?php $total += $item->price; ?>

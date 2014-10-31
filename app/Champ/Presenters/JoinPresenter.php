@@ -18,6 +18,36 @@ class JoinPresenter extends Presenter
 
     public function totalPrice()
     {
+        if ($this->status_id >= 5) return 0;
+
+        $price = 0;
+
+        foreach ($this->items as $item)
+        {
+            $price += $item->competition->original_price;
+        }
+
+        return $price;
+    }
+
+    public function totalConfirmedPrice()
+    {
+        if ( ! in_array($this->status_id, [3,4])) return 0;
+
+        $price = 0;
+
+        foreach ($this->items as $item)
+        {
+            $price += $item->competition->original_price;
+        }
+
+        return $price;
+    }
+
+    public function totalPendentPrice()
+    {
+        if ( ! in_array($this->status_id, [1,2])) return 0;
+
         $price = 0;
 
         foreach ($this->items as $item)

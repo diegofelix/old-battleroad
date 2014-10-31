@@ -17,6 +17,12 @@ return [
     */
     'rate' => 10.0, // percentual
 
+    /**
+     * Time limit to let user pay for the championships before the championship start
+     * So if the championship start in 10/02/2015, the users can pay until 08/02.
+     */
+    'payday_limit' => 2,
+
     /*
     |--------------------------------------------------------------------------
     | Event listeners
@@ -26,6 +32,7 @@ return [
     'listeners' => [
         'Champ\Listeners\ChampionshipVacancyUpdater',
         'Champ\Listeners\CompetitionVacancyUpdater',
-        'Champ\Listeners\NotificationListener'
+        'Champ\Listeners\NotificationListener',
+        'Champ\Listeners\AdminNotificationListener'
     ]
 ];

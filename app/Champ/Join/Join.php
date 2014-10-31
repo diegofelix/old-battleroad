@@ -98,16 +98,39 @@ class Join extends Eloquent {
 
         $this->raise(new JoinStatusChanged($this));
 
-        if ($statusId == 3) // Approved
+        if ($statusId == Status::APPROVED)
         {
             $this->raise(new JoinApproved($this));
         }
 
-        if ($statusId >= 6) // Cancelled, Returned and chargeback
+        if ($statusId >= Status::RETURNED) // Cancelled, Returned and chargeback
         {
             $this->raise(new JoinCancelled($this));
         }
+    }
 
+
+    /**
+     * Cancel a Join
+     *
+     * @return void
+     */
+    public function cancelJoin()
+    {
+        $this->status_id = Status::CANCELLED;
+        $this->save();
+
+        Event::fire('join.cancelled', [$this]);
+    }
+
+    /**
+     * Check if the championship was paid yet
+     *
+     * @return boolean
+     */
+    public function isPaid()
+    {
+        return  in_array($this->status_id, [Status::APPROVED, Status::FINISHED]);
     }
 
     /**

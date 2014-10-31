@@ -64,4 +64,16 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
             $q->where('transaction_id', '=', $transactionId);
         })->first();
     }
+
+    /**
+     * Get the joins that belongs to a given championship
+     *
+     * @param  int $championshipId
+     * @return Collection
+     */
+    public function getByChampionship($championshipId)
+    {
+        $this->model->where('championship_id', $championshipId)
+            ->get();
+    }
 }

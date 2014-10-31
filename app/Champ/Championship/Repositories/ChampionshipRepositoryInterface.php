@@ -63,4 +63,11 @@ interface ChampionshipRepositoryInterface extends RepositoryInterface {
      */
     public function getAllByUser($id, $with);
 
+    /**
+     * Cancel past championships based on the current date
+     *
+     * @return void
+     */
+    public function finishPastChampionships();
+
 }

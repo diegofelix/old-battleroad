@@ -8,9 +8,6 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             Descrição
-            <div class="pull-right">
-                <a href="{{ route('admin.championships.edit', $championship->id) }}" class="btn btn-info btn-sm"><span class="icon icon-pencil"></span></a>
-            </div>
         </div>
         <div class="panel-body">{{ $championship->present()->markdownDescription }}</div>
     </div>
