@@ -1,5 +1,6 @@
 <?php
 
+
 /*
 Route::get('usuario-teste', function(){
 

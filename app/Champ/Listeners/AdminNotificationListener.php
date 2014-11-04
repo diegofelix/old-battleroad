@@ -20,15 +20,21 @@ class AdminNotificationListener {
     {
         $joins = $this->joinRepository->findByChampionship($championship->id);
 
+        $cancelledJoins = [];
+
         foreach ($joins as $join)
         {
             if ( ! $join->isPaid())
             {
+                $cancelledJoins[] = $join->id;
                 $join->cancelJoin();
             }
         }
 
-        Log::warning('enviar e-mail pra mim pra mim avisando');
+        Mail::send('emails.join_finished', $parameters, function($message) use ($cancelledJoins)
+        {
+            $message->to('diegoflx.oliveira@gmail.com')->subject("Inscrições canceladas.");
+        });
     }
 
 }
