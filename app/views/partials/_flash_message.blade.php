@@ -3,14 +3,14 @@
     <!-- Error Message -->
     <div class="flash-message alert alert-error">
         @if (Session::get('error') instanceof Illuminate\Support\MessageBag)
-            <i class="icon icon-warning"></i>
+            <i class="fa fa-warning"></i>
             <ul>
                 @foreach (Session::get('error')->all() as $error)
                     <li>{{ $error }}</li>
                 @endforeach
             </ul>
         @else
-            <p><i class="icon icon-warning"></i> {{ Session::get('error') }}</p>
+            <p><i class="fa fa-warning"></i> {{ Session::get('error') }}</p>
         @endif
     </div>
     <!-- Error Message -->
@@ -21,7 +21,7 @@
 
     <!-- Message -->
     <div class="flash-message alert alert-success">
-        <p><i class="icon icon-thumbs-up"></i> {{ Session::get('message') }}</p>
+        <p><i class="fa fa-thumbs-up"></i> {{ Session::get('message') }}</p>
     </div>
     <!-- Message -->
 

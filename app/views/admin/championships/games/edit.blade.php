@@ -1,7 +1,7 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
     <h3>
-        <i class="icon icon-gamepad"></i> Jogos <small>Adicionando jogos ao campeonato.</small>
+        <i class="fa fa-gamepad"></i> Jogos <small>Adicionando jogos ao campeonato.</small>
     </h3>
 
     {{ Form::model($competition, ['route' => ['admin.championships.games.store', $championship->id], 'role' => 'form']) }}

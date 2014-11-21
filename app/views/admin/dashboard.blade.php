@@ -10,19 +10,19 @@
                 <div class="row">
                     <div class="dashboard-item col-md-4">
                         <h3>
-                            <!-- <span class="icon icon-dollar"></span> -->
+                            <!-- <span class="fa fa-dollar"></span> -->
                             <small>R$</small>108,90
                         </h3>
                     </div>
                     <div class="dashboard-item col-md-4">
                         <h3>
-                            <!-- <span class="icon icon-trophy"></span> -->
+                            <!-- <span class="fa fa-trophy"></span> -->
                             2 Campeonatos
                         </h3>
                     </div>
                     <div class="dashboard-item col-md-4">
                         <h3>
-                            <!-- <span class="icon icon-users"></span> -->
+                            <!-- <span class="fa fa-users"></span> -->
                             5 Organizações
                         </h3>
                     </div>
@@ -36,7 +36,7 @@
             <h2 class="main-title">
                 Dashboard
                 <a href="{{ route('admin.register.index') }}" class="pull-right btn btn-success">
-                    <span class="icon icon-plus"></span>
+                    <span class="fa fa-plus"></span>
                      Registrar Novo Campeonato
                 </a>
             </h2>
@@ -59,7 +59,7 @@
                                     <td>{{ $join->championship->name }}</td>
                                     <td>{{ $join->user->name }}</td>
                                     <td>{{ $join->status->name }}</td>
-                                    <td><a href="{{ route('join.show', $join->id) }}"><span class="icon icon-eye"></span> Detalhes</a></td>
+                                    <td><a href="{{ route('join.show', $join->id) }}"><span class="fa fa-eye"></span> Detalhes</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

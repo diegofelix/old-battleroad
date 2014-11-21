@@ -1,6 +1,6 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
-    <h3><i class="icon icon-gamepad"></i> Jogos</h3>
+    <h3><i class="fa fa-gamepad"></i> Jogos</h3>
 
     <table class="table table-striped table-hover games-table">
         <thead>

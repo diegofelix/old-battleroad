@@ -1,6 +1,6 @@
 <fieldset>
 
-    <legend><span class="icon icon-user"></span> Dados Pessoais</legend>
+    <legend><span class="fa fa-user"></span> Dados Pessoais</legend>
 
     <div class="form-group">
         {{ Form::label('bio', 'Biografia: ', ['class' => 'col-md-2 control-label']) }}
@@ -26,7 +26,7 @@
 
 <fieldset>
 
-    <legend><span class="icon icon-gamepad"></span> Gamer Tags</legend>
+    <legend><span class="fa fa-gamepad"></span> Gamer Tags</legend>
 
     <div class="form-group">
         {{ Form::label('psn', 'PSN: ', ['class' => 'col-md-2 control-label']) }}
@@ -52,7 +52,7 @@
 </fieldset>
 <fieldset>
 
-    <legend><span class="icon icon-check"></span> Notificações</legend>
+    <legend><span class="fa fa-check"></span> Notificações</legend>
 
     <div class="form-group">
         <div class="col-md-7 col-md-offset-2">

@@ -7,6 +7,7 @@ use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinApproved;
 use Laracasts\Presenter\PresentableTrait;
+use Carbon\Carbon;
 
 class Join extends Eloquent {
 
@@ -211,5 +212,15 @@ class Join extends Eloquent {
     public function findTransaction($transactionId)
     {
         return $this->transactions()->where('transaction_id', $transactionId)->first();
+    }
+
+    /**
+     * Check if the championship will start in 2 days
+     *
+     * @return boolean
+     */
+    public function inGracePeriod()
+    {
+        return $this->championship->event_start->diffInDays(Carbon::now()) <= 2;
     }
 }

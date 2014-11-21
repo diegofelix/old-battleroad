@@ -2,7 +2,7 @@
 @section ('champ-content')
 
     <h3>
-        <i class="icon icon-camera"></i> Banner
+        <i class="fa fa-camera"></i> Banner
     </h3>
 
     <div class="panel panel-default">

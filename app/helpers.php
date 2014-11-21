@@ -53,7 +53,7 @@ if ( ! function_exists('icon_route'))
 	 */
 	function icon_route($route, $name, $icon, $params = null)
 	{
-		return '<a href="' . route($route, $params) . '">' . '<i class="icon icon-' . $icon . '"> </i> ' . $name . '</a>';
+		return '<a href="' . route($route, $params) . '">' . '<i class="fa fa-' . $icon . '"> </i> ' . $name . '</a>';
 	}
 }
 if ( ! function_exists('icon_link'))
@@ -69,7 +69,7 @@ if ( ! function_exists('icon_link'))
 	 */
 	function icon_link($link, $name, $icon, $params = null)
 	{
-		return '<a href="' . $link . '">' . '<i class="icon icon-' . $icon . '"> </i> ' . $name . '</a>';
+		return '<a href="' . $link . '">' . '<i class="fa fa-' . $icon . '"> </i> ' . $name . '</a>';
 	}
 }
 

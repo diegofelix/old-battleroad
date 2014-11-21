@@ -30,21 +30,21 @@
 
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="icon icon-envelope icon-fw"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-envelope icon-fw"></i></span>
                             {{ Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'E-mail', 'required']) }}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="icon icon-key icon-fw"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-key icon-fw"></i></span>
                                 {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
-                            <span class="input-group-addon"><i class="icon icon-key icon-fw"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-key icon-fw"></i></span>
                             {{ Form::password('password_confirmation', ['class' => 'form-control input-lg', 'placeholder' => 'Repita a senha', 'required']) }}
                         </div>
                     </div>

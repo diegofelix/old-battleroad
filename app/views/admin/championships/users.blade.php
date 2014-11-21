@@ -1,6 +1,6 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
-    <h3><i class="icon icon-users"></i>
+    <h3><i class="fa fa-users"></i>
         Participantes
         <div id="payment-filter" class="btn-group pull-right">
             <button type="button" data-status="all" class="btn btn-sm btn-default">Todos</button>

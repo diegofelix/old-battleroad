@@ -1,4 +1,4 @@
-<?php Champ\Listeners;
+<?php namespace Champ\Listeners;
 
 use Champ\Join\Repositories\JoinRepositoryInterface;
 

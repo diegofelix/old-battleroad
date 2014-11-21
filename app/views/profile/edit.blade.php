@@ -14,13 +14,13 @@
                     {{-- Check if the user logged is the same as the profile --}}
                     <div class="settings champ-box">
                         <header class="default-header">
-                            <h3><i class="icon icon-gear"></i> Configurações</h3>
+                            <h3><i class="fa fa-gear"></i> Configurações</h3>
                         </header>
                         <section>
                             <ul class="settings-list">
-                                <li><a href="{{ route('profile.edit', Auth::user()->username) }}"><i class="icon icon-user"></i> Configurações</a></li>
-                                <li><a href="#"><i class="icon icon-key"></i> Alterar Senha</a></li>
-                                <li><a href="{{ route('session.destroy') }}"><i class="icon icon-sign-out"></i> Sair</a></li>
+                                <li><a href="{{ route('profile.edit', Auth::user()->username) }}"><i class="fa fa-user"></i> Configurações</a></li>
+                                <li><a href="#"><i class="fa fa-key"></i> Alterar Senha</a></li>
+                                <li><a href="{{ route('session.destroy') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
                             </ul>
                         </section>
                     </div>
