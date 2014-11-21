@@ -15,7 +15,7 @@
 
             <ul class="nav navbar-nav">
                 <li>{{ link_to_route('championships.index', 'Campeonatos') }}</li>
-                <li>{{ link_to('http://battleroad.uservoice.com/knowledgebase', 'Como funciona?') }}</li>
+                <li>{{ link_to_route('how_it_works', 'Como funciona?') }}</li>
                 <li>{{ link_to('http://battleroad.uservoice.com', 'Feedback') }}</li>
             </ul>
 

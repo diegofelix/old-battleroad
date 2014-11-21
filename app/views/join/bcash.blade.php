@@ -6,21 +6,20 @@
     {{-- Join id --}}
     {{ Form::hidden('id_pedido', $join->id) }}
 
-    {{ Form::hidden('id_plataforma', 4654389) }}
-
     {{-- Championship data --}}
     @foreach ($join->items as $key => $item)
         <?php $count = $key+1; ?>
         {{ Form::hidden('produto_codigo_'.$count, $item->id) }}
-        {{ Form::hidden('produto_descricao_'.$count, 'Inscrição: ' . $item->competition->game->name ) }}
+        <input type="hidden" name="produto_descricao_{{$count}}" value="{{str_replace(' ', '', 'Inscrição: ' . $item->competition->game->name) }}">
+        {{-- Form::hidden('produto_descricao_'.$count, str_replace(' ', '', 'Inscrição: ' . $item->competition->game->name )) --}}
         {{ Form::hidden('produto_qtde_'.$count, 1) }}
         {{ Form::hidden('produto_valor_'.$count, $item->price) }}
     @endforeach
     {{-- // Championship data --}}
 
     {{-- User data --}}
-    <input name="email"type="hidden" value="{{{ $join->user->email }}}">
-    <input name="nome"type="hidden"value="{{{ $join->user->name }}}">
+    <input name="email" type="hidden" value="{{ $join->user->email }}">
+    <input name="nome" type="hidden" value="{{ str_replace(' ', '', $join->user->name) }}">
     {{-- // User data --}}
 
     {{-- Comission data --}}

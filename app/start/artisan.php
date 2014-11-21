@@ -1,6 +1,7 @@
 <?php
 
 Artisan::resolve('FinishChampionshipCommand');
+Artisan::resolve('ThreeDaysLeftToChampCommand');
 
 /*
 |--------------------------------------------------------------------------

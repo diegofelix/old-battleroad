@@ -22,6 +22,15 @@
             </div>
         </li>
         <li>
+            <div class="step-title step-finished">
+                <span class="number">3</span>
+                <h2>
+                    Sistema de Pagamento
+                    <small>Integre à sua conta ao Bcash</small>
+                </h2>
+            </div>
+        </li>
+        <li>
             <div class="step-title">
                 <span class="number">3</span>
                 <h2>

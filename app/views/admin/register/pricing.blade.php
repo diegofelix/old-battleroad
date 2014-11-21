@@ -70,7 +70,7 @@
                         </fieldset>
 
                         <div class="form-group next-step">
-                            <button type="submit" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</button>
+                            <button type="submit" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</button>
                         </div>
 
                     {{ Form::close() }}

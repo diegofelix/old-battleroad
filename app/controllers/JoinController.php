@@ -7,7 +7,7 @@ use Champ\Join\UpdateJoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
-use Champ\Billing\Core\BillingInterface;
+// use Champ\Billing\Core\BillingInterface;
 use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController implements PaymentListenerInterface
@@ -46,14 +46,14 @@ class JoinController extends BaseController implements PaymentListenerInterface
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepository,
-        CommandBus $commandBus,
-        BillingInterface $billing
+        CommandBus $commandBus/*,
+        BillingInterface $billing*/
     )
     {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
-        $this->billing = $billing;
+        // $this->billing = $billing;
     }
 
     /**
@@ -178,8 +178,8 @@ class JoinController extends BaseController implements PaymentListenerInterface
             'email_loja'            => getenv('BCASH_ACCOUNT'),
             'id_pedido'             => $join->id,
             'email'                 => $join->user->email,
-            'nome'                  => $join->user->name,
-            'email_dependente_1'    => $join->championship->user->email,
+            'nome'                  => str_replace(' ', '', $join->user->name),
+            'email_dependente_1'    => $join->championship->refresh_token,
             'valor_dependente_1'    => $join->present()->totalPrice,
             'url_retorno'           => route('join.returned', $join->id),
             'url_aviso'             => route('bcash')
@@ -188,8 +188,9 @@ class JoinController extends BaseController implements PaymentListenerInterface
         foreach ($join->items as $key => $item)
         {
             $count = $key+1;
+
             $fields['produto_codigo_'.$count]       = $item->id;
-            $fields['produto_descricao_'.$count]    = 'Inscrição: ' . $item->competition->game->name;
+            $fields['produto_descricao_'.$count]    = str_replace(' ', '', 'Inscrição: ' . $item->competition->game->name);
             $fields['produto_qtde_'.$count]         = 1;
             $fields['produto_valor_'.$count]        = $item->price;
         }
@@ -201,6 +202,6 @@ class JoinController extends BaseController implements PaymentListenerInterface
 
         // dd(md5($string.getenv('BCASH_TOKEN')));
 
-        return md5($string.'&token='.getenv('BCASH_TOKEN'));
+        return md5($string.getenv('BCASH_TOKEN'));
     }
 }

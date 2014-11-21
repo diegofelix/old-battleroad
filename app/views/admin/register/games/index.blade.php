@@ -28,7 +28,7 @@
                     </div>
 
                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#add-game">
-                        <span class="icon icon-plus"></span> Jogo
+                        <span class="fa fa-plus"></span> Adicionar Jogo
                     </button>
 
                     <table class="table table-striped table-hover games-table">
@@ -53,7 +53,7 @@
                                     <td>
                                         {{ Form::open(['route' => ['admin.register.games.destroy', $championship->id, $competition->id], 'method' => 'DELETE', 'role' => 'form']) }}
                                             <button type="submit" class="btn btn-danger">
-                                                <i class="icon icon-times-circle"></i>
+                                                <i class="fa fa-times-circle"></i>
                                             </button>
                                         {{ Form::close() }}
                                         {{--
@@ -72,10 +72,19 @@
 
                     @if ($championship->competitions->count() > 0)
                         <div class="form-group next-step">
-                            <a href="{{ route('admin.register.confirmation', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="icon icon-arrow-right"></i> Continuar</a>
+                            <a href="{{ route('admin.register.integration', $championship->id) }}" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</a>
                         </div>
                     @endif
                 </div>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">3</span>
+                <h2>
+                    Sistema de Pagamento
+                    <small>Integre à sua conta ao Bcash</small>
+                </h2>
             </div>
         </li>
         <li>
@@ -128,7 +137,7 @@
                             <div class="form-group">
                                 {{ Form::label('event_start', 'Data do Campeonato: ') }}
                                 <div class="input-group col-md-6">
-                                    <span class="input-group-addon"><span class="icon icon-calendar"></span></span>
+                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                                     {{ Form::text('start', null, [
                                         'class' => 'form-control',
                                         'id' => 'event_start',

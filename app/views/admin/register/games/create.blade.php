@@ -2,7 +2,7 @@
 @section ('register_content')
 
     <h3>
-        <i class="icon icon-gamepad"></i> Jogos <small>Adicionando jogos ao campeonato.</small>
+        <i class="fa fa-gamepad"></i> Jogos <small>Adicionando jogos ao campeonato.</small>
     </h3>
 
     {{ Form::open(['route' => ['admin.register.games.store', $championship->id], 'role' => 'form']) }}

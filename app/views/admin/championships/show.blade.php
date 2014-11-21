@@ -2,7 +2,7 @@
 @section ('champ-content')
 
     <h3>
-        <i class="icon icon-info-circle"></i> Informações
+        <i class="fa fa-info-circle"></i> Informações
     </h3>
 
     <div class="panel panel-default">

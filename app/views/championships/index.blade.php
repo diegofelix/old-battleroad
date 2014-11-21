@@ -4,7 +4,7 @@
 
     <div id="championship" class="main-container">
         <div class="container">
-            <h2 class="main-title">Campeonatos <a href="#" class="pull-right"><span class="icon icon-search"></span></a></h2>
+            <h2 class="main-title">Campeonatos <a href="#" class="pull-right"><span class="fa fa-search"></span></a></h2>
             <div class="row">
                 <div class="col-md-9">
                     <div class="row">
@@ -24,7 +24,7 @@
                                             -->
                                             <section class="info">
                                                 <a href="#" class="time-left">
-                                                    <i class="icon icon-calendar"></i> {{ $champ->present()->daysLeft }}
+                                                    <i class="fa fa-calendar"></i> {{ $champ->present()->daysLeft }}
                                                 </a>
                                                 <a href="#" class="price">
                                                     <strong>{{ $champ->present()->lowestPrice }}</strong>

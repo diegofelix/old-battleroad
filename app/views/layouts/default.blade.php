@@ -11,6 +11,7 @@
         <title>Battleroad - @yield('title', 'De olho nos campeões')</title>
 
         <link href="//fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" >
 
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 
@@ -56,9 +57,9 @@
                         <div class="col-md-4">
                             <h4>Onde estamos?</h4>
                             <ul>
-                                <li><a href="mailto:contato@battleroad.com.br"><span class="icon icon-envelope"></span> E-mail</a></li>
-                                <li><a href="http://twitter.com/sigabattleroad"><span class="icon icon-twitter-square"></span> Twitter</a></li>
-                                <li><a href="https://www.facebook.com/battleroadoficial"><span class="icon icon-facebook-square"></span> Facebook</a></li>
+                                <li><a href="mailto:contato@battleroad.com.br"><span class="fa fa-envelope"></span> E-mail</a></li>
+                                <li><a href="http://twitter.com/sigabattleroad"><span class="fa fa-twitter-square"></span> Twitter</a></li>
+                                <li><a href="https://www.facebook.com/battleroadoficial"><span class="fa fa-facebook-square"></span> Facebook</a></li>
                             </ul>
                         </div>
                     </div>

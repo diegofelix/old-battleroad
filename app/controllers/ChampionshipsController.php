@@ -2,7 +2,7 @@
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Billing\Moip\MoipBilling;
+// use Champ\Billing\Moip\MoipBilling;
 //use Champ\Billing\Core\BillingInterface
 
 class ChampionshipsController extends BaseController {
@@ -30,13 +30,13 @@ class ChampionshipsController extends BaseController {
 
     public function __construct(
         ChampionshipRepositoryInterface $champRepo,
-        JoinRepositoryInterface $joinRepository,
-        MoipBilling $billing
+        JoinRepositoryInterface $joinRepository
+        // MoipBilling $billing
     )
     {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
-        $this->billing = $billing;
+        // $this->billing = $billing;
     }
 
     /**

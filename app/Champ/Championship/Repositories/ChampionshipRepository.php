@@ -280,23 +280,57 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $limit = Config::get('champ.payday_limit');
 
         // get all championships that cross the limit of time
-        $championships = $this->model
-            ->whereRaw("datediff(event_start, now()) <= ?", [$limit])
-            ->get();
+        $championships = $this->getNotFinishedByDateDiff($limit);
 
         // pass for all these championships and "finish him!"
         foreach ($championships as $championship)
         {
-            if ( ! $championship->isFinished())
+            $championship->finished = true;
+            $championship->save();
+            Event::fire('championship.finished', [$championship]);
+            Log::info('championship ' . $championship->id . ' finished.');
+        }
+    }
+
+    /**
+     * Get all users that not paid yet
+     *
+     * @return Collection
+     */
+    public function getUsersFromCommingChampionships()
+    {
+        $championships = $this->getNotFinishedByDateDiff(3, ['joins.user']);
+
+        $toSendAlert = [];
+
+        foreach ($championships as $championship)
+        {
+            foreach ($championship->joins as $join)
             {
-                $championship->finished = true;
-                $championship->save();
-                Event::fire('championship.finished', [$championship]);
-                Log::info('championship ' . $championship->id . ' finished.');
+                if ( ! $join->isPaid())
+                {
+                    $toSendAlert[] = $join;
+                }
             }
         }
 
+        return $toSendAlert;
+    }
 
+    /**
+     * Get all championships by the limit passed
+     *
+     * @param  int $limit
+     * @param  array $with
+     * @return Collection
+     */
+    public function getNotFinishedByDateDiff($limit = 2, $with = [])
+    {
+        return $this->model
+            ->with($with)
+            ->where('finished', false)
+            ->whereRaw("datediff(event_start, now()) = ?", [$limit])
+            ->get();
     }
 
 }

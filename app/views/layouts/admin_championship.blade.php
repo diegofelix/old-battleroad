@@ -15,7 +15,7 @@
                         {{ champ_action_links('Banner', 'banner', 'admin.championships.banner', $championship->id, 'icon-camera'); }}
                         {{ champ_action_links('Jogos', 'games', 'admin.championships.games', $championship->id, 'icon-gamepad'); }}
                         {{ champ_action_links('Participantes', 'users', 'admin.championships.users', $championship->id, 'icon-users'); }}
-                        {{ champ_action_links('Feedback', 'feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); }}
+                        {{-- champ_action_links('Feedback', 'feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); --}}
                     </ul>
 
                     <hr>
