@@ -1,6 +1,8 @@
 <?php namespace Champ\Listeners;
 
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Config;
+use Mail;
 
 class AdminNotificationListener {
 
@@ -18,7 +20,9 @@ class AdminNotificationListener {
 
     public function handle($championship)
     {
-        $joins = $this->joinRepository->findByChampionship($championship->id);
+        \Log::info($championship);
+        $joins = $this->joinRepository->getByChampionship($championship->id);
+
 
         $cancelledJoins = [];
 
@@ -31,9 +35,9 @@ class AdminNotificationListener {
             }
         }
 
-        Mail::send('emails.join_finished', $parameters, function($message) use ($cancelledJoins)
+        Mail::send('emails.join_finished', compact('cancelledJoins'), function($message)
         {
-            $message->to('diegoflx.oliveira@gmail.com')->subject("Inscrições canceladas.");
+            $message->to(Config::get('champ.admin_email'))->subject("Inscrições canceladas.");
         });
     }
 

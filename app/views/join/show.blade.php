@@ -70,7 +70,11 @@
                         @endif
 
                         @if (empty($join->token))
-                            @include ('join.bcash')
+                            @if ( ! $join->championship->finished)
+                                @include ('join.bcash')
+                            @else
+                                <p>O campeonato já está em andamento, por isso, você não poderá mais realizar o pagamento.</p>
+                            @endif
                         @endif
                     </div>
                 </div>

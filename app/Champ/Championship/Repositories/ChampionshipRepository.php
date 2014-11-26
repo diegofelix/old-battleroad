@@ -29,7 +29,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      */
     public function featured($game = null)
     {
-        $query = $this->model->wherePublished(true);
+        $query = $this->model
+            ->wherePublished(true)
+            ->whereFinished(false);
 
         if ($game)
         {
@@ -105,7 +107,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     public function getAvailableCompetitions()
     {
         $competitions = [];
-        $championships = $this->model->with('competitions.game')->where('published', 1)->get();
+        $championships = $this->model
+            ->with('competitions.game')
+            ->wherePublished(true)
+            ->whereFinished(false)
+            ->get();
 
         foreach($championships as $champ)
         {
@@ -287,7 +293,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         {
             $championship->finished = true;
             $championship->save();
-            Event::fire('championship.finished', [$championship]);
+            Event::fire('championship.finished', $championship);
             Log::info('championship ' . $championship->id . ' finished.');
         }
     }

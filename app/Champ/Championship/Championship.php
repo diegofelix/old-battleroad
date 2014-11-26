@@ -143,6 +143,17 @@ class Championship extends Eloquent
     }
 
     /**
+     * Check if Championship was finished
+     *
+     * @param  int $id
+     * @return boolean
+     */
+    public static function checkFinished($id)
+    {
+        return self::find($id)->finished == 1;
+    }
+
+    /**
      * Set the the limit attribute
      * If the limit was not specified, then we set a high number to ensure that
      * this limit will not be reach

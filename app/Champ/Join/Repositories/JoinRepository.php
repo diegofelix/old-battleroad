@@ -73,7 +73,7 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
      */
     public function getByChampionship($championshipId)
     {
-        $this->model->where('championship_id', $championshipId)
+        return $this->model->where('championship_id', $championshipId)
             ->get();
     }
 }

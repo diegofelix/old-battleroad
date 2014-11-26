@@ -7,7 +7,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container how-it-works" id="how-player">
 
         <h3>Quais as vantagens de participar de um campeonato por aqui?</h3>
 
@@ -53,8 +53,9 @@
                 <p>Sua vaga já está reservada, porém ainda não há garantias de que você vá participar, para confirmar sua participação, é preciso que você realize o pagamento, dependendo da forma de pagamento, a sua inscrição será confirmada, normalmente em questão de horas se for cartão ou débito, e 2 dias se for depósito ou boleto.</p>
                 <p><strong>Atenção: </strong> Não deixe para pagar de última hora, pois pagamentos que demoram até 2 dias para serem compensados poderá inviabilizar sua participação. É recomendado que você pague imediatamente após a inscrição, para garantir que tudo ocorra dentro do prazo.</p>
             </div>
-            <p>Assim que o pagamento for confirmado, você receberá um e-mail e automaticamente você estará participando do campeonato.</p>
         </div>
+
+        <p>Assim que o pagamento for confirmado, você receberá um e-mail e automaticamente você estará participando do campeonato.</p>
 
         <p>Ainda tem dúvidas? <a href="#">Entre no nosso canal de suporte.</a></p>
 

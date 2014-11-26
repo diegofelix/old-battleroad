@@ -3,7 +3,7 @@
     <p>Olá <strong>Diego Felix,</strong></p>
 
     <ul>
-    @foreach ($cancellesJoins as $id)
+    @foreach ($cancelledJoins as $id)
         <li>{{ $id }}</li>
     @endforeach
     </ul>

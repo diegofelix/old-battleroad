@@ -1,6 +1,9 @@
 <?php
 
 return [
+
+    'admin_email' => 'diegoflx.oliveira@gmail.com',
+
     /*
     |--------------------------------------------------------------------------
     | Champ rate
@@ -19,9 +22,9 @@ return [
 
     /**
      * Time limit to let user pay for the championships before the championship start
-     * So if the championship start in 10/02/2015, the users can pay until 08/02.
+     * So if the championship start in 10/02/2015, the users can pay until x days before.
      */
-    'payday_limit' => 2,
+    'payday_limit' => 1,
 
     /*
     |--------------------------------------------------------------------------
