@@ -50,6 +50,7 @@ class FinishChampionshipCommand extends ScheduledCommand {
 	public function schedule(Schedulable $scheduler)
 	{
 		return $scheduler->daily()->hours(1)->minutes(0);
+		// return $scheduler->everyMinutes(1);
 	}
 
 	/**

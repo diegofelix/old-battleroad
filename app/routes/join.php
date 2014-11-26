@@ -3,13 +3,13 @@ Route::group(['before' => 'auth'], function()
 {
     Route::get('join/create/{id}', [
         'as' => 'join.create',
-        'before' => 'not_joined_yet|has_vacancy',
+        'before' => 'not_joined_yet|has_vacancy|championship_not_finished',
         'uses' => 'JoinController@index',
     ]);
 
     Route::post('join/register', [
         'as' => 'join.register',
-        'before' => 'not_joined_yet|has_competition',
+        'before' => 'not_joined_yet|has_competition|championship_not_finished',
         'uses' => 'JoinController@register'
     ]);
 

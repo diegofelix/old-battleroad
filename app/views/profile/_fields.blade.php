@@ -58,7 +58,7 @@
         <div class="col-md-7 col-md-offset-2">
             <div class="checkbox">
                 <label>
-                    {{ Form::checkbox('notify') }} Receber mensalmente novidades da Battleroad.
+                    {{ Form::checkbox('notify') }} Receber novidades da Battleroad.
                 </label>
             </div>
         </div>

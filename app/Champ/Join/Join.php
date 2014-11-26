@@ -1,13 +1,14 @@
 <?php namespace Champ\Join;
 
-use Eloquent;
-use Laracasts\Commander\Events\EventGenerator;
-use Champ\Join\Events\UserJoined;
-use Champ\Join\Events\JoinStatusChanged;
-use Champ\Join\Events\JoinCancelled;
-use Champ\Join\Events\JoinApproved;
-use Laracasts\Presenter\PresentableTrait;
 use Carbon\Carbon;
+use Champ\Join\Events\JoinApproved;
+use Champ\Join\Events\JoinCancelled;
+use Champ\Join\Events\JoinStatusChanged;
+use Champ\Join\Events\UserJoined;
+use Eloquent;
+use Event;
+use Laracasts\Commander\Events\EventGenerator;
+use Laracasts\Presenter\PresentableTrait;
 
 class Join extends Eloquent {
 

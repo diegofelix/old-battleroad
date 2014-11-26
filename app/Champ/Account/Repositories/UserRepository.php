@@ -122,6 +122,9 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         // get a user
         $user = $this->find($id, ['profile']);
 
+        // add a notify false if was not passed.
+        if ( ! isset($data['notify'])) $data['notify'] = false;
+
         // update your profile
         return $user->profile->fill($data)->save();
     }
