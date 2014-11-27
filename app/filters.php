@@ -125,7 +125,7 @@ Route::filter('championship_not_finished', function($request)
 {
     $id = $request->getParameter('id');
 
-    if ( ! Champ\Championship\Championship::checkFinished($id))
+    if (Champ\Championship\Championship::checkFinished($id))
     {
         return Redirect::route('championships.show', $id)
             ->withError('Esse campeonato já aconteceu ou está em andamento, você não pode mais participar.');
