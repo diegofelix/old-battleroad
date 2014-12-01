@@ -116,7 +116,7 @@ Route::filter('championship_published', function($request)
 
     if ( ! Champ\Championship\Championship::checkPublished($id))
     {
-        return Redirect::route('admin.register.location', $id)
+        return Redirect::route('admin.register.games', $id)
             ->withError('Esse campeonato ainda não publicado, termine de registra-lo.');
     }
 });

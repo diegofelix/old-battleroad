@@ -528,6 +528,38 @@
 			}
 		},
 		{
+			"file": "app/filters.php",
+			"settings":
+			{
+				"buffer_size": 6238,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/routes/join.php",
+			"settings":
+			{
+				"buffer_size": 1021,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/controllers/JoinController.php",
+			"settings":
+			{
+				"buffer_size": 5388,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Champ/Championship/Championship.php",
+			"settings":
+			{
+				"buffer_size": 4077,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/assets/less/main.less",
 			"settings":
 			{
@@ -539,7 +571,7 @@
 			"file": "app/views/pages/how_player.blade.php",
 			"settings":
 			{
-				"buffer_size": 4015,
+				"buffer_size": 4045,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +579,7 @@
 			"file": "app/views/pages/how_organizer.blade.php",
 			"settings":
 			{
-				"buffer_size": 5992,
+				"buffer_size": 6033,
 				"line_ending": "Unix"
 			}
 		}
@@ -842,8 +874,8 @@
 	[
 		"/media/win/xampp/htdocs/answer-stack",
 		"/media/win/xampp/htdocs/answer-stack/app",
-		"/media/win/xampp/htdocs/answer-stack/app/assets",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less"
+		"/media/win/xampp/htdocs/answer-stack/app/views",
+		"/media/win/xampp/htdocs/answer-stack/app/views/pages"
 	],
 	"file_history":
 	[
@@ -1005,6 +1037,12 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			" ",
+			".",
+			" ",
+			".",
+			" ",
+			".",
 			"btn ",
 			"btn",
 			"organizer",
@@ -1126,13 +1164,7 @@
 			" ",
 			".",
 			" ",
-			".",
-			"placeholder=\"10.00\"",
-			"col-md-4",
-			"td",
-			"th",
-			"location",
-			"image"
+			"."
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1154,7 +1186,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1170,8 +1202,8 @@
 						"selection":
 						[
 							[
-								39,
-								39
+								41,
+								41
 							]
 						],
 						"settings":
@@ -1182,11 +1214,131 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "app/filters.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6238,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3303,
+								3303
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 5596.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/routes/join.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1021,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								368,
+								368
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/controllers/JoinController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5388,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1908,
+								1908
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 1178.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/Champ/Championship/Championship.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4077,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3193,
+								3193
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6492.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
 					"file": "app/assets/less/main.less",
 					"semi_transient": false,
 					"settings":
@@ -1210,24 +1362,24 @@
 						"translation.y": 282.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 6,
 					"file": "app/views/pages/how_player.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4015,
+						"buffer_size": 4045,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								288,
-								288
+								2991,
+								2991
 							]
 						],
 						"settings":
@@ -1237,27 +1389,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2397.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
 					"file": "app/views/pages/how_organizer.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5992,
+						"buffer_size": 6033,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4093,
-								4093
+								3436,
+								3436
 							]
 						],
 						"settings":
@@ -1267,10 +1419,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1974.0,
+						"translation.y": 2397.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1322,6 +1474,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"joincontroller",
+				"app/controllers/JoinController.php"
+			],
 			[
 				"how_or",
 				"app/views/pages/how_organizer.blade.php"
@@ -1389,10 +1545,6 @@
 			[
 				"bcash.blade",
 				"app/views/join/bcash.blade.php"
-			],
-			[
-				"joincontroller",
-				"app/controllers/JoinController.php"
 			],
 			[
 				".env.",
