@@ -51,7 +51,7 @@
                             <h4>Colabore</h4>
                             <ul>
                                 <li><a href="http://battleroad.uservoice.com">Feedback</a></li>
-                                <li><a href="#">Depoimentos</a></li>
+                                <!-- <li><a href="#">Depoimentos</a></li> -->
                             </ul>
                         </div>
                         <div class="col-md-4">
