@@ -41,9 +41,9 @@
                         <div class="col-md-4">
                             <h4>Plataforma</h4>
                             <ul>
-                                <li><a href="http://battleroad.uservoice.com/knowledgebase">Como funciona?</a></li>
-                                <li><a href="#">Sobre</a></li>
-                                <li><a href="#">Changelog</a></li>
+                                <li>{{ link_to_route('how_it_works', 'Como funciona?') }}</li>
+                                <!-- <li><a href="#">Sobre</a></li> -->
+                                <!-- <li><a href="#">Changelog</a></li> -->
                                 <!--<li><a href="#">Estatísticas</a></li>-->
                             </ul>
                         </div>
