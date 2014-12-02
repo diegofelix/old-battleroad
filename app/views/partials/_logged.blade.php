@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            {{ link_to('/', 'BattleRoad', ['class' => 'navbar-brand']) }}
+            <a href="/" class="navbar-brand">Battleroad <small class="beta">beta</small></a>
         </div> <!-- navbar-header -->
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">
