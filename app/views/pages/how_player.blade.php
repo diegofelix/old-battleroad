@@ -11,7 +11,8 @@
 
         <h3>Quais as vantagens de participar de um campeonato por aqui?</h3>
 
-        <p>Você fará parte da maior rede de campeonatos do Brasil, sempre que surgir um campeonato de seu interesse, você receberá um e-mail avisando o dia e hora do evento. Você poderá escolher a forma de pagamento e até parcelar a sua entrada, temos boleto, cartão de crédito, débito e muito mais. Além disso, estamos preparando muita novidade, <a href="">dá só uma olhada.</a></p>
+        <p>Você fará parte da maior rede de campeonatos do Brasil, sempre que surgir um campeonato de seu interesse, você receberá um e-mail avisando o dia e hora do evento. Você poderá escolher a forma de pagamento e até parcelar a sua entrada, temos boleto, cartão de crédito, débito e muito mais. Além disso, estamos preparando muita novidade, <a href="
+          http://battleroad.uservoice.com/forums/245755-geral">dá só uma olhada!</a></p>
 
         <h3>Quais jogos estão disponíveis?</h3>
 
@@ -57,7 +58,7 @@
 
         <p>Assim que o pagamento for confirmado, você receberá um e-mail e automaticamente você estará participando do campeonato.</p>
 
-        <p>Ainda tem dúvidas? <a href="#">Entre no nosso canal de suporte.</a></p>
+        <p>Ainda tem dúvidas? <a href="http://battleroad.uservoice.com">Entre no nosso canal de suporte.</a></p>
 
     </div>
 

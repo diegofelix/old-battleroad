@@ -4,7 +4,7 @@
 
     <div id="championship" class="main-container">
         <div class="container">
-            <h2 class="main-title">Campeonatos <a href="#" class="pull-right"><span class="fa fa-search"></span></a></h2>
+            <h2 class="main-title">Campeonatos <a href="#" class="pull-right"><!-- <span class="fa fa-search"></span> --></a></h2>
             <div class="row">
                 <div class="col-md-9">
                     <div class="row">
