@@ -36,9 +36,11 @@ class RegisterController extends BaseController {
      */
     public function store()
     {
-        if ( ! $user = $this->userRepo->create(Input::all())) {
+        if ( ! $user = $this->userRepo->create(Input::all()))
+        {
             return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
         }
+
 
         // authenticate the user immediatly
         Auth::loginUsingId($user->id);

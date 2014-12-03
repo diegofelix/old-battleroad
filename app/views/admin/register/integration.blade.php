@@ -37,7 +37,7 @@
                             Bcash é o sistema de pagamentos escolhido pela Battleroad. Além de ser uma empresa do grupo Buscapé e de confiança, o Bcash nos possibilita que o pagamento das inscrições do seu campeonato vá diretamente para sua conta.<br>
                             Dessa forma, o dinheiro não precisa passar pela Battleroad e você terá controle total sobre o dinheiro através de sua conta Bcash.
                         </p>
-                        <p>Tem dúvidas de como criar sua conta Bcash? Temos um {{ link_to_route('tutorial_bcash', 'mini-manual aqui')  }} que pode te ajudar!</p>
+                        <p>Tem dúvidas de como criar sua conta Bcash? Temos um {{ link_to_route('tutorial_bcash', 'mini-manual aqui', null, ['target' => '_blank'])  }} que pode te ajudar!</p>
                     </div>
 
                     {{ Form::open(['route' => ['admin.register.integration', $championship->id]]) }}

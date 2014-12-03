@@ -520,116 +520,58 @@
 	"buffers":
 	[
 		{
-			"file": "app/assets/less/how_it_works.less",
+			"file": "app/views/partials/_logged.blade.php",
 			"settings":
 			{
-				"buffer_size": 262,
+				"buffer_size": 2363,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/filters.php",
+			"file": "app/views/partials/_guest.blade.php",
 			"settings":
 			{
-				"buffer_size": 6235,
+				"buffer_size": 1270,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "Searching 8618 files for \"admin.register.location\"\n\n/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/LocationController.php:\n   15          $championship = $this->championshipRepository->find($id);\n   16  \n   17:         return $this->view('admin.register.location', compact('championship'));\n   18      }\n   19  \n\n/media/win/xampp/htdocs/answer-stack/app/routes/admin.php:\n   23  \n   24          // Route::get('register/{register}/location', [\n   25:         //     'as' => 'admin.register.location',\n   26          //     'uses' => 'Registration\\LocationController@create'\n   27          // ]);\n\n/media/win/xampp/htdocs/answer-stack/app/storage/logs/laravel.log:\n 69982  #23 /var/www/answer-stack/public/index.php(49): Illuminate\\Foundation\\Application->run()\n 69983  #24 {main} [] []\n 69984: [2014-07-31 21:02:04] local.ERROR: exception 'InvalidArgumentException' with message 'Route [admin.register.location] not defined.' in /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:209\n 69985  Stack trace:\n 69986  #0 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Routing/Redirector.php(157): Illuminate\\Routing\\UrlGenerator->route('admin.register....', Array)\n .....\n 72757  #19 /var/www/answer-stack/public/index.php(49): Illuminate\\Foundation\\Application->run()\n 72758  #20 {main} [] []\n 72759: [2014-08-12 20:42:06] local.ERROR: exception 'InvalidArgumentException' with message 'Route [admin.register.location.index] not defined.' in /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php:209\n 72760  Stack trace:\n 72761  #0 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Routing/Redirector.php(157): Illuminate\\Routing\\UrlGenerator->route('admin.register....', Array)\n\n4 matches across 3 files\n",
+			"file": "app/assets/less/base/base.less",
 			"settings":
 			{
-				"buffer_size": 1821,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "app/controllers/Admin/Registration/RegisterController.php",
-			"settings":
-			{
-				"buffer_size": 1102,
+				"buffer_size": 4418,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/default.blade.php",
+			"file": "app/views/championships/index.blade.php",
 			"settings":
 			{
-				"buffer_size": 3192,
+				"buffer_size": 2747,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/views/layouts/admin_championship.blade.php",
+			"file": "app/assets/less/index.less",
 			"settings":
 			{
-				"buffer_size": 2375,
+				"buffer_size": 2678,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "public/index.php",
+			"file": "app/Champ/Social/Facebook/FacebookDataFormatter.php",
 			"settings":
 			{
-				"buffer_size": 1586,
+				"buffer_size": 501,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "app/config/app.php",
+			"file": "app/Champ/Social/Google/GoogleDataFormatter.php",
 			"settings":
 			{
-				"buffer_size": 7665,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/routes/join.php",
-			"settings":
-			{
-				"buffer_size": 1021,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/JoinController.php",
-			"settings":
-			{
-				"buffer_size": 5388,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Championship/Championship.php",
-			"settings":
-			{
-				"buffer_size": 4077,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/less/main.less",
-			"settings":
-			{
-				"buffer_size": 342,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/pages/how_player.blade.php",
-			"settings":
-			{
-				"buffer_size": 4045,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/pages/how_organizer.blade.php",
-			"settings":
-			{
-				"buffer_size": 6033,
+				"buffer_size": 464,
 				"line_ending": "Unix"
 			}
 		}
@@ -637,15 +579,15 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 400.0,
+		"height": 115.0,
 		"selected_items":
 		[
 			[
-				"close",
+				"close all",
 				"File: Close All"
 			],
 			[
-				"close all",
+				"close",
 				"File: Close All"
 			],
 			[
@@ -901,7 +843,7 @@
 				"Set Syntax: LESS"
 			]
 		],
-		"width": 457.0
+		"width": 583.0
 	},
 	"console":
 	{
@@ -924,14 +866,28 @@
 	[
 		"/media/win/xampp/htdocs/answer-stack",
 		"/media/win/xampp/htdocs/answer-stack/app",
-		"/media/win/xampp/htdocs/answer-stack/app/config/local",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration",
-		"/media/win/xampp/htdocs/answer-stack/app/views",
-		"/media/win/xampp/htdocs/answer-stack/app/views/layouts"
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Social/Google",
+		"/media/win/xampp/htdocs/answer-stack/app/views"
 	],
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/examples/facebook.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/TraceableControllerResolver.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/controller.stub",
+		"/media/win/xampp/htdocs/answer-stack/vendor/jeremeamia/SuperClosure/demo/factorial.php",
+		"/media/win/xampp/htdocs/answer-stack/public/fonts/FontAwesome.otf",
+		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
+		"/media/win/xampp/htdocs/answer-stack/app/assets/less/how_it_works.less",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/RegisterController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/layouts/default.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/public/index.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/assets/less/main.less",
+		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_player.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_organizer.blade.php",
 		"/home/diego/Desktop/feds_rivals.csv",
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/UploadedFile.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/css/mixins-guards-default-func.css",
@@ -940,7 +896,6 @@
 		"/media/win/xampp/htdocs/answer-stack/public/css/user-profile.css",
 		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Plugins/PopBeforeSmtpPluginTest.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_organizer.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_it_works.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/HomeController.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
@@ -948,9 +903,6 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/css-selector/Symfony/Component/CssSelector/Parser/Handler/WhitespaceHandler.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Exception/WhoopsDisplayer.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/join/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/CompetitionPresenter.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/emails/join_finished.blade.php",
@@ -960,13 +912,11 @@
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Repositories/JoinRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/app/assets/less/base/base.less",
 		"/media/win/xampp/htdocs/answer-stack/app/assets/less/login.less",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/how_it_works.less",
 		"/media/win/xampp/htdocs/answer-stack/app/commands/FinishChampionshipCommand.php",
 		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Platform.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Repositories/JoinRepositoryInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/overview.rst",
 		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/Option/OptionInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php",
@@ -976,7 +926,6 @@
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/ProfileController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Profile.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_player.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_logged.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/public/css/profile.css",
 		"/media/win/xampp/htdocs/answer-stack/app/assets/js/bootstrap-datepicker.js",
@@ -986,14 +935,12 @@
 		"/media/win/xampp/htdocs/answer-stack/app/config/proxy.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/browser/phantom-runner.js",
 		"/media/win/xampp/htdocs/answer-stack/package.json",
-		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-concat/node_modules/through/test/auto-destroy.js",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/libsass/ast_def_macros.hpp",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/integration.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/pricing.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/PricingController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_03_18_221206_create_profiles_table.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/main.less",
 		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_guest.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/PagesController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/.gitignore",
@@ -1051,15 +998,7 @@
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/60bac2d943bc2d2b511281a103d5f516",
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/61a50c7aa1657d83e5194b5406d72e55",
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/63b463d6a4929c6db00d731ded63732a",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/6a4fb607b018a40eb739724c113e857b",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/779dd6bf707641b8b0c102cf6497dc05",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/7e1f928b168c83a33b229ca537653e5e",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/7efa25bccf0bfc1474f19686c3adf4b5",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/81388bc39d1552c4fe605327ef0d6ee7",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/8b5bff06317971d8d0845948b1a33207",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/8d930d7c47c77b75ae1df60db585fdf2",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/9554f7a8d42dc9716c9c9afaae69903f",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/9a0ef81ee711280244749c8d0ab397e2"
+		"/media/win/xampp/htdocs/answer-stack/app/storage/views/6a4fb607b018a40eb739724c113e857b"
 	],
 	"find":
 	{
@@ -1090,6 +1029,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"2",
 			"\"",
 			" ",
 			".",
@@ -1216,8 +1156,7 @@
 			"access_token()",
 			"http_build",
 			"$mercadopago",
-			"$this->sandbox",
-			" "
+			"$this->sandbox"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1239,171 +1178,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 5,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/assets/less/how_it_works.less",
+					"file": "app/views/partials/_logged.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 262,
+						"buffer_size": 2363,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								41,
-								41
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/filters.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6235,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3079,
-								3079
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5032.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1821,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										264,
-										287
-									],
-									[
-										499,
-										522
-									],
-									[
-										911,
-										934
-									],
-									[
-										1465,
-										1488
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/controllers/Admin/Registration/RegisterController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1102,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								660,
-								660
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 987.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/views/layouts/default.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2123,
-								2123
+								483,
+								483
 							]
 						],
 						"settings":
@@ -1411,93 +1203,6 @@
 							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1836.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/views/layouts/admin_championship.blade.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2375,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "public/index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1586,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5,
-								5
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/config/app.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7665,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7661,
-								7661
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1507,12 +1212,162 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
-					"file": "app/routes/join.php",
+					"buffer": 1,
+					"file": "app/views/partials/_guest.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1021,
+						"buffer_size": 1270,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								556,
+								556
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/assets/less/base/base.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4418,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1337,
+								1337
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1767.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/championships/index.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2747,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								252,
+								252
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/assets/less/index.less",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2678,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1746,
+								1746
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 3102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/Champ/Social/Facebook/FacebookDataFormatter.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 501,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								205,
+								205
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 282.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/Champ/Social/Google/GoogleDataFormatter.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 464,
 						"regions":
 						{
 						},
@@ -1533,155 +1388,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/controllers/JoinController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5388,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1908,
-								1908
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1178.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/Champ/Championship/Championship.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4077,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3193,
-								3193
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6492.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/assets/less/main.less",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 342,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								342,
-								342
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/LESS/LESS.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 282.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "app/views/pages/how_player.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4045,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2991,
-								2991
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2397.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "app/views/pages/how_organizer.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6033,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3436,
-								3436
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2397.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1733,6 +1440,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"facebookdataform",
+				"app/Champ/Social/Facebook/FacebookDataFormatter.php"
+			],
 			[
 				"joincontroller",
 				"app/controllers/JoinController.php"
@@ -2240,10 +1951,6 @@
 			[
 				"admin/register/integr",
 				"app/views/admin/register/integration.blade.php"
-			],
-			[
-				"admin/register/games.blade",
-				"app/views/admin/register/games/index.blade.php"
 			]
 		],
 		"width": 0.0
@@ -2276,7 +1983,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 392.0,
+	"side_bar_width": 334.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

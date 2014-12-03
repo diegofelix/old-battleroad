@@ -20,9 +20,7 @@ class AdminNotificationListener {
 
     public function handle($championship)
     {
-        \Log::info($championship);
         $joins = $this->joinRepository->getByChampionship($championship->id);
-
 
         $cancelledJoins = [];
 
