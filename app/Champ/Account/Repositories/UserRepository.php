@@ -5,6 +5,7 @@ use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
 use Champ\Account\Profile;
 use Champ\Validators\UserValidator;
+use Hash;
 
 class UserRepository extends AbstractRepository implements UserRepositoryInterface {
 
@@ -73,7 +74,8 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     public function create(array $data)
     {
         // attach a default image to the user
-        if (empty($data['picture'])) {
+        if (empty($data['picture']))
+        {
             $data['picture'] = $this->defaultPicture;
         }
 

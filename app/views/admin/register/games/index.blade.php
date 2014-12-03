@@ -118,7 +118,7 @@
 
                             <div class="form-group">
                                 {{ Form::label('platform', 'Plataforma') }}
-                                {{ Form::select('platform_id', $formats, null, ['id' => 'platform', 'class' => 'form-control']) }}
+                                {{ Form::select('platform_id', $platforms, null, ['id' => 'platform', 'class' => 'form-control']) }}
                                 <span class="help-block">
                                     Não sabe o que significa cada formato? <a href="#">saiba aqui!</a>
                                 </span>
@@ -126,11 +126,11 @@
 
                             <div class="form-group">
                                 {{ Form::label('format', 'Formato') }}
-                                {{ Form::select('format_id', $platforms, null, ['id' => 'format', 'class' => 'form-control']) }}
+                                {{ Form::select('format_id', $formats, null, ['id' => 'format', 'class' => 'form-control']) }}
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('price', 'Preço da Entrada (em Reais): ') }}
+                                {{ Form::label('price', 'Preço da Inscrição (em Reais): ') }}
                                 @include ('admin.register._price')
                             </div>
 

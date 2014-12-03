@@ -5,6 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Laracasts\Presenter\PresentableTrait;
 use Eloquent;
 use Auth;
+use Hash;
 
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
@@ -57,6 +58,17 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     public function getAuthPassword()
     {
         return $this->password;
+    }
+
+    /**
+     * Set the password attribut before saving
+     *
+     * @param string $value
+     * @return  void
+     */
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = Hash::make($value);
     }
 
     /**
