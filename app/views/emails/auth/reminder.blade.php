@@ -4,10 +4,12 @@
 		<meta charset="utf-8">
 	</head>
 	<body>
-		<h2>Password Reset</h2>
+		<h2>Resetar Senha</h2>
 
 		<div>
-			To reset your password, complete this form: {{ URL::to('password/reset', array($token)) }}.
+            <p>Olá, recemos um pedido para resetar sua senha, caso tenha sido feito por você, clique no link abaixo.</p>
+            <p>Do contrário, desconsidere esse e-mail.</p>
+			<p>{{ URL::to('password/reset', array($token)) }}</p>
 		</div>
 	</body>
 </html>

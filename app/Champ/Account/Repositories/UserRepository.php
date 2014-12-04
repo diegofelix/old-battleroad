@@ -79,8 +79,15 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
             $data['picture'] = $this->defaultPicture;
         }
 
-        // call the create of a abstract
-        return parent::create($data);
+        if ( ! $this->validator->passes($data))
+        {
+            $this->errors = $this->validator->errors();
+            return false;
+        }
+
+        $data['password'] = Hash::make($this->password);
+
+        return $this->model->create($data);
     }
 
     /**

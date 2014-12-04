@@ -41,7 +41,7 @@
                             </label>
                         </div>
 
-                        <span class="help-block pull-right"><a href="#">Esqueceu sua senha?</a></span>
+                        <span class="help-block pull-right">{{ link_to('password/remind', 'Esqueceu sua senha?') }}</span>
 
                         <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
 

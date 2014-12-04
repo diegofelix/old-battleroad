@@ -26,3 +26,13 @@
     <!-- Message -->
 
 @endif
+
+@if (Session::has('status'))
+
+    <!-- Message -->
+    <div class="flash-message alert alert-success">
+        <p><i class="fa fa-thumbs-up"></i> {{ Session::get('status') }}</p>
+    </div>
+    <!-- Message -->
+
+@endif
