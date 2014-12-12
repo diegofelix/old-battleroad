@@ -27,7 +27,6 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
             $command->user_id,
             $command->name,
             $command->description,
-            $command->event_start,
             $command->location,
             $image->getImagePath(),
             $image->getThumbPath(),

@@ -17,7 +17,6 @@
             <tr>
                 <th>Nome</th>
                 <th>Status</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
@@ -26,7 +25,6 @@
                     <td>{{ HTML::image($item->join->user->present()->userImage) }}
                     {{ $item->join->user->name }}</td>
                     <td>{{ $item->join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
                 </tr>
             @endforeach
         </tbody>

@@ -3,11 +3,11 @@
 
     <div class="featured-title">
         <div class="container">
-            <h2 class="wow fadeInLeft">Resetar senha</h2>
+            <h2>Resetar senha</h2>
         </div>
     </div>
 
-    <div class="container how-it-works" id="how-player">
+    <div class="container" id="password-reminder">
 
         <p>Preencha seu e-mail com sua nova senha e confirme.</p>
 
