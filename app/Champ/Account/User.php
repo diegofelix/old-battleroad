@@ -116,7 +116,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
-     * Get the latest
+     * Get the latest by the id
      *
      * @param  $id
      * @return Join
