@@ -1,0 +1,11 @@
+extensions:
+    - PhpSpec\Laravel\Extension\LaravelExtension
+suites:
+    acme_suite:
+        namespace: Champ
+        src_path: app
+        spec_path: app
+        spec_prefix: spec
+
+laravel_extension:
+    testing_environment: testing

@@ -85,10 +85,10 @@ class Competition extends Eloquent
         $this->attributes['start'] = $this->formatToDb($value);
     }
 
-    public function getStartAttribute($value)
-    {
-        return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
-    }
+    // public function getStartAttribute($value)
+    // {
+    //     return \Carbon\Carbon::createFromFormat('Y-m-d H:i:s', $value)->format('d/m/Y');
+    // }
 
     /**
      * Convert the price to cents

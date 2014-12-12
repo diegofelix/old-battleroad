@@ -1,10 +1,11 @@
 <?php namespace Champ\Listeners;
 
+use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Config;
 use Mail;
 
-class AdminNotificationListener {
+class AdminNotificationListener extends EventListener {
 
     /**
      * Join Repository
@@ -18,7 +19,7 @@ class AdminNotificationListener {
         $this->joinRepository = $joinRepository;
     }
 
-    public function handle($championship)
+    public function whenChampionshipFinished($championship)
     {
         $joins = $this->joinRepository->getByChampionship($championship->id);
 

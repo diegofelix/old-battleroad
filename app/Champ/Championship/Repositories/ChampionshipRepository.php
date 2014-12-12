@@ -5,6 +5,7 @@ use Champ\Championship\Championship;
 use Champ\Validators\ChampionshipValidator;
 use Champ\Contexts\Core\ContextInterface;
 use Champ\Championship\Competition;
+use Laracasts\Commander\Events\DispatchableTrait;
 use App;
 use Auth;
 use Config;
@@ -12,6 +13,8 @@ use Event;
 use Log;
 
 class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
+
+    use DispatchableTrait;
 
     public function __construct(
         Championship $model,
@@ -291,9 +294,8 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         // pass for all these championships and "finish him!"
         foreach ($championships as $championship)
         {
-            $championship->finished = true;
-            $championship->save();
-            Event::fire('championship.finished', $championship);
+            $championship->finishChampionship();
+            $this->dispatchEventsFor($championship);
             Log::info('championship ' . $championship->id . ' finished.');
         }
     }

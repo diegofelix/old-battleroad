@@ -4,11 +4,14 @@ use Eloquent;
 use Carbon\Carbon;
 use Laracasts\Presenter\PresentableTrait;
 use Champ\Traits\FormatToDb;
+use Laracasts\Commander\Events\EventGenerator;
+use Champ\Championship\Events\ChampionshipFinished;
 
 class Championship extends Eloquent
 {
-    use PresentableTrait;
+    use EventGenerator;
     use FormatToDb;
+    use PresentableTrait;
 
     /**
      * Championship presenter
@@ -34,9 +37,20 @@ class Championship extends Eloquent
      * @param  string $thumb
      * @return Championship
      */
-    public static function register($user_id, $name, $description, $event_start, $location, $image = null, $thumb = null, $limit = null)
+    public static function register($user_id, $name, $description, $location, $image = null, $thumb = null, $limit = null)
     {
-        return new static(compact('user_id', 'name', 'description', 'event_start', 'location', 'image', 'thumb', 'limit'));
+        return new static(compact('user_id', 'name', 'description', 'location', 'image', 'thumb', 'limit'));
+    }
+
+
+    /**
+     * Get the closes competition for this championship
+     *
+     * @return Competition
+     */
+    public function getClosestCompetition()
+    {
+        return $this->competitions()->orderBy('start')->first();
     }
 
     /**
@@ -129,6 +143,13 @@ class Championship extends Eloquent
     public function getOriginalPriceAttribute($value)
     {
         return $value / 100;
+    }
+
+    public function finisheChampionship()
+    {
+        $this->finished = true;
+        $this->save();
+        $this->raise(new ChampionshipFinished($this));
     }
 
     /**

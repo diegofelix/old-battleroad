@@ -18,6 +18,6 @@ class EventingServiceProvider extends ServiceProvider {
             $this->app['events']->listen('Champ.*', $listener);
         }
 
-        $this->app['events']->listen('championship.finished', 'Champ\Listeners\AdminNotificationListener');
+        //$this->app['events']->listen('championship.finished', 'Champ\Listeners\AdminNotificationListener@whenUserFinished');
     }
 }
