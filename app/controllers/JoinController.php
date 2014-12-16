@@ -179,7 +179,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
             'id_pedido'             => $join->id,
             'email'                 => $join->user->email,
             'nome'                  => str_replace(' ', '', $join->user->name),
-            'email_dependente_1'    => $join->championship->refresh_token,
+            'email_dependente_1'    => $join->championship->token,
             'valor_dependente_1'    => $join->present()->totalPrice,
             'url_retorno'           => route('join.returned', $join->id),
             'url_aviso'             => route('bcash')

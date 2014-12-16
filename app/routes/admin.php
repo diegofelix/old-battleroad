@@ -12,7 +12,10 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
         'uses' => 'Registration\RegisterController@store'
     ]);
 
-    Route::group(['before' => 'championship_not_published'], function()
+    Route::group([
+        // user cannot change a published championship and others championships
+        'before' => 'championship_not_published|championship_owner'
+    ], function()
     {
         /*
          |---------------------------------------------------------------------
@@ -128,7 +131,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
      |
      */
 
-    Route::group(['before' => 'championship_published'], function()
+    Route::group([
+        'before' => 'championship_published|championship_owner',
+    ], function()
     {
         Route::get('championships/{id}', [
             'as' => 'admin.championships.show',
@@ -140,10 +145,25 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'uses' => 'ChampionshipsController@edit'
         ]);
 
+        Route::post('championships/{id}/edit', [
+            'as' => 'admin.championships.update',
+            'uses' => 'ChampionshipsController@update'
+        ]);
+
         // banner
         Route::get('championships/{id}/banner', [
             'as' => 'admin.championships.banner',
             'uses' => 'ChampionshipsController@banner'
+        ]);
+
+        Route::get('championships/{id}/banner-edit', [
+            'as' => 'admin.championships.banner_edit',
+            'uses' => 'ChampionshipsController@editBanner'
+        ]);
+
+        Route::post('championships/{id}/banner-edit', [
+            'as' => 'admin.championships.banner_update',
+            'uses' => 'ChampionshipsController@updateBanner'
         ]);
 
         // games

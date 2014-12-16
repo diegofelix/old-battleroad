@@ -4,7 +4,6 @@ use Auth;
 use Input;
 use BaseController;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Laracasts\Commander\CommandBus;
 use Champ\Championship\Registration\RegisterChampionshipCommand;
 
 class RegisterController extends BaseRegistrationController {
@@ -30,10 +29,9 @@ class RegisterController extends BaseRegistrationController {
             Auth::user()->id,
             Input::get('name'),
             Input::get('description'),
-            Input::get('event_start'),
             Input::get('location'),
-            Input::file('image'),
-            Input::get('limit')
+            Input::get('event_start'),
+            Input::file('image')
         );
 
         $championship = $this->execute($command);

@@ -235,3 +235,16 @@ Route::filter('organizer', function()
         App::abort(404);
     }
 });
+
+/**
+ * Check if a user is owner fo the championship
+ */
+Route::filter('championship_owner', function(){
+    $id = Request::segment(3);
+
+    $championshipRepository = App::make('Champ\Championship\Repositories\ChampionshipRepositoryInterface');
+
+    $championship = $championshipRepository->find($id);
+
+    if ( ! $championship->isOwner(Auth::user()->id)) App::abort(404);
+});

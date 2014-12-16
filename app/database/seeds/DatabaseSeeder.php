@@ -16,8 +16,6 @@ class DatabaseSeeder extends Seeder {
 		$this->call('GameTableSeeder');
 		$this->call('FormatTableSeeder');
 		$this->call('StatusesTableSeeder');
-		$this->call('PaymentTypesTableSeeder');
-		$this->call('CancelationStatusesTableSeeder');
 	}
 
 }

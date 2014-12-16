@@ -61,7 +61,7 @@
                             </tr>
                             <tr>
                                 <th>Conta Bcash</th>
-                                <td>{{ $championship->refresh_token }}</td>
+                                <td>{{ $championship->token }}</td>
                             </tr>
                             <tr>
                                 <th rowspan="3">Jogos</th>

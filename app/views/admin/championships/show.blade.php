@@ -8,6 +8,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">
             Descrição
+            <a href="{{ route('admin.championships.edit', $championship->id) }}" class="pull-right btn btn-sm btn-primary"><i class="fa fa-edit"></i> Editar</a>
         </div>
         <div class="panel-body">{{ $championship->present()->markdownDescription }}</div>
     </div>

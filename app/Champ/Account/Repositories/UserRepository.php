@@ -85,7 +85,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
             return false;
         }
 
-        $data['password'] = Hash::make($this->password);
+        $data['password'] = Hash::make($data['password']);
 
         return $this->model->create($data);
     }

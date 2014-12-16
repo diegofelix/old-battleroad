@@ -9,3 +9,6 @@ suites:
 
 laravel_extension:
     testing_environment: testing
+    migrate_db: true
+    # seed_db: true
+    seed_class: 'DatabaseSeeder'
