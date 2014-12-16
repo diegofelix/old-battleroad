@@ -14,12 +14,13 @@ class CreateProfilesTable extends Migration {
 	{
 		Schema::create('profiles', function(Blueprint $table) {
 			$table->increments('id');
-			$table->unsignedInteger('user_id');
+			$table->integer('user_id')->unsigned();
 			$table->text('bio');
 			$table->string('psn');
 			$table->string('live');
 			$table->string('steam');
 			$table->string('moip_user');
+			$table->boolean('notify')->default(true);
 			$table->timestamps();
 			$table->foreign('user_id')
 				->references('id')->on('users')

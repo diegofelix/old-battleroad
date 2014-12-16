@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"int",
+				"integer"
+			],
+			[
+				"Champ",
+				"Championship"
+			],
+			[
 				"Event",
 				"EventListener"
 			],
@@ -86,10 +94,6 @@
 			[
 				"trans",
 				"transactionId"
-			],
-			[
-				"int",
-				"integration"
 			],
 			[
 				"competi",
@@ -510,137 +514,11 @@
 			[
 				"champin",
 				"championship"
-			],
-			[
-				"champio",
-				"championships"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "app/controllers/Admin/Registration/RegisterController.php",
-			"settings":
-			{
-				"buffer_size": 1063,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/controllers/ChampionshipsController.php",
-			"settings":
-			{
-				"buffer_size": 1834,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Championship/Repositories/ChampionshipRepository.php",
-			"settings":
-			{
-				"buffer_size": 9047,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/views/championships/index.blade.php",
-			"settings":
-			{
-				"buffer_size": 2747,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Presenters/ChampionshipPresenter.php",
-			"settings":
-			{
-				"buffer_size": 3815,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Championship/Championship.php",
-			"settings":
-			{
-				"buffer_size": 4277,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Championship/Competition.php",
-			"settings":
-			{
-				"buffer_size": 3099,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Listeners/AdminNotificationListener.php",
-			"settings":
-			{
-				"buffer_size": 1047,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Searching 8628 files for \"Event::fire\"\n\n/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php:\n  294              $championship->finished = true;\n  295              $championship->save();\n  296:             Event::fire('championship.finished', $championship);\n  297              Log::info('championship ' . $championship->id . ' finished.');\n  298          }\n\n/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php:\n  123          $this->save();\n  124  \n  125:         Event::fire('join.cancelled', [$this]);\n  126      }\n  127  \n\n/media/win/xampp/htdocs/answer-stack/app/storage/logs/laravel.log:\n 5149  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5150  #6 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5151: #7 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5152  #8 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5153  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 5181  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5182  #8 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5183: #9 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5184  #10 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5185  #11 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 5213  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5214  #8 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5215: #9 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5216  #10 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5217  #11 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 5245  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5246  #8 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5247: #9 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5248  #10 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5249  #11 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 5277  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5278  #8 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5279: #9 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5280  #10 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5281  #11 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 5309  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('content.renderi...', Array)\n 5310  #8 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 5311: #9 /var/www/answer-stack/vendor/mccool/laravel-auto-presenter/src/McCool/LaravelAutoPresenter/LaravelAutoPresenterServiceProvider.php(24): Illuminate\\Support\\Facades\\Event::fire('content.renderi...', Array)\n 5312  #10 [internal function]: McCool\\LaravelAutoPresenter\\LaravelAutoPresenterServiceProvider->McCool\\LaravelAutoPresenter\\{closure}(Object(Illuminate\\View\\View))\n 5313  #11 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Events/Dispatcher.php(199): call_user_func_array(Object(Closure), Array)\n ....\n 86061  #3 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(208): Illuminate\\Events\\Dispatcher->fire('championship.fi...')\n 86062  #4 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86063: #5 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Event::fire('championship.fi...')\n 86064  #6 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86065  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86078  #3 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(208): Illuminate\\Events\\Dispatcher->fire('championship.fi...')\n 86079  #4 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86080: #5 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Event::fire('championship.fi...')\n 86081  #6 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86082  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86095  #3 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(208): Illuminate\\Events\\Dispatcher->fire('championship.fi...')\n 86096  #4 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86097: #5 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Event::fire('championship.fi...')\n 86098  #6 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86099  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86112  #3 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(208): Illuminate\\Events\\Dispatcher->fire('championship.fi...')\n 86113  #4 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86114: #5 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Event::fire('championship.fi...')\n 86115  #6 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86116  #7 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86141  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(208): Illuminate\\Events\\Dispatcher->fire('championship.fi...')\n 86142  #6 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86143: #7 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(293): Illuminate\\Support\\Facades\\Event::fire('championship.fi...')\n 86144  #8 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86145  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86170  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86171  #6 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86172: #7 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Event::fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86173  #8 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86174  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86194  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86195  #6 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86196: #7 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Event::fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86197  #8 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86198  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86214  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86215  #6 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86216: #7 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Event::fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86217  #8 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86218  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86246  #5 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86247  #6 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86248: #7 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Event::fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86249  #8 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86250  #9 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n .....\n 86270  #8 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Facade.php(211): Illuminate\\Events\\Dispatcher->fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86271  #9 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Facade::__callStatic('fire', Array)\n 86272: #10 /var/www/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php(290): Illuminate\\Support\\Facades\\Event::fire('championship.fi...', Object(Champ\\Championship\\Championship))\n 86273  #11 /var/www/answer-stack/app/commands/FinishChampionshipCommand.php(63): Champ\\Championship\\Repositories\\ChampionshipRepository->finishPastChampionships()\n 86274  #12 /var/www/answer-stack/vendor/laravel/framework/src/Illuminate/Console/Command.php(112): FinishChampionshipCommand->fire()\n\n",
-			"settings":
-			{
-				"buffer_size": 14449,
-				"line_ending": "Unix",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "app/Champ/Providers/EventingServiceProvider.php",
-			"settings":
-			{
-				"buffer_size": 579,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/config/champ.php",
-			"settings":
-			{
-				"buffer_size": 1317,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Join/Events/UserJoined.php",
-			"settings":
-			{
-				"buffer_size": 184,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Join/JoinCommandHandler.php",
-			"settings":
-			{
-				"buffer_size": 2717,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/laracasts/commander/src/Laracasts/Commander/Events/DispatchableTrait.php",
-			"settings":
-			{
-				"buffer_size": 569,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/laracasts/commander/src/Laracasts/Commander/Events/EventDispatcher.php",
-			"settings":
-			{
-				"buffer_size": 1073,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -653,8 +531,24 @@
 				"File: Close All"
 			],
 			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"pack",
+				"Package Control: Add Channel"
+			],
+			[
 				"close all",
 				"File: Close All"
+			],
+			[
+				"gist",
+				"Gist: Insert Gist"
 			],
 			[
 				"clo",
@@ -673,20 +567,12 @@
 				"File: Close All"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"clos",
 				"File: Close All"
 			],
 			[
 				"php",
 				"Set Syntax: PHP"
-			],
-			[
-				"gist",
-				"Gist: Insert Gist"
 			],
 			[
 				"clo sall",
@@ -932,46 +818,112 @@
 	[
 		"/media/win/xampp/htdocs/answer-stack",
 		"/media/win/xampp/htdocs/answer-stack/app",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration",
+		"/media/win/xampp/htdocs/answer-stack/app/database",
 		"/media/win/xampp/htdocs/answer-stack/app/database/migrations",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/games"
+		"/media/win/xampp/htdocs/answer-stack/app/spec/Champ",
+		"/media/win/xampp/htdocs/answer-stack/app/spec/Champ/Account",
+		"/media/win/xampp/htdocs/answer-stack/app/storage/cache",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/partials"
 	],
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/admin.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/confirmation.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/RegisterController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Competition.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_02_13_205646_create_championships_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/ChampionshipsController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/edit.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
+		"/media/win/xampp/htdocs/answer-stack/composer.json",
+		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/fzaninotto/faker/src/Faker/Provider/hy_AM/Company.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/node_modules/mocha/mocha.css",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Forms/ChampionshipRegisterForm.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/show.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommand.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommandHandler.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipValidator.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/IntegrationController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_02_13_203140_create_users_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_04_24_210416_create_competitions_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/seeds/DatabaseSeeder.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/testing.sqlite",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_07_22_115221_create_items_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_07_21_204106_create_joins_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_04_23_210416_create_competitions_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_03_18_221206_create_profiles_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_03_15_191829_add_picture_to_users_table.php",
+		"/home/diego/Desktop/sublime.text",
+		"/home/diego/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/media/win/xampp/htdocs/answer-stack/phpspec.yml",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_10_20_162653_add_organizer_field_to_users_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_02_21_142808_add_is_banned_to_users_table.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/testing/database.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/.fuse_hidden00006a6e00000003",
+		"/media/win/xampp/htdocs/answer-stack/champaholic.sublime-project",
+		"/media/win/xampp/htdocs/answer-stack/app/assets/less/base/bootstrap/component-animations.less",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Cache/CacheManager.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/cache.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/packages/artdarek/oauth-4-laravel/config.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/conf.py",
+		"/media/win/xampp/htdocs/answer-stack/CONTRIBUTING.md",
+		"/media/win/xampp/htdocs/answer-stack/app/commands/FinishChampionshipCommand.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/AdminNotificationListener.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Events/ChampionshipFinished.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/DispatchableTrait.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventDispatcher.php",
+		"/media/win/xampp/htdocs/answer-stack/app/storage/views/e5081c78031e0df1f4eca83840efe89b",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/events.rst",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/lib/less/extend-visitor.js",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php",
+		"/media/win/xampp/htdocs/answer-stack/app/spec/Champ/Account/UserSpec.php",
+		"/media/win/xampp/htdocs/answer-stack/public/target.php",
+		"/media/win/xampp/htdocs/answer-stack/public/servidor.php",
+		"/media/win/xampp/htdocs/answer-stack/public/index.php",
+		"/media/win/xampp/htdocs/answer-stack/public/data.txt",
+		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/integration.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/AccountServiceProvider.php",
+		"/media/win/xampp/htdocs/answer-stack/public/js/admin_championship.js",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepository.php",
+		"/media/win/xampp/htdocs/answer-stack/app/spec/Champ/Account/Repositories/UserRepositorySpec.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Events/UserJoined.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepositoryInterface.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/presenter/phpspec.yml",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpspec/phpspec/features/bootstrap/PhpSpecContext.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Profile.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Repositories/Core/AbstractRepository.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/UserPresenter.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Auth/UserProviderInterface.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/nikic/php-parser/lib/PHPParser/Node/Expr/AssignBitwiseAnd.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/EventingServiceProvider.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/index.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/examples/DispatcherLoop.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/d11wtq/boris/lib/Boris/DumpInspector.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/layouts/default.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/events.rst",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/lib/less/extend-visitor.js",
-		"/media/win/xampp/htdocs/answer-stack/app/storage/views/e5081c78031e0df1f4eca83840efe89b",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventListener.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/emails/user_joined.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Events/UserJoined.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/UserAlreadyJoinedException.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/user.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/UsersController.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/security-core/Symfony/Component/Security/Core/Authentication/Provider/UserAuthenticationProvider.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/integration.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/libsass/ast_def_macros.hpp",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-concat/node_modules/through/test/auto-destroy.js",
-		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommand.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommandHandler.php",
 		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_12_08_182550_remove_event_start_from_championships_table.php",
-		"/media/win/xampp/htdocs/answer-stack/composer.json",
-		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-autoprefixer/node_modules/autoprefixer/lib/hacks/flex-direction.js",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/libsass/ast_fwd_decl.hpp",
-		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/confirmation.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/storage/views/.gitignore",
 		"/media/win/xampp/htdocs/answer-stack/app/views/join/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/config/view.php",
@@ -980,11 +932,7 @@
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/index.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/routes/register.php",
 		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/replaceExtension.js",
-		"/media/win/xampp/htdocs/answer-stack/app/routes.php",
 		"/media/win/xampp/htdocs/answer-stack/app/lang/pt-br/reminders.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Repositories/Core/AbstractRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/session/create.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/password/reset.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/RemindersController.php",
@@ -997,91 +945,29 @@
 		"/media/win/xampp/htdocs/answer-stack/app/assets/less/password-reminder.less",
 		"/media/win/xampp/htdocs/answer-stack/app/assets/less/password-reminder.les",
 		"/media/win/xampp/htdocs/answer-stack/app/views/emails/auth/reminder.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepositoryInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/CompetitionsController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Validators/UserValidator.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/AdminNotificationListener.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/NotificationController.php",
 		"/media/win/xampp/htdocs/answer-stack/password/remind.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/edit.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/create.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Competition.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Repositories/JoinRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Repositories/JoinRepositoryInterface.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Repositories/ItemRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/finder/Symfony/Component/Finder/Adapter/AbstractAdapter.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/ByteStream/ArrayByteStream.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/src/OAuth/Common/Service/AbstractService.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/lib/classes/Swift/Transport/AbstractSmtpTransport.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/tests/acceptance/Swift/Transport/StreamBuffer/AbstractStreamBufferAcceptanceTest.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_logged.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_guest.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/base/base.less",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/index.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/index.less",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Social/Facebook/FacebookDataFormatter.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/examples/facebook.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Controller/TraceableControllerResolver.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Auth/Console/stubs/controller.stub",
-		"/media/win/xampp/htdocs/answer-stack/vendor/jeremeamia/SuperClosure/demo/factorial.php",
-		"/media/win/xampp/htdocs/answer-stack/public/fonts/FontAwesome.otf",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/how_it_works.less",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/RegisterController.php",
-		"/media/win/xampp/htdocs/answer-stack/public/index.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/main.less",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_player.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_organizer.blade.php",
-		"/home/diego/Desktop/feds_rivals.csv",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/UploadedFile.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/css/mixins-guards-default-func.css",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-foundation/Symfony/Component/HttpFoundation/File/Exception/UploadException.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpseclib/phpseclib/travis/upload-code-coverage-html.sh",
-		"/media/win/xampp/htdocs/answer-stack/public/css/user-profile.css",
-		"/media/win/xampp/htdocs/answer-stack/vendor/swiftmailer/swiftmailer/tests/unit/Swift/Plugins/PopBeforeSmtpPluginTest.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_it_works.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/HomeController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/config/workbench.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/css-selector/Symfony/Component/CssSelector/Parser/Handler/WhitespaceHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Exception/WhoopsDisplayer.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/CompetitionPresenter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/emails/join_finished.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/EventingServiceProvider.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/login.less",
-		"/media/win/xampp/htdocs/answer-stack/app/commands/FinishChampionshipCommand.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Platform.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/overview.rst",
-		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/Option/OptionInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/.fuse_hidden00067bf80000000a",
-		"/media/win/xampp/htdocs/answer-stack/app/views/profile/_fields.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/ProfileController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Profile.php",
-		"/media/win/xampp/htdocs/answer-stack/public/css/profile.css",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/bootstrap-datepicker.js",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/.idea/inspectionProfiles/profiles_settings.xml",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Profiler/ProfilerStorageInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/postcss/lib/container.js",
-		"/media/win/xampp/htdocs/answer-stack/app/config/proxy.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/test/browser/phantom-runner.js",
-		"/media/win/xampp/htdocs/answer-stack/package.json",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/pricing.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/PricingController.php"
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/finder/Symfony/Component/Finder/Adapter/AbstractAdapter.php"
 	],
 	"find":
 	{
-		"height": 70.0
+		"height": 62.0
 	},
 	"find_in_files":
 	{
 		"height": 172.0,
 		"where_history":
 		[
+			"/media/win/xampp/htdocs/answer-stack",
+			"/media/win/xampp/htdocs/answer-stack/app/database/migrations",
 			"/media/win/xampp/htdocs/answer-stack",
 			"/media/win/xampp/htdocs/reportms2master",
 			"/media/win/xampp/htdocs/reportms2master/app/controllers",
@@ -1102,6 +988,26 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"event_star",
+			"refresh_token",
+			"description",
+			"$this->champRepo->find($id);",
+			"2014_08_19_205400_create_statuses_table",
+			"integer",
+			"picture",
+			"is_banned",
+			"gender",
+			"->default(",
+			"$championship",
+			"$this->raise",
+			"join",
+			"fire",
+			"data",
+			"div",
+			"listenToPage1",
+			"dado",
+			"Route",
+			"it_have",
 			"Event::fire",
 			"getDates",
 			"img",
@@ -1209,27 +1115,7 @@
 			".panel",
 			"Pagseguro",
 			"Payer",
-			"\"produto",
-			"$count",
-			"_1",
-			"1",
-			"_1",
-			"listener",
-			"Championship",
-			"95px",
-			"70px",
-			"value",
-			"public",
-			"nome",
-			"smallerPrice",
-			"$this->price",
-			"CredentialsTrait",
-			"champaholic.dev",
-			"redirect",
-			"http://",
-			"3348313329700561",
-			"string",
-			"=>"
+			"\"produto"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1251,542 +1137,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/controllers/Admin/Registration/RegisterController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1063,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								705,
-								705
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1128.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/controllers/ChampionshipsController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1834,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1153,
-								1153
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2115.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Champ/Championship/Repositories/ChampionshipRepository.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7975,
-								7975
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 13577.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/views/championships/index.blade.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2747,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1642,
-								1642
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1128.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/Champ/Presenters/ChampionshipPresenter.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3815,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								625,
-								625
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 846.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Champ/Championship/Championship.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4277,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1768,
-								1768
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1944.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/Champ/Championship/Competition.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3099,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1634,
-								1634
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3366.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/Champ/Listeners/AdminNotificationListener.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1047,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								598,
-								598
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 843.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 14449,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										253,
-										264
-									],
-									[
-										521,
-										532
-									],
-									[
-										1201,
-										1212
-									],
-									[
-										2108,
-										2119
-									],
-									[
-										3017,
-										3028
-									],
-									[
-										3926,
-										3937
-									],
-									[
-										4835,
-										4846
-									],
-									[
-										5744,
-										5755
-									],
-									[
-										6559,
-										6570
-									],
-									[
-										7353,
-										7364
-									],
-									[
-										8147,
-										8158
-									],
-									[
-										8941,
-										8952
-									],
-									[
-										9735,
-										9746
-									],
-									[
-										10570,
-										10581
-									],
-									[
-										11446,
-										11457
-									],
-									[
-										12322,
-										12333
-									],
-									[
-										13198,
-										13209
-									],
-									[
-										14075,
-										14086
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								261,
-								261
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([A-Za-z\\\\/<].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "app/Champ/Providers/EventingServiceProvider.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 579,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								455,
-								455
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 88.0,
-						"translation.y": 423.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "app/config/champ.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1317,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1551.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "app/Champ/Join/Events/UserJoined.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 184,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "app/Champ/Join/JoinCommandHandler.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2717,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1178,
-								1178
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1692.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "vendor/laracasts/commander/src/Laracasts/Commander/Events/DispatchableTrait.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								550,
-								550
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 511.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "vendor/laracasts/commander/src/Laracasts/Commander/Events/EventDispatcher.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1073,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								979,
-								979
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1545.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1837,6 +1189,94 @@
 		"selected_items":
 		[
 			[
+				"competition.php",
+				"app/Champ/Championship/Competition.php"
+			],
+			[
+				"cham/champi",
+				"app/Champ/Championship/Championship.php"
+			],
+			[
+				"cham",
+				"app/routes/championship.php"
+			],
+			[
+				"champipresenter",
+				"app/Champ/Presenters/ChampionshipPresenter.php"
+			],
+			[
+				"champion",
+				"app/Champ/Championship/Repositories/ChampionshipRepository.php"
+			],
+			[
+				"routes/admin",
+				"app/routes/admin.php"
+			],
+			[
+				"champ/champion",
+				"app/Champ/Championship/Championship.php"
+			],
+			[
+				"champpresenter",
+				"app/Champ/Presenters/ChampionshipPresenter.php"
+			],
+			[
+				"config/cham",
+				"app/config/champ.php"
+			],
+			[
+				"eventgene",
+				"vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php"
+			],
+			[
+				"champ/championship.php",
+				"app/Champ/Championship/Championship.php"
+			],
+			[
+				"eventgenerator",
+				"vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php"
+			],
+			[
+				"compos",
+				"composer.json"
+			],
+			[
+				"admin/champcn",
+				"app/controllers/Admin/ChampionshipsController.php"
+			],
+			[
+				"account/user",
+				"app/Champ/Account/User.php"
+			],
+			[
+				"user.php",
+				"app/Champ/Account/User.php"
+			],
+			[
+				"userrepor",
+				"app/Champ/Account/Repositories/UserRepository.php"
+			],
+			[
+				"phpspec.",
+				"phpspec.yml"
+			],
+			[
+				"userreposiory",
+				"app/Champ/Account/Repositories/UserRepository.php"
+			],
+			[
+				"abstractreposit",
+				"app/Champ/Repositories/Core/AbstractRepository.php"
+			],
+			[
+				"account/user.php",
+				"app/Champ/Account/User.php"
+			],
+			[
+				"routes.php",
+				"app/routes.php"
+			],
+			[
 				"disp",
 				"vendor/predis/predis/examples/DispatcherLoop.php"
 			],
@@ -1869,10 +1309,6 @@
 				"app/Champ/Championship/Registration/RegisterChampionshipCommandHandler.php"
 			],
 			[
-				"user.php",
-				"app/Champ/Account/User.php"
-			],
-			[
 				"join.php",
 				"app/Champ/Join/Join.php"
 			],
@@ -1903,10 +1339,6 @@
 			[
 				"filter",
 				"app/filters.php"
-			],
-			[
-				"champ/champion",
-				"app/Champ/Championship/Championship.php"
 			],
 			[
 				"joinrepository.php",
@@ -2213,10 +1645,6 @@
 				"app/controllers/Admin/Registration/IntegrationController.php"
 			],
 			[
-				"routes/admin",
-				"app/routes/admin.php"
-			],
-			[
 				"routes/join",
 				"app/routes/join.php"
 			],
@@ -2271,82 +1699,6 @@
 			[
 				"games.blade.php",
 				"app/views/admin/championships/games/show.blade.php"
-			],
-			[
-				"views/join/",
-				"app/views/join/show.blade.php"
-			],
-			[
-				"integrat",
-				"app/controllers/Admin/Registration/IntegrationController.php"
-			],
-			[
-				"mprest",
-				"app/Champ/Billing/MercadoPago/MPRestClient.php"
-			],
-			[
-				"makrpe",
-				"app/Champ/Billing/MercadoPago/Marketplace.php"
-			],
-			[
-				"route",
-				"app/routes.php"
-			],
-			[
-				"default.blade",
-				"app/views/layouts/default.blade.php"
-			],
-			[
-				"routes/",
-				"app/routes/register.php"
-			],
-			[
-				"filters",
-				"app/filters.php"
-			],
-			[
-				"eloquent/model",
-				"vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php"
-			],
-			[
-				"notificati",
-				"app/controllers/NotificationController.php"
-			],
-			[
-				"mercd",
-				"vendor/mercadopago/sdk/lib/mercadopago.php"
-			],
-			[
-				"marke",
-				"app/Champ/Billing/MercadoPago/Marketplace.php"
-			],
-			[
-				"admin/register/pri",
-				"app/views/admin/register/pricing.blade.php"
-			],
-			[
-				"arr",
-				"vendor/laravel/framework/src/Illuminate/Support/Arr.php"
-			],
-			[
-				"helpers.php",
-				"vendor/laravel/framework/src/Illuminate/Support/helpers.php"
-			],
-			[
-				"joincnt",
-				"app/controllers/JoinController.php"
-			],
-			[
-				"market",
-				"app/Champ/Billing/MercadoPago/Marketplace.php"
-			],
-			[
-				"http/request",
-				"vendor/laravel/framework/src/Illuminate/Http/Request.php"
-			],
-			[
-				"input",
-				"app/assets/less/base/bootstrap/input-groups.less"
 			]
 		],
 		"width": 0.0
@@ -2378,8 +1730,8 @@
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
-	"side_bar_width": 334.0,
+	"side_bar_visible": false,
+	"side_bar_width": 504.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

@@ -24,7 +24,7 @@ class IntegrationController extends BaseRegistrationController {
     {
         $championship = $this->championshipRepository->find($id);
 
-        $championship->refresh_token = Input::get('bcash_account');
+        $championship->token = Input::get('bcash_account');
 
         $this->championshipRepository->save($championship);
 

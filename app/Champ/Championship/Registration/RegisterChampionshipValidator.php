@@ -23,8 +23,7 @@ class RegisterChampionshipValidator {
             'description'   => $command->description,
             'event_start'   => $command->event_start,
             'image'         => $command->image,
-            'location'      => $command->location,
-            'limit'         => $command->limit
+            'location'      => $command->location
         ]);
     }
 

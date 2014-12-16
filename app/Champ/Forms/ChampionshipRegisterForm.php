@@ -7,10 +7,15 @@ class ChampionshipRegisterForm extends FormValidator {
     protected $rules = [
         'name' => 'required|min:5',
         'description' => 'required|min:20',
-        'image' => 'required|image',
+        'image' => 'required|image|max:3000',
         'event_start' => 'required|date_format:"d/m/Y"|future_date',
-        'location' => 'required',
-        'limit' => 'sometimes|numeric'
+        'location' => 'required'
+    ];
+
+    protected $messages = [
+        'image.required' => 'Você precisa fazer o upload de uma imagem.',
+        'image' => 'O arquivo precisa ser uma imagem.',
+        'image.max' => 'A imagem deve ter no máximo 3MB'
     ];
 
 }

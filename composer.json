@@ -18,7 +18,8 @@
 		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0",
         "phpspec/phpspec": "~2.0",
-        "benconstable/phpspec-laravel": "~1.0"
+        "benconstable/phpspec-laravel": "~1.0",
+        "doctrine/dbal": "2.4.*"
 	},
 	"autoload": {
 		"classmap": [

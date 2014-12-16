@@ -28,9 +28,9 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
             $command->name,
             $command->description,
             $command->location,
+            $command->event_start,
             $image->getImagePath(),
-            $image->getThumbPath(),
-            $command->limit
+            $image->getThumbPath()
         );
 
         $this->repository->save($championship);
@@ -48,9 +48,6 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
      */
     private function uploadImage($image)
     {
-        // if was not image, go away
-        if (is_null($image)) return null;
-
         $champImage = App::make('Champ\Services\ChampionshipImage');
 
         return $champImage->upload($image);

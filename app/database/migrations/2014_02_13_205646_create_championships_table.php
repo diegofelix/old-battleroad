@@ -14,13 +14,19 @@ class CreateChampionshipsTable extends Migration {
 	{
 		Schema::create('championships', function(Blueprint $table) {
 			$table->increments('id');
-			$table->integer('user_id');
-			$table->string('name', 200);
+			$table->unsignedInteger('user_id');
+			$table->string('name', 200)->index();
 			$table->text('description');
+			$table->datetime('event_start');
 			$table->string('image', 200);
+			$table->string('thumb', 200);
 			$table->string('location', 200);
-			$table->tinyInteger('published');
+			$table->string('token', 200);
+			$table->boolean('published')->default(false)->index();
+			$table->datetime('published_at');
+			$table->boolean('finished')->default(false);
 			$table->timestamps();
+			$table->foreign('user_id')->references('id')->on('users');
 		});
 	}
 

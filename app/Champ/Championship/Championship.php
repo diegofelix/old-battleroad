@@ -37,9 +37,50 @@ class Championship extends Eloquent
      * @param  string $thumb
      * @return Championship
      */
-    public static function register($user_id, $name, $description, $location, $image = null, $thumb = null, $limit = null)
+    public static function register($user_id, $name, $description, $location, $event_start, $image = null, $thumb = null)
     {
-        return new static(compact('user_id', 'name', 'description', 'location', 'image', 'thumb', 'limit'));
+        return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image', 'thumb'));
+    }
+
+    /**
+     * Update championship's information
+     *
+     * @param  string $name
+     * @param  string $description
+     * @return void
+     */
+    public function updateInformation($name, $description)
+    {
+        $this->name = $name;
+        $this->description = $description;
+
+        // raise a new event if needed.
+    }
+
+    /**
+     * Check if the id given is the same as the championship
+     *
+     * @param  int $id
+     * @return boolean     =
+     */
+    public function isOwner($id)
+    {
+        return $this->user_id == $id;
+    }
+
+    /**
+     * Updates the banner images
+     *
+     * @param  string $image
+     * @param  string $thumb
+     * @return void
+     */
+    public function updateBanner($image, $thumb)
+    {
+        $this->image = $image;
+        $this->thumb = $thumb;
+
+        // raise a new event if needed
     }
 
 
@@ -145,7 +186,7 @@ class Championship extends Eloquent
         return $value / 100;
     }
 
-    public function finisheChampionship()
+    public function finishChampionship()
     {
         $this->finished = true;
         $this->save();
@@ -175,30 +216,13 @@ class Championship extends Eloquent
     }
 
     /**
-     * Set the the limit attribute
-     * If the limit was not specified, then we set a high number to ensure that
-     * this limit will not be reach
-     *
-     * @param int $value
-     */
-    public function setLimitAttribute($value)
-    {
-        $this->attributes['limit'] = $value;
-
-        if (empty($value) || $value == 0)
-        {
-            $this->attributes['limit'] = 999999;
-        }
-    }
-
-    /**
      * Check if the user already has integrated with MercadoPago
      *
      * @return boolean
      */
     public function hasIntegrated()
     {
-        return !empty($this->refresh_token);
+        return !empty($this->token);
     }
 
     /**
