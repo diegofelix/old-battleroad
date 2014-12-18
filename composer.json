@@ -17,9 +17,10 @@
 	"require-dev": {
 		"way/generators": "2.*",
 		"fzaninotto/faker": "v1.3.0",
-        "phpspec/phpspec": "~2.0",
-        "benconstable/phpspec-laravel": "~1.0",
-        "doctrine/dbal": "2.4.*"
+        "doctrine/dbal": "2.4.*",
+        "phpunit/phpunit": "4.4.0",
+        "fzaninotto/faker": "1.4.0",
+        "laracasts/testdummy": "1.1.3"
 	},
 	"autoload": {
 		"classmap": [
