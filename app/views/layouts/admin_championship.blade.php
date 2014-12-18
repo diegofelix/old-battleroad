@@ -8,7 +8,7 @@
             <div class="row">
                 <div class="col-md-3 champ-sidebar">
                     @if ($championship->published)
-                        <a href="#" class="btn btn-success btn-lg btn-block disabled">Publicado</a>
+                        <a href="{{ route('admin.championships.cancel', $championship->id) }}" class="btn btn-danger btn-lg btn-block">Cancelar</a>
                     @endif
                     <ul>
                         {{ champ_action_links('Informações', '', 'admin.championships.show', $championship->id, 'icon-info-circle'); }}

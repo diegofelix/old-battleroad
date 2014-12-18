@@ -116,6 +116,18 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
+     * Show a message to the user cancelling the championship
+     *
+     * @return Response
+     */
+    public function cancel($id)
+    {
+        $championship = $this->champRepo->find($id);
+
+        return $this->view('admin.championships.cancel', compact('championship'));
+    }
+
+    /**
      * Show all users that joined the championship
      *
      * @param  int $id

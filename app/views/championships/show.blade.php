@@ -63,7 +63,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Informações</div>
                         <ul class="list-group">
-                            <li class="list-group-item">Av Engenheiro Armando de Arruda Pereira, 1370, Jabaquara SP</li>
+                            <li class="list-group-item">{{{ $championship->location }}}</li>
                             <li class="list-group-item">{{{ $championship->present()->daysLeft }}}</li>
                         </ul>
                         @if ($championship->limit > 0)

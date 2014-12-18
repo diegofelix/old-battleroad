@@ -188,6 +188,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'as' => 'admin.championships.feedback',
             'uses' => 'ChampionshipsController@feedback'
         ]);
+
+        Route::get('championships/{id}/cancel', [
+            'as' => 'admin.championships.cancel',
+            'uses' => 'ChampionshipsController@cancel'
+        ]);
     });
 
     Route::get('dashboard', [
