@@ -60,8 +60,8 @@ class JoinCommandHandler implements CommandHandler {
     private function registerJoin($command)
     {
         // throws an exception in case the championship reach the competitors limit.
-        if ($command->championship->limit == 0)
-            throw new ChampionshipFullException("Esse campeonato já atingiu o limite de participantes", 1);
+        // if ($command->championship->limit == 0)
+        //     throw new ChampionshipFullException("Esse campeonato já atingiu o limite de participantes", 1);
 
         $join = Join::register(
             $command->user->id,
