@@ -75,21 +75,21 @@ class ChampionshipPresenter extends Presenter
         return new Markdown;
     }
 
-    /**
-     * Show the vacancy limit for the championship
-     *
-     * @return string
-     */
-    public function slotsRemaining()
-    {
-        if ($this->limit > 900000) return 'Sem limite';
+    // /**
+    //  * Show the vacancy limit for the championship
+    //  *
+    //  * @return string
+    //  */
+    // public function slotsRemaining()
+    // {
+    //     if ($this->limit > 900000) return 'Sem limite';
 
-        if ($this->trueLimit == 1) return '1 Vaga restantes';
+    //     if ($this->trueLimit == 1) return '1 Vaga restantes';
 
-        if ($this->limit > 1) return $this->limit . ' Vagas restantes';
+    //     if ($this->limit > 1) return $this->limit . ' Vagas restantes';
 
-        return 'Vagas esgotadas';
-    }
+    //     return 'Vagas esgotadas';
+    // }
 
     /**
      * Show the quantity of games for a event

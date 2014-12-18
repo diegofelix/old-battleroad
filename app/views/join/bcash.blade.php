@@ -23,7 +23,7 @@
     {{-- // User data --}}
 
     {{-- Comission data --}}
-    {{ Form::hidden('email_dependente_1', $join->championship->refresh_token) }}
+    {{ Form::hidden('email_dependente_1', $join->championship->token) }}
     {{ Form::hidden('valor_dependente_1', $join->present()->totalPrice) }}
     {{-- // Comission data --}}
 

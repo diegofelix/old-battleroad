@@ -16,10 +16,10 @@ class CompetitionPresenter extends Presenter
      */
     public function trueLimit()
     {
-        if ($this->championship->limit < $this->limit)
-        {
-            return $this->championship->limit;
-        }
+        // if ($this->championship->limit < $this->limit)
+        // {
+        //     return $this->championship->limit;
+        // }
 
         return $this->limit;
     }

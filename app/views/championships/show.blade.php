@@ -4,6 +4,8 @@
 
 @section ('content')
 
+    <?php $canJoin = false; ?>
+
     <div id="championship">
 
         <div class="featured-title championship">
@@ -45,6 +47,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach($championship->competitions as $competition)
+                                        <?php if ($competition->limit > 0) $canJoin = true; ?>
                                         <tr>
                                             <td>{{{ $competition->game->name }}}</td>
                                             <td>{{{ $competition->format->name }}}</td>
@@ -66,7 +69,7 @@
                             <li class="list-group-item">{{{ $championship->location }}}</li>
                             <li class="list-group-item">{{{ $championship->present()->daysLeft }}}</li>
                         </ul>
-                        @if ($championship->limit > 0)
+                        @if ($canJoin)
                             <div class="panel-body">
                                 {{ link_to_route('join.create', 'Quero Participar!', $championship->id, ['class' => 'btn btn-block btn-lg btn-success']) }}
                             </div>

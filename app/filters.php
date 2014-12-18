@@ -199,21 +199,21 @@ Route::filter('has_competition', function()
     }
 });
 
-Route::filter('has_vacancy', function(){
-    $id = Request::segment(3);
+// Route::filter('has_vacancy', function(){
+//     $id = Request::segment(3);
 
-    $championshipRepository = App::make('Champ\Championship\Repositories\ChampionshipRepositoryInterface');
+//     $championshipRepository = App::make('Champ\Championship\Repositories\ChampionshipRepositoryInterface');
 
-    $championship = $championshipRepository->find($id);
+//     $championship = $championshipRepository->find($id);
 
-    if ($championship->limit <= 0)
-    {
-        $message = "Esse campeonato esgotou seu limite de vagas";
+//     if ($championship->limit <= 0)
+//     {
+//         $message = "Esse campeonato esgotou seu limite de vagas";
 
-        return Redirect::route('championships.show', $id)
-            ->with('error', $message);
-    }
-});
+//         return Redirect::route('championships.show', $id)
+//             ->with('error', $message);
+//     }
+// });
 
 Route::filter('paid_championship', function(){
     // get the id of the intended championship
