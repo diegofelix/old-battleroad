@@ -3,6 +3,8 @@ $(document).ready(function()
     var rate = $("#price").data('rate');
 
     $("#price").on('keyup', function(){
+        var updatedPrice = $(this).val().replace(',', '.');
+        $(this).val(updatedPrice);
         var price = calcPrice("#price", rate);
         $("#preview").val(price);
     });
