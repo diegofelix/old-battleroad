@@ -1,7 +1,7 @@
 <form name="bcash"action="https://www.bcash.com.br/checkout/pay/"method="post">
 
     {{-- Organizer identifier --}}
-    {{ Form::hidden('email_loja', 'diegoflx.oliveira@gmail.com') }}
+    {{ Form::hidden('email_loja', getenv('BCASH_ACCOUNT')) }}
 
     {{-- Join id --}}
     {{ Form::hidden('id_pedido', $join->id) }}
