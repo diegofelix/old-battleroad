@@ -64,6 +64,10 @@
                         </div>
                     </div>
 
+                    <!-- Disqus area -->
+                    @include ('partials._disqus')
+                    <!-- // disqus area -->
+
                 </div>
                 <div class="col-md-3">
                     <div class="panel panel-default">
