@@ -57,7 +57,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     public function userFound($user)
     {
         Auth::loginUsingId($user->id);
-        return $this->redirectTo('/');
+        return $this->redirectIntended('/');
     }
 
     /**

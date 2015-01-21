@@ -135,7 +135,7 @@
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('event_start', 'Data do Campeonato: ') }}
+                                {{ Form::label('event_start', 'Data da Competição: ') }}
                                 <div class="input-group col-md-6">
                                     <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                                     {{ Form::text('start', null, [
