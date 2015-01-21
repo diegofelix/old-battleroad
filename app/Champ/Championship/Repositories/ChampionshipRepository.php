@@ -6,6 +6,8 @@ use Champ\Validators\ChampionshipValidator;
 use Champ\Contexts\Core\ContextInterface;
 use Champ\Championship\Competition;
 use Laracasts\Commander\Events\DispatchableTrait;
+use Illuminate\Support\Collection;
+use Carbon\Carbon;
 use App;
 use Auth;
 use Config;
@@ -38,13 +40,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         if ($game)
         {
-            $query->whereHas('competitions', function($q) use ($game)
-            {
-                $q->whereHas('game', function($g) use ($game)
-                {
-                    $g->where('name', '=', $game);
-                });
-            });
+            $query = $this->getChampionshipsWithGames($query, $game);
         }
 
         return $query->orderBy('event_start', 'desc')->paginate();
@@ -61,6 +57,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championship = $this->model->find($id);
 
         $championship->published = true;
+        $championship->published_at = Date('Y-m-d H:i:s');
 
         return $championship->save();
     }
@@ -146,6 +143,12 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             return false;
         }
 
+        if ( ! $this->competitionStartsAfterChampionship($championship, $data['start']))
+        {
+            $this->errors = new Collection(['O Campo data deve ter uma data maior que o campeonato.']);
+            return false;
+        }
+
         // set the limit for the competition
         $data['limit'] = $this->updateLimitValues($championship, $data);
 
@@ -204,6 +207,13 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             ->whereUserId($id)
             ->wherePublished(true)
             ->get();
+    }
+
+    private function competitionStartsAfterChampionship($championship, $eventStart)
+    {
+        $date = Carbon::createFromFormat('d/m/Y', $eventStart);
+
+        return $date > $championship->event_start;
     }
 
     /**
@@ -305,9 +315,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
      *
      * @return Collection
      */
-    public function getUsersFromCommingChampionships()
+    public function getUsersFromCommingChampionships($dayLimit = 3)
     {
-        $championships = $this->getNotFinishedByDateDiff(3, ['joins.user']);
+        $championships = $this->getNotFinishedByDateDiff($dayLimit, ['joins.user']);
 
         $toSendAlert = [];
 
@@ -336,9 +346,27 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     {
         return $this->model
             ->with($with)
-            ->where('finished', false)
+            ->whereFinished(false)
             ->whereRaw("datediff(event_start, now()) = ?", [$limit])
             ->get();
+    }
+
+    /**
+     * Return a relation query with game
+     *
+     * @param  QueryBuilder $query
+     * @param  string $game
+     * @return QueryBuilder
+     */
+    private function getChampionshipsWithGames($query, $game)
+    {
+        return $query->whereHas('competitions', function($q) use ($game)
+        {
+            $q->whereHas('game', function($g) use ($game)
+            {
+                $g->where('name', '=', $game);
+            });
+        });
     }
 
 }
