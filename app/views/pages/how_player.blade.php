@@ -16,7 +16,7 @@
 
         <h3>Quais jogos estão disponíveis?</h3>
 
-        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão, e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já league of legends é 5x5. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
+        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão, e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já League of Legends é 5x5. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
 
         <h3>Posso cancelar minha inscrição no campeonato?</h3>
 
