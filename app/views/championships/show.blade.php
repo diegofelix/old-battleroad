@@ -50,7 +50,10 @@
                                         <?php if ($competition->limit > 0) $canJoin = true; ?>
                                         <tr>
                                             <td>{{{ $competition->game->name }}}</td>
-                                            <td>{{{ $competition->format->name }}}</td>
+                                            <td>
+                                                {{{ $competition->format->name }}}
+                                                <button type="button" class="btn btn-xs" data-placement="bottom" data-toggle="popover" title="{{{ $competition->format->name }}}" data-content="{{ Config::get('champ.formats.'.$competition->format_id) }}" >?</button>
+                                            </td>
                                             <td>{{{ $competition->platform->name }}}</td>
                                             <td>{{{ $competition->present()->slotsRemaining }}}</td>
                                             <td>{{ $competition->present()->userPrice }}</td>
@@ -84,4 +87,9 @@
 @endsection
 @section('scripts')
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-53e299d075914d81"></script>
+<script type="text/javascript">
+$(function () {
+  $('[data-toggle="popover"]').popover();
+});
+</script>
 @stop

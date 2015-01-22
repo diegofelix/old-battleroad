@@ -26,6 +26,17 @@ return [
      */
     'payday_limit' => 1,
 
+    'formats' => [
+        // Round Robin
+        1 => 'Conhecido aqui no Brasil como pontos corridos onde todos enfrentam todos, podem haver variantes.',
+        // Double Elimination
+        2 => 'Parecido com mata-mata, porém os jogadores que perderem a primeira vez vão para um série a parte, chamada de losers ( perdedores ). Lá ele terá mais uma chance.',
+        // Single Elimination
+        3 => 'É o famosos mata-mata, quem perder é eliminado.',
+        // Swiss
+        4 => 'Esse é um meio termo entre Double Elimination e Round Robin. Mais informações em http://battleroad.uservoice.com/knowledgebase'
+    ],
+
     /*
     |--------------------------------------------------------------------------
     | Event listeners
