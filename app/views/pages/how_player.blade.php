@@ -16,7 +16,7 @@
 
         <h3>Quais jogos estão disponíveis?</h3>
 
-        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já league of legends é 4x4. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
+        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão, e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já league of legends é 5x5. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
 
         <h3>Posso cancelar minha inscrição no campeonato?</h3>
 
@@ -51,7 +51,7 @@
             </div>
             <div class="col-md-5">
                 <h3>Realizando o pagamento</h3>
-                <p>Sua vaga já está reservada, porém ainda não há garantias de que você vá participar, para confirmar sua participação, é preciso que você realize o pagamento, dependendo da forma de pagamento, a sua inscrição será confirmada, normalmente em questão de horas se for cartão ou débito, e 2 dias se for depósito ou boleto.</p>
+                <p>Sua vaga já está reservada, porém ainda não há garantias de que você vá participar, para confirmar sua participação, é preciso que você realize o pagamento. Dependendo da forma escolhida, sua inscrição pode ser confirmada em poucas horas. Para boletos e depósito pode demorar um pouco mais.</p>
                 <p><strong>Atenção: </strong> Não deixe para pagar de última hora, pois pagamentos que demoram até 2 dias para serem compensados poderá inviabilizar sua participação. É recomendado que você pague imediatamente após a inscrição, para garantir que tudo ocorra dentro do prazo.</p>
             </div>
         </div>
