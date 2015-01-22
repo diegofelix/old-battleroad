@@ -1,5 +1,4 @@
-@extends('layouts.default')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <div class="featured-title">
         <div class="container">
@@ -16,7 +15,8 @@
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_dashboard.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_dashboard.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
             <div class="col-md-5">
                 <h3>Dashboard</h3>
@@ -30,12 +30,14 @@
                 <p>Você também precisa definir a data do campeonato. Essa data é muito importante, porque será baseada nela que definiremos a data de finalização dos pagamentos, por exemplo, se você disser que o campeonato começa no dia 10/01/2015, no dia 07/01/2015 enviaremos e-mails aos jogadores que se inscreveram, mas ainda não pagaram o campeonato lembrando sobre o pagamento. Isso porque, alguns tipos de pagamento necessitam de 2 dias para confirmação, como boleto e depósito.</p>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_register.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_register.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
         </div>
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
             <div class="col-md-5">
                 <h3>Adicionando jogos ao campeonato</h3>
@@ -53,7 +55,8 @@
                 </ul>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_integration.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_integration.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
         </div>
 
@@ -72,5 +75,8 @@
           http://battleroad.uservoice.com/forums/245755-geral">Dá só uma olhada!</a></p>
 
         <p>Após colocar o e-mail do seu bcash no campo, você irá para a parte de confirmação, veja se está tudo certo e clique em Confirmar. Pronto! Seu campeonato está publicado, divulgue no facebook, twitter e em suas redes sociais do seu novo evento. Agora é só se preocupar com o evento que a Battleroad cuida do resto!</p>
+
+        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
     </div>
-@stop
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

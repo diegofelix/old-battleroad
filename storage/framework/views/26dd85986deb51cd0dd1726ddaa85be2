@@ -1,0 +1,40 @@
+<?php $__env->startSection('content'); ?>
+
+    <div id="dashboard">
+
+        <div class="container">
+
+            <h2 class="main-title">Minhas inscrições</h2>
+
+            <div class="panel panel-info">
+                <div class="panel-heading">Campeonatos em que estou participando</div>
+                <div class="panel-body">
+                    <table class="champ-table">
+                        <thead>
+                            <tr>
+                                <th>Título</th>
+                                <th>Status</th>
+                                <th>Organizador</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($joins as $join): ?>
+                                <?php if($join->isActive()): ?>
+                                    <tr>
+                                        <td><?php echo e($join->championship->name); ?></td>
+                                        <td><?php echo e($join->status->name); ?>
+
+                                        <td><?php echo link_to_route('profile.show', $join->championship->user->name, $join->championship->user->username); ?>
+
+                                        <td><a href="<?php echo e(route('join.show', $join->id)); ?>"><span class="fa fa-eye"></span></a></td>
+                                    </tr>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

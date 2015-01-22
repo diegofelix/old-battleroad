@@ -1,0 +1,14 @@
+<?php $__env->startSection('content'); ?>
+
+    <div id="championship_register">
+
+        <div class="container main-container">
+
+            <?php echo $__env->yieldContent('register_content'); ?>
+
+        </div>
+
+    </div><!-- championship -->
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -9,12 +9,12 @@
 
             <h4>Sistema de Pagamento</h4>
             <p>
-                Um sistema de pagamento é um modelo de negócios que cuida de toda a segurança e comodidade dos pagamentos da Battleroad, aceitando diversos tipos de cartão, boleto, débito e etc.
+                Um sistema de pagamento é um modelo de negócios que cuida de toda a segurança e comodidade dos pagamentos da Battleroad, aceitando diversos tipos de cartões, boleto, débitos e parcelamento.
             </p>
 
             <h4>Por que Bcash?</h4>
             <p>
-                Nós da Battleroad testamos vários sistemas de pagamento até chegarmos no Bcash. A maioria dos sistemas de pagamento não oferece com confiabilidade, praticidade e confiança um sistema que atende nosso nicho. Dentre todos os testados, Bcash foi o que mais se adequou ao nosso modelo de negócio, como por exemplo:
+                Nós da Battleroad testamos vários sistemas de pagamento até chegarmos ao Bcash. A maioria dos sistemas de pagamento não oferece com confiabilidade, praticidade e confiança um sistema que atende nosso nicho. Dentre todos os testados, Bcash foi o que mais se adequou ao nosso modelo de negócio, como por exemplo:
                 <ul>
                     <li>Pagamento com sistema de comissionamento;</li>
                     <li>Amplas formas de pagamento;</li>
@@ -34,10 +34,10 @@
 
             <h4>Recebimento do dinheiro</h4>
             <p>
-                Assim que um participante se inscrever no campeonato, ele será redirecionado para a página de pagamento. O Bcash irá confirmar o pagamento, dependendo da forma de pagamento a confirmação é feita em poucas horas. Com o pagamento confirmado o dinheiro já aparecerá na sua conta como "à receber".
+                Assim que um participante se inscrever no campeonato, ele será redirecionado para a página de pagamento. O Bcash irá confirmar o pagamento, dependendo da forma de pagamento a confirmação é feita em poucas horas. Com o pagamento confirmado, o dinheiro já aparecerá na sua conta como "à receber".
             </p>
             <p>
-                Por lei todos os clientes têm o direito de pedir o dinheiro devolta durante o processo ou até mesmo depois do pagamento confirmado. Por isso o Bcash irá liberar o dinheiro para saque em até 14 dias. Apesar de parecer estranho receber o dinheiro e não poder sacar, a maioria das pessoas não cancela a compra. Além disso, no nosso nicho, onde os organizadores dependem do dinheiro das inscrições para a realização do campeonato, há muita margem para que isso não ocorra e caso ocorra, por exemplo, após o campeonato, o dinheiro não poderá ser devolvido.
+                Por lei, todos os clientes têm o direito de pedir o estorno do dinheiro durante o processo, ou até mesmo depois do pagamento confirmado. Por isso, o Bcash irá liberar o dinheiro para saque em até 14 dias. Apesar de parecer estranho receber o dinheiro e não poder sacar, a maioria das pessoas não cancela a compra. Além disso, no nosso nicho, onde os organizadores dependem do dinheiro das inscrições para a realização do campeonato, há muita margem para que isso não ocorra e, caso ocorra por exemplo, após o campeonato, o dinheiro não poderá ser devolvido.
             </p>
 
         </div><!-- container -->

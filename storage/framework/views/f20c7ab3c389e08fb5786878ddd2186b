@@ -1,0 +1,33 @@
+<?php $__env->startSection('content'); ?>
+
+	<div id="profile">
+
+		<?php echo $__env->make('partials._featured_title', ['title' => 'Perfil de '. Auth::user()->name], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+		<div class="container">
+
+			<?php echo Form::open(['route' => 'profile.store', 'role' => 'form', 'class' => 'form-horizontal']); ?>
+
+
+				<?php echo Form::hidden('user_id', Auth::user()->id); ?>
+
+
+				<?php echo $__env->make('profile._fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+			<?php echo Form::close(); ?>
+
+
+		</div><!-- container -->
+
+	</div>
+
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <?php echo HTML::script('js/jquery-input-mask.js'); ?>
+
+    <?php echo HTML::script('js/jquery-input-mask-date.js'); ?>
+
+    <?php echo HTML::script('js/profile.js'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

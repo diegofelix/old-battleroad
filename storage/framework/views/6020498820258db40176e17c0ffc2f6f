@@ -1,0 +1,5 @@
+<div class="featured-title">
+    <div class="container">
+        <h2><?php echo e($title); ?></h2>
+    </div>
+</div>

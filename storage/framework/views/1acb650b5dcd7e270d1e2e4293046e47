@@ -1,0 +1,92 @@
+<?php $__env->startSection('title', 'Perfil de ' . $user->name); ?>
+<?php $__env->startSection('meta'); ?>
+    <meta property="og:image" content="<?php echo e(asset($user->present()->userImage)); ?>" />
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('partials._featured_title', ['title' => $user->name ], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div id="user-profile">
+        <div class="container">
+            <div class="row">
+                <figure class="col-md-3">
+                    <?php echo HTML::image($user->present()->userImage, $user->name, ['class' => 'img-responsive']); ?>
+
+                    <?php /* Check if the user logged is the same as the profile */ ?>
+                    <?php if($user->currentUser()): ?>
+                        <div class="settings champ-box">
+                            <header class="default-header">
+                                <h3><i class="fa fa-gear"></i> Configurações</h3>
+                            </header>
+                            <section>
+                                <ul class="settings-list">
+                                    <li>
+                                        <?php $route = ($user->profile) ? 'profile.edit': 'profile.create' ?>
+                                        <a href="<?php echo e(route($route, Auth::user()->username)); ?>"><i class="fa fa-user"></i> Configurações</a>
+                                    </li>
+                                    <li><a href="#"><i class="fa fa-key"></i> Alterar Senha</a></li>
+                                    <li><a href="<?php echo e(route('session.destroy')); ?>"><i class="fa fa-sign-out"></i> Sair</a></li>
+                                </ul>
+                            </section>
+                        </div>
+                    <?php endif; ?>
+                </figure>
+                <div class="col-md-9">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            Olá, meu nome é <?php echo e($user->name); ?>
+
+                            <span class="pull-right"><em>Membro desde </em><?php echo e($user->created_at->format('M, Y')); ?></span>
+                        </div>
+                        <div class="panel-body">
+                            <?php if( ! $user->profile): ?>
+                                <?php echo $__env->make('partials._no_profile', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <?php else: ?>
+                                <p><?php echo e($user->profile->bio); ?></p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <?php if( ! empty($user->profile->psn)): ?>
+                            <div class="col-md-4">
+                                <div class="panel panel-info">
+                                    <div class="panel-heading">PSN</div>
+                                    <div class="panel-body">
+                                        <?php echo e($user->profile->psn); ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if( ! empty($user->profile->live)): ?>
+                            <div class="col-md-4">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">XBOX Live</div>
+                                    <div class="panel-body">
+                                        <?php echo e($user->profile->live); ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                        <?php if( ! empty($user->profile->steam)): ?>
+                            <div class="col-md-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">Steam</div>
+                                    <div class="panel-body">
+                                        <?php echo e($user->profile->steam); ?>
+
+                                    </div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                    <?php echo $__env->make('profile._achievements', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

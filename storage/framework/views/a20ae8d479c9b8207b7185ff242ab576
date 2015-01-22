@@ -1,5 +1,4 @@
-@extends('layouts.default')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <div class="featured-title">
         <div class="container" id="how_it_works">
@@ -16,7 +15,7 @@
 
         <h3>Quais jogos estão disponíveis?</h3>
 
-        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão, e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já league of legends é 5x5. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
+        <p>Antes de inserirmos um jogo, precisamos saber como é o modelo no qual esse jogo se encaixa. Cada jogo tem um padrão, e pra isso, precisamos analisar todas as vertentes antes de adicionar um jogo à plataforma, Por exemplo: Street Fighter é 1x1, já League of Legends é 5x5. Estamos trabalhando duro para atender ao máximo de jogos possíveis.</p>
 
         <h3>Posso cancelar minha inscrição no campeonato?</h3>
 
@@ -25,7 +24,8 @@
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_championship.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_championship.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
             <div class="col-md-5">
                 <h3>Participando de um campeonato</h3>
@@ -41,13 +41,15 @@
                 <p>Selecione quais competições você quer se inscrever, isso atualizará o preço total da participação. Após, confirme sua inscrição.</p>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_payment.png', '', ['class' => 'img-responsive']) }}
+                <?php echo HTML::image('images/hiw_payment.png', '', ['class' => 'img-responsive']); ?>
+
             </div>
             <div class="col-md-5">
                 <h3>Realizando o pagamento</h3>
@@ -62,4 +64,6 @@
 
     </div>
 
-@stop
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

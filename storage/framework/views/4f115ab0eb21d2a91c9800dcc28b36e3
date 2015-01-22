@@ -1,0 +1,81 @@
+<?php $__env->startSection('register_content'); ?>
+
+    <ol id="steps">
+        <li>
+            <div class="step-title step-finished">
+                <span class="number">1</span>
+                <h2>
+                    Informações
+                    <small>Como vai ser?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title step-finished">
+                <span class="number">2</span>
+                <h2>
+                    Jogos
+                    <small>Quais jogos?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">3</span>
+                <h2>
+                    Sistema de Pagamento
+                    <small>Integre à sua conta ao Bcash</small>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="step-content col-md-12">
+                    <div class="mini-helper warning">
+                        <h5>Conta BCash</h5>
+                        <p>
+                            Bcash é o sistema de pagamentos escolhido pela Battleroad. Além de ser uma empresa do grupo Buscapé e de confiança, o Bcash nos possibilita que o pagamento das inscrições do seu campeonato vá diretamente para sua conta.<br>
+                            Dessa forma, o dinheiro não precisa passar pela Battleroad e você terá controle total sobre o dinheiro através de sua conta Bcash.
+                        </p>
+                        <p>Tem dúvidas de como criar sua conta Bcash? Temos um <?php echo link_to_route('tutorial_bcash', 'mini-manual aqui', null, ['target' => '_blank']); ?> que pode te ajudar!</p>
+                    </div>
+
+                    <?php echo Form::open(['route' => ['admin.register.integration', $championship->id]]); ?>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <?php echo Form::label('E-mail cadastrado no Bcash'); ?>
+
+                                <?php echo Form::email('bcash_account', null, ['class' => 'form-control', 'required' => 'required']); ?>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="next-step">
+                        <button type="submit" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</button>
+                    </div>
+                    <?php echo Form::close(); ?>
+
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">4</span>
+                <h2>
+                    Confirmação
+                    <small>Tudo certo?</small>
+                </h2>
+            </div>
+        </li>
+    </ol>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+    <?php echo HTML::script('js/register.js'); ?>
+
+    <?php echo HTML::script('js/help-toggle.js'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.admin_register_2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

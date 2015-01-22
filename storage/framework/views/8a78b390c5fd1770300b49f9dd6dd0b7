@@ -1,0 +1,97 @@
+<?php $__env->startSection('register_content'); ?>
+
+    <ol id="steps">
+        <li>
+            <div class="step-title step-finished">
+                <span class="number">1</span>
+                <h2>
+                    Informações
+                    <small>Como vai ser?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title step-finished">
+                <span class="number">2</span>
+                <h2>
+                    Jogos
+                    <small>Quais jogos?</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title step-finished">
+                <span class="number">3</span>
+                <h2>
+                    Sistema de Pagamento
+                    <small>Integre à sua conta ao Bcash</small>
+                </h2>
+            </div>
+        </li>
+        <li>
+            <div class="step-title">
+                <span class="number">3</span>
+                <h2>
+                    Confirmação
+                    <small>Tudo certo?</small>
+                </h2>
+            </div>
+            <div class="row">
+                <div class="step-content col-md-12">
+
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Título</th>
+                                <td><?php echo e($championship->name); ?></td>
+                            </tr>
+                            <tr>
+                                <th>Descrição</th>
+                                <td><?php echo e($championship->description); ?></td>
+                            </tr>
+                            <tr>
+                                <th>Data de início</th>
+                                <td><?php echo e($championship->event_start->format('d/m/Y')); ?></td>
+                            </tr>
+                            <tr>
+                                <th>Localização</th>
+                                <td><?php echo e($championship->location); ?></td>
+                            </tr>
+                            <tr>
+                                <th>Conta Bcash</th>
+                                <td><?php echo e($championship->token); ?></td>
+                            </tr>
+                            <tr>
+                                <th rowspan="3">Jogos</th>
+                            </tr>
+                            <?php if($championship->competitions): ?>
+                                <?php foreach($championship->competitions as $competition): ?>
+                                <tr>
+                                    <td>
+                                        <?php echo e($competition->game->name); ?>
+
+                                        <?php if( ! $competition->present()->isSingleRegistration()): ?>
+                                            <small>( Inscrição por time. )</small>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </tbody>
+                    </table>
+
+                    <div class="next-step">
+                        <p>
+                            <a href="<?php echo e(route('admin.register.publish', [$championship->id])); ?>"
+                                class="btn btn-success btn-lg pull-right">
+                                Publicar
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ol>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.admin_register_2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

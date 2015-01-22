@@ -1,0 +1,9 @@
+<?php foreach($competitions as $competition): ?>
+    <li class="list-group-item">
+        <?php if(Input::get('game') == $competition): ?>
+            <a href="<?php echo e(route('championships.index')); ?>"><span class="fa fa-check-square-o"></span> <?php echo e($competition); ?></a>
+        <?php else: ?>
+            <a href="<?php echo e(route('championships.index') . '?game=' . $competition); ?>"><span class="fa fa-square-o"></span> <?php echo e($competition); ?></a>
+        <?php endif; ?>
+    </li>
+<?php endforeach; ?>
