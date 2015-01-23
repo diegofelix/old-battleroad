@@ -536,10 +536,53 @@
 			}
 		},
 		{
+			"file": "app/views/championships/show.blade.php",
+			"settings":
+			{
+				"buffer_size": 4211,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/pages/bcash.blade.php",
+			"settings":
+			{
+				"buffer_size": 2863,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/pages/how_organizer.blade.php",
+			"settings":
+			{
+				"buffer_size": 6637,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/pages/how_player.blade.php",
+			"settings":
+			{
+				"buffer_size": 4113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!-- Modal -->\n<div class=\"modal fade\" id=\"formats\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"formatsLabel\" aria-hidden=\"true\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span aria-hidden=\"true\">&times;</span></button>\n        <h4 class=\"modal-title\" id=\"formatsLabel\">Formatos</h4>\n      </div>\n      <div class=\"modal-body\">\n        <p>Existem 4 principais tipos de campeonatos:</p>\n\n        <dl>\n            <dt>Single Elimination</dt>\n            <dd>É o famosos mata-mata, quem perder é eliminado.</dd>\n            <dt>Double Elimination</dt>\n            <dd>Parecido com mata-mata, porém os jogadores que perderem a primeira vez vão para um série a parte, chamada de losers ( perdedores ). Lá ele terá mais uma chance.</dd>\n            <dt>Round Robin</dt>\n            <dd>Conhecido aqui no Brasil como pontos corridos onde todos enfrentam todos, pode haver variantes.</dd>\n            <dt>Swiss</dt>\n            <dd>Esse é um meio termo entre Double Elimination e Round Robin.</dd>\n        </dl>\n\n        <p>Para mais informações, por favor acesse: <a href=\"http://battleroad.uservoice.com/knowledgebase/articles/419839-quais-os-tipos-de-campeonato\"> Tipos de campeonato.</a></p>\n\n      </div>\n    </div>\n  </div>\n</div>\n<!-- // Modal -->",
+			"file": "app/views/partials/_formats.blade.php",
+			"file_size": -1,
+			"file_write_time": -1,
+			"settings":
+			{
+				"buffer_size": 1384,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "app/config/champ.php",
 			"settings":
 			{
-				"buffer_size": 1317,
+				"buffer_size": 1940,
 				"line_ending": "Unix"
 			}
 		},
@@ -547,7 +590,7 @@
 			"file": "/home/diego/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 			"settings":
 			{
-				"buffer_size": 359,
+				"buffer_size": 360,
 				"line_ending": "Unix"
 			}
 		}
@@ -854,23 +897,35 @@
 	[
 		"/media/win/xampp/htdocs/answer-stack",
 		"/media/win/xampp/htdocs/answer-stack/app",
-		"/media/win/xampp/htdocs/answer-stack/app/config"
+		"/media/win/xampp/htdocs/answer-stack/app/assets/js/lib",
+		"/media/win/xampp/htdocs/answer-stack/app/config",
+		"/media/win/xampp/htdocs/answer-stack/app/views",
+		"/media/win/xampp/htdocs/answer-stack/public"
 	],
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/app/views/partials/tooltips/DoubleElimination.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/partials/tooltips/RoundRobin.blade.php",
+		"/home/diego/Desktop/bootstrap/js/bootstrap.min.js",
+		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_player.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_disqus.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/public/images/championships/.gitignore",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Status.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/examples/SessionHandler.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/.fuse_hidden00006a6e00000003",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/GameRepository.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
 		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
 		"/media/win/xampp/htdocs/answer-stack/app/controllers/BaseController.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Validators/ChampionshipValidator.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/ValidationServiceProvider.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Collection.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Validation/ChampValidator.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/games/index.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/commands/ThreeDaysLeftToChampCommand.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/ChampionshipVacancyUpdater.php",
@@ -976,20 +1031,11 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/CommanderTrait.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Http/Request.php",
 		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/AdminNotificationListener.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-concat/node_modules/through/test/auto-destroy.js",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Status.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/examples/SessionHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/Facades/Request.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Queue/RedisQueue.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Redis/Database.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Remote/GatewayInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Auth/AuthManager.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Queue/IlluminateQueueClosure.php"
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/AdminNotificationListener.php"
 	],
 	"find":
 	{
-		"height": 55.0
+		"height": 52.0
 	},
 	"find_in_files":
 	{
@@ -1018,6 +1064,15 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"<dt>",
+			"dt",
+			"fa fa",
+			"popover",
+			"dd",
+			"myModal",
+			"myModalLabel",
+			"myModal",
+			"competitionStartsAfterChampionship",
 			"event_start",
 			"Data do Campeonato",
 			"future_date",
@@ -1136,16 +1191,7 @@
 			"e3f13c27c10561b06acd198b1ca987c6",
 			"]",
 			") }}",
-			"}}",
-			"{{ Form::hidden('",
-			"<input type=\"hidden\" value=\"",
-			"## ",
-			" ",
-			".",
-			"::class",
-			"ChampionshipFullException",
-			"exists",
-			"competition"
+			"}}"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1167,7 +1213,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -1195,10 +1241,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1712.0,
+						"translation.y": 1838.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1214,8 +1260,8 @@
 						"selection":
 						[
 							[
-								9419,
-								9419
+								3934,
+								3934
 							]
 						],
 						"settings":
@@ -1226,19 +1272,109 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 12790.0,
+						"translation.y": 5776.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 2,
-					"file": "app/config/champ.php",
-					"semi_transient": true,
+					"file": "app/views/championships/show.blade.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1317,
+						"buffer_size": 4211,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2456,
+								2456
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1942.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/views/pages/bcash.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2776,
+								2776
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2193.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/views/pages/how_organizer.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6637,
+								6637
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3949.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "app/views/pages/how_player.blade.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4113,
 						"regions":
 						{
 						},
@@ -1251,32 +1387,91 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
-						"translation.y": 912.0,
+						"translation.x": 0.0,
+						"translation.y": 903.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "/home/diego/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+					"buffer": 6,
+					"file": "app/views/partials/_formats.blade.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 359,
+						"buffer_size": 1384,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								218,
-								218
+								1127,
+								1127
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Laravel Blade Highlighter/laravel-blade.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 129.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/config/champ.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1940,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								930,
+								930
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 54.0,
+						"translation.y": 939.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/home/diego/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 360,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1289,7 +1484,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
@@ -1297,7 +1492,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 60.0
+		"height": 51.0
 	},
 	"input":
 	{
@@ -1333,7 +1528,7 @@
 	"project": "champaholic.sublime-project",
 	"replace":
 	{
-		"height": 229.0
+		"height": 98.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1341,6 +1536,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"championships/show",
+				"app/views/championships/show.blade.php"
+			],
 			[
 				"championshipreposirt",
 				"app/Champ/Championship/Repositories/ChampionshipRepository.php"
@@ -1848,10 +2047,6 @@
 			[
 				"price",
 				"app/Champ/Traits/UserPrice.php"
-			],
-			[
-				"joinpresent",
-				"app/Champ/Presenters/JoinPresenter.php"
 			]
 		],
 		"width": 0.0
