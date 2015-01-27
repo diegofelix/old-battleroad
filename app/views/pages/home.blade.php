@@ -33,11 +33,10 @@
             <div class="row">
                 <div class="col-md-4">
                     <p>Crie seu campeonato e a BattleRoad cuidará do resto: Divulgação, inscrição, pagamento e etc.</p>
-                    <p><a class="btn btn-warning btn-lg" href="#">Saiba mais</a></p>
                 </div>
 
                 <div class="col-md-8">
-                    {{ HTML::image('images/admin.jpg', 'Painel de Administração', ['class' => 'img-responsive']) }}    
+                    {{ HTML::image('images/admin.jpg', 'Painel de Administração', ['class' => 'img-responsive']) }}
                 </div>
             </div>
 
@@ -58,7 +57,6 @@
 
                 <div class="col-md-4">
                     <p>Faça amigos, participe de campeonatos, ganhe prêmios, seja reconhecido, seja o melhor!</p>
-                    <p><a class="btn btn-warning btn-lg" href="#">Saiba mais</a></p>
                 </div>
             </div>
         </div>
