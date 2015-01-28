@@ -1,10 +1,48 @@
 <?php namespace Champ\Account;
 
 use Eloquent;
+use Laracasts\Commander\Events\EventGenerator;
+use Champ\Account\Events\UserChangedProfile;
 
 class Profile extends Eloquent {
 
     protected $fillable = ['user_id', 'bio', 'psn', 'live', 'steam', 'notify'];
+
+    use EventGenerator;
+
+    /**
+     * Create a new profile
+     *
+     * @param  array $data
+     * @return Profile
+     */
+    public static function createProfile($data)
+    {
+        if ( ! isset($data['notify'])) $data['notify'] = false;
+
+        $profile = new static($data);
+
+        $profile->raise(new UserChangedProfile($profile));
+
+        return $profile;
+    }
+
+    /**
+     * Update the profile with the new data
+     *
+     * @param  array $data
+     * @return Profile
+     */
+    public function updateProfile($data)
+    {
+        if ( ! isset($data['notify'])) $data['notify'] = false;
+
+        $profile = $this->fill($data);
+
+        $this->raise(new UserChangedProfile($profile));
+
+        return $profile;
+    }
 
     /**
      * Relation with User

@@ -1,6 +1,7 @@
 <?php
 
 use Champ\Account\Repositories\UserRepositoryInterface;
+use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterController extends BaseController {
 
@@ -10,6 +11,8 @@ class RegisterController extends BaseController {
      * @var Champ\Account\Repositories\UserRepositoryInterface
      */
     protected $userRepo;
+
+    use DispatchableTrait;
 
     /**
      * Inject the user repo
@@ -41,9 +44,12 @@ class RegisterController extends BaseController {
             return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
         }
 
-
         // authenticate the user immediatly
         Auth::loginUsingId($user->id);
+
+        // when a user is registered, its fire various events
+        // this method dispatch them
+        $this->dispatchEventsFor($user);
 
         // and return him to the home
         return $this->redirectTo('/', ['message' => 'Parabéns, sua conta foi criada!']);

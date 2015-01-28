@@ -115,6 +115,8 @@ return array(
 		'Champ\Providers\JoinServiceProvider',
 		'Champ\Providers\EventingServiceProvider',
 		'Champ\Providers\ValidationServiceProvider',
+		'Champ\Providers\NewsletterListServiceProvider',
+		'Champ\Providers\NotificationsServiceProvider',
 
 		// custom service providers
 		'Way\Generators\GeneratorsServiceProvider',

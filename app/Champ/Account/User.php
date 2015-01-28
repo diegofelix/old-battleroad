@@ -2,7 +2,9 @@
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
+use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
+use Champ\Account\Events\UserSignedUp;
 use Eloquent;
 use Auth;
 use Hash;
@@ -39,6 +41,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     protected $fillable = ['name', 'username', 'email', 'password', 'picture'];
 
     use PresentableTrait;
+    use EventGenerator;
+
+    public function register($data)
+    {
+        $user = $this->fill($data);
+
+        $this->raise(new UserSignedUp($user));
+
+        return $user;
+    }
 
     /**
      * Get the unique identifier for the user.
