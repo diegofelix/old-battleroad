@@ -6,11 +6,6 @@ use Mailchimp;
 class ChampionshipPublished implements ChampionshipPublishedInterface {
 
     /**
-     * List id
-     */
-    const CHAMPIONSHIP_SUBSCRIBERS_ID = '425ef84f09';
-
-    /**
      * List of templates
      *
      * @var array
@@ -44,10 +39,10 @@ class ChampionshipPublished implements ChampionshipPublishedInterface {
     public function notify($title, $body)
     {
         $options = [
-            'list_id' => self::CHAMPIONSHIP_SUBSCRIBERS_ID,
+            'list_id' => getenv('CHAMPIONSHIPS_SUBSCRIBERS_LIST'),
             'subject' => 'Correio Battleroad: Novo Campeonato',
             'from_name' => 'Battleroad',
-            'from_email' => 'contato@battleroad.com.br',
+            'from_email' => 'noreply@battleroad.com.br',
             'to_name' => 'Battleroad Subscriber',
             'template_id' => $this->templates['defaultTemplate']
         ];

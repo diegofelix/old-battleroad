@@ -6,7 +6,7 @@ use Mailchimp;
 class NewsletterList implements NewsletterListInterface {
 
     protected $lists = [
-        'championshipsSubscribers' => '425ef84f09'
+        'championshipsSubscribers' => '4d9ee789f6'
     ];
 
     /**
@@ -31,7 +31,7 @@ class NewsletterList implements NewsletterListInterface {
     public function subscribeTo($listName, $email)
     {
         return $this->mailchimp->lists->subscribe(
-            $this->lists[$listName],
+            getenv('CHAMPIONSHIPS_SUBSCRIBERS_LIST'),
             compact('email'),
             null, // merge vars
             'html', // type
