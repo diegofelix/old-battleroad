@@ -25,7 +25,7 @@ class SessionController extends BaseController {
 			return $this->redirectBack(['error' => 'E-mail ou senha inválidos.']);
 		}
 
-		return $this->redirectIntended();
+		return $this->redirectIntended('/');
 	}
 
 	/**

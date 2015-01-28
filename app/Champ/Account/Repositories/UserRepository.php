@@ -62,7 +62,7 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
      */
     public function createBySocialAuth(array $data)
     {
-        return $this->model->create($data);
+        return $this->registerUser($data);
     }
 
     /**
@@ -87,7 +87,22 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
 
         $data['password'] = Hash::make($data['password']);
 
-        return $this->model->create($data);
+        return $this->registerUser($data);
+    }
+
+    /**
+     * Register a user
+     *
+     * @param  array $data
+     * @return mixed
+     */
+    protected function registerUser($data)
+    {
+        $user = $this->model->register($data);
+
+        $user->save();
+
+        return $user;
     }
 
     /**
@@ -113,10 +128,12 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         $user = $this->find($id, ['profile']);
 
         // create a profile
-        $profile = new Profile($data);
+        $profile = Profile::createProfile($data);
 
         // link a profile with a user
-        return $user->profile()->save($profile);
+        $user->profile()->save($profile);
+
+        return $profile;
     }
 
     /**
@@ -131,11 +148,17 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
         // get a user
         $user = $this->find($id, ['profile']);
 
+        $profile = $user->profile->updateProfile($data);
+
+        $profile->save();
+
+        return $profile;
+
         // add a notify false if was not passed.
-        if ( ! isset($data['notify'])) $data['notify'] = false;
+        // if ( ! isset($data['notify'])) $data['notify'] = false;
 
         // update your profile
-        return $user->profile->fill($data)->save();
+        // return $user->profile->fill($data)->save();
     }
 
     /**

@@ -47,6 +47,7 @@ return [
         'Champ\Listeners\ChampionshipVacancyUpdater',
         'Champ\Listeners\CompetitionVacancyUpdater',
         'Champ\Listeners\NotificationListener',
-        'Champ\Listeners\AdminNotificationListener'
+        'Champ\Listeners\AdminNotificationListener',
+        'Champ\Listeners\NewsletterListListener'
     ]
 ];

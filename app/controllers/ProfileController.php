@@ -1,6 +1,7 @@
 <?php
 
 use Champ\Account\Repositories\UserRepositoryInterface;
+use Laracasts\Commander\Events\DispatchableTrait;
 
 class ProfileController extends BaseController {
 
@@ -10,6 +11,8 @@ class ProfileController extends BaseController {
 	 * @var Champ\Repositories\ProfileRepositoryInterface
 	 */
 	protected $userRepo;
+
+	use DispatchableTrait;
 
 	public function __construct(UserRepositoryInterface $user)
 	{
@@ -68,10 +71,12 @@ class ProfileController extends BaseController {
 	{
 		// check if the profile was created
 		// if not, redirect the user back and show what happened
-		if ( ! $this->userRepo->updateProfile(Auth::user()->id, Input::all()))
+		if ( ! $profile = $this->userRepo->updateProfile(Auth::user()->id, Input::all()))
 		{
 			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
 		}
+
+		$this->dispatchEventsFor($profile);
 
 		// if came here means profile was created
 		// redirect him to your brand new profile and show a nice message =)
@@ -88,10 +93,12 @@ class ProfileController extends BaseController {
 	{
 		// check if the profile was created
 		// if not, redirect the user back to the form and show what happened
-		if ( ! $this->userRepo->createProfile(Auth::user()->id, Input::all()))
+		if ( ! $profile = $this->userRepo->createProfile(Auth::user()->id, Input::all()))
 		{
 			return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
 		}
+
+		$this->dispatchEventsFor($profile);
 
 		// if came here means everything gone ok
 		// lets redirect the user and show a nice message =)

@@ -12,7 +12,8 @@
 		"laracasts/presenter": "0.1.*",
 		"michelf/php-markdown": "1.4.*",
 		"indatus/dispatcher": "1.*",
-		"guzzlehttp/guzzle": "~5.0"
+		"guzzlehttp/guzzle": "~5.0",
+		"mailchimp/mailchimp": "~2.0"
 	},
 	"require-dev": {
 		"way/generators": "2.*",
