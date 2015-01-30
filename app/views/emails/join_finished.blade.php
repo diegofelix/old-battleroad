@@ -1,6 +1,6 @@
 <html>
 <body>
-    <p>Olá <strong>Diego Felix,</strong></p>
+    <p>Olá <strong>Admin,</strong></p>
 
     <ul>
     @foreach ($cancelledJoins as $id)
