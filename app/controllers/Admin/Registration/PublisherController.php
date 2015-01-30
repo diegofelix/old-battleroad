@@ -1,6 +1,10 @@
 <?php namespace Admin\Registration;
 
+use Laracasts\Commander\Events\DispatchableTrait;
+
 class PublisherController extends BaseRegistrationController {
+
+    use DispatchableTrait;
 
     /**
      * Show all saved data to confirm to the user all steps before publish
@@ -29,7 +33,9 @@ class PublisherController extends BaseRegistrationController {
         // check the count of competitions
         if ($championship->competitions->count() > 0)
         {
-            $this->championshipRepository->publish($id);
+            $championship = $this->championshipRepository->publish($id);
+
+            $this->dispatchEventsFor($championship);
 
             return $this->redirectRoute('admin.championships.show', [$id])
                 ->with('message', 'Campeonato publicado!');

@@ -6,6 +6,7 @@ use Laracasts\Presenter\PresentableTrait;
 use Champ\Traits\FormatToDb;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\ChampionshipFinished;
+use Champ\Championship\Events\ChampionshipPublished;
 
 class Championship extends Eloquent
 {
@@ -40,6 +41,21 @@ class Championship extends Eloquent
     public static function register($user_id, $name, $description, $location, $event_start, $image = null, $thumb = null)
     {
         return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image', 'thumb'));
+    }
+
+    /**
+     * Publish a Championship
+     *
+     * @return Championship
+     */
+    public function publish()
+    {
+        $this->published = true;
+        $this->published_at = Date('Y-m-d H:i:s');
+
+        $this->raise(new ChampionshipPublished($this));
+
+        return $this;
     }
 
     /**

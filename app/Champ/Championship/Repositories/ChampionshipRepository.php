@@ -56,10 +56,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     {
         $championship = $this->model->find($id);
 
-        $championship->published = true;
-        $championship->published_at = Date('Y-m-d H:i:s');
+        $championship->publish();
 
-        return $championship->save();
+        $championship->save();
+
+        return $championship;
     }
 
     /**

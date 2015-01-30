@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"Champion",
+				"championship"
+			],
+			[
+				"Champi",
+				"ChampionshipPublished"
+			],
+			[
+				"User",
+				"UserChangedNotifications"
+			],
+			[
+				"uns",
+				"unsubscribeFrom"
+			],
+			[
+				"subs",
+				"subscribeUserForChampionships"
+			],
+			[
+				"sub",
+				"subscribeTo"
+			],
+			[
+				"ca",
+				"campaign"
+			],
+			[
 				"stri",
 				"strip_tags"
 			],
@@ -70,10 +98,6 @@
 			[
 				"Repo",
 				"Repositories"
-			],
-			[
-				"Champion",
-				"ChampionshipRepositoryInterface"
 			],
 			[
 				"champ",
@@ -272,10 +296,6 @@
 				"serie"
 			],
 			[
-				"ca",
-				"category"
-			],
-			[
 				"serie",
 				"serieData"
 			],
@@ -368,10 +388,6 @@
 				"CommanderTrait"
 			],
 			[
-				"Champi",
-				"ChampionshipRepositoryInterface"
-			],
-			[
 				"compa",
 				"comparativeProxies"
 			],
@@ -422,10 +438,6 @@
 			[
 				"command",
 				"commandBus"
-			],
-			[
-				"subs",
-				"subscription"
 			],
 			[
 				"comman",
@@ -502,86 +514,16 @@
 			[
 				"averae",
 				"averageIdentifieds"
-			],
-			[
-				"getAver",
-				"getAverageIdentifieds"
-			],
-			[
-				"comparati",
-				"comparativeIdentifieds"
-			],
-			[
-				"var",
-				"var_dump"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "app/Champ/Newsletters/NewsletterList.php",
+			"contents": "<?php\n\nreturn [\n    '' => '',\n    '' => '',\n    '' => '425ef84f09',\n    '' => '',\n    '' => ''\n\n];\n",
 			"settings":
 			{
-				"buffer_size": 467,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Newsletters/Mailchimp/NewsletterList.php",
-			"settings":
-			{
-				"buffer_size": 1461,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/config/app.php",
-			"settings":
-			{
-				"buffer_size": 7716,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Listeners/NotificationListener.php",
-			"settings":
-			{
-				"buffer_size": 2246,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Champ/Notifications/ChampionshipPublished.php",
-			"settings":
-			{
-				"buffer_size": 273,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "<?php namespace Champ\\Notifications\\Mailchimp;\n\nuse Champ\\Notifications\\ChampionshipPublished as ChampionshipPublishedInterface;\nuse Mailchimp;\n\nclass ChampionshipPublished implements ChampionshipPublishedInterface {\n\n    /**\n     * Mailchimp\n     *\n     * @var Mailchimp\n     */\n    protected $mailchimp;\n\n    public function __construct(Mailchimp $mailchimp)\n    {\n        $this->mailchimp = $mailchimp;\n    }\n\n    /**\n     * Notify a user when a championship is published\n     *\n     * @param  string $title\n     * @param  string $body\n     * @return mixed\n     */\n    public function notify($title, $body)\n    {\n        $options = [\n            'subject' => 'Correio Battleroad',\n            'from_name' => 'Battleroad',\n            'from_email' => 'contato@battleroad.com.br',\n            'to_name' => 'Battleroad Subscriber'\n        ];\n\n        $content = [\n            'html' => $body,\n            'text' => strip_tags($body)\n        ];\n    }\n\n}",
-			"file": "app/Champ/Notifications/Mailchimp/ChampionshipPublished.php",
-			"file_size": 613,
-			"file_write_time": 130669254938180930,
-			"settings":
-			{
-				"buffer_size": 952,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": ".env.local.php",
-			"settings":
-			{
-				"buffer_size": 1118,
+				"buffer_size": 99,
 				"line_ending": "Unix"
 			}
 		}
@@ -888,14 +830,101 @@
 	[
 		"/media/win/xampp/htdocs/answer-stack",
 		"/media/win/xampp/htdocs/answer-stack/app",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Newsletters/Mailchimp",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Notifications",
-		"/media/win/xampp/htdocs/answer-stack/app/config",
-		"/media/win/xampp/htdocs/answer-stack/app/views/pages"
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners",
+		"/media/win/xampp/htdocs/answer-stack/bootstrap",
+		"/media/win/xampp/htdocs/answer-stack/public"
 	],
 	"file_history":
 	[
+		"/media/win/xampp/htdocs/answer-stack/.env.local.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Notifications/Mailchimp/ChampionshipPublished.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/AdminNotificationListener.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Support/helpers.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/emails/championship_finished.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/emails/join_finished.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/emails/user_joined.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/NewsletterListListener.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/ProfileController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepository.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Newsletters/Mailchimp/NewsletterList.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Events/ChampionshipPublished.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/PublisherController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Listeners/NewsletterSenderListener.php",
+		"/media/win/xampp/htdocs/answer-stack/public/robots.txt",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Notifications/ChampionshipPublished.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Billing/MercadoPago/Marketplace.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/HomeController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/app.php",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/admin.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/DispatchableTrait.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/validation/src/Laracasts/Validation/FormValidationException.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/admin/register/confirmation.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/FormatRepositoryInterface.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/packages/artdarek/oauth-4-laravel/config.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/conf.py",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/libsass/color_names.hpp",
+		"/media/win/xampp/htdocs/answer-stack/composer.json",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/ChampionshipsController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Profile.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Events/UserJoined.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/tests/Unit/OAuth1/Service/YahooTest.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/tests/Unit/Common/Storage/SymfonySessionTest.php",
+		"/home/diego/Desktop/users.csv",
+		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Events/UserChangedProfile.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/RegisterController.php",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/replaceExtension.js",
+		"/media/win/xampp/htdocs/answer-stack/app/routes.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/SessionController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/config/session.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/lib/Predis/Command/ServerEvalSHA.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/streams/src/Exception/SeekException.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Status.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/docs/overview.rst",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/AccountServiceProvider.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/DependencyInjection/AddClassesToCachePass.php",
+		"/media/win/xampp/htdocs/answer-stack/public/js/admin_championship.js",
+		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/examples/yahoo.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsSpecificationExamples.yml",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/yaml/Symfony/Component/Yaml/Tests/Fixtures/YtsErrorTests.yml",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_03_18_221206_create_profiles_table.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/bin/create-pear",
+		"/media/win/xampp/htdocs/answer-stack/app/views/profile/create.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/bin/create-single-file",
+		"/media/win/xampp/htdocs/answer-stack/app/database/migrations/2014_04_22_214349_create_games_table.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/mustache/mustache/bin/create_example.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/phpseclib/phpseclib/build/code-sniffer-ruleset.xml",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Newsletters/NewsletterList.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Events/UserSignedUp.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Events/UserChangedNotifications.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/nikic/php-parser/lib/PHPParser/Node/Expr/NotEqual.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/NotificationController.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/monolog/monolog/src/Monolog/Handler/ErrorLogHandler.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/EventListener/EsiListener.php",
+		"/media/win/xampp/htdocs/answer-stack/app/storage/views/e5081c78031e0df1f4eca83840efe89b",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/RegisterController.php",
+		"/media/win/xampp/htdocs/answer-stack/app/views/championships/register.blade.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/JoinCommandHandler.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/NotificationsServiceProvider.php",
+		"/media/win/xampp/htdocs/answer-stack/app/controllers/AuthController.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/event-dispatcher/Symfony/Component/EventDispatcher/EventDispatcher.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/doctrine/common/lib/Doctrine/Common/EventSubscriber.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php",
+		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/EloquentDatabaseProvider.php",
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/.fuse_hidden0004c0c300000002",
+		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-less/node_modules/less/.grunt/grunt-contrib-jasmine/jasmine.js",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Providers/NewslettersListServiceProvider.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/mailchimp/mailchimp/src/Mailchimp.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/lusitanian/oauth/examples/mailchimp.php",
@@ -905,10 +934,6 @@
 		"/home/diego/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/media/win/xampp/htdocs/answer-stack/.gitignore",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Social/Facebook/FacebookDataFormatter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/config/champ.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/AuthController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/ChampionshipRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/show.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/pages/bcash.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_organizer.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_player.blade.php",
@@ -919,11 +944,6 @@
 		"/home/diego/Desktop/bootstrap/js/bootstrap.min.js",
 		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_disqus.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/public/images/championships/.gitignore",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/ChampionshipsController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/ChampionshipPresenter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/championship.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Status.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/predis/predis/examples/SessionHandler.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/.fuse_hidden00006a6e00000003",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/GameRepository.php",
@@ -938,96 +958,16 @@
 		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/src/Collection.php",
 		"/media/win/xampp/htdocs/answer-stack/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Collection.php",
-		"/media/win/xampp/htdocs/answer-stack/.env.local.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/pages/how_it_works.blade.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Presenters/CompetitionPresenter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/JoinCommandHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/join.php",
 		"/media/win/xampp/htdocs/answer-stack/app/filters.php",
 		"/media/win/xampp/htdocs/answer-stack/app/Champ/Validators/Core/AbstractValidator.php",
 		"/media/win/xampp/htdocs/answer-stack/app/views/join/bcash.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/FormatRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/FormatRepositoryInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/filp/whoops/src/Whoops/Resources/views/frame_list.html.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/symfony/http-kernel/Symfony/Component/HttpKernel/Tests/EventListener/FragmentListenerTest.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Mail/Transport/LogTransport.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpunit/phpunit/src/Framework/InvalidCoversTargetError.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Join.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/JoinController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/src/Cookie/CookieJar.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/ChampionshipFullException.php",
-		"/media/win/xampp/htdocs/answer-stack/app/routes/admin.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/show.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/cancel.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/ChampionshipsController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/layouts/admin_championship.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/index.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/CompetitionsController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/register.js",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/PublisherController.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp/completion/bash",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpunit/php-code-coverage/tests/_files/BankAccount.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/bin/boris",
-		"/media/win/xampp/htdocs/answer-stack/public/js/championship.js",
-		"/media/win/xampp/htdocs/answer-stack/app/views/partials/_logged.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpunit/php-code-coverage/src/CodeCoverage/Filter.php",
-		"/media/win/xampp/htdocs/answer-stack/app/tests/models/UserTest.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/Builder.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/DynamicAttributeReplacer.php",
-		"/media/win/xampp/htdocs/answer-stack/app/tests/TestCase.php",
-		"/media/win/xampp/htdocs/answer-stack/app/tests/fixtures.yml",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/js/bootstrap-datepicker.js",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/EloquentDatabaseProvider.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/Factory.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laravel/framework/src/Illuminate/Database/Schema/Blueprint.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/laracasts/testdummy/src/Laracasts/TestDummy/BuildableRepositoryInterface.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-sass/node_modules/node-sass/build.js",
-		"/media/win/xampp/htdocs/answer-stack/app/config/testing/database.php",
-		"/media/win/xampp/htdocs/answer-stack/composer.json",
-		"/media/win/xampp/htdocs/answer-stack/app/spec/Champ/Account/ProfileSpec.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/patchwork/utf8/.travis.yml",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpdocumentor/reflection-docblock/.gitignore",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpspec/phpspec/phpspec.yml",
-		"/media/win/xampp/htdocs/answer-stack/vendor/phpspec/phpspec/features/bootstrap/PhpSpecContext.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/autoload.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/postcss/lib/vendor.js",
-		"/media/win/xampp/htdocs/answer-stack/vendor/nesbot/carbon/tests/StartEndOfTest.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/doctrine/cache/lib/Doctrine/Common/Cache/ZendDataCache.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/nesbot/carbon/tests/DayOfWeekModifiersTest.php",
-		"/media/win/xampp/htdocs/answer-stack/vendor/guzzlehttp/guzzle/src/Event/EndEvent.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp/node_modules/liftoff/lib/valid_extensions.js",
-		"/media/win/xampp/htdocs/answer-stack/app/config/view.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/UpdateChampionshipCommandHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/UpdateChampionshipValidator.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/base/bootstrap/responsive-utilities.less",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp/node_modules/orchestrator/lib/runTask.js",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-uglify/node_modules/uglify-js/test/run-tests.js",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Forms/ChampionshipRegisterForm.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Forms/ChampionshipUpdateForm.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Forms/ChampionshipBannerForm.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Events/ChampionshipFinished.php",
-		"/media/win/xampp/htdocs/answer-stack/node_modules/gulp-util/lib/replaceExtension.js",
-		"/media/win/xampp/htdocs/answer-stack/app/views/championships/register.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/controllers/Admin/Registration/RegisterController.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommandHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Registration/RegisterChampionshipCommand.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/UpdateChampionshipCommand.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/register.less",
-		"/media/win/xampp/htdocs/answer-stack/app/views/admin/championships/edit.blade.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/UpdateBannerCommandHandler.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/index-responsive.less",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/profile.less",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/Repositories/UserRepository.php",
-		"/media/win/xampp/htdocs/answer-stack/app/assets/less/user-profile.less",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/UpdateBannerCommand.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Join/Events/UserJoined.php",
-		"/media/win/xampp/htdocs/answer-stack/app/Champ/Account/User.php"
+		"/media/win/xampp/htdocs/answer-stack/app/Champ/Championship/Repositories/FormatRepository.php"
 	],
 	"find":
 	{
-		"height": 48.0
+		"height": 49.0
 	},
 	"find_in_files":
 	{
@@ -1056,6 +996,42 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"championship",
+			"ChampionshipPublished",
+			"ChampionshipFinished",
+			"ChampionshipPublished",
+			"newsletterList",
+			"NewsletterList",
+			"newsletterList",
+			"championship",
+			"|",
+			"| ",
+			" | ",
+			"| ",
+			"@",
+			"             ",
+			"UserChangedNotifications",
+			"UserSignedUp",
+			"user",
+			"$user",
+			"User",
+			"$this->dispatchEventsFor($user);",
+			"( ! $user",
+			"dispa",
+			"UserCanceledNotifications",
+			"$this->newsletterList->subscribeTo('championshipsSubscribers', $event->user->email);",
+			"$this->newsletterList->unsubscribeFrom('championshipsSubscribers', $event->user->email);",
+			"$email",
+			"$this->model->register($data);",
+			"EventGenerator",
+			"$this->model->create",
+			"join",
+			"Join",
+			"join",
+			"$join",
+			"Newsletters",
+			"Notifications",
+			"NewsletterList",
 			"Champ\\Billing\\",
 			"Champ\\Billing\\Core\\",
 			"$list",
@@ -1147,43 +1123,7 @@
 			"btn",
 			"organizer",
 			"');\n",
-			"getByDateDiff",
-			"championship",
-			"$championships",
-			"championships",
-			"div",
-			"FA FA-",
-			"icon icon-",
-			"email_loja",
-			"name",
-			"email",
-			"email_",
-			"+",
-			"prod1",
-			"_1",
-			"produto_codigo_1",
-			"909E12A17C8B38FF13545BF1639A8615",
-			"$this->billing",
-			"PaymentListenerInterface",
-			"billing",
-			"\\",
-			"notifiable",
-			"Status",
-			",",
-			"=>",
-			" ",
-			"Champ\\Championship\\Repositories\\ChampionshipRepositoryInterface",
-			"ChampionshipRepositoryInterface",
-			"joinRepository",
-			"whereRaw",
-			"item",
-			"R$ {{",
-			"return $totalPrice;",
-			"get",
-			"set",
-			"name",
-			"join",
-			"'"
+			"getByDateDiff"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1205,236 +1145,36 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/Champ/Newsletters/NewsletterList.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 467,
+						"buffer_size": 99,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								154,
-								154
+								93,
+								93
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 305.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/Champ/Newsletters/Mailchimp/NewsletterList.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1461,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								274,
-								274
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 240.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/config/app.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7716,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3233,
-								3233
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 3600.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/Champ/Listeners/NotificationListener.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2246,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3120.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"default_dir": "/media/win/xampp/htdocs/answer-stack/app/Champ/Notifications",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "app/Champ/Notifications/ChampionshipPublished.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 273,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								77,
-								77
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/Champ/Notifications/Mailchimp/ChampionshipPublished.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 952,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								943,
-								943
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": -0.0,
-						"translation.y": 960.0,
+						"translation.y": 94.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": ".env.local.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1114,
-								1114
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": -0.0,
-						"translation.y": 1200.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -1487,6 +1227,70 @@
 		"selected_items":
 		[
 			[
+				"championship.php",
+				"app/Champ/Championship/Championship.php"
+			],
+			[
+				"app/champ.p",
+				"app/config/champ.php"
+			],
+			[
+				"profile.php",
+				"app/Champ/Account/Profile.php"
+			],
+			[
+				"join.php",
+				"app/Champ/Join/Join.php"
+			],
+			[
+				"registercontroller",
+				"app/controllers/RegisterController.php"
+			],
+			[
+				"sessioncontrol",
+				"app/controllers/SessionController.php"
+			],
+			[
+				"join",
+				"app/Champ/Join/Join.php"
+			],
+			[
+				"account/user",
+				"app/Champ/Account/User.php"
+			],
+			[
+				"account/profile",
+				"app/Champ/Account/Profile.php"
+			],
+			[
+				"userreposito",
+				"app/Champ/Account/Repositories/UserRepository.php"
+			],
+			[
+				"eloquent/model",
+				"vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php"
+			],
+			[
+				"eventgene",
+				"vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php"
+			],
+			[
+				"userrepository",
+				"app/Champ/Account/Repositories/UserRepository.php"
+			],
+			[
+				"joincommandhan",
+				"app/Champ/Join/JoinCommandHandler.php"
+			],
+			[
+				"config/champ",
+				"app/config/champ.php"
+			],
+			[
+				"app.php",
+				"app/config/app.php"
+			],
+			[
 				"mailc",
 				"vendor/mailchimp/mailchimp/src/Mailchimp.php"
 			],
@@ -1523,10 +1327,6 @@
 				"app/filters.php"
 			],
 			[
-				"join.php",
-				"app/routes/join.php"
-			],
-			[
 				"routes/cham",
 				"app/routes/championship.php"
 			],
@@ -1551,16 +1351,8 @@
 				"app/routes/admin.php"
 			],
 			[
-				"championship.php",
-				"app/Champ/Championship/Championship.php"
-			],
-			[
 				"championform",
 				"app/Champ/Forms/ChampionshipRegisterForm.php"
-			],
-			[
-				"userrepository",
-				"app/Champ/Account/Repositories/UserRepository.php"
 			],
 			[
 				"admin/registercontroler",
@@ -1600,10 +1392,6 @@
 			],
 			[
 				"admin/registercontrol",
-				"app/controllers/Admin/Registration/RegisterController.php"
-			],
-			[
-				"registercontroller",
 				"app/controllers/Admin/Registration/RegisterController.php"
 			],
 			[
@@ -1663,10 +1451,6 @@
 				"app/config/champ.php"
 			],
 			[
-				"eventgene",
-				"vendor/laracasts/commander/src/Laracasts/Commander/Events/EventGenerator.php"
-			],
-			[
 				"champ/championship.php",
 				"app/Champ/Championship/Championship.php"
 			],
@@ -1681,10 +1465,6 @@
 			[
 				"admin/champcn",
 				"app/controllers/Admin/ChampionshipsController.php"
-			],
-			[
-				"account/user",
-				"app/Champ/Account/User.php"
 			],
 			[
 				"user.php",
@@ -1773,10 +1553,6 @@
 			[
 				"joinrepository.php",
 				"app/Champ/Join/Repositories/JoinRepository.php"
-			],
-			[
-				"profile.php",
-				"app/Champ/Account/Profile.php"
 			],
 			[
 				"profilecontroller",
@@ -1891,10 +1667,6 @@
 				"app/Champ/Join/Repositories/JoinRepositoryInterface.php"
 			],
 			[
-				"app.php",
-				"app/config/app.php"
-			],
-			[
 				"join/show.",
 				"app/views/join/show.blade.php"
 			],
@@ -1955,10 +1727,6 @@
 				"app/controllers/JoinController.php"
 			],
 			[
-				"joincommandhan",
-				"app/Champ/Join/JoinCommandHandler.php"
-			],
-			[
 				"notificationha",
 				"app/Champ/Billing/Pagseguro/NotificationHandler.php"
 			],
@@ -1969,34 +1737,6 @@
 			[
 				"routes/joi",
 				"app/routes/join.php"
-			],
-			[
-				"joincommandhanl",
-				"app/Champ/Join/JoinCommandHandler.php"
-			],
-			[
-				"joincommnan",
-				"app/Champ/Join/JoinCommandHandler.php"
-			],
-			[
-				"joi",
-				"app/controllers/JoinController.php"
-			],
-			[
-				"not",
-				"app/controllers/NotificationController.php"
-			],
-			[
-				"competition.",
-				"app/Champ/Championship/Competition.php"
-			],
-			[
-				"competitionrepor",
-				"app/Champ/Championship/Repositories/CompetitionRepository.php"
-			],
-			[
-				"championshipreposit",
-				"app/Champ/Championship/Repositories/ChampionshipRepository.php"
 			]
 		],
 		"width": 0.0
