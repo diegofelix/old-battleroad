@@ -1,0 +1,31 @@
+<?php
+
+return [
+	'APP_ENV' => 'production',
+
+	'DB_HOST' => 'localhost',
+	'DB_NAME' => 'battleroad',
+	'DB_USER' => 'root',
+	'DB_PASS' => 'root',
+
+        'MOIP_ENV'      => 'test',
+        'MOIP_KEY'      => 'H980Q22VM3W6LC6LIQIA8JVQTUKF1E1ONH4VL3QC',
+        'MOIP_TOKEN'    => 'ZOYXSPWPYR5ZEGYPGQVRKO9I58JA6CLU',
+	
+	'PAGSEGURO_EMAIL' => 'diegoflx.oliveira@gmail.com',
+	//'PAGSEGURO_TOKEN' => 'B36A4ADF9F7E4B58A82E26D2D8AA4BBD',
+	'PAGSEGURO_TOKEN' => '170B020763384756ADA8C6C66E3A3F4B',
+
+	// mandril settings
+	'MANDRILL_SECRET' => '3zD6rbq59FcpQmuMUm_ZXA',
+
+	// mailchimp settings
+	'MAILCHIMP_APIKEY' => '1e0a9b7ea570193a15452a331e4988cb-us7',
+
+	'MERCADOLIVRE_CLIENT' => '327781618675455',
+	'MERCADOLIVRE_SECRET' => 'nTpwgusnAxp7P3bjmDGlVHqbxcOXVI7x',
+
+	'BCASH_ACCOUNT' => 'diegoflx.oliveira@gmail.com',
+	'BCASH_TOKEN' => '909E12A17C8B38FF13545BF1639A8615'
+
+];
