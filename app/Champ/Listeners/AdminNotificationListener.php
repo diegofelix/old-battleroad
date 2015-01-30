@@ -52,6 +52,7 @@ class AdminNotificationListener extends EventListener {
      */
     public function whenChampionshipPublished(ChampionshipPublished $championship)
     {
+        $championship = $championship->championship;
         Mail::send('emails.championship_published', compact('championship'), function($message)
         {
             $message->to(Config::get('champ.admin_email'))->subject("Novo Campeonato Publicado");
