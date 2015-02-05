@@ -23,7 +23,7 @@
             @foreach ($competition->items as $item)
                 <tr class="status status-{{ $item->join->present()->simplifiedStatus }}">
                     <td>{{ HTML::image($item->join->user->present()->userImage) }}
-                    {{ $item->join->user->name }}</td>
+                    {{ link_to_route('profile.show', $item->join->user->name, [$item->join->user->username]) }}</td>
                     <td>{{ $item->join->status->name }}</td>
                 </tr>
             @endforeach
