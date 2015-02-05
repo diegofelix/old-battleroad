@@ -88,7 +88,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
 
         // when a user signed up we fire an event
         // here we release every event
-        $this->dispatchEventsFor($join);
+        $this->dispatchEventsFor($user);
 
         return $this->userFound($user);
     }
