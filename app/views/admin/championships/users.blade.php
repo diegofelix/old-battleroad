@@ -14,16 +14,14 @@
             <tr>
                 <th>Nome</th>
                 <th>Status</th>
-                <th>Ações</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($championship->joins as $join)
                 <tr class="status status-{{ $join->present()->simplifiedStatus }}">
                     <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ $join->user->name }}</td>
+                    {{ link_to_route('profile.show', $join->user->name, [$join->user->username]) }}</td>
                     <td>{{ $join->status->name }}</td>
-                    <td><a href="">Detalhes</a></td>
                 </tr>
             @endforeach
         </tbody>
