@@ -26,7 +26,7 @@ $app = new Illuminate\Foundation\Application;
 */
 
 $env = $app->detectEnvironment([
-    'local' => ['precise64']
+    'local' => ['precise64', 'SHADOW']
 ]);
 
 /*

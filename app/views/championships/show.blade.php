@@ -42,6 +42,7 @@
                                         <th>Formato</th>
                                         <th>Plataforma</th>
                                         <th>Vagas</th>
+                                        <th>Data</th>
                                         <th>Inscrição</th>
                                     </tr>
                                 </thead>
@@ -56,6 +57,7 @@
                                             </td>
                                             <td>{{{ $competition->platform->name }}}</td>
                                             <td>{{{ $competition->present()->slotsRemaining }}}</td>
+                                            <td>{{{ $competition->present()->eventStart }}}</td>
                                             <td>{{ $competition->present()->userPrice }}</td>
                                         </tr>
                                     @endforeach
