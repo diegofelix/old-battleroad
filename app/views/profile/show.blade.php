@@ -2,7 +2,7 @@
 
 @section('title', 'Perfil de ' . $user->name)
 @section('meta')
-    <meta property="og:image" content="{{ HTML::image($user->present()->userImage, $user->name, ['class' => 'img-responsive']) }}"/>
+    <meta property="og:image" content="{{ link_to_asset($user->present()->userImage) }}" />
 @stop
 
 @section ('content')
