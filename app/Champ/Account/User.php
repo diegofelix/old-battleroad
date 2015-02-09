@@ -5,6 +5,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 use Champ\Account\Events\UserSignedUp;
+use Champ\Join\Status;
 use Eloquent;
 use Auth;
 use Hash;
@@ -137,6 +138,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     {
         return $this->joins()
                 ->where('championship_id', $id)
+                ->whereNotIn('status_id', [Status::RETURNED, Status::CANCELLED, Status::CHARGEBACK])
                 ->first();
     }
 
