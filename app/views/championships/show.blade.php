@@ -81,7 +81,8 @@
                         @endif
                     </div>
                 </div>
-            </div>
+
+                @include('championships.partials.competitors', ['perPage' => 10])
         </div>
 
     </div><!-- championship -->
