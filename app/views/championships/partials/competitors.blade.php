@@ -11,7 +11,7 @@
             </table>
             @if ($championship->joins->count() > $perPage)
                 <div class="panel-footer">
-                    {{ link_to_route('join.create', 'Veja a lista completa', $championship->id, ['class' => 'btn btn-block btn-default']) }}
+                    +{{ $championship->joins()->count() - $perPage }} competidor(es).
                 </div>
             @endif
         </div>
