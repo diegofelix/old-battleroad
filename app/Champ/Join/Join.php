@@ -136,6 +136,16 @@ class Join extends Eloquent {
     }
 
     /**
+     * Check if the championship is Active or not
+     *
+     * @return boolean
+     */
+    public function isActive()
+    {
+        return ! in_array($this->status_id, [Status::CANCELLED, Status::RETURNED, Status::CHARGEBACK]);
+    }
+
+    /**
      * Convert the price to cents
      *
      * @param int $value
