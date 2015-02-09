@@ -19,9 +19,10 @@
                             </header>
                             <section>
                                 <ul class="settings-list">
-                                    @if ($user->profile)
-                                    <li><a href="{{ route('profile.edit', Auth::user()->username) }}"><i class="fa fa-user"></i> Configurações</a></li>
-                                    @endif
+                                    <li>
+                                        <?php $route = ($user->profile) ? 'profile.edit': 'profile.create' ?>
+                                        <a href="{{ route($route, Auth::user()->username) }}"><i class="fa fa-user"></i> Configurações</a>
+                                    </li>
                                     <li><a href="#"><i class="fa fa-key"></i> Alterar Senha</a></li>
                                     <li><a href="{{ route('session.destroy') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
                                 </ul>
