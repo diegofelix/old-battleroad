@@ -39,4 +39,14 @@ class CompetitionPresenter extends Presenter
 
         return 'Vagas esgotadas';
     }
+
+    /**
+     * Show the event start with the data
+     *
+     * @return string
+     */
+    public function eventStart()
+    {
+        return $this->start->format('d/m/Y');
+    }
 }
