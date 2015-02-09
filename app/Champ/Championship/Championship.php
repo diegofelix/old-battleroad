@@ -251,4 +251,15 @@ class Championship extends Eloquent
         return $this->finished == true;
     }
 
+    /**
+     * Get a qty of competitors based on inportance
+     *
+     * @param  int $qty
+     * @return Collection
+     */
+    public function getFeaturedCompetitors($qty = 10)
+    {
+        return $this->joins()->limit($qty)->get();
+    }
+
 }
