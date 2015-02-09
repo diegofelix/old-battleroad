@@ -1,6 +1,9 @@
 @extends ('layouts.default')
 
 @section('title', 'Perfil de ' . $user->name)
+@section('meta')
+    <meta property="og:image" content="{{ HTML::image($user->present()->userImage, $user->name, ['class' => 'img-responsive']) }}"/>
+@stop
 
 @section ('content')
 
