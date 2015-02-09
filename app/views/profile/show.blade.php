@@ -2,7 +2,7 @@
 
 @section('title', 'Perfil de ' . $user->name)
 @section('meta')
-    <meta property="og:image" content="{{ link_to_asset($user->present()->userImage) }}" />
+    <meta property="og:image" content="{{ asset($user->present()->userImage) }}" />
 @stop
 
 @section ('content')
