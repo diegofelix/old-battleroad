@@ -6,7 +6,7 @@
         <meta name="description" content="@yield('meta_description', 'O primeiro site de campeonatos do brasil!')">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        @yield('meta');
+        @yield('meta')
 
 	<meta name="google-site-verification" content="QlRQqaIL0xz5aGS-ZENdKQKdTNaUQfiphyBgVJV_-u4" />
 
