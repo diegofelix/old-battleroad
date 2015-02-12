@@ -32,4 +32,14 @@ class PagesController extends BaseController {
         return $this->view('pages/how_player');
     }
 
+    /**
+     * Change log page
+     *
+     * @return Response
+     */
+    public function changelog()
+    {
+        return $this->view('pages/changelog');
+    }
+
 }

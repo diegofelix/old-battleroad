@@ -44,6 +44,7 @@
                             <h4>Plataforma</h4>
                             <ul>
                                 <li>{{ link_to_route('how_it_works', 'Como funciona?') }}</li>
+                                <li>{{ link_to_route('changelog', 'Changelog') }}</li>
                                 <!-- <li><a href="#">Sobre</a></li> -->
                                 <!-- <li><a href="#">Changelog</a></li> -->
                                 <!--<li><a href="#">Estatísticas</a></li>-->
