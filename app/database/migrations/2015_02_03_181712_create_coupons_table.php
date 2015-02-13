@@ -18,6 +18,7 @@ class CreateCouponsTable extends Migration {
 			$table->string('code', 11)->unique();
 			$table->unsignedInteger('championship_id');
 			$table->unsignedInteger('user_id')->nullable();
+			$table->unsignedInteger('price');
 			$table->boolean('used')->default(false);
 			$table->timestamps();
 			$table->foreign('championship_id')->references('id')->on('championships');
