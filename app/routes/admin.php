@@ -193,6 +193,16 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'as' => 'admin.championships.cancel',
             'uses' => 'ChampionshipsController@cancel'
         ]);
+
+        Route::get('championships/{id}/coupons', [
+            'as' => 'admin.championships.coupons',
+            'uses' => 'CouponsController@index'
+        ]);
+
+        Route::post('championships/{id}/coupons', [
+            'as' => 'admin.championships.coupons.generate',
+            'uses' => 'CouponsController@generate'
+        ]);
     });
 
     Route::get('dashboard', [

@@ -11,10 +11,11 @@
                         <a href="{{ route('admin.championships.cancel', $championship->id) }}" class="btn btn-danger btn-lg btn-block">Cancelar</a>
                     @endif
                     <ul>
-                        {{ champ_action_links('Informações', '', 'admin.championships.show', $championship->id, 'icon-info-circle'); }}
-                        {{ champ_action_links('Banner', 'banner', 'admin.championships.banner', $championship->id, 'icon-camera'); }}
-                        {{ champ_action_links('Jogos', 'games', 'admin.championships.games', $championship->id, 'icon-gamepad'); }}
-                        {{ champ_action_links('Participantes', 'users', 'admin.championships.users', $championship->id, 'icon-users'); }}
+                        {{ champ_action_links('Informações', '', 'admin.championships.show', $championship->id, 'fa fa-info-circle'); }}
+                        {{ champ_action_links('Banner', 'banner', 'admin.championships.banner', $championship->id, 'fa fa-camera'); }}
+                        {{ champ_action_links('Jogos', 'games', 'admin.championships.games', $championship->id, 'fa fa-gamepad'); }}
+                        {{ champ_action_links('Participantes', 'users', 'admin.championships.users', $championship->id, 'fa fa-users'); }}
+                        {{ champ_action_links('Cupons', 'coupons', 'admin.championships.coupons', $championship->id, 'fa fa-ticket'); }}
                         {{-- champ_action_links('Feedback', 'feedback', 'admin.championships.feedback', $championship->id, 'icon-star'); --}}
                     </ul>
 
