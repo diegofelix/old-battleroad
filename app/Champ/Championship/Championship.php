@@ -4,6 +4,7 @@ use Eloquent;
 use Carbon\Carbon;
 use Laracasts\Presenter\PresentableTrait;
 use Champ\Traits\FormatToDb;
+use Champ\Join\Status;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Championship\Events\ChampionshipPublished;
@@ -259,7 +260,7 @@ class Championship extends Eloquent
      */
     public function getFeaturedCompetitors($qty = 10)
     {
-        return $this->joins()->limit($qty)->get();
+        return $this->joins()->whereStatusId(Status::APPROVED)->limit($qty)->get();
     }
 
 }
