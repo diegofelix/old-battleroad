@@ -15,6 +15,7 @@ Route::group(['before' => 'auth'], function()
 
     Route::get('join/{id}', [
         'as' => 'join.show',
+        'before' => 'join_owner',
         'uses' => 'JoinController@show'
     ]);
 
