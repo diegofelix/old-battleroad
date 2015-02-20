@@ -31,4 +31,26 @@ class CouponRepository implements CouponRepositoryInterface {
     {
         return $this->model->create($data);
     }
+
+    /**
+     * Find a coupon by its id
+     *
+     * @param  int $id
+     * @return Model
+     */
+    public function find($id)
+    {
+        return $this->model->find($id);
+    }
+
+    /**
+     * Delete a Coupon
+     *
+     * @param  Coupon $coupon
+     * @return boolean
+     */
+    public function delete(Coupon $coupon)
+    {
+        return $coupon->delete();
+    }
 }

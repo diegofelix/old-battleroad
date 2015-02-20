@@ -203,6 +203,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'as' => 'admin.championships.coupons.generate',
             'uses' => 'CouponsController@generate'
         ]);
+
+        Route::delete('championships/{id}/coupons', [
+            'as' => 'admin.championships.coupons.destroy',
+            'uses' => 'CouponsController@destroy'
+        ]);
     });
 
     Route::get('dashboard', [
