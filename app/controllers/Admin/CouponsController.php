@@ -4,6 +4,7 @@ use BaseController;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
 use Champ\Services\KeyGen;
 use Request;
+use Input;
 
 class CouponsController extends BaseController {
 
@@ -49,10 +50,30 @@ class CouponsController extends BaseController {
     {
         $this->couponRepository->create([
             'championship_id' => $championshipId,
-            'code' => $this->keyGen->make()
+            'code' => $this->keyGen->make(),
+            'price' => Input::get('price')
         ]);
 
         return $this->redirectRoute('admin.championships.coupons', $championshipId);
+    }
+
+    /**
+     * Delete a coupon if this coupon has no user
+     *
+     * @param  int $id
+     * @return Response
+     */
+    public function destroy($id)
+    {
+        $coupon = $this->couponRepository->find(Input::get('id'));
+
+        // a little verification to check if the user is the owner
+        if ($coupon->championship_id == $id && empty($coupon->user_id))
+        {
+            $this->couponRepository->delete($coupon);
+        }
+
+        return $this->redirectBack(['message' => 'Cupon excluído com sucesso!']);
     }
 
 }

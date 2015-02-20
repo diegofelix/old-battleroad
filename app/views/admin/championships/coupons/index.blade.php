@@ -4,10 +4,16 @@
         <i class="fa fa-ticket"></i> Cupons <small>Adicione cupons de descontos</small>
     </h3>
 
-    {{ Form::open(['route' => ['admin.championships.coupons.generate', $championship->id], 'role' => 'form']) }}
+    {{ Form::open(['route' => ['admin.championships.coupons.generate', $championship->id], 'role' => 'form', 'class' => 'form-inline']) }}
 
-        <input type="text" name="price" class="form-control">
-        <button type="submit" class="btn btn-info"><i class="fa fa-plus"></i> Gerar Cupon</button>
+        <div class="form-group col-md-2">
+            <label class="sr-only" for="percentage">Porcentagem</label>
+            <div class="input-group ">
+                <div class="input-group-addon">R$</div>
+                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Gerar Cupon</button>
 
     {{ Form::close() }}
 
@@ -27,9 +33,13 @@
                 <tr>
                     <td><input type="text" class="form-control" value="{{ $coupon->code }}" readonly></td>
                     <td>@if(isset($coupon->user)) {{ $coupon->user->name }} @endif</td>
+                    <td>{{ $coupon->present()->userPrice }}</td>
                     <td>{{ $coupon->created_at->format('d/m/Y') }}</td>
                 </tr>
             @endforeach
         </tbody>
     </table>
+@stop
+@section('scripts')
+    {{ HTML::script('js/register.js') }}
 @stop
