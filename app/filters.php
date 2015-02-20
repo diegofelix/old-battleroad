@@ -248,3 +248,5 @@ Route::filter('championship_owner', function(){
 
     if ( ! $championship->isOwner(Auth::user()->id)) App::abort(404);
 });
+
+Route::filter('join_owner', 'Champ\Filters\JoinOwner');
