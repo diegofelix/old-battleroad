@@ -20,4 +20,12 @@ interface CouponRepositoryInterface {
      * @return Model
      */
     public function create($data);
+
+    /**
+     * Get a coupon by its code
+     *
+     * @param  string $code
+     * @return Coupon
+     */
+    public function findByCode($code);
 }

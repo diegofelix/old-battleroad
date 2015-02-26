@@ -76,4 +76,15 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
         return $this->model->where('championship_id', $championshipId)
             ->get();
     }
+
+    /**
+     * Get a join that has a Coupon
+     *
+     * @param  Coupon $coupon
+     * @return Join
+     */
+    public function getByCoupon($coupon)
+    {
+        return $coupon->load('join.items')->join;
+    }
 }

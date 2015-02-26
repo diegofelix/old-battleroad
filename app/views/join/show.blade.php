@@ -51,8 +51,12 @@
                     </table>
                 </div>
             </div>
-            @if ( ! $join->isFree())
 
+            @if ( ! $join->isPaid())
+                @include('join.coupon')
+            @endif
+
+            @if ( ! $join->isFree())
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="fa fa-credit-card"></span> Dados do Pagamento</div>
                     <div class="panel-body">
@@ -72,9 +76,11 @@
                         @if ( ! $join->isPaid())
                             @if ( ! $join->championship->finished)
                                 @include ('join.bcash')
+                            @else
+                                <p>O campeonato já está em andamento, por isso, você não poderá mais realizar o pagamento.</p>
                             @endif
                         @else
-                            <p>O campeonato já está em andamento, por isso, você não poderá mais realizar o pagamento.</p>
+                            <p>Você já está inscrito no campeonato!</p>
                         @endif
                     </div>
                 </div>
