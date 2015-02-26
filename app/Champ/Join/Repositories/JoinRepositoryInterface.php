@@ -28,4 +28,12 @@ interface JoinRepositoryInterface extends RepositoryInterface
      * @return Collection
      */
     public function getByChampionship($championshipId);
+
+    /**
+     * Get a join that has a Coupon
+     *
+     * @param  Coupon $coupon
+     * @return Join
+     */
+    public function getByCoupon($coupon);
 }

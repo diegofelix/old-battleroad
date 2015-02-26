@@ -53,4 +53,17 @@ class CouponRepository implements CouponRepositoryInterface {
     {
         return $coupon->delete();
     }
+
+    /**
+     * Get a coupon by its code and checks if the coupon is able to be used
+     *
+     * @param  string $code
+     * @return Coupon
+     */
+    public function findByCode($code)
+    {
+        return $this->model->whereCode($code)
+            ->whereNull('user_id')
+            ->first();
+    }
 }

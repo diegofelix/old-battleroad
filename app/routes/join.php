@@ -19,6 +19,12 @@ Route::group(['before' => 'auth'], function()
         'uses' => 'JoinController@show'
     ]);
 
+    Route::patch('joins/{id}/coupon', [
+        'as' => 'join.coupon',
+        'before' => 'join_owner',
+        'uses' => 'CouponsController@apply'
+    ]);
+
     Route::post('join/{id}', [
         'as' => 'join.returned',
         'uses' => 'JoinController@returned'

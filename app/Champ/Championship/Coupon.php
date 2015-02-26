@@ -3,6 +3,8 @@
 use Eloquent;
 use Champ\Traits\PriceAttribute;
 use Laracasts\Presenter\PresentableTrait;
+use Laracasts\Commander\Events\EventGenerator;
+use Champ\Championship\Events\CouponWasApplied;
 
 class Coupon extends Eloquent {
 
@@ -15,8 +17,24 @@ class Coupon extends Eloquent {
      */
     protected $presenter = 'Champ\Presenters\CouponPresenter';
 
+    use EventGenerator;
     use PriceAttribute;
     use PresentableTrait;
+
+    /**
+     * Apply the coupon for a user in a determined join
+     *
+     * @param  int $joinId
+     * @param  int $userId
+     * @return void
+     */
+    public function applyFor($joinId, $userId)
+    {
+        $this->join_id = $joinId;
+        $this->user_id = $userId;
+
+        $this->raise(new CouponWasApplied($this));
+    }
 
     /**
      * Relation with Championship
@@ -36,6 +54,16 @@ class Coupon extends Eloquent {
     public function user()
     {
         return $this->belongsTo('Champ\Account\User');
+    }
+
+    /**
+     * Relation with Join
+     *
+     * @return BelongsTo
+     */
+    public function join()
+    {
+        return $this->belongsTo('Champ\Join\Join');
     }
 
 }
