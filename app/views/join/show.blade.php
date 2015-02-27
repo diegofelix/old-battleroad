@@ -52,8 +52,15 @@
                 </div>
             </div>
 
-            @if ( ! $join->isPaid())
-                @include('join.coupon')
+
+            @if ($join->coupon)
+                <div class="alert alert-info">
+                    <h4>CUPOM UTILIZADO: <strong>{{ $join->coupon->code }}</strong> no valor de: <strong>R$ {{ number_format($join->coupon->price, 2) }}</strong></h4>
+                </div>
+            @else
+                @if ( ! $join->isPaid())
+                    @include('join.coupon')
+                @endif
             @endif
 
             @if ( ! $join->isFree())

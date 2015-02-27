@@ -30,9 +30,9 @@
         </thead>
         <tbody>
             @foreach ($championship->coupons as $coupon)
-                <tr>
+                <tr @if ($coupon->user) class="success" @endif>
                     <td><input type="text" class="form-control" value="{{ $coupon->code }}" readonly></td>
-                    <td>@if(isset($coupon->user)) {{ $coupon->user->name }} @endif</td>
+                    <td>@if($coupon->user) {{ $coupon->user->name }} @endif</td>
                     <td>{{ $coupon->present()->userPrice }}</td>
                     <td>{{ $coupon->created_at->format('d/m/Y') }}</td>
                 </tr>

@@ -4,6 +4,7 @@ use Laracasts\Commander\Events\EventListener;
 use Champ\Championship\Events\CouponWasApplied;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\Repositories\ItemRepositoryInterface;
+use Champ\Join\Status;
 
 class JoinDiscountListener extends EventListener {
 
@@ -45,7 +46,26 @@ class JoinDiscountListener extends EventListener {
     {
         $join = $this->joinRepository->getByCoupon($coupon->coupon);
 
-        // cache the coupon price
+        $this->applyDiscountOnItems($join, $coupon);
+
+        // if after apply the discount the join change to free
+        // then we need to confirm the user imediatly
+        if ($join->isFree())
+        {
+            $join->changeStatus(Status::APPROVED);
+            $this->joinRepository->save($join);
+        }
+    }
+
+    /**
+     * Apply the discount on items in the join
+     *
+     * @param  Joim $join
+     * @param  Coupon $coupon
+     * @return void
+     */
+    private function applyDiscountOnItems($join, $coupon)
+    {
         $couponPrice = $coupon->coupon->price;
 
         foreach ($join->items as $item)

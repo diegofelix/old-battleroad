@@ -28,4 +28,12 @@ interface CouponRepositoryInterface {
      * @return Coupon
      */
     public function findByCode($code);
+
+    /**
+     * Find a Coupon by User Id
+     *
+     * @param  int $userId
+     * @return Coupon
+     */
+    public function findByUserId($userId);
 }
