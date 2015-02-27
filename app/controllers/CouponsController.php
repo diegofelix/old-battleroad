@@ -2,6 +2,7 @@
 
 use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\Exceptions\CouponNotFoundException;
+use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 use Champ\Join\ApplyCouponCommand;
 
 class CouponsController extends BaseController {
@@ -26,6 +27,10 @@ class CouponsController extends BaseController {
         catch (CouponNotFoundException $e)
         {
             return $this->redirectBack(['error' => 'Cupon inválido ou já utilizado.']);
+        }
+        catch (UserAlreadyHasDiscountException $e)
+        {
+            return $this->redirectBack(['error' => 'Você já aplicou um cupon para esse pagamento.']);
         }
 
         // redirect the user to the location page.

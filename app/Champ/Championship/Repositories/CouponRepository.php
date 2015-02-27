@@ -66,4 +66,15 @@ class CouponRepository implements CouponRepositoryInterface {
             ->whereNull('user_id')
             ->first();
     }
+
+    /**
+     * Find a Coupon by User Id
+     *
+     * @param  int $userId
+     * @return Coupon
+     */
+    public function findByUserId($userId)
+    {
+        return $this->model->whereUserId($userId)->first();
+    }
 }

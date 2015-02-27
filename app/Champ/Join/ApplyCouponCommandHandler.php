@@ -6,6 +6,7 @@ use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
 use Champ\Championship\Exceptions\CouponNotFoundException;
+use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 use Champ\Join\Status;
 
 class ApplyCouponCommandHandler implements CommandHandler {
@@ -26,7 +27,9 @@ class ApplyCouponCommandHandler implements CommandHandler {
     {
         $coupon = $this->couponRepository->findByCode($command->code);
 
-        if ( ! $coupon) throw new CouponNotFoundException("Invalid Coupon Code.");
+        $this->checkInvalidCoupon($coupon);
+
+        $this->checkUserAlreadyHasDiscount($command, $coupon);
 
         $coupon->applyFor($command->joinId, $command->userId);
 
@@ -35,5 +38,33 @@ class ApplyCouponCommandHandler implements CommandHandler {
         $this->dispatchEventsFor($coupon);
 
         return $coupon;
+    }
+
+    /**
+     * Check if the user already had a coupon applied to the join
+     *
+     * @param  ApplyDiscountCommand $command
+     * @param  Coupon $coupon
+     * @return void
+     */
+    private function checkUserAlreadyHasDiscount($command, $coupon)
+    {
+        $coupon = $this->couponRepository->findByUserId($command->userId);
+
+        if ($coupon && $coupon->join_id == $command->joinId)
+        {
+            throw new UserAlreadyHasDiscountException("The user already has a coupon applied.");
+        }
+    }
+
+    /**
+     * Check if is a valid coupon
+     *
+     * @param  Coupon $coupon
+     * @return void
+     */
+    private function checkInvalidCoupon($coupon = null)
+    {
+        if ( ! $coupon) throw new CouponNotFoundException("Invalid Coupon Code.");
     }
 }

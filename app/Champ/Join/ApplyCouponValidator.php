@@ -1,17 +1,17 @@
 <?php namespace Champ\Join;
 
-use Champ\Forms\JoinForm;
+use Champ\Forms\ApplyCouponForm;
 
-class JoinValidator {
+class ApplyCouponValidator {
 
     /**
-     * Join Form Validator
+     * Apply Coupon Validator
      *
-     * @var JoinForm
+     * @var ApplyCouponForm
      */
     protected $form;
 
-    public function __construct(JoinForm $form)
+    public function __construct(ApplyCouponForm $form)
     {
         $this->form = $form;
     }
@@ -19,7 +19,7 @@ class JoinValidator {
     public function validate($command)
     {
         $this->form->validate([
-            'competitions' => $command->competitions,
+            'price' => $command->price
         ]);
     }
 
