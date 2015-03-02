@@ -142,6 +142,16 @@ class Championship extends Eloquent
     }
 
     /**
+     * Relation with coupons
+     *
+     * @return HasMany
+     */
+    public function coupons()
+    {
+        return $this->hasMany('Champ\Championship\Coupon');
+    }
+
+    /**
      * Dates handled by Carbon
      *
      * @return array

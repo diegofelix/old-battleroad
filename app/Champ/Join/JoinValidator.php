@@ -5,9 +5,9 @@ use Champ\Forms\JoinForm;
 class JoinValidator {
 
     /**
-     * Register Form Validator
+     * Join Form Validator
      *
-     * @var ChampionshipRegisterForm
+     * @var JoinForm
      */
     protected $form;
 

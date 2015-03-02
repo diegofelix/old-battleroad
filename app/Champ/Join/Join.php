@@ -70,6 +70,16 @@ class Join extends Eloquent {
     }
 
     /**
+     * Relation with Coupon
+     *
+     * @return HasOne
+     */
+    public function coupon()
+    {
+        return $this->hasOne('Champ\Championship\Coupon');
+    }
+
+    /**
      * Create a new Join
      *
      * @param  int $user_id

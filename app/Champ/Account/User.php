@@ -129,6 +129,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
+     * Relation with coupons
+     *
+     * @return HasMany
+     */
+    public function coupons()
+    {
+        return $this->hasMany('Champ\Championship\Coupon');
+    }
+
+    /**
      * Get the latest by the id
      *
      * @param  $id
