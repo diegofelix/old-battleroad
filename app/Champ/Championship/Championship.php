@@ -260,7 +260,7 @@ class Championship extends Eloquent
      */
     public function getFeaturedCompetitors($qty = 10)
     {
-        return $this->joins()->whereStatusId(Status::APPROVED)->limit($qty)->get();
+        return $this->joins()->whereStatusId(Status::APPROVED)->paginate($qty);
     }
 
 }
