@@ -22,6 +22,19 @@ class Coupon extends Eloquent {
     use PresentableTrait;
 
     /**
+     * Generate a new coupon for the championship
+     *
+     * @param  int $championshipId
+     * @param  string $code
+     * @param  int $price
+     * @return Model
+     */
+    public static function generate($championship_id, $code, $price)
+    {
+        return new static(compact('championship_id', 'code', 'price'));
+    }
+
+    /**
      * Apply the coupon for a user in a determined join
      *
      * @param  int $joinId
