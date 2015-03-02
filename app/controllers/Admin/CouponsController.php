@@ -3,10 +3,14 @@
 use BaseController;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
 use Champ\Services\KeyGen;
+use Champ\Championship\Coupons\GenerateCouponCommand;
 use Request;
 use Input;
+use Laracasts\Commander\CommanderTrait;
 
 class CouponsController extends BaseController {
+
+    use CommanderTrait;
 
     /**
      * KeyGen
@@ -48,11 +52,13 @@ class CouponsController extends BaseController {
      */
     public function generate($championshipId)
     {
-        $this->couponRepository->create([
+        $input = [
             'championship_id' => $championshipId,
             'code' => $this->keyGen->make(),
             'price' => Input::get('price')
-        ]);
+        ];
+
+        $this->execute(GenerateCouponCommand::class, $input);
 
         return $this->redirectRoute('admin.championships.coupons', $championshipId);
     }
