@@ -23,6 +23,7 @@ class ApplyCouponCommandHandler implements CommandHandler {
         $this->couponRepository = $couponRepository;
     }
 
+
     public function handle($command)
     {
         $coupon = $this->couponRepository->findByCode($command->code);
