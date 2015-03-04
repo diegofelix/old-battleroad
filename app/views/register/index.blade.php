@@ -4,7 +4,7 @@
 
     <div class="featured-title">
         <div class="container">
-            <h2>Cadastrate-se</h2>
+            <h2>Cadastre-se</h2>
         </div>
     </div>
 
