@@ -79,6 +79,7 @@
                             </div>
                         @endif
                     </div>
+                    @include('profile._achievements')
                 </div>
             </div>
         </div>
