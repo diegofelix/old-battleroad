@@ -139,6 +139,16 @@ class User extends Eloquent implements UserInterface, RemindableInterface
     }
 
     /**
+     * Relation with Achievement
+     *
+     * @return HasMany
+     */
+    public function achievements()
+    {
+        return $this->hasMany('Champ\Account\Achievement');
+    }
+
+    /**
      * Get the latest by the id
      *
      * @param  $id
