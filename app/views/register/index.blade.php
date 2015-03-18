@@ -49,7 +49,7 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Cadastrar</button>
+                    <button type="submit" class="btn btn-default btn-block btn-lg champ-button" id="registerButton">Cadastrar</button>
 
                 {{ Form::close() }}
 

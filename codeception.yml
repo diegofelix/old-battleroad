@@ -1,0 +1,17 @@
+actor: Tester
+paths:
+    tests: app/tests
+    log: app/tests/_output
+    data: app/tests/_data
+    helpers: app/tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    colors: true
+    memory_limit: 1024M
+modules:
+    config:
+        Db:
+            dsn: 'mysql:host=localhost;dbname=champaholic_test'
+            user: 'root'
+            password: 'root'
+            dump: app/tests/_data/dump.sql
