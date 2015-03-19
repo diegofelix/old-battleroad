@@ -208,6 +208,11 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'as' => 'admin.championships.coupons.destroy',
             'uses' => 'CouponsController@destroy'
         ]);
+
+        Route::get('championships/{id}/transaction/{transactionId}', [
+            'as' => 'admin.championships.transaction',
+            'uses' => 'TransactionsController@show'
+        ]);
     });
 
     Route::get('dashboard', [
