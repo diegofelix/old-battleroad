@@ -12,5 +12,9 @@ class BillingServiceProvider extends ServiceProvider {
     public function register()
     {
         $this->app->bind('Champ\Billing\Core\BillingInterface', 'Champ\Billing\Pagseguro\Pagseguro');
+
+        // bcash
+        $this->app->bind('Champ\Billing\Contracts\TransactionService', 'Champ\Billing\Bcash\BcashTransaction');
+        $this->app->bind('Champ\Billing\Contracts\TransactionDataFormatter', 'Champ\Billing\Bcash\BcashDataFormatter');
     }
 }

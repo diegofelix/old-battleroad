@@ -130,4 +130,28 @@ abstract class AbstractRepository {
         return $this->model->with($with);
     }
 
+    /**
+     * Get first for a Specific match
+     *
+     * @param  array $where
+     * @param  array $with
+     * @return Model
+     */
+    public function getFirstWhere($where = [], $with = [])
+    {
+        return $this->model->with($with)->where($where)->first();
+    }
+
+    /**
+     * Get a Specific match
+     *
+     * @param  array $where
+     * @param  array $with
+     * @return Collection
+     */
+    public function getWhere($where = [], $with = [])
+    {
+        return $this->model->with($with)->where($where)->get();
+    }
+
 }

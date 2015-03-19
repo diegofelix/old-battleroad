@@ -11,6 +11,18 @@
         <p>Se contarmos a primeira linha de código digitada para tornar esse nosso sonho real, eu diria 18 de fevereiro de 2014. Foi o ano que eu enxerguei que poderia contribuir com a comunidade de e-sports brasileira. Onde eu percebi a dificuldade de nós, competidores, participarmos de um campeonato. Desde lá aconteceram muitas coisas, boas e ruins, que não são importantes depois da plataforma lançada, por isso, mostrarei as modificações após o lançamento.</p>
 
 
+        <h4>Março</h4>
+        <table class="table table-striped">
+            <tr>
+                <th>16/03/2015</th>
+                <td>Sistemas de conquistas. Fique no top3 dos campeonatos e essa conquista aparecerá no seu perfil.</td>
+            </tr>
+            <tr>
+                <th>02/03/2015</th>
+                <td>Adicionamos um sistema de cupons de desconto. Organizadores poderão dar descontos aos competidores.</td>
+            </tr>
+        </table>
+
         <h4>Fevereiro</h4>
         <table class="table table-striped">
             <tr>
