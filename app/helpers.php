@@ -91,3 +91,20 @@ if ( ! function_exists('apply_rate'))
 		return ($price / (100 - $rate)) * 100;
 	}
 }
+
+if ( ! function_exists('apply_comission'))
+{
+	/**
+	 * Apply a comission in the price
+	 *
+	 * Unlike the apply_rate, this method remove the comission from the original price
+	 *
+	 * @param  int $price
+	 * @param  float $rate
+	 * @return float
+	 */
+	function apply_comission($price, $rate)
+	{
+		return $price - (($price * $rate) / 100);
+	}
+}

@@ -87,4 +87,19 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
     {
         return $coupon->load('join.items')->join;
     }
+
+    /**
+     * Get a specific join, but only if he belongs to a championship
+     * This method is a constraint to garantee that gets only joins that belongs
+     * to a specific championship
+     *
+     * @param  int $championship_id
+     * @param  int $id
+     * @param  array $with
+     * @return Model
+     */
+    public function getRelationedWith($championship_id, $id, $with = [])
+    {
+        return $this->getFirstWhere(compact('championship_id', 'id'), $with);
+    }
 }
