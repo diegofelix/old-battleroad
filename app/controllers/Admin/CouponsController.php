@@ -1,12 +1,13 @@
 <?php namespace Admin;
 
 use BaseController;
+use Champ\Championship\Coupons\GenerateCouponCommand;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
 use Champ\Services\KeyGen;
-use Champ\Championship\Coupons\GenerateCouponCommand;
-use Request;
 use Input;
 use Laracasts\Commander\CommanderTrait;
+use Request;
 
 class CouponsController extends BaseController {
 
@@ -20,6 +21,13 @@ class CouponsController extends BaseController {
     protected $keyGen;
 
     /**
+     * Championship Repository
+     *
+     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     */
+    protected $championshipRepository;
+
+    /**
      * Coupon Repository
      *
      * @var CouponRepositoryInterface
@@ -27,9 +35,11 @@ class CouponsController extends BaseController {
     protected $couponRepository;
 
     public function __construct(
+        ChampionshipRepositoryInterface $championshipRepository,
         CouponRepositoryInterface $couponRepository,
         KeyGen $keyGen
     ) {
+        $this->championshipRepository = $championshipRepository;
         $this->couponRepository = $couponRepository;
         $this->keyGen = $keyGen;
     }
@@ -39,9 +49,11 @@ class CouponsController extends BaseController {
      *
      * @return Response
      */
-    public function index()
+    public function index($id)
     {
-        return $this->view('admin.championships.coupons.index');
+        $championship = $this->championshipRepository->find($id);
+
+        return $this->view('admin.championships.coupons.index', compact('championship'));
     }
 
     /**

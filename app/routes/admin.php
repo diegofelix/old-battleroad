@@ -215,6 +215,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
         ]);
     });
 
+    Route::post('checkin',  'CheckinController@checkin');
+    Route::post('checkout', 'CheckinController@checkout');
+
     Route::get('dashboard', [
         'as' => 'admin.dashboard',
         'uses' => 'DashboardController@index'

@@ -102,4 +102,18 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
     {
         return $this->getFirstWhere(compact('championship_id', 'id'), $with);
     }
+
+    /**
+     * Get the joins that belongs to a specific competition
+     *
+     * @param  int $competitionId
+     * @param  array $with
+     * @return Collection
+     */
+    public function getByCompetition($competitionId, $with = [])
+    {
+        return $this->make($with)->whereHas('items', function($query) use ($competitionId) {
+            $query->where('competition_id', $competitionId);
+        })->get();
+    }
 }
