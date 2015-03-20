@@ -1,24 +1,39 @@
-<?php namespace Admin;
+<?php
 
-use Input;
+namespace Admin;
+
 use BaseController;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Championship\Repositories\GameRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepositoryInterface;
 use Champ\Championship\Repositories\FormatRepositoryInterface;
+use Champ\Championship\Repositories\GameRepositoryInterface;
 use Champ\Championship\Repositories\PlatformRepositoryInterface;
+use Champ\Join\Repositories\JoinRepositoryInterface;
+use Input;
 
 class CompetitionsController extends BaseController
 {
-    /**
-     * Championship Repository
-     *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
-     */
-    protected $champRepo;
 
-    public function __construct(ChampionshipRepositoryInterface $champRepo)
+    /**
+     * Competition Repository
+     *
+     * @var Champ\Championship\Repositories\CompetitionRepositoryInterface
+     */
+    protected $competitionRepository;
+
+    /**
+     * Join Repository
+     *
+     * @var Champ\Join\Repositories\JoinRepositoryInterface
+     */
+    protected $joinRepository;
+
+    public function __construct(
+        CompetitionRepositoryInterface $competitionRepository,
+        JoinRepositoryInterface $joinRepository
+    )
     {
-        $this->champRepo = $champRepo;
+        $this->competitionRepository = $competitionRepository;
+        $this->joinRepository = $joinRepository;
     }
 
     /**
@@ -29,9 +44,9 @@ class CompetitionsController extends BaseController
      */
     public function index($champId)
     {
-        $championship = $this->champRepo->find($champId, ['competitions']);
+        $competitions = $this->competitionRepository->getByChampionship($champId);
 
-        return $this->view('admin.championships.games.index', compact('championship'));
+        return $this->view('admin.championships.games.index', compact('competitions'));
     }
 
     /**
@@ -39,15 +54,13 @@ class CompetitionsController extends BaseController
      *
      * @param  int $champId
      * @param  int $competitionId
-     * @return Response
+     * @return Illuminate\Http\Response
      */
     public function show($champId, $competitionId)
     {
-        // I need to improve this code
-        $championship = $this->champRepo->find($champId, ['competitions.items.join.user']);
+        $competition    = $this->competitionRepository->find($competitionId);
+        $joins          = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
-        $competition = $championship->competitions->find($competitionId);
-
-        return $this->view('admin.championships.games.show', compact('championship', 'competition'));
+        return $this->view('admin.championships.games.show', compact('competition', 'joins'));
     }
 }

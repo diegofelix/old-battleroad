@@ -2,33 +2,7 @@
 @section ('champ-content')
     <h3><i class="fa fa-gamepad"></i> {{ $competition->game->name }}</h3>
 
-    <h3><i class="fa fa-users"></i>
-        Participantes
-        <div id="payment-filter" class="btn-group pull-right">
-            <button type="button" data-status="all" class="btn btn-sm btn-default">Todos</button>
-            <button type="button" data-status="paid" class="btn btn-sm btn-default">Confirmados</button>
-            <button type="button" data-status="pending" class="btn btn-sm btn-default">Pendentes</button>
-        </div>
-    </h3>
-    <hr>
-
-    <table class="table table-striped table-hover games-table">
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Status</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach ($competition->items as $item)
-                <tr class="status status-{{ $item->join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($item->join->user->present()->userImage) }}
-                    {{ link_to_route('profile.show', $item->join->user->name, [$item->join->user->username]) }}</td>
-                    <td>{{ $item->join->status->name }}</td>
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
+    @include ('admin.championships._competitors')
 @stop
 @section('scripts')
     {{ HTML::script('js/admin_championship.js') }}

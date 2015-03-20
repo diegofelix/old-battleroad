@@ -20,4 +20,13 @@ interface CompetitionRepositoryInterface extends RepositoryInterface {
      * @return boolean
      */
     public function save(Competition $competition);
+
+    /**
+     * Get competitions by the championship id
+     *
+     * @param  id $championshipId
+     * @param  array $with
+     * @return Collection
+     */
+    public function getByChampionship($championshipId, $with = []);
 }
