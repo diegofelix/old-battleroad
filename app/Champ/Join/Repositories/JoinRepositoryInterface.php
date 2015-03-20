@@ -48,4 +48,13 @@ interface JoinRepositoryInterface extends RepositoryInterface
      * @return Model
      */
     public function getRelationedWith($championship_id, $id, $with = []);
+
+    /**
+     * Get the joins that belongs to a specific competition
+     *
+     * @param  int $competitionId
+     * @param  array $with
+     * @return Collection
+     */
+    public function getByCompetition($competitionId, $with = []);
 }

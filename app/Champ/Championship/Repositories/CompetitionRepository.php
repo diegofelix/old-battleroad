@@ -36,4 +36,16 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     {
         return $competition->save();
     }
+
+    /**
+     * Get competitions by the championship id
+     *
+     * @param  id $championshipId
+     * @param  array $with
+     * @return Collection
+     */
+    public function getByChampionship($championshipId, $with = [])
+    {
+        return $this->make($with)->where('championship_id', $championshipId)->get();
+    }
 }
