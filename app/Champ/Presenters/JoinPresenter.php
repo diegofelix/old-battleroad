@@ -25,7 +25,7 @@ class JoinPresenter extends Presenter
 
         foreach ($this->items as $item)
         {
-            $price += $item->competition->original_price;
+            $price += $item->price * 0.9;
         }
 
         return $price;
