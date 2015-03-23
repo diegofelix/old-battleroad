@@ -24,7 +24,7 @@ return [
      * Time limit to let user pay for the championships before the championship start
      * So if the championship start in 10/02/2015, the users can pay until x days before.
      */
-    'payday_limit' => 1,
+    'payday_limit' => 0,
 
     'formats' => [
         // Round Robin
