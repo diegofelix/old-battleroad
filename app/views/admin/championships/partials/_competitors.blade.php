@@ -31,13 +31,7 @@
                     </a>
                 </td>
                 <td>
-                    <a
-                        href="#"
-                        class="checkin-button btn btn-default @if ($join->checkin) btn-success @endif"
-                        data-loading-text="Salvando.."
-                        autocomplete="off"
-                        data-join="{{ $join->id }}"
-                    ><i class="fa fa-check"></i> Check In</a>
+                    @include('admin.championships.partials._checkin_form')
                 </td>
             </tr>
         @endforeach

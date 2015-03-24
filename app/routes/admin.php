@@ -215,8 +215,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
         ]);
     });
 
-    Route::post('checkin',  'CheckinController@checkin');
-    Route::post('checkout', 'CheckinController@checkout');
+    Route::post('checkin/{id}', ['as' => 'checkin', 'before' => 'csrf', 'uses' => 'CheckinController@checkin']);
 
     Route::get('dashboard', [
         'as' => 'admin.dashboard',
