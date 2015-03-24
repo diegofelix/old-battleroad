@@ -1,7 +1,7 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
 
-    @include ('admin.championships._competitors', ['joins' => $championship->joins])
+    @include ('admin.championships.partials._competitors', ['joins' => $championship->joins])
 
     {{-- <h3><i class="fa fa-users"></i>
         Participantes

@@ -24,29 +24,13 @@ class CheckinController extends BaseController {
      *
      * @return Illuminate\Http\Response
      */
-    public function checkin()
+    public function checkin($id)
     {
-        $join = $this->getJoin();
+        $join = $this->getJoin($id);
 
         if ( ! $join) App::abort(404);
 
-        $join->checkin = true;
-
-        $this->joinRepository->save($join);
-    }
-
-    /**
-     * Check out User Join
-     *
-     * @return Illuminate\Http\Response
-     */
-    public function checkout()
-    {
-        $join = $this->getJoin();
-
-        if ( ! $join) App::abort(404);
-
-        $join->checkin = false;
+        $join->checkin = !$join->checkin;
 
         $this->joinRepository->save($join);
     }
@@ -57,10 +41,8 @@ class CheckinController extends BaseController {
      * @param  int $id
      * @return Champ\Join\Join
      */
-    private function getJoin()
+    private function getJoin($id)
     {
-        $id = Input::get('join');
-
         return $this->joinRepository->find($id);
     }
 
