@@ -8,11 +8,23 @@ $(document).ready(function(){
         $('.status-' + statusSelected).slideDown();
     });
 
-    $('.checkin-button').on('click', function(){
-        $button = $(this);
-        $(this).button('loading');
+    $('.checkin-form').on('click', function(e){
 
-        checkUser($button);
+        e.preventDefault();
+
+        var $form = $(this);
+        var formData = $form.serialize();
+        var $button = $form.find('button').button('loading');
+
+        return $.post($form.attr('action'), formData)
+            .done(function(){$button.button('reset');})
+            .success(function(){$button.toggleClass('btn-success');})
+            .error(function(){alert('Houve um erro de comunicação, se o problema persistir, contate o administrador.');});
+
+        // $button = $(this);
+        // $(this).button('loading');
+
+        // checkUser($button);
     });
 
     /**
@@ -26,9 +38,6 @@ $(document).ready(function(){
         var url = '/admin/';
         url += ($button.hasClass('btn-success')) ? 'checkout' : 'checkin';
 
-        return $.post(url, {join: $button.data('join')})
-            .done(function(){$button.button('reset');})
-            .success(function(){$button.toggleClass('btn-success');})
-            .error(function(){alert('Houve um erro de comunicação, se o problema persistir, contate o administrador.');});
+
     }
 });
