@@ -212,9 +212,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
     private function competitionStartsAfterChampionship($championship, $eventStart)
     {
-        $date = Carbon::createFromFormat('d/m/Y', $eventStart);
+        $date = Carbon::createFromFormat('d/m/Y H:i', $eventStart)->toDateTimeString();
 
-        return $date > $championship->event_start;
+        return $date >= $championship->event_start;
     }
 
     /**
