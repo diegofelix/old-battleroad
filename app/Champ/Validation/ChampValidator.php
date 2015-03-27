@@ -19,7 +19,7 @@ class ChampValidator extends Validator {
         $now  = Carbon::now();
         try
         {
-            $date = Carbon::createFromFormat('d/m/Y', $value);
+            $date = Carbon::createFromFormat('d/m/Y H:i', $value);
             return $date > $now;
         }
         catch (InvalidArgumentException $e)

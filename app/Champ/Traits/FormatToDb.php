@@ -12,6 +12,6 @@ trait FormatToDb
      */
     protected function formatToDb($value)
     {
-        return Carbon::createFromFormat('d/m/Y', $value)->toDateTimeString();
+        return Carbon::createFromFormat('d/m/Y H:i', $value)->toDateTimeString();
     }
 }
