@@ -1,1 +1,1 @@
-$("document").ready(function(){$("#event_start").inputmask("d/m/y",{placeholder:"dd/mm/aaaa"}),$("#limit-switch").on("click",function(){$("#limit-input").toggleClass("hide")})});
+$("document").ready(function(){$("#event_start").inputmask("d/m/y h:s",{placeholder:"dd/mm/aaaa hh:mm"}),$("#limit-switch").on("click",function(){$("#limit-input").toggleClass("hide")})});
