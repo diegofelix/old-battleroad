@@ -1,9 +1,10 @@
 <?php namespace Champ\Presenters;
 
-use Laracasts\Presenter\Presenter;
+use Carbon\Carbon;
 use Champ\Championship\Championship;
 use Champ\Traits\UserPrice;
 use Config;
+use Laracasts\Presenter\Presenter;
 use Michelf\Markdown;
 
 class ChampionshipPresenter extends Presenter
@@ -18,7 +19,7 @@ class ChampionshipPresenter extends Presenter
     public function daysLeft()
     {
         // get the date based on brazilian time
-        $now = \Carbon\Carbon::now('America/Sao_Paulo');
+        $now = Carbon::now('America/Sao_Paulo');
 
         // get the difference in days from now to the start of the event
         $days = $this->event_start->diffInDays($now);
@@ -73,6 +74,28 @@ class ChampionshipPresenter extends Presenter
     private function getMarkdown()
     {
         return new Markdown;
+    }
+
+    public function banner()
+    {
+        $stream = $this->stream;
+
+        if ($this->started() &&  ! empty($stream))
+        {
+            return 'twitch';
+        }
+
+        return 'banner';
+    }
+
+    /**
+     * Check if the championships is ocurring now
+     *
+     * @return boolean
+     */
+    public function started()
+    {
+        return Carbon::now()->gte($this->event_start);
     }
 
     // /**

@@ -14,6 +14,11 @@
     </div>
 
     <div class="panel panel-default">
+        <div class="panel-heading">URL Twitch</div>
+        <div class="panel-body">{{ $championship->stream }}</div>
+    </div>
+
+    <div class="panel panel-default">
         <div class="panel-heading">Local</div>
         <div class="panel-body">{{ $championship->location }}</div>
     </div>
