@@ -10,9 +10,7 @@
 
         <div class="featured-title championship">
             <div class="container">
-                <figure>
-                    {{ HTML::image($championship->image) }}
-                </figure>
+                @include('championships.partials.' . $championship->present()->banner())
                 <section championship-minidetails>
                     <h2>
                         {{ $championship->name }}

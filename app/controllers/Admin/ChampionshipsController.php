@@ -68,8 +68,9 @@ class ChampionshipsController extends BaseController {
     {
         $name        = Input::get('name');
         $description = Input::get('description');
+        $stream      = Input::get('stream');
 
-        $championship = $this->execute(UpdateChampionshipCommand::class, compact('id', 'description', 'name'));
+        $championship = $this->execute(UpdateChampionshipCommand::class, compact('id', 'description', 'name', 'stream'));
 
         return $this->redirectRoute('admin.championships.show', [$championship->id])
             ->with(['message' => 'Informações atualizadas com sucesso!']);

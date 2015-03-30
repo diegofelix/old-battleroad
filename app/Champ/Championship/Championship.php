@@ -64,12 +64,14 @@ class Championship extends Eloquent
      *
      * @param  string $name
      * @param  string $description
+     * @param  string $stream
      * @return void
      */
-    public function updateInformation($name, $description)
+    public function updateInformation($name, $description, $stream = "")
     {
         $this->name = $name;
         $this->description = $description;
+        $this->stream = $stream;
 
         // raise a new event if needed.
     }

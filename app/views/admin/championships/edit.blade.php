@@ -21,8 +21,14 @@
         <div class="panel-body">{{ Form::textarea('description', null, ['class' => 'form-control']) }}</div>
     </div>
 
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Twitch URL
+        </div>
+        <div class="panel-body">{{ Form::url('stream', null, ['class' => 'form-control']) }}</div>
+    </div>
+
     <div class="alert alert-warning">
-        Apenas a descrição pode ser alterada no momento, pois dados sensíveis já foram divulgados e mostrados aos usuários.
         Caso queira alterar mais alguma coisa, envie um e-mail para <a href="mailto:contato@battleroad.com.br">contato@battleroad.com.br</a> informando o motivo da alteração que entraremos em contato.
     </div>
 
