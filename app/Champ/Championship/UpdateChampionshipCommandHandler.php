@@ -20,7 +20,7 @@ class UpdateChampionshipCommandHandler implements CommandHandler {
     {
         $championship = $this->repository->find($command->id);
 
-        $championship->updateInformation($command->name, $command->description);
+        $championship->updateInformation($command->name, $command->description, $command->stream);
 
         $this->repository->save($championship);
 
