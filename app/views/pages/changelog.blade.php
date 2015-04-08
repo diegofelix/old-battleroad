@@ -14,6 +14,22 @@
         <h4>Março</h4>
         <table class="table table-striped">
             <tr>
+                <th>30/03/2015</th>
+                <td>Adicionei o campo Twitch para mostrar o stream diretamente na página do campeonato.</td>
+            </tr>
+            <tr>
+                <th>27/03/2015</th>
+                <td>Adicionei o campo tempo na hora de criar os campeonatos e competições.</td>
+            </tr>
+            <tr>
+                <th>20/03/2015</th>
+                <td>Sistema de checkin para os organizadores saberem quem compareceu ou não ao campeonato.</td>
+            </tr>
+            <tr>
+                <th>19/03/2015</th>
+                <td>Detalhes dos pagamentos aos organizadores.</td>
+            </tr>
+            <tr>
                 <th>16/03/2015</th>
                 <td>Sistemas de conquistas. Fique no top3 dos campeonatos e essa conquista aparecerá no seu perfil.</td>
             </tr>
