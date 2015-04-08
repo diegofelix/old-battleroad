@@ -8,7 +8,8 @@
 </h3>
 <hr>
 
-<table class="table table-striped table-hover games-table">
+<div class="panel panel-default">
+    <table class="table table-striped table-hover games-table">
     <thead>
         <tr>
             <th>Inscrição</th>
@@ -37,3 +38,4 @@
         @endforeach
     </tbody>
 </table>
+</div>

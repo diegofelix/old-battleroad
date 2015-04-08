@@ -21,23 +21,23 @@
 
             <hr>
 
-            <div class="alert alert-info">
-                <h4>Pagamentos Confirmados:</h4>
-                <h4 class="text-right">R$ {{ $championship->present()->totalConfirmedPrice() }}</h4>
+            <div class="panel panel-info">
+                <div class="panel-heading"><i class="fa fa-money"></i> Confirmados:</div>
+                <div class="panel-body text-right">R$ {{ $championship->present()->totalConfirmedPrice() }}</div>
             </div>
 
             <hr>
 
-            <div class="alert alert-warning">
-                <h4>Pagamentos Pendentes:</h4>
-                <h4 class="text-right">R$ {{ $championship->present()->totalPendentPrice() }}</h4>
+            <div class="panel panel-warning">
+                <div class="panel-heading"><i class="fa fa-money"></i>  Pendentes:</div>
+                <div class="panel-body text-right">R$ {{ $championship->present()->totalPendentPrice() }}</div>
             </div>
 
             <hr>
 
-            <div class="alert alert-success">
-                <h4>Previsão total dos recebimentos:</h4>
-                <h4 class="text-right">R$ {{ $championship->present()->totalPrice() }}</h4>
+            <div class="panel panel-success">
+                <div class="panel-heading"><i class="fa fa-money"></i> Previsão:</div>
+                <div class="panel-body text-right">R$ {{ $championship->present()->totalPrice() }}</div>
             </div>
 
         </div><!-- champ-sidebar -->
