@@ -17,6 +17,10 @@
                         <th>Nick</th>
                         <td>{{ $join->user->username }}</td>
                     </tr>
+		    <tr>
+			<th>E-mail</th>
+			<td>{{ $join->user->email }}</th>
+		    </tr>
                 </tbody>
             </table>
         </div>
