@@ -33,6 +33,7 @@ class CheckinController extends BaseController {
         $join->checkin = !$join->checkin;
 
         $this->joinRepository->save($join);
+
     }
 
     /**
