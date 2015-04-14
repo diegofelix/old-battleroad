@@ -14,7 +14,7 @@ class AddNickToJoinsTable extends Migration {
 	{
 		Schema::table('joins', function(Blueprint $table)
 		{
-			$table->string('nick');
+			$table->string('nick')->after('price')->nullable();
 		});
 	}
 
