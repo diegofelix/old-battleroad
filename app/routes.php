@@ -1,5 +1,10 @@
 <?php
 
+// redirecting because the email link i sent is incorrect
+Route::get('/championships/11', function(){
+	return Redirect::to('championships/14');
+});
+
 Route::get('teste/{id}', 'Admin\TransactionsController@show');
 Route::get('diegosecreto', function(){
 
