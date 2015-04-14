@@ -58,4 +58,16 @@ class JoinPresenter extends Presenter
 
         return $price;
     }
+
+    /**
+     * Show the user name or nick if applied
+     *
+     * @return string
+     */
+    public function competitorName()
+    {
+        if ($this->nick) return $this->nick;
+
+        return $this->user->name;
+    }
 }

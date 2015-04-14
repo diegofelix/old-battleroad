@@ -20,6 +20,7 @@ class JoinValidator {
     {
         $this->form->validate([
             'competitions' => $command->competitions,
+            'nick' => $command->nick
         ]);
     }
 

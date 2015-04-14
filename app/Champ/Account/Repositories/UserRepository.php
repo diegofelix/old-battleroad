@@ -171,4 +171,15 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     {
         return $this->getFirstBy('username', $username, ['profile']);
     }
+
+    /**
+     * Save a user
+     *
+     * @param  User   $user
+     * @return boolean
+     */
+    public function save(User $user)
+    {
+        return $user->save();
+    }
 }

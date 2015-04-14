@@ -11,8 +11,19 @@
         <p>Se contarmos a primeira linha de código digitada para tornar esse nosso sonho real, eu diria 18 de fevereiro de 2014. Foi o ano que eu enxerguei que poderia contribuir com a comunidade de e-sports brasileira. Onde eu percebi a dificuldade de nós, competidores, participarmos de um campeonato. Desde lá aconteceram muitas coisas, boas e ruins, que não são importantes depois da plataforma lançada, por isso, mostrarei as modificações após o lançamento.</p>
 
 
+        <h4>Abril</h4>
+        <table class="table table-striped">
+            <tr>
+                <th>14/04/2015</th>
+                <td>Adicionamos a opção do usuário registrar um Nick para participar do Campeonato.</td>
+            </tr>
+        </table>
         <h4>Março</h4>
         <table class="table table-striped">
+            <tr>
+                <th>08/03/2015</th>
+                <td>Mudanças leves no layout da plataforma para melhorar a legibilidade e focar no conteúdo.</td>
+            </tr>
             <tr>
                 <th>30/03/2015</th>
                 <td>Adicionei o campo Twitch para mostrar o stream diretamente na página do campeonato.</td>
