@@ -33,7 +33,7 @@ class JoinCommandHandler implements CommandHandler {
         ItemRepositoryInterface $itemRepo
     )
     {
-        $this->JoinRepo = $joinRepo;
+        $this->JoinRepo         = $joinRepo;
         $this->competitionRepo  = $competitionRepo;
         $this->itemRepo         = $itemRepo;
     }
@@ -66,6 +66,7 @@ class JoinCommandHandler implements CommandHandler {
         $join = Join::register(
             $command->user->id,
             $command->championship->id,
+            $command->nick,
             $command->championship->price
         );
 

@@ -1,5 +1,6 @@
 <?php namespace Champ\Account\Repositories;
 
+use Champ\Account\User;
 use Champ\Repositories\Core\RepositoryInterface;
 
 interface UserRepositoryInterface extends RepositoryInterface {
@@ -60,5 +61,13 @@ interface UserRepositoryInterface extends RepositoryInterface {
      * @return Profile
      */
     public function getProfile($username);
+
+    /**
+     * Save a user
+     *
+     * @param  User   $user
+     * @return boolean
+     */
+    public function save(User $user);
 
 }

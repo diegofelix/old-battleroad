@@ -86,11 +86,11 @@ class Join extends Eloquent {
      * @param  int $championship_id
      * @return Join
      */
-    public static function register($user_id, $championship_id, $price)
+    public static function register($user_id, $championship_id, $nick, $price)
     {
-        $status_id = 1; // Waiting payment
+        $status_id = Status::WAITING;
 
-        $join = new static(compact('user_id', 'championship_id', 'price', 'status_id'));
+        $join = new static(compact('user_id', 'championship_id', 'nick', 'price', 'status_id'));
 
         $join->raise(new UserJoined($join));
 
