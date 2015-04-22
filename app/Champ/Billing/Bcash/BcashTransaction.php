@@ -3,6 +3,7 @@
 use Champ\Billing\Contracts\TransactionDataFormatter;
 use Champ\Billing\Contracts\TransactionService;
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\ClientException;
 
 class BcashTransaction implements TransactionService {
 
@@ -53,14 +54,15 @@ class BcashTransaction implements TransactionService {
         $options['headers'] = $this->authenticationHeaders();
         $options['body'] = $this->getBody($id);
 
-        $response = $this->httpClient->post($this->serviceUrl, $options);
-
-        if ($response->getStatusCode() == 200)
+        try
         {
+            $response = $this->httpClient->post($this->serviceUrl, $options);
             return $this->dataFormatter->format($response->json());
         }
-
-        return false;
+        catch (ClientException $e)
+        {
+            return false;
+        }
     }
 
     /**
