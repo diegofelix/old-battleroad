@@ -1,10 +1,10 @@
 @extends ('layouts.admin_championship')
 @section ('champ-content')
-    <h3><i class="fa fa-money"></i>
-        Transação #{{ $transaction->transactionId }}
-    </h3>
-
     @if ($join && $transaction)
+
+        <h3><i class="fa fa-money"></i>
+            Transação #{{ $transaction->transactionId }}
+        </h3>
 
         <div class="panel panel-default">
             <table class="table table-bordered">
