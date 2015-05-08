@@ -56,20 +56,12 @@
                     </div>
                 </div>
 
-                <div class="panel panel-default">
-                    <div class="panel-heading">Nick para o campeonato</div>
-                    <div class="panel-body">
-                        <div class="row">
-                            <div class="col-md-3">
-                                {{ Form::text('nick', Auth::user()->username, ['class' => 'form-control input-lg']) }}
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        Esse nome será exibido nas chaves do campeonato.<br>
-                        Se for um campeonato Online, coloque a gamertag da plataforma ( PSN/Live e etc )
-                    </div>
-                </div>
+                @if ($championship->competitions->count() == 1 or $championship->competitions->count() > 2)
+
+                @else
+                @endif
+
+                @include ('join/partials/players')
 
                 <button type="submit" class="btn btn-lg btn-success">Ir para Pagamento</button>
 
@@ -81,4 +73,5 @@
 @endsection
 @section('scripts')
     {{ HTML::script('js/checkout.js') }}
+    {{ HTML::script('js/join.js') }}
 @stop

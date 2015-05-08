@@ -49,4 +49,14 @@ class CompetitionPresenter extends Presenter
     {
         return $this->start->format('d/m/Y');
     }
+
+    /**
+     * Check if the competition is single registration
+     *
+     * @return boolean
+     */
+    public function isSingleRegistration()
+    {
+        return $this->players == 1;
+    }
 }
