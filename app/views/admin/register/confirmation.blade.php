@@ -69,7 +69,12 @@
                             @if ($championship->competitions)
                                 @foreach($championship->competitions as $competition)
                                 <tr>
-                                    <td>{{ $competition->game->name }}</td>
+                                    <td>
+                                        {{ $competition->game->name }}
+                                        @if ( ! $competition->present()->isSingleRegistration())
+                                            <small>( Inscrição por time. )</small>
+                                        @endif
+                                    </td>
                                 </tr>
                                 @endforeach
                             @endif

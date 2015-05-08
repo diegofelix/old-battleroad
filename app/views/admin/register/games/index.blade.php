@@ -119,14 +119,19 @@
                             <div class="form-group">
                                 {{ Form::label('platform', 'Plataforma') }}
                                 {{ Form::select('platform_id', $platforms, null, ['id' => 'platform', 'class' => 'form-control']) }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ Form::label('format', 'Formato') }}
+                                {{ Form::select('format_id', $formats, null, ['id' => 'format', 'class' => 'form-control']) }}
                                 <span class="help-block">
                                     Não sabe o que significa cada formato? <a href="#">saiba aqui!</a>
                                 </span>
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('format', 'Formato') }}
-                                {{ Form::select('format_id', $formats, null, ['id' => 'format', 'class' => 'form-control']) }}
+                                {{ Form::label('players', 'Jogadores') }}
+                                {{ Form::selectRange('players', 1, 7, null, ['id' => 'players', 'class' => 'form-control']) }}
                             </div>
 
                             <div class="form-group">
