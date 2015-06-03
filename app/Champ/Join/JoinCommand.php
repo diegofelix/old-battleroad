@@ -9,15 +9,15 @@ class JoinCommand {
 
     public $championship;
 
-    public $nick;
+    public $nicks;
 
     public $competitions;
 
-    public function __construct(User $user, Championship $championship, $nick, $competitions = null)
+    public function __construct(User $user, Championship $championship, $nicks, $competitions)
     {
         $this->user = $user;
         $this->championship = $championship;
-        $this->nick = $nick;
+        $this->nicks = $nicks;
         $this->competitions = $competitions;
     }
 

@@ -1,1 +1,0 @@
-!function(){$(".panel-players").hide();{var e;$(".panel-players").length}$(".input-competition").on("click",function(){var i=12/$(".input-competition:checked").length,l=$(this).val(),n=$("#competition-"+l);$(this).is(":checked")?n.slideDown():n.slideUp(),$(".panel-players:visible").removeClass().addClass("panel-players col-md-"+i),e=i})}();

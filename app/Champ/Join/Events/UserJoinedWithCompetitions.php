@@ -2,17 +2,15 @@
 
 use Champ\Join\Join;
 
-class UserJoined {
+class UserJoinedWithCompetitions {
 
     public $join;
     public $competitions;
-    public $nicks;
 
-    public function __construct(Join $join, $competitions, $nicks)
+    public function __construct(Join $join, $competitions)
     {
         $this->join = $join;
         $this->competitions = $competitions;
-        $this->nicks = $nicks;
     }
 
 }

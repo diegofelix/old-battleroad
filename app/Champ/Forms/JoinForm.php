@@ -6,11 +6,11 @@ class JoinForm extends FormValidator {
 
     protected $rules = [
         'competitions' => 'required',
-        'nick' => 'required|min:4'
+        'nicks' => 'required'
     ];
 
     protected $messages = [
-        'nick.required' => 'Você esqueceu de preencher o seu nick',
+        'nicks.required' => 'Você esqueceu de preencher o(s) nick(s)',
         'competitions.required' => 'Você precisa participar pelo menos de 1 competição'
     ];
 
