@@ -1,12 +1,12 @@
 <?php namespace Champ\Join;
 
+use App;
+use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Join\Join;
+use Champ\Join\Repositories\ItemRepositoryInterface;
+use Champ\Join\Repositories\JoinRepositoryInterface;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Join\Join;
-use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Join\Repositories\ItemRepositoryInterface;
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
-use App;
 
 class JoinCommandHandler implements CommandHandler {
 
@@ -40,72 +40,17 @@ class JoinCommandHandler implements CommandHandler {
 
     public function handle($command)
     {
-        // register a Join
-        $join = $this->registerJoin($command);
-
-        // add the competitions
-        $this->registerCompetitions($join, $command);
-
-        $this->dispatchEventsFor($join);
-
-        return $join;
-    }
-
-    /**
-     * Register a Join
-     *
-     * @param  Command $command
-     * @return Join
-     */
-    private function registerJoin($command)
-    {
-        // throws an exception in case the championship reach the competitors limit.
-        // if ($command->championship->limit == 0)
-        //     throw new ChampionshipFullException("Esse campeonato já atingiu o limite de participantes", 1);
-
         $join = Join::register(
             $command->user->id,
             $command->championship->id,
-            $command->nick,
-            $command->championship->price
+            $command->nicks,
+            $command->competitions
         );
 
         $this->JoinRepo->save($join);
 
+        $this->dispatchEventsFor($join);
+
         return $join;
-    }
-
-    /**
-     * Pass through all competitions and create a Join item
-     *
-     * @param  Join $join
-     * @param  Command $command
-     * @return void
-     */
-    private function registerCompetitions($join, $command)
-    {
-        if ( ! $command->competitions) return false;
-
-        $competitions = $this->competitionRepo->getByIds($command->competitions);
-
-        foreach ($competitions as $competition)
-        {
-            if ($competition->limit > 0)
-            {
-                $this->addItemToJoin($join, $competition);
-            }
-        }
-    }
-
-    /**
-     * Add a competition ( item ) to a Join
-     *
-     * @param Join $join
-     * @param Competition $competition
-     */
-    private function addItemToJoin($join, $competition)
-    {
-        $item = $join->addItem($competition->id, $competition->price);
-        $this->itemRepo->save($item);
     }
 }

@@ -26,6 +26,7 @@
                                     <th>Formato</th>
                                     <th>Preço (R$)</th>
                                     <th>Vagas disponíveis</th>
+                                    <th><i class="fa fa-cog"></i></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -39,17 +40,28 @@
                                             }
                                         ?>
                                         <tr>
-                                            <td><input class="input-competition" type="checkbox" name="competitions[]" value="{{ $competition->id }}" data-price="{{ $competition->price }}"/> {{ $competition->game->name }}</td>
+                                            <td><input data-target="#modal-{{$competition->id}}" class="input-competition" type="checkbox" name="competitions[]" value="{{ $competition->id }}" data-price="{{ $competition->price }}"/> {{ $competition->game->name }}</td>
                                             <td>{{ $competition->platform->name }}</td>
                                             <td>{{ $competition->format->name }}</td>
                                             <td>{{ $competition->present()->userPrice }}</td>
                                             <td>{{ $competition->present()->slotsRemaining }}</td>
+                                            <td>
+                                                <button
+                                                    id="edit-nicks-{{$competition->id}}"
+                                                    type="button"
+                                                    class="btn btn-info btn-xs hide"
+                                                    data-toggle="modal"
+                                                    data-target="#modal-{{$competition->id}}"
+                                                >
+                                                    Editar Nicks
+                                                </button>
+                                            </td>
                                         </tr>
                                     @endif
                                 @endforeach
                                 <tr>
                                     <th colspan="3"><span class="pull-right">Total</span></th>
-                                    <th colspan="2">R$ <span id="totalprice">{{ number_format($total, 2) }}</span></th>
+                                    <th colspan="3">R$ <span id="totalprice">{{ number_format($total, 2) }}</span></th>
                                 </tr>
                             </tbody>
                         </table>
@@ -73,5 +85,4 @@
 @endsection
 @section('scripts')
     {{ HTML::script('js/checkout.js') }}
-    {{ HTML::script('js/join.js') }}
 @stop
