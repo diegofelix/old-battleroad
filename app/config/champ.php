@@ -49,6 +49,7 @@ return [
         'Champ\Listeners\NotificationListener',
         'Champ\Listeners\AdminNotificationListener',
         'Champ\Listeners\NewsletterListListener',
-        'Champ\Listeners\JoinDiscountListener'
+        'Champ\Listeners\JoinDiscountListener',
+        'Champ\Listeners\CompetitionRegistrar'
     ]
 ];

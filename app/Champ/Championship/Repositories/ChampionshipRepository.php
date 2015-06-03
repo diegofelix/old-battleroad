@@ -43,7 +43,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             $query = $this->getChampionshipsWithGames($query, $game);
         }
 
-        return $query->orderBy('event_start', 'desc')->paginate();
+        return $query->orderBy('event_start')->paginate();
     }
 
     /**

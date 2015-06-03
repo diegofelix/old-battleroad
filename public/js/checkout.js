@@ -1,1 +1,1 @@
-$("document").ready(function(){var t=$("#totalprice");$(".input-competition").click(function(){var i=+$(this).data("price"),c=+t.text();$(this).is(":checked")||(i=-1*i);var e=(c+i).toFixed(2);t.text(e)})});
+$("document").ready(function(){var t=$("#totalprice");$(".input-competition").click(function(){var i=+$(this).data("price"),e=+t.text(),a=$(this).data("target"),c="#edit-nicks-"+$(this).val();$(c).removeClass("hide"),$(this).is(":checked")&&$(a).modal(),$(this).is(":checked")||(i=-1*i,$(c).addClass("hide"));var d=(e+i).toFixed(2);t.text(d)})});

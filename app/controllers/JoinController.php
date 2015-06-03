@@ -78,15 +78,12 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     public function register()
     {
-        $input = Input::all();
-        // dd($input);
-        $input['user'] = Auth::user();
-        $input['championship'] = $this->champRepo->find(Input::get('id'));
+        Input::merge([
+            'user'         => Auth::user(),
+            'championship' => $this->champRepo->find(Input::get('id'))
+        ]);
 
-
-        // $command = new JoinCommand(Auth::user(), $championship, Input::get('competitions'));
-
-        $join = $this->execute(JoinCommand::class, $input);
+        $join = $this->execute(JoinCommand::class);
 
         // redirect the user to the location page.
         return $this->redirectRoute('join.show', [$join->id]);

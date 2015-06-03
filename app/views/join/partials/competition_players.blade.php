@@ -1,10 +1,8 @@
-<div class="panel panel-default">
-    <div class="panel-heading"><h3 class="panel-title"><small>Nick para: </small>{{ $competition->game->name }}</h3></div>
-    <div class="panel-body">
-        @for ( $i = 1 ; $i <= $competition->players ; $i++)
-            <div class="form-group">
-                {{ Form::text('nick', null, ['class' => 'form-control input-lg', 'placeholder' => "#$i Nick"]) }}
-            </div>
-        @endfor
+<p class="help-block">
+    Essa competição pede que você adicione os jogadores do seu time para participar do campeonato.
+</p>
+@for ( $i = 1 ; $i <= $competition->players ; $i++)
+    <div class="form-group">
+        {{ Form::text("nicks[{$competition->id}][]", null, ['class' => 'form-control input-lg', 'placeholder' => "#$i Nick"]) }}
     </div>
-</div>
+@endfor
