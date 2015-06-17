@@ -2,6 +2,7 @@
 
 use Carbon\Carbon;
 use Champ\Championship\Championship;
+use Champ\Join\Status;
 use Champ\Traits\UserPrice;
 use Config;
 use Laracasts\Presenter\Presenter;
@@ -177,5 +178,21 @@ class ChampionshipPresenter extends Presenter
         }
 
         return number_format($totalPrice, 2);
+    }
+
+    public function getFeaturedCompetitors()
+    {
+        $nicks = [];
+        foreach ($this->joins as $join) {
+            if ($join->status_id == Status::APPROVED) {
+                foreach ($join->items as $item) {
+                    foreach ($item->nicks as $nick) {
+                        $nicks[$nick->nick] = $nick->nick;
+                    }
+                }
+            }
+        }
+
+        return $nicks;
     }
 }

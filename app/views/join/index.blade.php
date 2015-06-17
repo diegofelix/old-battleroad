@@ -26,7 +26,7 @@
                                     <th>Formato</th>
                                     <th>Preço (R$)</th>
                                     <th>Vagas disponíveis</th>
-                                    <th><i class="fa fa-cog"></i></th>
+                                    <th><i class="fa fa-cog"></i> Nick / Time</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -40,22 +40,11 @@
                                             }
                                         ?>
                                         <tr>
-                                            <td><input data-target="#modal-{{$competition->id}}" class="input-competition" type="checkbox" name="competitions[]" value="{{ $competition->id }}" data-price="{{ $competition->price }}"/> {{ $competition->game->name }}</td>
-                                            <td>{{ $competition->platform->name }}</td>
-                                            <td>{{ $competition->format->name }}</td>
-                                            <td>{{ $competition->present()->userPrice }}</td>
-                                            <td>{{ $competition->present()->slotsRemaining }}</td>
-                                            <td>
-                                                <button
-                                                    id="edit-nicks-{{$competition->id}}"
-                                                    type="button"
-                                                    class="btn btn-info btn-xs hide"
-                                                    data-toggle="modal"
-                                                    data-target="#modal-{{$competition->id}}"
-                                                >
-                                                    Editar Nicks
-                                                </button>
-                                            </td>
+                                            @if ($competition->present()->isSingleRegistration())
+                                                @include ('join.partials.single_competition')
+                                            @else
+                                                @include ('join.partials.team_competition')
+                                            @endif
                                         </tr>
                                     @endif
                                 @endforeach
@@ -67,11 +56,6 @@
                         </table>
                     </div>
                 </div>
-
-                @if ($championship->competitions->count() == 1 or $championship->competitions->count() > 2)
-
-                @else
-                @endif
 
                 @include ('join/partials/players')
 
