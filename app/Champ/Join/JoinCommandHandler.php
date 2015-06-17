@@ -5,6 +5,7 @@ use Champ\Championship\Repositories\CompetitionRepositoryInterface;
 use Champ\Join\Join;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Services\JoinUserService;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 
@@ -25,31 +26,48 @@ class JoinCommandHandler implements CommandHandler {
      */
     protected $itemRepo;
 
+    /**
+     * Join User Service
+     * @var [type]
+     */
+    protected $userJoinService;
+
     use DispatchableTrait;
 
     public function __construct(
-        JoinRepositoryInterface $joinRepo,
-        CompetitionRepositoryInterface $competitionRepo,
-        ItemRepositoryInterface $itemRepo
+        JoinUserService $joinUserService
+        // JoinRepositoryInterface $joinRepo,
+        // CompetitionRepositoryInterface $competitionRepo,
+        // ItemRepositoryInterface $itemRepo
     )
     {
-        $this->JoinRepo         = $joinRepo;
-        $this->competitionRepo  = $competitionRepo;
-        $this->itemRepo         = $itemRepo;
+        $this->joinUserService = $joinUserService;
+        // $this->JoinRepo         = $joinRepo;
+        // $this->competitionRepo  = $competitionRepo;
+        // $this->itemRepo         = $itemRepo;
     }
 
     public function handle($command)
     {
-        $join = Join::register(
-            $command->user->id,
-            $command->championship->id,
-            $command->nicks,
-            $command->competitions
+        $join = $this->joinUserService->register(
+            $command->user,
+            $command->championship,
+            $command->competitions,
+            $command->nicks
         );
 
-        $this->JoinRepo->save($join);
+        // $join = Join::register(
+        //     $command->user->id,
+        //     $command->championship->id,
+        //     $command->nicks,
+        //     $command->competitions
+        // );
 
-        $this->dispatchEventsFor($join);
+
+
+        // $this->JoinRepo->save($join);
+
+        // $this->dispatchEventsFor($join);
 
         return $join;
     }
