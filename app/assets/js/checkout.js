@@ -36,4 +36,12 @@ $('document').ready(function(){
         // newTotal = newTotal/multiplier;
         // $total.text(newTotal);
     });
+
+    // prevent the user to submit the form if the modal is open
+    $("#checkout-form").on('submit', function(e){
+        if ($('.modal').is(':visible')) {
+            e.preventDefault();
+            $('.modal').modal('hide');
+        }
+    })
 });
