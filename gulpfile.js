@@ -32,6 +32,7 @@ gulp.task('libJS', function(){
         jsLibDir + '/jquery.js',
         jsLibDir + '/bootstrap.js',
         jsLibDir + '/wow.js',
+        jsLibDir + '/bootstrap-toggle.min.js',
         jsLibDir + '/index.js'
     ])
     .pipe(concat('min.js'))

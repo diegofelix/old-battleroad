@@ -55,10 +55,11 @@ class Item extends Eloquent
      *
      * @param  int $join_id
      * @param  int $price
+     * @param  string $team_name
      * @return model
      */
-    public static function register($competition_id, $price)
+    public static function register($competition_id, $price, $team_name = null)
     {
-        return new static(compact('competition_id', 'price'));
+        return new static(compact('competition_id', 'price', 'team_name'));
     }
 }

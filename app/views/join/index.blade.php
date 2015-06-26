@@ -10,7 +10,7 @@
             </div>
         </div>
 
-        {{ Form::open(['route' => 'join.register']) }}
+        {{ Form::open(['route' => 'join.register', 'id' => 'checkout-form']) }}
 
             {{ Form::hidden('id', $championship->id) }}
 
@@ -57,14 +57,15 @@
                     </div>
                 </div>
 
-                @include ('join/partials/players')
 
                 <button type="submit" class="btn btn-lg btn-success">Ir para Pagamento</button>
 
             </div>
+        @include ('join/partials/players')
         {{ Form::close() }}
 
     </div><!-- championship -->
+
 
 @endsection
 @section('scripts')

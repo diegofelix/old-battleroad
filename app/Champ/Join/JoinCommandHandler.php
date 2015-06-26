@@ -53,7 +53,8 @@ class JoinCommandHandler implements CommandHandler {
             $command->user,
             $command->championship,
             $command->competitions,
-            $command->nicks
+            $command->nicks,
+            $command->team_name
         );
 
         // $join = Join::register(
