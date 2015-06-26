@@ -39,4 +39,27 @@ class Item extends Eloquent
     {
         return $this->belongsTo('Champ\Championship\Competition');
     }
+
+    /**
+     * Relation with Nick
+     *
+     * @return HasMany
+     */
+    public function nicks()
+    {
+        return $this->hasMany('Champ\Join\Nick');
+    }
+
+    /**
+     * Add a new item
+     *
+     * @param  int $join_id
+     * @param  int $price
+     * @param  string $team_name
+     * @return model
+     */
+    public static function register($competition_id, $price, $team_name = null)
+    {
+        return new static(compact('competition_id', 'price', 'team_name'));
+    }
 }

@@ -75,7 +75,7 @@ class CompetitionsController extends BaseRegistrationController
     public function store($champId)
     {
         // get the necessary inputs
-        $input = Input::only('game_id', 'platform_id', 'format_id', 'price', 'start');
+        $input = Input::only('game_id', 'platform_id', 'format_id', 'players', 'price', 'start');
 
         // if the user setted a competition limit
         if ( ! Input::get('limit_switch') && Input::get('limit'))
