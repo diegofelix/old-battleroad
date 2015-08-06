@@ -14,6 +14,14 @@
         <h4>Abril</h4>
         <table class="table table-striped">
             <tr>
+                <th>06/08/2015</th>
+                <td>Organizadores agora podem enviar e-mail aos inscritos no seu campeonato!</td>
+            </tr>
+            <tr>
+                <th>26/06/2015</th>
+                <td>Adicionamos a opção do competidor inscrever seu time para campeonatos de times.</td>
+            </tr>
+            <tr>
                 <th>14/04/2015</th>
                 <td>Adicionamos a opção do usuário registrar um Nick para participar do Campeonato.</td>
             </tr>
