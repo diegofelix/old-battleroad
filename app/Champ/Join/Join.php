@@ -102,7 +102,7 @@ class Join extends Eloquent {
 
         $join = new static(compact('user_id', 'championship_id', 'status_id'));
 
-        // $join->raise(new UserJoined($join, $competitions, $nicks));
+        $join->raise(new UserJoined($join));
 
         return $join;
     }
