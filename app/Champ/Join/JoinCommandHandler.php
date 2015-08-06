@@ -57,18 +57,7 @@ class JoinCommandHandler implements CommandHandler {
             $command->team_name
         );
 
-        // $join = Join::register(
-        //     $command->user->id,
-        //     $command->championship->id,
-        //     $command->nicks,
-        //     $command->competitions
-        // );
-
-
-
-        // $this->JoinRepo->save($join);
-
-        // $this->dispatchEventsFor($join);
+        $this->dispatchEventsFor($join);
 
         return $join;
     }

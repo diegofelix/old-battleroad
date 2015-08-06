@@ -236,17 +236,18 @@ Route::filter('organizer', function()
     }
 });
 
-/**
- * Check if a user is owner fo the championship
- */
-Route::filter('championship_owner', function(){
-    $id = Request::segment(3);
+// /**
+//  * Check if a user is owner fo the championship
+//  */
+// Route::filter('championship_owner', function(){
+//     $id = Request::segment(3);
 
-    $championshipRepository = App::make('Champ\Championship\Repositories\ChampionshipRepositoryInterface');
+//     $championshipRepository = App::make('Champ\Championship\Repositories\ChampionshipRepositoryInterface');
 
-    $championship = $championshipRepository->find($id);
+//     $championship = $championshipRepository->find($id);
 
-    if ( ! $championship->isOwner(Auth::user()->id)) App::abort(404);
-});
+//     if ( ! $championship->isOwner(Auth::user()->id)) App::abort(404);
+// });
 
 Route::filter('join_owner', 'Champ\Filters\JoinOwner');
+Route::filter('championship_owner', 'Champ\Filters\ChampionshipOwner');
