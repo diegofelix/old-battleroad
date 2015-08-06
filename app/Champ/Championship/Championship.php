@@ -1,13 +1,15 @@
-<?php namespace Champ\Championship;
+<?php
 
-use Eloquent;
+namespace Champ\Championship;
+
 use Carbon\Carbon;
-use Laracasts\Presenter\PresentableTrait;
-use Champ\Traits\FormatToDb;
-use Champ\Join\Status;
-use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Championship\Events\ChampionshipPublished;
+use Champ\Join\Status;
+use Champ\Traits\FormatToDb;
+use Eloquent;
+use Laracasts\Commander\Events\EventGenerator;
+use Laracasts\Presenter\PresentableTrait;
 
 class Championship extends Eloquent
 {
@@ -151,6 +153,16 @@ class Championship extends Eloquent
     public function coupons()
     {
         return $this->hasMany('Champ\Championship\Coupon');
+    }
+
+    /**
+     * Relation with campaigns
+     *
+     * @return HasMany
+     */
+    public function campaigns()
+    {
+        return $this->hasMany('Champ\Championship\Campaign');
     }
 
     /**

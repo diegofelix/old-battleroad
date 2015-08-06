@@ -17,5 +17,6 @@ class ChampionshipServiceProvider extends ServiceProvider {
         $this->app->bind('Champ\Championship\Repositories\FormatRepositoryInterface', 'Champ\Championship\Repositories\FormatRepository');
         $this->app->bind('Champ\Championship\Repositories\PlatformRepositoryInterface', 'Champ\Championship\Repositories\PlatformRepository');
         $this->app->bind('Champ\Championship\Repositories\CouponRepositoryInterface', 'Champ\Championship\Repositories\CouponRepository');
+        $this->app->bind('Champ\Championship\Repositories\CampaignRepositoryInterface', 'Champ\Championship\Repositories\CampaignRepository');
     }
 }
