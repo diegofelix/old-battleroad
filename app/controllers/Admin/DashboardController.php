@@ -5,18 +5,6 @@ use BaseController;
 
 class DashboardController extends BaseController {
 
-    // /**
-    //  * Championship Repository Interface
-    //  *
-    //  * @var ChampionshipRepositoryInterface
-    //  */
-    // protected $championshipRepository;
-
-    // public function __construct(ChampionshipRepositoryInterface $championshipRepository)
-    // {
-    //     $this->championshipRepository = $championshipRepository;
-    // }
-
     /**
      * Show a screen with your championships and joins
      *
@@ -24,10 +12,25 @@ class DashboardController extends BaseController {
      */
     public function index()
     {
-        $championships = Auth::user()->championships;
+        $activeChampionships    = $this->activeChampionships();
+        $oldChampionships       = $this->oldChampionships();
         $joins = Auth::user()->joins;
 
-        return $this->view('admin.dashboard', compact('championships', 'joins'));
+        return $this->view('admin.dashboard', compact('activeChampionships', 'oldChampionships', 'joins'));
+    }
+
+    private function activeChampionships()
+    {
+        return Auth::user()->championships->filter(function($champ) {
+            return ! $champ->isFinished();
+        });
+    }
+
+    private function oldChampionships()
+    {
+        return Auth::user()->championships->filter(function($champ) {
+            return $champ->isFinished();
+        });
     }
 
 }
