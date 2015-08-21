@@ -45,6 +45,7 @@ class JoinUserService
         // save the join
         $join = $this->saveJoin($user, $championship);
 
+
         // save the competition for theses joins ( its saved as items )
         $items = $this->saveCompetitionsForJoin($join, $competitions, $teamName);
 

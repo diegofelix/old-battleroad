@@ -64,6 +64,7 @@ class EmbededJoinCommandHandler implements CommandHandler {
 
     public function handle($command)
     {
+
         $user         = $this->getOrCreateUser($command);
         $championship = $this->championshipRepository->find($command->championship_id);
 
@@ -105,9 +106,13 @@ class EmbededJoinCommandHandler implements CommandHandler {
     private function registerUser($command)
     {
         $model = App::make(User::class);
+
+        // first nick he encounter
+        $nick  = reset($command->nicks)[0];
+
         $user = $model->register([
             'name' => $command->name,
-            'username' => reset($command->nicks),
+            'username' => $nick,
             'email' => $command->email,
             'profile' => 'images/defaultUser.jpg'
         ]);
