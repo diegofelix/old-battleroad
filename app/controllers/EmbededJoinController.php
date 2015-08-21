@@ -1,11 +1,15 @@
 <?php
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Join\EmbededJoinCommand;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Laracasts\Commander\CommanderTrait;
 // use Champ\Billing\Moip\MoipBilling;
 //use Champ\Billing\Core\BillingInterface
 
 class EmbededJoinController extends BaseController {
+
+    use CommanderTrait;
 
     /**
      * Championship Repository
@@ -49,7 +53,12 @@ class EmbededJoinController extends BaseController {
      */
     public function store($id)
     {
-        return "opa, você está registrado!";
+        Input::merge(['championship_id' => $id]);
+
+        $join = $this->execute(EmbededJoinCommand::class);
+
+        return $this->redirectRoute('championships.embeded', $id)
+            ->with(['message' => 'Você foi registrado com sucesso!']);
     }
 
 }
