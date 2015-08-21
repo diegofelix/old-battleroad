@@ -34,10 +34,10 @@
                     @foreach ($championship->competitions as $competition)
                         <div class="checkbox">
                             <label>
-                                <input type="checkbox" name="competitions[]" value="{{ $competition->id }}"> {{ $competition->game->name }}
+                                <input type="checkbox" data-target="#form-nick-{{ $competition->id }}" name="competitions[]" value="{{ $competition->id  }}"> {{ $competition->game->name }}
                             </label>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group form-nick" id="form-nick-{{ $competition->id }}">
                             <label for="username" class="control-label">Nickname:
                             <input type="text" name="nicks[{{ $competition->id }}][]" class="form-control">
                             <small class="help-block">para esse jogo</small> </label>
@@ -63,4 +63,24 @@
 
     </div>
 
+@stop
+@section('scripts')
+    @parent
+    <script>
+        $(function(){
+            $('.form-nick').hide();
+
+            var curTarget = $("input[type=checkbox]:checked").data('target');
+            $(curTarget).show();
+
+            $("input[type=checkbox]").on('change', function(){
+                target = $(this).data('target');
+                if (this.checked) {
+                    $(target).fadeIn();
+                } else {
+                    $(target).fadeOut();
+                }
+            });
+        });
+    </script>
 @stop
