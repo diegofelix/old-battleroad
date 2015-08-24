@@ -24,9 +24,6 @@
     <body>
 
         <div id="wrapper">
-
-            @include ('partials._flash_message')
-
             <div id="content">
                 @yield('content')
             </div>

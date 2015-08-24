@@ -110,6 +110,8 @@ class EmbededJoinCommandHandler implements CommandHandler {
         // first nick he encounter
         $nick  = reset($command->nicks)[0];
 
+        if (! $nick) $nick = $command->name;
+
         $user = $model->register([
             'name' => $command->name,
             'username' => $nick,

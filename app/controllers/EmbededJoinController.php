@@ -61,4 +61,19 @@ class EmbededJoinController extends BaseController {
             ->with(['message' => 'Você foi registrado com sucesso!']);
     }
 
+    private function validate($input)
+    {
+        $errors = [];
+
+        foreach ($input as $field) {
+            if (empty($field)) {
+                $errors[] = "Campo obrigatório";
+            }
+        }
+
+        if ($errors) {
+            throw new Laracasts\Validation\FormValidationException('Há erros de validação.', $errors);
+        }
+    }
+
 }
