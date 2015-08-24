@@ -23,8 +23,9 @@ class EmbededJoinValidator {
         $this->form->validate([
             'name' => $command->name,
             'email' => $command->email,
-            // 'competitions' => $command->competitions,
-            // 'nicks' => $command->nicks,
+            'email_confirmation' => $command->email_confirmation,
+            'competitions' => $command->competitions,
+            'nicks' => $command->nicks,
             'identification' => $command->identification
         ]);
     }
