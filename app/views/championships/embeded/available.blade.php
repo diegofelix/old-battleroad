@@ -40,11 +40,11 @@
                     @endif
                 </div>
 
-                @if ($championship->competitions->count() > 1 )
+                @if ($championship->availableCompetitions()->count() > 1 )
 
                     <p class="help-block">Selecione os campeonatos que deseja participar:</p>
 
-                    @foreach ($championship->competitions as $competition)
+                    @foreach ($championship->availableCompetitions() as $competition)
                         <div class="checkbox {{ Session::has('error') && Session::get('error')->has('competitions') ? 'has-error' : '' }}">
                             <label>
                                 <input type="checkbox" data-target="#form-nick-{{ $competition->id }}" name="competitions[]" value="{{ $competition->id  }}"> {{ $competition->game->name }}

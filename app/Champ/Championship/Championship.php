@@ -287,4 +287,27 @@ class Championship extends Eloquent
         return $this->joins()->whereStatusId(Status::APPROVED)->paginate($qty);
     }
 
+    /**
+     * Show all competitions that has vacancies
+     *
+     * @return boolean
+     */
+    public function hasAvailableCompetitions()
+    {
+        foreach ($this->competitions as $competition) {
+            if ($competition->limit > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function availableCompetitions()
+    {
+        return $this->competitions->filter(function($competition){
+            return $competition->limit > 0;
+        });
+    }
+
 }
