@@ -28,6 +28,20 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
+     * Find only if the championship is available
+     *
+     * @param  int $id
+     * @return mixed
+     */
+    public function findAvailable($id)
+    {
+        return $this->model->whereId($id)
+            ->wherePublished(true)
+            ->whereFinished(false)
+            ->first();
+    }
+
+    /**
      * Get a list of Championships in event_start desc order
      *
      * @return Paginator

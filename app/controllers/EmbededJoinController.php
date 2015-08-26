@@ -40,9 +40,17 @@ class EmbededJoinController extends BaseController {
      */
     public function index($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->champRepo->findAvailable($id);
 
-        return $this->view('championships.embeded', compact('championship'));
+        if (is_null($championship)) {
+            return $this->championshipFinished();
+        }
+
+        if ($championship->hasAvailableCompetitions()) {
+            return $this->showJoinForm($championship);
+        }
+
+        return $this->joinsClosed();
     }
 
     /**
@@ -61,19 +69,34 @@ class EmbededJoinController extends BaseController {
             ->with(['message' => 'Você foi registrado com sucesso!']);
     }
 
-    private function validate($input)
+    /**
+     * Show for the user that this championship was finished
+     *
+     * @return Response
+     */
+    private function championshipFinished()
     {
-        $errors = [];
-
-        foreach ($input as $field) {
-            if (empty($field)) {
-                $errors[] = "Campo obrigatório";
-            }
-        }
-
-        if ($errors) {
-            throw new Laracasts\Validation\FormValidationException('Há erros de validação.', $errors);
-        }
+        return $this->view('championships.embeded.finished');
     }
 
+    /**
+     * Show for the user that the joins period expired or has no more vacancies
+     *
+     * @return Response
+     */
+    private function joinsClosed()
+    {
+        return $this->view('championships.embeded.closed');
+    }
+
+    /**
+     * Show the join form for the user
+     *
+     * @param  Championship $championship
+     * @return Response
+     */
+    private function showJoinForm($championship)
+    {
+        return $this->view('championships.embeded.available', compact('championship'));
+    }
 }

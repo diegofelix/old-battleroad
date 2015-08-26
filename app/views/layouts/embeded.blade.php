@@ -25,6 +25,15 @@
 
         <div id="wrapper">
             <div id="content">
+                @if (Session::has('message'))
+
+                    <!-- Message -->
+                    <div class="flash-message alert alert-success">
+                        <p><i class="fa fa-thumbs-up"></i> {{ Session::get('message') }}</p>
+                    </div>
+                    <!-- Message -->
+
+                @endif
                 @yield('content')
             </div>
         </div><!-- wrapper -->
