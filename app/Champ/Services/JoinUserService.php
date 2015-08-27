@@ -7,6 +7,7 @@ use Champ\Join\Join;
 use Champ\Join\Nick;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\UserAlreadyJoinedException;
 use DB;
 
 /**
@@ -43,8 +44,7 @@ class JoinUserService
     public function register($user, $championship, $competitions, $nicks, $teamName = null)
     {
         // save the join
-        $join = $this->saveJoin($user, $championship);
-
+        $join = $this->saveJoin($user, $championship, $nicks);
 
         // save the competition for theses joins ( its saved as items )
         $items = $this->saveCompetitionsForJoin($join, $competitions, $teamName);
@@ -103,9 +103,20 @@ class JoinUserService
      * @param  Championship $championship
      * @return Join
      */
-    private function saveJoin($user, $championship)
+    private function saveJoin($user, $championship, $nicks)
     {
-        $join = Join::register($user->id, $championship->id);
+        if ($this->joins->userParticipating($user->id, $championship->id)) {
+            throw new UserAlreadyJoinedException("Esse e-mail já está participando deste campeonato.");
+        }
+
+        // first nick he encounter
+        $nick  = reset($nicks)[0];
+        if (! $nick) {
+            $nick = $user->name;
+        }
+
+        $join = Join::register($user->id, $championship->id, $nick);
+
         $this->joins->save($join);
 
         return $join;

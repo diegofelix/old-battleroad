@@ -70,6 +70,21 @@ App::error(function(Laracasts\Validation\FormValidationException $exception, $co
 
 /*
 |--------------------------------------------------------------------------
+| User Already Joined Exception
+|--------------------------------------------------------------------------
+|
+| We now have two ways to user join championship. One of them the user even
+| dont need to be logged in, so. The better way I found was using
+| Exception to handle this
+|
+*/
+App::error(function(Champ\Join\UserAlreadyJoinedException $exception, $code)
+{
+    return Redirect::back()->withInput()->withError($exception->getErrors());
+});
+
+/*
+|--------------------------------------------------------------------------
 | Maintenance Mode Handler
 |--------------------------------------------------------------------------
 |

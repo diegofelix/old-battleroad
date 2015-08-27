@@ -96,11 +96,20 @@ class Join extends Eloquent {
 
     //     return $join;
     // }
-    public static function register($user_id, $championship_id)
+
+    /**
+     * Register a new join
+     *
+     * @param  int $user_id
+     * @param  int $championship_id
+     * @param  string $nick
+     * @return Join
+     */
+    public static function register($user_id, $championship_id, $nick)
     {
         $status_id = Status::WAITING;
 
-        $join = new static(compact('user_id', 'championship_id', 'status_id'));
+        $join = new static(compact('user_id', 'championship_id', 'status_id', 'nick'));
 
         $join->raise(new UserJoined($join));
 
