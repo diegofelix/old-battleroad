@@ -116,4 +116,19 @@ class JoinRepository extends AbstractRepository implements JoinRepositoryInterfa
             $query->where('competition_id', $competitionId);
         })->get();
     }
+
+    public function userParticipating($userId, $championshipId)
+    {
+        // get the join
+        $join = $this->model
+            ->whereUserId($userId)
+            ->whereChampionshipId($championshipId)
+            ->first();
+
+        // if was not found
+        if (is_null($join)) return false;
+
+        // return if is active or not
+        return $join->isActive();
+    }
 }

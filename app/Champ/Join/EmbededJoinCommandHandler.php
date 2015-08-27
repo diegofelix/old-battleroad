@@ -3,6 +3,7 @@
 namespace Champ\Join;
 
 use App;
+use Champ\Account\Profile;
 use Champ\Account\Repositories\UserRepositoryInterface;
 use Champ\Account\User;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
@@ -94,6 +95,8 @@ class EmbededJoinCommandHandler implements CommandHandler {
             $user = $this->registerUser($command);
         }
 
+        $this->saveIdentificationToUser($user, $command->identification);
+
         return $user;
     }
 
@@ -116,7 +119,7 @@ class EmbededJoinCommandHandler implements CommandHandler {
             'name' => $command->name,
             'username' => $nick,
             'email' => $command->email,
-            'profile' => 'images/defaultUser.jpg'
+            'profile' => 'images/defaultUser.jpg',
         ]);
 
         $this->userRepository->save($user);
@@ -124,5 +127,11 @@ class EmbededJoinCommandHandler implements CommandHandler {
         $this->dispatchEventsFor($user);
 
         return $user;
+    }
+
+    public function saveIdentificationToUser($user, $identification)
+    {
+        $user->identification = $identification;
+        $user->save();
     }
 }
