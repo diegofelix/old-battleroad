@@ -13,5 +13,6 @@ class JoinServiceProvider extends ServiceProvider {
     {
         $this->app->bind('Champ\Join\Repositories\JoinRepositoryInterface', 'Champ\Join\Repositories\JoinRepository');
         $this->app->bind('Champ\Join\Repositories\ItemRepositoryInterface', 'Champ\Join\Repositories\ItemRepository');
+        $this->app->bind('Champ\Join\Repositories\WaitingListRepositoryInterface', 'Champ\Join\Repositories\WaitingListRepository');
     }
 }
