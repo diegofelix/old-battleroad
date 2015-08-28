@@ -166,6 +166,16 @@ class Championship extends Eloquent
     }
 
     /**
+     * Relation with Waiting List
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function waitingList()
+    {
+        return $this->hasMany('Champ\Join\WaitingList');
+    }
+
+    /**
      * Dates handled by Carbon
      *
      * @return array

@@ -2,6 +2,7 @@
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\EmbededJoinCommand;
+use Champ\Join\LimitExceededJoinCommand;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
 // use Champ\Billing\Moip\MoipBilling;
@@ -46,11 +47,7 @@ class EmbededJoinController extends BaseController {
             return $this->championshipFinished();
         }
 
-        if ($championship->hasAvailableCompetitions()) {
-            return $this->showJoinForm($championship);
-        }
-
-        return $this->joinsClosed();
+        return $this->showJoinForm($championship);
     }
 
     /**
@@ -63,10 +60,20 @@ class EmbededJoinController extends BaseController {
     {
         Input::merge(['championship_id' => $id]);
 
-        $join = $this->execute(EmbededJoinCommand::class);
+        if (Input::has('limit_exceeded')) {
+            $join = $this->execute(LimitExceededJoinCommand::class);
+            $message = '
+                Obrigado por sua inscrição.
+                O limite de jogadores foi atingido, mas você poderá ser chamado em caso de desistência.
+            ';
+        } else {
+            $join = $this->execute(EmbededJoinCommand::class);
+            $message = 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.';
+        }
+
 
         return $this->redirectRoute('championships.embeded', $id)
-            ->with(['message' => 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.']);
+            ->with(compact('message'));
     }
 
     /**

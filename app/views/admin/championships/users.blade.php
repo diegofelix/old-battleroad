@@ -3,6 +3,28 @@
 
     @include ('admin.championships.partials._competitors', ['joins' => $championship->joins])
 
+    <hr>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">Lista de Espera</div>
+        <table class="table table-striped table-hover games-table">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>E-mail</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($championship->waitingList as $waitingList)
+                <tr>
+                    <td>{{ $waitingList->user->name }}</td>
+                    <td>{{ $waitingList->user->email }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+    </div>
+
     {{-- <h3><i class="fa fa-users"></i>
         Participantes
         <div id="payment-filter" class="btn-group pull-right">
