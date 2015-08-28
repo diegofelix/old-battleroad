@@ -28,7 +28,7 @@
                 @if (Session::has('message'))
 
                     <!-- Message -->
-                    <div class="flash-message alert alert-success">
+                    <div class="flash-message alert alert-success-embeded">
                         <p><i class="fa fa-thumbs-up"></i> {{ Session::get('message') }}</p>
                     </div>
                     <!-- Message -->

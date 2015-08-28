@@ -75,7 +75,7 @@
                 @endif
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-success">Registrar-se</button>
+                    <button type="submit" class="btn btn-success-embeded">Registrar-se</button>
                 </div>
 
             </div>
