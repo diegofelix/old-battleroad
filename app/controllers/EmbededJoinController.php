@@ -66,7 +66,7 @@ class EmbededJoinController extends BaseController {
         $join = $this->execute(EmbededJoinCommand::class);
 
         return $this->redirectRoute('championships.embeded', $id)
-            ->with(['message' => 'Você foi registrado com sucesso!']);
+            ->with(['message' => 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.']);
     }
 
     /**
