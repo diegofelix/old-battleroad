@@ -3,7 +3,8 @@
 
     <div class="container">
 
-        <p>Infelizmente as inscrições estão encerradas =(</p>
+        <p>Este campeonato já acabou.<p>
+        <p>Obrigado pelo carinho com Street Fighter e fique atento para futuras oportunidades!</p>
 
     </div>
 
