@@ -1,0 +1,1 @@
+$(function(){$("input[name=birthdate]").inputmask("d/m/y",{placeholder:"dd/mm/aaaa"}),$(".form-nick").hide();var t=$("input[type=checkbox]:checked").data("target");$(t).show(),$("input[type=checkbox]").on("change",function(){target=$(this).data("target"),this.checked?$(target).fadeIn():$(target).fadeOut()})});
