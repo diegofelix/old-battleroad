@@ -16,6 +16,14 @@
                     @endif
                 </div>
 
+                <div class="form-group {{ Session::has('error') && Session::get('error')->has('birthdate') ? 'has-error' : '' }}">
+                    <label for="birthdate" class="control-label">Data de Nascimento/Birthdate/Fecha de Nacimiento:</label>
+                    {{ Form::text('birthdate', null, ['class' => 'form-control']) }}
+                    @if (Session::has('error') && Session::get('error')->has('birthdate'))
+                        <p class="text-danger">{{ Session::get('error')->get('birthdate')[0] }}</p>
+                    @endif
+                </div>
+
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('email') ? 'has-error' : '' }}">
                     <label for="email" class="control-label">E-mail:</label>
                     {{ Form::text('email', null, ['class' => 'form-control']) }}
@@ -85,24 +93,4 @@
 
     </div>
 
-@stop
-@section('scripts')
-    @parent
-    <script>
-        $(function(){
-            $('.form-nick').hide();
-
-            var curTarget = $("input[type=checkbox]:checked").data('target');
-            $(curTarget).show();
-
-            $("input[type=checkbox]").on('change', function(){
-                target = $(this).data('target');
-                if (this.checked) {
-                    $(target).fadeIn();
-                } else {
-                    $(target).fadeOut();
-                }
-            });
-        });
-    </script>
 @stop

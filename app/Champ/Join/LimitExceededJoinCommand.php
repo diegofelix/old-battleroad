@@ -10,9 +10,10 @@ class LimitExceededJoinCommand {
     public $email;
     public $email_confirmation;
     public $identification;
+    public $birthdate;
     public $competitions;
 
-    function __construct($championship_id, $name, $nicks, $email, $email_confirmation, $identification, $competitions = array()) {
+    function __construct($championship_id, $name, $nicks, $email, $email_confirmation, $identification, $birthdate, $competitions = array()) {
         $this->championship_id = $championship_id;
         $this->competitions = $competitions;
         $this->name = $name;
@@ -20,6 +21,7 @@ class LimitExceededJoinCommand {
         $this->email = $email;
         $this->email_confirmation = $email_confirmation;
         $this->identification = $identification;
+        $this->birthdate = $birthdate;
     }
 
 }

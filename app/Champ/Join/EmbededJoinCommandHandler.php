@@ -4,11 +4,11 @@ namespace Champ\Join;
 
 use App;
 use Champ\Account\Profile;
-use Champ\Account\Repositories\UserRepositoryInterface;
 use Champ\Account\User;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Services\JoinUserService;
+use Champ\Services\RegisterUser;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 
@@ -21,12 +21,13 @@ class EmbededJoinCommandHandler implements CommandHandler {
      */
     protected $joinRepository;
 
+
     /**
-     * User Repository
+     * Register User Service
      *
-     * @var  Champ\Account\Repositories\UserRepositoryInterface
+     * @var Champ\Services\RegisterUser
      */
-    protected $userRepository;
+    protected $userService;
 
     /**
      * Join User Service
@@ -42,6 +43,8 @@ class EmbededJoinCommandHandler implements CommandHandler {
      */
     protected $championshipRepository;
 
+    private $userService;
+
     use DispatchableTrait;
 
     /**
@@ -55,18 +58,18 @@ class EmbededJoinCommandHandler implements CommandHandler {
         JoinRepositoryInterface $joinRepository,
         ChampionshipRepositoryInterface $championshipRepository,
         JoinUserService $joinUserService,
-        UserRepositoryInterface $userRepository
+        RegisterUser $userService
     ) {
         $this->joinRepository = $joinRepository;
         $this->championshipRepository = $championshipRepository;
         $this->joinUserService = $joinUserService;
         $this->userRepository = $userRepository;
+        $this->userService = $userService;
     }
 
     public function handle($command)
     {
-
-        $user         = $this->getOrCreateUser($command);
+        $user         = $this->userService->getOrCreateUser($command);
         $championship = $this->championshipRepository->find($command->championship_id);
 
         $join = $this->joinUserService->register(
@@ -79,59 +82,5 @@ class EmbededJoinCommandHandler implements CommandHandler {
         $this->dispatchEventsFor($join);
 
         return $join;
-    }
-
-    /**
-     * Find or creates a new User
-     *
-     * @param  EmbededJoinCommand $command
-     * @return User
-     */
-    private function getOrCreateUser($command)
-    {
-        $user = $this->userRepository->getByEmail($command->email);
-
-        if ( ! $user) {
-            $user = $this->registerUser($command);
-        }
-
-        $this->saveIdentificationToUser($user, $command->identification);
-
-        return $user;
-    }
-
-    /**
-     * Register a new User
-     *
-     * @param  EmbededJoinCommand $command
-     * @return User
-     */
-    private function registerUser($command)
-    {
-        $model = App::make(User::class);
-
-        // first nick he encounter
-        $nick  = reset($command->nicks)[0];
-
-        if (! $nick) $nick = $command->name;
-
-        $user = $model->register([
-            'name' => $command->name,
-            'username' => $nick,
-            'email' => $command->email,
-            'profile' => 'images/defaultUser.jpg',
-        ]);
-
-        $this->userRepository->save($user);
-
-        $this->dispatchEventsFor($user);
-
-        return $user;
-    }
-
-    public function saveIdentificationToUser($user, $identification)
-    {
-        $user->identification = $identification;
-        $user->save();
     }
 }
