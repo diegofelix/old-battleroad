@@ -47,6 +47,9 @@
       ga('create', 'UA-57282158-1', 'auto');
       ga('send', 'pageview');
     </script>
+    <script src="{{ asset('js/jquery-input-mask.js') }}"></script>
+    <script src="{{ asset('js/jquery-input-mask-date.js') }}"></script>
+    <script src="{{ asset('js/embeded.js') }}"></script>
     @yield('scripts')
     </body>
 </html>
