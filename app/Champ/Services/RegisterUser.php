@@ -2,6 +2,7 @@
 
 namespace Champ\Services;
 
+use App;
 use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
 
@@ -20,7 +21,7 @@ class RegisterUser {
      * @param  Object $object
      * @return User
      */
-    private function getOrCreateUser(Object $object)
+    public function getOrCreateUser($object)
     {
         if (! $user = $this->findUser($object)) {
             $user = $this->registerUser($object);
@@ -66,7 +67,7 @@ class RegisterUser {
 
         $this->users->save($user);
 
-        $this->dispatchEventsFor($user);
+        //$this->dispatchEventsFor($user);
 
         return $user;
     }

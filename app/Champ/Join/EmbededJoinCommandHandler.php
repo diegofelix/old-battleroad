@@ -43,8 +43,6 @@ class EmbededJoinCommandHandler implements CommandHandler {
      */
     protected $championshipRepository;
 
-    private $userService;
-
     use DispatchableTrait;
 
     /**
@@ -63,7 +61,6 @@ class EmbededJoinCommandHandler implements CommandHandler {
         $this->joinRepository = $joinRepository;
         $this->championshipRepository = $championshipRepository;
         $this->joinUserService = $joinUserService;
-        $this->userRepository = $userRepository;
         $this->userService = $userService;
     }
 
