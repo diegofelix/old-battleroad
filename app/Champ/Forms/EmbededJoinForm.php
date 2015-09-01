@@ -8,7 +8,7 @@ class EmbededJoinForm extends FormValidator {
 
     protected $rules = [
         'name' => 'required|min:6',
-        'birthdate' => 'required|date_format:dd/mm/yyyy',
+        'birthdate' => 'required|date_format:"d/m/Y"',
         'identification' => 'required',
         'email' => 'required|confirmed',
         'competitions' => 'required|min:1',
