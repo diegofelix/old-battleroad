@@ -58,7 +58,7 @@
                     <h4>CUPOM UTILIZADO: <strong>{{ $join->coupon->code }}</strong> no valor de: <strong>R$ {{ number_format($join->coupon->price, 2) }}</strong></h4>
                 </div>
             @else
-                @if ( ! $join->isPaid())
+                @if ( ! $join->wasPaid())
                     @include('join.coupon')
                 @endif
             @endif
@@ -80,7 +80,7 @@
                             <hr>
                         @endif
 
-                        @if ( ! $join->isPaid())
+                        @if ( ! $join->wasPaid())
                             @if ( ! $join->championship->finished)
                                 @include ('join.bcash')
                             @else
@@ -93,7 +93,7 @@
                 </div>
             @endif
 
-            @if ($join->isPaid())
+            @if ($join->wasPaid())
                 <div class="panel panel-default">
                     <div class="panel-heading"><span class="fa fa-info"></span> Informações adicionais</div>
                     <div class="panel-body">
