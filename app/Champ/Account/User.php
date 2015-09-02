@@ -1,14 +1,15 @@
 <?php namespace Champ\Account;
 
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableInterface;
-use Laracasts\Commander\Events\EventGenerator;
-use Laracasts\Presenter\PresentableTrait;
+use Auth;
+use Carbon\Carbon;
 use Champ\Account\Events\UserSignedUp;
 use Champ\Join\Status;
 use Eloquent;
-use Auth;
 use Hash;
+use Illuminate\Auth\Reminders\RemindableInterface;
+use Illuminate\Auth\UserInterface;
+use Laracasts\Commander\Events\EventGenerator;
+use Laracasts\Presenter\PresentableTrait;
 
 class User extends Eloquent implements UserInterface, RemindableInterface
 {
@@ -184,4 +185,23 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->is_organizer == true;
     }
 
+    /**
+     * Dates handled by the Carbon Api
+     *
+     * @return array
+     */
+    public function getDates()
+    {
+        return ['created_at', 'updated_at', 'birthdate'];
+    }
+
+    /**
+     * Convert the brazilian date do database date
+     *
+     * @param string $value
+     */
+    public function setBirthdateAttribute($value)
+    {
+        $this->attributes['birthdate'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
+    }
 }
