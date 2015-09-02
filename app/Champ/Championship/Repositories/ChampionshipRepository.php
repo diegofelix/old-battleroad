@@ -340,7 +340,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         {
             foreach ($championship->joins as $join)
             {
-                if ( ! $join->isPaid())
+                if ( ! $join->wasPaid())
                 {
                     $toSendAlert[] = $join;
                 }

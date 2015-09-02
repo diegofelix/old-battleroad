@@ -7,6 +7,7 @@ use Champ\Join\Join;
 use Champ\Join\Nick;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Status;
 use Champ\Join\UserAlreadyJoinedException;
 use DB;
 
@@ -52,7 +53,24 @@ class JoinUserService
         // for each item we save a list of nicks
         $this->saveNicksForItems($items, $nicks);
 
+        // check to see if a join is paid or not and update it status
+        $this->updateJoinStatusIfItsFree($join);
+
         return $join;
+    }
+
+    /**
+     * Update the Join Status if the Join is Free
+     *
+     * @param  Join $join
+     * @return void
+     */
+    public function updateJoinStatusIfItsFree($join)
+    {
+        if ($join->isFree()) {
+            $join->status_id = Status::APPROVED;
+            $join->save();
+        }
     }
 
     /**
@@ -62,7 +80,7 @@ class JoinUserService
      * @param  array $nicks
      * @return void
      */
-    public function saveNicksForItems($items, $nicks)
+    private function saveNicksForItems($items, $nicks)
     {
         foreach ($items as $item) {
             if (array_key_exists($item->competition_id, $nicks)) {

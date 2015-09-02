@@ -71,7 +71,7 @@ class AdminNotificationListener extends EventListener {
 
         foreach ($joins as $join)
         {
-            if ( ! $join->isPaid())
+            if ( ! $join->wasPaid())
             {
                 $cancelledJoins[] = $join->id;
                 $join->cancelJoin();

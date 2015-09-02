@@ -159,7 +159,7 @@ class Join extends Eloquent {
      *
      * @return boolean
      */
-    public function isPaid()
+    public function wasPaid()
     {
         return  in_array($this->status_id, [Status::APPROVED, Status::FINISHED]);
     }
@@ -196,20 +196,29 @@ class Join extends Eloquent {
     }
 
     /**
+     * Check if this Join is Paid or its free
+     *
+     * @return boolean
+     */
+    public function isPaid()
+    {
+        foreach ($this->items as $item) {
+            if ($item->price > 0) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Check if the user joined a free championship or not
      *
      * @return boolean
      */
     public function isFree()
     {
-        if ( ! empty($this->price)) return false;
-
-        foreach ($this->items as $item)
-        {
-            if ( ! empty($item->price)) return false;
-        }
-
-        return true;
+        return !$this->isPaid();
     }
 
     /**
