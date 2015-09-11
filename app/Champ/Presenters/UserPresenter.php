@@ -18,4 +18,18 @@ class UserPresenter extends Presenter
 
         return $this->picture;
     }
+
+    /**
+     * Present the User Birthdate with the Brazilian format
+     *
+     * @return string
+     */
+    public function userBirthdate()
+    {
+        if ($this->birthdate) {
+            return $this->birthdate->format('d/m/Y');
+        }
+
+        return "";
+    }
 }
