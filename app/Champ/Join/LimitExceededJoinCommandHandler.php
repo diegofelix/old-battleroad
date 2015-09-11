@@ -64,6 +64,8 @@ class LimitExceededJoinCommandHandler implements CommandHandler
 
         $this->waitingList->save($waitingList);
 
+        $this->dispatchEventsFor($user);
+
         return $waitingList;
     }
 }

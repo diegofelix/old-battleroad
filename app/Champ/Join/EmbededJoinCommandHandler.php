@@ -76,6 +76,7 @@ class EmbededJoinCommandHandler implements CommandHandler {
             $command->nicks
         );
 
+        $this->dispatchEventsFor($user);
         $this->dispatchEventsFor($join);
 
         return $join;
