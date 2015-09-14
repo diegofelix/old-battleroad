@@ -34,7 +34,7 @@ class AdminNotificationListener extends EventListener {
      */
     public function whenChampionshipFinished(ChampionshipFinished $championship)
     {
-        $joins = $this->joinRepository->getByChampionship($championship->id);
+        $joins = $this->joinRepository->getByChampionship($championship->championship->id);
 
         $cancelledJoins = $this->getCancelledJoins($joins);
 
