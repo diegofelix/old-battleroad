@@ -137,6 +137,7 @@ class ChampionshipsController extends BaseController {
     public function users($id)
     {
         $championship = $this->champRepo->find($id, ['joins.user']);
+        $waitingList  = $this->champRepo->waitingList($championship);
 
         return $this->view('admin.championships.users', compact('championship'));
     }

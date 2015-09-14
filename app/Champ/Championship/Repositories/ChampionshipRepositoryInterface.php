@@ -70,4 +70,12 @@ interface ChampionshipRepositoryInterface extends RepositoryInterface {
      */
     public function finishPastChampionships();
 
+    /**
+     * Get a waiting list for the championship
+     *
+     * @param  Championship $championship
+     * @return Collection
+     */
+    public function waitingList(Championship $championship);
+
 }

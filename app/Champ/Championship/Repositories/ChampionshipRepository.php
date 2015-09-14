@@ -326,6 +326,20 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
+     * Get a waiting list for the championship
+     *
+     * @param  Championship $championship
+     * @return Collection
+     */
+    public function waitingList(Championship $championship)
+    {
+        return $championship->waitingList()
+                            ->groupBy('email')
+                            ->orderBy('id')
+                            ->get();
+    }
+
+    /**
      * Get all users that not paid yet
      *
      * @return Collection
