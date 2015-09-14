@@ -15,7 +15,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($championship->waitingList as $waitingList)
+            @foreach ($waitingList as $waitingList)
                 <tr>
                     <td>{{ $waitingList->user->name }}</td>
                     <td>{{ $waitingList->user->email }}</td>

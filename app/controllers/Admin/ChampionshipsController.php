@@ -139,7 +139,7 @@ class ChampionshipsController extends BaseController {
         $championship = $this->champRepo->find($id, ['joins.user']);
         $waitingList  = $this->champRepo->waitingList($championship);
 
-        return $this->view('admin.championships.users', compact('championship'));
+        return $this->view('admin.championships.users', compact('championship', 'waitingList'));
     }
 
     /**
