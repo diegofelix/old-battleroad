@@ -334,7 +334,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     public function waitingList(Championship $championship)
     {
         return $championship->waitingList()
-                            ->groupBy('email')
+                            ->groupBy('user_id')
                             ->orderBy('id')
                             ->get();
     }
