@@ -9,6 +9,7 @@
                 <div class="col-md-9">
                     @if (count($championships))
                         @foreach ($championships as $champ)
+			@if ($champ->id != 40)
                             <div class="panel panel-default champ-item">
                                 <div class="panel-heading">
                                     <a href="{{ route('championships.show', $champ->id) }}">
@@ -30,6 +31,7 @@
                                     </a>
                                 </div>
                             </div>
+			@endif
                         @endforeach
                     @endif
                 </div>
