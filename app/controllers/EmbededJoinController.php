@@ -60,16 +60,16 @@ class EmbededJoinController extends BaseController {
     {
         Input::merge(['championship_id' => $id]);
 
-        if (Input::has('limit_exceeded')) {
+        //if (Input::has('limit_exceeded')) {
             $join = $this->execute(LimitExceededJoinCommand::class);
             $message = '
                 Obrigado por sua inscrição.
                 O limite de jogadores foi atingido, mas você poderá ser chamado em caso de desistência.
             ';
-        } else {
-            $join = $this->execute(EmbededJoinCommand::class);
-            $message = 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.';
-        }
+//        } else {
+  //          $join = $this->execute(EmbededJoinCommand::class);
+    //        $message = 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.';
+      //  }
 
 
         return $this->redirectRoute('championships.embeded', $id)
@@ -104,6 +104,6 @@ class EmbededJoinController extends BaseController {
      */
     private function showJoinForm($championship)
     {
-        return $this->view('championships.embeded.available', compact('championship'));
+        return $this->view('championships.embeded.limit_exceeded', compact('championship'));
     }
 }
