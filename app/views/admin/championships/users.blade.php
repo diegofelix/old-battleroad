@@ -11,6 +11,7 @@
         <thead>
             <tr>
                 <th>Nome</th>
+                <th>Nick</th>
                 <th>E-mail</th>
             </tr>
         </thead>
@@ -18,6 +19,7 @@
             @foreach ($waitingList as $waitingList)
                 <tr>
                     <td>{{ $waitingList->user->name }}</td>
+                    <td>{{ $waitingList->user->username or "" }}</td>
                     <td>{{ $waitingList->user->email }}</td>
                 </tr>
             @endforeach
