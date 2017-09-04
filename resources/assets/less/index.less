@@ -1,0 +1,124 @@
+// @import "base/base.less";
+
+/* all texts will be Lato */
+body { font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+
+#wrapper > .navbar .icon { margin-right: 5px; }
+.navbar-brand { font-weight: 400; }
+
+.banner {
+    padding-top: 250px;
+    background: #fff url('../images/banner.jpg') no-repeat;
+    color: #fff;
+    padding-left: 0;
+    h2 {
+        font-family: Raleway, Arial, sans-serif;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        letter-spacing: -0.05em;
+        font-weight: 900;
+        font-size: 7.7em;
+        width: 80%;
+        text-transform: uppercase;
+        line-height: 1em;
+    }
+    h3 {
+        font: 400 1.3em/0.8em Lato, Trebuchet MS, Tahoma, sans-serif;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+        margin-left: 10px;
+        margin-top: 0;
+        .highlight {
+            color: #ff6;
+        }
+    }
+}
+
+.subscription {
+    .subscribe {
+        margin-top: 113px;
+        margin-bottom: -30px;
+        margin-left: 70%;
+        display: inline-block;
+        background: #fff;
+        padding: 4px;
+        border-radius: 5px;
+    }
+    .btn-subscribe {
+        padding: 20px 20px;
+        border: none;
+        background-color: @champ-button-color;
+        color: #fff;
+        border-bottom: 3px solid @champ-button-color;
+        &:hover {
+            background-color: lighten(@champ-button-color, 10%);
+        }
+    }
+}
+
+.piece {
+    padding-top: 30px;
+    h2 {
+        font-family: Lato;
+        font-weight: 300;
+    }
+    p {
+        margin-top: 20px;
+        font-family: Lato, Trebuchet MS, Tahoma, sans-serif;
+        font-weight: 300;
+        font-size: 1.4em;
+        margin-bottom: 15px;
+    }
+}
+.piece.second,
+.piece.third {
+    padding-bottom: 20px;
+    h2 {@media (max-width: @screen-xs-max) {
+    .banner {
+        padding-top: 100px;
+    }
+    .subscription {
+        .subscribe {
+            margin-top: 113px;
+            margin-bottom: -30px;
+            margin-left: 30%;
+        }
+    }
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: @screen-sm-min) {
+    .banner {
+        padding-top: 100px;
+    }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: @screen-md-min) {
+    .banner {
+        position: relative;
+        padding-top: 150px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: @screen-lg-min) {
+    .banner {
+        position: relative;
+        padding-top: 150px;
+    }
+}
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+.piece.second {
+    .row {
+        margin-top: 40px;
+    }
+    p {
+        text-align: right;
+    }
+}
+.piece.third {
+    p {
+        text-align: left;
+    }
+}

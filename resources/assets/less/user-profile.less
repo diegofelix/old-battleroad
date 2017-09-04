@@ -1,0 +1,65 @@
+// @import "base/base.less";
+
+#user-profile {
+    margin-top: 40px;
+    padding-bottom: 20px;
+    figure {
+        text-align: center;
+        img {
+            width: 100%;
+        }
+    }
+    .champ-box {
+        header {
+            background: @champ-button-color;
+            color: #fff;
+            border-radius: 5px 5px 0 0;
+            h3 {
+                font-family: Lato, Tahoma, Arial, sans-serif;
+                font-weight: 300;
+                margin: 0;
+                padding: 10px 20px;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+            }
+        }
+        section {
+            border: 1px solid #ccc;
+            border-top: none;
+            padding: 20px;
+        }
+    }
+    .settings {
+        margin-top: 20px;
+        .settings-list {
+            text-align: left;
+            list-style: none;
+            padding-left: 0;
+            a {
+                display: block;
+                padding: 7px 0;
+                border-bottom: 1px dotted #ccc;
+                &:hover {
+                    background: #f1f1f1;
+                    text-decoration: none;
+                }
+            }
+            li:first-child a {
+                border-top: 1px dotted #ccc;
+            }
+        }
+    }
+    .panel {
+        font-weight: 300;
+        legend {
+            background: #f1f1f1;
+            font-size: 16px;
+            padding: 5px 20px;
+        }
+        label {
+            font-weight: 300;
+        }
+        textarea {
+            height: 100px;
+        }
+    }
+}
