@@ -1,6 +1,6 @@
-/bootstrap/compiled.php
 /vendor
 /node_modules
+<<<<<<< HEAD
 composer.phar
 composer.lock
 .env.local.php
@@ -10,3 +10,6 @@ Thumbs.db
 .fuse_hidden*
 champaholic.sublime-project
 champaholic.sublime-workspace
+=======
+.env
+>>>>>>> laravel/5.0

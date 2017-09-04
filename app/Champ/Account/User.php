@@ -6,12 +6,14 @@ use Champ\Account\Events\UserSignedUp;
 use Champ\Join\Status;
 use Eloquent;
 use Hash;
-use Illuminate\Auth\Reminders\RemindableInterface;
-use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Authenticatable;
+use Illuminate\Auth\Passwords\CanResetPassword;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
-class User extends Eloquent implements UserInterface, RemindableInterface
+class User extends Eloquent implements AuthenticatableContract, CanResetPasswordContract
 {
 
     /**
@@ -42,6 +44,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
      */
     protected $fillable = ['name', 'username', 'email', 'password', 'picture'];
 
+    use Authenticatable, CanResetPassword;
     use PresentableTrait;
     use EventGenerator;
 
