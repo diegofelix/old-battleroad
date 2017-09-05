@@ -107,5 +107,5 @@
     </div>
 @endsection
 @section('scripts')
-    {{ HTML::script('js/checkout.js') }}
+    {!! HTML::script('js/checkout.js') !!}
 @stop

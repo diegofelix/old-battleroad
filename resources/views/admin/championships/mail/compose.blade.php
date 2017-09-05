@@ -23,5 +23,5 @@
 
 @stop
 @section('scripts')
-    {{ HTML::script('js/register.js') }}
+    {!! HTML::script('js/register.js') !!}
 @stop

@@ -14,8 +14,8 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
             <ul class="nav navbar-nav">
-                    <li>{{ link_to('championships', 'Campeonatos') }}</li>
-                    <li>{{ link_to_route('how_it_works', 'Como funciona?') }}</li>
+                    <li>{!! link_to('championships', 'Campeonatos') !!}</li>
+                    <li>{!! link_to_route('how_it_works', 'Como funciona?') !!}</li>
                     <li><a href="http://battleroad.uservoice.com">Feedback</a></li>
             </ul>
 
@@ -27,8 +27,8 @@
                 @endif
                 <li id="user-options" class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        {{ HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['width' => '25']) }}
-                        {{{ Auth::user()->name }}}
+                        {!! HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['width' => '25']) !!}
+                        {{ Auth::user()->name }}
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu dropdown-with-icons" role="menu">

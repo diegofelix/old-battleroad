@@ -23,8 +23,8 @@
             <tr class="status status-{{ $join->present()->simplifiedStatus }}">
                 <td># {{ $join->id }}</td>
                 <td>
-                    {{ HTML::image($join->user->present()->userImage) }}
-                    {{ link_to_route('profile.show', $join->present()->competitorName, [$join->user->username]) }}
+                    {!! HTML::image($join->user->present()->userImage) !!}
+                    {!! link_to_route('profile.show', $join->present()->competitorName, [$join->user->username]) !!}
                 </td>
                 <td>
                     <a href="{{ route('admin.championships.transaction', [$join->championship_id, $join->id]) }}">

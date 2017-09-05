@@ -5,5 +5,5 @@
     @include ('admin.championships.partials._competitors')
 @stop
 @section('scripts')
-    {{ HTML::script('js/admin_championship.js') }}
+    {!! HTML::script('js/admin_championship.js') !!}
 @stop

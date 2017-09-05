@@ -13,7 +13,7 @@
         <div class="container">
             <div class="row">
                 <figure class="col-md-3">
-                    {{ HTML::image($user->present()->userImage, $user->name, ['class' => 'img-responsive']) }}
+                    {!! HTML::image($user->present()->userImage, $user->name, ['class' => 'img-responsive']) !!}
                     {{-- Check if the user logged is the same as the profile --}}
                     @if ($user->currentUser())
                         <div class="settings champ-box">
@@ -53,7 +53,7 @@
                                 <div class="panel panel-info">
                                     <div class="panel-heading">PSN</div>
                                     <div class="panel-body">
-                                        {{{ $user->profile->psn }}}
+                                        {{ $user->profile->psn }}
                                     </div>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                                 <div class="panel panel-success">
                                     <div class="panel-heading">XBOX Live</div>
                                     <div class="panel-body">
-                                        {{{ $user->profile->live }}}
+                                        {{ $user->profile->live }}
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                 <div class="panel panel-default">
                                     <div class="panel-heading">Steam</div>
                                     <div class="panel-body">
-                                        {{{ $user->profile->steam }}}
+                                        {{ $user->profile->steam }}
                                     </div>
                                 </div>
                             </div>

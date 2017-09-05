@@ -17,7 +17,7 @@
         <div class="subscription">
             <div class="container">
                 <div class="subscribe">
-                    {{ link_to_route('register.index', 'Cadastre-se, é grátis!', null, ['class' => 'btn btn-lg btn-default btn-subscribe']) }}
+                    {!! link_to_route('register.index', 'Cadastre-se, é grátis!', null, ['class' => 'btn btn-lg btn-default btn-subscribe']) !!}
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="col-md-8">
-                    {{ HTML::image('images/admin.jpg', 'Painel de Administração', ['class' => 'img-responsive']) }}
+                    {!! HTML::image('images/admin.jpg', 'Painel de Administração', ['class' => 'img-responsive']) !!}
                 </div>
             </div>
 
@@ -52,7 +52,7 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    {{ HTML::image('images/championships.jpg', 'Lista de campeonatos', ['class' => 'img-responsive']) }}
+                    {!! HTML::image('images/championships.jpg', 'Lista de campeonatos', ['class' => 'img-responsive']) !!}
                 </div>
 
                 <div class="col-md-4">

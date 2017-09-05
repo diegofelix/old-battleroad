@@ -25,7 +25,7 @@
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_championship.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_championship.png', '', ['class' => 'img-responsive']) !!}
             </div>
             <div class="col-md-5">
                 <h3>Participando de um campeonato</h3>
@@ -41,13 +41,13 @@
                 <p>Selecione quais competições você quer se inscrever, isso atualizará o preço total da participação. Após, confirme sua inscrição.</p>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) !!}
             </div>
         </div>
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_payment.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_payment.png', '', ['class' => 'img-responsive']) !!}
             </div>
             <div class="col-md-5">
                 <h3>Realizando o pagamento</h3>

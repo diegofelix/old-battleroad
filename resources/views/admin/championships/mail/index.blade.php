@@ -19,7 +19,7 @@
             <tbody>
                 @foreach ($championship->campaigns as $campaign)
                     <tr>
-                        <td>{{{ $campaign->subject }}}</td>
+                        <td>{{ $campaign->subject }}</td>
                         {{-- <td>
                             <a
                                 href="{{ route('admin.championships.mail.summary', [$championship->id, $campaign->id]) }}"
@@ -36,5 +36,5 @@
     </div>
 @stop
 @section('scripts')
-    {{ HTML::script('js/register.js') }}
+    {!! HTML::script('js/register.js') !!}
 @stop

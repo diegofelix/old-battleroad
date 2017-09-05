@@ -6,7 +6,7 @@
 
         <div class="featured-title championship">
             <div class="container">
-                {{ HTML::image($championship->image) }}
+                {!! HTML::image($championship->image) !!}
             </div>
         </div>
 
@@ -50,7 +50,7 @@
                     </tbody>
                 </table>
 
-                {{ link_to_route('subscription.create', 'Inscrever-se', $championship->id) }}
+                {!! link_to_route('subscription.create', 'Inscrever-se', $championship->id) !!}
                 <button type="submit" class="btn btn-lg btn-success">Finalizar Inscrição</button>
 
             </div>
