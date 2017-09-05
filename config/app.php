@@ -136,7 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
-		'Illuminate\Html\HtmlServiceProvider',
+		'Collective\Html\HtmlServiceProvider',
 		Illuminate\Broadcasting\BroadcastServiceProvider::class,
 
 		/*
@@ -147,6 +147,16 @@ return [
 		'Battleroad\Providers\ConfigServiceProvider',
 		'Battleroad\Providers\EventServiceProvider',
 		'Battleroad\Providers\RouteServiceProvider',
+
+		Champ\Providers\ChampionshipServiceProvider::class,
+		Champ\Providers\AccountServiceProvider::class,
+		Champ\Providers\BillingServiceProvider::class,
+		Champ\Providers\ContextsServiceProvider::class,
+		Champ\Providers\EventingServiceProvider::class,
+		Champ\Providers\JoinServiceProvider::class,
+		Champ\Providers\NewsletterListServiceProvider::class,
+		Champ\Providers\NotificationsServiceProvider::class,
+		Champ\Providers\ValidationServiceProvider::class,
 
 	],
 
@@ -197,8 +207,8 @@ return [
 		'View'      => 'Illuminate\Support\Facades\View',
 		'Gate' => Illuminate\Support\Facades\Gate::class,
 
-		'Form'      => 'Illuminate\Html\FormFacade',
-        'Html'      => 'Illuminate\Html\HtmlFacade',
+		'Form'      => Collective\Html\FormFacade::class,
+        'HTML'      => Collective\Html\HtmlFacade::class,
 	],
 
 ];
