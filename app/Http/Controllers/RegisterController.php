@@ -1,6 +1,8 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
+use Auth;
+use Input;
 use Champ\Account\Repositories\UserRepositoryInterface;
 use Laracasts\Commander\Events\DispatchableTrait;
 
