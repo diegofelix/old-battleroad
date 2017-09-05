@@ -1,6 +1,8 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
+use View;
+
 class BaseController extends Controller {
 
 	/**
