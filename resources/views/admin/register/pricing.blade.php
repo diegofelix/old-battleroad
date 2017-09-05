@@ -100,6 +100,6 @@
 @endsection
 
 @section ('scripts')
-    {{ HTML::script('js/register.js') }}
-    {{ HTML::script('js/help-toggle.js') }}
+    {!! HTML::script('js/register.js') !!}
+    {!! HTML::script('js/help-toggle.js') !!}
 @endsection

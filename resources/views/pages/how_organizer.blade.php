@@ -16,7 +16,7 @@
 
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_dashboard.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_dashboard.png', '', ['class' => 'img-responsive']) !!}
             </div>
             <div class="col-md-5">
                 <h3>Dashboard</h3>
@@ -30,12 +30,12 @@
                 <p>Você também precisa definir a data do campeonato. Essa data é muito importante, porque será baseada nela que definiremos a data de finalização dos pagamentos, por exemplo, se você disser que o campeonato começa no dia 10/01/2015, no dia 07/01/2015 enviaremos e-mails aos jogadores que se inscreveram, mas ainda não pagaram o campeonato lembrando sobre o pagamento. Isso porque, alguns tipos de pagamento necessitam de 2 dias para confirmação, como boleto e depósito.</p>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_register.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_register.png', '', ['class' => 'img-responsive']) !!}
             </div>
         </div>
         <div class="row">
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_games.png', '', ['class' => 'img-responsive']) !!}
             </div>
             <div class="col-md-5">
                 <h3>Adicionando jogos ao campeonato</h3>
@@ -53,7 +53,7 @@
                 </ul>
             </div>
             <div class="col-md-7">
-                {{ HTML::image('images/hiw_integration.png', '', ['class' => 'img-responsive']) }}
+                {!! HTML::image('images/hiw_integration.png', '', ['class' => 'img-responsive']) !!}
             </div>
         </div>
 

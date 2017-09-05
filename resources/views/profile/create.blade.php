@@ -22,7 +22,7 @@
 
 @stop
 @section('scripts')
-    {{ HTML::script('js/jquery-input-mask.js') }}
-    {{ HTML::script('js/jquery-input-mask-date.js') }}
-    {{ HTML::script('js/profile.js') }}
+    {!! HTML::script('js/jquery-input-mask.js') !!}
+    {!! HTML::script('js/jquery-input-mask-date.js') !!}
+    {!! HTML::script('js/profile.js') !!}
 @stop

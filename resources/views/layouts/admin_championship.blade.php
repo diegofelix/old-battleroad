@@ -14,5 +14,5 @@
 @stop
 
 @section('scripts')
-    {{ HTML::script('js/bootstrap-datepicker.js') }}
+    {!! HTML::script('js/bootstrap-datepicker.js') !!}
 @stop

@@ -48,14 +48,14 @@
                                     @foreach($championship->competitions as $competition)
                                         <?php if ($competition->limit > 0) $canJoin = true; ?>
                                         <tr>
-                                            <td>{{{ $competition->game->name }}}</td>
+                                            <td>{{ $competition->game->name }}</td>
                                             <td>
-                                                {{{ $competition->format->name }}}
-                                                <button type="button" class="btn btn-xs" data-placement="bottom" data-toggle="popover" title="{{{ $competition->format->name }}}" data-content="{{ Config::get('champ.formats.'.$competition->format_id) }}" >?</button>
+                                                {{ $competition->format->name }}
+                                                <button type="button" class="btn btn-xs" data-placement="bottom" data-toggle="popover" title="{{ $competition->format->name }}" data-content="{{ Config::get('champ.formats.'.$competition->format_id) }}" >?</button>
                                             </td>
-                                            <td>{{{ $competition->platform->name }}}</td>
-                                            <td>{{{ $competition->present()->slotsRemaining }}}</td>
-                                            <td>{{{ $competition->present()->eventStart }}}</td>
+                                            <td>{{ $competition->platform->name }}</td>
+                                            <td>{{ $competition->present()->slotsRemaining }}</td>
+                                            <td>{{ $competition->present()->eventStart }}</td>
                                             <td>{{ $competition->present()->userPrice }}</td>
                                         </tr>
                                     @endforeach
@@ -73,12 +73,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Informações</div>
                         <ul class="list-group">
-                            <li class="list-group-item">{{{ $championship->location }}}</li>
-                            <li class="list-group-item">{{{ $championship->present()->daysLeft }}}</li>
+                            <li class="list-group-item">{{ $championship->location }}</li>
+                            <li class="list-group-item">{{ $championship->present()->daysLeft }}</li>
                         </ul>
                         @if ($canJoin)
                             <div class="panel-body">
-                                {{ link_to_route('join.create', 'Quero Participar!', $championship->id, ['class' => 'btn btn-block btn-lg btn-success']) }}
+                                {!! link_to_route('join.create', 'Quero Participar!', $championship->id, ['class' => 'btn btn-block btn-lg btn-success']) !!}
                             </div>
                         @endif
                     </div>

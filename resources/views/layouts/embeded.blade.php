@@ -17,7 +17,7 @@
 
         <link href='http://fonts.googleapis.com/css?family=Raleway:400,900' rel='stylesheet' type='text/css'>
 
-        {{ HTML::style('css/main.css') }}
+        {!! HTML::style('css/main.css') !!}
 
     </head>
 
@@ -37,7 +37,7 @@
                 @yield('content')
             </div>
         </div><!-- wrapper -->
-    {{ HTML::script('js/min.js') }}
+    {!! HTML::script('js/min.js') !!}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
