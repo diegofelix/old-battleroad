@@ -8,47 +8,43 @@ version: '2'
 
 # Named volumes
 volumes:
-  # Postgres Data
-  testing-postgres-data:
-    driver: local
-
   # MySQL Data
-  diegofelix-mysql-data:
+  battleroad-mysql-data:
     driver: local
 
   # Redis Data
-  testing-redis-data:
+  battleroad-redis-data:
     driver: local
 
 services:
   # MySQL (5.7)
   mysql:
     image: ambientum/mysql:5.7
-    container_name: diegofelix-mysql
+    container_name: battleroad-mysql
     volumes:
-      - diegofelix-mysql-data:/var/lib/mysql
+      - battleroad-mysql-data:/var/lib/mysql
     ports:
       - "3306:3306"
     environment:
-      - MYSQL_ROOT_PASSWORD=diegofelix
-      - MYSQL_DATABASE=diegofelix
-      - MYSQL_USER=diegofelix
-      - MYSQL_PASSWORD=diegofelix
+      - MYSQL_ROOT_PASSWORD=battleroad
+      - MYSQL_DATABASE=battleroad
+      - MYSQL_USER=battleroad
+      - MYSQL_PASSWORD=battleroad
 
   # Redis
   cache:
     image: ambientum/redis:3.2
-    container_name: testing-redis
+    container_name: battleroad-redis
     command: --appendonly yes
     volumes:
-      - testing-redis-data:/data
+      - battleroad-redis-data:/data
     ports:
       - "6379:6379"
 
   # PHP (with Caddy)
   app:
     image: ambientum/php:7.0-nginx
-    container_name: testing-app
+    container_name: battleroad-app
     volumes:
       - .:/var/www/app
     ports:
@@ -60,7 +56,7 @@ services:
   # Laravel Queues
   queue:
     image: ambientum/php:7.0-nginx
-    container_name: testing-queue
+    container_name: battleroad-queue
     command: php artisan queue:listen
     volumes:
       - .:/var/www/app
