@@ -29,11 +29,11 @@
                     <div class="panel panel-success">
                         <div class="panel-heading">Configurações</div>
                         <div class="panel-body">
-                            {{ Form::model(Auth::user()->profile, ['route' => ['profile.update', Auth::user()->profile->id], 'method' => 'PATCH', 'role' => 'form', 'class' => 'form-horizontal']) }}
+                            {!! Form::model(Auth::user()->profile, ['route' => ['profile.update', Auth::user()->profile->id], 'method' => 'PATCH', 'role' => 'form', 'class' => 'form-horizontal']) !!}
 
                                 @include('profile._fields')
 
-                            {{ Form::close() }}
+                            {!! Form::close() !!}
                         </div>
                     </div>
                 </div>

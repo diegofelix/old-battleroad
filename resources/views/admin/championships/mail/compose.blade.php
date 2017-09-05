@@ -7,18 +7,18 @@
     <hr>
 
     <div class="form">
-        {{ Form::open(['route' => ['admin.championships.mail.store', $championship->id]]) }}
+        {!! Form::open(['route' => ['admin.championships.mail.store', $championship->id]]) !}}
 
             <div class="form-group">
-                {{ Form::text('subject', null, ['class' => 'form-control input-lg', 'placeholder' => 'Assunto']) }}
+                {!! Form::text('subject', null, ['class' => 'form-control input-lg', 'placeholder' => 'Assunto']) !}}
             </div>
             <div class="form-group">
-                {{ Form::textarea('body', null, ['class' => 'form-control input-lg', 'placeholder' => 'Mensagem']) }}
+                {!! Form::textarea('body', null, ['class' => 'form-control input-lg', 'placeholder' => 'Mensagem']) !}}
             </div>
 
             <button type="submit" class="btn btn-success"><i class="fa fa-send"></i> Enviar</button>
 
-        {{ Form::close() }}
+        {!! Form::close() !}}
     </div>
 
 @stop

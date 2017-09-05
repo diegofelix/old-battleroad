@@ -40,12 +40,12 @@
                         <p>Tem dúvidas de como criar sua conta Bcash? Temos um {!! link_to_route('tutorial_bcash', 'mini-manual aqui', null, ['target' => '_blank'])  !!} que pode te ajudar!</p>
                     </div>
 
-                    {{ Form::open(['route' => ['admin.register.integration', $championship->id]]) }}
+                    {!! Form::open(['route' => ['admin.register.integration', $championship->id]]) !!}
                     <div class="row">
                         <div class="col-md-4">
                             <div class="form-group">
-                                {{ Form::label('E-mail cadastrado no Bcash') }}
-                                {{ Form::email('bcash_account', null, ['class' => 'form-control', 'required' => 'required']) }}
+                                {!! Form::label('E-mail cadastrado no Bcash') !!}
+                                {!! Form::email('bcash_account', null, ['class' => 'form-control', 'required' => 'required']) !!}
                             </div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                     <div class="next-step">
                         <button type="submit" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</button>
                     </div>
-                    {{ Form::close() }}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </li>
