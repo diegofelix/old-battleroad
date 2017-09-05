@@ -1,7 +1,9 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
+use Auth;
 use View;
+use Redirect;
 
 class BaseController extends Controller {
 

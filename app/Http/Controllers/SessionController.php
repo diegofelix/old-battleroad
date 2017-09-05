@@ -1,6 +1,9 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
+use Auth;
+use Input;
+
 class SessionController extends BaseController {
 
 	/**
