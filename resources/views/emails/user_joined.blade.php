@@ -8,6 +8,6 @@
     </p>
     <p>O número da sua inscrição é: <strong>{{ $join }}</strong></p>
 
-    <p>Para mais informações, acesse: {{ link_to_route('join.show', 'a página do seu pedido', $join) }}</p>
+    <p>Para mais informações, acesse: {!! link_to_route('join.show', 'a página do seu pedido', $join) !!}</p>
 </body>
 </html>

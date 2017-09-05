@@ -47,7 +47,7 @@
                                 <tr>
                                     <td>{{ $competition->game->name }}</td>
                                     <td>{{ $competition->format->name }}</td>
-                                    <td>{{ HTML::image($competition->platform->icon) }}</td>
+                                    <td>{!! HTML::image($competition->platform->icon) !!}</td>
                                     <td>{{ $competition->present()->userPrice }}</td>
                                     <td>{{ $competition->start }}</td>
                                     <td>
@@ -187,8 +187,8 @@
 
 @stop
 @section('scripts')
-    {{ HTML::script('js/jquery-input-mask.js') }}
-    {{ HTML::script('js/jquery-input-mask-date.js') }}
-    {{ HTML::script('js/games.js') }}
-    {{ HTML::script('js/register.js') }}
+    {!! HTML::script('js/jquery-input-mask.js') !!}
+    {!! HTML::script('js/jquery-input-mask-date.js') !!}
+    {!! HTML::script('js/games.js') !!}
+    {!! HTML::script('js/register.js') !!}
 @stop

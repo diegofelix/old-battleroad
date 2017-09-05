@@ -17,10 +17,10 @@
                 @foreach ($competitions as $competition)
                     <tr>
                         <td>{{ $competition->game->name }}</td>
-                        <td>{{ HTML::image($competition->platform->icon) }}</td>
+                        <td>{!! HTML::image($competition->platform->icon) !!}</td>
                         <td>{{ $competition->items->count() }} Participantes</td>
                         <td>{{ $competition->start }}</td>
-                        <td>{{ link_to_route('admin.championships.games.show', 'Detalhes', [$competition->championship_id, $competition->id]) }}</td>
+                        <td>{!! link_to_route('admin.championships.games.show', 'Detalhes', [$competition->championship_id, $competition->id]) !!}</td>
                     </tr>
 
                 @endforeach

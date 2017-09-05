@@ -6,7 +6,7 @@
 
         <div class="featured-title championship">
             <div class="container">
-                {{ HTML::image($championship->image) }}
+                {!! HTML::image($championship->image) !!}
             </div>
         </div>
 
@@ -69,5 +69,5 @@
 
 @endsection
 @section('scripts')
-    {{ HTML::script('js/checkout.js') }}
+    {!! HTML::script('js/checkout.js') !!}
 @stop

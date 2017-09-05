@@ -14,8 +14,8 @@
 
                         <div class="networks">
                             <ul>
-                                <li>{{ link_to_route('auth.facebook', 'Facebook', null, ['class' => 'btn btn-default btn-facebook']) }}</li>
-                                <li>{{ link_to_route('auth.google', 'Google', null, ['class' => 'btn btn-default btn-google']) }}</li>
+                                <li>{!! link_to_route('auth.facebook', 'Facebook', null, ['class' => 'btn btn-default btn-facebook']) !!}</li>
+                                <li>{!! link_to_route('auth.google', 'Google', null, ['class' => 'btn btn-default btn-google']) !!}</li>
                             </ul>
                         </div>
 
@@ -41,7 +41,7 @@
                             </label>
                         </div>
 
-                        <span class="help-block pull-right">{{ link_to('password/remind', 'Esqueceu sua senha?') }}</span>
+                        <span class="help-block pull-right">{!! link_to('password/remind', 'Esqueceu sua senha?') !!}</span>
 
                         <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
 

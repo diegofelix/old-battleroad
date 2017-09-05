@@ -14,7 +14,7 @@
 
             <div class="col-md-6">
 
-                <h5>Já tem cadastro? {{ link_to_route('session.create', 'faça o login.') }}</h5>
+                <h5>Já tem cadastro? {!! link_to_route('session.create', 'faça o login.') !!}</h5>
 
                 <p></p>
 
@@ -61,8 +61,8 @@
 
                 <div class="networks">
                     <ul>
-                        <li>{{ link_to_route('auth.facebook', 'Facebook', null, ['class' => 'btn btn-default btn-block btn-facebook']) }}</li>
-                        <li>{{ link_to_route('auth.google', 'Google', null, ['class' => 'btn btn-default btn-block btn-google']) }}</li>
+                        <li>{!! link_to_route('auth.facebook', 'Facebook', null, ['class' => 'btn btn-default btn-block btn-facebook']) !!}</li>
+                        <li>{!! link_to_route('auth.google', 'Google', null, ['class' => 'btn btn-default btn-block btn-google']) !!}</li>
                     </ul>
                 </div>
 

@@ -8,7 +8,7 @@
             <div class="container">
                 <h2>
                     Meus Campeonatos
-                    {{ link_to_route('admin.register.index', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) }}
+                    {!! link_to_route('admin.register.index', 'Criar um Campeonato', null, ['class' => 'btn btn-default create-button pull-right']) !!}
                 </h2>
             </div>
         </div>
@@ -20,7 +20,7 @@
                         <header>
                             <h2>
                                 {{ $champ->name }}
-                                {{ link_to_route('admin.championships.show',  'Gerenciar', [$champ->id], ['class' => 'btn btn-default manage-button pull-right'])  }}
+                                {!! link_to_route('admin.championships.show',  'Gerenciar', [$champ->id], ['class' => 'btn btn-default manage-button pull-right'])  !!}
                             </h2>
                         </header>
                         <section class="champ-infos">

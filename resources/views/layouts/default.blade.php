@@ -72,7 +72,7 @@
                 </div>
             </footer>
         </div><!-- wrapper -->
-    {{ HTML::script('js/min.js') }}
+    {!! HTML::script('js/min.js') !!}
     <script>
         new WOW().init();
     </script>

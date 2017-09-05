@@ -18,7 +18,7 @@
                                 <div class="panel-body">
                                     <a href="{{ route('championships.show', $champ->id) }}">
                                         <figure>
-                                            {{ HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) }}
+                                            {!! HTML::image($champ->image, $champ->title, ['class' => 'img-responsive']) !!}
                                         </figure>
                                     </a>
                                 </div>

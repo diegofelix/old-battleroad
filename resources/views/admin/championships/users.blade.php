@@ -46,8 +46,8 @@
         <tbody>
             @foreach ($championship->joins as $join)
                 <tr class="status status-{{ $join->present()->simplifiedStatus }}">
-                    <td>{{ HTML::image($join->user->present()->userImage) }}
-                    {{ link_to_route('profile.show', $join->user->name, [$join->user->username]) }}</td>
+                    <td>{!! HTML::image($join->user->present()->userImage) !!}
+                    {!! link_to_route('profile.show', $join->user->name, [$join->user->username]) !!}</td>
                     <td>{{ $join->status->name }}</td>
                 </tr>
             @endforeach
@@ -55,5 +55,5 @@
     </table> --}}
 @stop
 @section('scripts')
-    {{ HTML::script('js/admin_championship.js') }}
+    {!! HTML::script('js/admin_championship.js') !!}
 @stop

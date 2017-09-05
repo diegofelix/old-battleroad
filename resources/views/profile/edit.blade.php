@@ -10,7 +10,7 @@
         <div class="container">
             <div class="row">
                 <figure class="col-md-3">
-                    {{ HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['class' => 'img-responsive']) }}
+                    {!! HTML::image(Auth::user()->present()->userImage, Auth::user()->name, ['class' => 'img-responsive']) !!}
                     {{-- Check if the user logged is the same as the profile --}}
                     <div class="settings champ-box">
                         <header class="default-header">

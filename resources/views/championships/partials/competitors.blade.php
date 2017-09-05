@@ -6,7 +6,7 @@
             <table class="table table-bordered">
                 @foreach ($joins as $join)
                     <tr>
-                        <td>{{ link_to_route('profile.show', $join->present()->competitorName, [$join->user->username]) }}</td>
+                        <td>{!! link_to_route('profile.show', $join->present()->competitorName, [$join->user->username]) !!}</td>
                     </tr>
                 @endforeach
             </table>

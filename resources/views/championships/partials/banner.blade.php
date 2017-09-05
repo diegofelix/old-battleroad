@@ -1,3 +1,3 @@
 <figure>
-    {{ HTML::image($championship->image) }}
+    {!! HTML::image($championship->image) !!}
 </figure>

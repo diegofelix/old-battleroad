@@ -40,7 +40,7 @@
                                 ]) }}
                                 <span class="help-block hide">
                                     Você pode usar Markdown para estilizar a descrição do seu campeonato, só não exagere. <br>
-                                    Não sabe usar o Markdown? Veja {{ link_to('http://battleroad.uservoice.com/knowledgebase/articles/339890-como-usar-o-markdown', 'como usar aqui.') }}
+                                    Não sabe usar o Markdown? Veja {!! link_to('http://battleroad.uservoice.com/knowledgebase/articles/339890-como-usar-o-markdown', 'como usar aqui.') !!}
                                 </span>
                             </div>
 
@@ -111,7 +111,7 @@
 
 @endsection
 @section('scripts')
-    {{ HTML::script('js/jquery-input-mask.js') }}
-    {{ HTML::script('js/jquery-input-mask-date.js') }}
-    {{ HTML::script('js/championship.js') }}
+    {!! HTML::script('js/jquery-input-mask.js') !!}
+    {!! HTML::script('js/jquery-input-mask-date.js') !!}
+    {!! HTML::script('js/championship.js') !!}
 @stop
