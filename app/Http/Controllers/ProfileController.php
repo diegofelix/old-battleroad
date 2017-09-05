@@ -1,8 +1,11 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Auth;
+use View;
+use Input;
 use Laracasts\Commander\Events\DispatchableTrait;
+use Champ\Account\Repositories\UserRepositoryInterface;
 
 class ProfileController extends BaseController {
 

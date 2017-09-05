@@ -1,6 +1,7 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
+use Input;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 // use Champ\Billing\Moip\MoipBilling;
