@@ -7,7 +7,7 @@
                     <h3>Campeonato</h3>
                     @for ( $i = 1 ; $i <= $competition->players ; $i++)
                         <div class="form-group">
-                            {{ Form::text('nick', Auth::user()->username, ['class' => 'form-control input-lg']) }}
+                            {!! Form::text('nick', Auth::user()->username, ['class' => 'form-control input-lg']) !!}
                         </div>
                     @endfor
                 </div>

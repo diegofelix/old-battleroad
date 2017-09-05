@@ -10,9 +10,9 @@
             </div>
         </div>
 
-        {{ Form::open(['route' => 'championships.payment']) }}
+        {!! Form::open(['route' => 'championships.payment']) !!}
 
-            {{ Form::hidden('id', $championship->id) }}
+            {!! Form::hidden('id', $championship->id) !!}
 
             <div class="container">
                 <table class="table table-striped">
@@ -54,7 +54,7 @@
                 <button type="submit" class="btn btn-lg btn-success">Finalizar Inscrição</button>
 
             </div>
-        {{ Form::close() }}
+        {!! Form::close() !!}
 
     </div><!-- championship -->
 

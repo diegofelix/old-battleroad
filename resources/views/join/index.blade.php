@@ -10,9 +10,9 @@
             </div>
         </div>
 
-        {{ Form::open(['route' => 'join.register', 'id' => 'checkout-form']) }}
+        {!! Form::open(['route' => 'join.register', 'id' => 'checkout-form']) !!}
 
-            {{ Form::hidden('id', $championship->id) }}
+            {!! Form::hidden('id', $championship->id) !!}
 
             <div class="container main-container">
                 <div class="panel panel-default">
@@ -62,7 +62,7 @@
 
             </div>
         @include ('join/partials/players')
-        {{ Form::close() }}
+        {!! Form::close() !!}
 
     </div><!-- championship -->
 

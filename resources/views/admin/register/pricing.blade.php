@@ -32,8 +32,8 @@
             <div class="row">
                 <div class="step-content col-md-12">
 
-                    {{ Form::model($championship, ['route' => ['admin.register.storePricing', $championship->id], 'role' => 'form', 'files' => true, 'class' => 'form-horizontal']) }}
-                        {{ Form::hidden('id', $championship->id) }}
+                    {!! Form::model($championship, ['route' => ['admin.register.storePricing', $championship->id], 'role' => 'form', 'files' => true, 'class' => 'form-horizontal']) !!}
+                        {!! Form::hidden('id', $championship->id) !!}
 
                         <div class="mini-helper warning">
                             <p>Há campeonatos realizados dentro de locais onde é necessário pagar pra entrar. Se for o seu caso, você pode definir o preço no campo <strong>Entrada</strong>.</p>
@@ -45,7 +45,7 @@
                             <legend>Valores</legend>
 
                             <div class="form-group">
-                                {{ Form::label('competiton', 'Entrada', ['class' => 'control-label col-md-4'])}}
+                                {!! Form::label('competiton', 'Entrada', ['class' => 'control-label col-md-4']) !!}
                                 <div class="col-md-2">
                                     <div class="input-group">
                                         <div class="input-group-addon">R$</div>
@@ -58,7 +58,7 @@
 
                             @foreach ($championship->competitions as $competition)
                                 <div class="form-group">
-                                    {{ Form::label('competiton', $competition->game->name, ['class' => 'col-md-4 control-label'])}}
+                                    {!! Form::label('competiton', $competition->game->name, ['class' => 'col-md-4 control-label']) !!}
                                     <div class="col-md-2">
                                         <div class="input-group">
                                             <div class="input-group-addon">R$</div>
@@ -73,7 +73,7 @@
                             <button type="submit" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</button>
                         </div>
 
-                    {{ Form::close() }}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </li>

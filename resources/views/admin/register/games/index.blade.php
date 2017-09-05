@@ -51,11 +51,11 @@
                                     <td>{{ $competition->present()->userPrice }}</td>
                                     <td>{{ $competition->start }}</td>
                                     <td>
-                                        {{ Form::open(['route' => ['admin.register.games.destroy', $championship->id, $competition->id], 'method' => 'DELETE', 'role' => 'form']) }}
+                                        {!! Form::open(['route' => ['admin.register.games.destroy', $championship->id, $competition->id], 'method' => 'DELETE', 'role' => 'form']) !!}
                                             <button type="submit" class="btn btn-danger">
                                                 <i class="fa fa-times-circle"></i>
                                             </button>
-                                        {{ Form::close() }}
+                                        {!! Form::close() !!}
                                         {{--
                                             link_to_route(
                                                 'admin.championships.games.delete',
@@ -101,7 +101,7 @@
 <div class="modal fade" id="add-game">
     <div class="modal-dialog">
         <div class="modal-content">
-            {{ Form::open(['route' => ['admin.register.games.store', $championship->id], 'role' => 'form']) }}
+            {!! Form::open(['route' => ['admin.register.games.store', $championship->id], 'role' => 'form']) !!}
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
                     <h4 class="modal-title">Adicionando um novo jogo ao campeonato</h4>
@@ -109,62 +109,62 @@
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-md-10 col-md-offset-1">
-                            {{ Form::hidden('id', $championship->id) }}
+                            {!! Form::hidden('id', $championship->id) !!}
 
                             <div class="form-group">
-                                {{ Form::label('game', 'Game') }}
-                                {{ Form::select('game_id', $games, 1, ['id' => 'game', 'class' => 'form-control']) }}
+                                {!! Form::label('game', 'Game') !!}
+                                {!! Form::select('game_id', $games, 1, ['id' => 'game', 'class' => 'form-control']) !!}
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('platform', 'Plataforma') }}
-                                {{ Form::select('platform_id', $platforms, null, ['id' => 'platform', 'class' => 'form-control']) }}
+                                {!! Form::label('platform', 'Plataforma') !!}
+                                {!! Form::select('platform_id', $platforms, null, ['id' => 'platform', 'class' => 'form-control']) !!}
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('format', 'Formato') }}
-                                {{ Form::select('format_id', $formats, null, ['id' => 'format', 'class' => 'form-control']) }}
+                                {!! Form::label('format', 'Formato') !!}
+                                {!! Form::select('format_id', $formats, null, ['id' => 'format', 'class' => 'form-control']) !!}
                                 <span class="help-block">
                                     Não sabe o que significa cada formato? <a href="#">saiba aqui!</a>
                                 </span>
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('players', 'Jogadores') }}
-                                {{ Form::selectRange('players', 1, 7, null, ['id' => 'players', 'class' => 'form-control']) }}
+                                {!! Form::label('players', 'Jogadores') !!}
+                                {!! Form::selectRange('players', 1, 7, null, ['id' => 'players', 'class' => 'form-control']) !!}
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('price', 'Preço da Inscrição (em Reais): ') }}
+                                {!! Form::label('price', 'Preço da Inscrição (em Reais): ') !!}
                                 @include ('admin.register._price')
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('event_start', 'Data da Competição: ') }}
+                                {!! Form::label('event_start', 'Data da Competição: ') !!}
                                 <div class="input-group col-md-6">
                                     <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                    {{ Form::text('start', null, [
+                                    {!! Form::text('start', null, [
                                         'class' => 'form-control',
                                         'id' => 'event_start',
-                                        'required']) }}
+                                        'required']) !!}
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="limit-switch">
-                                    {{ Form::checkbox('limit_switch', 1, true, ['id' => 'limit-switch']) }}
+                                    {!! Form::checkbox('limit_switch', 1, true, ['id' => 'limit-switch']) !!}
                                     Sem limite de participantes
                                 </label>
                             </div>
 
                             <div class="row">
                                 <div id="limit-input" class="form-group hide col-md-3">
-                                    {{ Form::label('limit', 'Limite de participantes: ') }}
+                                    {!! Form::label('limit', 'Limite de participantes: ') !!}
 
-                                    {{ Form::text('limit', null, [
+                                    {!! Form::text('limit', null, [
                                         'class' => 'form-control',
                                         'id' => 'limit'
-                                    ]) }}
+                                    ]) !!}
 
                                     @if ( ! empty($championship->limit))
                                         <div class="help-block">Máximo: {{ $championship->limit }}</div>
@@ -180,7 +180,7 @@
                     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
                     <button type="submit" class="btn btn-info">Salvar</button>
                 </div>
-            {{ Form::close() }}
+            {!! Form::close() !!}
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->

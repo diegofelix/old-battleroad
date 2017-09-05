@@ -3,14 +3,14 @@
 
     <div class="container">
 
-        {{ Form::open(['route' => ['championships.embeded', $championship->id], 'method' => 'post']) }}
+        {!! Form::open(['route' => ['championships.embeded', $championship->id], 'method' => 'post']) !!}
 
         <div class="row">
 
             <div class="col-xs-10 col-xs-offset-1">
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('name') ? 'has-error' : '' }}">
                     <label for="name" class="control-label">Nome/Name/Nombre:</label>
-                    {{ Form::text('name', null, ['class' => 'form-control']) }}
+                    {!! Form::text('name', null, ['class' => 'form-control']) !!}
                     @if (Session::has('error') && Session::get('error')->has('name'))
                         <p class="text-danger">{{ Session::get('error')->get('name')[0] }}</p>
                     @endif
@@ -18,7 +18,7 @@
 
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('birthdate') ? 'has-error' : '' }}">
                     <label for="birthdate" class="control-label">Data de Nascimento/Birthdate/Fecha de Nacimiento:</label>
-                    {{ Form::text('birthdate', null, ['class' => 'form-control']) }}
+                    {!! Form::text('birthdate', null, ['class' => 'form-control']) !!}
                     @if (Session::has('error') && Session::get('error')->has('birthdate'))
                         <p class="text-danger">{{ Session::get('error')->get('birthdate')[0] }}</p>
                     @endif
@@ -26,7 +26,7 @@
 
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('email') ? 'has-error' : '' }}">
                     <label for="email" class="control-label">E-mail:</label>
-                    {{ Form::text('email', null, ['class' => 'form-control']) }}
+                    {!! Form::text('email', null, ['class' => 'form-control']) !!}
                     @if (Session::has('error') && Session::get('error')->has('email'))
                         <p class="text-danger">{{ Session::get('error')->get('email')[0] }}</p>
                     @endif
@@ -34,7 +34,7 @@
 
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('email') ? 'has-error' : '' }}">
                     <label for="email_confirmation" class="control-label">Confirme seu E-mail/Confirm your E-mail/Confirma tu E-mail:</label>
-                    {{ Form::text('email_confirmation', null, ['class' => 'form-control']) }}
+                    {!! Form::text('email_confirmation', null, ['class' => 'form-control']) !!}
                     @if (Session::has('error') && Session::get('error')->has('email'))
                         <p class="text-danger">{{ Session::get('error')->get('email')[0] }}</p>
                     @endif
@@ -42,7 +42,7 @@
 
                 <div class="form-group {{ Session::has('error') && Session::get('error')->has('identification') ? 'has-error' : '' }}">
                     <label for="identification" class="control-label">RG ou CPF/Passport/Pasaporte:</label>
-                    {{ Form::text('identification', null, ['class' => 'form-control']) }}
+                    {!! Form::text('identification', null, ['class' => 'form-control']) !!}
                     @if (Session::has('error') && Session::get('error')->has('identification'))
                         <p class="text-danger">{{ Session::get('error')->get('identification')[0] }}</p>
                     @endif
@@ -97,7 +97,7 @@
             </div>
         </div>
 
-        {{ Form::close() }}
+        {!! Form::close() !!}
 
     </div>
 

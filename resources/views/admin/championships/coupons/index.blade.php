@@ -4,18 +4,18 @@
         <i class="fa fa-ticket"></i> Cupons <small>Adicione cupons de descontos</small>
     </h3>
 
-    {{ Form::open(['route' => ['admin.championships.coupons.generate', $championship->id], 'role' => 'form', 'class' => 'form-inline']) }}
+    {!! Form::open(['route' => ['admin.championships.coupons.generate', $championship->id], 'role' => 'form', 'class' => 'form-inline']) !!}
 
         <div class="form-group">
             <label class="sr-only" for="percentage">Porcentagem</label>
             <div class="input-group ">
                 <div class="input-group-addon">R$</div>
-                {{ Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) }}
+                {!! Form::text('price', null, ['class' => 'form-control', 'id' => 'price']) !!}
             </div>
         </div>
         <button type="submit" class="btn btn-primary"><i class="fa fa-plus"></i> Gerar Cupon</button>
 
-    {{ Form::close() }}
+    {!! Form::close() !!}
 
     <hr>
 

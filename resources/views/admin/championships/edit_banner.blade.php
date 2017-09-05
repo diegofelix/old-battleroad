@@ -5,13 +5,13 @@
         <i class="fa fa-camera"></i> Atualizar Banner
     </h3>
 
-    {{ Form::open(['route' => ['admin.championships.banner_update', $championship->id], 'files' => true]) }}
+    {!! Form::open(['route' => ['admin.championships.banner_update', $championship->id], 'files' => true]) !!}
 
     <div class="panel panel-default">
         <div class="panel-heading">
             Banner
         </div>
-        <div class="panel-body">{{ Form::file('image', ['class' => 'form-control']) }}</div>
+        <div class="panel-body">{!! Form::file('image', ['class' => 'form-control']) !!}</div>
     </div>
 
     <div class="alert alert-info">
@@ -20,6 +20,6 @@
 
     <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Salvar</button>
 
-    {{ Form::close() }}
+    {!! Form::close() !!}
 
 @stop

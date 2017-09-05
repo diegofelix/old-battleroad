@@ -16,17 +16,17 @@
 
         <div class="row">
             <div class="col-md-6">
-                {{ Form::open() }}
+                {!! Form::open() !!}
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope icon-fw"></i></span>
-                            {{ Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'required']) }}
+                            {!! Form::email('email', null, ['class' => 'form-control', 'placeholder' => 'E-mail', 'required']) !!}
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-default btn-success">Enviar E-mail</button>
 
-                {{ Form::close() }}
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

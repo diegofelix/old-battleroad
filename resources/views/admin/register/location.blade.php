@@ -22,35 +22,35 @@
             </div>
             <div class="row">
                 <div class="step-content col-md-12">
-                    {{ Form::model($championship, ['route' => ['admin.register.storeLocation', $championship->id], 'role' => 'form', 'files' => true]) }}
+                    {!! Form::model($championship, ['route' => ['admin.register.storeLocation', $championship->id], 'role' => 'form', 'files' => true]) !!}
 
-                        {{ Form::hidden('id', $championship->id) }}
+                        {!! Form::hidden('id', $championship->id) !!}
 
                             <div class="form-group">
-                                {{ Form::label('location', 'Localização', ['class' => 'control-label']) }}
-                                {{ Form::text('location', null, [
+                                {!! Form::label('location', 'Localização', ['class' => 'control-label']) !!}
+                                {!! Form::text('location', null, [
                                     'class' => 'form-control togglable-help',
                                     'placeholder' => 'Localização',
                                     'id' => 'location',
                                     'required' => 'required'
-                                ]) }}
+                                ]) !!}
                                 <span class="help-block hide">
                                     Coloque o endereço da forma que você quiser, por exemplo: Online, Shopp Itaquera...
                                 </span>
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('price', 'Preço da Entrada (em Reais): ', ['class' => 'control-label']) }}
+                                {!! Form::label('price', 'Preço da Entrada (em Reais): ', ['class' => 'control-label']) !!}
                                 @include ('admin.register._price')
                             </div>
 
                             <div class="form-group">
-                                {{ Form::label('limit', 'Limite de pessoas: ', ['class' => 'control-label']) }}
-                                {{ Form::text('limit', null, [
+                                {!! Form::label('limit', 'Limite de pessoas: ', ['class' => 'control-label']) !!}
+                                {!! Form::text('limit', null, [
                                     'class' => 'form-control togglable-help',
                                     'placeholder' => 'Limite',
                                     'id' => 'limit'
-                                ]) }}
+                                ]) !!}
                                 <span class="help-block hide">
                                     Preenchendo esse campo, faremos com que o limite de visitantes e participantes não ultrapasse a capacidade do lugar.<br />
                                     Deixe em branco se não houver limite.
@@ -61,7 +61,7 @@
                                 <button type="submit" class="btn btn-success pull-right champ-button"><i class="fa fa-arrow-right"></i> Continuar</button>
                             </div>
 
-                    {{ Form::close() }}
+                    {!! Form::close() !!}
                 </div>
             </div>
         </li>
