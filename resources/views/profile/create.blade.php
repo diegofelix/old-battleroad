@@ -8,13 +8,13 @@
 
 		<div class="container">
 
-			{{ Form::open(['route' => 'profile.store', 'role' => 'form', 'class' => 'form-horizontal']) }}
+			{!! Form::open(['route' => 'profile.store', 'role' => 'form', 'class' => 'form-horizontal']) !!}
 
-				{{ Form::hidden('user_id', Auth::user()->id) }}
+				{!! Form::hidden('user_id', Auth::user()->id) !!}
 
 				@include('profile._fields')
 
-			{{ Form::close() }}
+			{!! Form::close() !!}
 
 		</div><!-- container -->
 

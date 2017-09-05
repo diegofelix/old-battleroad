@@ -18,40 +18,40 @@
 
                 <p></p>
 
-                {{ Form::open(['route' => 'register.store', 'role' => 'form']) }}
+                {!! Form::open(['route' => 'register.store', 'role' => 'form']) !!}
 
                     <div class="form-group">
-                        {{ Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Nome', 'required']) }}
+                        {!! Form::text('name', null, ['class' => 'form-control input-lg', 'placeholder' => 'Nome', 'required']) !!}
                     </div>
 
                     <div class="form-group">
-                        {{ Form::text('username', null, ['class' => 'form-control input-lg', 'placeholder' => 'Nick', 'required']) }}
+                        {!! Form::text('username', null, ['class' => 'form-control input-lg', 'placeholder' => 'Nick', 'required']) !!}
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-envelope icon-fw"></i></span>
-                            {{ Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'E-mail', 'required']) }}
+                            {!! Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'E-mail', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-key icon-fw"></i></span>
-                                {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
+                                {!! Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) !!}
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="input-group">
                             <span class="input-group-addon"><i class="fa fa-key icon-fw"></i></span>
-                            {{ Form::password('password_confirmation', ['class' => 'form-control input-lg', 'placeholder' => 'Repita a senha', 'required']) }}
+                            {!! Form::password('password_confirmation', ['class' => 'form-control input-lg', 'placeholder' => 'Repita a senha', 'required']) !!}
                         </div>
                     </div>
 
                     <button type="submit" class="btn btn-default btn-block btn-lg champ-button" id="registerButton">Cadastrar</button>
 
-                {{ Form::close() }}
+                {!! Form::close() !!}
 
             </div><!-- login-form -->
 

@@ -25,19 +25,19 @@
 
                     </div>
 
-        			{{ Form::open(['route' => 'session.store', 'role' => 'form']) }}
+        			{!! Form::open(['route' => 'session.store', 'role' => 'form']) !!}
 
                         <div class="form-group">
-                            {{ Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'E-mail', 'required']) }}
+                            {!! Form::email('email', null, ['class' => 'form-control input-lg', 'placeholder' => 'E-mail', 'required']) !!}
                         </div>
 
                         <div class="form-group">
-                            {{ Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) }}
+                            {!! Form::password('password', ['class' => 'form-control input-lg', 'placeholder' => 'Password', 'required']) !!}
                         </div>
 
                         <div class="checkbox">
                             <label>
-                                {{ Form::checkbox('remember') }} Mantenha-me conectado
+                                {!! Form::checkbox('remember') !!} Mantenha-me conectado
                             </label>
                         </div>
 
@@ -45,7 +45,7 @@
 
                         <button type="submit" class="btn btn-default btn-block btn-lg champ-button">Login</button>
 
-                    {{ Form::close() }}
+                    {!! Form::close() !!}
 
                 </div><!-- login-form -->
 

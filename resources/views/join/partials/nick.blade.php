@@ -3,7 +3,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-3">
-                {{ Form::text('nick', Auth::user()->username, ['class' => 'form-control input-lg']) }}
+                {!! Form::text('nick', Auth::user()->username, ['class' => 'form-control input-lg']) !!}
             </div>
         </div>
     </div>
