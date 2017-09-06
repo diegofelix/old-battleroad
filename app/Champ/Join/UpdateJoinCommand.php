@@ -1,7 +1,7 @@
 <?php namespace Champ\Join;
 
-class UpdateJoinCommand {
-
+class UpdateJoinCommand
+{
     public $notificationType;
     public $notificationCode;
 
@@ -10,5 +10,4 @@ class UpdateJoinCommand {
         $this->notificationType = $notificationType;
         $this->notificationCode = $notificationCode;
     }
-
 }

@@ -10,22 +10,22 @@ use Event;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
-class Join extends Eloquent {
-
+class Join extends Eloquent
+{
     protected $guarded = [];
 
     use PresentableTrait;
     use EventGenerator;
 
     /**
-     * Championship presenter
+     * Championship presenter.
      *
      * @var string
      */
     protected $presenter = 'Champ\Presenters\JoinPresenter';
 
     /**
-     * Relation with User
+     * Relation with User.
      */
     public function user()
     {
@@ -33,7 +33,7 @@ class Join extends Eloquent {
     }
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      */
     public function championship()
     {
@@ -41,7 +41,8 @@ class Join extends Eloquent {
     }
 
     /**
-     * Relation with Item
+     * Relation with Item.
+     *
      * @return HasMany
      */
     public function items()
@@ -50,7 +51,7 @@ class Join extends Eloquent {
     }
 
     /**
-     * Relation with Status
+     * Relation with Status.
      *
      * @return BelongsTo
      */
@@ -60,7 +61,7 @@ class Join extends Eloquent {
     }
 
     /**
-     * Relation with Transaction
+     * Relation with Transaction.
      *
      * @return HasMany
      */
@@ -70,7 +71,7 @@ class Join extends Eloquent {
     }
 
     /**
-     * Relation with Coupon
+     * Relation with Coupon.
      *
      * @return HasOne
      */
@@ -80,10 +81,11 @@ class Join extends Eloquent {
     }
 
     /**
-     * Create a new Join
+     * Create a new Join.
      *
-     * @param  int $user_id
-     * @param  int $championship_id
+     * @param int $user_id
+     * @param int $championship_id
+     *
      * @return Join
      */
     // public static function register($user_id, $championship_id, $nicks, $competitions)
@@ -98,11 +100,12 @@ class Join extends Eloquent {
     // }
 
     /**
-     * Register a new join
+     * Register a new join.
      *
-     * @param  int $user_id
-     * @param  int $championship_id
-     * @param  string $nick
+     * @param int    $user_id
+     * @param int    $championship_id
+     * @param string $nick
+     *
      * @return Join
      */
     public static function register($user_id, $championship_id, $nick)
@@ -119,9 +122,8 @@ class Join extends Eloquent {
     /**
      * Change the Status for this order.
      *
-     * @param  int $statusId
-     * @param  string $token
-     * @return void
+     * @param int    $statusId
+     * @param string $token
      */
     public function changeStatus($statusId)
     {
@@ -129,22 +131,17 @@ class Join extends Eloquent {
 
         $this->raise(new JoinStatusChanged($this));
 
-        if ($statusId == Status::APPROVED)
-        {
+        if ($statusId == Status::APPROVED) {
             $this->raise(new JoinApproved($this));
         }
 
-        if ($statusId >= Status::RETURNED) // Cancelled, Returned and chargeback
-        {
+        if ($statusId >= Status::RETURNED) { // Cancelled, Returned and chargeback
             $this->raise(new JoinCancelled($this));
         }
     }
 
-
     /**
-     * Cancel a Join
-     *
-     * @return void
+     * Cancel a Join.
      */
     public function cancelJoin()
     {
@@ -155,9 +152,9 @@ class Join extends Eloquent {
     }
 
     /**
-     * Check if the championship was paid yet
+     * Check if the championship was paid yet.
      *
-     * @return boolean
+     * @return bool
      */
     public function wasPaid()
     {
@@ -165,17 +162,17 @@ class Join extends Eloquent {
     }
 
     /**
-     * Check if the championship is Active or not
+     * Check if the championship is Active or not.
      *
-     * @return boolean
+     * @return bool
      */
     public function isActive()
     {
-        return ! in_array($this->status_id, [Status::CANCELLED, Status::RETURNED, Status::CHARGEBACK]);
+        return !in_array($this->status_id, [Status::CANCELLED, Status::RETURNED, Status::CHARGEBACK]);
     }
 
     /**
-     * Convert the price to cents
+     * Convert the price to cents.
      *
      * @param int $value
      */
@@ -185,9 +182,10 @@ class Join extends Eloquent {
     }
 
     /**
-     * Get the price in cents and transforms to real
+     * Get the price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getPriceAttribute($value)
@@ -196,9 +194,9 @@ class Join extends Eloquent {
     }
 
     /**
-     * Check if this Join is Paid or its free
+     * Check if this Join is Paid or its free.
      *
-     * @return boolean
+     * @return bool
      */
     public function isPaid()
     {
@@ -212,9 +210,9 @@ class Join extends Eloquent {
     }
 
     /**
-     * Check if the user joined a free championship or not
+     * Check if the user joined a free championship or not.
      *
-     * @return boolean
+     * @return bool
      */
     public function isFree()
     {
@@ -222,7 +220,7 @@ class Join extends Eloquent {
     }
 
     /**
-     * Add an item to the Join
+     * Add an item to the Join.
      *
      * @param int $competitionId
      * @param int $price
@@ -232,12 +230,12 @@ class Join extends Eloquent {
         return new Item([
             'join_id' => $this->id,
             'competition_id' => $competitionId,
-            'price' => $price
+            'price' => $price,
         ]);
     }
 
     /**
-     * Add a transaction that belongs to a join
+     * Add a transaction that belongs to a join.
      *
      * @param int $transactionId
      */
@@ -245,17 +243,17 @@ class Join extends Eloquent {
     {
         $transaction = $this->findTransaction($transactionId);
 
-        if (empty($transaction))
-        {
+        if (empty($transaction)) {
             $transaction = new Transaction(['transaction_id' => $transactionId]);
             $this->transactions()->save($transaction);
         }
     }
 
     /**
-     * Find a transaction by its Id
+     * Find a transaction by its Id.
      *
-     * @param  int $transactionId
+     * @param int $transactionId
+     *
      * @return Transaction
      */
     public function findTransaction($transactionId)
@@ -264,9 +262,9 @@ class Join extends Eloquent {
     }
 
     /**
-     * Check if the championship will start in 2 days
+     * Check if the championship will start in 2 days.
      *
-     * @return boolean
+     * @return bool
      */
     public function inGracePeriod()
     {

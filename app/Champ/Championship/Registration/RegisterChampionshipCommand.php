@@ -1,7 +1,7 @@
 <?php namespace Champ\Championship\Registration;
 
-class RegisterChampionshipCommand {
-
+class RegisterChampionshipCommand
+{
     public $user_id;
 
     public $name;
@@ -18,12 +18,11 @@ class RegisterChampionshipCommand {
 
     public function __construct($user_id, $name, $description, $location, $event_start, $image = null)
     {
-        $this->user_id      = $user_id;
-        $this->name         = $name;
-        $this->description  = $description;
-        $this->location     = $location;
-        $this->event_start  = $event_start;
-        $this->image        = $image;
+        $this->user_id = $user_id;
+        $this->name = $name;
+        $this->description = $description;
+        $this->location = $location;
+        $this->event_start = $event_start;
+        $this->image = $image;
     }
-
 }

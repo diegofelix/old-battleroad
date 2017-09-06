@@ -2,10 +2,10 @@
 
 use Champ\Forms\CreateCouponForm;
 
-class GenerateCouponValidator {
-
+class GenerateCouponValidator
+{
     /**
-     * Create Coupon Validator
+     * Create Coupon Validator.
      *
      * @var CreateCouponFormForm
      */
@@ -17,18 +17,16 @@ class GenerateCouponValidator {
     }
 
     /**
-     * Validates the coupon creation
+     * Validates the coupon creation.
      *
-     * @param  CreateCouponCommand $command
-     * @return void
+     * @param CreateCouponCommand $command
      */
     public function validate($command)
     {
         $this->form->validate([
             'championship_id' => $command->championshipId,
             'code' => $command->code,
-            'price' => $command->price
+            'price' => $command->price,
         ]);
     }
-
 }

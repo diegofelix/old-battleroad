@@ -4,7 +4,6 @@ use Carbon\Carbon;
 use Champ\Championship\Championship;
 use Champ\Join\Status;
 use Champ\Traits\UserPrice;
-use Config;
 use Laracasts\Presenter\Presenter;
 use Michelf\Markdown;
 
@@ -13,7 +12,7 @@ class ChampionshipPresenter extends Presenter
     use UserPrice;
 
     /**
-     * Return the date with diff for humans translated to pt-br
+     * Return the date with diff for humans translated to pt-br.
      *
      * @return string
      */
@@ -26,7 +25,9 @@ class ChampionshipPresenter extends Presenter
         $days = $this->event_start->diffInDays($now);
 
         // check if the diff is zero, meaning the champ is today!
-        if ($days == 0) return 'Hoje';
+        if ($days == 0) {
+            return 'Hoje';
+        }
 
         // if is greater then one, then we have to plurarize the output.
         // the line put an s in our words
@@ -37,17 +38,17 @@ class ChampionshipPresenter extends Presenter
     }
 
     /**
-     * Return a piece of the description
+     * Return a piece of the description.
      *
      * @return string
      */
     public function shortDescription()
     {
-        return substr($this->description, 0, 160) . '...' ;
+        return substr($this->description, 0, 160).'...';
     }
 
     /**
-     * Return a text transformed to markdown
+     * Return a text transformed to markdown.
      *
      * @return string
      */
@@ -57,32 +58,32 @@ class ChampionshipPresenter extends Presenter
     }
 
     /**
-     * Return a clean description to the admin user
+     * Return a clean description to the admin user.
      *
      * @return string
      */
     public function cleanDescription()
     {
         $description = $this->markdownDescription();
+
         return strip_tags($description);
     }
 
     /**
-     * Instantiate a Markdown parser
+     * Instantiate a Markdown parser.
      *
      * @return Markdown
      */
     private function getMarkdown()
     {
-        return new Markdown;
+        return new Markdown();
     }
 
     public function banner()
     {
         $stream = $this->stream;
 
-        if ($this->started() &&  ! empty($stream))
-        {
+        if ($this->started() && !empty($stream)) {
             return 'twitch';
         }
 
@@ -90,9 +91,9 @@ class ChampionshipPresenter extends Presenter
     }
 
     /**
-     * Check if the championships is ocurring now
+     * Check if the championships is ocurring now.
      *
-     * @return boolean
+     * @return bool
      */
     public function started()
     {
@@ -116,16 +117,18 @@ class ChampionshipPresenter extends Presenter
     // }
 
     /**
-     * Show the quantity of games for a event
+     * Show the quantity of games for a event.
      *
      * @return string
      */
     public function countCompetitions()
     {
         $count = $this->competitions->count();
-        $text  = $count . ' jogo';
+        $text = $count.' jogo';
 
-        if ($count > 1) $text .= 's';
+        if ($count > 1) {
+            $text .= 's';
+        }
 
         return $text;
     }
@@ -134,24 +137,23 @@ class ChampionshipPresenter extends Presenter
     {
         $lowestPrice = $this->competitions->first()->price;
 
-        foreach ($this->competitions as $competition)
-        {
-            if ($competition->price < $lowestPrice)
-            {
+        foreach ($this->competitions as $competition) {
+            if ($competition->price < $lowestPrice) {
                 $lowestPrice = $competition->price;
             }
         }
 
-        if ( $lowestPrice == 0) return '<span class="champ-free label label-success">Grátis!</span>';
+        if ($lowestPrice == 0) {
+            return '<span class="champ-free label label-success">Grátis!</span>';
+        }
 
-        return '<span class="label label-info">À partir de R$ ' . number_format($lowestPrice, 2) . '</span>';
+        return '<span class="label label-info">À partir de R$ '.number_format($lowestPrice, 2).'</span>';
     }
 
     public function totalPrice()
     {
         $totalPrice = 0;
-        foreach ($this->joins as $join)
-        {
+        foreach ($this->joins as $join) {
             $totalPrice += $join->present()->totalPrice;
         }
 
@@ -161,8 +163,7 @@ class ChampionshipPresenter extends Presenter
     public function totalConfirmedPrice()
     {
         $totalPrice = 0;
-        foreach ($this->joins as $join)
-        {
+        foreach ($this->joins as $join) {
             $totalPrice += $join->present()->totalConfirmedPrice;
         }
 
@@ -172,8 +173,7 @@ class ChampionshipPresenter extends Presenter
     public function totalPendentPrice()
     {
         $totalPrice = 0;
-        foreach ($this->joins as $join)
-        {
+        foreach ($this->joins as $join) {
             $totalPrice += $join->present()->totalPendentPrice;
         }
 

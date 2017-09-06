@@ -9,7 +9,7 @@ use Laracasts\Commander\Events\EventListener;
 class SendCampaigns extends EventListener
 {
     /**
-     * Campaign Maker
+     * Campaign Maker.
      *
      * @var CampaignMaker
      */

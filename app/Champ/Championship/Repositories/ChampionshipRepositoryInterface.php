@@ -3,79 +3,83 @@
 use Champ\Repositories\Core\RepositoryInterface;
 use Champ\Championship\Championship;
 
-interface ChampionshipRepositoryInterface extends RepositoryInterface {
-
+interface ChampionshipRepositoryInterface extends RepositoryInterface
+{
     /**
-     * Get a list of Championships in event_start desc order
+     * Get a list of Championships in event_start desc order.
      *
      * @return Paginator
      */
     public function featured();
 
     /**
-     * Publish a championship
+     * Publish a championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return bool
      */
     public function publish($id);
 
     /**
-     * Save the location and price for the championship
+     * Save the location and price for the championship.
      *
-     * @param  array $input
+     * @param array $input
+     *
      * @return mixed
      */
     public function saveLocation($input);
 
     /**
-     * Create a new competition and attach to the championship
+     * Create a new competition and attach to the championship.
      *
-     * @param  int $champId
-     * @param  array $data
+     * @param int   $champId
+     * @param array $data
+     *
      * @return mixed
      */
     public function createCompetition($champId, $data);
 
     /**
-     * Save a championship
+     * Save a championship.
      *
-     * @param  Championship $championship
+     * @param Championship $championship
+     *
      * @return mixed
      */
     public function save(Championship $championship);
 
     /**
-     * Return a competition by a champ id
+     * Return a competition by a champ id.
      *
-     * @param  int $champId
-     * @param  int $competitionId
+     * @param int $champId
+     * @param int $competitionId
+     *
      * @return Model
      */
     public function getCompetition($champId, $competitionId);
 
     /**
-     * Get all championships for the user
+     * Get all championships for the user.
      *
-     * @param  int $id
-     * @param  array $with
+     * @param int   $id
+     * @param array $with
+     *
      * @return Collectino
      */
     public function getAllByUser($id, $with);
 
     /**
-     * Cancel past championships based on the current date
-     *
-     * @return void
+     * Cancel past championships based on the current date.
      */
     public function finishPastChampionships();
 
     /**
-     * Get a waiting list for the championship
+     * Get a waiting list for the championship.
      *
-     * @param  Championship $championship
+     * @param Championship $championship
+     *
      * @return Collection
      */
     public function waitingList(Championship $championship);
-
 }

@@ -3,14 +3,15 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class PublisherController extends BaseRegistrationController {
-
+class PublisherController extends BaseRegistrationController
+{
     use DispatchableTrait;
 
     /**
-     * Show all saved data to confirm to the user all steps before publish
+     * Show all saved data to confirm to the user all steps before publish.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function confirmation($id)
@@ -22,9 +23,10 @@ class PublisherController extends BaseRegistrationController {
 
     /**
      * Publish a championship, but only if the championship have at least
-     * one game
+     * one game.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function publish($id)
@@ -32,20 +34,16 @@ class PublisherController extends BaseRegistrationController {
         $championship = $this->championshipRepository->find($id);
 
         // check the count of competitions
-        if ($championship->competitions->count() > 0)
-        {
+        if ($championship->competitions->count() > 0) {
             $championship = $this->championshipRepository->publish($id);
 
             $this->dispatchEventsFor($championship);
 
             return $this->redirectRoute('admin.championships.show', [$id])
                 ->with('message', 'Campeonato publicado!');
-        }
-        else
-        {
+        } else {
             return $this->redirectBack()
                 ->with('error', 'Você precisa ter pelo menos uma competição pra publicar um campeonato.');
         }
     }
-
 }

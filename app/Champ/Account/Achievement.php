@@ -2,8 +2,8 @@
 
 use Eloquent;
 
-class Achievement extends Eloquent {
-
+class Achievement extends Eloquent
+{
     /**
      * The relations to eager load on every query.
      *
@@ -12,7 +12,7 @@ class Achievement extends Eloquent {
     protected $with = ['championship', 'competition.game'];
 
     /**
-     * Relation with User
+     * Relation with User.
      *
      * @return BelongsTo
      */
@@ -22,7 +22,7 @@ class Achievement extends Eloquent {
     }
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      *
      * @return BelongsTo
      */
@@ -32,7 +32,7 @@ class Achievement extends Eloquent {
     }
 
     /**
-     * Relation with Competition
+     * Relation with Competition.
      *
      * @return BelongsTo
      */
@@ -40,5 +40,4 @@ class Achievement extends Eloquent {
     {
         return $this->belongsTo('Champ\Championship\Competition');
     }
-
 }

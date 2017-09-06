@@ -2,18 +2,17 @@
 
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use App;
 use Champ\Services\ChampionshipImage;
 
-class UpdateBannerCommandHandler implements CommandHandler {
-
+class UpdateBannerCommandHandler implements CommandHandler
+{
     /**
-     * Championship Repository
+     * Championship Repository.
      */
     protected $repository;
 
     /**
-     * Image Uploader
+     * Image Uploader.
      *
      * @var Cham\Services\ChampionshipImage
      */
@@ -42,10 +41,11 @@ class UpdateBannerCommandHandler implements CommandHandler {
     }
 
     /**
-     * Update Championship with the new banner image
+     * Update Championship with the new banner image.
      *
-     * @param  UpdateBannerCommand $command
-     * @param  ImageUploader $image
+     * @param UpdateBannerCommand $command
+     * @param ImageUploader       $image
+     *
      * @return Championship
      */
     private function updateBanner($command, $image)
@@ -58,9 +58,10 @@ class UpdateBannerCommandHandler implements CommandHandler {
     }
 
     /**
-     * Get the uploaded image
+     * Get the uploaded image.
      *
-     * @param  UpdateBannerCommand $command
+     * @param UpdateBannerCommand $command
+     *
      * @return ImageUploader
      */
     private function getUploadedImage($command)

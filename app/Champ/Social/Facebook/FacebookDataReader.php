@@ -3,10 +3,10 @@
 use OAuth;
 use Champ\Social\SocialDataReaderInterface;
 
-class FacebookDataReader implements SocialDataReaderInterface {
-
+class FacebookDataReader implements SocialDataReaderInterface
+{
     /**
-     * Facebook Data Formatter
+     * Facebook Data Formatter.
      *
      * @var Champ\Social\Facebook\FacebookDataFormatter
      */
@@ -20,7 +20,8 @@ class FacebookDataReader implements SocialDataReaderInterface {
     /**
      * Get the code and do an request back to facebook retrieving the user data.
      *
-     * @param  string $code
+     * @param string $code
+     *
      * @return array
      */
     public function getDataFromCode($code)
@@ -31,16 +32,17 @@ class FacebookDataReader implements SocialDataReaderInterface {
     }
 
     /**
-     * Read the data from Facebook
+     * Read the data from Facebook.
      *
-     * @param  string $code
+     * @param string $code
+     *
      * @return array
      */
     private function readDataFromFacebook($code)
     {
         $facebookService = OAuth::consumer('Facebook');
         $token = $facebookService->requestAccessToken($code);
+
         return json_decode($facebookService->request('/me'), true);
     }
-
 }

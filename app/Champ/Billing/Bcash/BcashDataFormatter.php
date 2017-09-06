@@ -3,19 +3,20 @@
 use Champ\Billing\Contracts\TransactionDataFormatter;
 use Champ\Billing\TransactionData;
 
-class BcashDataFormatter implements TransactionDataFormatter {
-
+class BcashDataFormatter implements TransactionDataFormatter
+{
     /**
-     * receive an input ( generaly json ) and translate to a data pattern
+     * receive an input ( generaly json ) and translate to a data pattern.
      *
-     * @param  mixed $input
+     * @param mixed $input
+     *
      * @return TransactionData
      */
     public function format($input)
     {
         $transaction = $input['transacao'];
 
-        return new TransactionData (
+        return new TransactionData(
             $transaction['id_transacao'],
             $transaction['data_transacao'],
             $transaction['data_credito'],
@@ -25,5 +26,4 @@ class BcashDataFormatter implements TransactionDataFormatter {
             $transaction['status']
         );
     }
-
 }

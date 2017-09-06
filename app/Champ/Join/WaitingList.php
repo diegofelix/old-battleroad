@@ -9,18 +9,19 @@ class WaitingList extends Eloquent
     protected $guarded = [];
 
     /**
-     * Table for the model
+     * Table for the model.
      *
      * @var string
      */
-    protected $table = "waiting_list";
+    protected $table = 'waiting_list';
 
     /**
-     * Register a new user to a waiting list
+     * Register a new user to a waiting list.
      *
-     * @param  int $userId
-     * @param  int $championshipId
-     * @param  int $competitionId
+     * @param int $userId
+     * @param int $championshipId
+     * @param int $competitionId
+     *
      * @return Model
      */
     public static function register($user_id, $championship_id, $competition_id)
@@ -29,7 +30,7 @@ class WaitingList extends Eloquent
     }
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -39,7 +40,7 @@ class WaitingList extends Eloquent
     }
 
     /**
-     * Relation with User
+     * Relation with User.
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */

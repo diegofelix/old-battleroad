@@ -4,21 +4,24 @@ use Eloquent;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Account\Events\UserChangedProfile;
 
-class Profile extends Eloquent {
-
+class Profile extends Eloquent
+{
     protected $fillable = ['user_id', 'bio', 'psn', 'live', 'steam', 'notify'];
 
     use EventGenerator;
 
     /**
-     * Create a new profile
+     * Create a new profile.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return Profile
      */
     public static function createProfile($data)
     {
-        if ( ! isset($data['notify'])) $data['notify'] = false;
+        if (!isset($data['notify'])) {
+            $data['notify'] = false;
+        }
 
         $profile = new static($data);
 
@@ -28,14 +31,17 @@ class Profile extends Eloquent {
     }
 
     /**
-     * Update the profile with the new data
+     * Update the profile with the new data.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return Profile
      */
     public function updateProfile($data)
     {
-        if ( ! isset($data['notify'])) $data['notify'] = false;
+        if (!isset($data['notify'])) {
+            $data['notify'] = false;
+        }
 
         $profile = $this->fill($data);
 
@@ -45,7 +51,7 @@ class Profile extends Eloquent {
     }
 
     /**
-     * Relation with User
+     * Relation with User.
      *
      * @return Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -55,7 +61,7 @@ class Profile extends Eloquent {
     }
 
     /**
-     * Dates to be handled by the Carbon
+     * Dates to be handled by the Carbon.
      *
      * @return array
      */
@@ -65,13 +71,10 @@ class Profile extends Eloquent {
     }
 
     /**
-     * Change the date format before save the birthday
-     *
-     * @return void
+     * Change the date format before save the birthday.
      */
     public function setBirthdayAttribute($value)
     {
         $this->attributes['birthday'] = Carbon::createFromFormat('d/m/Y', $value)->toDateString();
     }
-
 }

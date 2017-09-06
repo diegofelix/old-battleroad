@@ -4,10 +4,10 @@ namespace Champ\Championship\Mail;
 
 use Champ\Forms\CreateCampaignForm;
 
-class CreateCampaignValidator {
-
+class CreateCampaignValidator
+{
     /**
-     * Register Form Validator
+     * Register Form Validator.
      *
      * @var CreateCampaignForm
      */
@@ -21,10 +21,9 @@ class CreateCampaignValidator {
     public function validate($command)
     {
         $this->form->validate([
-            'championship_id'   => $command->championshipId,
-            'subject'           => $command->subject,
-            'body'              => $command->body
+            'championship_id' => $command->championshipId,
+            'subject' => $command->subject,
+            'body' => $command->body,
         ]);
     }
-
 }

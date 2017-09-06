@@ -2,13 +2,12 @@
 
 use Champ\Account\User;
 
-class UserSignedUp {
-
+class UserSignedUp
+{
     public $user;
 
     public function __construct(User $user)
     {
         $this->user = $user;
     }
-
 }

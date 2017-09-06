@@ -14,20 +14,21 @@ class CreateCampaignCommandHandler implements CommandHandler
     use DispatchableTrait;
 
     /**
-     * Campaign Repository
+     * Campaign Repository.
      *
      * @var CampaignRepositoryInterface
      */
     protected $campaigns;
 
     /**
-     * Campaign Maker
+     * Campaign Maker.
+     *
      * @var CampaignMaker
      */
     protected $campaignMaker;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var ChampionshipRepository
      */
@@ -61,11 +62,12 @@ class CreateCampaignCommandHandler implements CommandHandler
     }
 
     /**
-     * Compose a new campaign
+     * Compose a new campaign.
      *
-     * @param  Championship $championship
-     * @param  CreateCampaignCommand $command
-     * @return int               campaign id
+     * @param Championship          $championship
+     * @param CreateCampaignCommand $command
+     *
+     * @return int campaign id
      */
     private function composeCampaign($championship, $command)
     {
@@ -77,20 +79,20 @@ class CreateCampaignCommandHandler implements CommandHandler
     }
 
     /**
-     * Save a campaign to the database
+     * Save a campaign to the database.
      *
-     * @param  int $campaignId
-     * @param  CreateCampaignCommand $command
+     * @param int                   $campaignId
+     * @param CreateCampaignCommand $command
+     *
      * @return Campaign
      */
     private function saveCampaignToDatabase($campaignId, $command)
     {
-        $campaign = new Campaign;
+        $campaign = new Campaign();
         $campaign->compose($command->championshipId, $command->subject, $command->body, $campaignId);
 
         $this->campaigns->save($campaign);
 
         return $campaign;
     }
-
 }

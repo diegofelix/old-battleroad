@@ -1,6 +1,5 @@
 <?php
-Route::group(['before' => 'auth'], function()
-{
+Route::group(['before' => 'auth'], function () {
     Route::get('join/create/{id}', [
         'as' => 'join.create',
         'before' => 'not_joined_yet|championship_not_finished',
@@ -10,30 +9,30 @@ Route::group(['before' => 'auth'], function()
     Route::post('join/register', [
         'as' => 'join.register',
         'before' => 'not_joined_yet|has_competition',
-        'uses' => 'JoinController@register'
+        'uses' => 'JoinController@register',
     ]);
 
     Route::get('join/{id}', [
         'as' => 'join.show',
         'before' => 'join_owner',
-        'uses' => 'JoinController@show'
+        'uses' => 'JoinController@show',
     ]);
 
     Route::patch('joins/{id}/coupon', [
         'as' => 'join.coupon',
         'before' => 'join_owner',
-        'uses' => 'CouponsController@apply'
+        'uses' => 'CouponsController@apply',
     ]);
 
     Route::post('join/{id}', [
         'as' => 'join.returned',
-        'uses' => 'JoinController@returned'
+        'uses' => 'JoinController@returned',
     ]);
 
     Route::get('payment/{id}', [
         'as' => 'payment',
         'before' => 'paid_championship',
-        'uses' => 'JoinController@payment'
+        'uses' => 'JoinController@payment',
     ]);
 });
 
@@ -42,5 +41,5 @@ Route::any('nasp', 'NotificationController@nasp');
 Route::get('mercadopago', 'NotificationController@mercadopago');
 Route::any('bcash', [
     'as' => 'bcash',
-    'uses' => 'NotificationController@bcash'
+    'uses' => 'NotificationController@bcash',
 ]);

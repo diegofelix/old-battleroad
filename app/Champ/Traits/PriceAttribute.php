@@ -1,9 +1,9 @@
 <?php namespace Champ\Traits;
 
-trait PriceAttribute {
-
+trait PriceAttribute
+{
     /**
-     * Convert the price to cents
+     * Convert the price to cents.
      *
      * @param int $value
      */
@@ -13,9 +13,10 @@ trait PriceAttribute {
     }
 
     /**
-     * Get the price in cents and transforms to real
+     * Get the price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getPriceAttribute($value)

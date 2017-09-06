@@ -3,14 +3,14 @@
 use Champ\Newsletters\NewsletterList as NewsletterListInterface;
 use Mailchimp;
 
-class NewsletterList implements NewsletterListInterface {
-
+class NewsletterList implements NewsletterListInterface
+{
     protected $lists = [
-        'championshipsSubscribers' => '4d9ee789f6'
+        'championshipsSubscribers' => '4d9ee789f6',
     ];
 
     /**
-     * Mailchimp
+     * Mailchimp.
      *
      * @var Mailchimp
      */
@@ -22,10 +22,11 @@ class NewsletterList implements NewsletterListInterface {
     }
 
     /**
-     * Subscribe a user to Mailchimp list
+     * Subscribe a user to Mailchimp list.
      *
-     * @param  strgin $listName
-     * @param  string $email
+     * @param strgin $listName
+     * @param string $email
+     *
      * @return mixed
      */
     public function subscribeTo($listName, $email)
@@ -41,10 +42,11 @@ class NewsletterList implements NewsletterListInterface {
     }
 
     /**
-     * Unsubscribe a user from a Mailchimp list
+     * Unsubscribe a user from a Mailchimp list.
      *
-     * @param  string $listName
-     * @param  string $email
+     * @param string $listName
+     * @param string $email
+     *
      * @return mixed
      */
     public function unsubscribeFrom($listName, $email)
@@ -57,5 +59,4 @@ class NewsletterList implements NewsletterListInterface {
             false // send unsubscribe notification email?
         );
     }
-
 }

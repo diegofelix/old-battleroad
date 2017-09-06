@@ -1,41 +1,39 @@
 <?php namespace Champ\Account\Repositories;
 
-use App;
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
 use Champ\Account\Profile;
 use Champ\Validators\UserValidator;
 use Hash;
 
-class UserRepository extends AbstractRepository implements UserRepositoryInterface {
-
+class UserRepository extends AbstractRepository implements UserRepositoryInterface
+{
     /**
-     * User model
+     * User model.
      *
      * @var Champ\Account\User
      */
     protected $model;
 
     /**
-     * User Validator
+     * User Validator.
      *
      * @var Champ\Services\Validation\User\UserValidator;
      */
     protected $validator;
 
     /**
-     * Default Image if user has no picture
+     * Default Image if user has no picture.
      *
      * @var string
      */
     protected $defaultPicture = 'images/defaultUser.jpg';
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @param Champ\Account\User $userModel
+     * @param Champ\Account\User             $userModel
      * @param Champ\Validators\UserValidator $validator
-     * @return void
      */
     public function __construct(User $userModel, UserValidator $validator)
     {
@@ -44,9 +42,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Return a user by the email
+     * Return a user by the email.
      *
-     * @param  string $email
+     * @param string $email
+     *
      * @return Champ\Account\User
      */
     public function getByEmail($email)
@@ -55,9 +54,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Create a user with the social data
+     * Create a user with the social data.
      *
      * @param array $data
+     *
      * @return Model
      */
     public function createBySocialAuth(array $data)
@@ -66,22 +66,22 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Overrided method to add a default picture to a user in registration
+     * Overrided method to add a default picture to a user in registration.
      *
-     * @param  array  $dataedit
+     * @param array $dataedit
+     *
      * @return Model
      */
     public function create(array $data)
     {
         // attach a default image to the user
-        if (empty($data['picture']))
-        {
+        if (empty($data['picture'])) {
             $data['picture'] = $this->defaultPicture;
         }
 
-        if ( ! $this->validator->passes($data))
-        {
+        if (!$this->validator->passes($data)) {
             $this->errors = $this->validator->errors();
+
             return false;
         }
 
@@ -91,9 +91,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Register a user
+     * Register a user.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return mixed
      */
     protected function registerUser($data)
@@ -106,9 +107,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Get the user and profile by id
+     * Get the user and profile by id.
      *
      * @param int $id
+     *
      * @return Champ\Account\User
      */
     public function getById($id)
@@ -117,9 +119,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Create a profile for the user
+     * Create a profile for the user.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return mixed
      */
     public function createProfile($id, array $data)
@@ -137,10 +140,11 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Update a profile for the user
+     * Update a profile for the user.
      *
-     * @param  int $id
-     * @param  array  $data
+     * @param int   $id
+     * @param array $data
+     *
      * @return mixed
      */
     public function updateProfile($id, array $data)
@@ -162,9 +166,10 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Get a profile by a username
+     * Get a profile by a username.
      *
-     * @param  int $username
+     * @param int $username
+     *
      * @return Profile
      */
     public function getProfile($username)
@@ -173,10 +178,11 @@ class UserRepository extends AbstractRepository implements UserRepositoryInterfa
     }
 
     /**
-     * Save a user
+     * Save a user.
      *
-     * @param  User   $user
-     * @return boolean
+     * @param User $user
+     *
+     * @return bool
      */
     public function save(User $user)
     {

@@ -18,27 +18,28 @@ class Championship extends Eloquent
     use PresentableTrait;
 
     /**
-     * Championship presenter
+     * Championship presenter.
      *
      * @var string
      */
     protected $presenter = 'Champ\Presenters\ChampionshipPresenter';
 
     /**
-     * Allow all other fields to be mass assigned
+     * Allow all other fields to be mass assigned.
      *
      * @var array
      */
     protected $guarded = ['_token', 'published', 'published_at'];
 
     /**
-     * Register a championship
+     * Register a championship.
      *
-     * @param  string $name
-     * @param  string $description
-     * @param  string $event_start
-     * @param  string $image
-     * @param  string $thumb
+     * @param string $name
+     * @param string $description
+     * @param string $event_start
+     * @param string $image
+     * @param string $thumb
+     *
      * @return Championship
      */
     public static function register($user_id, $name, $description, $location, $event_start, $image = null, $thumb = null)
@@ -47,14 +48,14 @@ class Championship extends Eloquent
     }
 
     /**
-     * Publish a Championship
+     * Publish a Championship.
      *
      * @return Championship
      */
     public function publish()
     {
         $this->published = true;
-        $this->published_at = Date('Y-m-d H:i:s');
+        $this->published_at = date('Y-m-d H:i:s');
 
         $this->raise(new ChampionshipPublished($this));
 
@@ -62,14 +63,13 @@ class Championship extends Eloquent
     }
 
     /**
-     * Update championship's information
+     * Update championship's information.
      *
-     * @param  string $name
-     * @param  string $description
-     * @param  string $stream
-     * @return void
+     * @param string $name
+     * @param string $description
+     * @param string $stream
      */
-    public function updateInformation($name, $description, $stream = "")
+    public function updateInformation($name, $description, $stream = '')
     {
         $this->name = $name;
         $this->description = $description;
@@ -79,10 +79,11 @@ class Championship extends Eloquent
     }
 
     /**
-     * Check if the id given is the same as the championship
+     * Check if the id given is the same as the championship.
      *
-     * @param  int $id
-     * @return boolean     =
+     * @param int $id
+     *
+     * @return bool =
      */
     public function isOwner($id)
     {
@@ -90,11 +91,10 @@ class Championship extends Eloquent
     }
 
     /**
-     * Updates the banner images
+     * Updates the banner images.
      *
-     * @param  string $image
-     * @param  string $thumb
-     * @return void
+     * @param string $image
+     * @param string $thumb
      */
     public function updateBanner($image, $thumb)
     {
@@ -104,9 +104,8 @@ class Championship extends Eloquent
         // raise a new event if needed
     }
 
-
     /**
-     * Get the closes competition for this championship
+     * Get the closes competition for this championship.
      *
      * @return Competition
      */
@@ -116,7 +115,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with User
+     * Relation with User.
      *
      * @return BelongsTo
      */
@@ -126,7 +125,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with joins
+     * Relation with joins.
      *
      * @return HasMany
      */
@@ -136,7 +135,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with competition
+     * Relation with competition.
      *
      * @return HasMany
      */
@@ -146,7 +145,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with coupons
+     * Relation with coupons.
      *
      * @return HasMany
      */
@@ -156,7 +155,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with campaigns
+     * Relation with campaigns.
      *
      * @return HasMany
      */
@@ -166,7 +165,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Relation with Waiting List
+     * Relation with Waiting List.
      *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -176,7 +175,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Dates handled by Carbon
+     * Dates handled by Carbon.
      *
      * @return array
      */
@@ -186,7 +185,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Convert the date to the db format
+     * Convert the date to the db format.
      *
      * @param string $value
      */
@@ -196,7 +195,7 @@ class Championship extends Eloquent
     }
 
     /**
-     * Convert the price to cents
+     * Convert the price to cents.
      *
      * @param int $value
      */
@@ -205,8 +204,8 @@ class Championship extends Eloquent
         $this->attributes['price'] = $value * 100;
     }
 
-     /**
-     * Convert the original price to cents
+    /**
+     * Convert the original price to cents.
      *
      * @param int $value
      */
@@ -216,9 +215,10 @@ class Championship extends Eloquent
     }
 
     /**
-     * Get the price in cents and transforms to real
+     * Get the price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getPriceAttribute($value)
@@ -227,9 +227,10 @@ class Championship extends Eloquent
     }
 
     /**
-     * Get the original price in cents and transforms to real
+     * Get the original price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getOriginalPriceAttribute($value)
@@ -245,10 +246,11 @@ class Championship extends Eloquent
     }
 
     /**
-     * Check if Championship was published
+     * Check if Championship was published.
      *
-     * @param  int $id
-     * @return boolean
+     * @param int $id
+     *
+     * @return bool
      */
     public static function checkPublished($id)
     {
@@ -256,10 +258,11 @@ class Championship extends Eloquent
     }
 
     /**
-     * Check if Championship was finished
+     * Check if Championship was finished.
      *
-     * @param  int $id
-     * @return boolean
+     * @param int $id
+     *
+     * @return bool
      */
     public static function checkFinished($id)
     {
@@ -267,9 +270,9 @@ class Championship extends Eloquent
     }
 
     /**
-     * Check if the user already has integrated with MercadoPago
+     * Check if the user already has integrated with MercadoPago.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasIntegrated()
     {
@@ -277,9 +280,9 @@ class Championship extends Eloquent
     }
 
     /**
-     * Check if the championship period is finished
+     * Check if the championship period is finished.
      *
-     * @return boolean
+     * @return bool
      */
     public function isFinished()
     {
@@ -287,9 +290,10 @@ class Championship extends Eloquent
     }
 
     /**
-     * Get a qty of competitors based on inportance
+     * Get a qty of competitors based on inportance.
      *
-     * @param  int $qty
+     * @param int $qty
+     *
      * @return Collection
      */
     public function getFeaturedCompetitors($qty = 10)
@@ -298,9 +302,9 @@ class Championship extends Eloquent
     }
 
     /**
-     * Show all competitions that has vacancies
+     * Show all competitions that has vacancies.
      *
-     * @return boolean
+     * @return bool
      */
     public function hasAvailableCompetitions()
     {
@@ -315,9 +319,8 @@ class Championship extends Eloquent
 
     public function availableCompetitions()
     {
-        return $this->competitions->filter(function($competition){
+        return $this->competitions->filter(function ($competition) {
             return $competition->limit > 0;
         });
     }
-
 }

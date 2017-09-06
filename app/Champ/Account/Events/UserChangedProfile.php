@@ -2,13 +2,12 @@
 
 use Champ\Account\Profile;
 
-class UserChangedProfile {
-
+class UserChangedProfile
+{
     public $profile;
 
     public function __construct(Profile $profile)
     {
         $this->profile = $profile;
     }
-
 }

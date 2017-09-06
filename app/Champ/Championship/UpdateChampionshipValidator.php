@@ -2,10 +2,10 @@
 
 use Champ\Forms\ChampionshipUpdateForm;
 
-class UpdateChampionshipValidator {
-
+class UpdateChampionshipValidator
+{
     /**
-     * Update Form Validator
+     * Update Form Validator.
      *
      * @var ChampionshipUpdateForm
      */
@@ -23,5 +23,4 @@ class UpdateChampionshipValidator {
             'description' => $command->description,
         ]);
     }
-
 }

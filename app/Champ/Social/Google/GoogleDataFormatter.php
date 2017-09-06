@@ -1,11 +1,12 @@
 <?php namespace Champ\Social\Google;
 
-class GoogleDataFormatter {
-
+class GoogleDataFormatter
+{
     /**
-     * Format a data in order to mantain a default data to the consumer
+     * Format a data in order to mantain a default data to the consumer.
      *
      * @param array $data
+     *
      * @return array
      */
     public function format($data)
@@ -14,8 +15,7 @@ class GoogleDataFormatter {
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => usernameFromEmail($data['email']),
-            'picture' => $data['picture']
+            'picture' => $data['picture'],
         ];
     }
-
 }

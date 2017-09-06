@@ -5,10 +5,10 @@ use BaseController;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
 
-abstract class BaseRegistrationController extends BaseController {
-
+abstract class BaseRegistrationController extends BaseController
+{
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var ChampionshipRepositoryInterface
      */
@@ -20,5 +20,4 @@ abstract class BaseRegistrationController extends BaseController {
     {
         $this->championshipRepository = $championshipRepository;
     }
-
 }

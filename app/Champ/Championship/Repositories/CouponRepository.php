@@ -1,20 +1,20 @@
 <?php namespace Champ\Championship\Repositories;
 
-use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Coupon;
 
-class CouponRepository implements CouponRepositoryInterface {
-
+class CouponRepository implements CouponRepositoryInterface
+{
     public function __construct(Coupon $model)
     {
         $this->model = $model;
     }
 
     /**
-     * Saves a Coupon
+     * Saves a Coupon.
      *
-     * @param  Coupon $coupon
-     * @return boolean
+     * @param Coupon $coupon
+     *
+     * @return bool
      */
     public function save(Coupon $coupon)
     {
@@ -22,9 +22,10 @@ class CouponRepository implements CouponRepositoryInterface {
     }
 
     /**
-     * Creates a coupon an assign it to a championship
+     * Creates a coupon an assign it to a championship.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return Model
      */
     public function create($data)
@@ -33,9 +34,10 @@ class CouponRepository implements CouponRepositoryInterface {
     }
 
     /**
-     * Find a coupon by its id
+     * Find a coupon by its id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Model
      */
     public function find($id)
@@ -44,10 +46,11 @@ class CouponRepository implements CouponRepositoryInterface {
     }
 
     /**
-     * Delete a Coupon
+     * Delete a Coupon.
      *
-     * @param  Coupon $coupon
-     * @return boolean
+     * @param Coupon $coupon
+     *
+     * @return bool
      */
     public function delete(Coupon $coupon)
     {
@@ -55,9 +58,10 @@ class CouponRepository implements CouponRepositoryInterface {
     }
 
     /**
-     * Get a coupon by its code and checks if the coupon is able to be used
+     * Get a coupon by its code and checks if the coupon is able to be used.
      *
-     * @param  string $code
+     * @param string $code
+     *
      * @return Coupon
      */
     public function findByCode($code)
@@ -68,9 +72,10 @@ class CouponRepository implements CouponRepositoryInterface {
     }
 
     /**
-     * Find a Coupon by User Id
+     * Find a Coupon by User Id.
      *
-     * @param  int $userId
+     * @param int $userId
+     *
      * @return Coupon
      */
     public function findByUserId($userId)

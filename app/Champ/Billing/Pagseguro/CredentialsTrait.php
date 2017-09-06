@@ -3,10 +3,10 @@
 use PHPSC\PagSeguro\Credentials;
 use PHPSC\PagSeguro\Environments\Sandbox;
 
-trait CredentialsTrait {
-
+trait CredentialsTrait
+{
     /**
-     * Credentials
+     * Credentials.
      *
      * @var Credentials
      */
@@ -20,5 +20,4 @@ trait CredentialsTrait {
             new Sandbox()
         );
     }
-
 }

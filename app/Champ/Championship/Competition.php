@@ -8,21 +8,21 @@ class Competition extends Eloquent
     use PresentableTrait;
 
     /**
-     * Allow all other fields to be mass assigned
+     * Allow all other fields to be mass assigned.
      *
      * @var array
      */
     protected $guarded = ['id'];
 
     /**
-     * Competition presenter
+     * Competition presenter.
      *
      * @var string
      */
     protected $presenter = 'Champ\Presenters\CompetitionPresenter';
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      *
      * @return BelongsTo
      */
@@ -30,8 +30,9 @@ class Competition extends Eloquent
     {
         return $this->belongsTo('Champ\Championship\Championship');
     }
+
     /**
-     * Relation with Format
+     * Relation with Format.
      *
      * @return BelongsTo
      */
@@ -41,7 +42,7 @@ class Competition extends Eloquent
     }
 
     /**
-     * Relation with Game
+     * Relation with Game.
      *
      * @return BelongsTo
      */
@@ -51,7 +52,7 @@ class Competition extends Eloquent
     }
 
     /**
-     * Relation with Platform
+     * Relation with Platform.
      *
      * @return BelongsTo
      */
@@ -61,7 +62,7 @@ class Competition extends Eloquent
     }
 
     /**
-     * Relation with Item in Join
+     * Relation with Item in Join.
      *
      * @return HasMany
      */
@@ -71,7 +72,7 @@ class Competition extends Eloquent
     }
 
     /**
-     * Dates handles by Carbon\Carbon
+     * Dates handles by Carbon\Carbon.
      *
      * @return array
      */
@@ -91,7 +92,7 @@ class Competition extends Eloquent
     // }
 
     /**
-     * Convert the price to cents
+     * Convert the price to cents.
      *
      * @param int $value
      */
@@ -101,9 +102,10 @@ class Competition extends Eloquent
     }
 
     /**
-     * Get the price in cents and transforms to real
+     * Get the price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getPriceAttribute($value)
@@ -112,7 +114,7 @@ class Competition extends Eloquent
     }
 
     /**
-     * Convert the original price to cents
+     * Convert the original price to cents.
      *
      * @param int $value
      */
@@ -122,9 +124,10 @@ class Competition extends Eloquent
     }
 
     /**
-     * Get the original price in cents and transforms to real
+     * Get the original price in cents and transforms to real.
      *
-     * @param  int $value
+     * @param int $value
+     *
      * @return float
      */
     public function getOriginalPriceAttribute($value)
@@ -132,7 +135,7 @@ class Competition extends Eloquent
         return $value / 100;
     }
 
-    /**
+    /*
      * Set the the limit attribute
      * If the limit was not specified, then we set a high number to ensure that
      * this limit will not be reach
@@ -148,7 +151,6 @@ class Competition extends Eloquent
             $this->attributes['limit'] = 999999;
         }
     }*/
-
 
     use \Champ\Traits\FormatToDb;
 }

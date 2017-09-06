@@ -1,19 +1,18 @@
 <?php namespace Champ\Validators\Core;
 
-interface ValidableInterface {
+interface ValidableInterface
+{
+    /**
+     * Passes.
+     *
+     * @return bool
+     */
+    public function passes($data, $ruleset = []);
 
-  /**
-   * Passes
-   *
-   * @return boolean
-   */
-  public function passes($data, $ruleset = []);
-
-  /**
-   * Errors
-   *
-   * @return array
-   */
-  public function errors();
-
+    /**
+     * Errors.
+     *
+     * @return array
+     */
+    public function errors();
 }

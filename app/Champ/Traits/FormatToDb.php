@@ -5,10 +5,11 @@ use Carbon\Carbon;
 trait FormatToDb
 {
     /**
-     * Convert the date given to the correct format
+     * Convert the date given to the correct format.
      *
-     * @param  string $value date in format dd/mm/yyyy hh:ii:ss
-     * @return string        date in format yyyy-mm--dd hh:ii:ss
+     * @param string $value date in format dd/mm/yyyy hh:ii:ss
+     *
+     * @return string date in format yyyy-mm--dd hh:ii:ss
      */
     protected function formatToDb($value)
     {

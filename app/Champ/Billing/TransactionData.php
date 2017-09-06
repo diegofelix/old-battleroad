@@ -2,29 +2,31 @@
 
 use Config;
 
-class TransactionData {
-
+class TransactionData
+{
     /**
-     * Transaction ID
+     * Transaction ID.
+     *
      * @var string
      */
     public $transactionId;
 
     /**
-     * Date when the transaction occour
+     * Date when the transaction occour.
+     *
      * @var string
      */
     public $transactionDate;
 
     /**
-     * Date when the user will receive the money
+     * Date when the user will receive the money.
      *
      * @var string
      */
     public $creditDate;
 
     /**
-     * The price paid by the competitor
+     * The price paid by the competitor.
      *
      * @var string
      */
@@ -32,21 +34,21 @@ class TransactionData {
 
     /**
      * The price after we apply our rates.
-     * This is not the billing service price, its our price with the rate applied
+     * This is not the billing service price, its our price with the rate applied.
      *
      * @var string
      */
     public $priceAfterTaxes;
 
     /**
-     * A string with the payment method given for the billing service
+     * A string with the payment method given for the billing service.
      *
      * @var string
      */
     public $paymentMethod;
 
     /**
-     * A string with the status given for the billing service
+     * A string with the status given for the billing service.
      *
      * @var string
      */
@@ -64,5 +66,4 @@ class TransactionData {
 
         //$this->priceAfterTaxes = number_format(apply_comission($this->originalPrice, Config::get('champ.rate')), 2);
     }
-
 }

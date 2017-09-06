@@ -10,7 +10,7 @@ class CompetitionPresenter extends Presenter
 
     /**
      * Show the limit of the competition, but if the championship limit is less then
-     * the competition, show the championship limit
+     * the competition, show the championship limit.
      *
      * @return int
      */
@@ -25,23 +25,29 @@ class CompetitionPresenter extends Presenter
     }
 
     /**
-     * Show the current slots remainings
+     * Show the current slots remainings.
      *
      * @return string
      */
     public function slotsRemaining()
     {
-        if ($this->trueLimit > 90000) return 'Sem limite';
+        if ($this->trueLimit > 90000) {
+            return 'Sem limite';
+        }
 
-        if ($this->trueLimit == 1) return '1 Vaga restante';
+        if ($this->trueLimit == 1) {
+            return '1 Vaga restante';
+        }
 
-        if ($this->trueLimit > 0 ) return $this->trueLimit . ' Vagas restantes';
+        if ($this->trueLimit > 0) {
+            return $this->trueLimit.' Vagas restantes';
+        }
 
         return 'Vagas esgotadas';
     }
 
     /**
-     * Show the event start with the data
+     * Show the event start with the data.
      *
      * @return string
      */
@@ -51,9 +57,9 @@ class CompetitionPresenter extends Presenter
     }
 
     /**
-     * Check if the competition is single registration
+     * Check if the competition is single registration.
      *
-     * @return boolean
+     * @return bool
      */
     public function isSingleRegistration()
     {

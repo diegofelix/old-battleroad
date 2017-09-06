@@ -6,12 +6,12 @@ use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 use Champ\Join\ApplyCouponCommand;
 
-class CouponsController extends BaseController {
-
+class CouponsController extends BaseController
+{
     use CommanderTrait;
 
     /**
-     * Receive a coupon code, process it and apply to the join
+     * Receive a coupon code, process it and apply to the join.
      *
      * @return Response
      */
@@ -21,16 +21,11 @@ class CouponsController extends BaseController {
         $input['user_id'] = Auth::user()->id;
         $input['join_id'] = $joinId;
 
-        try
-        {
+        try {
             $this->execute(ApplyCouponCommand::class, $input);
-        }
-        catch (CouponNotFoundException $e)
-        {
+        } catch (CouponNotFoundException $e) {
             return $this->redirectBack(['error' => 'Cupon inválido ou já utilizado.']);
-        }
-        catch (UserAlreadyHasDiscountException $e)
-        {
+        } catch (UserAlreadyHasDiscountException $e) {
             return $this->redirectBack(['error' => 'Você já aplicou um cupon para esse pagamento.']);
         }
 
@@ -38,5 +33,4 @@ class CouponsController extends BaseController {
         return $this->redirectRoute('join.show', [$joinId])
             ->with('message', 'Cupom Aplicado com sucesso!');
     }
-
 }

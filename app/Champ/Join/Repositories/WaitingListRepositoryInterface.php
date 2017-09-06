@@ -8,9 +8,10 @@ use Champ\Join\WaitingList;
 interface WaitingListRepositoryInterface extends RepositoryInterface
 {
     /**
-     * Save an WaitingList
+     * Save an WaitingList.
      *
-     * @param  WaitingList   $waitingList
+     * @param WaitingList $waitingList
+     *
      * @return WaitingList
      */
     public function save(WaitingList $waitingList);

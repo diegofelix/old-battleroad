@@ -1,10 +1,10 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
-class PagesController extends BaseController {
-
+class PagesController extends BaseController
+{
     /**
-     * Show two options to the user choose
+     * Show two options to the user choose.
      *
      * @return Response
      */
@@ -34,7 +34,7 @@ class PagesController extends BaseController {
     }
 
     /**
-     * Change log page
+     * Change log page.
      *
      * @return Response
      */
@@ -42,5 +42,4 @@ class PagesController extends BaseController {
     {
         return $this->view('pages/changelog');
     }
-
 }

@@ -2,8 +2,8 @@
 
 use Illuminate\Support\MessageBag;
 
-class UserAlreadyJoinedException extends \Exception {
-
+class UserAlreadyJoinedException extends \Exception
+{
     /**
      * @var mixed
      */
@@ -12,7 +12,7 @@ class UserAlreadyJoinedException extends \Exception {
     /**
      * @param string $error
      */
-    function __construct($error)
+    public function __construct($error)
     {
         $this->errors = new MessageBag(['email' => $error]);
 
@@ -20,7 +20,7 @@ class UserAlreadyJoinedException extends \Exception {
     }
 
     /**
-     * Get form validation errors
+     * Get form validation errors.
      *
      * @return mixed
      */
@@ -28,5 +28,4 @@ class UserAlreadyJoinedException extends \Exception {
     {
         return $this->errors;
     }
-
 }

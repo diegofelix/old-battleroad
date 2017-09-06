@@ -9,9 +9,8 @@ use Request;
 
 class ChampionshipOwner
 {
-
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var ChampionshipRepository
      */
@@ -23,10 +22,11 @@ class ChampionshipOwner
     }
 
     /**
-     * Garantee that only the owner of the championship can view its championship
+     * Garantee that only the owner of the championship can view its championship.
      *
-     * @param  Route $route
-     * @param  Request $request
+     * @param Route   $route
+     * @param Request $request
+     *
      * @return mixed
      */
     public function filter($route, $request)
@@ -36,7 +36,7 @@ class ChampionshipOwner
 
         $championship = $this->championships->find($id);
 
-        if (! $championship->isOwner(Auth::id())) {
+        if (!$championship->isOwner(Auth::id())) {
             App::abort(404);
         }
     }
