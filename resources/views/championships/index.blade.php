@@ -27,7 +27,7 @@
                                         <i class="fa fa-calendar"></i> {{ $champ->present()->daysLeft }}
                                     </a>
                                     <a href="#" class="price pull-right">
-                                        <strong>{{ $champ->present()->lowestPrice }}</strong>
+                                        <strong>{!! $champ->present()->lowestPrice !!}</strong>
                                     </a>
                                 </div>
                             </div>
