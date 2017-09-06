@@ -36,7 +36,7 @@ class ChampionshipImage extends ImageUploader
         $dest = public_path($this->path.'thumb_'.$image->filename.'.jpg');
 
         $this->image->make($image->dirname.'/'.$image->basename)
-            ->grab($this->thumbWidth, $this->thumbHeight)
+            ->fit($this->thumbWidth, $this->thumbHeight)
             ->save($dest);
     }
 
