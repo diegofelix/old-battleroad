@@ -2,7 +2,7 @@
 namespace Battleroad\Http\Controllers\Admin;
 
 use Auth;
-use BaseController;
+use Battleroad\Http\Controllers\BaseController;
 
 class DashboardController extends BaseController
 {

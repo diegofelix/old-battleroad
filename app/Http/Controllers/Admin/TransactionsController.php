@@ -1,7 +1,7 @@
 <?php
 namespace Battleroad\Http\Controllers\Admin;
 
-use BaseController;
+use Battleroad\Http\Controllers\BaseController;
 use Champ\Billing\Contracts\TransactionService;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 
