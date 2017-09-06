@@ -7,14 +7,14 @@ use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 abstract class BaseRegistrationController extends BaseController
 {
+    use CommanderTrait;
+
     /**
      * Championship Repository.
      *
      * @var ChampionshipRepositoryInterface
      */
     protected $championshipRepository;
-
-    use CommanderTrait;
 
     public function __construct(ChampionshipRepositoryInterface $championshipRepository)
     {
