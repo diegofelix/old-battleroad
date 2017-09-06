@@ -2,12 +2,11 @@
 
 use Laracasts\Validation\FormValidator;
 
-class ChampionshipUpdateForm extends FormValidator {
-
+class ChampionshipUpdateForm extends FormValidator
+{
     protected $rules = [
         'name' => 'required|min:5',
         'description' => 'required|min:20',
-        'stream' => 'sometimes|url'
+        'stream' => 'sometimes|url',
     ];
-
 }

@@ -6,12 +6,12 @@ use Laracasts\Presenter\PresentableTrait;
 use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\CouponWasApplied;
 
-class Coupon extends Eloquent {
-
+class Coupon extends Eloquent
+{
     protected $fillable = ['code', 'championship_id', 'price'];
 
     /**
-     * Competition presenter
+     * Competition presenter.
      *
      * @var string
      */
@@ -22,11 +22,12 @@ class Coupon extends Eloquent {
     use PresentableTrait;
 
     /**
-     * Generate a new coupon for the championship
+     * Generate a new coupon for the championship.
      *
-     * @param  int $championshipId
-     * @param  string $code
-     * @param  int $price
+     * @param int    $championshipId
+     * @param string $code
+     * @param int    $price
+     *
      * @return Model
      */
     public static function generate($championship_id, $code, $price)
@@ -35,11 +36,10 @@ class Coupon extends Eloquent {
     }
 
     /**
-     * Apply the coupon for a user in a determined join
+     * Apply the coupon for a user in a determined join.
      *
-     * @param  int $joinId
-     * @param  int $userId
-     * @return void
+     * @param int $joinId
+     * @param int $userId
      */
     public function applyFor($joinId, $userId)
     {
@@ -50,7 +50,7 @@ class Coupon extends Eloquent {
     }
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      *
      * @return BelongsTo
      */
@@ -60,7 +60,7 @@ class Coupon extends Eloquent {
     }
 
     /**
-     * Relation with User
+     * Relation with User.
      *
      * @return BelongsTo
      */
@@ -70,7 +70,7 @@ class Coupon extends Eloquent {
     }
 
     /**
-     * Relation with Join
+     * Relation with Join.
      *
      * @return BelongsTo
      */
@@ -78,5 +78,4 @@ class Coupon extends Eloquent {
     {
         return $this->belongsTo('Champ\Join\Join');
     }
-
 }

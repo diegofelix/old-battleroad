@@ -3,10 +3,10 @@
 use Champ\Join\WaitingList;
 use Champ\Repositories\Core\AbstractRepository;
 
-class WaitingListRepository extends AbstractRepository implements WaitingListRepositoryInterface {
-
+class WaitingListRepository extends AbstractRepository implements WaitingListRepositoryInterface
+{
     /**
-     * inject the model into constructor
+     * inject the model into constructor.
      *
      * @param Champ\Join\WaitingList $model
      */
@@ -16,9 +16,10 @@ class WaitingListRepository extends AbstractRepository implements WaitingListRep
     }
 
     /**
-     * Save an WaitingList
+     * Save an WaitingList.
      *
-     * @param  WaitingList   $waitingList
+     * @param WaitingList $waitingList
+     *
      * @return WaitingList
      */
     public function save(WaitingList $waitingList)

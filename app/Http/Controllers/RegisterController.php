@@ -6,10 +6,10 @@ use Input;
 use Champ\Account\Repositories\UserRepositoryInterface;
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class RegisterController extends BaseController {
-
+class RegisterController extends BaseController
+{
     /**
-     * User Repository
+     * User Repository.
      *
      * @var Champ\Account\Repositories\UserRepositoryInterface
      */
@@ -18,7 +18,7 @@ class RegisterController extends BaseController {
     use DispatchableTrait;
 
     /**
-     * Inject the user repo
+     * Inject the user repo.
      */
     public function __construct(UserRepositoryInterface $user)
     {
@@ -26,7 +26,7 @@ class RegisterController extends BaseController {
     }
 
     /**
-     * Show the registration for to the user
+     * Show the registration for to the user.
      *
      * @return Response
      */
@@ -36,14 +36,13 @@ class RegisterController extends BaseController {
     }
 
     /**
-     * Register the user
+     * Register the user.
      *
      * @return Response
      */
     public function store()
     {
-        if ( ! $user = $this->userRepo->create(Input::all()))
-        {
+        if (!$user = $this->userRepo->create(Input::all())) {
             return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
         }
 
@@ -57,5 +56,4 @@ class RegisterController extends BaseController {
         // and return him to the home
         return $this->redirectTo('/', ['message' => 'Parabéns, sua conta foi criada!']);
     }
-
 }

@@ -3,10 +3,10 @@
 use OAuth;
 use Champ\Social\SocialDataReaderInterface;
 
-class GoogleDataReader implements SocialDataReaderInterface {
-
+class GoogleDataReader implements SocialDataReaderInterface
+{
     /**
-     * Google Data Formatter
+     * Google Data Formatter.
      *
      * @var Champ\Social\Google\GoogleDataFormatter
      */
@@ -20,26 +20,29 @@ class GoogleDataReader implements SocialDataReaderInterface {
     /**
      * Get the code and do an request back to google retrieving the user data.
      *
-     * @param  string $code
+     * @param string $code
+     *
      * @return array
      */
     public function getDataFromCode($code)
     {
         $data = $this->readDataFromGoogle($code);
+
         return $this->formatter->format($data);
     }
 
     /**
-     * Read the data from Google
+     * Read the data from Google.
      *
-     * @param  string $code
+     * @param string $code
+     *
      * @return array
      */
     protected function readDataFromGoogle($code)
     {
         $googleService = OAuth::consumer('Google');
         $token = $googleService->requestAccessToken($code);
+
         return json_decode($googleService->request('https://www.googleapis.com/oauth2/v1/userinfo'), true);
     }
-
 }

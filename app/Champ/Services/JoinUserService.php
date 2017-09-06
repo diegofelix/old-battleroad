@@ -9,11 +9,10 @@ use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\Status;
 use Champ\Join\UserAlreadyJoinedException;
-use DB;
 
 /**
-* Join User Service
-*/
+ * Join User Service.
+ */
 class JoinUserService
 {
     protected $user;
@@ -22,7 +21,7 @@ class JoinUserService
     protected $items;
     protected $players;
 
-    function __construct(
+    public function __construct(
         JoinRepositoryInterface $joins,
         CompetitionRepositoryInterface $competitions,
         ItemRepositoryInterface $items
@@ -33,13 +32,14 @@ class JoinUserService
     }
 
     /**
-     * Register all the join process
+     * Register all the join process.
      *
-     * @param  User $user
-     * @param  Championship $championship
-     * @param  array $competitions
-     * @param  array $nicks
-     * @param  string $teamName
+     * @param User         $user
+     * @param Championship $championship
+     * @param array        $competitions
+     * @param array        $nicks
+     * @param string       $teamName
+     *
      * @return Join
      */
     public function register($user, $championship, $competitions, $nicks, $teamName = null)
@@ -60,10 +60,9 @@ class JoinUserService
     }
 
     /**
-     * Update the Join Status if the Join is Free
+     * Update the Join Status if the Join is Free.
      *
-     * @param  Join $join
-     * @return void
+     * @param Join $join
      */
     public function updateJoinStatusIfItsFree($join)
     {
@@ -74,11 +73,10 @@ class JoinUserService
     }
 
     /**
-     * Save nicks for each item
+     * Save nicks for each item.
      *
-     * @param  array $items
-     * @param  array $nicks
-     * @return void
+     * @param array $items
+     * @param array $nicks
      */
     private function saveNicksForItems($items, $nicks)
     {
@@ -90,10 +88,11 @@ class JoinUserService
     }
 
     /**
-     * Save competitions for this join
+     * Save competitions for this join.
      *
-     * @param  Join $join
-     * @param  array $competitions
+     * @param Join  $join
+     * @param array $competitions
+     *
      * @return array
      */
     private function saveCompetitionsForJoin($join, $competitions, $teamName = null)
@@ -101,7 +100,6 @@ class JoinUserService
         $foundCompetitions = $this->competitions->getByIds($competitions);
 
         foreach ($foundCompetitions as $competition) {
-
             $isTeamCompetition = !$competition->present()->isSingleRegistration();
 
             $teamName = ($isTeamCompetition) ? $teamName : '';
@@ -115,21 +113,22 @@ class JoinUserService
     }
 
     /**
-     * Save the join
+     * Save the join.
      *
-     * @param  User $user
-     * @param  Championship $championship
+     * @param User         $user
+     * @param Championship $championship
+     *
      * @return Join
      */
     private function saveJoin($user, $championship, $nicks)
     {
         if ($this->joins->userParticipating($user->id, $championship->id)) {
-            throw new UserAlreadyJoinedException("Esse e-mail já está participando deste campeonato.");
+            throw new UserAlreadyJoinedException('Esse e-mail já está participando deste campeonato.');
         }
 
         // first nick he encounter
-        $nick  = reset($nicks)[0];
-        if (! $nick) {
+        $nick = reset($nicks)[0];
+        if (!$nick) {
             $nick = $user->name;
         }
 
@@ -141,11 +140,10 @@ class JoinUserService
     }
 
     /**
-     * Save nicks for a single item
+     * Save nicks for a single item.
      *
-     * @param  Item $item
-     * @param  array $nicks
-     * @return void
+     * @param Item  $item
+     * @param array $nicks
      */
     private function saveNicksForItem($item, $nicks)
     {

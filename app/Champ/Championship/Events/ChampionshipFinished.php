@@ -2,13 +2,12 @@
 
 use Champ\Championship\Championship;
 
-class ChampionshipFinished {
-
+class ChampionshipFinished
+{
     public $championship;
 
     public function __construct(Championship $championship)
     {
         $this->championship = $championship;
     }
-
 }

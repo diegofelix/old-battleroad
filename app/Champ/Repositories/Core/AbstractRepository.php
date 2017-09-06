@@ -1,18 +1,19 @@
 <?php namespace Champ\Repositories\Core;
 
-abstract class AbstractRepository {
-
+abstract class AbstractRepository
+{
     /**
-     * Errors
+     * Errors.
      *
      * @var MessageBag
      */
     protected $errors;
 
     /**
-     * Get the first instance of a model
+     * Get the first instance of a model.
      *
-     * @param  array  $with
+     * @param array $with
+     *
      * @return Model
      */
     public function first($with = array())
@@ -21,7 +22,7 @@ abstract class AbstractRepository {
     }
 
     /**
-     * All
+     * All.
      *
      * @return Illuminate\Database\Eloquent\Collection
      */
@@ -31,7 +32,7 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Find
+     * Find.
      *
      * @return Illuminate\Database\Eloquent\Model
      */
@@ -41,16 +42,17 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Create
+     * Create.
      *
      * @param array $data
-     * @return boolean
+     *
+     * @return bool
      */
     public function create(array $data)
     {
-        if ( ! $this->validator->passes($data))
-        {
+        if (!$this->validator->passes($data)) {
             $this->errors = $this->validator->errors();
+
             return false;
         }
 
@@ -58,15 +60,17 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Update
+     * Update.
      *
      * @param array $data
-     * @return boolean
+     *
+     * @return bool
      */
     public function update($id, array $data)
     {
-        if ( ! $this->validator->passes($data, 'update')) {
+        if (!$this->validator->passes($data, 'update')) {
             $this->errors = $this->validator->errors();
+
             return false;
         }
 
@@ -74,9 +78,9 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Delete
+     * Delete.
      *
-     * @return boolean
+     * @return bool
      */
     public function delete($id)
     {
@@ -84,7 +88,7 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Get the validation errors
+     * Get the validation errors.
      *
      * @return MessageBag
      */
@@ -94,11 +98,12 @@ abstract class AbstractRepository {
     }
 
     /**
-     * get a model by its key
+     * get a model by its key.
      *
-     * @param  string $key
-     * @param  mixed $value
-     * @param  array  $with
+     * @param string $key
+     * @param mixed  $value
+     * @param array  $with
+     *
      * @return Model
      */
     public function getBy($key, $value, $with = array())
@@ -107,11 +112,12 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Get first model by its key
+     * Get first model by its key.
      *
-     * @param  string $key
-     * @param  mixed $value
-     * @param  array  $with
+     * @param string $key
+     * @param mixed  $value
+     * @param array  $with
+     *
      * @return Model
      */
     public function getFirstBy($key, $value, $with = array())
@@ -120,9 +126,10 @@ abstract class AbstractRepository {
     }
 
     /**
-     * make Method eager loading itens
+     * make Method eager loading itens.
      *
-     * @param  array  $with
+     * @param array $with
+     *
      * @return Query
      */
     protected function make($with = array())
@@ -131,10 +138,11 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Get first for a Specific match
+     * Get first for a Specific match.
      *
-     * @param  array $where
-     * @param  array $with
+     * @param array $where
+     * @param array $with
+     *
      * @return Model
      */
     public function getFirstWhere($where = [], $with = [])
@@ -143,15 +151,15 @@ abstract class AbstractRepository {
     }
 
     /**
-     * Get a Specific match
+     * Get a Specific match.
      *
-     * @param  array $where
-     * @param  array $with
+     * @param array $where
+     * @param array $with
+     *
      * @return Collection
      */
     public function getWhere($where = [], $with = [])
     {
         return $this->model->with($with)->where($where)->get();
     }
-
 }

@@ -2,32 +2,34 @@
 
 namespace Champ\Newsletters;
 
-interface ChampionshipSegment {
-
+interface ChampionshipSegment
+{
     /**
-     * Create a new segment
+     * Create a new segment.
      *
-     * @param  string $segmentName
+     * @param string $segmentName
+     *
      * @return mixed
      */
     public function createSegment($segmentName);
 
     /**
-     * Subscribe a email to a segment
+     * Subscribe a email to a segment.
      *
-     * @param  int $segmentId
-     * @param  string $email
+     * @param int    $segmentId
+     * @param string $email
+     *
      * @return mixed
      */
     public function subscribeTo($segmentId, $email);
 
     /**
-     * Unsubscribe a user from a segment
+     * Unsubscribe a user from a segment.
      *
-     * @param  int $segmentId
-     * @param  string $email
+     * @param int    $segmentId
+     * @param string $email
+     *
      * @return mixed
      */
     public function unsubscribeFrom($segmentId, $email);
-
 }

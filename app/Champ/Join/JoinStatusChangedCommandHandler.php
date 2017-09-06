@@ -4,10 +4,10 @@ use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 
-class JoinStatusChangedCommandHandler implements CommandHandler {
-
+class JoinStatusChangedCommandHandler implements CommandHandler
+{
     /**
-     * Join Repository
+     * Join Repository.
      */
     protected $joinRepository;
 

@@ -6,8 +6,8 @@ use App;
 use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
 
-class RegisterUser {
-
+class RegisterUser
+{
     protected $users;
 
     public function __construct(UserRepository $users)
@@ -16,14 +16,15 @@ class RegisterUser {
     }
 
     /**
-     * Find or creates a new User
+     * Find or creates a new User.
      *
-     * @param  Object $object
+     * @param object $object
+     *
      * @return User
      */
     public function getOrCreateUser($object)
     {
-        if (! $user = $this->findUser($object)) {
+        if (!$user = $this->findUser($object)) {
             $user = $this->registerUser($object);
         }
 
@@ -33,9 +34,10 @@ class RegisterUser {
     }
 
     /**
-     * Find a user by its email
+     * Find a user by its email.
      *
-     * @param  Object $object
+     * @param object $object
+     *
      * @return mixed
      */
     private function findUser($object)
@@ -44,9 +46,10 @@ class RegisterUser {
     }
 
     /**
-     * Register a new User
+     * Register a new User.
      *
-     * @param  Object $object
+     * @param object $object
+     *
      * @return User
      */
     private function registerUser($object)
@@ -54,9 +57,11 @@ class RegisterUser {
         $model = App::make(User::class);
 
         // first nick he encounter
-        $nick  = reset($object->nicks)[0];
+        $nick = reset($object->nicks)[0];
 
-        if (! $nick) $nick = $object->name;
+        if (!$nick) {
+            $nick = $object->name;
+        }
 
         $user = $model->register([
             'name' => $object->name,
@@ -72,20 +77,17 @@ class RegisterUser {
         return $user;
     }
 
-
     /**
-     * Save identification data to the user
+     * Save identification data to the user.
      *
-     * @param  User $user
-     * @param  string $identification
-     * @param  string $birthdate
-     * @return void
+     * @param User   $user
+     * @param string $identification
+     * @param string $birthdate
      */
     private function saveIdentificationToUser($user, $identification, $birthdate)
     {
         $user->identification = $identification;
-        $user->birthdate      = $birthdate;
+        $user->birthdate = $birthdate;
         $user->save();
     }
-
 }

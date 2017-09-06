@@ -12,5 +12,4 @@ class CampaignWasCreated
     {
         $this->campaign = $campaign;
     }
-
 }

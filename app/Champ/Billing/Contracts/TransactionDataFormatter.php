@@ -1,13 +1,13 @@
 <?php namespace Champ\Billing\Contracts;
 
-interface TransactionDataFormatter {
-
+interface TransactionDataFormatter
+{
     /**
-     * receive an input ( generaly json ) and translate to a data pattern
+     * receive an input ( generaly json ) and translate to a data pattern.
      *
-     * @param  mixed $input
+     * @param mixed $input
+     *
      * @return TransactionData
      */
     public function format($input);
-
 }

@@ -2,8 +2,8 @@
 
 namespace Champ\Join;
 
-class LimitExceededJoinCommand {
-
+class LimitExceededJoinCommand
+{
     public $championship_id;
     public $name;
     public $nicks;
@@ -13,7 +13,8 @@ class LimitExceededJoinCommand {
     public $birthdate;
     public $competitions;
 
-    function __construct($championship_id, $name, $nicks, $email, $email_confirmation, $identification, $birthdate, $competitions = array()) {
+    public function __construct($championship_id, $name, $nicks, $email, $email_confirmation, $identification, $birthdate, $competitions = array())
+    {
         $this->championship_id = $championship_id;
         $this->competitions = $competitions;
         $this->name = $name;
@@ -23,5 +24,4 @@ class LimitExceededJoinCommand {
         $this->identification = $identification;
         $this->birthdate = $birthdate;
     }
-
 }

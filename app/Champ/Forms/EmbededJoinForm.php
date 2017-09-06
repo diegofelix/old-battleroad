@@ -4,15 +4,15 @@ namespace Champ\Forms;
 
 use Laracasts\Validation\FormValidator;
 
-class EmbededJoinForm extends FormValidator {
-
+class EmbededJoinForm extends FormValidator
+{
     protected $rules = [
         'name' => 'required|min:6',
         'birthdate' => 'required|date_format:"d/m/Y"',
         'identification' => 'required',
         'email' => 'required|confirmed',
         'competitions' => 'required|min:1',
-        'nicks' => 'required|min:1|array'
+        'nicks' => 'required|min:1|array',
     ];
 
     protected $messages = [
@@ -29,5 +29,4 @@ class EmbededJoinForm extends FormValidator {
         'email.email' => 'Você precisa digitar um e-mail válido',
         'email.confirmed' => 'Os e-mails não correspondem',
     ];
-
 }

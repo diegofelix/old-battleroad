@@ -3,7 +3,6 @@ namespace Battleroad\Http\Controllers;
 
 namespace Admin;
 
-use App;
 use BaseController;
 use Champ\Championship\Mail\CreateCampaignCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
@@ -15,7 +14,7 @@ class MailController extends BaseController
     use CommanderTrait;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
@@ -27,7 +26,7 @@ class MailController extends BaseController
     }
 
     /**
-     * Show a view to view the mails
+     * Show a view to view the mails.
      *
      * @return Response
      */
@@ -39,9 +38,10 @@ class MailController extends BaseController
     }
 
     /**
-     * Compose a new message to the subscribed users
+     * Compose a new message to the subscribed users.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function compose($id)
@@ -52,9 +52,10 @@ class MailController extends BaseController
     }
 
     /**
-     * Send the campaign
+     * Send the campaign.
      *
-     * @param  int $championshipId
+     * @param int $championshipId
+     *
      * @return Response
      */
     public function store($championshipId)

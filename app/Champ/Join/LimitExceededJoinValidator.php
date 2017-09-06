@@ -4,10 +4,10 @@ namespace Champ\Join;
 
 use Champ\Forms\EmbededJoinForm;
 
-class LimitExceededJoinValidator {
-
+class LimitExceededJoinValidator
+{
     /**
-     * Form Validator
+     * Form Validator.
      *
      * @var EmbededJoinForm
      */
@@ -22,13 +22,12 @@ class LimitExceededJoinValidator {
     {
         $this->form->validate([
             'name' => $command->name,
-	    'birthdate' => $command->birthdate,
+        'birthdate' => $command->birthdate,
             'email' => $command->email,
             'email_confirmation' => $command->email_confirmation,
             'competitions' => $command->competitions,
             'nicks' => $command->nicks,
-            'identification' => $command->identification
+            'identification' => $command->identification,
         ]);
     }
-
 }

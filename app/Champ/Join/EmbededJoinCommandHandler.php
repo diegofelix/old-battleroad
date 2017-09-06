@@ -2,8 +2,6 @@
 
 namespace Champ\Join;
 
-use App;
-use Champ\Account\Profile;
 use Champ\Account\User;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
@@ -12,32 +10,31 @@ use Champ\Services\RegisterUser;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class EmbededJoinCommandHandler implements CommandHandler {
-
+class EmbededJoinCommandHandler implements CommandHandler
+{
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
     protected $joinRepository;
 
-
     /**
-     * Register User Service
+     * Register User Service.
      *
      * @var Champ\Services\RegisterUser
      */
     protected $userService;
 
     /**
-     * Join User Service
+     * Join User Service.
      *
      * @var Champ\Services\JoinUserService
      */
     protected $joinUserService;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
@@ -46,7 +43,7 @@ class EmbededJoinCommandHandler implements CommandHandler {
     use DispatchableTrait;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param JoinRepositoryInterface         $joinRepository
      * @param ChampionshipRepositoryInterface $championshipRepository
@@ -66,7 +63,7 @@ class EmbededJoinCommandHandler implements CommandHandler {
 
     public function handle($command)
     {
-        $user         = $this->userService->getOrCreateUser($command);
+        $user = $this->userService->getOrCreateUser($command);
         $championship = $this->championshipRepository->find($command->championship_id);
 
         $join = $this->joinUserService->register(

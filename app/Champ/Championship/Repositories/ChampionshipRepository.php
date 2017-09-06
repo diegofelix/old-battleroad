@@ -3,7 +3,6 @@
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Championship;
 use Champ\Validators\ChampionshipValidator;
-use Champ\Contexts\Core\ContextInterface;
 use Champ\Championship\Competition;
 use Laracasts\Commander\Events\DispatchableTrait;
 use Illuminate\Support\Collection;
@@ -11,26 +10,25 @@ use Carbon\Carbon;
 use App;
 use Auth;
 use Config;
-use Event;
 use Log;
 
-class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface {
-
+class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface
+{
     use DispatchableTrait;
 
     public function __construct(
         Championship $model,
         ChampionshipValidator $validator
-    )
-    {
+    ) {
         $this->model = $model;
         $this->validator = $validator;
     }
 
     /**
-     * Find only if the championship is available
+     * Find only if the championship is available.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return mixed
      */
     public function findAvailable($id)
@@ -42,7 +40,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Get a list of Championships in event_start desc order
+     * Get a list of Championships in event_start desc order.
      *
      * @return Paginator
      */
@@ -52,8 +50,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             ->wherePublished(true)
             ->whereFinished(false);
 
-        if ($game)
-        {
+        if ($game) {
             $query = $this->getChampionshipsWithGames($query, $game);
         }
 
@@ -61,9 +58,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Publish a championship
+     * Publish a championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return bool
      */
     public function publish($id)
@@ -78,9 +76,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Save the location and price for the championship
+     * Save the location and price for the championship.
      *
-     * @param  array $input
+     * @param array $input
+     *
      * @return mixed
      */
     public function saveLocation($input)
@@ -88,28 +87,31 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championship = $this->model->findOrFail($input['id']);
 
         // prevent malicious intentions checking the ownership
-        if ($championship->user_id != Auth::user()->id) return false;
+        if ($championship->user_id != Auth::user()->id) {
+            return false;
+        }
 
-        if ( ! $this->validator->passes($input, 'location'))
-        {
+        if (!$this->validator->passes($input, 'location')) {
             $this->errors = $this->validator->errors();
+
             return false;
         }
 
         // save only the inputs specifieds in the form.
-        $championship->location         = $input['location'];
-        $championship->price            = $this->updatePrice($input['price']);
-        $championship->original_price   = $input['price'];
-        $championship->limit            = $input['limit'];
+        $championship->location = $input['location'];
+        $championship->price = $this->updatePrice($input['price']);
+        $championship->original_price = $input['price'];
+        $championship->limit = $input['limit'];
 
         return $championship->save();
     }
 
     /**
-     * Return a competition by a champ id
+     * Return a competition by a champ id.
      *
-     * @param  int $champId
-     * @param  int $competitionId
+     * @param int $champId
+     * @param int $competitionId
+     *
      * @return Model
      */
     public function getCompetition($champId, $competitionId)
@@ -128,10 +130,8 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
             ->whereFinished(false)
             ->get();
 
-        foreach($championships as $champ)
-        {
-            foreach ($champ->competitions as $competition)
-            {
+        foreach ($championships as $champ) {
+            foreach ($champ->competitions as $competition) {
                 $competitions[] = $competition->game->name;
             }
         }
@@ -140,10 +140,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Create a new competition and attach to the championship
+     * Create a new competition and attach to the championship.
      *
-     * @param  int $champId
-     * @param  array $data
+     * @param int   $champId
+     * @param array $data
+     *
      * @return mixed
      */
     public function createCompetition($champId, $data)
@@ -152,15 +153,15 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championship = $this->find($champId, ['competitions']);
 
         // check if validation passes
-        if ( ! $this->validator->passes($data, 'competition'))
-        {
+        if (!$this->validator->passes($data, 'competition')) {
             $this->errors = $this->validator->errors();
+
             return false;
         }
 
-        if ( ! $this->competitionStartsAfterChampionship($championship, $data['start']))
-        {
+        if (!$this->competitionStartsAfterChampionship($championship, $data['start'])) {
             $this->errors = new Collection(['O Campo data deve ter uma data maior que o campeonato.']);
+
             return false;
         }
 
@@ -169,7 +170,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         // updates the price.
         $data['original_price'] = $data['price'];
-        $data['price']          = $this->updatePrice($data['price']);
+        $data['price'] = $this->updatePrice($data['price']);
 
         // create a new Competition
         $competition = new Competition($data);
@@ -179,9 +180,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Save a championship
+     * Save a championship.
      *
-     * @param  Championship $championship
+     * @param Championship $championship
+     *
      * @return mixed
      */
     public function save(Championship $championship)
@@ -190,10 +192,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Create a championship assigned to a user
+     * Create a championship assigned to a user.
      *
-     * @param  int $userId
-     * @param  array  $data
+     * @param int   $userId
+     * @param array $data
+     *
      * @return Model
      */
     public function create(array $data)
@@ -210,10 +213,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Get all championships for the user
+     * Get all championships for the user.
      *
-     * @param  int $id
-     * @param  array $with
+     * @param int   $id
+     * @param array $with
+     *
      * @return Collectino
      */
     public function getAllByUser($id, $with)
@@ -232,15 +236,18 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Upload an image
+     * Upload an image.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return string url to the image uploaded
      */
     private function uploadImage($data)
     {
         // if was not image, go away
-        if ( ! $data['image']) return null;
+        if (!$data['image']) {
+            return null;
+        }
 
         $champImage = App::make('Champ\Services\ChampionshipImage');
 
@@ -249,15 +256,18 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
     /**
      * Check if the limit of players in competition is greater than the championship limit
-     * if so, then, we will limit the numbers os players to the max limit of the championship
+     * if so, then, we will limit the numbers os players to the max limit of the championship.
      *
-     * @param  Championship $championship
-     * @param  array $data
+     * @param Championship $championship
+     * @param array        $data
+     *
      * @return mixed
      */
     private function updateLimitValues($championship, $data)
     {
-        if (empty($data['limit'])) return 99999;
+        if (empty($data['limit'])) {
+            return 99999;
+        }
 
         return $data['limit'];
         /*
@@ -280,9 +290,10 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Apply our rate to the price
+     * Apply our rate to the price.
      *
-     * @param  int $price
+     * @param int $price
+     *
      * @return float
      */
     public function updatePrice($price)
@@ -291,7 +302,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Add a refresh token, used by the billing mercado pago for the user
+     * Add a refresh token, used by the billing mercado pago for the user.
      *
      * @param string $refreshToken
      */
@@ -305,9 +316,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Cancel past championships based on the current date
-     *
-     * @return void
+     * Cancel past championships based on the current date.
      */
     public function finishPastChampionships()
     {
@@ -317,18 +326,18 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         $championships = $this->getNotFinishedByDateDiff($limit);
 
         // pass for all these championships and "finish him!"
-        foreach ($championships as $championship)
-        {
+        foreach ($championships as $championship) {
             $championship->finishChampionship();
             $this->dispatchEventsFor($championship);
-            Log::info('championship ' . $championship->id . ' finished.');
+            Log::info('championship '.$championship->id.' finished.');
         }
     }
 
     /**
-     * Get a waiting list for the championship
+     * Get a waiting list for the championship.
      *
-     * @param  Championship $championship
+     * @param Championship $championship
+     *
      * @return Collection
      */
     public function waitingList(Championship $championship)
@@ -340,7 +349,7 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Get all users that not paid yet
+     * Get all users that not paid yet.
      *
      * @return Collection
      */
@@ -350,12 +359,9 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
 
         $toSendAlert = [];
 
-        foreach ($championships as $championship)
-        {
-            foreach ($championship->joins as $join)
-            {
-                if ( ! $join->wasPaid())
-                {
+        foreach ($championships as $championship) {
+            foreach ($championship->joins as $join) {
+                if (!$join->wasPaid()) {
                     $toSendAlert[] = $join;
                 }
             }
@@ -365,10 +371,11 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
     }
 
     /**
-     * Get all championships by the limit passed
+     * Get all championships by the limit passed.
      *
-     * @param  int $limit
-     * @param  array $with
+     * @param int   $limit
+     * @param array $with
+     *
      * @return Collection
      */
     public function getNotFinishedByDateDiff($limit = 2, $with = [])
@@ -376,26 +383,24 @@ class ChampionshipRepository extends AbstractRepository implements ChampionshipR
         return $this->model
             ->with($with)
             ->whereFinished(false)
-            ->whereRaw("datediff(event_start, now()) = ?", [$limit])
+            ->whereRaw('datediff(event_start, now()) = ?', [$limit])
             ->get();
     }
 
     /**
-     * Return a relation query with game
+     * Return a relation query with game.
      *
-     * @param  QueryBuilder $query
-     * @param  string $game
+     * @param QueryBuilder $query
+     * @param string       $game
+     *
      * @return QueryBuilder
      */
     private function getChampionshipsWithGames($query, $game)
     {
-        return $query->whereHas('competitions', function($q) use ($game)
-        {
-            $q->whereHas('game', function($g) use ($game)
-            {
+        return $query->whereHas('competitions', function ($q) use ($game) {
+            $q->whereHas('game', function ($g) use ($game) {
                 $g->where('name', '=', $game);
             });
         });
     }
-
 }

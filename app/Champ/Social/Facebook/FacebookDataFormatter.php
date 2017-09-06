@@ -1,11 +1,12 @@
 <?php namespace Champ\Social\Facebook;
 
-class FacebookDataFormatter {
-
+class FacebookDataFormatter
+{
     /**
-     * Format a data in order to mantain a default data to the consumer
+     * Format a data in order to mantain a default data to the consumer.
      *
      * @param array $data
+     *
      * @return array
      */
     public function format($data)
@@ -14,8 +15,7 @@ class FacebookDataFormatter {
             'name' => $data['name'],
             'email' => $data['email'],
             'username' => usernameFromEmail($data['email']),
-            'picture' => "http://graph.facebook.com/{$data['id']}/picture?type=large"
+            'picture' => "http://graph.facebook.com/{$data['id']}/picture?type=large",
         ];
     }
-
 }

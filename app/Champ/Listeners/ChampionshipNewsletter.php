@@ -12,38 +12,38 @@ use Laracasts\Commander\Events\EventListener;
 class ChampionshipNewsletter extends EventListener
 {
     /**
-     * Championship Newsletter List
+     * Championship Newsletter List.
      *
      * @var ChampionshipSegment
      */
     protected $newsletter;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $championships;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param ChampionshipSegment $newsletter
      */
     public function __construct(
         ChampionshipSegment $newsletter,
         ChampionshipRepositoryInterface $championships
-    )
-    {
+    ) {
         $this->newsletter = $newsletter;
         $this->championships = $championships;
     }
 
     /**
-     * Create a segment in the newsletter list when championship is published
+     * Create a segment in the newsletter list when championship is published.
      *
-     * @param  ChampionshipPublished $championship
-     * @return boolean
+     * @param ChampionshipPublished $championship
+     *
+     * @return bool
      */
     public function whenChampionshipPublished(ChampionshipPublished $championship)
     {
@@ -57,10 +57,9 @@ class ChampionshipNewsletter extends EventListener
     }
 
     /**
-     * Add a user to the segment
+     * Add a user to the segment.
      *
-     * @param  UserJoined $event
-     * @return void
+     * @param UserJoined $event
      */
     public function whenUserJoined(UserJoined $event)
     {
@@ -68,20 +67,20 @@ class ChampionshipNewsletter extends EventListener
         $email = $event->join->user->email;
 
         // only if a championship has a segment in the list
-        if (! is_null($championship->segment)) {
+        if (!is_null($championship->segment)) {
             $this->newsletter->subscribeTo($championship->segment, $email);
         }
     }
 
     /**
-     * Generate a new name for a segment based on the championship name and attributes
+     * Generate a new name for a segment based on the championship name and attributes.
      *
-     * @param  Championsip $championship
+     * @param Championsip $championship
+     *
      * @return string
      */
     private function createSegmentName($championship)
     {
-        return $championship->id . '-' . Str::slug($championship->name);
+        return $championship->id.'-'.Str::slug($championship->name);
     }
-
 }

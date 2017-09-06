@@ -6,33 +6,37 @@ use Champ\Join\Join;
 interface JoinRepositoryInterface extends RepositoryInterface
 {
     /**
-     * Save a Join
+     * Save a Join.
      *
-     * @param  Join   $join
+     * @param Join $join
+     *
      * @return Join
      */
     public function save(Join $join);
 
     /**
-     * Find a join by the token
+     * Find a join by the token.
      *
-     * @param  string $token
+     * @param string $token
+     *
      * @return Join
      */
     public function findByToken($token);
 
     /**
-     * Get the joins that belongs to a given championship
+     * Get the joins that belongs to a given championship.
      *
-     * @param  int $championshipId
+     * @param int $championshipId
+     *
      * @return Collection
      */
     public function getByChampionship($championshipId);
 
     /**
-     * Get a join that has a Coupon
+     * Get a join that has a Coupon.
      *
-     * @param  Coupon $coupon
+     * @param Coupon $coupon
+     *
      * @return Join
      */
     public function getByCoupon($coupon);
@@ -40,20 +44,22 @@ interface JoinRepositoryInterface extends RepositoryInterface
     /**
      * Get a specific join, but only if he belongs to a championship
      * This method is a constraint to garantee that gets only joins that belongs
-     * to a specific championship
+     * to a specific championship.
      *
-     * @param  int $championship_id
-     * @param  int $id
-     * @param  array $with
+     * @param int   $championship_id
+     * @param int   $id
+     * @param array $with
+     *
      * @return Model
      */
     public function getRelationedWith($championship_id, $id, $with = []);
 
     /**
-     * Get the joins that belongs to a specific competition
+     * Get the joins that belongs to a specific competition.
      *
-     * @param  int $competitionId
-     * @param  array $with
+     * @param int   $competitionId
+     * @param array $with
+     *
      * @return Collection
      */
     public function getByCompetition($competitionId, $with = []);

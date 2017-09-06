@@ -5,17 +5,17 @@ use Request;
 use Auth;
 use App;
 
-class JoinOwner {
-
+class JoinOwner
+{
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var JoinRepositoryInterface
      */
     protected $joinRepository;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param JoinRepositoryInterface $joinRepository
      */
@@ -25,10 +25,11 @@ class JoinOwner {
     }
 
     /**
-     * Garantee that only the owner of the join can view its join
+     * Garantee that only the owner of the join can view its join.
      *
-     * @param  Route $route
-     * @param  Request $request
+     * @param Route   $route
+     * @param Request $request
+     *
      * @return mixed
      */
     public function filter($route, $request)
@@ -37,8 +38,7 @@ class JoinOwner {
 
         $join = $this->joinRepository->find($id);
 
-        if ($join->user_id != Auth::user()->id)
-        {
+        if ($join->user_id != Auth::user()->id) {
             App::abort(404);
         }
     }

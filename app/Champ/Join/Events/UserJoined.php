@@ -2,13 +2,12 @@
 
 use Champ\Join\Join;
 
-class UserJoined {
-
+class UserJoined
+{
     public $join;
 
     public function __construct(Join $join)
     {
         $this->join = $join;
     }
-
 }

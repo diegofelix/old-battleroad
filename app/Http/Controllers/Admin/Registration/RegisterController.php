@@ -3,14 +3,12 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Auth;
 use Input;
-use BaseController;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Championship\Registration\RegisterChampionshipCommand;
 
-class RegisterController extends BaseRegistrationController {
-
+class RegisterController extends BaseRegistrationController
+{
     /**
-     * Show the form to start registering a new Championship
+     * Show the form to start registering a new Championship.
      *
      * @return Response
      */
@@ -20,7 +18,7 @@ class RegisterController extends BaseRegistrationController {
     }
 
     /**
-     * Save the initial information about the championshipss
+     * Save the initial information about the championshipss.
      *
      * @return Response
      */
@@ -39,5 +37,4 @@ class RegisterController extends BaseRegistrationController {
 
         return $this->redirectRoute('admin.register.games', [$championship->id]);
     }
-
 }

@@ -3,12 +3,13 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Input;
 
-class PricingController extends BaseRegistrationController {
-
+class PricingController extends BaseRegistrationController
+{
     /**
-     * Show a form to define the prices for the championship
+     * Show a form to define the prices for the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function create($id)
@@ -19,15 +20,14 @@ class PricingController extends BaseRegistrationController {
     }
 
     /**
-     * Store the championship's prices
+     * Store the championship's prices.
      *
      * @return Response
      */
     public function store($id)
     {
         dd(Input::get());
-        if ( ! $this->championshipRepository->saveLocation(Input::all()))
-        {
+        if (!$this->championshipRepository->saveLocation(Input::all())) {
             return $this->redirectBack()
                 ->with('error', $this->championshipRepository->getErrors());
         }

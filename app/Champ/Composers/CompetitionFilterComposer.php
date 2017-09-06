@@ -2,8 +2,8 @@
 
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
-class CompetitionFilterComposer {
-
+class CompetitionFilterComposer
+{
     protected $championshipRepository;
 
     public function __construct(ChampionshipRepositoryInterface $repository)
@@ -12,10 +12,9 @@ class CompetitionFilterComposer {
     }
 
     /**
-     * Get all available competitions
+     * Get all available competitions.
      *
-     * @param  View $view
-     * @return void
+     * @param View $view
      */
     public function compose($view)
     {
@@ -23,5 +22,4 @@ class CompetitionFilterComposer {
 
         $view->with(compact('competitions'));
     }
-
 }

@@ -6,12 +6,13 @@ use Input;
 use Redirect;
 use Request;
 
-class IntegrationController extends BaseRegistrationController {
-
+class IntegrationController extends BaseRegistrationController
+{
     /**
-     * Show a page to user integrate your billing account with the champ
+     * Show a page to user integrate your billing account with the champ.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function index($id)
@@ -34,11 +35,10 @@ class IntegrationController extends BaseRegistrationController {
 
     public function login($id)
     {
-        $currentUrl  = Request::url();
+        $currentUrl = Request::url();
         $mercadopago = $this->getMercadoPagoApi();
 
-        if ( ! Input::has('code'))
-        {
+        if (!Input::has('code')) {
             return Redirect::to($mercadopago->getAuthenticationUrl($currentUrl));
         }
 
@@ -50,7 +50,7 @@ class IntegrationController extends BaseRegistrationController {
     }
 
     /**
-     * Get a mercado pago api instance
+     * Get a mercado pago api instance.
      *
      * @return Champ\Billing\MercadoPago\Marketplace
      */

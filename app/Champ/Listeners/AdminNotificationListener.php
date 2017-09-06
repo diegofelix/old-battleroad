@@ -7,17 +7,17 @@ use Champ\Championship\Events\ChampionshipFinished;
 use Config;
 use Mail;
 
-class AdminNotificationListener extends EventListener {
-
+class AdminNotificationListener extends EventListener
+{
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var JoinRepositoryInterface
      */
     protected $joinRepository;
 
     /**
-     * Constructor
+     * Constructor.
      *
      * @param JoinRepositoryInterface $joinRepository
      */
@@ -27,10 +27,9 @@ class AdminNotificationListener extends EventListener {
     }
 
     /**
-     * Notify the admin when a championship is Finished
+     * Notify the admin when a championship is Finished.
      *
-     * @param  ChampionshipFinished $championship
-     * @return void
+     * @param ChampionshipFinished $championship
      */
     public function whenChampionshipFinished(ChampionshipFinished $championship)
     {
@@ -38,41 +37,37 @@ class AdminNotificationListener extends EventListener {
 
         $cancelledJoins = $this->getCancelledJoins($joins);
 
-        Mail::send('emails.join_finished', compact('cancelledJoins'), function($message)
-        {
-            $message->to(Config::get('champ.admin_email'))->subject("Inscrições canceladas.");
+        Mail::send('emails.join_finished', compact('cancelledJoins'), function ($message) {
+            $message->to(Config::get('champ.admin_email'))->subject('Inscrições canceladas.');
         });
     }
 
     /**
-     * Send a notification to admin when a Championship is Published
+     * Send a notification to admin when a Championship is Published.
      *
-     * @param  ChampionshipPublished $championship
-     * @return void
+     * @param ChampionshipPublished $championship
      */
     public function whenChampionshipPublished(ChampionshipPublished $championship)
     {
         $championship = $championship->championship;
-        Mail::send('emails.championship_published', compact('championship'), function($message)
-        {
-            $message->to(Config::get('champ.admin_email'))->subject("Novo Campeonato Publicado");
+        Mail::send('emails.championship_published', compact('championship'), function ($message) {
+            $message->to(Config::get('champ.admin_email'))->subject('Novo Campeonato Publicado');
         });
     }
 
     /**
-     * Get all cancelled joins and send to the admin
+     * Get all cancelled joins and send to the admin.
      *
-     * @param  Collection $joins
+     * @param Collection $joins
+     *
      * @return array
      */
     private function getCancelledJoins($joins)
     {
         $cancelledJoins = [];
 
-        foreach ($joins as $join)
-        {
-            if ( ! $join->wasPaid())
-            {
+        foreach ($joins as $join) {
+            if (!$join->wasPaid()) {
                 $cancelledJoins[] = $join->id;
                 $join->cancelJoin();
             }
@@ -80,5 +75,4 @@ class AdminNotificationListener extends EventListener {
 
         return $cancelledJoins;
     }
-
 }

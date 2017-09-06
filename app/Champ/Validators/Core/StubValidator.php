@@ -1,9 +1,9 @@
 <?php namespace Champ\Validators\Core;
 
-class StubValidator extends AbstractValidator implements ValidableInterface {
-
+class StubValidator extends AbstractValidator implements ValidableInterface
+{
     /**
-     * Stub Validation rules
+     * Stub Validation rules.
      *
      * @var array
      */
@@ -11,11 +11,10 @@ class StubValidator extends AbstractValidator implements ValidableInterface {
         'create' => [
             'username' => 'required|alpha_dash|min:2',
             'email' => 'required|email',
-            'password' => 'required|confirmed'
+            'password' => 'required|confirmed',
         ],
         'update' => [
-            'username' => 'required'
-        ]
+            'username' => 'required',
+        ],
     ];
-
 }

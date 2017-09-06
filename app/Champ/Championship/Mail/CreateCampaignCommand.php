@@ -2,19 +2,19 @@
 
 namespace Champ\Championship\Mail;
 
-class CreateCampaignCommand {
-
+class CreateCampaignCommand
+{
     public $championshipId;
     public $subject;
     public $body;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @param int $championship_id
+     * @param int    $championship_id
      * @param string $subject
-     * @param int $body
-     * @param int $campaignId
+     * @param int    $body
+     * @param int    $campaignId
      */
     public function __construct($championshipId, $subject, $body)
     {
@@ -22,5 +22,4 @@ class CreateCampaignCommand {
         $this->subject = $subject;
         $this->body = $body;
     }
-
 }

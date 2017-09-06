@@ -2,13 +2,12 @@
 
 use Champ\Championship\Coupon;
 
-class CouponWasApplied {
-
+class CouponWasApplied
+{
     public $coupon;
 
     public function __construct(Coupon $coupon)
     {
         $this->coupon = $coupon;
     }
-
 }

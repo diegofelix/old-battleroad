@@ -2,12 +2,10 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class NewsletterListServiceProvider extends ServiceProvider {
-
+class NewsletterListServiceProvider extends ServiceProvider
+{
     /**
-     * Register the Billing providers
-     *
-     * @return void
+     * Register the Billing providers.
      */
     public function register()
     {

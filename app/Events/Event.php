@@ -1,7 +1,6 @@
 <?php namespace Battleroad\Events;
 
-abstract class Event {
-
-	//
-
+abstract class Event
+{
+    //
 }
