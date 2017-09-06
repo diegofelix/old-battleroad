@@ -2,12 +2,11 @@
 
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use App;
 
-class UpdateChampionshipCommandHandler implements CommandHandler {
-
+class UpdateChampionshipCommandHandler implements CommandHandler
+{
     /**
-     * Championship Repository
+     * Championship Repository.
      */
     protected $repository;
 

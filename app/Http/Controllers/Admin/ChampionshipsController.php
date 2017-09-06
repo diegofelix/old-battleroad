@@ -9,12 +9,12 @@ use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\UpdateChampionshipCommand;
 use Champ\Championship\UpdateBannerCommand;
 
-class ChampionshipsController extends BaseController {
-
+class ChampionshipsController extends BaseController
+{
     use CommanderTrait;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
@@ -26,7 +26,7 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show a list of Championships in desc date order
+     * Show a list of Championships in desc date order.
      *
      * @return Response
      */
@@ -38,38 +38,41 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Manage the championship
+     * Manage the championship.
      *
      * @param int $id
+     *
      * @return Response
      */
     public function show($id)
     {
         $championship = $this->getChampionshipById($id);
+
         return $this->view('admin.championships.show', compact('championship'));
     }
 
     /**
-     * Updates some informations about the championship
+     * Updates some informations about the championship.
      *
      * @return Response
      */
     public function edit($id)
     {
         $championship = $this->getChampionshipById($id);
+
         return $this->view('admin.championships.edit', compact('championship'));
     }
 
     /**
-     * Store the modifications
+     * Store the modifications.
      *
      * @return Response
      */
     public function update($id)
     {
-        $name        = Input::get('name');
+        $name = Input::get('name');
         $description = Input::get('description');
-        $stream      = Input::get('stream');
+        $stream = Input::get('stream');
 
         $championship = $this->execute(UpdateChampionshipCommand::class, compact('id', 'description', 'name', 'stream'));
 
@@ -78,33 +81,38 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show the banner of the championship
+     * Show the banner of the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function banner($id)
     {
         $championship = $this->champRepo->find($id);
+
         return $this->view('admin.championships.banner', compact('championship'));
     }
 
     /**
-     * Show a form to upload a new banner
+     * Show a form to upload a new banner.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function editBanner($id)
     {
         $championship = $this->champRepo->find($id);
+
         return $this->view('admin.championships.edit_banner', compact('championship'));
     }
 
     /**
-     * Updates the new banner
+     * Updates the new banner.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function updateBanner($id)
@@ -118,7 +126,7 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show a message to the user cancelling the championship
+     * Show a message to the user cancelling the championship.
      *
      * @return Response
      */
@@ -130,23 +138,25 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show all users that joined the championship
+     * Show all users that joined the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function users($id)
     {
         $championship = $this->champRepo->find($id, ['joins.user']);
-        $waitingList  = $this->champRepo->waitingList($championship);
+        $waitingList = $this->champRepo->waitingList($championship);
 
         return $this->view('admin.championships.users', compact('championship', 'waitingList'));
     }
 
     /**
-     * Get a championship by id
+     * Get a championship by id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Championship
      */
     public function getChampionshipById($id)

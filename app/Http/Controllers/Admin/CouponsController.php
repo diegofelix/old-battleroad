@@ -8,28 +8,27 @@ use Champ\Championship\Repositories\CouponRepositoryInterface;
 use Champ\Services\KeyGen;
 use Input;
 use Laracasts\Commander\CommanderTrait;
-use Request;
 
-class CouponsController extends BaseController {
-
+class CouponsController extends BaseController
+{
     use CommanderTrait;
 
     /**
-     * KeyGen
+     * KeyGen.
      *
      * @var KeyGen
      */
     protected $keyGen;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $championshipRepository;
 
     /**
-     * Coupon Repository
+     * Coupon Repository.
      *
      * @var CouponRepositoryInterface
      */
@@ -46,7 +45,7 @@ class CouponsController extends BaseController {
     }
 
     /**
-     * Show a view to generate the coupons
+     * Show a view to generate the coupons.
      *
      * @return Response
      */
@@ -58,9 +57,10 @@ class CouponsController extends BaseController {
     }
 
     /**
-     * Generate a coupon for the user
+     * Generate a coupon for the user.
      *
-     * @param  int $championshipId
+     * @param int $championshipId
+     *
      * @return Response
      */
     public function generate($championshipId)
@@ -68,7 +68,7 @@ class CouponsController extends BaseController {
         $input = [
             'championship_id' => $championshipId,
             'code' => $this->keyGen->make(),
-            'price' => Input::get('price')
+            'price' => Input::get('price'),
         ];
 
         $this->execute(GenerateCouponCommand::class, $input);
@@ -77,9 +77,10 @@ class CouponsController extends BaseController {
     }
 
     /**
-     * Delete a coupon if this coupon has no user
+     * Delete a coupon if this coupon has no user.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function destroy($id)
@@ -87,12 +88,10 @@ class CouponsController extends BaseController {
         $coupon = $this->couponRepository->find(Input::get('id'));
 
         // a little verification to check if the user is the owner
-        if ($coupon->championship_id == $id && empty($coupon->user_id))
-        {
+        if ($coupon->championship_id == $id && empty($coupon->user_id)) {
             $this->couponRepository->delete($coupon);
         }
 
         return $this->redirectBack(['message' => 'Cupon excluído com sucesso!']);
     }
-
 }

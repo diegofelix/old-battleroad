@@ -3,8 +3,8 @@
 use PHPSC\PagSeguro\Purchases\Subscriptions\Locator as SubscriptionLocator;
 use PHPSC\PagSeguro\Purchases\Transactions\Locator as TransactionLocator;
 
-class NotificationHandler {
-
+class NotificationHandler
+{
     use CredentialsTrait;
 
     public function __construct()
@@ -14,16 +14,13 @@ class NotificationHandler {
 
     public function handle($command)
     {
-        try
-        {
+        try {
             $service = $command->notificationType == 'preApproval'
                 ? new SubscriptionLocator($this->credentials)
                 : new TransactionLocator($this->credentials);
 
             return $service->getByNotification($command->notificationCode);
-        }
-        catch (Exception $error)
-        {
+        } catch (Exception $error) {
             return $error->getMessage();
         }
     }

@@ -1,33 +1,32 @@
 <?php namespace Champ\Join;
 
-use App;
 use Champ\Championship\Repositories\CompetitionRepositoryInterface;
-use Champ\Join\Join;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Services\JoinUserService;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class JoinCommandHandler implements CommandHandler {
-
+class JoinCommandHandler implements CommandHandler
+{
     /**
-     * Join Repository
+     * Join Repository.
      */
     protected $joinRepo;
 
     /**
-     * Competition Repository
+     * Competition Repository.
      */
     protected $competitionRepo;
 
     /**
-     * Competition Repository
+     * Competition Repository.
      */
     protected $itemRepo;
 
     /**
-     * Join User Service
+     * Join User Service.
+     *
      * @var [type]
      */
     protected $userJoinService;
@@ -39,8 +38,7 @@ class JoinCommandHandler implements CommandHandler {
         // JoinRepositoryInterface $joinRepo,
         // CompetitionRepositoryInterface $competitionRepo,
         // ItemRepositoryInterface $itemRepo
-    )
-    {
+    ) {
         $this->joinUserService = $joinUserService;
         // $this->JoinRepo         = $joinRepo;
         // $this->competitionRepo  = $competitionRepo;

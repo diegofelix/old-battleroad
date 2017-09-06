@@ -1,17 +1,17 @@
 <?php namespace Champ\Championship\Coupons;
 
-class GenerateCouponCommand {
-
+class GenerateCouponCommand
+{
     public $championshipId;
     public $code;
     public $price;
 
     /**
-     * Constructor
+     * Constructor.
      *
-     * @param int $championship_id
+     * @param int    $championship_id
      * @param string $code
-     * @param int $price
+     * @param int    $price
      */
     public function __construct($championship_id, $code, $price)
     {
@@ -19,5 +19,4 @@ class GenerateCouponCommand {
         $this->code = $code;
         $this->price = $price;
     }
-
 }

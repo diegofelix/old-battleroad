@@ -3,24 +3,19 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use BaseController;
 use Champ\Championship\Repositories\CompetitionRepositoryInterface;
-use Champ\Championship\Repositories\FormatRepositoryInterface;
-use Champ\Championship\Repositories\GameRepositoryInterface;
-use Champ\Championship\Repositories\PlatformRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Input;
 
 class CompetitionsController extends BaseController
 {
-
     /**
-     * Competition Repository
+     * Competition Repository.
      *
      * @var Champ\Championship\Repositories\CompetitionRepositoryInterface
      */
     protected $competitionRepository;
 
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
@@ -29,16 +24,16 @@ class CompetitionsController extends BaseController
     public function __construct(
         CompetitionRepositoryInterface $competitionRepository,
         JoinRepositoryInterface $joinRepository
-    )
-    {
+    ) {
         $this->competitionRepository = $competitionRepository;
         $this->joinRepository = $joinRepository;
     }
 
     /**
-     * Show a list of Games for the championship given
+     * Show a list of Games for the championship given.
      *
-     * @param integer $champId
+     * @param int $champId
+     *
      * @return Response
      */
     public function index($champId)
@@ -49,16 +44,17 @@ class CompetitionsController extends BaseController
     }
 
     /**
-     * Show all details for the competition
+     * Show all details for the competition.
      *
-     * @param  int $champId
-     * @param  int $competitionId
+     * @param int $champId
+     * @param int $competitionId
+     *
      * @return Illuminate\Http\Response
      */
     public function show($champId, $competitionId)
     {
-        $competition    = $this->competitionRepository->find($competitionId);
-        $joins          = $this->joinRepository->getByCompetition($competitionId, ['user']);
+        $competition = $this->competitionRepository->find($competitionId);
+        $joins = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
         return $this->view('admin.championships.games.show', compact('competition', 'joins'));
     }

@@ -3,29 +3,32 @@
 use Champ\Repositories\Core\RepositoryInterface;
 use Champ\Championship\Competition;
 
-interface CompetitionRepositoryInterface extends RepositoryInterface {
-
+interface CompetitionRepositoryInterface extends RepositoryInterface
+{
     /**
-     * Get all competitions where id in an array
+     * Get all competitions where id in an array.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return Collection
      */
     public function getByIds(array $ids);
 
     /**
-     * Saves a competition
+     * Saves a competition.
      *
-     * @param  Competition $competition
-     * @return boolean
+     * @param Competition $competition
+     *
+     * @return bool
      */
     public function save(Competition $competition);
 
     /**
-     * Get competitions by the championship id
+     * Get competitions by the championship id.
      *
-     * @param  id $championshipId
-     * @param  array $with
+     * @param id    $championshipId
+     * @param array $with
+     *
      * @return Collection
      */
     public function getByChampionship($championshipId, $with = []);

@@ -2,10 +2,10 @@
 
 use Champ\Forms\ChampionshipRegisterForm;
 
-class RegisterChampionshipValidator {
-
+class RegisterChampionshipValidator
+{
     /**
-     * Register Form Validator
+     * Register Form Validator.
      *
      * @var ChampionshipRegisterForm
      */
@@ -19,12 +19,11 @@ class RegisterChampionshipValidator {
     public function validate($command)
     {
         $this->form->validate([
-            'name'          => $command->name,
-            'description'   => $command->description,
-            'event_start'   => $command->event_start,
-            'image'         => $command->image,
-            'location'      => $command->location
+            'name' => $command->name,
+            'description' => $command->description,
+            'event_start' => $command->event_start,
+            'image' => $command->image,
+            'location' => $command->location,
         ]);
     }
-
 }

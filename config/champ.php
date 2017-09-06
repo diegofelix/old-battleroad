@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     'admin_email' => 'diegoflx.oliveira@gmail.com',
 
     /*
@@ -20,7 +19,7 @@ return [
     */
     'rate' => 10.0, // percentual
 
-    /**
+    /*
      * Time limit to let user pay for the championships before the championship start
      * So if the championship start in 10/02/2015, the users can pay until x days before.
      */
@@ -34,7 +33,7 @@ return [
         // Single Elimination
         3 => 'É o famosos mata-mata, quem perder é eliminado.',
         // Swiss
-        4 => 'Esse é um meio termo entre Double Elimination e Round Robin. Mais informações em http://battleroad.uservoice.com/knowledgebase'
+        4 => 'Esse é um meio termo entre Double Elimination e Round Robin. Mais informações em http://battleroad.uservoice.com/knowledgebase',
     ],
 
     /*
@@ -51,7 +50,7 @@ return [
         'Champ\Listeners\NewsletterListListener',
         'Champ\Listeners\ChampionshipNewsletter',
         'Champ\Listeners\JoinDiscountListener',
-        'Champ\Listeners\SendCampaigns'
+        'Champ\Listeners\SendCampaigns',
         // 'Champ\Listeners\CompetitionRegistrar'
-    ]
+    ],
 ];

@@ -1,22 +1,22 @@
 <?php namespace Champ\Billing\MercadoPago;
 
-class MPRestClient {
-
-    private $version = "0.2.1";
+class MPRestClient
+{
+    private $version = '0.2.1';
 
     /**
-     * Base url for the mercadolibre api
+     * Base url for the mercadolibre api.
      *
      * @var string
      */
-    private $baseUrl = "https://api.mercadolibre.com";
+    private $baseUrl = 'https://api.mercadolibre.com';
 
     /**
-     * We need this certificate for access the api
+     * We need this certificate for access the api.
      *
      * @var string
      */
-    private $libLocation = "/mercadopago/cert.pem";
+    private $libLocation = '/mercadopago/cert.pem';
 
     public function __construct()
     {
@@ -24,91 +24,89 @@ class MPRestClient {
     }
 
     /**
-     * Get requisition
+     * Get requisition.
      *
-     * @param  string $uri
-     * @param  string $content_type
+     * @param string $uri
+     * @param string $content_type
+     *
      * @return string
      */
-    public function get($uri, $content_type = "application/json")
+    public function get($uri, $content_type = 'application/json')
     {
-        return $this->exec("GET", $uri, null, $content_type);
+        return $this->exec('GET', $uri, null, $content_type);
     }
 
     /**
-     * Post requisition
+     * Post requisition.
      *
-     * @param  string $uri
-     * @param  array $data
-     * @param  string $content_type
+     * @param string $uri
+     * @param array  $data
+     * @param string $content_type
+     *
      * @return string
      */
-    public function post($uri, $data, $content_type = "application/json")
+    public function post($uri, $data, $content_type = 'application/json')
     {
-        return $this->exec("POST", $uri, $data, $content_type);
+        return $this->exec('POST', $uri, $data, $content_type);
     }
 
     /**
-     * PUT requisition
+     * PUT requisition.
      *
-     * @param  string $uri
-     * @param  array $data
-     * @param  string $content_type
+     * @param string $uri
+     * @param array  $data
+     * @param string $content_type
+     *
      * @return string
      */
-    public function put($uri, $data, $content_type = "application/json")
+    public function put($uri, $data, $content_type = 'application/json')
     {
-        return $this->exec("PUT", $uri, $data, $content_type);
+        return $this->exec('PUT', $uri, $data, $content_type);
     }
 
     /**
-     * Create the connection
+     * Create the connection.
      *
-     * @param  string $uri
-     * @param  string $method
-     * @param  string $content_type
+     * @param string $uri
+     * @param string $method
+     * @param string $content_type
+     *
      * @return string
      */
     private function get_connect($uri, $method, $content_type)
     {
-        $connect = curl_init($this->baseUrl . $uri);
+        $connect = curl_init($this->baseUrl.$uri);
 
-        curl_setopt($connect, CURLOPT_USERAGENT, "MercadoPago PHP SDK v" . $this->version);
+        curl_setopt($connect, CURLOPT_USERAGENT, 'MercadoPago PHP SDK v'.$this->version);
         curl_setopt($connect, CURLOPT_CAINFO, $this->libLocation);
         curl_setopt($connect, CURLOPT_SSLVERSION, 3);
         curl_setopt($connect, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($connect, CURLOPT_CUSTOMREQUEST, $method);
-        curl_setopt($connect, CURLOPT_HTTPHEADER, array("Accept: application/json", "Content-Type: " . $content_type));
+        curl_setopt($connect, CURLOPT_HTTPHEADER, array('Accept: application/json', 'Content-Type: '.$content_type));
 
         return $connect;
     }
 
     /**
-     * Set the data
+     * Set the data.
      *
-     * @param curl $connect
-     * @param mixed $data
+     * @param curl   $connect
+     * @param mixed  $data
      * @param string $content_type
      */
     private function set_data(&$connect, $data, $content_type)
     {
-        if ($content_type == "application/json")
-        {
-            if (gettype($data) == "string")
-            {
+        if ($content_type == 'application/json') {
+            if (gettype($data) == 'string') {
                 json_decode($data, true);
-            }
-            else
-            {
+            } else {
                 $data = json_encode($data);
             }
 
-            if (function_exists('json_last_error'))
-            {
+            if (function_exists('json_last_error')) {
                 $json_error = json_last_error();
 
-                if ($json_error != JSON_ERROR_NONE)
-                {
+                if ($json_error != JSON_ERROR_NONE) {
                     throw new \Exception("JSON Error [{$json_error}] - Data: {$data}");
                 }
             }
@@ -118,20 +116,20 @@ class MPRestClient {
     }
 
     /**
-     * Execute the curl requisition
+     * Execute the curl requisition.
      *
-     * @param  string $method
-     * @param  string $uri
-     * @param  mixed $data
-     * @param  string $content_type
+     * @param string $method
+     * @param string $uri
+     * @param mixed  $data
+     * @param string $content_type
+     *
      * @return string
      */
     private function exec($method, $uri, $data, $content_type)
     {
         $connect = $this->get_connect($uri, $method, $content_type);
 
-        if ($data)
-        {
+        if ($data) {
             $this->set_data($connect, $data, $content_type);
         }
 
@@ -139,13 +137,12 @@ class MPRestClient {
         $api_http_code = curl_getinfo($connect, CURLINFO_HTTP_CODE);
 
         $response = array(
-            "status" => $api_http_code,
-            "response" => json_decode($api_result, true)
+            'status' => $api_http_code,
+            'response' => json_decode($api_result, true),
         );
 
-        if ($response['status'] >= 400)
-        {
-            throw new \Exception ($response['response']['message'], $response['status']);
+        if ($response['status'] >= 400) {
+            throw new \Exception($response['response']['message'], $response['status']);
         }
 
         curl_close($connect);

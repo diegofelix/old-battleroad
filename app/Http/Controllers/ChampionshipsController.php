@@ -4,27 +4,28 @@ namespace Battleroad\Http\Controllers;
 use Input;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+
 // use Champ\Billing\Moip\MoipBilling;
 //use Champ\Billing\Core\BillingInterface
 
-class ChampionshipsController extends BaseController {
-
+class ChampionshipsController extends BaseController
+{
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var JoinRepositoryInterface
      */
     protected $joinRepository;
 
     /**
-     * Billing
+     * Billing.
      *
      * @var Billing
      */
@@ -34,15 +35,14 @@ class ChampionshipsController extends BaseController {
         ChampionshipRepositoryInterface $champRepo,
         JoinRepositoryInterface $joinRepository
         // MoipBilling $billing
-    )
-    {
+    ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
         // $this->billing = $billing;
     }
 
     /**
-     * Show a list of Championships in desc date order
+     * Show a list of Championships in desc date order.
      *
      * @return Response
      */
@@ -55,9 +55,10 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show all details about the championship
+     * Show all details about the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
@@ -68,9 +69,10 @@ class ChampionshipsController extends BaseController {
     }
 
     /**
-     * Show a form to register to championship
+     * Show a form to register to championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function register($id)

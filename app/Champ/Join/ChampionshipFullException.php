@@ -1,3 +1,5 @@
 <?php namespace Champ\Join;
 
-class ChampionshipFullException extends \Exception {}
+class ChampionshipFullException extends \Exception
+{
+}

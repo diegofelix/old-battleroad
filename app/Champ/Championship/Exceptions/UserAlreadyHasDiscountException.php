@@ -2,4 +2,6 @@
 
 use Exception;
 
-class UserAlreadyHasDiscountException extends Exception {}
+class UserAlreadyHasDiscountException extends Exception
+{
+}

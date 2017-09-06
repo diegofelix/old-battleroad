@@ -3,10 +3,10 @@
 use Champ\Championship\Competition;
 use Champ\Repositories\Core\AbstractRepository;
 
-class CompetitionRepository extends AbstractRepository implements CompetitionRepositoryInterface {
-
+class CompetitionRepository extends AbstractRepository implements CompetitionRepositoryInterface
+{
     /**
-     * inject the model into constructor
+     * inject the model into constructor.
      *
      * @param Champ\Championship\Competition $model
      */
@@ -16,9 +16,10 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     }
 
     /**
-     * Get all competitions where id in an array
+     * Get all competitions where id in an array.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return Collection
      */
     public function getByIds(array $ids)
@@ -27,10 +28,11 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     }
 
     /**
-     * Saves a competition
+     * Saves a competition.
      *
-     * @param  Competition $competition
-     * @return boolean
+     * @param Competition $competition
+     *
+     * @return bool
      */
     public function save(Competition $competition)
     {
@@ -38,10 +40,11 @@ class CompetitionRepository extends AbstractRepository implements CompetitionRep
     }
 
     /**
-     * Get competitions by the championship id
+     * Get competitions by the championship id.
      *
-     * @param  id $championshipId
-     * @param  array $with
+     * @param id    $championshipId
+     * @param array $with
+     *
      * @return Collection
      */
     public function getByChampionship($championshipId, $with = [])

@@ -31,14 +31,15 @@ abstract class AbstractValidator
      */
     public function __construct()
     {
-        $this->errors = new Collection;
+        $this->errors = new Collection();
     }
 
     /**
      * Validate the provided data using the
      * internal rules array.
      *
-     * @param  mixed $data
+     * @param mixed $data
+     *
      * @return bool
      */
     public function passes($data, $ruleset = 'create')
@@ -54,7 +55,7 @@ abstract class AbstractValidator
         // Create the validator instance and validate.
         $validator = Validator::make($data, $rules, $this->messages);
 
-        if ( ! $result = $validator->passes()) {
+        if (!$result = $validator->passes()) {
             $this->errors = $validator->messages();
         }
 

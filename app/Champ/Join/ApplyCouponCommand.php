@@ -1,7 +1,7 @@
 <?php namespace Champ\Join;
 
-class ApplyCouponCommand {
-
+class ApplyCouponCommand
+{
     public $userId;
     public $joinId;
     public $code;
@@ -12,5 +12,4 @@ class ApplyCouponCommand {
         $this->joinId = $join_id;
         $this->code = $code;
     }
-
 }

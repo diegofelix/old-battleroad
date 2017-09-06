@@ -2,10 +2,10 @@
 
 use Champ\Forms\JoinForm;
 
-class JoinValidator {
-
+class JoinValidator
+{
     /**
-     * Join Form Validator
+     * Join Form Validator.
      *
      * @var JoinForm
      */
@@ -20,8 +20,7 @@ class JoinValidator {
     {
         $this->form->validate([
             'competitions' => $command->competitions,
-            'nicks' => $command->nicks
+            'nicks' => $command->nicks,
         ]);
     }
-
 }

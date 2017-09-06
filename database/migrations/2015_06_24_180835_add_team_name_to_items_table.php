@@ -3,33 +3,25 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class AddTeamNameToItemsTable extends Migration {
+class AddTeamNameToItemsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up()
+    {
+        Schema::table('items', function (Blueprint $table) {
+            $table->string('team_name')->after('price')->nullable();
+        });
+    }
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
-	public function up()
-	{
-		Schema::table('items', function(Blueprint $table)
-		{
-			$table->string('team_name')->after('price')->nullable();
-		});
-	}
-
-
-	/**
-	 * Reverse the migrations.
-	 *
-	 * @return void
-	 */
-	public function down()
-	{
-		Schema::table('items', function(Blueprint $table)
-		{
-			$table->dropColumn('team_name');
-		});
-	}
-
+    /**
+     * Reverse the migrations.
+     */
+    public function down()
+    {
+        Schema::table('items', function (Blueprint $table) {
+            $table->dropColumn('team_name');
+        });
+    }
 }

@@ -2,17 +2,17 @@
 
 use Champ\Championship\Platform;
 
-class PlatformRepository implements PlatformRepositoryInterface {
-
+class PlatformRepository implements PlatformRepositoryInterface
+{
     /**
-     * Platform Model
+     * Platform Model.
      *
      * @var Cham\Championship\Platform
      */
     protected $model;
 
     /**
-     * inject the model into constructor
+     * inject the model into constructor.
      *
      * @param Champ\Championship\Platform $model
      */
@@ -22,14 +22,14 @@ class PlatformRepository implements PlatformRepositoryInterface {
     }
 
     /**
-     * Get a list of Platforms
+     * Get a list of Platforms.
      *
-     * @param  int $champId
+     * @param int $champId
+     *
      * @return array
      */
     public function dropdown()
     {
         return $this->model->lists('name', 'id');
     }
-
 }

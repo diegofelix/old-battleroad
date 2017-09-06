@@ -1,9 +1,9 @@
 <?php namespace Champ\Services;
 
-class CouponGenerator {
-
+class CouponGenerator
+{
     /**
-     * Key Generator
+     * Key Generator.
      *
      * @var KeyGen
      */
@@ -15,17 +15,17 @@ class CouponGenerator {
     }
 
     /**
-     * Generate a determined number of keys
+     * Generate a determined number of keys.
      *
-     * @param  int $qty
+     * @param int $qty
+     *
      * @return array
      */
     public function make($qty)
     {
         $keys = [];
 
-        while(sizeof($keys) < $qty)
-        {
+        while (count($keys) < $qty) {
             $key = $this->keygen->make();
             $keys[$key] = $key;
         }

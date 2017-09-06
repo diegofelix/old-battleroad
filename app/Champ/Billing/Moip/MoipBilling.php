@@ -1,14 +1,13 @@
 <?php namespace Champ\Billing\Moip;
 
 use Moip\Moip;
-use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Join\Join;
 
-class MoipBilling {
-
+class MoipBilling
+{
     /**
-     * Moip class
+     * Moip class.
      *
      * @var Moip\Moip
      */
@@ -20,9 +19,10 @@ class MoipBilling {
     }
 
     /**
-     * Do the payment with Moip
+     * Do the payment with Moip.
      *
-     * @param  PaymentObjectInterface $payment
+     * @param PaymentObjectInterface $payment
+     *
      * @return mixed
      */
     public function pay(Join $join)
@@ -30,8 +30,8 @@ class MoipBilling {
         $this->startupMoip($join);
 
         // create our id
-        $this->moip->setReason('Pagamento: ' . $join->championship->title);
-        $this->moip->setUniqueID('BTR' . $join->id);
+        $this->moip->setReason('Pagamento: '.$join->championship->title);
+        $this->moip->setUniqueID('BTR'.$join->id);
 
         // set the messages and prices
         $this->calculateTotalPrice($join);
@@ -46,45 +46,39 @@ class MoipBilling {
     private function startupMoip($join)
     {
         // check if the env is production
-        if (getenv('MOIP_ENV') == 'test')
-        {
+        if (getenv('MOIP_ENV') == 'test') {
             $this->moip->setEnvironment('test');
         }
 
         $this->moip->setCredential(array(
             'key' => getenv('MOIP_KEY'),
-            'token' => getenv('MOIP_TOKEN')
+            'token' => getenv('MOIP_TOKEN'),
         ));
     }
 
     /**
-     * Calculate the price for the championship
+     * Calculate the price for the championship.
      *
-     * @param  Join $join
-     * @return void
+     * @param Join $join
      */
     private function calculateTotalPrice($join)
     {
         $total = 0;
 
-        if ($join->price)
-        {
+        if ($join->price) {
             // add the current price
             $total = $join->price;
             // set the first message
-            $this->moip->addMessage('Entrada: ' . $join->championship->name);
+            $this->moip->addMessage('Entrada: '.$join->championship->name);
         }
 
-        foreach ($join->items as $item)
-        {
-            if ($item->price > 0)
-            {
-                $this->moip->addMessage('Inscrição: ' . $item->competition->game->name);
+        foreach ($join->items as $item) {
+            if ($item->price > 0) {
+                $this->moip->addMessage('Inscrição: '.$item->competition->game->name);
                 $total += $item->price;
             }
         }
 
         $this->moip->setValue($total);
     }
-
 }

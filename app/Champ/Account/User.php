@@ -5,7 +5,6 @@ use Carbon\Carbon;
 use Champ\Account\Events\UserSignedUp;
 use Champ\Join\Status;
 use Eloquent;
-use Hash;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Foundation\Auth\Access\Authorizable;
@@ -15,13 +14,10 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
-class User extends Eloquent implements AuthenticatableContract,
-                                       AuthorizableContract,
-                                       CanResetPasswordContract
+class User extends Eloquent implements AuthenticatableContract, AuthorizableContract, CanResetPasswordContract
 {
-
     /**
-     * Championship presenter
+     * Championship presenter.
      *
      * @var string
      */
@@ -42,7 +38,7 @@ class User extends Eloquent implements AuthenticatableContract,
     protected $hidden = array('password');
 
     /**
-     * All fields below can be mass assigned
+     * All fields below can be mass assigned.
      *
      * @var array
      */
@@ -107,7 +103,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Relation with championship
+     * Relation with championship.
      *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -117,7 +113,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Relation with profile
+     * Relation with profile.
      *
      * @return Illuminate\Database\Eloquent\Relations\HasOne
      */
@@ -127,7 +123,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Relation with Join
+     * Relation with Join.
      *
      * @return Illuminate\Database\Eloquent\Relations\HasMany
      */
@@ -137,7 +133,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Relation with coupons
+     * Relation with coupons.
      *
      * @return HasMany
      */
@@ -147,7 +143,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Relation with Achievement
+     * Relation with Achievement.
      *
      * @return HasMany
      */
@@ -157,9 +153,10 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Get the latest by the id
+     * Get the latest by the id.
      *
      * @param  $id
+     *
      * @return Join
      */
     public function getJoin($id)
@@ -171,21 +168,23 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Check if the authenticated user is the same as requested
+     * Check if the authenticated user is the same as requested.
      *
-     * @return boolean
+     * @return bool
      */
     public function currentUser()
     {
-        if (Auth::guest()) return false;
+        if (Auth::guest()) {
+            return false;
+        }
 
         return $this->id == Auth::user()->id;
     }
 
     /**
-     * Check if the user is a organizer
+     * Check if the user is a organizer.
      *
-     * @return boolean
+     * @return bool
      */
     public function isOrganizer()
     {
@@ -193,7 +192,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Dates handled by the Carbon Api
+     * Dates handled by the Carbon Api.
      *
      * @return array
      */
@@ -203,7 +202,7 @@ class User extends Eloquent implements AuthenticatableContract,
     }
 
     /**
-     * Convert the brazilian date do database date
+     * Convert the brazilian date do database date.
      *
      * @param string $value
      */

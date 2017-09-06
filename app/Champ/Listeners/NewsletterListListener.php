@@ -5,10 +5,10 @@ use Champ\Account\Events\UserSignedUp;
 use Champ\Account\Events\UserChangedProfile;
 use Champ\Newsletters\NewsletterList;
 
-class NewsletterListListener extends EventListener {
-
+class NewsletterListListener extends EventListener
+{
     /**
-     * Newsletter list
+     * Newsletter list.
      *
      * @var NewsletterList
      */
@@ -24,9 +24,10 @@ class NewsletterListListener extends EventListener {
 
     /**
      * When user Signed Up for the Battleroad. Automatically
-     * Subscribe him to the Newsletter list
+     * Subscribe him to the Newsletter list.
      *
-     * @param  UserSignedUp $event
+     * @param UserSignedUp $event
+     *
      * @return mixed
      */
     public function whenUserSignedUp(UserSignedUp $event)
@@ -35,9 +36,10 @@ class NewsletterListListener extends EventListener {
     }
 
     /**
-     * Subscribe or Unsubscribe a user from the Championships List
+     * Subscribe or Unsubscribe a user from the Championships List.
      *
-     * @param  UserChangedProfile $event
+     * @param UserChangedProfile $event
+     *
      * @return mixed
      */
     public function whenUserChangedProfile(UserChangedProfile $event)

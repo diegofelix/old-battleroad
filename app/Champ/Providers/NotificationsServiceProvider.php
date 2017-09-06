@@ -2,12 +2,10 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class NotificationsServiceProvider extends ServiceProvider {
-
+class NotificationsServiceProvider extends ServiceProvider
+{
     /**
-     * Register the Billing providers
-     *
-     * @return void
+     * Register the Billing providers.
      */
     public function register()
     {

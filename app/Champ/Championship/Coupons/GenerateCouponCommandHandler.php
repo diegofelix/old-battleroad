@@ -1,14 +1,13 @@
 <?php namespace Champ\Championship\Coupons;
 
 use Laracasts\Commander\CommandHandler;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Championship\Coupon;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
 
-class GenerateCouponCommandHandler implements CommandHandler {
-
+class GenerateCouponCommandHandler implements CommandHandler
+{
     /**
-     * Coupon Repository
+     * Coupon Repository.
      *
      * @var CouponRepositoryInterface
      */
@@ -27,5 +26,4 @@ class GenerateCouponCommandHandler implements CommandHandler {
 
         return $coupon;
     }
-
 }

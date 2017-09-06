@@ -8,28 +8,27 @@ use Champ\Join\JoinStatusChangedCommand;
 use Laracasts\Commander\CommanderTrait;
 use Champ\Join\Status;
 
-class NotificationController extends BaseController {
-
+class NotificationController extends BaseController
+{
     use CommanderTrait;
 
-
     /**
-     * Bcash statuses
+     * Bcash statuses.
      *
      * @var array
      */
     protected $statuses = [
-        'Em andamento'  => Status::IN_PROGRESS,
-        'Aprovada'      => Status::APPROVED,
-        'Concluída'     => Status::FINISHED,
-        'Disputa'       => Status::DISPUTE,
-        'Devolvida'     => Status::RETURNED,
-        'Cancelada'     => Status::CANCELLED,
-        'Chargeback'    => Status::CHARGEBACK,
+        'Em andamento' => Status::IN_PROGRESS,
+        'Aprovada' => Status::APPROVED,
+        'Concluída' => Status::FINISHED,
+        'Disputa' => Status::DISPUTE,
+        'Devolvida' => Status::RETURNED,
+        'Cancelada' => Status::CANCELLED,
+        'Chargeback' => Status::CHARGEBACK,
     ];
 
     /**
-     * Join repository
+     * Join repository.
      *
      * @var JoinRepositoryInterface
      */
@@ -41,7 +40,7 @@ class NotificationController extends BaseController {
     }
 
     /**
-     * Receives the notification and handle it
+     * Receives the notification and handle it.
      *
      * @return Response
      */
@@ -66,33 +65,29 @@ class NotificationController extends BaseController {
     }*/
 
     /**
-     * Bcash notification
-     *
-     * @return void
+     * Bcash notification.
      */
     public function bcash()
     {
         Log::info('O Status de uma transação mudou');
 
         // if input has a pedido means that the item status has changed.
-        if (Input::has('pedido'))
-        {
+        if (Input::has('pedido')) {
             $join = $this->execute(JoinStatusChangedCommand::class);
 
             // $join = $this->joinRepository->find(Input::get('pedido'));
             // $join->status_id = $this->statuses[Input::get('status')];
             // $this->joinRepository->save($join);
 
-            Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
+            Log::info('Status do join: '.$join->id.' alterado com sucesso!');
         }
 
-        if (Input::has('id_pedido'))
-        {
+        if (Input::has('id_pedido')) {
             $join = $this->joinRepository->find(Input::get('id_pedido'));
             $join->token = Input::get('id_transacao');
             $this->joinRepository->save($join);
 
-            Log::info('Status do join: ' . $join->id . ' alterado com sucesso!');
+            Log::info('Status do join: '.$join->id.' alterado com sucesso!');
         }
     }
 }

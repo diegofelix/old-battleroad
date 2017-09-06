@@ -2,8 +2,8 @@
 
 use Champ\Join\Join;
 
-class UserJoinedWithCompetitions {
-
+class UserJoinedWithCompetitions
+{
     public $join;
     public $competitions;
 
@@ -12,5 +12,4 @@ class UserJoinedWithCompetitions {
         $this->join = $join;
         $this->competitions = $competitions;
     }
-
 }

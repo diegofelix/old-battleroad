@@ -3,8 +3,8 @@
 use Champ\Account\User;
 use Champ\Championship\Championship;
 
-class JoinCommand {
-
+class JoinCommand
+{
     public $user;
 
     public $championship;
@@ -23,5 +23,4 @@ class JoinCommand {
         $this->competitions = $competitions;
         $this->team_name = $team_name;
     }
-
 }

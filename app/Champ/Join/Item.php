@@ -14,16 +14,16 @@ class Item extends Eloquent
     public $timestamps = false;
 
     /**
-     * Championship presenter
+     * Championship presenter.
      *
      * @var string
      */
     protected $presenter = 'Champ\Presenters\ItemPresenter';
 
     /**
-     * Relation with Join
+     * Relation with Join.
      *
-     * @return  BelongsTo
+     * @return BelongsTo
      */
     public function join()
     {
@@ -31,7 +31,7 @@ class Item extends Eloquent
     }
 
     /**
-     * Relation with Competition
+     * Relation with Competition.
      *
      * @return BelongsTo
      */
@@ -41,7 +41,7 @@ class Item extends Eloquent
     }
 
     /**
-     * Relation with Nick
+     * Relation with Nick.
      *
      * @return HasMany
      */
@@ -51,11 +51,12 @@ class Item extends Eloquent
     }
 
     /**
-     * Add a new item
+     * Add a new item.
      *
-     * @param  int $join_id
-     * @param  int $price
-     * @param  string $team_name
+     * @param int    $join_id
+     * @param int    $price
+     * @param string $team_name
+     *
      * @return model
      */
     public static function register($competition_id, $price, $team_name = null)

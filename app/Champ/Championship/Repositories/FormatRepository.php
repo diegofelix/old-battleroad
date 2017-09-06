@@ -2,17 +2,17 @@
 
 use Champ\Championship\Format;
 
-class FormatRepository implements FormatRepositoryInterface {
-
+class FormatRepository implements FormatRepositoryInterface
+{
     /**
-     * Format Model
+     * Format Model.
      *
      * @var Cham\Championship\Format
      */
     protected $model;
 
     /**
-     * inject the model into constructor
+     * inject the model into constructor.
      *
      * @param Champ\Championship\Format $model
      */
@@ -22,14 +22,14 @@ class FormatRepository implements FormatRepositoryInterface {
     }
 
     /**
-     * Get a list of Formats
+     * Get a list of Formats.
      *
-     * @param  int $champId
+     * @param int $champId
+     *
      * @return array
      */
     public function dropdown()
     {
         return $this->model->lists('name', 'id');
     }
-
 }
