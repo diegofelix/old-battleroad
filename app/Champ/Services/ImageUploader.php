@@ -1,4 +1,6 @@
-<?php namespace Champ\Services;
+<?php
+
+namespace Champ\Services;
 
 use Intervention\Image\Image;
 

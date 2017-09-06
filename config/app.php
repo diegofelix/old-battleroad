@@ -136,6 +136,7 @@ return [
 
         'Collective\Html\HtmlServiceProvider',
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        Laracasts\Commander\CommanderServiceProvider::class,
 
         /*
          * Application Service Providers...
