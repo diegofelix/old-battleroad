@@ -8,7 +8,7 @@
 		"laravel/framework": "5.1.*",
 		"predis/predis": "~1.0",
 		"laravelcollective/html": "5.1.*",
-		"intervention/image": "dev-master",
+		"intervention/image": "2.*",
 		"laracasts/commander": "1.*",
 		"laracasts/presenter": "dev-master",
 		"michelf/php-markdown": "1.4.*",
