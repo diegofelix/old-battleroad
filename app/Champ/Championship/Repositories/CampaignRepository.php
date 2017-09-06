@@ -2,7 +2,6 @@
 
 namespace Champ\Championship\Repositories;
 
-use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Campaign;
 
 class CampaignRepository implements CampaignRepositoryInterface
@@ -13,9 +12,10 @@ class CampaignRepository implements CampaignRepositoryInterface
     }
 
     /**
-     * Find a Campaign by its id
+     * Find a Campaign by its id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Model
      */
     public function find($id)
@@ -24,10 +24,11 @@ class CampaignRepository implements CampaignRepositoryInterface
     }
 
     /**
-     * Saves a Campaign
+     * Saves a Campaign.
      *
-     * @param  Campaign $campaign
-     * @return boolean
+     * @param Campaign $campaign
+     *
+     * @return bool
      */
     public function save(Campaign $campaign)
     {

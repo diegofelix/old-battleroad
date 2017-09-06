@@ -5,8 +5,8 @@ use Champ\Join\Events\UserJoined;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Championship\Repositories\CompetitionRepositoryInterface;
 
-class CompetitionVacancyUpdater extends EventListener {
-
+class CompetitionVacancyUpdater extends EventListener
+{
     protected $competitionRepository;
 
     public function __construct(CompetitionRepositoryInterface $competitionRepository)
@@ -15,10 +15,9 @@ class CompetitionVacancyUpdater extends EventListener {
     }
 
     /**
-     * Subtract a vacancy in the competition when user join the championship
+     * Subtract a vacancy in the competition when user join the championship.
      *
-     * @param  UserJoined $event
-     * @return void
+     * @param UserJoined $event
      */
     public function whenUserJoined(UserJoined $event)
     {
@@ -26,10 +25,9 @@ class CompetitionVacancyUpdater extends EventListener {
     }
 
     /**
-     * Add the vacancy back when user cancel the championship
+     * Add the vacancy back when user cancel the championship.
      *
-     * @param  JoinCancelled $event
-     * @return void
+     * @param JoinCancelled $event
      */
     public function whenJoinCancelled(JoinCancelled $event)
     {
@@ -37,18 +35,16 @@ class CompetitionVacancyUpdater extends EventListener {
     }
 
     /**
-     * Add or remove vancancy for the competition
+     * Add or remove vancancy for the competition.
      *
      * @param $event
-     * @param integer $value
+     * @param int $value
      */
     private function addVancancy($event, $value = 1)
     {
         $items = $event->join->items;
-        if ($items->count())
-        {
-            foreach ($items as $item)
-            {
+        if ($items->count()) {
+            foreach ($items as $item) {
                 $competition = $item->competition;
                 $competition->limit += $value;
                 $this->competitionRepository->save($competition);

@@ -6,22 +6,23 @@ use Champ\Join\EmbededJoinCommand;
 use Champ\Join\LimitExceededJoinCommand;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
+
 // use Champ\Billing\Moip\MoipBilling;
 //use Champ\Billing\Core\BillingInterface
 
-class EmbededJoinController extends BaseController {
-
+class EmbededJoinController extends BaseController
+{
     use CommanderTrait;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var JoinRepositoryInterface
      */
@@ -36,7 +37,7 @@ class EmbededJoinController extends BaseController {
     }
 
     /**
-     * Show a form to user register and register to the championship
+     * Show a form to user register and register to the championship.
      *
      * @return Response
      */
@@ -52,9 +53,10 @@ class EmbededJoinController extends BaseController {
     }
 
     /**
-     * Register the user and register him to the championship
+     * Register the user and register him to the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function store($id)
@@ -62,23 +64,22 @@ class EmbededJoinController extends BaseController {
         Input::merge(['championship_id' => $id]);
 
         //if (Input::has('limit_exceeded')) {
-            $join = $this->execute(LimitExceededJoinCommand::class);
-            $message = '
+        $join = $this->execute(LimitExceededJoinCommand::class);
+        $message = '
                 Obrigado por sua inscrição.
                 O limite de jogadores foi atingido, mas você poderá ser chamado em caso de desistência.
             ';
 //        } else {
-  //          $join = $this->execute(EmbededJoinCommand::class);
-    //        $message = 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.';
-      //  }
-
+        //          $join = $this->execute(EmbededJoinCommand::class);
+        //        $message = 'Você foi registrado com sucesso! Por favor, aguarde o e-mail de confirmação.';
+        //  }
 
         return $this->redirectRoute('championships.embeded', $id)
             ->with(compact('message'));
     }
 
     /**
-     * Show for the user that this championship was finished
+     * Show for the user that this championship was finished.
      *
      * @return Response
      */
@@ -88,7 +89,7 @@ class EmbededJoinController extends BaseController {
     }
 
     /**
-     * Show for the user that the joins period expired or has no more vacancies
+     * Show for the user that the joins period expired or has no more vacancies.
      *
      * @return Response
      */
@@ -98,9 +99,10 @@ class EmbededJoinController extends BaseController {
     }
 
     /**
-     * Show the join form for the user
+     * Show the join form for the user.
      *
-     * @param  Championship $championship
+     * @param Championship $championship
+     *
      * @return Response
      */
     private function showJoinForm($championship)

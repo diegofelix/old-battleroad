@@ -3,8 +3,8 @@
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Request;
 
-class ChampionshipComposer {
-
+class ChampionshipComposer
+{
     protected $championshipRepository;
 
     public function __construct(ChampionshipRepositoryInterface $repository)
@@ -13,15 +13,13 @@ class ChampionshipComposer {
     }
 
     /**
-     * Get all available competitions
+     * Get all available competitions.
      *
-     * @param  View $view
-     * @return void
+     * @param View $view
      */
     public function compose($view)
     {
         $championship = $this->championshipRepository->find(Request::segment(3));
         $view->with(compact('championship'));
     }
-
 }

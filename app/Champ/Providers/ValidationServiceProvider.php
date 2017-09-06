@@ -3,19 +3,19 @@
 use Illuminate\Support\ServiceProvider;
 use Champ\Validation\ChampValidator;
 
-class ValidationServiceProvider extends ServiceProvider {
-
+class ValidationServiceProvider extends ServiceProvider
+{
     /**
-     * Register the Validators providers
-     *
-     * @return void
+     * Register the Validators providers.
      */
     public function boot()
     {
-        $this->app->validator->resolver(function($translator, $data, $rules, $messages)
-        {
+        $this->app->validator->resolver(function ($translator, $data, $rules, $messages) {
             return new ChampValidator($translator, $data, $rules, $messages);
         });
     }
-    public function register(){}
+
+    public function register()
+    {
+    }
 }

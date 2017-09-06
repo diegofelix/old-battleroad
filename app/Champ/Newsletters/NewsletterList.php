@@ -1,23 +1,24 @@
 <?php namespace Champ\Newsletters;
 
-interface NewsletterList {
-
+interface NewsletterList
+{
     /**
-     * Subscribe a email to a list
+     * Subscribe a email to a list.
      *
-     * @param  strgin $listName
-     * @param  string $email
+     * @param strgin $listName
+     * @param string $email
+     *
      * @return mixed
      */
     public function subscribeTo($listName, $email);
 
     /**
-     * Unsubscribe a user from a list
+     * Unsubscribe a user from a list.
      *
-     * @param  string $listName
-     * @param  string $email
+     * @param string $listName
+     * @param string $email
+     *
      * @return mixed
      */
     public function unsubscribeFrom($listName, $email);
-
 }

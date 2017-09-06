@@ -2,10 +2,10 @@
 
 use Champ\Forms\ChampionshipBannerForm;
 
-class UpdateBannerValidator {
-
+class UpdateBannerValidator
+{
     /**
-     * Form Validator
+     * Form Validator.
      *
      * @var ChampionshipBannerForm
      */
@@ -18,7 +18,6 @@ class UpdateBannerValidator {
 
     public function validate($command)
     {
-        $this->form->validate(['image' => $command->image ]);
+        $this->form->validate(['image' => $command->image]);
     }
-
 }

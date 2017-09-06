@@ -8,9 +8,9 @@ class Nick extends Eloquent
     protected $guarded = [];
 
     /**
-     * Relation with Item
+     * Relation with Item.
      *
-     * @return  BelongsTo
+     * @return BelongsTo
      */
     public function item()
     {
@@ -18,9 +18,10 @@ class Nick extends Eloquent
     }
 
     /**
-     * Add a new item
+     * Add a new item.
      *
      * @param  string nick
+     *
      * @return model
      */
     public static function register($nick)

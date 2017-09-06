@@ -1,14 +1,15 @@
 <?php namespace Champ\Services;
 
-class KeyGen {
-
-    protected $hash  = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890';
+class KeyGen
+{
+    protected $hash = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ01234567890';
 
     /**
-     * Generate a hash with strings separated by a -
+     * Generate a hash with strings separated by a -.
      *
-     * @param  integer $limit
-     * @param  integer $chunkSize
+     * @param int $limit
+     * @param int $chunkSize
+     *
      * @return string
      */
     public function make($limit = 11, $chunkSize = 3)

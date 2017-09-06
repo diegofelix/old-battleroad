@@ -6,17 +6,17 @@ use Champ\Account\Repositories\UserRepositoryInterface;
 use Champ\Social\SocialFactory;
 use Laracasts\Commander\Events\DispatchableTrait;
 
-class AuthController extends BaseController implements SocialAuthenticatorListenerInterface {
-
+class AuthController extends BaseController implements SocialAuthenticatorListenerInterface
+{
     /**
-     * User Repository
+     * User Repository.
      *
      * @var Champ\Account\Repositories\UserRepositoryInterface
      */
     protected $userRepo;
 
     /**
-     * Social Factory
+     * Social Factory.
      *
      * @var Champ\Social\SocialFactory
      */
@@ -33,7 +33,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     }
 
     /**
-     * Handle the Authentication from Google
+     * Handle the Authentication from Google.
      *
      * @return Response
      */
@@ -43,7 +43,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     }
 
     /**
-     * Handle the Authentication from Facebook
+     * Handle the Authentication from Facebook.
      *
      * @return Response
      */
@@ -53,22 +53,25 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     }
 
     /**
-     * User found listener used in the SocialAuth
+     * User found listener used in the SocialAuth.
      *
-     * @param  Champ\Account\User $user
+     * @param Champ\Account\User $user
+     *
      * @return Response
      */
     public function userFound($user)
     {
         Auth::loginUsingId($user->id);
+
         return $this->redirectIntended('/');
     }
 
     /**
      * User is Banned
-     * This method also can be used in the SocialAuth
+     * This method also can be used in the SocialAuth.
      *
-     * @param  Champ\Account\User $user
+     * @param Champ\Account\User $user
+     *
      * @return Response
      */
     public function userIsBanned($user)
@@ -78,9 +81,10 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     }
 
     /**
-     * User Not Found Listener used in the SocialAuth
+     * User Not Found Listener used in the SocialAuth.
      *
      * @param array data
+     *
      * @return Response
      */
     public function userNotFound($data)

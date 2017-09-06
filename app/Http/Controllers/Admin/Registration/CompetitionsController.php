@@ -2,7 +2,6 @@
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Input;
-use BaseController;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Champ\Championship\Repositories\GameRepositoryInterface;
 use Champ\Championship\Repositories\FormatRepositoryInterface;
@@ -11,14 +10,14 @@ use Champ\Championship\Repositories\PlatformRepositoryInterface;
 class CompetitionsController extends BaseRegistrationController
 {
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
     /**
-     * Game Repository
+     * Game Repository.
      *
      * @var Champ\Championship\Repositories\GameRepositoryInterface
      */
@@ -37,9 +36,10 @@ class CompetitionsController extends BaseRegistrationController
     }
 
     /**
-     * Show a list of Games for the championship given
+     * Show a list of Games for the championship given.
      *
-     * @param integer $champId
+     * @param int $champId
+     *
      * @return Response
      */
     public function index($champId)
@@ -54,9 +54,10 @@ class CompetitionsController extends BaseRegistrationController
     }
 
     /**
-     * Show a form to create a new competition
+     * Show a form to create a new competition.
      *
-     * @param  int $champId
+     * @param int $champId
+     *
      * @return Response
      */
     public function create($champId)
@@ -65,12 +66,15 @@ class CompetitionsController extends BaseRegistrationController
         $games = $this->gameRepo->dropdown();
         $formats = $this->formatRepo->dropdown();
         $platforms = $this->platformRepo->dropdown();
+
         return $this->view('admin.register.games.create', compact('championship', 'games', 'formats', 'platforms'));
     }
 
     /**
-     * Attach a game to a competition
-     * @param  int $champId
+     * Attach a game to a competition.
+     *
+     * @param int $champId
+     *
      * @return Response
      */
     public function store($champId)
@@ -79,18 +83,17 @@ class CompetitionsController extends BaseRegistrationController
         $input = Input::only('game_id', 'platform_id', 'format_id', 'players', 'price', 'start');
 
         // if the user setted a competition limit
-        if ( ! Input::get('limit_switch') && Input::get('limit'))
-        {
+        if (!Input::get('limit_switch') && Input::get('limit')) {
             $input['limit'] = Input::get('limit');
         }
 
         // create the championship
-        if ( ! $this->champRepo->createCompetition($champId, $input))
+        if (!$this->champRepo->createCompetition($champId, $input)) {
             return $this->redirectBack(['error' => $this->champRepo->getErrors()]);
+        }
 
         // redirect back
         return $this->redirectRoute('admin.register.games', [$champId]);
-
     }
 
     public function destroy($champId, $competitionId)

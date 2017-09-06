@@ -2,12 +2,12 @@
 
 use Eloquent;
 
-class Transaction extends Eloquent {
-
+class Transaction extends Eloquent
+{
     protected $guarded = [];
 
     /**
-     * Relation with Status
+     * Relation with Status.
      *
      * @return BelongsTo
      */
@@ -17,7 +17,7 @@ class Transaction extends Eloquent {
     }
 
     /**
-     * Relation with Join
+     * Relation with Join.
      *
      * @return BelongsTo
      */
@@ -25,5 +25,4 @@ class Transaction extends Eloquent {
     {
         return $this->belongsTo('Champ\Join\Join');
     }
-
 }

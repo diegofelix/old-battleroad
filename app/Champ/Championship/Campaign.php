@@ -13,7 +13,7 @@ class Campaign extends Eloquent
     use EventGenerator;
 
     /**
-     * Relation with Championship
+     * Relation with Championship.
      *
      * @return BelongsTo
      */
@@ -23,12 +23,13 @@ class Campaign extends Eloquent
     }
 
     /**
-     * Compose a new campaign
+     * Compose a new campaign.
      *
-     * @param  int $championship_id
-     * @param  string $subject
-     * @param  string $body
-     * @param  string $campaign_id
+     * @param int    $championship_id
+     * @param string $subject
+     * @param string $body
+     * @param string $campaign_id
+     *
      * @return Model
      */
     public function compose($championship_id, $subject, $body, $campaign_id)

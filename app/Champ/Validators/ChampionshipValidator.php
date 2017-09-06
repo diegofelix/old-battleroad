@@ -3,10 +3,10 @@
 use Champ\Validators\Core\AbstractValidator;
 use Champ\Validators\Core\ValidableInterface;
 
-class ChampionshipValidator extends AbstractValidator implements ValidableInterface {
-
+class ChampionshipValidator extends AbstractValidator implements ValidableInterface
+{
     /**
-     * Rules for the validator
+     * Rules for the validator.
      *
      * @var array
      */
@@ -20,10 +20,10 @@ class ChampionshipValidator extends AbstractValidator implements ValidableInterf
         'location' => [
             'location' => 'required',
             'price' => 'sometimes|numeric',
-            'limit' => 'sometimes|numeric'
+            'limit' => 'sometimes|numeric',
         ],
         'update' => [
-            'description' => 'required|min:20'
+            'description' => 'required|min:20',
         ],
         'competition' => [
             'game_id' => 'required',
@@ -31,7 +31,6 @@ class ChampionshipValidator extends AbstractValidator implements ValidableInterf
             'platform_id' => 'required',
             // 'price' => 'required|numeric',
             'start' => 'required|date_format:"d/m/Y H:i"|future_date',
-        ]
+        ],
     ];
-
 }

@@ -6,9 +6,10 @@ use Champ\Join\Item;
 interface ItemRepositoryInterface extends RepositoryInterface
 {
     /**
-     * Save an item
+     * Save an item.
      *
-     * @param  Item   $item
+     * @param Item $item
+     *
      * @return Item
      */
     public function save(Item $item);

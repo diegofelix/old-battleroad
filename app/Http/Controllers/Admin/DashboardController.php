@@ -4,17 +4,17 @@ namespace Battleroad\Http\Controllers\Admin;
 use Auth;
 use BaseController;
 
-class DashboardController extends BaseController {
-
+class DashboardController extends BaseController
+{
     /**
-     * Show a screen with your championships and joins
+     * Show a screen with your championships and joins.
      *
      * @return Response
      */
     public function index()
     {
-        $activeChampionships    = $this->activeChampionships();
-        $oldChampionships       = $this->oldChampionships();
+        $activeChampionships = $this->activeChampionships();
+        $oldChampionships = $this->oldChampionships();
         $joins = Auth::user()->joins;
 
         return $this->view('admin.dashboard', compact('activeChampionships', 'oldChampionships', 'joins'));
@@ -22,16 +22,15 @@ class DashboardController extends BaseController {
 
     private function activeChampionships()
     {
-        return Auth::user()->championships->filter(function($champ) {
-            return ! $champ->isFinished();
+        return Auth::user()->championships->filter(function ($champ) {
+            return !$champ->isFinished();
         });
     }
 
     private function oldChampionships()
     {
-        return Auth::user()->championships->filter(function($champ) {
+        return Auth::user()->championships->filter(function ($champ) {
             return $champ->isFinished();
         });
     }
-
 }

@@ -3,12 +3,13 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Input;
 
-class LocationController extends BaseRegistrationController {
-
+class LocationController extends BaseRegistrationController
+{
     /**
-     * Show a form to create the location for the championship
+     * Show a form to create the location for the championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function create($id)
@@ -19,14 +20,13 @@ class LocationController extends BaseRegistrationController {
     }
 
     /**
-     * Store the championship's location
+     * Store the championship's location.
      *
      * @return Response
      */
     public function store($id)
     {
-        if ( ! $this->championshipRepository->saveLocation(Input::all()))
-        {
+        if (!$this->championshipRepository->saveLocation(Input::all())) {
             return $this->redirectBack()
                 ->with('error', $this->championshipRepository->getErrors());
         }

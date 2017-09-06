@@ -4,10 +4,10 @@ namespace Battleroad\Http\Controllers\Admin;
 use Auth;
 use BaseController;
 
-class JoinsController extends BaseController {
-
+class JoinsController extends BaseController
+{
     /**
-     * Show a screen with your championships and joins
+     * Show a screen with your championships and joins.
      *
      * @return Response
      */
@@ -17,5 +17,4 @@ class JoinsController extends BaseController {
 
         return $this->view('admin.joins', compact('joins'));
     }
-
 }

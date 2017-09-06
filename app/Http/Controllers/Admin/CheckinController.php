@@ -4,12 +4,11 @@ namespace Battleroad\Http\Controllers\Admin;
 use App;
 use BaseController;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Input;
 
-class CheckinController extends BaseController {
-
+class CheckinController extends BaseController
+{
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
@@ -21,7 +20,7 @@ class CheckinController extends BaseController {
     }
 
     /**
-     * Check in User Join
+     * Check in User Join.
      *
      * @return Illuminate\Http\Response
      */
@@ -29,23 +28,24 @@ class CheckinController extends BaseController {
     {
         $join = $this->getJoin($id);
 
-        if ( ! $join) App::abort(404);
+        if (!$join) {
+            App::abort(404);
+        }
 
         $join->checkin = !$join->checkin;
 
         $this->joinRepository->save($join);
-
     }
 
     /**
-     * Find a Join by its id
+     * Find a Join by its id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Champ\Join\Join
      */
     private function getJoin($id)
     {
         return $this->joinRepository->find($id);
     }
-
 }

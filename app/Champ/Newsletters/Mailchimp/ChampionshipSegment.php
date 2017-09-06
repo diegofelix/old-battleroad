@@ -8,14 +8,14 @@ use Mailchimp;
 class ChampionshipSegment implements ChampionshipSegmentInterface
 {
     /**
-     * List Id
+     * List Id.
      *
      * @var int
      */
     protected $listId;
 
     /**
-     * Mailchimp
+     * Mailchimp.
      *
      * @var Mailchimp
      */
@@ -28,9 +28,10 @@ class ChampionshipSegment implements ChampionshipSegmentInterface
     }
 
     /**
-     * Create a new segment
+     * Create a new segment.
      *
-     * @param  string $segmentName
+     * @param string $segmentName
+     *
      * @return mixed
      */
     public function createSegment($segmentName)
@@ -41,10 +42,11 @@ class ChampionshipSegment implements ChampionshipSegmentInterface
     }
 
     /**
-     * Subscribe a email to a segment
+     * Subscribe a email to a segment.
      *
-     * @param  int $segmentId
-     * @param  string $email
+     * @param int    $segmentId
+     * @param string $email
+     *
      * @return mixed
      */
     public function subscribeTo($segmentId, $email)
@@ -53,16 +55,19 @@ class ChampionshipSegment implements ChampionshipSegmentInterface
 
         $response = $this->mailchimp->lists->staticSegmentMembersAdd($this->listId, $segmentId, $emails);
 
-        if ($response['success_count'] == 1) return true;
+        if ($response['success_count'] == 1) {
+            return true;
+        }
 
         return false;
     }
 
     /**
-     * Unsubscribe a user from a segment
+     * Unsubscribe a user from a segment.
      *
-     * @param  int $segmentId
-     * @param  string $email
+     * @param int    $segmentId
+     * @param string $email
+     *
      * @return mixed
      */
     public function unsubscribeFrom($segmentId, $email)
@@ -71,7 +76,9 @@ class ChampionshipSegment implements ChampionshipSegmentInterface
 
         $response = $this->mailchimp->lists->staticSegmentMembersDel($this->listId, $segmentId, $emails);
 
-        if ($response['success_count'] == 1) return true;
+        if ($response['success_count'] == 1) {
+            return true;
+        }
 
         return false;
     }

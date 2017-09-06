@@ -1,15 +1,14 @@
 <?php namespace Champ\Championship\Registration;
 
 use Laracasts\Commander\CommandHandler;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Championship\Championship;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use App;
 
-class RegisterChampionshipCommandHandler implements CommandHandler {
-
+class RegisterChampionshipCommandHandler implements CommandHandler
+{
     /**
-     * Championship Repository
+     * Championship Repository.
      */
     protected $repository;
 
@@ -41,9 +40,10 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
     }
 
     /**
-     * Upload an image
+     * Upload an image.
      *
-     * @param  array $data
+     * @param array $data
+     *
      * @return string url to the image uploaded
      */
     private function uploadImage($image)
@@ -52,5 +52,4 @@ class RegisterChampionshipCommandHandler implements CommandHandler {
 
         return $champImage->upload($image);
     }
-
 }

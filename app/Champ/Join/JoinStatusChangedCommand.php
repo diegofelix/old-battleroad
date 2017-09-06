@@ -1,12 +1,12 @@
 <?php namespace Champ\Join;
 
-class JoinStatusChangedCommand {
-
+class JoinStatusChangedCommand
+{
     public $id;
     public $statusId;
 
     /**
-     * Bcash statuses
+     * Bcash statuses.
      *
      * @var array
      */
@@ -22,8 +22,7 @@ class JoinStatusChangedCommand {
 
     public function __construct($pedido, $status)
     {
-        $this->id       = $pedido;
+        $this->id = $pedido;
         $this->statusId = $this->statuses[$status];
     }
-
 }

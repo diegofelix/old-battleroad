@@ -1,12 +1,13 @@
 <?php namespace Champ\Repositories\Core;
 
-class TenantRepository extends AbstractRepository {
-
+class TenantRepository extends AbstractRepository
+{
     /**
-     * Create an instance of model
+     * Create an instance of model.
      *
      * @param array $data
-     * @return boolean
+     *
+     * @return bool
      */
     public function create(array $data)
     {
@@ -16,7 +17,8 @@ class TenantRepository extends AbstractRepository {
     /**
      * Create a new instance of the managed model.
      *
-     * @param  array  $with
+     * @param array $with
+     *
      * @return model
      */
     public function make($with = array())
@@ -25,5 +27,4 @@ class TenantRepository extends AbstractRepository {
 
         return $model->where('user_id', '=', $this->context->id());
     }
-
 }

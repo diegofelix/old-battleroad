@@ -3,8 +3,8 @@
 use App;
 use InvalidArgumentException;
 
-class SocialFactory {
-
+class SocialFactory
+{
     public function create($provider)
     {
         switch ($provider) {
@@ -18,5 +18,4 @@ class SocialFactory {
 
         throw new InvalidArgumentException("Unsupported Social [$provider]");
     }
-
 }

@@ -4,10 +4,7 @@ namespace Battleroad\Http\Controllers;
 use Laracasts\Commander\CommandBus;
 use Champ\Join\Join;
 use Champ\Join\JoinCommand;
-use Champ\Join\UpdateJoinCommand;
-use Champ\Join\ApplyCouponCommand;
 use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
 // use Champ\Billing\Core\BillingInterface;
@@ -15,32 +12,31 @@ use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController implements PaymentListenerInterface
 {
-
     use CommanderTrait;
 
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
      */
     protected $champRepo;
 
     /**
-     * Join Repository
+     * Join Repository.
      *
      * @var Champ\Join\Repositories\JoinRepositoryInterface
      */
     protected $joinRepository;
 
     /**
-     * Command Bus
+     * Command Bus.
      *
      * @var Laracasts\Commander\CommandBus
      */
     protected $commandBus;
 
     /**
-     * BillingInterface Billing
+     * BillingInterface Billing.
      *
      * @var BillingInterface
      */
@@ -51,8 +47,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
         JoinRepositoryInterface $joinRepository,
         CommandBus $commandBus/*,
         BillingInterface $billing*/
-    )
-    {
+    ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
@@ -60,9 +55,10 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * Show a form to register to championship
+     * Show a form to register to championship.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function index($id)
@@ -73,15 +69,15 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * Subscribe the logged user to the championship
+     * Subscribe the logged user to the championship.
      *
      * @return Response
      */
     public function register()
     {
         Input::merge([
-            'user'         => Auth::user(),
-            'championship' => $this->champRepo->find(Input::get('id'))
+            'user' => Auth::user(),
+            'championship' => $this->champRepo->find(Input::get('id')),
         ]);
 
         $join = $this->execute(JoinCommand::class);
@@ -91,24 +87,26 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * Show all Join data
+     * Show all Join data.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function show($id)
     {
-        $join   = $this->findAJoinById($id);
-        $token  = $this->encodedFields($join);
+        $join = $this->findAJoinById($id);
+        $token = $this->encodedFields($join);
 
         return $this->view('join.show', compact('join', 'token'));
     }
 
     /**
      * After the user paid for join, he will return back
-     * here, with some information. So, show some helpful message =)
+     * here, with some information. So, show some helpful message =).
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Response
      */
     public function returned($id)
@@ -124,7 +122,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * Payment
+     * Payment.
      *
      * @return Response
      */
@@ -136,9 +134,10 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * This method will be called when the user is allowed to pay
+     * This method will be called when the user is allowed to pay.
      *
      * @param   $response
+     *
      * @return Response
      */
     public function paymentAllowed($response, Join $join)
@@ -151,9 +150,10 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * When occurs an error, this method will be called
+     * When occurs an error, this method will be called.
      *
      * @param   $error
+     *
      * @return Response
      */
     public function paymentError($error)
@@ -162,9 +162,10 @@ class JoinController extends BaseController implements PaymentListenerInterface
     }
 
     /**
-     * Find a joined user by the join id
+     * Find a joined user by the join id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return Join
      */
     private function findAJoinById($id)
@@ -175,24 +176,23 @@ class JoinController extends BaseController implements PaymentListenerInterface
     private function encodedFields($join)
     {
         $fields = [
-            'email_loja'            => getenv('BCASH_ACCOUNT'),
-            'id_pedido'             => $join->id,
-            'email'                 => $join->user->email,
-            'nome'                  => str_replace(' ', '', $join->user->name),
-            'email_dependente_1'    => $join->championship->token,
-            'valor_dependente_1'    => $join->present()->totalPrice,
-            'url_retorno'           => route('join.returned', $join->id),
-            'url_aviso'             => route('bcash')
+            'email_loja' => getenv('BCASH_ACCOUNT'),
+            'id_pedido' => $join->id,
+            'email' => $join->user->email,
+            'nome' => str_replace(' ', '', $join->user->name),
+            'email_dependente_1' => $join->championship->token,
+            'valor_dependente_1' => $join->present()->totalPrice,
+            'url_retorno' => route('join.returned', $join->id),
+            'url_aviso' => route('bcash'),
         ];
 
-        foreach ($join->items as $key => $item)
-        {
-            $count = $key+1;
+        foreach ($join->items as $key => $item) {
+            $count = $key + 1;
 
-            $fields['produto_codigo_'.$count]       = $item->id;
-            $fields['produto_descricao_'.$count]    = str_replace(' ', '', 'Inscrição: ' . $item->competition->game->name);
-            $fields['produto_qtde_'.$count]         = 1;
-            $fields['produto_valor_'.$count]        = $item->price;
+            $fields['produto_codigo_'.$count] = $item->id;
+            $fields['produto_descricao_'.$count] = str_replace(' ', '', 'Inscrição: '.$item->competition->game->name);
+            $fields['produto_qtde_'.$count] = 1;
+            $fields['produto_valor_'.$count] = $item->price;
         }
 
         // sort by the key

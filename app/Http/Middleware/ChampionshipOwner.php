@@ -2,9 +2,6 @@
 namespace Battleroad\Http\Middleware;
 
 use Closure;
-use Illuminate\Contracts\Auth\Guard;
-use Illuminate\Http\RedirectResponse;
-use Champ\Championship\Repositories\ChampionshipRepository;
 
 class ChampionshipOwner
 {
@@ -21,8 +18,9 @@ class ChampionshipOwner
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure                 $next
+     *
      * @return mixed
      */
     public function handle($request, Closure $next)

@@ -5,10 +5,10 @@ use Champ\Billing\Contracts\TransactionService;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ClientException;
 
-class BcashTransaction implements TransactionService {
-
+class BcashTransaction implements TransactionService
+{
     /**
-     * Service URL
+     * Service URL.
      *
      * @var string
      */
@@ -17,21 +17,21 @@ class BcashTransaction implements TransactionService {
     /**
      * Return type
      * 1 for XML
-     * 2 for JSON
+     * 2 for JSON.
      *
-     * @var integer
+     * @var int
      */
     protected $returnType = 2;
 
     /**
-     * Guzzle http client
+     * Guzzle http client.
      *
      * @var Client
      */
     protected $httpClient;
 
     /**
-     * Transaction Data Formatter
+     * Transaction Data Formatter.
      *
      * @var TransactionDataFormatter
      */
@@ -44,9 +44,10 @@ class BcashTransaction implements TransactionService {
     }
 
     /**
-     * Get the details about a transaction by its id
+     * Get the details about a transaction by its id.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return array
      */
     public function getDetails($id)
@@ -54,33 +55,32 @@ class BcashTransaction implements TransactionService {
         $options['headers'] = $this->authenticationHeaders();
         $options['body'] = $this->getBody($id);
 
-        try
-        {
+        try {
             $response = $this->httpClient->post($this->serviceUrl, $options);
+
             return $this->dataFormatter->format($response->json());
-        }
-        catch (ClientException $e)
-        {
+        } catch (ClientException $e) {
             return false;
         }
     }
 
     /**
-     * Get the body of the request
+     * Get the body of the request.
      *
-     * @param  int $id
+     * @param int $id
+     *
      * @return array
      */
     private function getBody($id)
     {
         return [
             'id_pedido' => $id,
-            'tipo_retorno' => $this->returnType
+            'tipo_retorno' => $this->returnType,
         ];
     }
 
     /**
-     * Authenticate the request
+     * Authenticate the request.
      *
      * @return guzzle
      */
@@ -92,13 +92,12 @@ class BcashTransaction implements TransactionService {
     }
 
     /**
-     * Generate a auth token
+     * Generate a auth token.
      *
      * @return string base64 string
      */
     private function getAuthenticationToken()
     {
-        return base64_encode(getenv('BCASH_ACCOUNT') . ':' . getenv('BCASH_TOKEN'));
+        return base64_encode(getenv('BCASH_ACCOUNT').':'.getenv('BCASH_TOKEN'));
     }
-
 }

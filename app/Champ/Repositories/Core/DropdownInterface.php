@@ -1,13 +1,13 @@
 <?php namespace Champ\Repositories\Core;
 
-interface DropdownInterface {
-
+interface DropdownInterface
+{
     /**
-     * Get a list of games
+     * Get a list of games.
      *
-     * @param  int $champId
+     * @param int $champId
+     *
      * @return array
      */
     public function dropdown();
-
 }
