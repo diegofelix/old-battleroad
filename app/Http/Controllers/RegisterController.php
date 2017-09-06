@@ -8,14 +8,14 @@ use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterController extends BaseController
 {
+    use DispatchableTrait;
+
     /**
      * User Repository.
      *
      * @var Champ\Account\Repositories\UserRepositoryInterface
      */
     protected $userRepo;
-
-    use DispatchableTrait;
 
     /**
      * Inject the user repo.
