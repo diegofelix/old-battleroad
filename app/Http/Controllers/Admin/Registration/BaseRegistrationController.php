@@ -1,9 +1,9 @@
 <?php
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
-use BaseController;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
+use Battleroad\Http\Controllers\BaseController;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 abstract class BaseRegistrationController extends BaseController
 {

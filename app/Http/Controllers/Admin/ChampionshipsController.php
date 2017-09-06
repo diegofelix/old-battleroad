@@ -3,11 +3,11 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Auth;
 use Input;
-use BaseController;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
-use Champ\Championship\UpdateChampionshipCommand;
 use Champ\Championship\UpdateBannerCommand;
+use Battleroad\Http\Controllers\BaseController;
+use Champ\Championship\UpdateChampionshipCommand;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 class ChampionshipsController extends BaseController
 {

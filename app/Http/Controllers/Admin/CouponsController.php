@@ -1,13 +1,13 @@
 <?php
 namespace Battleroad\Http\Controllers\Admin;
 
-use BaseController;
-use Champ\Championship\Coupons\GenerateCouponCommand;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Championship\Repositories\CouponRepositoryInterface;
-use Champ\Services\KeyGen;
 use Input;
+use Champ\Services\KeyGen;
 use Laracasts\Commander\CommanderTrait;
+use Battleroad\Http\Controllers\BaseController;
+use Champ\Championship\Coupons\GenerateCouponCommand;
+use Champ\Championship\Repositories\CouponRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 class CouponsController extends BaseController
 {

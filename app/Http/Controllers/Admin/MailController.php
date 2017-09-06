@@ -3,11 +3,11 @@ namespace Battleroad\Http\Controllers;
 
 namespace Admin;
 
-use BaseController;
-use Champ\Championship\Mail\CreateCampaignCommand;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 use Input;
 use Laracasts\Commander\CommanderTrait;
+use Battleroad\Http\Controllers\BaseController;
+use Champ\Championship\Mail\CreateCampaignCommand;
+use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
 
 class MailController extends BaseController
 {

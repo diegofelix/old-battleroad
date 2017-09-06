@@ -2,7 +2,7 @@
 namespace Battleroad\Http\Controllers\Admin;
 
 use App;
-use BaseController;
+use Battleroad\Http\Controllers\BaseController;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 
 class CheckinController extends BaseController

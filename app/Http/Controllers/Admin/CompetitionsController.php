@@ -1,9 +1,9 @@
 <?php
 namespace Battleroad\Http\Controllers\Admin;
 
-use BaseController;
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Battleroad\Http\Controllers\BaseController;
 use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepositoryInterface;
 
 class CompetitionsController extends BaseController
 {
