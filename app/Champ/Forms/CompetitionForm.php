@@ -5,7 +5,7 @@ use Laracasts\Validation\FormValidator;
 
 class CompetitionForm extends FormValidator
 {
-    protected $rules => [
+    protected $rules = [
         'game_id' => 'required',
         'platform_id' => 'required',
         'format' => 'required',
