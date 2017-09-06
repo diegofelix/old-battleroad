@@ -15,7 +15,7 @@ class ContextsServiceProvider extends ServiceProvider
                 {
                     return new \Champ\Contexts\UserContext;
                 });
-        
+
                 $this->app->bind('Champ\Contexts\Core\ContextInterface', function($app)
                 {
                     return $app['context'];
