@@ -7,9 +7,6 @@ use Champ\Join\LimitExceededJoinCommand;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Laracasts\Commander\CommanderTrait;
 
-// use Champ\Billing\Moip\MoipBilling;
-//use Champ\Billing\Core\BillingInterface
-
 class EmbededJoinController extends BaseController
 {
     use CommanderTrait;

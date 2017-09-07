@@ -5,9 +5,6 @@ use Input;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 
-// use Champ\Billing\Moip\MoipBilling;
-//use Champ\Billing\Core\BillingInterface
-
 class ChampionshipsController extends BaseController
 {
     /**
