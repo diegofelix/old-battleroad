@@ -2,7 +2,7 @@
 
 use Champ\Championship\Game;
 
-class GameRepository implements GameRepositoryInterface
+class GameRepository
 {
     /**
      * Game Model.

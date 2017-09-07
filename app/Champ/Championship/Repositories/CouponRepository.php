@@ -2,7 +2,7 @@
 
 use Champ\Championship\Coupon;
 
-class CouponRepository implements CouponRepositoryInterface
+class CouponRepository
 {
     public function __construct(Coupon $model)
     {
