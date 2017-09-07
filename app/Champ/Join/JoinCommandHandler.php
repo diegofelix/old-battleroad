@@ -1,6 +1,6 @@
 <?php namespace Champ\Join;
 
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Repositories\ItemRepositoryInterface;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Services\JoinUserService;
@@ -36,7 +36,7 @@ class JoinCommandHandler implements CommandHandler
     public function __construct(
         JoinUserService $joinUserService
         // JoinRepositoryInterface $joinRepo,
-        // CompetitionRepositoryInterface $competitionRepo,
+        // CompetitionRepository $competitionRepo,
         // ItemRepositoryInterface $itemRepo
     ) {
         $this->joinUserService = $joinUserService;
