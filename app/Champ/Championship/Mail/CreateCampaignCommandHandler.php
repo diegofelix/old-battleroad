@@ -3,7 +3,7 @@
 namespace Champ\Championship\Mail;
 
 use Champ\Championship\Campaign;
-use Champ\Championship\Repositories\CampaignRepositoryInterface;
+use Champ\Championship\Repositories\CampaignRepository;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Newsletters\CampaignMaker;
 use Laracasts\Commander\CommandHandler;
@@ -16,7 +16,7 @@ class CreateCampaignCommandHandler implements CommandHandler
     /**
      * Campaign Repository.
      *
-     * @var CampaignRepositoryInterface
+     * @var CampaignRepository
      */
     protected $campaigns;
 
@@ -35,7 +35,7 @@ class CreateCampaignCommandHandler implements CommandHandler
     protected $championships;
 
     public function __construct(
-        CampaignRepositoryInterface $campaigns,
+        CampaignRepository $campaigns,
         CampaignMaker $campaignMaker,
         ChampionshipRepository $championships
     ) {
