@@ -2,7 +2,7 @@
 
 use Champ\Championship\Platform;
 
-class PlatformRepository implements PlatformRepositoryInterface
+class PlatformRepository
 {
     /**
      * Platform Model.

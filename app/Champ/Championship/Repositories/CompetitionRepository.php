@@ -3,7 +3,7 @@
 use Champ\Championship\Competition;
 use Champ\Repositories\Core\AbstractRepository;
 
-class CompetitionRepository extends AbstractRepository implements CompetitionRepositoryInterface
+class CompetitionRepository extends AbstractRepository
 {
     /**
      * inject the model into constructor.

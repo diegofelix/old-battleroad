@@ -12,7 +12,7 @@ use Auth;
 use Config;
 use Log;
 
-class ChampionshipRepository extends AbstractRepository implements ChampionshipRepositoryInterface
+class ChampionshipRepository extends AbstractRepository
 {
     use DispatchableTrait;
 
