@@ -2,18 +2,18 @@
 
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Coupon;
-use Champ\Championship\Repositories\CouponRepositoryInterface;
+use Champ\Championship\Repositories\CouponRepository;
 
 class GenerateCouponCommandHandler implements CommandHandler
 {
     /**
      * Coupon Repository.
      *
-     * @var CouponRepositoryInterface
+     * @var CouponRepository
      */
     protected $couponRepository;
 
-    public function __construct(CouponRepositoryInterface $couponRepository)
+    public function __construct(CouponRepository $couponRepository)
     {
         $this->couponRepository = $couponRepository;
     }

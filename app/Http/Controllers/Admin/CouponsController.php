@@ -6,7 +6,7 @@ use Champ\Services\KeyGen;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Coupons\GenerateCouponCommand;
-use Champ\Championship\Repositories\CouponRepositoryInterface;
+use Champ\Championship\Repositories\CouponRepository;
 use Champ\Championship\Repositories\ChampionshipRepository;
 
 class CouponsController extends BaseController
@@ -30,13 +30,13 @@ class CouponsController extends BaseController
     /**
      * Coupon Repository.
      *
-     * @var CouponRepositoryInterface
+     * @var CouponRepository
      */
     protected $couponRepository;
 
     public function __construct(
         ChampionshipRepository $championshipRepository,
-        CouponRepositoryInterface $couponRepository,
+        CouponRepository $couponRepository,
         KeyGen $keyGen
     ) {
         $this->championshipRepository = $championshipRepository;
