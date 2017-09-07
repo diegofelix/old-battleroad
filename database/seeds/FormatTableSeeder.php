@@ -2,25 +2,24 @@
 
 use Illuminate\Database\Seeder;
 
-class FormatTableSeeder extends Seeder {
-
+class FormatTableSeeder extends Seeder
+{
     public function run()
     {
         DB::table('formats')->insert([
-            'name' => 'Round Robin'
+            'name' => 'Round Robin',
         ]);
 
         DB::table('formats')->insert([
-            'name' => 'Double Elimination'
+            'name' => 'Double Elimination',
         ]);
 
         DB::table('formats')->insert([
-            'name' => 'Single Elimination'
+            'name' => 'Single Elimination',
         ]);
 
         DB::table('formats')->insert([
-            'name' => 'Swiss'
+            'name' => 'Swiss',
         ]);
     }
-
 }
