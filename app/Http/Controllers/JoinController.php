@@ -2,6 +2,8 @@
 
 namespace Battleroad\Http\Controllers;
 
+use Auth;
+use Input;
 use Laracasts\Commander\CommandBus;
 use Champ\Join\Join;
 use Champ\Join\JoinCommand;
@@ -10,7 +12,7 @@ use Champ\Join\Repositories\JoinRepository;
 use Champ\Billing\Core\PaymentListenerInterface;
 use Laracasts\Commander\CommanderTrait;
 
-class JoinController extends BaseController implements PaymentListenerInterface
+class JoinController extends BaseController
 {
     use CommanderTrait;
 

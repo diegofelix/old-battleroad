@@ -1,8 +1,6 @@
 <?php
 
-namespace Battleroad\Http\Controllers;
-
-namespace Admin;
+namespace Battleroad\Http\Controllers\Admin;
 
 use Input;
 use Laracasts\Commander\CommanderTrait;

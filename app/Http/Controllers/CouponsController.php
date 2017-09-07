@@ -2,10 +2,12 @@
 
 namespace Battleroad\Http\Controllers;
 
+use Auth;
+use Input;
+use Champ\Join\ApplyCouponCommand;
 use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
-use Champ\Join\ApplyCouponCommand;
 
 class CouponsController extends BaseController
 {
