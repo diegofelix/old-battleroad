@@ -3,14 +3,14 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepository;
 
 class CompetitionsController extends BaseController
 {
     /**
      * Competition Repository.
      *
-     * @var Champ\Championship\Repositories\CompetitionRepositoryInterface
+     * @var Champ\Championship\Repositories\CompetitionRepository
      */
     protected $competitionRepository;
 
@@ -22,7 +22,7 @@ class CompetitionsController extends BaseController
     protected $joinRepository;
 
     public function __construct(
-        CompetitionRepositoryInterface $competitionRepository,
+        CompetitionRepository $competitionRepository,
         JoinRepositoryInterface $joinRepository
     ) {
         $this->competitionRepository = $competitionRepository;

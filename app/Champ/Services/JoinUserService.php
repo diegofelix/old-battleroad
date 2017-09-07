@@ -1,7 +1,7 @@
 <?php
 namespace Champ\Services;
 
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
@@ -23,7 +23,7 @@ class JoinUserService
 
     public function __construct(
         JoinRepositoryInterface $joins,
-        CompetitionRepositoryInterface $competitions,
+        CompetitionRepository $competitions,
         ItemRepositoryInterface $items
     ) {
         $this->joins = $joins;
