@@ -1,7 +1,7 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\EmbededJoinCommand;
 use Champ\Join\LimitExceededJoinCommand;
 use Champ\Join\Repositories\JoinRepositoryInterface;
@@ -17,7 +17,7 @@ class EmbededJoinController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $champRepo;
 
@@ -29,7 +29,7 @@ class EmbededJoinController extends BaseController
     protected $joinRepository;
 
     public function __construct(
-        ChampionshipRepositoryInterface $champRepo,
+        ChampionshipRepository $champRepo,
         JoinRepositoryInterface $joinRepository
     ) {
         $this->champRepo = $champRepo;

@@ -1,7 +1,7 @@
 <?php namespace Champ\Championship;
 
 use Laracasts\Commander\CommandHandler;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 
 class UpdateChampionshipCommandHandler implements CommandHandler
 {
@@ -10,7 +10,7 @@ class UpdateChampionshipCommandHandler implements CommandHandler
      */
     protected $repository;
 
-    public function __construct(ChampionshipRepositoryInterface $repository)
+    public function __construct(ChampionshipRepository $repository)
     {
         $this->repository = $repository;
     }

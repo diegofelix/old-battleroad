@@ -7,7 +7,7 @@ use Input;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Mail\CreateCampaignCommand;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 
 class MailController extends BaseController
 {
@@ -16,11 +16,11 @@ class MailController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $championshipRepository;
 
-    public function __construct(ChampionshipRepositoryInterface $championshipRepository)
+    public function __construct(ChampionshipRepository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
     }
