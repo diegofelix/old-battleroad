@@ -1,4 +1,0 @@
-<figure>
-    <?php echo HTML::image($championship->image); ?>
-
-</figure>

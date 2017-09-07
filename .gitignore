@@ -1,12 +1,7 @@
 /vendor
 /node_modules
 composer.phar
-composer.lock
-.env.local.php
-.env.php
 .DS_Store
 Thumbs.db
 .fuse_hidden*
-champaholic.sublime-project
-champaholic.sublime-workspace
 .env

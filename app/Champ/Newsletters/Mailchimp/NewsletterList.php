@@ -7,10 +7,6 @@ use Mailchimp;
 
 class NewsletterList implements NewsletterListInterface
 {
-    protected $lists = [
-        'championshipsSubscribers' => '4d9ee789f6',
-    ];
-
     /**
      * Mailchimp.
      *
@@ -54,7 +50,7 @@ class NewsletterList implements NewsletterListInterface
     public function unsubscribeFrom($listName, $email)
     {
         return $this->mailchimp->lists->unsubscribe(
-            $this->lists[$listName],
+            getenv('CHAMPIONSHIPS_SUBSCRIBERS_LIST'),
             compact('email'),
             false, // delete the member permanently
             false, // send goodby email,
