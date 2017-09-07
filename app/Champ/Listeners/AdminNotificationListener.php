@@ -1,7 +1,7 @@
 <?php namespace Champ\Listeners;
 
 use Laracasts\Commander\Events\EventListener;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Championship\Events\ChampionshipPublished;
 use Champ\Championship\Events\ChampionshipFinished;
 use Config;
@@ -12,16 +12,16 @@ class AdminNotificationListener extends EventListener
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     /**
      * Constructor.
      *
-     * @param JoinRepositoryInterface $joinRepository
+     * @param JoinRepository $joinRepository
      */
-    public function __construct(JoinRepositoryInterface $joinRepository)
+    public function __construct(JoinRepository $joinRepository)
     {
         $this->joinRepository = $joinRepository;
     }

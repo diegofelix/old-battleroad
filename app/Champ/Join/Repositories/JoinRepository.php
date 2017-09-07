@@ -3,7 +3,7 @@
 use Champ\Join\Join;
 use Champ\Repositories\Core\AbstractRepository;
 
-class JoinRepository extends AbstractRepository implements JoinRepositoryInterface
+class JoinRepository extends AbstractRepository
 {
     /**
      * inject the model into constructor.

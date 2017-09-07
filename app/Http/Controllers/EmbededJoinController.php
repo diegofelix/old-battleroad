@@ -4,7 +4,7 @@ namespace Battleroad\Http\Controllers;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\EmbededJoinCommand;
 use Champ\Join\LimitExceededJoinCommand;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Laracasts\Commander\CommanderTrait;
 
 class EmbededJoinController extends BaseController
@@ -21,13 +21,13 @@ class EmbededJoinController extends BaseController
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     public function __construct(
         ChampionshipRepository $champRepo,
-        JoinRepositoryInterface $joinRepository
+        JoinRepository $joinRepository
     ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;

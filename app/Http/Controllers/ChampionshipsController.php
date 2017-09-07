@@ -3,7 +3,7 @@ namespace Battleroad\Http\Controllers;
 
 use Input;
 use Champ\Championship\Repositories\ChampionshipRepository;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 
 class ChampionshipsController extends BaseController
 {
@@ -17,7 +17,7 @@ class ChampionshipsController extends BaseController
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
@@ -30,7 +30,7 @@ class ChampionshipsController extends BaseController
 
     public function __construct(
         ChampionshipRepository $champRepo,
-        JoinRepositoryInterface $joinRepository
+        JoinRepository $joinRepository
         // MoipBilling $billing
     ) {
         $this->champRepo = $champRepo;

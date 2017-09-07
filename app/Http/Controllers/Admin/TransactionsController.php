@@ -3,7 +3,7 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Billing\Contracts\TransactionService;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 
 class TransactionsController extends BaseController
 {
@@ -17,13 +17,13 @@ class TransactionsController extends BaseController
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     public function __construct(
         TransactionService $transactionService,
-        JoinRepositoryInterface $joinRepository
+        JoinRepository $joinRepository
     ) {
         $this->transactionService = $transactionService;
         $this->joinRepository = $joinRepository;

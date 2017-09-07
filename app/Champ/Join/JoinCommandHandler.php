@@ -2,7 +2,7 @@
 
 use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Repositories\ItemRepository;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Services\JoinUserService;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
@@ -35,7 +35,7 @@ class JoinCommandHandler implements CommandHandler
 
     public function __construct(
         JoinUserService $joinUserService
-        // JoinRepositoryInterface $joinRepo,
+        // JoinRepository $joinRepo,
         // CompetitionRepository $competitionRepo,
         // ItemRepository $itemRepo
     ) {
