@@ -3,7 +3,7 @@
 use Champ\Join\WaitingList;
 use Champ\Repositories\Core\AbstractRepository;
 
-class WaitingListRepository extends AbstractRepository implements WaitingListRepositoryInterface
+class WaitingListRepository extends AbstractRepository
 {
     /**
      * inject the model into constructor.
