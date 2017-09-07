@@ -12,7 +12,7 @@ class ProfileController extends BaseController
     /**
      * Profile Repository.
      *
-     * @var Champ\Repositories\ProfileRepositoryInterface
+     * @var Champ\Repositories\UserRepository
      */
     protected $userRepo;
 
