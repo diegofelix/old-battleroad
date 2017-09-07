@@ -2,7 +2,7 @@
 namespace Battleroad\Http\Controllers;
 
 use Champ\Social\SocialAuthenticatorListenerInterface;
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 use Champ\Social\SocialFactory;
 use Laracasts\Commander\Events\DispatchableTrait;
 
@@ -11,7 +11,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     /**
      * User Repository.
      *
-     * @var Champ\Account\Repositories\UserRepositoryInterface
+     * @var Champ\Account\Repositories\UserRepository
      */
     protected $userRepo;
 
@@ -25,7 +25,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     use DispatchableTrait;
 
     public function __construct(
-        UserRepositoryInterface $user,
+        UserRepository $user,
         SocialFactory $social)
     {
         $this->userRepo = $user;

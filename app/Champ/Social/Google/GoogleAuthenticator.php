@@ -1,6 +1,6 @@
 <?php namespace Champ\Social\Google;
 
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 use Champ\Social\SocialAuthenticator;
 
 class GoogleAuthenticator extends SocialAuthenticator
@@ -9,7 +9,7 @@ class GoogleAuthenticator extends SocialAuthenticator
      * Inject the Google data reader and the User Repository.
      */
     public function __construct(
-        UserRepositoryInterface $user,
+        UserRepository $user,
         GoogleDataReader $reader
     ) {
         $this->user = $user;

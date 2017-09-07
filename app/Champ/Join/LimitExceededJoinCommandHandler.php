@@ -2,7 +2,7 @@
 
 namespace Champ\Join;
 
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\WaitingListRepositoryInterface;
@@ -39,7 +39,7 @@ class LimitExceededJoinCommandHandler implements CommandHandler
      * Constructor.
      *
      * @param ChampionshipRepository $championshipRepository
-     * @param UserRepositoryInterface         $userRepository
+     * @param UserRepository         $userRepository
      */
     public function __construct(
         ChampionshipRepository $championshipRepository,

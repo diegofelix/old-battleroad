@@ -47,7 +47,7 @@ class EmbededJoinCommandHandler implements CommandHandler
      *
      * @param JoinRepositoryInterface         $joinRepository
      * @param ChampionshipRepository $championshipRepository
-     * @param UserRepositoryInterface         $userRepository
+     * @param UserRepository         $userRepository
      */
     public function __construct(
         JoinRepositoryInterface $joinRepository,
