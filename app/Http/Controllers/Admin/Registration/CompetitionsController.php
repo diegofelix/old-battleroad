@@ -5,7 +5,7 @@ use Input;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Championship\Repositories\GameRepository;
 use Champ\Championship\Repositories\FormatRepository;
-use Champ\Championship\Repositories\PlatformRepositoryInterface;
+use Champ\Championship\Repositories\PlatformRepository;
 
 class CompetitionsController extends BaseRegistrationController
 {
@@ -27,7 +27,7 @@ class CompetitionsController extends BaseRegistrationController
         ChampionshipRepository $champRepo,
         GameRepository $gameRepo,
         FormatRepository $formatRepo,
-        PlatformRepositoryInterface $platformRepo
+        PlatformRepository $platformRepo
     ) {
         $this->champRepo = $champRepo;
         $this->gameRepo = $gameRepo;
