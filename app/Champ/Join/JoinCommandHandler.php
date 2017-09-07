@@ -1,7 +1,7 @@
 <?php namespace Champ\Join;
 
 use Champ\Championship\Repositories\CompetitionRepository;
-use Champ\Join\Repositories\ItemRepositoryInterface;
+use Champ\Join\Repositories\ItemRepository;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Services\JoinUserService;
 use Laracasts\Commander\CommandHandler;
@@ -37,7 +37,7 @@ class JoinCommandHandler implements CommandHandler
         JoinUserService $joinUserService
         // JoinRepositoryInterface $joinRepo,
         // CompetitionRepository $competitionRepo,
-        // ItemRepositoryInterface $itemRepo
+        // ItemRepository $itemRepo
     ) {
         $this->joinUserService = $joinUserService;
         // $this->JoinRepo         = $joinRepo;

@@ -1,9 +1,10 @@
-<?php namespace Champ\Join\Repositories;
+<?php
+namespace Champ\Join\Repositories;
 
 use Champ\Join\Item;
 use Champ\Repositories\Core\AbstractRepository;
 
-class ItemRepository extends AbstractRepository implements ItemRepositoryInterface
+class ItemRepository extends AbstractRepository
 {
     /**
      * inject the model into constructor.

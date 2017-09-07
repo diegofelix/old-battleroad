@@ -5,7 +5,7 @@ use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
-use Champ\Join\Repositories\ItemRepositoryInterface;
+use Champ\Join\Repositories\ItemRepository;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Join\Status;
 use Champ\Join\UserAlreadyJoinedException;
@@ -24,7 +24,7 @@ class JoinUserService
     public function __construct(
         JoinRepositoryInterface $joins,
         CompetitionRepository $competitions,
-        ItemRepositoryInterface $items
+        ItemRepository $items
     ) {
         $this->joins = $joins;
         $this->competitions = $competitions;
