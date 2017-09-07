@@ -150,7 +150,6 @@ return [
         Champ\Providers\BillingServiceProvider::class,
         Champ\Providers\ContextsServiceProvider::class,
         Champ\Providers\EventingServiceProvider::class,
-        Champ\Providers\JoinServiceProvider::class,
         Champ\Providers\NewsletterListServiceProvider::class,
         Champ\Providers\NotificationsServiceProvider::class,
         Champ\Providers\ValidationServiceProvider::class,
