@@ -3,18 +3,18 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use App;
 use Battleroad\Http\Controllers\BaseController;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 
 class CheckinController extends BaseController
 {
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepositoryInterface
+     * @var Champ\Join\Repositories\JoinRepository
      */
     protected $joinRepository;
 
-    public function __construct(JoinRepositoryInterface $joinRepository)
+    public function __construct(JoinRepository $joinRepository)
     {
         $this->joinRepository = $joinRepository;
     }

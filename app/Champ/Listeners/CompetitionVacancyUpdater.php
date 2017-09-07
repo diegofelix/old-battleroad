@@ -3,13 +3,13 @@
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
 use Champ\Join\Events\JoinCancelled;
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepository;
 
 class CompetitionVacancyUpdater extends EventListener
 {
     protected $competitionRepository;
 
-    public function __construct(CompetitionRepositoryInterface $competitionRepository)
+    public function __construct(CompetitionRepository $competitionRepository)
     {
         $this->competitionRepository = $competitionRepository;
     }

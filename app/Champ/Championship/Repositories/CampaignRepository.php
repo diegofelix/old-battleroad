@@ -4,7 +4,7 @@ namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Campaign;
 
-class CampaignRepository implements CampaignRepositoryInterface
+class CampaignRepository
 {
     public function __construct(Campaign $model)
     {

@@ -1,12 +1,12 @@
 <?php
 namespace Champ\Services;
 
-use Champ\Championship\Repositories\CompetitionRepositoryInterface;
+use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
-use Champ\Join\Repositories\ItemRepositoryInterface;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\ItemRepository;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Join\Status;
 use Champ\Join\UserAlreadyJoinedException;
 
@@ -22,9 +22,9 @@ class JoinUserService
     protected $players;
 
     public function __construct(
-        JoinRepositoryInterface $joins,
-        CompetitionRepositoryInterface $competitions,
-        ItemRepositoryInterface $items
+        JoinRepository $joins,
+        CompetitionRepository $competitions,
+        ItemRepository $items
     ) {
         $this->joins = $joins;
         $this->competitions = $competitions;

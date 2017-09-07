@@ -1,14 +1,11 @@
 <?php
 namespace Battleroad\Http\Controllers;
 
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\EmbededJoinCommand;
 use Champ\Join\LimitExceededJoinCommand;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Laracasts\Commander\CommanderTrait;
-
-// use Champ\Billing\Moip\MoipBilling;
-//use Champ\Billing\Core\BillingInterface
 
 class EmbededJoinController extends BaseController
 {
@@ -17,20 +14,20 @@ class EmbededJoinController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $champRepo;
 
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     public function __construct(
-        ChampionshipRepositoryInterface $champRepo,
-        JoinRepositoryInterface $joinRepository
+        ChampionshipRepository $champRepo,
+        JoinRepository $joinRepository
     ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;

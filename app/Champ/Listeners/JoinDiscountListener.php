@@ -2,8 +2,8 @@
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Championship\Events\CouponWasApplied;
-use Champ\Join\Repositories\JoinRepositoryInterface;
-use Champ\Join\Repositories\ItemRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
+use Champ\Join\Repositories\ItemRepository;
 use Champ\Join\Status;
 
 class JoinDiscountListener extends EventListener
@@ -11,25 +11,25 @@ class JoinDiscountListener extends EventListener
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     /**
      * Item Repository.
      *
-     * @var ItemRepositoryInterface
+     * @var ItemRepository
      */
     protected $itemRepository;
 
     /**
      * Constructor.
      *
-     * @param JoinRepositoryInterface $joinRepository
+     * @param JoinRepository $joinRepository
      */
     public function __construct(
-        JoinRepositoryInterface $joinRepository,
-        ItemRepositoryInterface $itemRepository
+        JoinRepository $joinRepository,
+        ItemRepository $itemRepository
     ) {
         $this->joinRepository = $joinRepository;
         $this->itemRepository = $itemRepository;

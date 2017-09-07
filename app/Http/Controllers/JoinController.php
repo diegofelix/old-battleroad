@@ -4,10 +4,9 @@ namespace Battleroad\Http\Controllers;
 use Laracasts\Commander\CommandBus;
 use Champ\Join\Join;
 use Champ\Join\JoinCommand;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Billing\Core\PaymentListenerInterface;
-// use Champ\Billing\Core\BillingInterface;
 use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController implements PaymentListenerInterface
@@ -17,14 +16,14 @@ class JoinController extends BaseController implements PaymentListenerInterface
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $champRepo;
 
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepositoryInterface
+     * @var Champ\Join\Repositories\JoinRepository
      */
     protected $joinRepository;
 
@@ -35,23 +34,14 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     protected $commandBus;
 
-    /**
-     * BillingInterface Billing.
-     *
-     * @var BillingInterface
-     */
-    protected $billing;
-
     public function __construct(
-        ChampionshipRepositoryInterface $champRepo,
-        JoinRepositoryInterface $joinRepository,
-        CommandBus $commandBus/*,
-        BillingInterface $billing*/
+        ChampionshipRepository $champRepo,
+        JoinRepository $joinRepository,
+        CommandBus $commandBus,
     ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
-        // $this->billing = $billing;
     }
 
     /**

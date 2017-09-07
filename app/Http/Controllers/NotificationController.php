@@ -2,7 +2,7 @@
 namespace Battleroad\Http\Controllers;
 
 use Champ\Join\Join;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Join\UpdateJoinCommand;
 use Champ\Join\JoinStatusChangedCommand;
 use Laracasts\Commander\CommanderTrait;
@@ -30,11 +30,11 @@ class NotificationController extends BaseController
     /**
      * Join repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
-    public function __construct(JoinRepositoryInterface $joinRepository)
+    public function __construct(JoinRepository $joinRepository)
     {
         $this->joinRepository = $joinRepository;
     }

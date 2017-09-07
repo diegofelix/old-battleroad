@@ -2,7 +2,7 @@
 
 use Champ\Championship\Format;
 
-class FormatRepository implements FormatRepositoryInterface
+class FormatRepository
 {
     /**
      * Format Model.

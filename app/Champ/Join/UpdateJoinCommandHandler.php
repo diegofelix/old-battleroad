@@ -2,7 +2,7 @@
 
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Billing\Pagseguro\NotificationHandler;
 
 class UpdateJoinCommandHandler implements CommandHandler
@@ -20,7 +20,7 @@ class UpdateJoinCommandHandler implements CommandHandler
     use DispatchableTrait;
 
     public function __construct(
-        JoinRepositoryInterface $joinRepository,
+        JoinRepository $joinRepository,
         NotificationHandler $notificationHandler
     ) {
         $this->joinRepository = $joinRepository;

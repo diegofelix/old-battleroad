@@ -2,7 +2,7 @@
 
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Championship\Repositories\CouponRepositoryInterface;
+use Champ\Championship\Repositories\CouponRepository;
 use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 
@@ -15,7 +15,7 @@ class ApplyCouponCommandHandler implements CommandHandler
 
     use DispatchableTrait;
 
-    public function __construct(CouponRepositoryInterface $couponRepository)
+    public function __construct(CouponRepository $couponRepository)
     {
         $this->couponRepository = $couponRepository;
     }

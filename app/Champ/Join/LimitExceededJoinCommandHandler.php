@@ -2,10 +2,10 @@
 
 namespace Champ\Join;
 
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
-use Champ\Join\Repositories\WaitingListRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Join\Repositories\WaitingListRepository;
 use Champ\Services\RegisterUser;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
@@ -15,14 +15,14 @@ class LimitExceededJoinCommandHandler implements CommandHandler
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $championshipRepository;
 
     /**
      * Waiting List Repository.
      *
-     * @var Champ\Join\Repositories\WaitingListRepositoryInterface
+     * @var Champ\Join\Repositories\WaitingListRepository
      */
     protected $waitingList;
 
@@ -38,12 +38,12 @@ class LimitExceededJoinCommandHandler implements CommandHandler
     /**
      * Constructor.
      *
-     * @param ChampionshipRepositoryInterface $championshipRepository
-     * @param UserRepositoryInterface         $userRepository
+     * @param ChampionshipRepository $championshipRepository
+     * @param UserRepository         $userRepository
      */
     public function __construct(
-        ChampionshipRepositoryInterface $championshipRepository,
-        WaitingListRepositoryInterface $waitingList,
+        ChampionshipRepository $championshipRepository,
+        WaitingListRepository $waitingList,
         RegisterUser $userService
     ) {
         $this->championshipRepository = $championshipRepository;

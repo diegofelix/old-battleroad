@@ -6,7 +6,7 @@ use Champ\Account\Profile;
 use Champ\Validators\UserValidator;
 use Hash;
 
-class UserRepository extends AbstractRepository implements UserRepositoryInterface
+class UserRepository extends AbstractRepository
 {
     /**
      * User model.
