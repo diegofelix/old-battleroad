@@ -2,7 +2,7 @@
 namespace Battleroad\Http\Controllers;
 
 use Input;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 
 // use Champ\Billing\Moip\MoipBilling;
@@ -13,7 +13,7 @@ class ChampionshipsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $champRepo;
 
@@ -32,7 +32,7 @@ class ChampionshipsController extends BaseController
     protected $billing;
 
     public function __construct(
-        ChampionshipRepositoryInterface $champRepo,
+        ChampionshipRepository $champRepo,
         JoinRepositoryInterface $joinRepository
         // MoipBilling $billing
     ) {

@@ -7,7 +7,7 @@ use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Coupons\GenerateCouponCommand;
 use Champ\Championship\Repositories\CouponRepositoryInterface;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 
 class CouponsController extends BaseController
 {
@@ -23,7 +23,7 @@ class CouponsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $championshipRepository;
 
@@ -35,7 +35,7 @@ class CouponsController extends BaseController
     protected $couponRepository;
 
     public function __construct(
-        ChampionshipRepositoryInterface $championshipRepository,
+        ChampionshipRepository $championshipRepository,
         CouponRepositoryInterface $couponRepository,
         KeyGen $keyGen
     ) {

@@ -2,13 +2,13 @@
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 
 class ChampionshipVacancyUpdater extends EventListener
 {
     protected $championshipRepository;
 
-    public function __construct(ChampionshipRepositoryInterface $championshipRepository)
+    public function __construct(ChampionshipRepository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
     }

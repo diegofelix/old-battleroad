@@ -3,7 +3,7 @@
 namespace Champ\Listeners;
 
 use Champ\Championship\Events\ChampionshipPublished;
-use Champ\Championship\Repositories\ChampionshipRepositoryInterface;
+use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Events\UserJoined;
 use Champ\Newsletters\ChampionshipSegment;
 use Illuminate\Support\Str;
@@ -21,7 +21,7 @@ class ChampionshipNewsletter extends EventListener
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepositoryInterface
+     * @var Champ\Championship\Repositories\ChampionshipRepository
      */
     protected $championships;
 
@@ -32,7 +32,7 @@ class ChampionshipNewsletter extends EventListener
      */
     public function __construct(
         ChampionshipSegment $newsletter,
-        ChampionshipRepositoryInterface $championships
+        ChampionshipRepository $championships
     ) {
         $this->newsletter = $newsletter;
         $this->championships = $championships;
