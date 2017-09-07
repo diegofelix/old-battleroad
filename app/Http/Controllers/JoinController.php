@@ -9,7 +9,6 @@ use Champ\Join\Join;
 use Champ\Join\JoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepository;
-use Champ\Billing\Core\PaymentListenerInterface;
 use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController
