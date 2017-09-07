@@ -37,7 +37,7 @@ class JoinController extends BaseController implements PaymentListenerInterface
     public function __construct(
         ChampionshipRepository $champRepo,
         JoinRepository $joinRepository,
-        CommandBus $commandBus,
+        CommandBus $commandBus
     ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
