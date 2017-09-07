@@ -1,6 +1,6 @@
 <?php namespace Champ\Filters;
 
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Request;
 use Auth;
 use App;
@@ -10,16 +10,16 @@ class JoinOwner
     /**
      * Join Repository.
      *
-     * @var JoinRepositoryInterface
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     /**
      * Constructor.
      *
-     * @param JoinRepositoryInterface $joinRepository
+     * @param JoinRepository $joinRepository
      */
-    public function __construct(JoinRepositoryInterface $joinRepository)
+    public function __construct(JoinRepository $joinRepository)
     {
         $this->joinRepository = $joinRepository;
     }

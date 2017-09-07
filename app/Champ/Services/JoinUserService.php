@@ -6,7 +6,7 @@ use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
 use Champ\Join\Repositories\ItemRepository;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Join\Status;
 use Champ\Join\UserAlreadyJoinedException;
 
@@ -22,7 +22,7 @@ class JoinUserService
     protected $players;
 
     public function __construct(
-        JoinRepositoryInterface $joins,
+        JoinRepository $joins,
         CompetitionRepository $competitions,
         ItemRepository $items
     ) {

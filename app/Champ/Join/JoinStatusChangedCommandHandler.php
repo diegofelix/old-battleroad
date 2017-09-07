@@ -2,7 +2,7 @@
 
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 
 class JoinStatusChangedCommandHandler implements CommandHandler
 {
@@ -13,7 +13,7 @@ class JoinStatusChangedCommandHandler implements CommandHandler
 
     use DispatchableTrait;
 
-    public function __construct(JoinRepositoryInterface $joinRepository)
+    public function __construct(JoinRepository $joinRepository)
     {
         $this->joinRepository = $joinRepository;
     }

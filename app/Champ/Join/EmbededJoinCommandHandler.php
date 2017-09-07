@@ -4,7 +4,7 @@ namespace Champ\Join;
 
 use Champ\Account\User;
 use Champ\Championship\Repositories\ChampionshipRepository;
-use Champ\Join\Repositories\JoinRepositoryInterface;
+use Champ\Join\Repositories\JoinRepository;
 use Champ\Services\JoinUserService;
 use Champ\Services\RegisterUser;
 use Laracasts\Commander\CommandHandler;
@@ -15,7 +15,7 @@ class EmbededJoinCommandHandler implements CommandHandler
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepositoryInterface
+     * @var Champ\Join\Repositories\JoinRepository
      */
     protected $joinRepository;
 
@@ -45,12 +45,12 @@ class EmbededJoinCommandHandler implements CommandHandler
     /**
      * Constructor.
      *
-     * @param JoinRepositoryInterface         $joinRepository
+     * @param JoinRepository         $joinRepository
      * @param ChampionshipRepository $championshipRepository
      * @param UserRepository         $userRepository
      */
     public function __construct(
-        JoinRepositoryInterface $joinRepository,
+        JoinRepository $joinRepository,
         ChampionshipRepository $championshipRepository,
         JoinUserService $joinUserService,
         RegisterUser $userService
