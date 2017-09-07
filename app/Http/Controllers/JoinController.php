@@ -7,7 +7,6 @@ use Champ\Join\JoinCommand;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepositoryInterface;
 use Champ\Billing\Core\PaymentListenerInterface;
-// use Champ\Billing\Core\BillingInterface;
 use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController implements PaymentListenerInterface
@@ -35,23 +34,14 @@ class JoinController extends BaseController implements PaymentListenerInterface
      */
     protected $commandBus;
 
-    /**
-     * BillingInterface Billing.
-     *
-     * @var BillingInterface
-     */
-    protected $billing;
-
     public function __construct(
         ChampionshipRepository $champRepo,
         JoinRepositoryInterface $joinRepository,
-        CommandBus $commandBus/*,
-        BillingInterface $billing*/
+        CommandBus $commandBus,
     ) {
         $this->champRepo = $champRepo;
         $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
-        // $this->billing = $billing;
     }
 
     /**
