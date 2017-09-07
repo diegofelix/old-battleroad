@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship;
+<?php
+
+namespace Champ\Championship;
 
 use Champ\Forms\ChampionshipBannerForm;
 

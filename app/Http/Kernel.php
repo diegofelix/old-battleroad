@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Http;
+<?php
+
+namespace Battleroad\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 

@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Providers;
+<?php
+
+namespace Battleroad\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

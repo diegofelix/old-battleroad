@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Forms;
 
 use Laracasts\Validation\FormValidator;

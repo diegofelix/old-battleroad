@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Providers;
+<?php
+
+namespace Battleroad\Providers;
 
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;

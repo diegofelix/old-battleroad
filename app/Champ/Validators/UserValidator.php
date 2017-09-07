@@ -1,4 +1,6 @@
-<?php namespace Champ\Validators;
+<?php
+
+namespace Champ\Validators;
 
 use Champ\Validators\Core\AbstractValidator;
 use Champ\Validators\Core\ValidableInterface;

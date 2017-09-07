@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Registration;
+<?php
+
+namespace Champ\Championship\Registration;
 
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Championship;

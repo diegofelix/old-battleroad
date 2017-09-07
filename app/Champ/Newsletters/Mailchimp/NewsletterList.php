@@ -1,4 +1,6 @@
-<?php namespace Champ\Newsletters\Mailchimp;
+<?php
+
+namespace Champ\Newsletters\Mailchimp;
 
 use Champ\Newsletters\NewsletterList as NewsletterListInterface;
 use Mailchimp;

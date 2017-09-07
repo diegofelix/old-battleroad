@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Http\Middleware;
+<?php
+
+namespace Battleroad\Http\Middleware;
 
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;

@@ -1,4 +1,6 @@
-<?php namespace Champ\Social\Google;
+<?php
+
+namespace Champ\Social\Google;
 
 class GoogleDataFormatter
 {

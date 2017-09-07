@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesCommands;

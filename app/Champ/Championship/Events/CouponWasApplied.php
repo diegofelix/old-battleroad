@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Events;
+<?php
+
+namespace Champ\Championship\Events;
 
 use Champ\Championship\Coupon;
 

@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Coupons;
+<?php
+
+namespace Champ\Championship\Coupons;
 
 use Champ\Forms\CreateCouponForm;
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Controllers;
 
 class PagesController extends BaseController

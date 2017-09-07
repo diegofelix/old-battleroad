@@ -1,4 +1,6 @@
-<?php namespace Champ\Billing\Bcash;
+<?php
+
+namespace Champ\Billing\Bcash;
 
 use Champ\Billing\Contracts\TransactionDataFormatter;
 use Champ\Billing\Contracts\TransactionService;

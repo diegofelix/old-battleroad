@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Http\Requests;
+<?php
+
+namespace Battleroad\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 

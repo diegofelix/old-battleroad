@@ -1,4 +1,6 @@
-<?php namespace Champ\Traits;
+<?php
+
+namespace Champ\Traits;
 
 trait UserPrice
 {

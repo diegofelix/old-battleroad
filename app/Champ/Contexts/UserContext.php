@@ -1,4 +1,6 @@
-<?php namespace Champ\Contexts;
+<?php
+
+namespace Champ\Contexts;
 
 use Illuminate\Database\Eloquent\Model;
 use Champ\Contexts\Core\ContextInterface;

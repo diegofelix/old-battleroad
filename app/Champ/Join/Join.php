@@ -1,4 +1,6 @@
-<?php namespace Champ\Join;
+<?php
+
+namespace Champ\Join;
 
 use Carbon\Carbon;
 use Champ\Join\Events\JoinApproved;

@@ -1,4 +1,6 @@
-<?php namespace Champ\Newsletters;
+<?php
+
+namespace Champ\Newsletters;
 
 interface NewsletterList
 {

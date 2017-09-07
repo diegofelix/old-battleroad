@@ -1,4 +1,6 @@
-<?php namespace Champ\Presenters;
+<?php
+
+namespace Champ\Presenters;
 
 use Laracasts\Presenter\Presenter;
 

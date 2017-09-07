@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Repositories;
+<?php
+
+namespace Champ\Championship\Repositories;
 
 use Champ\Championship\Platform;
 

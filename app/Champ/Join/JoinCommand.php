@@ -1,4 +1,6 @@
-<?php namespace Champ\Join;
+<?php
+
+namespace Champ\Join;
 
 use Champ\Account\User;
 use Champ\Championship\Championship;

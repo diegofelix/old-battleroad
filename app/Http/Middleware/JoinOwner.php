@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Middleware;
 
 use Champ\Join\Repositories\JoinRepository;

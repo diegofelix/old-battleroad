@@ -1,4 +1,6 @@
-<?php namespace Champ\Join\Repositories;
+<?php
+
+namespace Champ\Join\Repositories;
 
 use Champ\Join\Join;
 use Champ\Repositories\Core\AbstractRepository;

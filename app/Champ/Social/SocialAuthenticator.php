@@ -1,4 +1,6 @@
-<?php namespace Champ\Social;
+<?php
+
+namespace Champ\Social;
 
 use Champ\Account\Repositories\UserRepository;
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Auth;

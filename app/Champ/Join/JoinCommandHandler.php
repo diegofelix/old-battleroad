@@ -1,4 +1,6 @@
-<?php namespace Champ\Join;
+<?php
+
+namespace Champ\Join;
 
 use Champ\Championship\Repositories\CompetitionRepository;
 use Champ\Join\Repositories\ItemRepository;

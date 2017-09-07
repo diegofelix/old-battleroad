@@ -1,4 +1,6 @@
-<?php namespace Champ\Validation;
+<?php
+
+namespace Champ\Validation;
 
 use Illuminate\Validation\Validator;
 use InvalidArgumentException;

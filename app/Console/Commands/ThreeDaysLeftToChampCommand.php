@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Console\Commands;
 
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;

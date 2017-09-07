@@ -1,4 +1,6 @@
-<?php namespace Champ\Social\Google;
+<?php
+
+namespace Champ\Social\Google;
 
 use OAuth;
 use Champ\Social\SocialDataReaderInterface;

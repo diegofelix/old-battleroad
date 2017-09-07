@@ -1,4 +1,6 @@
-<?php namespace Champ\Account\Events;
+<?php
+
+namespace Champ\Account\Events;
 
 use Champ\Account\Profile;
 

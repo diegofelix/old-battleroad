@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Controllers\Auth;
 
 use Battleroad\Http\Controllers\Controller;

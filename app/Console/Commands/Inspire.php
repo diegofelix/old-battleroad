@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Console\Commands;
+<?php
+
+namespace Battleroad\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

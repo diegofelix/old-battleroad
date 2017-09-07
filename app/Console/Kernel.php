@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Console;
+<?php
+
+namespace Battleroad\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;

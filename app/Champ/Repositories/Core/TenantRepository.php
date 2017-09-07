@@ -1,4 +1,6 @@
-<?php namespace Champ\Repositories\Core;
+<?php
+
+namespace Champ\Repositories\Core;
 
 class TenantRepository extends AbstractRepository
 {

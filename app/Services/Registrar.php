@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Services;
+<?php
+
+namespace Battleroad\Services;
 
 use Battleroad\User;
 use Validator;

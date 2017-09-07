@@ -1,4 +1,6 @@
-<?php namespace Champ\Repositories\Core;
+<?php
+
+namespace Champ\Repositories\Core;
 
 abstract class AbstractRepository
 {

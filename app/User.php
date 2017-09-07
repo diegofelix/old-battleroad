@@ -1,4 +1,6 @@
-<?php namespace Battleroad;
+<?php
+
+namespace Battleroad;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

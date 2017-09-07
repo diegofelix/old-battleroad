@@ -1,4 +1,6 @@
-<?php namespace Champ\Social;
+<?php
+
+namespace Champ\Social;
 
 interface SocialAuthenticatorListenerInterface
 {

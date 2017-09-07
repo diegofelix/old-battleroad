@@ -1,4 +1,6 @@
-<?php namespace Champ\Providers;
+<?php
+
+namespace Champ\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

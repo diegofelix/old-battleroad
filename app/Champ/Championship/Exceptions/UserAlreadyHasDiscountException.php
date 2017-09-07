@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Exceptions;
+<?php
+
+namespace Champ\Championship\Exceptions;
 
 use Exception;
 

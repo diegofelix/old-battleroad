@@ -1,4 +1,6 @@
-<?php namespace Champ\Listeners;
+<?php
+
+namespace Champ\Listeners;
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Repositories\JoinRepository;

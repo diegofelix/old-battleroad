@@ -1,4 +1,6 @@
-<?php namespace Champ\Social\Facebook;
+<?php
+
+namespace Champ\Social\Facebook;
 
 use Champ\Account\Repositories\UserRepository;
 use Champ\Social\SocialAuthenticator;

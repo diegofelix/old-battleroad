@@ -1,4 +1,6 @@
-<?php namespace Champ\Presenters;
+<?php
+
+namespace Champ\Presenters;
 
 use Carbon\Carbon;
 use Champ\Championship\Championship;

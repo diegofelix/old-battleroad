@@ -1,4 +1,6 @@
-<?php namespace Champ\Join;
+<?php
+
+namespace Champ\Join;
 
 use Eloquent;
 use Laracasts\Presenter\PresentableTrait;

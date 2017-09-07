@@ -1,4 +1,6 @@
-<?php namespace Champ\Join;
+<?php
+
+namespace Champ\Join;
 
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;

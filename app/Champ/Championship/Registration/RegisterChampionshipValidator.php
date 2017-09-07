@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Registration;
+<?php
+
+namespace Champ\Championship\Registration;
 
 use Champ\Forms\ChampionshipRegisterForm;
 

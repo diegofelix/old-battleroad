@@ -1,4 +1,5 @@
 <?php
+
 Route::group(['before' => 'auth'], function () {
     Route::get('join/create/{id}', [
         'as' => 'join.create',

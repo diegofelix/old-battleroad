@@ -1,4 +1,6 @@
-<?php namespace Champ\Filters;
+<?php
+
+namespace Champ\Filters;
 
 use Champ\Join\Repositories\JoinRepository;
 use Request;

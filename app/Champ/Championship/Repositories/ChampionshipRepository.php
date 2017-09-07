@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Repositories;
+<?php
+
+namespace Champ\Championship\Repositories;
 
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Championship\Championship;

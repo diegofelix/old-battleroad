@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Join;
 
 use Eloquent;

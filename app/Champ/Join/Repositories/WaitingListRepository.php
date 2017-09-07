@@ -1,4 +1,6 @@
-<?php namespace Champ\Join\Repositories;
+<?php
+
+namespace Champ\Join\Repositories;
 
 use Champ\Join\WaitingList;
 use Champ\Repositories\Core\AbstractRepository;

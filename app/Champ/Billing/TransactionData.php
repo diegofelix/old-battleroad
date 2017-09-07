@@ -1,4 +1,6 @@
-<?php namespace Champ\Billing;
+<?php
+
+namespace Champ\Billing;
 
 use Config;
 

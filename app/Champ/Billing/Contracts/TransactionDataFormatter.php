@@ -1,4 +1,6 @@
-<?php namespace Champ\Billing\Contracts;
+<?php
+
+namespace Champ\Billing\Contracts;
 
 interface TransactionDataFormatter
 {

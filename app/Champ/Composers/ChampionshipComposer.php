@@ -1,4 +1,6 @@
-<?php namespace Champ\Composers;
+<?php
+
+namespace Champ\Composers;
 
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Request;

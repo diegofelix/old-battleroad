@@ -1,4 +1,6 @@
-<?php namespace Champ\Account;
+<?php
+
+namespace Champ\Account;
 
 use Auth;
 use Carbon\Carbon;

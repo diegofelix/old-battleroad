@@ -1,4 +1,6 @@
-<?php namespace Champ\Championship\Coupons;
+<?php
+
+namespace Champ\Championship\Coupons;
 
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Coupon;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Services;
 
 use Champ\Championship\Repositories\CompetitionRepository;

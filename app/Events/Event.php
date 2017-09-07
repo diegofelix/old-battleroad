@@ -1,4 +1,6 @@
-<?php namespace Battleroad\Events;
+<?php
+
+namespace Battleroad\Events;
 
 abstract class Event
 {

@@ -1,4 +1,6 @@
-<?php namespace Champ\Account\Repositories;
+<?php
+
+namespace Champ\Account\Repositories;
 
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Account\User;
