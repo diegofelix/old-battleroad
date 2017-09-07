@@ -1,13 +1,13 @@
 <?php namespace Champ\Social;
 
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 
 abstract class SocialAuthenticator
 {
     /**
      * Social User Data Reader.
      *
-     * @var Champ\Account\UserRepositoryInterface
+     * @var Champ\Account\UserRepository
      */
     protected $user;
 
@@ -27,7 +27,7 @@ abstract class SocialAuthenticator
      * Inject the data reader and the user repository.
      */
     public function __construct(
-        UserRepositoryInterface $user = null,
+        UserRepository $user = null,
         SocialDataReaderInterface $reader = null
     ) {
         $this->user = $user;

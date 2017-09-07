@@ -5,7 +5,7 @@ use Auth;
 use View;
 use Input;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 
 class ProfileController extends BaseController
 {
@@ -18,7 +18,7 @@ class ProfileController extends BaseController
 
     use DispatchableTrait;
 
-    public function __construct(UserRepositoryInterface $user)
+    public function __construct(UserRepository $user)
     {
         $this->userRepo = $user;
 

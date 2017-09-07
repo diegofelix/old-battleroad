@@ -3,7 +3,7 @@ namespace Battleroad\Http\Controllers;
 
 use Auth;
 use Input;
-use Champ\Account\Repositories\UserRepositoryInterface;
+use Champ\Account\Repositories\UserRepository;
 use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterController extends BaseController
@@ -13,14 +13,14 @@ class RegisterController extends BaseController
     /**
      * User Repository.
      *
-     * @var Champ\Account\Repositories\UserRepositoryInterface
+     * @var Champ\Account\Repositories\UserRepository
      */
     protected $userRepo;
 
     /**
      * Inject the user repo.
      */
-    public function __construct(UserRepositoryInterface $user)
+    public function __construct(UserRepository $user)
     {
         $this->userRepo = $user;
     }
