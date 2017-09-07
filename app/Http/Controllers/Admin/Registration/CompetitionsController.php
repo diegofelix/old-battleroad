@@ -4,7 +4,7 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 use Input;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Championship\Repositories\GameRepositoryInterface;
-use Champ\Championship\Repositories\FormatRepositoryInterface;
+use Champ\Championship\Repositories\FormatRepository;
 use Champ\Championship\Repositories\PlatformRepositoryInterface;
 
 class CompetitionsController extends BaseRegistrationController
@@ -26,7 +26,7 @@ class CompetitionsController extends BaseRegistrationController
     public function __construct(
         ChampionshipRepository $champRepo,
         GameRepositoryInterface $gameRepo,
-        FormatRepositoryInterface $formatRepo,
+        FormatRepository $formatRepo,
         PlatformRepositoryInterface $platformRepo
     ) {
         $this->champRepo = $champRepo;
