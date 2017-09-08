@@ -26,7 +26,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">Descrição</div>
                         <div class="panel-body">
-                            {{ $championship->present()->markdownDescription }}
+                            {!! $championship->present()->markdownDescription !!}
                         </div>
                     </div>
 
