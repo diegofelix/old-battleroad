@@ -148,7 +148,6 @@ return [
         'Battleroad\Providers\RouteServiceProvider',
 
         Champ\Providers\BillingServiceProvider::class,
-        Champ\Providers\ContextsServiceProvider::class,
         Champ\Providers\EventingServiceProvider::class,
         Champ\Providers\NewsletterListServiceProvider::class,
         Champ\Providers\NotificationsServiceProvider::class,
