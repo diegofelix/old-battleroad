@@ -3,17 +3,18 @@
 namespace Battleroad\Http\Middleware;
 
 use Closure;
+use Champ\Championship\Repositories\ChampionshipRepository;
 
 class ChampionshipOwner
 {
     /**
      * @var ChampiponshipRepository
      */
-    private $championshipRepository;
+    private $championships;
 
-    public function __construct(ChampiponshipRepository $championshipRepository)
+    public function __construct(ChampionshipRepository $championshipRepository)
     {
-        $this->championshipRepository = $championshipRepository;
+        $this->championships = $championshipRepository;
     }
 
     /**
@@ -26,16 +27,16 @@ class ChampionshipOwner
      */
     public function handle($request, Closure $next)
     {
-        $id = $requestt->segment(3);
+        $id = $request->segment(3);
 
         $championship = $this->championships->find($id);
 
-        if (!$championship->isOwner(Auth::id())) {
+        if (!$championship->isOwner(auth()->id())) {
             app()->abort(404);
         }
 
-        if ($this->auth->check()) {
-            return new redirect('/home');
+        if (!auth()->check()) {
+            return redirect('/home');
         }
 
         return $next($request);

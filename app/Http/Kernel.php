@@ -29,8 +29,10 @@ class Kernel extends HttpKernel
         'auth' => 'Battleroad\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'guest' => 'Battleroad\Http\Middleware\RedirectIfAuthenticated',
-        'championship_owner' => Battleroad\Http\Middleware\ChampionshipOwner::class,
-        'join_owner' => Battleroad\Http\Middleware\JoinOwner::class,
-        'no_profile' => Battleroad\Http\Middleware\NoProfile::class,
+        'championship_owner' => \Battleroad\Http\Middleware\ChampionshipOwner::class,
+        'join_owner' => \Battleroad\Http\Middleware\JoinOwner::class,
+        'no_profile' => \Battleroad\Http\Middleware\NoProfile::class,
+        'championship_not_published' => \Battleroad\Http\Middleware\ChampionshipNotPublished::class,
+        'championship_published' => \Battleroad\Http\Middleware\ChampionshipPublished::class,
     ];
 }
