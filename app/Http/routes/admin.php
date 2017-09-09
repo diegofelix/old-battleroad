@@ -13,7 +13,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
 
     Route::group([
         // user cannot change a published championship and others championships
-        'middleware' => ['championship_not_published','championship_owner'],
+        'middleware' => ['championship_not_published', 'championship_owner'],
     ], function () {
         /*
          |---------------------------------------------------------------------
