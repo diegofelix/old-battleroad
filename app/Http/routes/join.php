@@ -9,7 +9,7 @@ Route::group(['before' => 'auth'], function () {
 
     Route::post('join/register', [
         'as' => 'join.register',
-        'before' => 'not_joined_yet|has_competition',
+        'middleware' => ['not_joined_yet', 'has_competition'],
         'uses' => 'JoinController@register',
     ]);
 

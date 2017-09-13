@@ -36,5 +36,6 @@ class Kernel extends HttpKernel
         'championship_published' => \Battleroad\Http\Middleware\ChampionshipPublished::class,
         'championship_not_finished' => \Battleroad\Http\Middleware\ChampionshipNotFinished::class,
         'not_joined_yet' => \Battleroad\Http\Middleware\NotJoinedYet::class,
+        'has_competition' => \Battleroad\Http\Middleware\HasCompetition::class,
     ];
 }
