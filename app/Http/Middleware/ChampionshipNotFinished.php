@@ -23,7 +23,7 @@ class ChampionshipNotFinished
         if (Championship::checkFinished($id)) {
             session()->flash('error', 'Esse campeonato já aconteceu ou está em andamento, você não pode mais participar.');
 
-            return redirect()->route('championships.show');
+            return redirect()->route('championships.show', $id);
         }
 
         return $next($request);

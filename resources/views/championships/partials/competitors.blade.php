@@ -10,9 +10,9 @@
                     </tr>
                 @endforeach
             </table>
-            @if ($joins->getTotal() > $perPage)
+            @if ($joins->total() > $perPage)
                 <div class="panel-footer">
-                    +{{ $joins->getTotal() - $perPage }} competidor(es).
+                    +{{ $joins->total() - $perPage }} competidor(es).
                 </div>
             @endif
         </div>
