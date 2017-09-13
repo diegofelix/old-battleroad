@@ -34,5 +34,6 @@ class Kernel extends HttpKernel
         'no_profile' => \Battleroad\Http\Middleware\NoProfile::class,
         'championship_not_published' => \Battleroad\Http\Middleware\ChampionshipNotPublished::class,
         'championship_published' => \Battleroad\Http\Middleware\ChampionshipPublished::class,
+        'championship_not_finished' => \Battleroad\Http\Middleware\ChampionshipNotFinished::class,
     ];
 }
