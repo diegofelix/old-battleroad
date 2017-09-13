@@ -31,8 +31,8 @@ class JoinOwner
 
         $join = $this->joinRepository->find($id);
 
-        if ($join->user_id != Auth::user()->id) {
-            App::abort(404);
+        if ($join->user_id != auth()->user()->id) {
+            abort(404);
         }
 
         return $next($request);

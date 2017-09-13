@@ -15,25 +15,19 @@ Route::group(['before' => 'auth'], function () {
 
     Route::get('join/{id}', [
         'as' => 'join.show',
-        'before' => 'join_owner',
+        'middleware' => 'join_owner',
         'uses' => 'JoinController@show',
     ]);
 
     Route::patch('joins/{id}/coupon', [
         'as' => 'join.coupon',
-        'before' => 'join_owner',
+        'middleware' => 'join_owner',
         'uses' => 'CouponsController@apply',
     ]);
 
     Route::post('join/{id}', [
         'as' => 'join.returned',
         'uses' => 'JoinController@returned',
-    ]);
-
-    Route::get('payment/{id}', [
-        'as' => 'payment',
-        'before' => 'paid_championship',
-        'uses' => 'JoinController@payment',
     ]);
 });
 
