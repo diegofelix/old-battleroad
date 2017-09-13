@@ -4,7 +4,6 @@ namespace Battleroad\Http\Middleware;
 
 use Closure;
 use Champ\Championship\Championship;
-use Champ\Join\Repositories\JoinRepository;
 
 class ChampionshipNotPublished
 {
