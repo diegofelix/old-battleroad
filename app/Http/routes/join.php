@@ -1,6 +1,6 @@
 <?php
 
-Route::group(['before' => 'auth'], function () {
+Route::group(['middleware' => 'auth'], function () {
     Route::get('join/create/{id}', [
         'as' => 'join.create',
         'middleware' => ['not_joined_yet', 'championship_not_finished'],
