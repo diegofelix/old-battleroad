@@ -72,7 +72,5 @@
           http://battleroad.uservoice.com/forums/245755-geral">Dá só uma olhada!</a></p>
 
         <p>Após colocar o e-mail do seu bcash no campo, você irá para a parte de confirmação, veja se está tudo certo e clique em Confirmar. Pronto! Seu campeonato está publicado, divulgue no facebook, twitter e em suas redes sociais do seu novo evento. Agora é só se preocupar com o evento que a Battleroad cuida do resto!</p>
-
-        <a tabindex="0" class="btn btn-lg btn-danger" role="button" data-toggle="popover" data-trigger="focus" title="Dismissible popover" data-content="And here's some amazing content. It's very engaging. Right?">Dismissible popover</a>
     </div>
 @stop
