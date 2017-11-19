@@ -5,3 +5,4 @@ composer.phar
 Thumbs.db
 .fuse_hidden*
 .env
+.idea*
