@@ -47,10 +47,7 @@ return [
         'Champ\Listeners\CompetitionVacancyUpdater',
         'Champ\Listeners\NotificationListener',
         'Champ\Listeners\AdminNotificationListener',
-        'Champ\Listeners\NewsletterListListener',
-        'Champ\Listeners\ChampionshipNewsletter',
         'Champ\Listeners\JoinDiscountListener',
-        'Champ\Listeners\SendCampaigns',
         // 'Champ\Listeners\CompetitionRegistrar'
     ],
 ];
