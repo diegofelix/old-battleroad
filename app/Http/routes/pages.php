@@ -26,8 +26,3 @@ Route::get('how-it-works/player', [
     'as' => 'how_player',
     'uses' => 'PagesController@player',
 ]);
-
-Route::get('changelog', [
-    'as' => 'changelog',
-    'uses' => 'PagesController@changelog',
-]);
