@@ -2,7 +2,6 @@
 
 namespace Battleroad\Http\Controllers;
 
-use Input;
 use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepository;
 
@@ -11,16 +10,9 @@ class ChampionshipsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var ChampionshipRepository
      */
     protected $champRepo;
-
-    /**
-     * Join Repository.
-     *
-     * @var JoinRepository
-     */
-    protected $joinRepository;
 
     /**
      * Billing.
@@ -29,27 +21,22 @@ class ChampionshipsController extends BaseController
      */
     protected $billing;
 
-    public function __construct(
-        ChampionshipRepository $champRepo,
-        JoinRepository $joinRepository
-        // MoipBilling $billing
-    ) {
+    public function __construct(ChampionshipRepository $champRepo)
+    {
         $this->champRepo = $champRepo;
-        $this->joinRepository = $joinRepository;
-        // $this->billing = $billing;
     }
 
     /**
      * Show a list of Championships in desc date order.
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $game = Input::get('game');
+        $game = request()->get('game');
         $championships = $this->champRepo->featured($game);
 
-        return $this->view('championships.index', compact('championships'));
+        return view('championships.index', compact('championships'));
     }
 
     /**
@@ -57,13 +44,13 @@ class ChampionshipsController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
         $championship = $this->champRepo->find($id);
 
-        return $this->view('championships.show', compact('championship'));
+        return view('championships.show', compact('championship'));
     }
 
     /**
@@ -71,12 +58,12 @@ class ChampionshipsController extends BaseController
      *
      * @param int $id
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function register($id)
     {
         $championship = $this->champRepo->find($id);
 
-        return $this->view('championships.register', compact('championship'));
+        return view('championships.register', compact('championship'));
     }
 }

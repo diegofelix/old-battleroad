@@ -24,7 +24,7 @@ class BaseController extends Controller
      * @param string $view
      * @param array  $params
      *
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
     public function view($view, array $params = array())
     {
