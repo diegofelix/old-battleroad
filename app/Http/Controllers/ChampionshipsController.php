@@ -3,7 +3,6 @@
 namespace Battleroad\Http\Controllers;
 
 use Champ\Championship\Repositories\ChampionshipRepository;
-use Champ\Join\Repositories\JoinRepository;
 
 class ChampionshipsController extends BaseController
 {

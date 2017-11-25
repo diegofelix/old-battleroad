@@ -25,7 +25,7 @@ class ChampionshipVacancyUpdater extends EventListener
         $championship = $event->join->championship;
 
         // update only if championship has a limit
-        if ($championship->limit != 0) {
+        if (0 != $championship->limit) {
             $championship->limit--;
             $this->championshipRepository->save($championship);
         }

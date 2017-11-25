@@ -254,7 +254,7 @@ class Championship extends Eloquent
      */
     public static function checkPublished($id)
     {
-        return self::find($id)->published == 1;
+        return 1 == self::find($id)->published;
     }
 
     /**
@@ -266,7 +266,7 @@ class Championship extends Eloquent
      */
     public static function checkFinished($id)
     {
-        return self::find($id)->finished == 1;
+        return 1 == self::find($id)->finished;
     }
 
     /**
@@ -286,7 +286,7 @@ class Championship extends Eloquent
      */
     public function isFinished()
     {
-        return $this->finished == true;
+        return true == $this->finished;
     }
 
     /**

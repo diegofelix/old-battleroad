@@ -190,7 +190,7 @@ class User extends Eloquent implements AuthenticatableContract, AuthorizableCont
      */
     public function isOrganizer()
     {
-        return $this->is_organizer == true;
+        return true == $this->is_organizer;
     }
 
     /**

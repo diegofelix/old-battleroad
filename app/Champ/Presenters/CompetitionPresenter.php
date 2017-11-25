@@ -37,7 +37,7 @@ class CompetitionPresenter extends Presenter
             return 'Sem limite';
         }
 
-        if ($this->trueLimit == 1) {
+        if (1 == $this->trueLimit) {
             return '1 Vaga restante';
         }
 
@@ -65,6 +65,6 @@ class CompetitionPresenter extends Presenter
      */
     public function isSingleRegistration()
     {
-        return $this->players == 1;
+        return 1 == $this->players;
     }
 }
