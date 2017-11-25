@@ -210,27 +210,6 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'before' => 'auth|org
             'as' => 'admin.championships.transaction',
             'uses' => 'TransactionsController@show',
         ]);
-
-        // mail
-        Route::get('championships/{id}/mail', [
-            'as' => 'admin.championships.mail',
-            'uses' => 'MailController@index',
-        ]);
-
-        Route::get('championships/{id}/mail/compose', [
-            'as' => 'admin.championships.mail.compose',
-            'uses' => 'MailController@compose',
-        ]);
-
-        Route::post('championships/{id}/mail', [
-            'as' => 'admin.championships.mail.store',
-            'uses' => 'MailController@store',
-        ]);
-
-        Route::get('championships/{id}/mail/{campaignId}', [
-            'as' => 'admin.championships.mail.summary',
-            'uses' => 'MailController@summary',
-        ]);
     });
 
     Route::post('checkin/{id}', ['as' => 'checkin', 'before' => 'csrf', 'uses' => 'CheckinController@checkin']);
