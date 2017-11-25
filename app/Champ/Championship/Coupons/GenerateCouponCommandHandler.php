@@ -2,29 +2,32 @@
 
 namespace Champ\Championship\Coupons;
 
+use Champ\Championship\Repository;
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Coupon;
-use Champ\Championship\Repositories\CouponRepository;
 
 class GenerateCouponCommandHandler implements CommandHandler
 {
     /**
-     * Coupon Repository.
+     * Championship Repository.
      *
-     * @var CouponRepository
+     * @var Repository
      */
-    protected $couponRepository;
+    protected $repository;
 
-    public function __construct(CouponRepository $couponRepository)
+    public function __construct(Repository $repository)
     {
-        $this->couponRepository = $couponRepository;
+        $this->repository = $repository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function handle($command)
     {
         $coupon = Coupon::generate($command->championshipId, $command->code, $command->price);
 
-        $this->couponRepository->save($coupon);
+        $this->repository->saveCoupon($coupon);
 
         return $coupon;
     }
