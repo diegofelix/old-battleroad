@@ -1,33 +1,38 @@
 <?php
 
-namespace Champ\Championship\Repositories;
+namespace Champ\Championship;
 
 use Champ\Repositories\Core\AbstractRepository;
-use Champ\Championship\Championship;
+use Champ\Services\ChampionshipImage;
 use Champ\Validators\ChampionshipValidator;
-use Champ\Championship\Competition;
 use Laracasts\Commander\Events\DispatchableTrait;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
-use App;
-use Auth;
-use Config;
 use Log;
 
-class ChampionshipRepository extends AbstractRepository
+/**
+ * Responsible for handling all championships interactions.
+ */
+class Repository extends AbstractRepository
 {
     use DispatchableTrait;
 
+    /**
+     * Class constructor.
+     *
+     * @param Championship          $model
+     * @param ChampionshipValidator $validator
+     */
     public function __construct(
         Championship $model,
         ChampionshipValidator $validator
     ) {
-        $this->model = $model;
+        parent::__construct($model);
         $this->validator = $validator;
     }
 
     /**
-     * Find only if the championship is available.
+     * Returns all available championships.
      *
      * @param int $id
      *
@@ -44,12 +49,11 @@ class ChampionshipRepository extends AbstractRepository
     /**
      * Get a list of Championships in event_start desc order.
      *
-     * @return Paginator
+     * @return \Illuminate\Contracts\Pagination\Paginator
      */
     public function featured($game = null)
     {
-        $query = $this->model
-            ->wherePublished(true)
+        $query = $this->model->wherePublished(true)
             ->whereFinished(false);
 
         if ($game) {
@@ -89,7 +93,7 @@ class ChampionshipRepository extends AbstractRepository
         $championship = $this->model->findOrFail($input['id']);
 
         // prevent malicious intentions checking the ownership
-        if ($championship->user_id != Auth::user()->id) {
+        if ($championship->user_id != auth()->user()->id) {
             return false;
         }
 
@@ -109,7 +113,7 @@ class ChampionshipRepository extends AbstractRepository
     }
 
     /**
-     * Return a competition by a champ id.
+     * Returns a competition by a champ id.
      *
      * @param int $champId
      * @param int $competitionId
@@ -123,11 +127,15 @@ class ChampionshipRepository extends AbstractRepository
         return $championship->competitions()->find($competitionId);
     }
 
+    /**
+     * Returns a list of available competitions.
+     *
+     * @return array
+     */
     public function getAvailableCompetitions()
     {
         $competitions = [];
-        $championships = $this->model
-            ->with('competitions.game')
+        $championships = $this->model->with('competitions.game')
             ->wherePublished(true)
             ->whereFinished(false)
             ->get();
@@ -168,7 +176,7 @@ class ChampionshipRepository extends AbstractRepository
         }
 
         // set the limit for the competition
-        $data['limit'] = $this->updateLimitValues($championship, $data);
+        $data['limit'] = $this->updateLimitValues($data);
 
         // updates the price.
         $data['original_price'] = $data['price'];
@@ -220,11 +228,11 @@ class ChampionshipRepository extends AbstractRepository
      * @param int   $id
      * @param array $with
      *
-     * @return Collectino
+     * @return Collection
      */
-    public function getAllByUser($id, $with)
+    public function getAllByUser($id, $with = [])
     {
-        return $this->model
+        return $this->model->with($with)
             ->whereUserId($id)
             ->wherePublished(true)
             ->get();
@@ -251,9 +259,8 @@ class ChampionshipRepository extends AbstractRepository
             return null;
         }
 
-        $champImage = App::make('Champ\Services\ChampionshipImage');
-
-        return $champImage->upload($data['image']);
+        return app(ChampionshipImage::class)
+            ->upload($data['image']);
     }
 
     /**
@@ -265,30 +272,13 @@ class ChampionshipRepository extends AbstractRepository
      *
      * @return mixed
      */
-    private function updateLimitValues($championship, $data)
+    private function updateLimitValues($data)
     {
         if (empty($data['limit'])) {
             return 99999;
         }
 
         return $data['limit'];
-        /*
-         * This is working when we have a championship limit.
-         * For now, we only need a competition limit.
-         *
-         // if no limit was specified, then is the same as the championship limit
-        if (empty($data['limit'])) return $championship->limit;
-
-        // if the championship dont have limit we dont need to
-        // check this
-        if (empty($championship->limit)) return $data['limit'];
-
-        // if the limit for the competition is greater than the championship
-        // we limit to the championship limit
-        if ($data['limit'] > $championship->limit) return $championship->limit;
-
-        // if came here, then return himself.
-        return $data['limit'];*/
     }
 
     /**
@@ -300,7 +290,7 @@ class ChampionshipRepository extends AbstractRepository
      */
     public function updatePrice($price)
     {
-        return apply_rate($price, Config::get('champ.rate'));
+        return apply_rate($price, config('champ.rate'));
     }
 
     /**
@@ -322,7 +312,7 @@ class ChampionshipRepository extends AbstractRepository
      */
     public function finishPastChampionships()
     {
-        $limit = Config::get('champ.payday_limit');
+        $limit = config('champ.payday_limit');
 
         // get all championships that cross the limit of time
         $championships = $this->getNotFinishedByDateDiff($limit);
@@ -382,8 +372,7 @@ class ChampionshipRepository extends AbstractRepository
      */
     public function getNotFinishedByDateDiff($limit = 2, $with = [])
     {
-        return $this->model
-            ->with($with)
+        return $this->model->with($with)
             ->whereFinished(false)
             ->whereRaw('datediff(event_start, now()) = ?', [$limit])
             ->get();
@@ -404,5 +393,148 @@ class ChampionshipRepository extends AbstractRepository
                 $g->where('name', '=', $game);
             });
         });
+    }
+
+    /**
+     * Get all competitions where id in an array.
+     *
+     * @param array $ids
+     *
+     * @return Collection
+     */
+    public function getCompetitionsByIds(array $ids)
+    {
+        return Competition::whereIn('id', $ids)->get();
+    }
+
+    /**
+     * Saves a competition.
+     *
+     * @param Competition $competition
+     *
+     * @return bool
+     */
+    public function saveCompetition(Competition $competition)
+    {
+        return $competition->save();
+    }
+
+    /**
+     * Get competitions by the championship id.
+     *
+     * @param id    $championshipId
+     * @param array $with
+     *
+     * @return Collection
+     */
+    public function getCompetitionByChampionship($championshipId, $with = [])
+    {
+        return Competition::with($with)
+            ->whereChampionshipId($championshipId)
+            ->get();
+    }
+
+    /**
+     * Saves a Coupon.
+     *
+     * @param Coupon $coupon
+     *
+     * @return bool
+     */
+    public function saveCoupon(Coupon $coupon)
+    {
+        return $coupon->save();
+    }
+
+    /**
+     * Creates a coupon an assign it to a championship.
+     *
+     * @param array $data
+     *
+     * @return Model
+     */
+    public function createCoupon($data)
+    {
+        return Competition::create($data);
+    }
+
+    /**
+     * Find a coupon by its id.
+     *
+     * @param int $id
+     *
+     * @return Model
+     */
+    public function findCoupon($id)
+    {
+        return Competition::find($id);
+    }
+
+    /**
+     * Delete a Coupon.
+     *
+     * @param Coupon $coupon
+     *
+     * @return bool
+     */
+    public function deleteCoupon(Coupon $coupon)
+    {
+        return $coupon->delete();
+    }
+
+    /**
+     * Get a coupon by its code and checks if the coupon is able to be used.
+     *
+     * @param string $code
+     *
+     * @return Coupon
+     */
+    public function findCouponByCode($code)
+    {
+        return Competition::whereCode($code)
+            ->whereNull('user_id')
+            ->first();
+    }
+
+    /**
+     * Find a Coupon by User Id.
+     *
+     * @param int $userId
+     *
+     * @return Coupon
+     */
+    public function findCouponByUserId($userId)
+    {
+        return Competition::whereUserId($userId)->first();
+    }
+
+    /**
+     * Get a list of Formats.
+     *
+     * @return array
+     */
+    public function getFormatsDropdown()
+    {
+        return Format::lists('name', 'id');
+    }
+
+    /**
+     * Get a list of games.
+     *
+     * @return array
+     */
+    public function getGamesDropdown()
+    {
+        return Game::lists('name', 'id');
+    }
+
+    /**
+     * Get a list of Platforms.
+     *
+     * @return array
+     */
+    public function getPlatformsDropdown()
+    {
+        return Platform::lists('name', 'id');
     }
 }
