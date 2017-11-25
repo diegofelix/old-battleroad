@@ -2,7 +2,6 @@
 
 namespace Champ\Join;
 
-use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
 use Champ\Championship\Repository;
 use Champ\Join\Repositories\WaitingListRepository;

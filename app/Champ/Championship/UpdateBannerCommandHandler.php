@@ -3,13 +3,12 @@
 namespace Champ\Championship;
 
 use Laracasts\Commander\CommandHandler;
-use Champ\Championship\Repository;
 use Champ\Services\ChampionshipImage;
 
 class UpdateBannerCommandHandler implements CommandHandler
 {
     /**
-     * @var Championship Repository.
+     * @var Championship repository
      */
     protected $repository;
 

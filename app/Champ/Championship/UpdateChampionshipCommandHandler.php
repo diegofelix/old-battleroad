@@ -3,7 +3,6 @@
 namespace Champ\Championship;
 
 use Laracasts\Commander\CommandHandler;
-use Champ\Championship\Repository;
 
 class UpdateChampionshipCommandHandler implements CommandHandler
 {

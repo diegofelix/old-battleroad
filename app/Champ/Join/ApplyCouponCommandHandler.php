@@ -5,7 +5,6 @@ namespace Champ\Join;
 use Champ\Championship\Repository;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
-use Champ\Championship\Repositories\CouponRepository;
 use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 
