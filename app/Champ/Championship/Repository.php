@@ -32,7 +32,7 @@ class Repository extends AbstractRepository
     }
 
     /**
-     * Returns all available championships.
+     * Find a championship if its available.
      *
      * @param int $id
      *
@@ -396,7 +396,7 @@ class Repository extends AbstractRepository
     }
 
     /**
-     * Get all competitions where id in an array.
+     * Get all competitions by an array of ids.
      *
      * @param array $ids
      *
@@ -427,7 +427,7 @@ class Repository extends AbstractRepository
      *
      * @return Collection
      */
-    public function getCompetitionByChampionship($championshipId, $with = [])
+    public function getCompetitionsByChampionship($championshipId, $with = [])
     {
         return Competition::with($with)
             ->whereChampionshipId($championshipId)

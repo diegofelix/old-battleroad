@@ -39,7 +39,7 @@ class CompetitionsController extends BaseController
      */
     public function index($champId)
     {
-        $competitions = $this->championships->getCompetitionByChampionship($champId);
+        $competitions = $this->championships->getCompetitionsByChampionship($champId);
 
         return $this->view('admin.championships.games.index', compact('competitions'));
     }
