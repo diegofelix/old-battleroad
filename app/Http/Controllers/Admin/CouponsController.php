@@ -7,7 +7,6 @@ use Champ\Services\KeyGen;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Coupons\GenerateCouponCommand;
-use Champ\Championship\Repositories\CouponRepository;
 use Champ\Championship\Repository;
 
 class CouponsController extends BaseController

@@ -7,7 +7,7 @@ use Laracasts\Commander\CommandHandler;
 class UpdateChampionshipCommandHandler implements CommandHandler
 {
     /**
-     * Championship Repository
+     * Championship Repository.
      *
      * @var Repository
      */
