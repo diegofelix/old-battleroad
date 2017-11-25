@@ -4,7 +4,6 @@ namespace Battleroad\Http\Middleware;
 
 use Closure;
 use Champ\Championship\Championship;
-use Champ\Join\Repositories\JoinRepository;
 
 class NotJoinedYet
 {
@@ -36,7 +35,7 @@ class NotJoinedYet
 
         // if founded
         if ($joined) {
-            $message = "Você já está participando desse campeonato.";
+            $message = 'Você já está participando desse campeonato.';
 
             return redirect()->route('join.show', $joined->id)
                 ->with('message', $message);
