@@ -19,11 +19,16 @@ class ChampionshipsController extends BaseController
      *
      * @var Repository
      */
-    protected $champRepo;
+    protected $repository;
 
-    public function __construct(Repository $champRepo)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
-        $this->champRepo = $champRepo;
+        $this->repository = $repository;
     }
 
     /**
@@ -33,7 +38,7 @@ class ChampionshipsController extends BaseController
      */
     public function index()
     {
-        $championships = $this->champRepo->getAllByUser(Auth::user()->id, ['user']);
+        $championships = $this->repository->getAllByUser(Auth::user()->id, ['user']);
 
         return $this->view('admin.championships.index', compact('championships'));
     }
@@ -90,7 +95,7 @@ class ChampionshipsController extends BaseController
      */
     public function banner($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.championships.banner', compact('championship'));
     }
@@ -104,7 +109,7 @@ class ChampionshipsController extends BaseController
      */
     public function editBanner($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.championships.edit_banner', compact('championship'));
     }
@@ -133,7 +138,7 @@ class ChampionshipsController extends BaseController
      */
     public function cancel($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.championships.cancel', compact('championship'));
     }
@@ -147,8 +152,8 @@ class ChampionshipsController extends BaseController
      */
     public function users($id)
     {
-        $championship = $this->champRepo->find($id, ['joins.user']);
-        $waitingList = $this->champRepo->waitingList($championship);
+        $championship = $this->repository->find($id, ['joins.user']);
+        $waitingList = $this->repository->waitingList($championship);
 
         return $this->view('admin.championships.users', compact('championship', 'waitingList'));
     }
@@ -162,6 +167,6 @@ class ChampionshipsController extends BaseController
      */
     public function getChampionshipById($id)
     {
-        return $this->champRepo->find($id);
+        return $this->repository->find($id);
     }
 }

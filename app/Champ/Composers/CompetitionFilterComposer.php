@@ -6,11 +6,21 @@ use Champ\Championship\Repository;
 
 class CompetitionFilterComposer
 {
-    protected $championshipRepository;
+    /**
+     * Championship Repository.
+     *
+     * @var Repository
+     */
+    protected $repository;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
     public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $repository;
+        $this->repository = $repository;
     }
 
     /**
@@ -20,7 +30,7 @@ class CompetitionFilterComposer
      */
     public function compose($view)
     {
-        $competitions = $this->championshipRepository->getAvailableCompetitions();
+        $competitions = $this->repository->getAvailableCompetitions();
 
         $view->with(compact('competitions'));
     }

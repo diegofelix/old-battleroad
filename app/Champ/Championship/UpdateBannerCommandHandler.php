@@ -8,14 +8,16 @@ use Champ\Services\ChampionshipImage;
 class UpdateBannerCommandHandler implements CommandHandler
 {
     /**
-     * @var Championship repository
+     * Championship Repository.
+     *
+     * @var Repository
      */
     protected $repository;
 
     /**
      * Image Uploader.
      *
-     * @var Cham\Services\ChampionshipImage
+     * @var ChampionshipImage
      */
     protected $uploader;
 
@@ -31,6 +33,9 @@ class UpdateBannerCommandHandler implements CommandHandler
         $this->uploader = $uploader;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function handle($command)
     {
         $image = $this->getUploadedImage($command);

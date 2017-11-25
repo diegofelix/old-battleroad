@@ -10,20 +10,18 @@ class CompetitionsController extends BaseRegistrationController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Repository
      */
-    protected $championships;
+    protected $repository;
 
     /**
-     * Game Repository.
+     * Class constructor.
      *
-     * @var Champ\Championship\Repositories\GameRepository
+     * @param Repository $repository
      */
-    protected $gameRepo;
-
-    public function __construct(Repository $championshipRepository)
+    public function __construct(Repository $repository)
     {
-        $this->championships = $championshipRepository;
+        $this->repository = $repository;
     }
 
     /**
@@ -35,10 +33,10 @@ class CompetitionsController extends BaseRegistrationController
      */
     public function index($champId)
     {
-        $championship = $this->championships->find($champId, ['competitions']);
-        $games = $this->championships->getGamesDropdown();
-        $formats = $this->championships->getFormatsDropdown();
-        $platforms = $this->championships->getPlatformsDropdown();
+        $championship = $this->repository->find($champId, ['competitions']);
+        $games = $this->repository->getGamesDropdown();
+        $formats = $this->repository->getFormatsDropdown();
+        $platforms = $this->repository->getPlatformsDropdown();
 
         return $this->view('admin.register.games.index', compact('championship', 'games', 'formats', 'platforms'));
     }
@@ -52,7 +50,7 @@ class CompetitionsController extends BaseRegistrationController
      */
     public function create($champId)
     {
-        $championship = $this->championships->find($champId, ['competitions']);
+        $championship = $this->repository->find($champId, ['competitions']);
         $games = $this->gameRepo->dropdown();
         $formats = $this->formatRepo->dropdown();
         $platforms = $this->platformRepo->dropdown();
@@ -78,8 +76,8 @@ class CompetitionsController extends BaseRegistrationController
         }
 
         // create the championship
-        if (!$this->championships->createCompetition($champId, $input)) {
-            return $this->redirectBack(['error' => $this->championships->getErrors()]);
+        if (!$this->repository->createCompetition($champId, $input)) {
+            return $this->redirectBack(['error' => $this->repository->getErrors()]);
         }
 
         // redirect back
@@ -88,7 +86,7 @@ class CompetitionsController extends BaseRegistrationController
 
     public function destroy($champId, $competitionId)
     {
-        $championship = $this->championships->find($champId);
+        $championship = $this->repository->find($champId);
         $competition = $championship->competitions->find($competitionId);
 
         $competition->delete();

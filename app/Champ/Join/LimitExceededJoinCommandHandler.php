@@ -11,42 +11,42 @@ use Laracasts\Commander\Events\DispatchableTrait;
 
 class LimitExceededJoinCommandHandler implements CommandHandler
 {
+    use DispatchableTrait;
+
     /**
      * Championship Repository.
      *
      * @var Repository
      */
-    protected $championshipRepository;
+    protected $repository;
 
     /**
      * Waiting List Repository.
      *
-     * @var Champ\Join\Repositories\WaitingListRepository
+     * @var WaitingListRepository
      */
     protected $waitingList;
 
     /**
      * Register User Service.
      *
-     * @var Champ\Services\RegisterUser
+     * @var RegisterUser
      */
     private $userService;
-
-    use DispatchableTrait;
 
     /**
      * Constructor.
      *
-     * @param Repository            $championshipRepository
+     * @param Repository            $repository
      * @param WaitingListRepository $waitingList
      * @param RegisterUser          $userService
      */
     public function __construct(
-        Repository $championshipRepository,
+        Repository $repository,
         WaitingListRepository $waitingList,
         RegisterUser $userService
     ) {
-        $this->championshipRepository = $championshipRepository;
+        $this->repository = $repository;
         $this->waitingList = $waitingList;
         $this->userService = $userService;
     }
@@ -54,7 +54,7 @@ class LimitExceededJoinCommandHandler implements CommandHandler
     public function handle($command)
     {
         $user = $this->userService->getOrCreateUser($command);
-        $championship = $this->championshipRepository->find($command->championship_id);
+        $championship = $this->repository->find($command->championship_id);
         $waitingList = WaitingList::register($user->id, $championship->id, $command->competitions[0]);
 
         $this->waitingList->save($waitingList);

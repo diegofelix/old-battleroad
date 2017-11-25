@@ -8,13 +8,20 @@ use Closure;
 class ChampionshipOwner
 {
     /**
+     * Championship Repository.
+     *
      * @var Repository
      */
-    private $championships;
+    private $repository;
 
-    public function __construct(Repository $championshipRepository)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
-        $this->championships = $championshipRepository;
+        $this->repository = $repository;
     }
 
     /**
@@ -29,7 +36,7 @@ class ChampionshipOwner
     {
         $id = $request->segment(3);
 
-        $championship = $this->championships->find($id);
+        $championship = $this->repository->find($id);
 
         if (!$championship->isOwner(auth()->id())) {
             app()->abort(404);

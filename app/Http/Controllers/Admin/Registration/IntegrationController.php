@@ -18,18 +18,18 @@ class IntegrationController extends BaseRegistrationController
      */
     public function index($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.register.integration', compact('championship'));
     }
 
     public function store($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         $championship->token = Input::get('bcash_account');
 
-        $this->championshipRepository->save($championship);
+        $this->repository->save($championship);
 
         return $this->redirectRoute('admin.register.confirmation', $championship->id);
     }
@@ -45,7 +45,7 @@ class IntegrationController extends BaseRegistrationController
 
         $response = $mercadopago->getSellerAccessToken(Input::get('code'), $currentUrl);
 
-        $championship = $this->championshipRepository->addRefreshToken($id, $response['response']['refresh_token']);
+        $championship = $this->repository->addRefreshToken($id, $response['response']['refresh_token']);
 
         return $this->view('admin.register.integration', compact('championship'));
     }

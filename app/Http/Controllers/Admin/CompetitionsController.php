@@ -9,24 +9,24 @@ use Champ\Championship\Repository;
 class CompetitionsController extends BaseController
 {
     /**
-     * Competition Repository.
+     * Championship Repository.
      *
      * @var Repository
      */
-    protected $championships;
+    protected $repository;
 
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepository
+     * @var JoinRepository
      */
     protected $joinRepository;
 
     public function __construct(
-        Repository $championships,
+        Repository $repository,
         JoinRepository $joinRepository
     ) {
-        $this->championships = $championships;
+        $this->repository = $repository;
         $this->joinRepository = $joinRepository;
     }
 
@@ -39,7 +39,7 @@ class CompetitionsController extends BaseController
      */
     public function index($champId)
     {
-        $competitions = $this->championships->getCompetitionsByChampionship($champId);
+        $competitions = $this->repository->getCompetitionsByChampionship($champId);
 
         return $this->view('admin.championships.games.index', compact('competitions'));
     }
@@ -54,7 +54,7 @@ class CompetitionsController extends BaseController
      */
     public function show($champId, $competitionId)
     {
-        $competition = $this->championships->find($competitionId);
+        $competition = $this->repository->find($competitionId);
         $joins = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
         return $this->view('admin.championships.games.show', compact('competition', 'joins'));

@@ -15,7 +15,7 @@ class LocationController extends BaseRegistrationController
      */
     public function create($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.register.location', compact('championship'));
     }
@@ -27,9 +27,9 @@ class LocationController extends BaseRegistrationController
      */
     public function store($id)
     {
-        if (!$this->championshipRepository->saveLocation(Input::all())) {
+        if (!$this->repository->saveLocation(Input::all())) {
             return $this->redirectBack()
-                ->with('error', $this->championshipRepository->getErrors());
+                ->with('error', $this->repository->getErrors());
         }
 
         return $this->redirectRoute('admin.register.games', $id);

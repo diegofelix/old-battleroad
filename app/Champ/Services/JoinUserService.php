@@ -16,20 +16,38 @@ use Champ\Join\UserAlreadyJoinedException;
  */
 class JoinUserService
 {
-    protected $user;
-    protected $joins;
-    protected $championships;
-    protected $items;
-    protected $players;
+    /**
+     * @var JoinRepository
+     */
+    protected $joinRepository;
 
+    /**
+     * Championship Repository.
+     *
+     * @var Repository
+     */
+    protected $repository;
+
+    /**
+     * @var ItemRepository
+     */
+    protected $itemRepository;
+
+    /**
+     * Class constructor.
+     *
+     * @param JoinRepository $joinRepository
+     * @param Repository     $repository
+     * @param ItemRepository $itemRepository
+     */
     public function __construct(
-        JoinRepository $joins,
-        Repository $championshipRepository,
-        ItemRepository $items
+        JoinRepository $joinRepository,
+        Repository $repository,
+        ItemRepository $itemRepository
     ) {
-        $this->joins = $joins;
-        $this->championships = $championshipRepository;
-        $this->items = $items;
+        $this->joinRepository = $joinRepository;
+        $this->repository = $repository;
+        $this->itemRepository = $itemRepository;
     }
 
     /**
@@ -98,7 +116,7 @@ class JoinUserService
      */
     private function saveCompetitionsForJoin($join, $competitions, $teamName = null)
     {
-        $foundCompetitions = $this->championships->getCompetitionsByIds($competitions);
+        $foundCompetitions = $this->repository->getCompetitionsByIds($competitions);
 
         foreach ($foundCompetitions as $competition) {
             $isTeamCompetition = !$competition->present()->isSingleRegistration();
@@ -123,7 +141,7 @@ class JoinUserService
      */
     private function saveJoin($user, $championship, $nicks)
     {
-        if ($this->joins->userParticipating($user->id, $championship->id)) {
+        if ($this->joinRepository->userParticipating($user->id, $championship->id)) {
             throw new UserAlreadyJoinedException('Esse e-mail já está participando deste campeonato.');
         }
 
@@ -135,7 +153,7 @@ class JoinUserService
 
         $join = Join::register($user->id, $championship->id, $nick);
 
-        $this->joins->save($join);
+        $this->joinRepository->save($join);
 
         return $join;
     }

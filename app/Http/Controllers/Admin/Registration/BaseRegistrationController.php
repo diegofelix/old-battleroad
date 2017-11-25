@@ -15,10 +15,15 @@ abstract class BaseRegistrationController extends BaseController
      *
      * @var Repository
      */
-    protected $championshipRepository;
+    protected $repository;
 
-    public function __construct(Repository $championshipRepository)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $championshipRepository;
+        $this->repository = $repository;
     }
 }

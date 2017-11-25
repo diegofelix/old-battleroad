@@ -17,7 +17,7 @@ class PublisherController extends BaseRegistrationController
      */
     public function confirmation($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.register.confirmation', compact('championship'));
     }
@@ -32,11 +32,11 @@ class PublisherController extends BaseRegistrationController
      */
     public function publish($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         // check the count of competitions
         if ($championship->competitions->count() > 0) {
-            $championship = $this->championshipRepository->publish($id);
+            $championship = $this->repository->publish($id);
 
             $this->dispatchEventsFor($championship);
 

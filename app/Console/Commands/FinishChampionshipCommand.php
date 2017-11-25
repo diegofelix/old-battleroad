@@ -28,16 +28,16 @@ class FinishChampionshipCommand extends ScheduledCommand
      *
      * @var Repository
      */
-    protected $championshipRepository;
+    protected $repository;
 
     /**
      * Class constructor.
      *
-     * @param Repository $championshipRepository
+     * @param Repository $repository
      */
-    public function __construct(Repository $championshipRepository)
+    public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $championshipRepository;
+        $this->repository = $repository;
         parent::__construct();
     }
 
@@ -61,6 +61,6 @@ class FinishChampionshipCommand extends ScheduledCommand
      */
     public function handle()
     {
-        $this->championshipRepository->finishPastChampionships();
+        $this->repository->finishPastChampionships();
     }
 }

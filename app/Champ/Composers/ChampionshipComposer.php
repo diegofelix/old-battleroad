@@ -7,11 +7,21 @@ use Request;
 
 class ChampionshipComposer
 {
-    protected $championshipRepository;
+    /**
+     * Championship Repository.
+     *
+     * @var Repository
+     */
+    protected $repository;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
     public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $repository;
+        $this->repository = $repository;
     }
 
     /**
@@ -21,7 +31,7 @@ class ChampionshipComposer
      */
     public function compose($view)
     {
-        $championship = $this->championshipRepository->find(Request::segment(3));
+        $championship = $this->repository->find(Request::segment(3));
         $view->with(compact('championship'));
     }
 }

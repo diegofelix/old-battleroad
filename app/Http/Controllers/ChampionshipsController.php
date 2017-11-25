@@ -11,16 +11,16 @@ class ChampionshipsController extends BaseController
      *
      * @var Repository
      */
-    protected $champRepo;
+    protected $repository;
 
     /**
      * Class constructor.
      *
-     * @param Repository $champRepo
+     * @param Repository $repository
      */
-    public function __construct(Repository $champRepo)
+    public function __construct(Repository $repository)
     {
-        $this->champRepo = $champRepo;
+        $this->repository = $repository;
     }
 
     /**
@@ -31,7 +31,7 @@ class ChampionshipsController extends BaseController
     public function index()
     {
         $game = request()->get('game');
-        $championships = $this->champRepo->featured($game);
+        $championships = $this->repository->featured($game);
 
         return view('championships.index', compact('championships'));
     }
@@ -45,7 +45,7 @@ class ChampionshipsController extends BaseController
      */
     public function show($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return view('championships.show', compact('championship'));
     }
@@ -59,7 +59,7 @@ class ChampionshipsController extends BaseController
      */
     public function register($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return view('championships.register', compact('championship'));
     }

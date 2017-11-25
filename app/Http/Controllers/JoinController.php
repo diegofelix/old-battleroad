@@ -20,12 +20,12 @@ class JoinController extends BaseController
      *
      * @var Repository
      */
-    protected $champRepo;
+    protected $repository;
 
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepository
+     * @var JoinRepository
      */
     protected $joinRepository;
 
@@ -36,12 +36,19 @@ class JoinController extends BaseController
      */
     protected $commandBus;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository     $repository
+     * @param JoinRepository $joinRepository
+     * @param CommandBus     $commandBus
+     */
     public function __construct(
-        Repository $champRepo,
+        Repository $repository,
         JoinRepository $joinRepository,
         CommandBus $commandBus
     ) {
-        $this->champRepo = $champRepo;
+        $this->repository = $repository;
         $this->joinRepository = $joinRepository;
         $this->commandBus = $commandBus;
     }
@@ -55,7 +62,7 @@ class JoinController extends BaseController
      */
     public function index($id)
     {
-        $championship = $this->champRepo->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('join.index', compact('championship'));
     }
@@ -69,7 +76,7 @@ class JoinController extends BaseController
     {
         Input::merge([
             'user' => Auth::user(),
-            'championship' => $this->champRepo->find(Input::get('id')),
+            'championship' => $this->repository->find(Input::get('id')),
         ]);
 
         $join = $this->execute(JoinCommand::class);

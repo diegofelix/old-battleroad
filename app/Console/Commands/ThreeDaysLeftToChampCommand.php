@@ -10,6 +10,13 @@ use Indatus\Dispatcher\Drivers\Cron\Scheduler;
 class ThreeDaysLeftToChampCommand extends ScheduledCommand
 {
     /**
+     * Championship Repository.
+     *
+     * @var Repository
+     */
+    protected $repository;
+
+    /**
      * The console command name.
      *
      * @var string
@@ -24,11 +31,13 @@ class ThreeDaysLeftToChampCommand extends ScheduledCommand
     protected $description = 'Alert the users that the championship is comming';
 
     /**
-     * Create a new command instance.
+     * Class constructor.
+     *
+     * @param Repository $repository
      */
-    public function __construct(Repository $championshipRepository)
+    public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $championshipRepository;
+        $this->repository = $repository;
         parent::__construct();
     }
 
@@ -51,7 +60,7 @@ class ThreeDaysLeftToChampCommand extends ScheduledCommand
      */
     public function handle()
     {
-        $joins = $this->championshipRepository->getUsersFromCommingChampionships();
+        $joins = $this->repository->getUsersFromCommingChampionships();
 
         foreach ($joins as $join) {
             $parameters = [

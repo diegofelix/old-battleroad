@@ -7,6 +7,8 @@ use Laracasts\Commander\CommandHandler;
 class UpdateChampionshipCommandHandler implements CommandHandler
 {
     /**
+     * Championship Repository
+     *
      * @var Repository
      */
     protected $repository;
@@ -21,6 +23,9 @@ class UpdateChampionshipCommandHandler implements CommandHandler
         $this->repository = $repository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function handle($command)
     {
         $championship = $this->repository->find($command->id);
