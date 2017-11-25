@@ -7,11 +7,11 @@ use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Championship\Events\ChampionshipPublished;
 use Champ\Join\Status;
 use Champ\Traits\FormatToDb;
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
-class Championship extends Eloquent
+class Championship extends Model
 {
     use EventGenerator;
     use FormatToDb;
@@ -152,16 +152,6 @@ class Championship extends Eloquent
     public function coupons()
     {
         return $this->hasMany('Champ\Championship\Coupon');
-    }
-
-    /**
-     * Relation with campaigns.
-     *
-     * @return HasMany
-     */
-    public function campaigns()
-    {
-        return $this->hasMany('Champ\Championship\Campaign');
     }
 
     /**
