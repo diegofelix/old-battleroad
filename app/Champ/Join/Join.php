@@ -133,7 +133,7 @@ class Join extends Eloquent
 
         $this->raise(new JoinStatusChanged($this));
 
-        if ($statusId == Status::APPROVED) {
+        if (Status::APPROVED == $statusId) {
             $this->raise(new JoinApproved($this));
         }
 

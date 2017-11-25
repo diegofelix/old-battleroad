@@ -11,7 +11,7 @@ trait UserPrice
      */
     public function userPrice()
     {
-        if ($this->price == 0) {
+        if (0 == $this->price) {
             return '<span class="champ-free label label-success">Grátis!</span>';
         }
 

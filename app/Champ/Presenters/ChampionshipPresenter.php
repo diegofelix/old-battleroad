@@ -27,7 +27,7 @@ class ChampionshipPresenter extends Presenter
         $days = $this->event_start->diffInDays($now);
 
         // check if the diff is zero, meaning the champ is today!
-        if ($days == 0) {
+        if (0 == $days) {
             return 'Hoje';
         }
 
@@ -145,7 +145,7 @@ class ChampionshipPresenter extends Presenter
             }
         }
 
-        if ($lowestPrice == 0) {
+        if (0 == $lowestPrice) {
             return '<span class="champ-free label label-success">Grátis!</span>';
         }
 
@@ -186,7 +186,7 @@ class ChampionshipPresenter extends Presenter
     {
         $nicks = [];
         foreach ($this->joins as $join) {
-            if ($join->status_id == Status::APPROVED) {
+            if (Status::APPROVED == $join->status_id) {
                 foreach ($join->items as $item) {
                     foreach ($item->nicks as $nick) {
                         $nicks[$nick->nick] = $nick->nick;
