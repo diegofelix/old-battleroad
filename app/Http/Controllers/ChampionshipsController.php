@@ -2,25 +2,23 @@
 
 namespace Battleroad\Http\Controllers;
 
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class ChampionshipsController extends BaseController
 {
     /**
      * Championship Repository.
      *
-     * @var ChampionshipRepository
+     * @var Repository
      */
     protected $champRepo;
 
     /**
-     * Billing.
+     * Class constructor.
      *
-     * @var Billing
+     * @param Repository $champRepo
      */
-    protected $billing;
-
-    public function __construct(ChampionshipRepository $champRepo)
+    public function __construct(Repository $champRepo)
     {
         $this->champRepo = $champRepo;
     }

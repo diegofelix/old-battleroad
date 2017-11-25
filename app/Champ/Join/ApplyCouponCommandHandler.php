@@ -2,6 +2,7 @@
 
 namespace Champ\Join;
 
+use Champ\Championship\Repository;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Championship\Repositories\CouponRepository;
@@ -13,18 +14,18 @@ class ApplyCouponCommandHandler implements CommandHandler
     /**
      * Coupon Repository.
      */
-    protected $couponRepository;
+    protected $championships;
 
     use DispatchableTrait;
 
-    public function __construct(CouponRepository $couponRepository)
+    public function __construct(Repository $championshipRepository)
     {
-        $this->couponRepository = $couponRepository;
+        $this->championships = $championshipRepository;
     }
 
     public function handle($command)
     {
-        $coupon = $this->couponRepository->findByCode($command->code);
+        $coupon = $this->championships->findCouponByCode($command->code);
 
         $this->checkInvalidCoupon($coupon);
 
@@ -32,7 +33,7 @@ class ApplyCouponCommandHandler implements CommandHandler
 
         $coupon->applyFor($command->joinId, $command->userId);
 
-        $this->couponRepository->save($coupon);
+        $this->championships->saveCoupon($coupon);
 
         $this->dispatchEventsFor($coupon);
 
@@ -47,7 +48,7 @@ class ApplyCouponCommandHandler implements CommandHandler
      */
     private function checkUserAlreadyHasDiscount($command, $coupon)
     {
-        $coupon = $this->couponRepository->findByUserId($command->userId);
+        $coupon = $this->championships->findCouponByUserId($command->userId);
 
         if ($coupon && $coupon->join_id == $command->joinId) {
             throw new UserAlreadyHasDiscountException('The user already has a coupon applied.');

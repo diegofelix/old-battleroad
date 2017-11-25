@@ -4,7 +4,7 @@ namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 abstract class BaseRegistrationController extends BaseController
 {
@@ -13,11 +13,11 @@ abstract class BaseRegistrationController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var ChampionshipRepository
+     * @var Repository
      */
     protected $championshipRepository;
 
-    public function __construct(ChampionshipRepository $championshipRepository)
+    public function __construct(Repository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
     }

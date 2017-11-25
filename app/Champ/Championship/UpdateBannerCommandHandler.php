@@ -3,13 +3,13 @@
 namespace Champ\Championship;
 
 use Laracasts\Commander\CommandHandler;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Champ\Services\ChampionshipImage;
 
 class UpdateBannerCommandHandler implements CommandHandler
 {
     /**
-     * Championship Repository.
+     * @var Championship Repository.
      */
     protected $repository;
 
@@ -20,10 +20,14 @@ class UpdateBannerCommandHandler implements CommandHandler
      */
     protected $uploader;
 
-    public function __construct(
-        ChampionshipRepository $repository,
-        ChampionshipImage $uploader
-    ) {
+    /**
+     * Class constructor.
+     *
+     * @param Repository        $repository
+     * @param ChampionshipImage $uploader
+     */
+    public function __construct(Repository $repository, ChampionshipImage $uploader)
+    {
         $this->repository = $repository;
         $this->uploader = $uploader;
     }

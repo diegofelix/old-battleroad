@@ -4,16 +4,16 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Join\Repositories\JoinRepository;
-use Champ\Championship\Repositories\CompetitionRepository;
+use Champ\Championship\Repository;
 
 class CompetitionsController extends BaseController
 {
     /**
      * Competition Repository.
      *
-     * @var Champ\Championship\Repositories\CompetitionRepository
+     * @var Repository
      */
-    protected $competitionRepository;
+    protected $championships;
 
     /**
      * Join Repository.
@@ -23,10 +23,10 @@ class CompetitionsController extends BaseController
     protected $joinRepository;
 
     public function __construct(
-        CompetitionRepository $competitionRepository,
+        Repository $championships,
         JoinRepository $joinRepository
     ) {
-        $this->competitionRepository = $competitionRepository;
+        $this->championships = $championships;
         $this->joinRepository = $joinRepository;
     }
 
@@ -39,7 +39,7 @@ class CompetitionsController extends BaseController
      */
     public function index($champId)
     {
-        $competitions = $this->competitionRepository->getByChampionship($champId);
+        $competitions = $this->championships->getCompetitionByChampionship($champId);
 
         return $this->view('admin.championships.games.index', compact('competitions'));
     }
@@ -54,7 +54,7 @@ class CompetitionsController extends BaseController
      */
     public function show($champId, $competitionId)
     {
-        $competition = $this->competitionRepository->find($competitionId);
+        $competition = $this->championships->find($competitionId);
         $joins = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
         return $this->view('admin.championships.games.show', compact('competition', 'joins'));

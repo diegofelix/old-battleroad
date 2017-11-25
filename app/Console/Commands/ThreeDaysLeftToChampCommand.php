@@ -2,10 +2,10 @@
 
 namespace Battleroad\Console\Commands;
 
+use Champ\Championship\Repository;
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
-use Champ\Championship\Repositories\ChampionshipRepository;
 
 class ThreeDaysLeftToChampCommand extends ScheduledCommand
 {
@@ -26,7 +26,7 @@ class ThreeDaysLeftToChampCommand extends ScheduledCommand
     /**
      * Create a new command instance.
      */
-    public function __construct(ChampionshipRepository $championshipRepository)
+    public function __construct(Repository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
         parent::__construct();

@@ -2,7 +2,7 @@
 
 namespace Champ\Services;
 
-use Champ\Championship\Repositories\CompetitionRepository;
+use Champ\Championship\Repository;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
@@ -18,17 +18,17 @@ class JoinUserService
 {
     protected $user;
     protected $joins;
-    protected $competitions;
+    protected $championships;
     protected $items;
     protected $players;
 
     public function __construct(
         JoinRepository $joins,
-        CompetitionRepository $competitions,
+        Repository $championshipRepository,
         ItemRepository $items
     ) {
         $this->joins = $joins;
-        $this->competitions = $competitions;
+        $this->championships = $championshipRepository;
         $this->items = $items;
     }
 
@@ -98,7 +98,7 @@ class JoinUserService
      */
     private function saveCompetitionsForJoin($join, $competitions, $teamName = null)
     {
-        $foundCompetitions = $this->competitions->getByIds($competitions);
+        $foundCompetitions = $this->championships->getCompetitionsByIds($competitions);
 
         foreach ($foundCompetitions as $competition) {
             $isTeamCompetition = !$competition->present()->isSingleRegistration();

@@ -8,7 +8,7 @@ use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\UpdateBannerCommand;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\UpdateChampionshipCommand;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class ChampionshipsController extends BaseController
 {
@@ -17,11 +17,11 @@ class ChampionshipsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Repository
      */
     protected $champRepo;
 
-    public function __construct(ChampionshipRepository $champRepo)
+    public function __construct(Repository $champRepo)
     {
         $this->champRepo = $champRepo;
     }

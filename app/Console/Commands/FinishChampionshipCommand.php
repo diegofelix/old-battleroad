@@ -5,7 +5,7 @@ namespace Battleroad\Console\Commands;
 use Indatus\Dispatcher\Scheduling\ScheduledCommand;
 use Indatus\Dispatcher\Scheduling\Schedulable;
 use Indatus\Dispatcher\Drivers\Cron\Scheduler;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class FinishChampionshipCommand extends ScheduledCommand
 {
@@ -26,14 +26,16 @@ class FinishChampionshipCommand extends ScheduledCommand
     /**
      * Join Repository.
      *
-     * @var ChampionshipRepository
+     * @var Repository
      */
     protected $championshipRepository;
 
     /**
-     * Create a new command instance.
+     * Class constructor.
+     *
+     * @param Repository $championshipRepository
      */
-    public function __construct(ChampionshipRepository $championshipRepository)
+    public function __construct(Repository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
         parent::__construct();

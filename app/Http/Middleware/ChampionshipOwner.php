@@ -2,17 +2,17 @@
 
 namespace Battleroad\Http\Middleware;
 
+use Champ\Championship\Repository;
 use Closure;
-use Champ\Championship\Repositories\ChampionshipRepository;
 
 class ChampionshipOwner
 {
     /**
-     * @var ChampiponshipRepository
+     * @var Repository
      */
     private $championships;
 
-    public function __construct(ChampionshipRepository $championshipRepository)
+    public function __construct(Repository $championshipRepository)
     {
         $this->championships = $championshipRepository;
     }

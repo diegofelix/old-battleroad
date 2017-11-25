@@ -8,7 +8,7 @@ use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Coupons\GenerateCouponCommand;
 use Champ\Championship\Repositories\CouponRepository;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class CouponsController extends BaseController
 {
@@ -24,7 +24,7 @@ class CouponsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Champ\Championship\Repository
      */
     protected $championshipRepository;
 
@@ -36,12 +36,10 @@ class CouponsController extends BaseController
     protected $couponRepository;
 
     public function __construct(
-        ChampionshipRepository $championshipRepository,
-        CouponRepository $couponRepository,
+        Repository $championshipRepository,
         KeyGen $keyGen
     ) {
         $this->championshipRepository = $championshipRepository;
-        $this->couponRepository = $couponRepository;
         $this->keyGen = $keyGen;
     }
 
@@ -86,11 +84,11 @@ class CouponsController extends BaseController
      */
     public function destroy($id)
     {
-        $coupon = $this->couponRepository->find(Input::get('id'));
+        $coupon = $this->championshipRepository->findCoupon(Input::get('id'));
 
         // a little verification to check if the user is the owner
         if ($coupon->championship_id == $id && empty($coupon->user_id)) {
-            $this->couponRepository->delete($coupon);
+            $this->championshipRepository->deleteCoupon($coupon);
         }
 
         return $this->redirectBack(['message' => 'Cupon excluído com sucesso!']);

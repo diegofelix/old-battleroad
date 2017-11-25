@@ -4,7 +4,7 @@ namespace Champ\Join;
 
 use Champ\Account\Repositories\UserRepository;
 use Champ\Account\User;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Champ\Join\Repositories\WaitingListRepository;
 use Champ\Services\RegisterUser;
 use Laracasts\Commander\CommandHandler;
@@ -15,7 +15,7 @@ class LimitExceededJoinCommandHandler implements CommandHandler
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Repository
      */
     protected $championshipRepository;
 
@@ -38,11 +38,12 @@ class LimitExceededJoinCommandHandler implements CommandHandler
     /**
      * Constructor.
      *
-     * @param ChampionshipRepository $championshipRepository
-     * @param UserRepository         $userRepository
+     * @param Repository            $championshipRepository
+     * @param WaitingListRepository $waitingList
+     * @param RegisterUser          $userService
      */
     public function __construct(
-        ChampionshipRepository $championshipRepository,
+        Repository $championshipRepository,
         WaitingListRepository $waitingList,
         RegisterUser $userService
     ) {

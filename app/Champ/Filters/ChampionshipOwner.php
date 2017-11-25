@@ -4,7 +4,7 @@ namespace Champ\Filters;
 
 use App;
 use Auth;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Request;
 
 class ChampionshipOwner
@@ -12,11 +12,11 @@ class ChampionshipOwner
     /**
      * Championship Repository.
      *
-     * @var ChampionshipRepository
+     * @var Repository
      */
     protected $championships;
 
-    public function __construct(ChampionshipRepository $championships)
+    public function __construct(Repository $championships)
     {
         $this->championships = $championships;
     }

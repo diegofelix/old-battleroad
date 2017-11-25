@@ -2,11 +2,8 @@
 
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
+use Champ\Championship\Repository;
 use Input;
-use Champ\Championship\Repositories\ChampionshipRepository;
-use Champ\Championship\Repositories\GameRepository;
-use Champ\Championship\Repositories\FormatRepository;
-use Champ\Championship\Repositories\PlatformRepository;
 
 class CompetitionsController extends BaseRegistrationController
 {
@@ -15,7 +12,7 @@ class CompetitionsController extends BaseRegistrationController
      *
      * @var Champ\Championship\Repositories\ChampionshipRepository
      */
-    protected $champRepo;
+    protected $championships;
 
     /**
      * Game Repository.
@@ -24,16 +21,9 @@ class CompetitionsController extends BaseRegistrationController
      */
     protected $gameRepo;
 
-    public function __construct(
-        ChampionshipRepository $champRepo,
-        GameRepository $gameRepo,
-        FormatRepository $formatRepo,
-        PlatformRepository $platformRepo
-    ) {
-        $this->champRepo = $champRepo;
-        $this->gameRepo = $gameRepo;
-        $this->formatRepo = $formatRepo;
-        $this->platformRepo = $platformRepo;
+    public function __construct(Repository $championshipRepository)
+    {
+        $this->championships = $championshipRepository;
     }
 
     /**
@@ -45,11 +35,10 @@ class CompetitionsController extends BaseRegistrationController
      */
     public function index($champId)
     {
-        $championship = $this->champRepo->find($champId, ['competitions']);
-        $championship = $this->champRepo->find($champId, ['competitions']);
-        $games = $this->gameRepo->dropdown();
-        $formats = $this->formatRepo->dropdown();
-        $platforms = $this->platformRepo->dropdown();
+        $championship = $this->championships->find($champId, ['competitions']);
+        $games = $this->championships->getGamesDropdown();
+        $formats = $this->championships->getFormatsDropdown();
+        $platforms = $this->championships->getPlatformsDropdown();
 
         return $this->view('admin.register.games.index', compact('championship', 'games', 'formats', 'platforms'));
     }
@@ -63,7 +52,7 @@ class CompetitionsController extends BaseRegistrationController
      */
     public function create($champId)
     {
-        $championship = $this->champRepo->find($champId, ['competitions']);
+        $championship = $this->championships->find($champId, ['competitions']);
         $games = $this->gameRepo->dropdown();
         $formats = $this->formatRepo->dropdown();
         $platforms = $this->platformRepo->dropdown();
@@ -89,8 +78,8 @@ class CompetitionsController extends BaseRegistrationController
         }
 
         // create the championship
-        if (!$this->champRepo->createCompetition($champId, $input)) {
-            return $this->redirectBack(['error' => $this->champRepo->getErrors()]);
+        if (!$this->championships->createCompetition($champId, $input)) {
+            return $this->redirectBack(['error' => $this->championships->getErrors()]);
         }
 
         // redirect back
@@ -99,7 +88,7 @@ class CompetitionsController extends BaseRegistrationController
 
     public function destroy($champId, $competitionId)
     {
-        $championship = $this->champRepo->find($champId);
+        $championship = $this->championships->find($champId);
         $competition = $championship->competitions->find($competitionId);
 
         $competition->delete();

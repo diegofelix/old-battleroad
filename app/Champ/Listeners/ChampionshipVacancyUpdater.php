@@ -4,13 +4,13 @@ namespace Champ\Listeners;
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class ChampionshipVacancyUpdater extends EventListener
 {
     protected $championshipRepository;
 
-    public function __construct(ChampionshipRepository $championshipRepository)
+    public function __construct(Repository $championshipRepository)
     {
         $this->championshipRepository = $championshipRepository;
     }

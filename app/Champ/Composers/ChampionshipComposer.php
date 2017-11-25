@@ -2,14 +2,14 @@
 
 namespace Champ\Composers;
 
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Request;
 
 class ChampionshipComposer
 {
     protected $championshipRepository;
 
-    public function __construct(ChampionshipRepository $repository)
+    public function __construct(Repository $repository)
     {
         $this->championshipRepository = $repository;
     }

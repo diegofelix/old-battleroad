@@ -2,49 +2,24 @@
 
 namespace Champ\Join;
 
-use Champ\Championship\Repositories\CompetitionRepository;
-use Champ\Join\Repositories\ItemRepository;
-use Champ\Join\Repositories\JoinRepository;
 use Champ\Services\JoinUserService;
 use Laracasts\Commander\CommandHandler;
 use Laracasts\Commander\Events\DispatchableTrait;
 
 class JoinCommandHandler implements CommandHandler
 {
-    /**
-     * Join Repository.
-     */
-    protected $joinRepo;
-
-    /**
-     * Competition Repository.
-     */
-    protected $competitionRepo;
-
-    /**
-     * Competition Repository.
-     */
-    protected $itemRepo;
+    use DispatchableTrait;
 
     /**
      * Join User Service.
      *
-     * @var [type]
+     * @var JoinUserService
      */
-    protected $userJoinService;
+    protected $joinUserService;
 
-    use DispatchableTrait;
-
-    public function __construct(
-        JoinUserService $joinUserService
-        // JoinRepository $joinRepo,
-        // CompetitionRepository $competitionRepo,
-        // ItemRepository $itemRepo
-    ) {
+    public function __construct(JoinUserService $joinUserService)
+    {
         $this->joinUserService = $joinUserService;
-        // $this->JoinRepo         = $joinRepo;
-        // $this->competitionRepo  = $competitionRepo;
-        // $this->itemRepo         = $itemRepo;
     }
 
     public function handle($command)

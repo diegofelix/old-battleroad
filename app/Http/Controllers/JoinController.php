@@ -3,11 +3,11 @@
 namespace Battleroad\Http\Controllers;
 
 use Auth;
+use Champ\Championship\Repository;
 use Input;
 use Laracasts\Commander\CommandBus;
 use Champ\Join\Join;
 use Champ\Join\JoinCommand;
-use Champ\Championship\Repositories\ChampionshipRepository;
 use Champ\Join\Repositories\JoinRepository;
 use Laracasts\Commander\CommanderTrait;
 
@@ -18,7 +18,7 @@ class JoinController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Repository
      */
     protected $champRepo;
 
@@ -37,7 +37,7 @@ class JoinController extends BaseController
     protected $commandBus;
 
     public function __construct(
-        ChampionshipRepository $champRepo,
+        Repository $champRepo,
         JoinRepository $joinRepository,
         CommandBus $commandBus
     ) {

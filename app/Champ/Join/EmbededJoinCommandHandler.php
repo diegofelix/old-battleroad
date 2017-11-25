@@ -3,7 +3,7 @@
 namespace Champ\Join;
 
 use Champ\Account\User;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Champ\Join\Repositories\JoinRepository;
 use Champ\Services\JoinUserService;
 use Champ\Services\RegisterUser;
@@ -36,7 +36,7 @@ class EmbededJoinCommandHandler implements CommandHandler
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Champ\Championship\Repository
      */
     protected $championshipRepository;
 
@@ -51,7 +51,7 @@ class EmbededJoinCommandHandler implements CommandHandler
      */
     public function __construct(
         JoinRepository $joinRepository,
-        ChampionshipRepository $championshipRepository,
+        Repository $championshipRepository,
         JoinUserService $joinUserService,
         RegisterUser $userService
     ) {
