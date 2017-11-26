@@ -1,3 +1,5 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/diegofelix/battleroad/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/diegofelix/battleroad/?branch=master) [![Build Status](https://scrutinizer-ci.com/g/diegofelix/battleroad/badges/build.png?b=master)](https://scrutinizer-ci.com/g/diegofelix/battleroad/build-status/master)
+
 ## Battleroad
 Battleroad is the first brazilian eSports championship platform. It was made on top of Laravel framework and MySQL as database.
 
