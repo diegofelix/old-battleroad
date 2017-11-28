@@ -22,6 +22,12 @@ class CompetitionsController extends BaseController
      */
     protected $joinRepository;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository     $repository
+     * @param JoinRepository $joinRepository
+     */
     public function __construct(
         Repository $repository,
         JoinRepository $joinRepository
@@ -54,7 +60,7 @@ class CompetitionsController extends BaseController
      */
     public function show($champId, $competitionId)
     {
-        $competition = $this->repository->find($competitionId);
+        $competition = $this->repository->findCompetition($competitionId);
         $joins = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
         return $this->view('admin.championships.games.show', compact('competition', 'joins'));

@@ -396,6 +396,20 @@ class Repository extends AbstractRepository
     }
 
     /**
+     * Find a competition by its id.
+     *
+     * @param $competitionId
+     *
+     * @return Competition
+     *
+     * @throws \Illuminate\Database\Eloquent\ModelNotFoundException
+     */
+    public function findCompetition($competitionId)
+    {
+        return Competition::findOrFail($competitionId);
+    }
+
+    /**
      * Get all competitions by an array of ids.
      *
      * @param array $ids
