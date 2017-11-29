@@ -16,7 +16,8 @@ build:
       - command: docker-compose run --rm web composer install --no-progress
   project_setup:
     before:
-      - mysql stop
+      - command: mysql stop
+      - command: redis stop
   tests:
     override:
       - docker-compose run --rm app vendor/bin/phpunit
