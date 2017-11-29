@@ -14,6 +14,7 @@ build:
       - cp .env.example .env
       - command: sudo service mysql stop
       - command: sudo service redis-server stop
+      - command: sudo service apache2 stop
       - command: docker-compose up -d
       - command: docker-compose run --rm web composer install --no-progress
   project_setup:
