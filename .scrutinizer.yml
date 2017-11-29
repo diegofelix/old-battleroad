@@ -1,0 +1,19 @@
+build:
+  environment:
+    docker:
+    postgresql: false
+    redis: false
+  cache:
+    disabled: false
+    directories:
+      - vendor/
+      - bower_components/
+      - node_modules/
+  dependencies:
+    override:
+      - cp .env.example .env
+      - command: docker-compose up -d
+      - command: docker-compose run --rm web composer install --no-progress
+  tests:
+    override:
+      - docker-compose run --rm app vendor/bin/phpunit
