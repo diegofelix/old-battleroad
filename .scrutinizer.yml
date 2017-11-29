@@ -12,8 +12,8 @@ build:
   dependencies:
     override:
       - cp .env.example .env
-      - command: mysql stop
-      - command: redis stop
+      - command: service mysql stop
+      - command: service redis stop
       - command: docker-compose up -d
       - command: docker-compose run --rm web composer install --no-progress
   project_setup:
