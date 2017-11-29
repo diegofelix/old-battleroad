@@ -3,7 +3,6 @@ build:
     docker: true
     postgresql: false
     redis: false
-    mysql: false
   cache:
     disabled: false
     directories:
@@ -15,6 +14,9 @@ build:
       - cp .env.example .env
       - command: docker-compose up -d
       - command: docker-compose run --rm web composer install --no-progress
+  project_setup:
+    before:
+      - mysql stop
   tests:
     override:
       - docker-compose run --rm app vendor/bin/phpunit
