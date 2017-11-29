@@ -3,6 +3,9 @@ build:
     docker: true
     postgresql: false
     redis: false
+    memcached: true
+    neo4j: false
+    rabbitmq: false
   cache:
     disabled: false
     directories:
