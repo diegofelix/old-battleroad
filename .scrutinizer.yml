@@ -12,12 +12,9 @@ build:
   dependencies:
     override:
       - cp .env.example .env
-      - command: docker-compose up -d
-      - command: docker-compose run --rm web composer install --no-progress
-  project_setup:
-    before:
       - command: mysql stop
       - command: redis stop
+      - command: docker-compose up -d
+      - command: docker-compose run --rm web composer install --no-progress
   tests:
-    override:
-      - docker-compose run --rm app vendor/bin/phpunit
+      - command: docker-compose run --rm app vendor/bin/phpunit
