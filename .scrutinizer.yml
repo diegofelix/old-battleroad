@@ -1,8 +1,9 @@
 build:
   environment:
-    docker:
+    docker: true
     postgresql: false
     redis: false
+    mysql: false
   cache:
     disabled: false
     directories:
