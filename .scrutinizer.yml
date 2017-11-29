@@ -16,5 +16,9 @@ build:
       - command: redis stop
       - command: docker-compose up -d
       - command: docker-compose run --rm web composer install --no-progress
+  project_setup:
+    override:
+      - docker-compose up -d
   tests:
-      - command: docker-compose run --rm app vendor/bin/phpunit
+    override:
+    - docker-compose run --rm app vendor/bin/phpunit
