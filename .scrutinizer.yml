@@ -3,7 +3,7 @@ build:
     docker: true
     postgresql: false
     redis: false
-    memcached: true
+    memcached: false
     neo4j: false
     rabbitmq: false
   cache:
