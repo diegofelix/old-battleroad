@@ -4,7 +4,7 @@ namespace Champ\Filters;
 
 use App;
 use Auth;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 use Request;
 
 class ChampionshipOwner
@@ -12,13 +12,18 @@ class ChampionshipOwner
     /**
      * Championship Repository.
      *
-     * @var ChampionshipRepository
+     * @var Repository
      */
-    protected $championships;
+    protected $repository;
 
-    public function __construct(ChampionshipRepository $championships)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
-        $this->championships = $championships;
+        $this->repository = $repository;
     }
 
     /**
@@ -34,7 +39,7 @@ class ChampionshipOwner
         // get the championship id
         $id = Request::segment(3);
 
-        $championship = $this->championships->find($id);
+        $championship = $this->repository->find($id);
 
         if (!$championship->isOwner(Auth::id())) {
             App::abort(404);

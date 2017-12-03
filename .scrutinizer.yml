@@ -1,0 +1,28 @@
+build:
+  environment:
+    docker: true
+    postgresql: false
+    redis: false
+    memcached: false
+    neo4j: false
+    rabbitmq: false
+  cache:
+    disabled: false
+    directories:
+      - vendor/
+      - bower_components/
+      - node_modules/
+  dependencies:
+    override:
+      - cp .env.example .env
+      - command: sudo service mysql stop
+      - command: sudo service redis-server stop
+      - command: sudo service apache2 stop
+      - command: docker-compose up -d
+      - command: docker-compose run --rm web composer install --no-progress
+  project_setup:
+    override:
+      - docker-compose up -d
+  tests:
+    override:
+    - docker-compose run --rm app vendor/bin/phpunit

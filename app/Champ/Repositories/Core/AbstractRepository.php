@@ -2,6 +2,9 @@
 
 namespace Champ\Repositories\Core;
 
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Database\Eloquent\Model;
+
 abstract class AbstractRepository
 {
     /**
@@ -10,6 +13,21 @@ abstract class AbstractRepository
      * @var MessageBag
      */
     protected $errors;
+
+    /**
+     * @var Model
+     */
+    protected $model;
+
+    /**
+     * Class constructor.
+     *
+     * @param Model $model
+     */
+    public function __construct(Model $model)
+    {
+        $this->model = $model;
+    }
 
     /**
      * Get the first instance of a model.
@@ -24,9 +42,9 @@ abstract class AbstractRepository
     }
 
     /**
-     * All.
+     * Returns a list of all models.
      *
-     * @return Illuminate\Database\Eloquent\Collection
+     * @return Collection
      */
     public function all($with = array())
     {
@@ -34,13 +52,13 @@ abstract class AbstractRepository
     }
 
     /**
-     * Find.
+     * Find a model by its id.
      *
-     * @return Illuminate\Database\Eloquent\Model
+     * @return Model
      */
     public function find($id, $with = array())
     {
-        return $this->make($with)->find($id);
+        return $this->make($with)->findOrFail($id);
     }
 
     /**
@@ -80,7 +98,7 @@ abstract class AbstractRepository
     }
 
     /**
-     * Delete.
+     * Deletes a model by its id.
      *
      * @return bool
      */

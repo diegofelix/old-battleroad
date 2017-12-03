@@ -2,18 +2,18 @@
 
 namespace Champ\Listeners;
 
+use Champ\Championship\Repository;
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
 use Champ\Join\Events\JoinCancelled;
-use Champ\Championship\Repositories\CompetitionRepository;
 
 class CompetitionVacancyUpdater extends EventListener
 {
-    protected $competitionRepository;
+    protected $championships;
 
-    public function __construct(CompetitionRepository $competitionRepository)
+    public function __construct(Repository $competitionRepository)
     {
-        $this->competitionRepository = $competitionRepository;
+        $this->championships = $competitionRepository;
     }
 
     /**
@@ -49,7 +49,7 @@ class CompetitionVacancyUpdater extends EventListener
             foreach ($items as $item) {
                 $competition = $item->competition;
                 $competition->limit += $value;
-                $this->competitionRepository->save($competition);
+                $this->championships->saveCompetition($competition);
             }
         }
     }

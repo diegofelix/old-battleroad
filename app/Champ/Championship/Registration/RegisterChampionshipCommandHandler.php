@@ -2,9 +2,9 @@
 
 namespace Champ\Championship\Registration;
 
+use Champ\Championship\Repository;
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Championship;
-use Champ\Championship\Repositories\ChampionshipRepository;
 use App;
 
 class RegisterChampionshipCommandHandler implements CommandHandler
@@ -14,7 +14,7 @@ class RegisterChampionshipCommandHandler implements CommandHandler
      */
     protected $repository;
 
-    public function __construct(ChampionshipRepository $repository)
+    public function __construct(Repository $repository)
     {
         $this->repository = $repository;
     }

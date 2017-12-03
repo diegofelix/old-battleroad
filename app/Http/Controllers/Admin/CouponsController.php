@@ -7,8 +7,7 @@ use Champ\Services\KeyGen;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\Coupons\GenerateCouponCommand;
-use Champ\Championship\Repositories\CouponRepository;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class CouponsController extends BaseController
 {
@@ -24,24 +23,19 @@ class CouponsController extends BaseController
     /**
      * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\ChampionshipRepository
+     * @var Repository
      */
-    protected $championshipRepository;
+    protected $repository;
 
     /**
-     * Coupon Repository.
+     * Class constructor.
      *
-     * @var CouponRepository
+     * @param Repository $repository
+     * @param KeyGen     $keyGen
      */
-    protected $couponRepository;
-
-    public function __construct(
-        ChampionshipRepository $championshipRepository,
-        CouponRepository $couponRepository,
-        KeyGen $keyGen
-    ) {
-        $this->championshipRepository = $championshipRepository;
-        $this->couponRepository = $couponRepository;
+    public function __construct(Repository $repository, KeyGen $keyGen)
+    {
+        $this->repository = $repository;
         $this->keyGen = $keyGen;
     }
 
@@ -52,7 +46,7 @@ class CouponsController extends BaseController
      */
     public function index($id)
     {
-        $championship = $this->championshipRepository->find($id);
+        $championship = $this->repository->find($id);
 
         return $this->view('admin.championships.coupons.index', compact('championship'));
     }
@@ -86,11 +80,11 @@ class CouponsController extends BaseController
      */
     public function destroy($id)
     {
-        $coupon = $this->couponRepository->find(Input::get('id'));
+        $coupon = $this->repository->findCoupon(Input::get('id'));
 
         // a little verification to check if the user is the owner
         if ($coupon->championship_id == $id && empty($coupon->user_id)) {
-            $this->couponRepository->delete($coupon);
+            $this->repository->deleteCoupon($coupon);
         }
 
         return $this->redirectBack(['message' => 'Cupon excluído com sucesso!']);

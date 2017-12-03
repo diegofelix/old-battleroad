@@ -4,29 +4,35 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Join\Repositories\JoinRepository;
-use Champ\Championship\Repositories\CompetitionRepository;
+use Champ\Championship\Repository;
 
 class CompetitionsController extends BaseController
 {
     /**
-     * Competition Repository.
+     * Championship Repository.
      *
-     * @var Champ\Championship\Repositories\CompetitionRepository
+     * @var Repository
      */
-    protected $competitionRepository;
+    protected $repository;
 
     /**
      * Join Repository.
      *
-     * @var Champ\Join\Repositories\JoinRepository
+     * @var JoinRepository
      */
     protected $joinRepository;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository     $repository
+     * @param JoinRepository $joinRepository
+     */
     public function __construct(
-        CompetitionRepository $competitionRepository,
+        Repository $repository,
         JoinRepository $joinRepository
     ) {
-        $this->competitionRepository = $competitionRepository;
+        $this->repository = $repository;
         $this->joinRepository = $joinRepository;
     }
 
@@ -39,7 +45,7 @@ class CompetitionsController extends BaseController
      */
     public function index($champId)
     {
-        $competitions = $this->competitionRepository->getByChampionship($champId);
+        $competitions = $this->repository->getCompetitionsByChampionship($champId);
 
         return $this->view('admin.championships.games.index', compact('competitions'));
     }
@@ -54,7 +60,7 @@ class CompetitionsController extends BaseController
      */
     public function show($champId, $competitionId)
     {
-        $competition = $this->competitionRepository->find($competitionId);
+        $competition = $this->repository->findCompetition($competitionId);
         $joins = $this->joinRepository->getByCompetition($competitionId, ['user']);
 
         return $this->view('admin.championships.games.show', compact('competition', 'joins'));

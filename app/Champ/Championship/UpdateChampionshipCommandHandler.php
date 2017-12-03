@@ -3,20 +3,29 @@
 namespace Champ\Championship;
 
 use Laracasts\Commander\CommandHandler;
-use Champ\Championship\Repositories\ChampionshipRepository;
 
 class UpdateChampionshipCommandHandler implements CommandHandler
 {
     /**
      * Championship Repository.
+     *
+     * @var Repository
      */
     protected $repository;
 
-    public function __construct(ChampionshipRepository $repository)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
         $this->repository = $repository;
     }
 
+    /**
+     * {@inheritdoc}
+     */
     public function handle($command)
     {
         $championship = $this->repository->find($command->id);

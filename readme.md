@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/diegofelix/battleroad.svg?branch=master)](https://travis-ci.org/diegofelix/battleroad)
+
 ## Battleroad
 Battleroad is the first brazilian eSports championship platform. It was made on top of Laravel framework and MySQL as database.
 

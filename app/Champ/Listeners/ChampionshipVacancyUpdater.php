@@ -4,15 +4,25 @@ namespace Champ\Listeners;
 
 use Laracasts\Commander\Events\EventListener;
 use Champ\Join\Events\UserJoined;
-use Champ\Championship\Repositories\ChampionshipRepository;
+use Champ\Championship\Repository;
 
 class ChampionshipVacancyUpdater extends EventListener
 {
-    protected $championshipRepository;
+    /**
+     * Championship Repository.
+     *
+     * @var Repository
+     */
+    protected $repository;
 
-    public function __construct(ChampionshipRepository $championshipRepository)
+    /**
+     * Class constructor.
+     *
+     * @param Repository $repository
+     */
+    public function __construct(Repository $repository)
     {
-        $this->championshipRepository = $championshipRepository;
+        $this->repository = $repository;
     }
 
     /**
@@ -27,7 +37,7 @@ class ChampionshipVacancyUpdater extends EventListener
         // update only if championship has a limit
         if (0 != $championship->limit) {
             $championship->limit--;
-            $this->championshipRepository->save($championship);
+            $this->repository->save($championship);
         }
     }
 }
