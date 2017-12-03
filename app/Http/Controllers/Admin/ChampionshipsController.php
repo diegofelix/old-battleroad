@@ -3,9 +3,9 @@
 namespace Battleroad\Http\Controllers\Admin;
 
 use Auth;
+use Champ\Championship\Jobs\UpdateBanner;
 use Input;
 use Laracasts\Commander\CommanderTrait;
-use Champ\Championship\UpdateBannerCommand;
 use Battleroad\Http\Controllers\BaseController;
 use Champ\Championship\UpdateChampionshipCommand;
 use Champ\Championship\Repository;
@@ -125,7 +125,7 @@ class ChampionshipsController extends BaseController
     {
         $image = Input::file('image');
 
-        $championship = $this->execute(UpdateBannerCommand::class, compact('id', 'image'));
+        $championship = $this->dispatch(new UpdateBanner($id, $image));
 
         return $this->redirectRoute('admin.championships.banner', [$championship->id])
             ->with(['message' => 'Banner atualizado com sucesso!']);

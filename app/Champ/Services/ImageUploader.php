@@ -3,6 +3,7 @@
 namespace Champ\Services;
 
 use Intervention\Image\ImageManager as Image;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 abstract class ImageUploader
 {
@@ -56,16 +57,16 @@ abstract class ImageUploader
      * This method also "grab" the image, basically is resize and crop
      * the image to fit the best way.
      *
-     * @param array $input
+     * @param UploadedFile $image
      *
-     * @return Intervention\Image\Facades\Image
+     * @return ChampionshipImage
      */
-    public function upload($input)
+    public function upload(UploadedFile $image)
     {
         // save the image and generate its name based on current time
         $dest = public_path($this->path.time().'.jpg');
 
-        $this->uploadedImage = $this->image->make($input->getRealPath())
+        $this->uploadedImage = $this->image->make($image->getRealPath())
             ->resize($this->width, $this->height)
             ->save($dest);
 

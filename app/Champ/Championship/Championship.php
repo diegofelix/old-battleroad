@@ -100,8 +100,6 @@ class Championship extends Model
     {
         $this->image = $image;
         $this->thumb = $thumb;
-
-        // raise a new event if needed
     }
 
     /**
