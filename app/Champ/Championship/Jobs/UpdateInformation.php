@@ -1,6 +1,7 @@
 <?php
+
 namespace Champ\Championship\Jobs;
 
-class UpdateInformation {
-
+class UpdateInformation
+{
 }
