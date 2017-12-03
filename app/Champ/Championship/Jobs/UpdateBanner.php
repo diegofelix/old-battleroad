@@ -4,7 +4,7 @@ namespace Champ\Championship\Jobs;
 
 use Battleroad\Jobs\Job;
 use Champ\Championship\Repository;
-use Champ\Services\ChampionshipImage;
+use Champ\Championship\ImageUploader;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Queue\SerializesModels;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
@@ -44,11 +44,11 @@ class UpdateBanner extends Job implements SelfHandling
     /**
      * Execute the job.
      *
-     * @param ChampionshipImage $uploader
+     * @param ImageUploader $uploader
      *
      * @return \Champ\Championship\Championship
      */
-    public function handle(ChampionshipImage $uploader)
+    public function handle(ImageUploader $uploader)
     {
         $image = $uploader->upload($this->image);
 
@@ -62,15 +62,15 @@ class UpdateBanner extends Job implements SelfHandling
     /**
      * Update championship with the new banner image.
      *
-     * @param ChampionshipImage $image
+     * @param ImageUploader $image
      *
      * @return \Champ\Championship\Championship
      */
-    private function updateBanner(ChampionshipImage $image)
+    private function updateBanner(ImageUploader $image)
     {
         $championship = $this->repository->find($this->id);
 
-        $championship->updateBanner($image->getImagePath(), $image->getThumbPath());
+        $championship->updateBanner($image->getImagePath());
 
         return $championship;
     }

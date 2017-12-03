@@ -3,7 +3,7 @@
 namespace Champ\Championship;
 
 use Champ\Repositories\Core\AbstractRepository;
-use Champ\Services\ChampionshipImage;
+use Champ\Services\ImageUploader;
 use Champ\Validators\ChampionshipValidator;
 use Laracasts\Commander\Events\DispatchableTrait;
 use Illuminate\Support\Collection;
@@ -216,7 +216,6 @@ class Repository extends AbstractRepository
 
         // save the images
         $data['image'] = $image->getImagePath();
-        $data['thumb'] = $image->getThumbPath();
 
         // continue to save the championship
         return parent::create($data);
@@ -259,7 +258,7 @@ class Repository extends AbstractRepository
             return null;
         }
 
-        return app(ChampionshipImage::class)
+        return app(ImageUploader::class)
             ->upload($data['image']);
     }
 

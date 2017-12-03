@@ -38,13 +38,12 @@ class Championship extends Model
      * @param string $description
      * @param string $event_start
      * @param string $image
-     * @param string $thumb
      *
      * @return Championship
      */
-    public static function register($user_id, $name, $description, $location, $event_start, $image = null, $thumb = null)
+    public static function register($user_id, $name, $description, $location, $event_start, $image = null)
     {
-        return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image', 'thumb'));
+        return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image'));
     }
 
     /**
@@ -94,12 +93,10 @@ class Championship extends Model
      * Updates the banner images.
      *
      * @param string $image
-     * @param string $thumb
      */
-    public function updateBanner($image, $thumb)
+    public function updateBanner($image)
     {
         $this->image = $image;
-        $this->thumb = $thumb;
     }
 
     /**

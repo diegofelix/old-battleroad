@@ -17,7 +17,6 @@ class CreateChampionshipsTable extends Migration
             $table->text('description');
             $table->datetime('event_start');
             $table->string('image', 200);
-            $table->string('thumb', 200);
             $table->string('location', 200);
             $table->string('token', 200);
             $table->boolean('published')->default(false)->index();
