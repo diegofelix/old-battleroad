@@ -3,6 +3,7 @@
 namespace Champ\Championship;
 
 use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 use Mockery as m;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use TestCase;
@@ -11,7 +12,7 @@ class ImageUploaderTest extends TestCase
 {
     public function testShouldGetEmptyStringWhenCallingImagePath()
     {
-        $imageManager = m::mock(Image::class);
+        $imageManager = m::mock(ImageManager::class);
         $imageUploader = new ImageUploader($imageManager);
 
         $this->assertEmpty($imageUploader->getImagePath());
@@ -19,7 +20,7 @@ class ImageUploaderTest extends TestCase
 
     public function testShouldUploadImage()
     {
-        $imageManager = m::mock(Image::class);
+        $imageManager = m::mock(ImageManager::class);
         $imageManager->dirname = 'images';
         $imageManager->basename = '1234567890.jpg';
         $uploadedFile = m::mock(UploadedFile::class);

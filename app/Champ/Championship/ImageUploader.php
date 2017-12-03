@@ -3,6 +3,7 @@
 namespace Champ\Championship;
 
 use Intervention\Image\Image;
+use Intervention\Image\ImageManager;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class ImageUploader
@@ -43,9 +44,9 @@ class ImageUploader
     /**
      * Class constructor.
      *
-     * @param Image $image
+     * @param ImageManager $image
      */
-    public function __construct(Image $image)
+    public function __construct(ImageManager $image)
     {
         $this->image = $image;
     }
