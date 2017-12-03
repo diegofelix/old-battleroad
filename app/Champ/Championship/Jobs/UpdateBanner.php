@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Championship\Jobs;
 
 use Battleroad\Jobs\Job;
@@ -30,7 +31,7 @@ class UpdateBanner extends Job implements SelfHandling
     /**
      * Class constructor.
      *
-     * @param int    $id
+     * @param int          $id
      * @param UploadedFile $image
      */
     public function __construct($id, UploadedFile $image)
