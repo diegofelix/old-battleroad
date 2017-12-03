@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Championship;
 
 use Intervention\Image\Image;
