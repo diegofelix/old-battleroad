@@ -73,8 +73,6 @@ class Championship extends Model
         $this->name = $name;
         $this->description = $description;
         $this->stream = $stream;
-
-        // raise a new event if needed.
     }
 
     /**
@@ -82,7 +80,7 @@ class Championship extends Model
      *
      * @param int $id
      *
-     * @return bool =
+     * @return bool
      */
     public function isOwner($id)
     {
