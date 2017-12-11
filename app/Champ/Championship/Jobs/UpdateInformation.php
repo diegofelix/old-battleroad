@@ -30,6 +30,12 @@ class UpdateInformation extends Job implements SelfHandling
      */
     public $stream;
 
+    /**
+     * @param int    $id
+     * @param string $name
+     * @param string $description
+     * @param string $stream
+     */
     public function __construct($id, $name, $description, $stream = '')
     {
         $this->id = $id;
