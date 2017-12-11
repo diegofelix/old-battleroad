@@ -2,19 +2,20 @@
 
 namespace Battleroad\Http\Controllers;
 
-use Auth;
-use View;
-use Redirect;
-
 class BaseController extends Controller
 {
+    /**
+     * @var string
+     */
+    protected $layout;
+
     /**
      * Setup the layout used by the controller.
      */
     protected function setupLayout()
     {
         if (!is_null($this->layout)) {
-            $this->layout = View::make($this->layout);
+            $this->layout = view($this->layout);
         }
     }
 
@@ -26,21 +27,22 @@ class BaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function view($view, array $params = array())
+    public function view($view, array $params = [])
     {
-        return View::make($view, $params);
+        return view($view, $params);
     }
 
     /**
      * Redirect the user to an url.
      *
      * @param string $url
+     * @param array  $with
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    protected function redirectTo($url, $with = array())
+    protected function redirectTo($url, $with = [])
     {
-        return Redirect::to($url)->with($with);
+        return redirect()->to($url)->with($with);
     }
 
     /**
@@ -49,11 +51,11 @@ class BaseController extends Controller
      * @param string $route
      * @param array  $params
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    protected function redirectRoute($route, $params = array())
+    protected function redirectRoute($route, $params = [])
     {
-        return Redirect::route($route, $params);
+        return redirect()->route($route, $params);
     }
 
     /**
@@ -61,11 +63,11 @@ class BaseController extends Controller
      *
      * @param array $with
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function redirectBack(array $with = null)
     {
-        return Redirect::back()->withInput()->with($with);
+        return redirect()->back()->withInput()->with($with);
     }
 
     /**
@@ -74,14 +76,14 @@ class BaseController extends Controller
      *
      * @param string $fallback
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function redirectIntended($fallback = 'admin/joins')
     {
-        if (Auth::user()->isOrganizer()) {
+        if (auth()->user()->isOrganizer()) {
             $fallback = 'admin/dashboard';
         }
 
-        return Redirect::intended($fallback);
+        return redirect()->intended($fallback);
     }
 }
