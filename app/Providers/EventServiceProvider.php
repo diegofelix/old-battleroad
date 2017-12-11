@@ -2,6 +2,8 @@
 
 namespace Battleroad\Providers;
 
+use Champ\Championship\Events\CouponWasApplied;
+use Champ\Listeners\JoinDiscountListener;
 use Illuminate\Contracts\Events\Dispatcher as DispatcherContract;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
@@ -13,9 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'event.name' => [
-            'EventListener',
-        ],
+        CouponWasApplied::class => [
+            JoinDiscountListener::class
+        ]
     ];
 
     /**

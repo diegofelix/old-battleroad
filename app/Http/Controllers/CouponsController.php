@@ -3,8 +3,10 @@
 namespace Battleroad\Http\Controllers;
 
 use Auth;
+use Champ\Join\InvalidChampionshipForCoupon;
+use Champ\Join\Jobs\ApplyCoupon;
+use Illuminate\Http\Request;
 use Input;
-use Champ\Join\ApplyCouponCommand;
 use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
@@ -16,20 +18,25 @@ class CouponsController extends BaseController
     /**
      * Receive a coupon code, process it and apply to the join.
      *
-     * @return Response
+     * @param int     $joinId
+     * @param Request $request
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function apply($joinId)
+    public function apply($joinId, Request $request)
     {
-        $input = Input::all();
-        $input['user_id'] = Auth::user()->id;
-        $input['join_id'] = $joinId;
-
         try {
-            $this->execute(ApplyCouponCommand::class, $input);
+            $this->dispatch(new ApplyCoupon(
+                $request->user()->id,
+                $joinId,
+                $request->get('code')
+            ));
         } catch (CouponNotFoundException $e) {
-            return $this->redirectBack(['error' => 'Cupon inválido ou já utilizado.']);
+            return $this->redirectBack(['error' => 'Cupom inválido ou já utilizado.']);
         } catch (UserAlreadyHasDiscountException $e) {
-            return $this->redirectBack(['error' => 'Você já aplicou um cupon para esse pagamento.']);
+            return $this->redirectBack(['error' => 'Você já aplicou um cupom para esse pagamento.']);
+        } catch (InvalidChampionshipForCoupon $e) {
+            return $this->redirectBack(['error' => 'Cupom inválido ou já utilizado.']);
         }
 
         // redirect the user to the location page.

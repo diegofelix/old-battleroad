@@ -48,7 +48,7 @@ class Coupon extends Eloquent
         $this->join_id = $joinId;
         $this->user_id = $userId;
 
-        $this->raise(new CouponWasApplied($this));
+        event(new CouponWasApplied($this));
     }
 
     /**
