@@ -468,7 +468,7 @@ class Repository extends AbstractRepository
      */
     public function createCoupon($data)
     {
-        return Competition::create($data);
+        return Coupon::create($data);
     }
 
     /**
@@ -480,7 +480,7 @@ class Repository extends AbstractRepository
      */
     public function findCoupon($id)
     {
-        return Competition::find($id);
+        return Coupon::find($id);
     }
 
     /**
@@ -504,7 +504,7 @@ class Repository extends AbstractRepository
      */
     public function findCouponByCode($code)
     {
-        return Competition::whereCode($code)
+        return Coupon::whereCode($code)
             ->whereNull('user_id')
             ->first();
     }
@@ -514,11 +514,27 @@ class Repository extends AbstractRepository
      *
      * @param int $userId
      *
-     * @return Coupon
+     * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findCouponByUserId($userId)
+    public function getUserCoupons($userId)
     {
-        return Competition::whereUserId($userId)->first();
+        return Coupon::whereUserId($userId)->get();
+    }
+
+    /**
+     * Returns a coupon used for user in a determined Championship.
+     *
+     * @param $userId
+     * @param $joinId
+     *
+     * @return Coupon|null
+     */
+    public function getCouponsForUsedInJoin($userId, $joinId)
+    {
+        return Coupon::where([
+            'user_id' => $userId,
+            'join_id' => $joinId,
+        ])->first();
     }
 
     /**
