@@ -4,6 +4,8 @@ namespace Battleroad\Http\Controllers\Admin;
 
 use Auth;
 use Champ\Championship\Jobs\UpdateBanner;
+use Champ\Championship\Jobs\UpdateInformation;
+use Illuminate\Http\Request;
 use Input;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
@@ -72,15 +74,16 @@ class ChampionshipsController extends BaseController
     /**
      * Store the modifications.
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
-        $name = Input::get('name');
-        $description = Input::get('description');
-        $stream = Input::get('stream');
-
-        $championship = $this->execute(UpdateChampionshipCommand::class, compact('id', 'description', 'name', 'stream'));
+        $championship = $this->dispatch(new UpdateInformation(
+            $id,
+            $request->get('name'),
+            $request->get('description'),
+            $request->get('stream')
+        ));
 
         return $this->redirectRoute('admin.championships.show', [$championship->id])
             ->with(['message' => 'Informações atualizadas com sucesso!']);
