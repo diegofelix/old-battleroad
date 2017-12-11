@@ -5,6 +5,7 @@ namespace Champ\Join;
 class UpdateJoinCommand
 {
     public $notificationType;
+
     public $notificationCode;
 
     public function __construct($notificationType, $notificationCode)

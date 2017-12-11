@@ -5,6 +5,7 @@ namespace Champ\Join;
 class JoinStatusChangedCommand
 {
     public $id;
+
     public $statusId;
 
     /**

@@ -2,11 +2,9 @@
 
 namespace Battleroad\Http\Controllers;
 
-use Auth;
 use Champ\Join\InvalidChampionshipForCoupon;
 use Champ\Join\Jobs\ApplyCoupon;
 use Illuminate\Http\Request;
-use Input;
 use Laracasts\Commander\CommanderTrait;
 use Champ\Championship\Exceptions\CouponNotFoundException;
 use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;

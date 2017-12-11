@@ -5,12 +5,19 @@ namespace Champ\Join;
 class LimitExceededJoinCommand
 {
     public $championship_id;
+
     public $name;
+
     public $nicks;
+
     public $email;
+
     public $email_confirmation;
+
     public $identification;
+
     public $birthdate;
+
     public $competitions;
 
     public function __construct($championship_id, $name, $nicks, $email, $email_confirmation, $identification, $birthdate, $competitions = array())

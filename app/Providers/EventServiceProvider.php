@@ -16,8 +16,8 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         CouponWasApplied::class => [
-            JoinDiscountListener::class
-        ]
+            JoinDiscountListener::class,
+        ],
     ];
 
     /**

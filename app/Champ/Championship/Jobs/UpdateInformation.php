@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Championship\Jobs;
 
 use Battleroad\Jobs\Job;

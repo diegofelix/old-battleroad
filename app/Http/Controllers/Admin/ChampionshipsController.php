@@ -9,7 +9,6 @@ use Illuminate\Http\Request;
 use Input;
 use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
-use Champ\Championship\UpdateChampionshipCommand;
 use Champ\Championship\Repository;
 
 class ChampionshipsController extends BaseController
