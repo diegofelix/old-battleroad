@@ -34,8 +34,22 @@ class Join extends Job implements SelfHandling
      */
     public $team_name;
 
-    public function __construct(User $user, Championship $championship, $nicks, $competitions, $team_name = null)
-    {
+    /**
+     * Join constructor.
+     *
+     * @param User         $user
+     * @param Championship $championship
+     * @param array        $nicks
+     * @param array        $competitions
+     * @param string|null  $team_name
+     */
+    public function __construct(
+        User $user,
+        Championship $championship,
+        $nicks,
+        $competitions,
+        $team_name = null
+    ) {
         $this->user = $user;
         $this->championship = $championship;
         $this->nicks = $nicks;
@@ -43,19 +57,23 @@ class Join extends Job implements SelfHandling
         $this->team_name = $team_name;
     }
 
-
+    /**
+     * Execute the job.
+     *
+     * @param JoinUserService $joinService
+     *
+     * @return \Champ\Join\Join
+     *
+     * @throws \Champ\Join\UserAlreadyJoinedException
+     */
     public function handle(JoinUserService $joinService)
     {
-        $join = $joinService->register(
+        return $joinService->register(
             $this->user,
             $this->championship,
             $this->competitions,
             $this->nicks,
             $this->team_name
         );
-
-        $this->dispatchEventsFor($join);
-
-        return $join;
     }
 }

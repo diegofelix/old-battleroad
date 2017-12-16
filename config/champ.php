@@ -47,7 +47,7 @@ return [
         'Champ\Listeners\CompetitionVacancyUpdater',
         'Champ\Listeners\NotificationListener',
         'Champ\Listeners\AdminNotificationListener',
-        'Champ\Listeners\JoinDiscountListener',
+//        'Champ\Listeners\JoinDiscountListener',
         // 'Champ\Listeners\CompetitionRegistrar'
     ],
 ];

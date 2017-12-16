@@ -9,19 +9,27 @@ use Champ\Join\Events\JoinCancelled;
 
 class CompetitionVacancyUpdater extends EventListener
 {
+    /**
+     * @var Repository
+     */
     protected $championships;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository $competitionRepository
+     */
     public function __construct(Repository $competitionRepository)
     {
         $this->championships = $competitionRepository;
     }
 
     /**
-     * Subtract a vacancy in the competition when user join the championship.
+     * Handle the event.
      *
      * @param UserJoined $event
      */
-    public function whenUserJoined(UserJoined $event)
+    public function handle(UserJoined $event)
     {
         $this->addVancancy($event, -1);
     }

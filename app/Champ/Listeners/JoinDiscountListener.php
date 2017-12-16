@@ -25,9 +25,10 @@ class JoinDiscountListener extends EventListener
     protected $itemRepository;
 
     /**
-     * Constructor.
+     * Class constructor.
      *
      * @param JoinRepository $joinRepository
+     * @param ItemRepository $itemRepository
      */
     public function __construct(
         JoinRepository $joinRepository,
@@ -38,18 +39,18 @@ class JoinDiscountListener extends EventListener
     }
 
     /**
-     * Apply the discount in join.
+     * Handle the event.
      *
      * @param CouponWasApplied $coupon
      */
-    public function whenCouponWasApplied(CouponWasApplied $coupon)
+    public function handle(CouponWasApplied $coupon)
     {
         $join = $this->joinRepository->getByCoupon($coupon->coupon);
 
         $this->applyDiscountOnItems($join, $coupon);
 
         // if after apply the discount the join change to free
-        // then we need to confirm the user imediatly
+        // then we need to confirm the user immediately
         if ($join->isFree()) {
             $join->changeStatus(Status::APPROVED);
             $this->joinRepository->save($join);
