@@ -1,4 +1,5 @@
 <?php
+
 namespace Champ\Join\Events;
 
 use Champ\Join\Join;

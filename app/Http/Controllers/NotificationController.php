@@ -4,7 +4,6 @@ namespace Battleroad\Http\Controllers;
 
 use Champ\Join\Jobs\ChangeJoinStatus;
 use Champ\Join\Repositories\JoinRepository;
-use Champ\Join\JoinStatusChangedCommand;
 use Illuminate\Http\Request;
 use Laracasts\Commander\CommanderTrait;
 use Champ\Join\Status;

@@ -3,7 +3,6 @@
 namespace Champ\Join\Jobs;
 
 use Battleroad\Jobs\Job;
-use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Repositories\JoinRepository;
 use Illuminate\Contracts\Bus\SelfHandling;
 
