@@ -5,6 +5,7 @@ namespace Champ\Services;
 use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Championship\Repository;
+use Champ\Join\Events\UserJoined;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
@@ -75,9 +76,11 @@ class JoinUserService
 
         // for each item we save a list of nicks
         $this->saveNicksForItems($items, $nicks);
-        
+
         // check to see if a join is paid or not and update it status
         $this->updateJoinStatusIfItsFree($join);
+
+        event(new UserJoined($join));
 
         return $join;
     }

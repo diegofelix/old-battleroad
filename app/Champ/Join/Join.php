@@ -6,7 +6,6 @@ use Carbon\Carbon;
 use Champ\Join\Events\JoinApproved;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinStatusChanged;
-use Champ\Join\Events\UserJoined;
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
@@ -114,8 +113,6 @@ class Join extends Model
         $status_id = Status::WAITING;
 
         $join = new static(compact('user_id', 'championship_id', 'status_id', 'nick'));
-
-        event(new UserJoined($join));
 
         return $join;
     }
