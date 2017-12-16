@@ -7,12 +7,11 @@ use Champ\Join\Events\JoinApproved;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Events\UserJoined;
-use Eloquent;
-use Event;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
-class Join extends Eloquent
+class Join extends Model
 {
     protected $guarded = [];
 
@@ -45,7 +44,7 @@ class Join extends Eloquent
     /**
      * Relation with Item.
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items()
     {
@@ -55,7 +54,7 @@ class Join extends Eloquent
     /**
      * Relation with Status.
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function status()
     {
@@ -65,7 +64,7 @@ class Join extends Eloquent
     /**
      * Relation with Transaction.
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()
     {
@@ -75,7 +74,7 @@ class Join extends Eloquent
     /**
      * Relation with Coupon.
      *
-     * @return HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function coupon()
     {

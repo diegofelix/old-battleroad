@@ -2,9 +2,9 @@
 
 namespace Champ\Join;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Status extends Eloquent
+class Status extends Model
 {
     protected $table = 'statuses';
 

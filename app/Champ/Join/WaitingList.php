@@ -2,9 +2,9 @@
 
 namespace Champ\Join;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class WaitingList extends Eloquent
+class WaitingList extends Model
 {
     protected $guarded = [];
 

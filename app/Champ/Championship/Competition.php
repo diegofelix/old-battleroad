@@ -2,10 +2,10 @@
 
 namespace Champ\Championship;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
 
-class Competition extends Eloquent
+class Competition extends Model
 {
     use PresentableTrait;
 
