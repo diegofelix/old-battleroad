@@ -4,6 +4,7 @@ namespace Battleroad\Providers;
 
 use Champ\Championship\Events\CouponWasApplied;
 use Champ\Join\Events\JoinCancelled;
+use Champ\Join\Events\JoinStatusChanged;
 use Champ\Join\Events\UserJoined;
 use Champ\Listeners\ChampionshipVacancyUpdater;
 use Champ\Listeners\CompetitionVacancyUpdater;
@@ -25,6 +26,13 @@ class EventServiceProvider extends ServiceProvider
         UserJoined::class => [
             ChampionshipVacancyUpdater::class,
             CompetitionVacancyUpdater::class,
+            'Champ\Listeners\NotificationListener@whenUserJoined',
+        ],
+        JoinStatusChanged::class => [
+            'Champ\Listeners\NotificationListener@whenJoinStatusChanged',
+        ],
+        JoinCancelled::class => [
+            'Champ\Listeners\NotificationListener@whenJoinCancelled',
         ],
     ];
 

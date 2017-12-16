@@ -2,7 +2,6 @@
 
 namespace Champ\Repositories\Core;
 
-use Champ\Championship\Championship;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 
@@ -55,7 +54,10 @@ abstract class AbstractRepository
     /**
      * Find a model by its id.
      *
-     * @return Championship
+     * @param int   $id
+     * @param array $with
+     *
+     * @return Model
      */
     public function find($id, $with = array())
     {
@@ -151,7 +153,7 @@ abstract class AbstractRepository
      *
      * @param array $with
      *
-     * @return Query
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     protected function make($with = array())
     {

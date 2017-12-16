@@ -127,14 +127,14 @@ class Join extends Model
     {
         $this->status_id = $statusId;
 
-        $this->raise(new JoinStatusChanged($this));
+        event(new JoinStatusChanged($this));
 
         if (Status::APPROVED == $statusId) {
-            $this->raise(new JoinApproved($this));
+            event(new JoinApproved($this));
         }
 
         if ($statusId >= Status::RETURNED) { // Cancelled, Returned and chargeback
-            $this->raise(new JoinCancelled($this));
+            event(new JoinCancelled($this));
         }
     }
 
