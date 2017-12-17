@@ -72,8 +72,6 @@ class RegisterUser
 
         $this->users->save($user);
 
-        //$this->dispatchEventsFor($user);
-
         return $user;
     }
 

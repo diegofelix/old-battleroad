@@ -2,12 +2,10 @@
 
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
-use Laracasts\Commander\Events\DispatchableTrait;
+use Champ\Championship\Events\ChampionshipPublished;
 
 class PublisherController extends BaseRegistrationController
 {
-    use DispatchableTrait;
-
     /**
      * Show all saved data to confirm to the user all steps before publish.
      *
@@ -38,7 +36,7 @@ class PublisherController extends BaseRegistrationController
         if ($championship->competitions->count() > 0) {
             $championship = $this->repository->publish($id);
 
-            $this->dispatchEventsFor($championship);
+            event(new ChampionshipPublished($championship));
 
             return $this->redirectRoute('admin.championships.show', [$id])
                 ->with('message', 'Campeonato publicado!');

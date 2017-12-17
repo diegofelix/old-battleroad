@@ -2,13 +2,12 @@
 
 namespace Champ\Championship;
 
-use Eloquent;
 use Champ\Traits\PriceAttribute;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
-use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\CouponWasApplied;
 
-class Coupon extends Eloquent
+class Coupon extends Model
 {
     protected $fillable = ['code', 'championship_id', 'price'];
 
@@ -19,7 +18,6 @@ class Coupon extends Eloquent
      */
     protected $presenter = 'Champ\Presenters\CouponPresenter';
 
-    use EventGenerator;
     use PriceAttribute;
     use PresentableTrait;
 
@@ -48,7 +46,7 @@ class Coupon extends Eloquent
         $this->join_id = $joinId;
         $this->user_id = $userId;
 
-        $this->raise(new CouponWasApplied($this));
+        event(new CouponWasApplied($this));
     }
 
     /**

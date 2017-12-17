@@ -2,8 +2,8 @@
 
 namespace Champ\Championship;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Platform extends Eloquent
+class Platform extends Model
 {
 }

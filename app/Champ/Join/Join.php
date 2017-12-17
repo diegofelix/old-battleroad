@@ -6,18 +6,14 @@ use Carbon\Carbon;
 use Champ\Join\Events\JoinApproved;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinStatusChanged;
-use Champ\Join\Events\UserJoined;
-use Eloquent;
-use Event;
-use Laracasts\Commander\Events\EventGenerator;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
 
-class Join extends Eloquent
+class Join extends Model
 {
     protected $guarded = [];
 
     use PresentableTrait;
-    use EventGenerator;
 
     /**
      * Championship presenter.
@@ -45,7 +41,7 @@ class Join extends Eloquent
     /**
      * Relation with Item.
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function items()
     {
@@ -55,7 +51,7 @@ class Join extends Eloquent
     /**
      * Relation with Status.
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function status()
     {
@@ -65,7 +61,7 @@ class Join extends Eloquent
     /**
      * Relation with Transaction.
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function transactions()
     {
@@ -75,7 +71,7 @@ class Join extends Eloquent
     /**
      * Relation with Coupon.
      *
-     * @return HasOne
+     * @return \Illuminate\Database\Eloquent\Relations\HasOne
      */
     public function coupon()
     {
@@ -116,8 +112,6 @@ class Join extends Eloquent
 
         $join = new static(compact('user_id', 'championship_id', 'status_id', 'nick'));
 
-        $join->raise(new UserJoined($join));
-
         return $join;
     }
 
@@ -131,14 +125,14 @@ class Join extends Eloquent
     {
         $this->status_id = $statusId;
 
-        $this->raise(new JoinStatusChanged($this));
+        event(new JoinStatusChanged($this));
 
         if (Status::APPROVED == $statusId) {
-            $this->raise(new JoinApproved($this));
+            event(new JoinApproved($this));
         }
 
         if ($statusId >= Status::RETURNED) { // Cancelled, Returned and chargeback
-            $this->raise(new JoinCancelled($this));
+            event(new JoinCancelled($this));
         }
     }
 

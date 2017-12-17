@@ -3,14 +3,12 @@
 namespace Battleroad\Http\Controllers;
 
 use Auth;
+use Champ\Account\Events\UserSignedUp;
 use Input;
 use Champ\Account\Repositories\UserRepository;
-use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterController extends BaseController
 {
-    use DispatchableTrait;
-
     /**
      * User Repository.
      *
@@ -50,9 +48,7 @@ class RegisterController extends BaseController
         // authenticate the user immediatly
         Auth::loginUsingId($user->id);
 
-        // when a user is registered, its fire various events
-        // this method dispatch them
-        $this->dispatchEventsFor($user);
+        event(new UserSignedUp($user));
 
         // and return him to the home
         return $this->redirectTo('/', ['message' => 'Parabéns, sua conta foi criada!']);

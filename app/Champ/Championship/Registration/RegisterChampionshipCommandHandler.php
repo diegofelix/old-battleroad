@@ -2,10 +2,12 @@
 
 namespace Champ\Championship\Registration;
 
+use Champ\Championship\ImageUploader;
 use Champ\Championship\Repository;
 use Laracasts\Commander\CommandHandler;
 use Champ\Championship\Championship;
 use App;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RegisterChampionshipCommandHandler implements CommandHandler
 {
@@ -30,28 +32,25 @@ class RegisterChampionshipCommandHandler implements CommandHandler
             $command->description,
             $command->location,
             $command->event_start,
-            $image->getImagePath(),
-            $image->getThumbPath()
+            $image->getImagePath()
         );
 
         $this->repository->save($championship);
-
-        //$this->dispatchEventsFor($championship);
 
         return $championship;
     }
 
     /**
-     * Upload an image.
+     * Upload a championship banner.
      *
-     * @param array $data
+     * @param UploadedFile $image
      *
-     * @return string url to the image uploaded
+     * @return ImageUploader
      */
-    private function uploadImage($image)
+    private function uploadImage(UploadedFile $image)
     {
-        $champImage = App::make('Champ\Services\ChampionshipImage');
+        $imageUploader = app(ImageUploader::class);
 
-        return $champImage->upload($image);
+        return $imageUploader->upload($image);
     }
 }

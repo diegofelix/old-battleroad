@@ -2,11 +2,11 @@
 
 namespace Champ\Join;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
 use Champ\Traits\PriceAttribute;
 
-class Item extends Eloquent
+class Item extends Model
 {
     use PresentableTrait;
     use PriceAttribute;
@@ -25,7 +25,7 @@ class Item extends Eloquent
     /**
      * Relation with Join.
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function join()
     {
@@ -35,7 +35,7 @@ class Item extends Eloquent
     /**
      * Relation with Competition.
      *
-     * @return BelongsTo
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function competition()
     {
@@ -45,7 +45,7 @@ class Item extends Eloquent
     /**
      * Relation with Nick.
      *
-     * @return HasMany
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function nicks()
     {
@@ -55,7 +55,7 @@ class Item extends Eloquent
     /**
      * Add a new item.
      *
-     * @param int    $join_id
+     * @param int    $competition_id
      * @param int    $price
      * @param string $team_name
      *

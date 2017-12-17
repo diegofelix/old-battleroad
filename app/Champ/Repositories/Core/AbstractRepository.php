@@ -54,6 +54,9 @@ abstract class AbstractRepository
     /**
      * Find a model by its id.
      *
+     * @param int   $id
+     * @param array $with
+     *
      * @return Model
      */
     public function find($id, $with = array())
@@ -150,7 +153,7 @@ abstract class AbstractRepository
      *
      * @param array $with
      *
-     * @return Query
+     * @return \Illuminate\Database\Eloquent\Builder
      */
     protected function make($with = array())
     {

@@ -3,9 +3,9 @@
 namespace Battleroad\Http\Controllers;
 
 use Auth;
+use Champ\Account\Events\UserChangedProfile;
 use View;
 use Input;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Account\Repositories\UserRepository;
 
 class ProfileController extends BaseController
@@ -16,8 +16,6 @@ class ProfileController extends BaseController
      * @var Champ\Repositories\UserRepository
      */
     protected $userRepo;
-
-    use DispatchableTrait;
 
     public function __construct(UserRepository $user)
     {
@@ -81,7 +79,7 @@ class ProfileController extends BaseController
             return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
         }
 
-        $this->dispatchEventsFor($profile);
+        event(new UserChangedProfile($profile));
 
         // if came here means profile was created
         // redirect him to your brand new profile and show a nice message =)
@@ -102,7 +100,7 @@ class ProfileController extends BaseController
             return $this->redirectBack(['error' => $this->userRepo->getErrors()]);
         }
 
-        $this->dispatchEventsFor($profile);
+        event(new UserChangedProfile($profile));
 
         // if came here means everything gone ok
         // lets redirect the user and show a nice message =)

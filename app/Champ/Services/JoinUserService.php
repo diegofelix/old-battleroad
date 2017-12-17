@@ -2,7 +2,10 @@
 
 namespace Champ\Services;
 
+use Champ\Account\User;
+use Champ\Championship\Championship;
 use Champ\Championship\Repository;
+use Champ\Join\Events\UserJoined;
 use Champ\Join\Item;
 use Champ\Join\Join;
 use Champ\Join\Nick;
@@ -27,11 +30,6 @@ class JoinUserService
      * @var Repository
      */
     protected $repository;
-
-    /**
-     * @var ItemRepository
-     */
-    protected $itemRepository;
 
     /**
      * Class constructor.
@@ -60,9 +58,16 @@ class JoinUserService
      * @param string       $teamName
      *
      * @return Join
+     *
+     * @throws UserAlreadyJoinedException
      */
-    public function register($user, $championship, $competitions, $nicks, $teamName = null)
-    {
+    public function register(
+        User $user,
+        Championship $championship,
+        $competitions,
+        $nicks,
+        $teamName = null
+    ) {
         // save the join
         $join = $this->saveJoin($user, $championship, $nicks);
 
@@ -75,8 +80,15 @@ class JoinUserService
         // check to see if a join is paid or not and update it status
         $this->updateJoinStatusIfItsFree($join);
 
+        event(new UserJoined($join));
+
         return $join;
     }
+
+    /**
+     * @var ItemRepository
+     */
+    protected $itemRepository;
 
     /**
      * Update the Join Status if the Join is Free.
@@ -109,8 +121,9 @@ class JoinUserService
     /**
      * Save competitions for this join.
      *
-     * @param Join  $join
-     * @param array $competitions
+     * @param Join        $join
+     * @param array       $competitions
+     * @param string|null $teamName
      *
      * @return array
      */
@@ -136,10 +149,13 @@ class JoinUserService
      *
      * @param User         $user
      * @param Championship $championship
+     * @param              $nicks
      *
      * @return Join
+     *
+     * @throws UserAlreadyJoinedException
      */
-    private function saveJoin($user, $championship, $nicks)
+    private function saveJoin(User $user, Championship $championship, $nicks)
     {
         if ($this->joinRepository->userParticipating($user->id, $championship->id)) {
             throw new UserAlreadyJoinedException('Esse e-mail já está participando deste campeonato.');

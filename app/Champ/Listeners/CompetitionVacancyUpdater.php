@@ -9,21 +9,29 @@ use Champ\Join\Events\JoinCancelled;
 
 class CompetitionVacancyUpdater extends EventListener
 {
+    /**
+     * @var Repository
+     */
     protected $championships;
 
+    /**
+     * Class constructor.
+     *
+     * @param Repository $competitionRepository
+     */
     public function __construct(Repository $competitionRepository)
     {
         $this->championships = $competitionRepository;
     }
 
     /**
-     * Subtract a vacancy in the competition when user join the championship.
+     * Handle the event.
      *
      * @param UserJoined $event
      */
-    public function whenUserJoined(UserJoined $event)
+    public function handle(UserJoined $event)
     {
-        $this->addVancancy($event, -1);
+        $this->addVacancy($event, -1);
     }
 
     /**
@@ -33,18 +41,19 @@ class CompetitionVacancyUpdater extends EventListener
      */
     public function whenJoinCancelled(JoinCancelled $event)
     {
-        $this->addVancancy($event);
+        $this->addVacancy($event);
     }
 
     /**
-     * Add or remove vancancy for the competition.
+     * Add or remove vacancy for the competition.
      *
      * @param $event
      * @param int $value
      */
-    private function addVancancy($event, $value = 1)
+    private function addVacancy($event, $value = 1)
     {
         $items = $event->join->items;
+
         if ($items->count()) {
             foreach ($items as $item) {
                 $competition = $item->competition;

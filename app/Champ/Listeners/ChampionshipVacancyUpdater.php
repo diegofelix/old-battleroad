@@ -26,11 +26,11 @@ class ChampionshipVacancyUpdater extends EventListener
     }
 
     /**
-     * Update the championship limit when a user join the championship.
+     * Handle the event.
      *
      * @param UserJoined $event
      */
-    public function whenUserJoined(UserJoined $event)
+    public function handle(UserJoined $event)
     {
         $championship = $event->join->championship;
 

@@ -2,9 +2,9 @@
 
 namespace Champ\Account;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Achievement extends Eloquent
+class Achievement extends Model
 {
     /**
      * The relations to eager load on every query.

@@ -3,11 +3,12 @@
 namespace Battleroad\Http\Controllers\Admin;
 
 use Auth;
+use Champ\Championship\Jobs\UpdateBanner;
+use Champ\Championship\Jobs\UpdateInformation;
+use Illuminate\Http\Request;
 use Input;
 use Laracasts\Commander\CommanderTrait;
-use Champ\Championship\UpdateBannerCommand;
 use Battleroad\Http\Controllers\BaseController;
-use Champ\Championship\UpdateChampionshipCommand;
 use Champ\Championship\Repository;
 
 class ChampionshipsController extends BaseController
@@ -72,15 +73,16 @@ class ChampionshipsController extends BaseController
     /**
      * Store the modifications.
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function update($id)
+    public function update($id, Request $request)
     {
-        $name = Input::get('name');
-        $description = Input::get('description');
-        $stream = Input::get('stream');
-
-        $championship = $this->execute(UpdateChampionshipCommand::class, compact('id', 'description', 'name', 'stream'));
+        $championship = $this->dispatch(new UpdateInformation(
+            $id,
+            $request->get('name'),
+            $request->get('description'),
+            $request->get('stream')
+        ));
 
         return $this->redirectRoute('admin.championships.show', [$championship->id])
             ->with(['message' => 'Informações atualizadas com sucesso!']);
@@ -125,7 +127,7 @@ class ChampionshipsController extends BaseController
     {
         $image = Input::file('image');
 
-        $championship = $this->execute(UpdateBannerCommand::class, compact('id', 'image'));
+        $championship = $this->dispatch(new UpdateBanner($id, $image));
 
         return $this->redirectRoute('admin.championships.banner', [$championship->id])
             ->with(['message' => 'Banner atualizado com sucesso!']);

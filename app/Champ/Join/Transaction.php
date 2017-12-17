@@ -2,9 +2,9 @@
 
 namespace Champ\Join;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Eloquent
+class Transaction extends Model
 {
     protected $guarded = [];
 

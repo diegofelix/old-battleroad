@@ -2,8 +2,8 @@
 
 namespace Champ\Championship;
 
-use Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
-class Format extends Eloquent
+class Format extends Model
 {
 }

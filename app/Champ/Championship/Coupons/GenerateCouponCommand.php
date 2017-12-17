@@ -5,7 +5,9 @@ namespace Champ\Championship\Coupons;
 class GenerateCouponCommand
 {
     public $championshipId;
+
     public $code;
+
     public $price;
 
     /**

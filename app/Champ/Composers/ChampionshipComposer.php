@@ -3,7 +3,6 @@
 namespace Champ\Composers;
 
 use Champ\Championship\Repository;
-use Request;
 
 class ChampionshipComposer
 {
@@ -31,7 +30,7 @@ class ChampionshipComposer
      */
     public function compose($view)
     {
-        $championship = $this->repository->find(Request::segment(3));
+        $championship = $this->repository->find(request()->segment(3));
         $view->with(compact('championship'));
     }
 }

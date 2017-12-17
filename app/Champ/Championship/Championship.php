@@ -2,18 +2,13 @@
 
 namespace Champ\Championship;
 
-use Carbon\Carbon;
-use Champ\Championship\Events\ChampionshipFinished;
-use Champ\Championship\Events\ChampionshipPublished;
 use Champ\Join\Status;
 use Champ\Traits\FormatToDb;
 use Illuminate\Database\Eloquent\Model;
-use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
 class Championship extends Model
 {
-    use EventGenerator;
     use FormatToDb;
     use PresentableTrait;
 
@@ -38,13 +33,12 @@ class Championship extends Model
      * @param string $description
      * @param string $event_start
      * @param string $image
-     * @param string $thumb
      *
      * @return Championship
      */
-    public static function register($user_id, $name, $description, $location, $event_start, $image = null, $thumb = null)
+    public static function register($user_id, $name, $description, $location, $event_start, $image = null)
     {
-        return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image', 'thumb'));
+        return new static(compact('user_id', 'name', 'description', 'location', 'event_start', 'image'));
     }
 
     /**
@@ -56,8 +50,6 @@ class Championship extends Model
     {
         $this->published = true;
         $this->published_at = date('Y-m-d H:i:s');
-
-        $this->raise(new ChampionshipPublished($this));
 
         return $this;
     }
@@ -74,8 +66,6 @@ class Championship extends Model
         $this->name = $name;
         $this->description = $description;
         $this->stream = $stream;
-
-        // raise a new event if needed.
     }
 
     /**
@@ -83,7 +73,7 @@ class Championship extends Model
      *
      * @param int $id
      *
-     * @return bool =
+     * @return bool
      */
     public function isOwner($id)
     {
@@ -94,14 +84,10 @@ class Championship extends Model
      * Updates the banner images.
      *
      * @param string $image
-     * @param string $thumb
      */
-    public function updateBanner($image, $thumb)
+    public function updateBanner($image)
     {
         $this->image = $image;
-        $this->thumb = $thumb;
-
-        // raise a new event if needed
     }
 
     /**
@@ -231,8 +217,8 @@ class Championship extends Model
     public function finishChampionship()
     {
         $this->finished = true;
+
         $this->save();
-        $this->raise(new ChampionshipFinished($this));
     }
 
     /**

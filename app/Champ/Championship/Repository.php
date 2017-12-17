@@ -2,10 +2,10 @@
 
 namespace Champ\Championship;
 
+use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Repositories\Core\AbstractRepository;
-use Champ\Services\ChampionshipImage;
+use Champ\Services\ImageUploader;
 use Champ\Validators\ChampionshipValidator;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
 use Log;
@@ -15,8 +15,6 @@ use Log;
  */
 class Repository extends AbstractRepository
 {
-    use DispatchableTrait;
-
     /**
      * Class constructor.
      *
@@ -68,7 +66,7 @@ class Repository extends AbstractRepository
      *
      * @param int $id
      *
-     * @return bool
+     * @return Championship
      */
     public function publish($id)
     {
@@ -216,7 +214,6 @@ class Repository extends AbstractRepository
 
         // save the images
         $data['image'] = $image->getImagePath();
-        $data['thumb'] = $image->getThumbPath();
 
         // continue to save the championship
         return parent::create($data);
@@ -259,7 +256,7 @@ class Repository extends AbstractRepository
             return null;
         }
 
-        return app(ChampionshipImage::class)
+        return app(ImageUploader::class)
             ->upload($data['image']);
     }
 
@@ -320,7 +317,9 @@ class Repository extends AbstractRepository
         // pass for all these championships and "finish him!"
         foreach ($championships as $championship) {
             $championship->finishChampionship();
-            $this->dispatchEventsFor($championship);
+
+            event(new ChampionshipFinished($championship));
+
             Log::info('championship '.$championship->id.' finished.');
         }
     }
@@ -469,7 +468,7 @@ class Repository extends AbstractRepository
      */
     public function createCoupon($data)
     {
-        return Competition::create($data);
+        return Coupon::create($data);
     }
 
     /**
@@ -481,7 +480,7 @@ class Repository extends AbstractRepository
      */
     public function findCoupon($id)
     {
-        return Competition::find($id);
+        return Coupon::find($id);
     }
 
     /**
@@ -505,7 +504,7 @@ class Repository extends AbstractRepository
      */
     public function findCouponByCode($code)
     {
-        return Competition::whereCode($code)
+        return Coupon::whereCode($code)
             ->whereNull('user_id')
             ->first();
     }
@@ -515,11 +514,27 @@ class Repository extends AbstractRepository
      *
      * @param int $userId
      *
-     * @return Coupon
+     * @return \Illuminate\Database\Eloquent\Collection
      */
-    public function findCouponByUserId($userId)
+    public function getUserCoupons($userId)
     {
-        return Competition::whereUserId($userId)->first();
+        return Coupon::whereUserId($userId)->get();
+    }
+
+    /**
+     * Returns a coupon used for user in a determined Championship.
+     *
+     * @param $userId
+     * @param $joinId
+     *
+     * @return Coupon|null
+     */
+    public function getCouponsForUsedInJoin($userId, $joinId)
+    {
+        return Coupon::where([
+            'user_id' => $userId,
+            'join_id' => $joinId,
+        ])->first();
     }
 
     /**
