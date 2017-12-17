@@ -2,18 +2,13 @@
 
 namespace Champ\Championship;
 
-use Carbon\Carbon;
-use Champ\Championship\Events\ChampionshipFinished;
-use Champ\Championship\Events\ChampionshipPublished;
 use Champ\Join\Status;
 use Champ\Traits\FormatToDb;
 use Illuminate\Database\Eloquent\Model;
-use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
 class Championship extends Model
 {
-    use EventGenerator;
     use FormatToDb;
     use PresentableTrait;
 
@@ -222,7 +217,7 @@ class Championship extends Model
     public function finishChampionship()
     {
         $this->finished = true;
-        
+
         $this->save();
     }
 

@@ -5,7 +5,6 @@ namespace Champ\Championship;
 use Champ\Traits\PriceAttribute;
 use Illuminate\Database\Eloquent\Model;
 use Laracasts\Presenter\PresentableTrait;
-use Laracasts\Commander\Events\EventGenerator;
 use Champ\Championship\Events\CouponWasApplied;
 
 class Coupon extends Model
@@ -19,7 +18,6 @@ class Coupon extends Model
      */
     protected $presenter = 'Champ\Presenters\CouponPresenter';
 
-    use EventGenerator;
     use PriceAttribute;
     use PresentableTrait;
 

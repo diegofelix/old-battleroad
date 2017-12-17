@@ -3,14 +3,10 @@
 namespace Champ\Account;
 
 use Illuminate\Database\Eloquent\Model;
-use Laracasts\Commander\Events\EventGenerator;
-use Champ\Account\Events\UserChangedProfile;
 
 class Profile extends Model
 {
     protected $fillable = ['user_id', 'bio', 'psn', 'live', 'steam', 'notify'];
-
-    use EventGenerator;
 
     /**
      * Create a new profile.

@@ -7,7 +7,6 @@ use Champ\Join\Events\JoinApproved;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinStatusChanged;
 use Illuminate\Database\Eloquent\Model;
-use Laracasts\Commander\Events\EventGenerator;
 use Laracasts\Presenter\PresentableTrait;
 
 class Join extends Model
@@ -15,7 +14,6 @@ class Join extends Model
     protected $guarded = [];
 
     use PresentableTrait;
-    use EventGenerator;
 
     /**
      * Championship presenter.
