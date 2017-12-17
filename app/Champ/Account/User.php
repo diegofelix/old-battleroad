@@ -4,7 +4,6 @@ namespace Champ\Account;
 
 use Auth;
 use Carbon\Carbon;
-use Champ\Account\Events\UserSignedUp;
 use Champ\Join\Status;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Auth\Passwords\CanResetPassword;
