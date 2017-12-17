@@ -115,7 +115,6 @@ return [
          * Laravel Framework Service Providers...
          */
         'Illuminate\Auth\AuthServiceProvider',
-        'Illuminate\Bus\BusServiceProvider',
         'Illuminate\Cache\CacheServiceProvider',
         'Illuminate\Foundation\Providers\ConsoleSupportServiceProvider',
         'Illuminate\Cookie\CookieServiceProvider',
@@ -142,7 +141,6 @@ return [
          * Application Service Providers...
          */
         'Battleroad\Providers\AppServiceProvider',
-        'Battleroad\Providers\BusServiceProvider',
         'Battleroad\Providers\ConfigServiceProvider',
         'Battleroad\Providers\EventServiceProvider',
         'Battleroad\Providers\RouteServiceProvider',
