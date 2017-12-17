@@ -6,7 +6,6 @@ use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Services\ImageUploader;
 use Champ\Validators\ChampionshipValidator;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Illuminate\Support\Collection;
 use Carbon\Carbon;
 use Log;
@@ -16,8 +15,6 @@ use Log;
  */
 class Repository extends AbstractRepository
 {
-    use DispatchableTrait;
-
     /**
      * Class constructor.
      *

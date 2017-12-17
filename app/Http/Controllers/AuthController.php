@@ -6,7 +6,6 @@ use Champ\Account\Events\UserSignedUp;
 use Champ\Social\SocialAuthenticatorListenerInterface;
 use Champ\Account\Repositories\UserRepository;
 use Champ\Social\SocialFactory;
-use Laracasts\Commander\Events\DispatchableTrait;
 
 class AuthController extends BaseController implements SocialAuthenticatorListenerInterface
 {
@@ -23,8 +22,6 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
      * @var Champ\Social\SocialFactory
      */
     protected $social;
-
-    use DispatchableTrait;
 
     public function __construct(
         UserRepository $user,

@@ -6,7 +6,6 @@ use Auth;
 use Champ\Account\Events\UserChangedProfile;
 use View;
 use Input;
-use Laracasts\Commander\Events\DispatchableTrait;
 use Champ\Account\Repositories\UserRepository;
 
 class ProfileController extends BaseController
@@ -17,8 +16,6 @@ class ProfileController extends BaseController
      * @var Champ\Repositories\UserRepository
      */
     protected $userRepo;
-
-    use DispatchableTrait;
 
     public function __construct(UserRepository $user)
     {

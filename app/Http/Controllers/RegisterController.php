@@ -6,12 +6,9 @@ use Auth;
 use Champ\Account\Events\UserSignedUp;
 use Input;
 use Champ\Account\Repositories\UserRepository;
-use Laracasts\Commander\Events\DispatchableTrait;
 
 class RegisterController extends BaseController
 {
-    use DispatchableTrait;
-
     /**
      * User Repository.
      *

@@ -3,12 +3,9 @@
 namespace Battleroad\Http\Controllers\Admin\Registration;
 
 use Champ\Championship\Events\ChampionshipPublished;
-use Laracasts\Commander\Events\DispatchableTrait;
 
 class PublisherController extends BaseRegistrationController
 {
-    use DispatchableTrait;
-
     /**
      * Show all saved data to confirm to the user all steps before publish.
      *
