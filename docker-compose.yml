@@ -43,7 +43,7 @@ services:
 
   # PHP (with Caddy)
   app:
-    image: ambientum/php:7.0-nginx
+    image: ambientum/php:7.1-nginx
     container_name: battleroad-app
     volumes:
       - .:/var/www/app
@@ -55,7 +55,7 @@ services:
 
   # Laravel Queues
   queue:
-    image: ambientum/php:7.0-nginx
+    image: ambientum/php:7.1-nginx
     container_name: battleroad-queue
     command: php artisan queue:listen
     volumes:
