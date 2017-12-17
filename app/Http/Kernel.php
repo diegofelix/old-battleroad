@@ -26,6 +26,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
+        'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'auth' => 'Battleroad\Http\Middleware\Authenticate',
         'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
         'guest' => 'Battleroad\Http\Middleware\RedirectIfAuthenticated',

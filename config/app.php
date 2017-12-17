@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'name' => 'Battleroad',
+
     'env' => env('APP_ENV', 'production'),
 
     /*
@@ -134,7 +136,8 @@ return [
         'Illuminate\View\ViewServiceProvider',
 
         'Collective\Html\HtmlServiceProvider',
-        Illuminate\Broadcasting\BroadcastServiceProvider::class,
+        Battleroad\Providers\BroadcastServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
 
         /*
          * Application Service Providers...
