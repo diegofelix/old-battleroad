@@ -54,7 +54,7 @@ class ChangeJoinStatus extends Job implements SelfHandling
     {
         $join = $joinRepository->find($this->joinId);
 
-        $join->changeStatus($command->statusId);
+        $join->changeStatus($this->statusId);
 
         $joinRepository->save($join);
 

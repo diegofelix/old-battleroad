@@ -54,8 +54,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
     {
         $user = $this->fill($data);
 
-        $this->raise(new UserSignedUp($user));
-
         return $user;
     }
 

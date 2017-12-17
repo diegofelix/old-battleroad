@@ -2,6 +2,7 @@
 
 namespace Battleroad\Http\Controllers;
 
+use Champ\Account\Events\UserSignedUp;
 use Champ\Social\SocialAuthenticatorListenerInterface;
 use Champ\Account\Repositories\UserRepository;
 use Champ\Social\SocialFactory;
@@ -92,9 +93,7 @@ class AuthController extends BaseController implements SocialAuthenticatorListen
     {
         $user = $this->userRepo->createBySocialAuth($data);
 
-        // when a user signed up we fire an event
-        // here we release every event
-        $this->dispatchEventsFor($user);
+        event(new UserSignedUp($user));
 
         return $this->userFound($user);
     }

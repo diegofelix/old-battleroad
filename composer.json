@@ -9,7 +9,6 @@
 		"predis/predis": "~1.0",
 		"laravelcollective/html": "5.1.*",
 		"intervention/image": "2.*",
-		"laracasts/commander": "1.*",
 		"laracasts/presenter": "dev-master",
 		"michelf/php-markdown": "1.4.*",
 		"indatus/dispatcher": "1.*",

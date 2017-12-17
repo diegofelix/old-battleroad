@@ -136,7 +136,6 @@ return [
 
         'Collective\Html\HtmlServiceProvider',
         Illuminate\Broadcasting\BroadcastServiceProvider::class,
-        Laracasts\Commander\CommanderServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -149,7 +148,6 @@ return [
 
         Champ\Providers\BillingServiceProvider::class,
         Champ\Providers\EventingServiceProvider::class,
-        Champ\Providers\NotificationsServiceProvider::class,
         Champ\Providers\ValidationServiceProvider::class,
     ],
 

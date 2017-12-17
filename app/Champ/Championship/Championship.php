@@ -56,8 +56,6 @@ class Championship extends Model
         $this->published = true;
         $this->published_at = date('Y-m-d H:i:s');
 
-        $this->raise(new ChampionshipPublished($this));
-
         return $this;
     }
 
@@ -224,8 +222,8 @@ class Championship extends Model
     public function finishChampionship()
     {
         $this->finished = true;
+        
         $this->save();
-        $this->raise(new ChampionshipFinished($this));
     }
 
     /**

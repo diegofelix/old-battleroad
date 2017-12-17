@@ -2,6 +2,10 @@
 
 namespace Battleroad\Providers;
 
+use Champ\Account\Events\UserChangedProfile;
+use Champ\Account\Events\UserSignedUp;
+use Champ\Championship\Events\ChampionshipFinished;
+use Champ\Championship\Events\ChampionshipPublished;
 use Champ\Championship\Events\CouponWasApplied;
 use Champ\Join\Events\JoinCancelled;
 use Champ\Join\Events\JoinStatusChanged;
@@ -34,6 +38,14 @@ class EventServiceProvider extends ServiceProvider
         JoinCancelled::class => [
             'Champ\Listeners\NotificationListener@whenJoinCancelled',
         ],
+        ChampionshipPublished::class => [
+            'Champ\Listeners\AdminNotificationListener@whenChampionshipPublished',
+        ],
+        ChampionshipFinished::class => [
+            'Champ\Listeners\AdminNotificationListener@whenChampionshipFinished',
+        ],
+        UserChangedProfile::class => [],
+        UserSignedUp::class => [],
     ];
 
     /**

@@ -2,6 +2,7 @@
 
 namespace Champ\Championship;
 
+use Champ\Championship\Events\ChampionshipFinished;
 use Champ\Repositories\Core\AbstractRepository;
 use Champ\Services\ImageUploader;
 use Champ\Validators\ChampionshipValidator;
@@ -68,7 +69,7 @@ class Repository extends AbstractRepository
      *
      * @param int $id
      *
-     * @return bool
+     * @return Championship
      */
     public function publish($id)
     {
@@ -319,7 +320,9 @@ class Repository extends AbstractRepository
         // pass for all these championships and "finish him!"
         foreach ($championships as $championship) {
             $championship->finishChampionship();
-            $this->dispatchEventsFor($championship);
+
+            event(new ChampionshipFinished($championship));
+
             Log::info('championship '.$championship->id.' finished.');
         }
     }

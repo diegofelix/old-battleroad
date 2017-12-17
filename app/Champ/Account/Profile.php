@@ -27,8 +27,6 @@ class Profile extends Model
 
         $profile = new static($data);
 
-        $profile->raise(new UserChangedProfile($profile));
-
         return $profile;
     }
 
@@ -46,8 +44,6 @@ class Profile extends Model
         }
 
         $profile = $this->fill($data);
-
-        $this->raise(new UserChangedProfile($profile));
 
         return $profile;
     }
