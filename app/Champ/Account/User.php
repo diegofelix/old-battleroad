@@ -48,7 +48,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
      */
     protected $fillable = ['name', 'username', 'email', 'password', 'picture'];
 
-
     public function register($data)
     {
         $user = $this->fill($data);

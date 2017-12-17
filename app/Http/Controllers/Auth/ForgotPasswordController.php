@@ -1,4 +1,5 @@
 <?php
+
 namespace Battleroad\Http\Controllers\Auth;
 
 use Battleroad\Http\Controllers\Controller;
@@ -21,8 +22,6 @@ class ForgotPasswordController extends Controller
 
     /**
      * Create a new controller instance.
-     *
-     * @return void
      */
     public function __construct()
     {
