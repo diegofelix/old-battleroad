@@ -1,7 +1,5 @@
 <?php
 
-Route::controller('password', 'RemindersController');
-
 // Common auth
 Route::get('login', ['as' => 'session.create', 'uses' => 'SessionController@create']);
 Route::get('logout', ['as' => 'session.destroy', 'uses' => 'SessionController@destroy']);
