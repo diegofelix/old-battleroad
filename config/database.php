@@ -120,7 +120,6 @@ return [
     */
 
     'redis' => [
-
         'client' => 'predis',
 
         'options' => [
@@ -137,6 +136,5 @@ return [
                 ],
             ],
         ],
-
     ],
 ];
