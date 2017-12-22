@@ -1,10 +1,11 @@
 <?php
+
 namespace Tests;
 
-class TestCase extends Illuminate\Foundation\Testing\TestCase
-{
-    protected $baseUrl = 'http://localhost';
+use Illuminate\Contracts\Console\Kernel;
 
+trait CreatesApplication
+{
     /**
      * Creates the application.
      *
@@ -14,7 +15,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase
     {
         $app = require __DIR__.'/../bootstrap/app.php';
 
-        $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
+        $app->make(Kernel::class)->bootstrap();
 
         return $app;
     }

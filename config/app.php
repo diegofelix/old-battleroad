@@ -160,6 +160,7 @@ return [
         'Collective\Html\HtmlServiceProvider',
         Battleroad\Providers\BroadcastServiceProvider::class,
         Illuminate\Notifications\NotificationServiceProvider::class,
+        Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
          * Application Service Providers...
