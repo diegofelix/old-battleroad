@@ -6,7 +6,7 @@ View::composer('partials._admin_sidebar', 'Champ\Composers\ChampionshipComposer'
 
 require 'admin.php';
 require 'championship.php';
-require 'join.php.php';
-require 'pages.php.php';
-require 'register.php.php';
+require 'join.php';
+require 'pages.php';
+require 'register.php';
 require 'user.php';
