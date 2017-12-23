@@ -9,9 +9,8 @@ use Champ\Championship\Exceptions\UserAlreadyHasDiscountException;
 use Champ\Championship\Repository;
 use Champ\Join\Join;
 use Champ\Join\InvalidChampionshipForCoupon;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class ApplyCoupon extends Job implements SelfHandling
+class ApplyCoupon extends Job
 {
     /**
      * @var int
