@@ -6,8 +6,9 @@ use Battleroad\Jobs\Job;
 use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Services\JoinUserService;
+use Illuminate\Contracts\Bus\SelfHandling;
 
-class Join extends Job
+class Join extends Job implements SelfHandling
 {
     /**
      * @var User

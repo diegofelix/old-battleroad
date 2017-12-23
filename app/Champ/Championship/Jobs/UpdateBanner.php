@@ -5,10 +5,11 @@ namespace Champ\Championship\Jobs;
 use Battleroad\Jobs\Job;
 use Champ\Championship\Repository;
 use Champ\Championship\ImageUploader;
+use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Queue\SerializesModels;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class UpdateBanner extends Job
+class UpdateBanner extends Job implements SelfHandling
 {
     use SerializesModels;
 

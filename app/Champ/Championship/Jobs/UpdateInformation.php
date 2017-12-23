@@ -4,9 +4,10 @@ namespace Champ\Championship\Jobs;
 
 use Battleroad\Jobs\Job;
 use Champ\Championship\Repository;
+use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Queue\SerializesModels;
 
-class UpdateInformation extends Job
+class UpdateInformation extends Job implements SelfHandling
 {
     use SerializesModels;
 
