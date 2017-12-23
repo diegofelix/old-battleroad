@@ -6,7 +6,6 @@ use Battleroad\Jobs\Job;
 use Champ\Championship\Championship;
 use Champ\Championship\ImageUploader;
 use Champ\Championship\Repository;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class RegisterChampionship extends Job
 {
