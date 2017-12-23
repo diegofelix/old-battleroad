@@ -34,7 +34,7 @@ class RegisterController extends BaseRegistrationController
             Input::file('image')
         );
 
-        $championship = $this->execute($command);
+        $championship = $this->dispatch($command);
 
         return $this->redirectRoute('admin.register.games', [$championship->id]);
     }

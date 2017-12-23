@@ -2,9 +2,9 @@
 
 namespace Battleroad\Http\Controllers;
 
-use Auth;
+use Champ\Join\Jobs\Join as JoinJob;
 use Champ\Championship\Repository;
-use Input;
+use Illuminate\Http\Request;
 use Champ\Join\Join;
 use Champ\Join\Repositories\JoinRepository;
 
@@ -25,27 +25,17 @@ class JoinController extends BaseController
     protected $joinRepository;
 
     /**
-     * Command Bus.
-     *
-     * @var Laracasts\Commander\CommandBus
-     */
-    protected $commandBus;
-
-    /**
      * Class constructor.
      *
      * @param Repository     $repository
      * @param JoinRepository $joinRepository
-     * @param CommandBus     $commandBus
      */
     public function __construct(
         Repository $repository,
-        JoinRepository $joinRepository,
-        CommandBus $commandBus
+        JoinRepository $joinRepository
     ) {
         $this->repository = $repository;
         $this->joinRepository = $joinRepository;
-        $this->commandBus = $commandBus;
     }
 
     /**
@@ -67,14 +57,14 @@ class JoinController extends BaseController
      *
      * @return Response
      */
-    public function register()
+    public function register(Request $request)
     {
-        Input::merge([
-            'user' => Auth::user(),
-            'championship' => $this->repository->find(Input::get('id')),
+        $request->merge([
+            'user' => auth()->user(),
+            'championship' => $this->repository->find($request->get('id')),
         ]);
 
-        $join = $this->execute(JoinCommand::class);
+        $join = $this->dispatch(JoinJob::class);
 
         // redirect the user to the location page.
         return $this->redirectRoute('join.show', [$join->id]);
