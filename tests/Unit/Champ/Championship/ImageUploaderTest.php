@@ -2,11 +2,10 @@
 
 namespace Champ\Championship;
 
-use Intervention\Image\Image;
 use Intervention\Image\ImageManager;
 use Mockery as m;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
-use TestCase;
+use Tests\TestCase;
 
 class ImageUploaderTest extends TestCase
 {

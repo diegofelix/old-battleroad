@@ -4,9 +4,8 @@ namespace Champ\Join\Jobs;
 
 use Battleroad\Jobs\Job;
 use Champ\Join\Repositories\JoinRepository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class ChangeJoinStatus extends Job implements SelfHandling
+class ChangeJoinStatus extends Job
 {
     /**
      * @var int
