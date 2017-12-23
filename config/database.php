@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Default Database Connection Name
@@ -97,7 +96,6 @@ return [
     */
 
     'redis' => [
-
         'client' => 'predis',
 
         'options' => [
@@ -114,6 +112,5 @@ return [
                 ],
             ],
         ],
-
     ],
 ];
