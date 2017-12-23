@@ -5,9 +5,8 @@ namespace Battleroad\Champ\Championship\Jobs;
 use Battleroad\Jobs\Job;
 use Champ\Championship\Coupon;
 use Champ\Championship\Repository;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class GenerateCoupon extends Job implements SelfHandling
+class GenerateCoupon extends Job
 {
     /**
      * @var int
