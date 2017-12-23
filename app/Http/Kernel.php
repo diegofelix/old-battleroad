@@ -51,7 +51,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \Battleroad\Http\Middleware\RedirectIfAuthenticated,
+        'guest' => \Battleroad\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'championship_owner' => \Battleroad\Http\Middleware\ChampionshipOwner::class,
         'join_owner' => \Battleroad\Http\Middleware\JoinOwner::class,
