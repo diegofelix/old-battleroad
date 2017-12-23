@@ -1,14 +1,13 @@
 <?php
 
-namespace Battleroad\Champ\Join\Jobs;
+namespace Champ\Join\Jobs;
 
 use Battleroad\Jobs\Job;
 use Champ\Account\User;
 use Champ\Championship\Championship;
 use Champ\Services\JoinUserService;
-use Illuminate\Contracts\Bus\SelfHandling;
 
-class Join extends Job implements SelfHandling
+class Join extends Job
 {
     /**
      * @var User

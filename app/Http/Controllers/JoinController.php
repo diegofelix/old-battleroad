@@ -5,16 +5,11 @@ namespace Battleroad\Http\Controllers;
 use Auth;
 use Champ\Championship\Repository;
 use Input;
-use Laracasts\Commander\CommandBus;
 use Champ\Join\Join;
-use Champ\Join\JoinCommand;
 use Champ\Join\Repositories\JoinRepository;
-use Laracasts\Commander\CommanderTrait;
 
 class JoinController extends BaseController
 {
-    use CommanderTrait;
-
     /**
      * Championship Repository.
      *
