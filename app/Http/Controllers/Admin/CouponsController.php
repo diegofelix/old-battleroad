@@ -2,17 +2,14 @@
 
 namespace Battleroad\Http\Controllers\Admin;
 
-use Input;
+use Battleroad\Champ\Championship\Jobs\GenerateCoupon;
+use Illuminate\Http\Request;
 use Champ\Services\KeyGen;
-use Laracasts\Commander\CommanderTrait;
 use Battleroad\Http\Controllers\BaseController;
-use Champ\Championship\Coupons\GenerateCouponCommand;
 use Champ\Championship\Repository;
 
 class CouponsController extends BaseController
 {
-    use CommanderTrait;
-
     /**
      * KeyGen.
      *
@@ -54,19 +51,18 @@ class CouponsController extends BaseController
     /**
      * Generate a coupon for the user.
      *
-     * @param int $championshipId
+     * @param int     $championshipId
+     * @param Request $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function generate($championshipId)
+    public function generate($championshipId, Request $request)
     {
-        $input = [
-            'championship_id' => $championshipId,
-            'code' => $this->keyGen->make(),
-            'price' => Input::get('price'),
-        ];
-
-        $this->execute(GenerateCouponCommand::class, $input);
+        $this->dispatch(new GenerateCoupon(
+            $championshipId,
+            $this->keyGen->make(),
+            $request->get('price')
+        ));
 
         return $this->redirectRoute('admin.championships.coupons', $championshipId);
     }
@@ -74,13 +70,14 @@ class CouponsController extends BaseController
     /**
      * Delete a coupon if this coupon has no user.
      *
-     * @param int $id
+     * @param int     $id
+     * @param Request $request
      *
-     * @return Response
+     * @return \Illuminate\Http\RedirectResponse
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
-        $coupon = $this->repository->findCoupon(Input::get('id'));
+        $coupon = $this->repository->findCoupon($request->get('id'));
 
         // a little verification to check if the user is the owner
         if ($coupon->championship_id == $id && empty($coupon->user_id)) {
